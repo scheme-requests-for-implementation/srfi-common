@@ -184,24 +184,7 @@ requires.
 conflict with each other.  Won't that make it impossible for an
 implementation to support conflicting SRFIs?</em>
           
-<DD>Not necessarily.  <strong><em>This will be clarified once the details of <a
-href="srfi-0/">SRFI 0</a> have been worked out.</em></strong>
-<p>
-Certainly conflicting SRFIs cannot be active at the same time in a
-program, but some mechanism in SRFI 0 might allow different programs
-to choose which of a set of conflicting SRFIs they use.
-<p>
-Failing that, a particular implementor will choose a set of SRFIs to
-implement natively.  The application programmer can check to see which
-of the conflicting SRFIs are implemented and program accordingly.
-<p>
-This may not be perfect, but see the previous question about <A HREF="#teeth">teeth!</A>
-
-<!-- allows for an implementation to load or link the implementation
-of a specification provided in a SRFI on demand.  This means an
-implementation can support conflicting SRFIs.  The only restriction
-implied by this is that a single program cannot make use of
-conflicting SRFIs simultaneously. -->
+<DD>Not necessarily.  See <a href="/srfi-7/">SRFI 7</a>.
 
 <P><DT><em>Where did the acronym come from?  It's a mouthful</em>
 
@@ -218,7 +201,7 @@ Implementation Request (SIR) was also proposed.
     <address><a href="mailto:srfi-editors@srfi.schemers.org">The SRFI Editors</a></address>
 <!-- Created: Sat Oct 17 19:36:06 EDT 1998 -->
 <!-- hhmts start -->
-Last modified: Sat Feb 16 19:08:45 MET 2002
+Last modified: Sat Feb 16 19:09:52 MET 2002
 <!-- hhmts end -->
   </body>
 </html>
