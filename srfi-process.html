@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>Scheme Request For Implementation - Process</title>
+  </head>
+
+  <body>
+    <h1>Scheme Request For Implementation - Process</h1>
+
+<TABLE BORDER=0 CELLSPACING=10>
+<TR VALIGN=TOP><TD ALIGN=CENTER><H3>Title</H3></TD><TD>``Scheme Request for Implementation'' Process</TD></TR>
+<TR VALIGN=TOP><TD ALIGN=CENTER><H3>Author</H3></TD><TD>Dave Mason</TD></TR>
+
+<TR VALIGN=TOP><TD ALIGN=CENTER><H3>Abstract</H3></TD><TD>
+
+At the Scheme Workshop held in Baltimore, Maryland, on September 26, 1998,
+the attendees considered a number of proposals
+for standardized feature sets for inclusion in Scheme implementations.
+The discussion produced a rough process to provide a
+timely mechanism for the production and dissemination of such
+``standards''.  This process is described below.
+<p>
+The goal of this mechanism is to provide a permanent registry for
+``Scheme Request For Implementation''s (SRFIs - pronounced
+``surfie'').  This is not a formal standards creation mechanism.
+Rather, it is a formal way to manage the production of proposals for
+Scheme and to manage the name-space of feature-descriptors signifying
+those proposals.
+<p>
+There are many other things that this process is not.  Discussion of
+those, rationales for some of the implementation details, and answers
+to related questions are to be found in the <A
+HREF="srfi-faq.html">SRFI FAQ page</A>.
+<p>
+Related to this process is a Scheme special form, documented in <A
+HREF="srfi-0.html">SRFI-0</A>, that a Scheme program can use to
+ascertain whether an implementation supports a particular standard or
+feature.
+
+</TD></TR>
+
+<TR VALIGN=TOP><TD ALIGN=CENTER><H3>Mechanism</H3></TD><TD>
+
+The site <A HREF="http://srfi.schemers.org/"><code>http://srfi.schemers.org/</code></A>
+will provide an archive of <em>pending</em>, <em>accepted</em> and <em>withdrawn</em> SRFIs and a
+submission process to submit SRFIs for consideration.
+<p>
+The editors of the SRFIs will be experienced members of the Scheme
+community independent of the major implementors.  They will attempt to
+keep the quality of SRFIs high, but will ultimately accept any SRFI
+which conforms to the <A HREF=#structure>structure requirements</A>
+below.
+<p>
+A moderated mailing list, <code>srfi-announce@srfi.schemers.org</code>,
+will be used to announce when new SRFI proposals become <em>pending</em>;
+it will carry a final notification when
+the SRFI has been either <em>accepted</em> or <em>withdrawn</em>.
+Anyone can subscribe to the list, and implementors are
+especially encouraged to subscribe.
+<p>
+There will be a mailing list created for the evaluation period of each
+SRFI where all discussion of the proposal will take place.  Anyone may
+join these lists.  The discussion will be archived and the archived
+discussion will remain part of the permanent record of the SRFI.  Once
+the SRFI is accepted or withdrawn, the mailing list will be closed.
+
+</TD></TR>
+<TR VALIGN=TOP><TD ALIGN=CENTER><H3>Process</H3></TD><TD>
+
+<!-- In order for the SRFI process to be as open and transparent as possible, -->
+All proposals must follow the following steps:
+
+<OL>
+
+<LI>Authors submit a proposal by using the <A HREF="http://srfi.schemers.org/"><code>http://srfi.schemers.org/</code></A> web page, or sending email to  <A HREF="mailto:srfi-editors@srfi.schemers.org"><code>srfi-editors@srfi.schemers.org</code></A>.
+<p>
+<LI>Within 7 days, one of the editors will read and respond to the
+proposal.  The response may be a request to clarify, justify, or
+withdraw the proposal.  Such a request must not reflect the personal
+bias of an editor.  Rather, it will be made strictly to maintain a
+high quality of submissions.  The editors may not turn a proposal back
+more than twice.  On the third submission, the editors will move the
+proposal to <em>pending</em> status if it conforms to the
+specification below.  At the discretion of the editors, a proposal
+that does not completely conform may be moved to <em>pending</em>
+status (although it must conform before it will be moved to
+<em>accepted</em> status).
+<p>
+<LI>When the proposal has been vetted by the editors, it receives its
+SRFI number and becomes <em>pending</em>.  The editors will create a mailing
+list for the discussion of the proposal.  A proposal normally stays <em>pending</em> for
+<strong>60 days</strong>.  A short notice of the new pending SRFI, including the title
+and abstract, SRFI number, URL, and instructions to access the temporary
+mailing list, will be sent to <code>srfi-announce@srfi.schemers.org</code>.
+<p>
+As part of the initial editing process, the editors will ensure that
+related standards (R*RS, SRFIs, RFCs and others) are appropriately identified and
+that the proposal meets the structural requirements described below.
+If other related standards are identified during the comment process or after acceptance,
+the editors will keep the references up-to-date.
+<p>
+<LI>If the authors choose, they may submit revised versions of the
+proposal at any point during the comment period.  Every such revision
+shall be announced to <code>srfi-announce@srfi.schemers.org</code>,
+and all revisions will be retained in the permanent record of the
+SRFI.  Re-submission may cause the comment period to be extended at
+the discretion of the editors.  The total discussion period
+<strong>must not exceed 90 days</strong>.  Active discussion or revision
+after 90 days normally suggests that a proposal has been revised at
+least 3 times and is not yet mature enough for standardization.
+<p>
+<LI>At the end of the 60-90 day comment period, the authors can choose
+to withdraw the proposal.  If the editors determine that insufficient
+time for discussion has followed a significant revision of the
+proposal, the proposal will be withdrawn.  Otherwise, the proposal
+will be accepted if it meets the requirements below.  The outcome will
+be announced to <code>srfi-announce@srfi.schemers.org</code>.
+<p>
+<LI>If the SRFI is withdrawn at the end of the comment period, it will
+be moved to a <em>withdrawn</em> proposal archive.  At the discretion
+of the editors, subsequent related proposals (by the same or different
+authors) may be encouraged to include/modify the withdrawn proposal
+and may be treated as a reactivation of the withdrawn proposal and
+move it back to <em>pending</em>.  A withdrawn proposal may not
+normally be reactivated until 30 days after the withdrawal.
+<p>
+<LI>When the SRFI is accepted, it will be placed on the list of <em>accepted</em>
+SRFIs.  This will include a link to the history of the proposal,
+including all earlier versions and the archive of the discussion from
+the comment period.
+<p>
+Any identified SRFIs that are superseded or incompatible with the newly accepted SRFI will be updated to reflect this fact.
+
+</OL>
+
+Once the SRFI number has been assigned, the proposal will be in one of
+three states: <em>pending</em>, <em>accepted</em>, or
+<em>withdrawn</em>.  Lists of proposals in all 3 states will be
+available and archived indefinitely and SRFI numbers will not be
+reused.  <!--Accepted SRFIs may be further thought of as being in one
+of three states: active, deprecated, or superseded.--> The
+<em>accepted</em> state is permanent, and the only change that may be
+made to such a SRFI is the updating of URLs (including related SRFIs)
+or noting the SRFI as deprecated, conflicted, or superseded by a subsequent SRFI.
+Every Scheme implementation is encouraged to provide implementations
+of active SRFIs where possible, and to retain existing implementations
+of deprecated SRFIs for a reasonable time period.
+
+<p>
+New standards, such as R*RS, may supersede or conflict with existing
+SRFIs.  The editors and authors will work to update the relationship
+of active SRFIs to such standards.
+
+</TD></TR>
+<TR VALIGN=TOP><TD ALIGN=CENTER><A NAME=structure><H3>Structure</H3></TD><TD>
+
+Every SRFI must meet the following requirements:
+
+<OL>
+
+<LI>It must have a succinct title.
+<p>
+<LI>It must list the authors.
+<p>
+<LI>It must list related standards and SRFIs, including dependencies, conflicts, and replacements.
+<p>
+<LI>It must begin with an abstract.  This will be fewer than 200 words
+long.  It will outline the need for, and design of, the proposal.
+<p>
+<LI>It must contain a detailed rationale.  This will typically be 200-500 words long and
+will explain why the proposal should be incorporated as a standard feature
+in Scheme implementations.  If there are other standards which this
+proposal will replace or with which it will compete, the rationale
+should explain why the present proposal is a substantial improvement.
+<p>
+<LI>It must contain a detailed specification.  This should be detailed
+enough that a conforming implementation could be completely created
+from this description.
+<p>
+<LI>It must contain a reference implementation.  This requirement may be met
+(in order from the most to the least preferred) by:
+
+<OL>
+<LI>A portable Scheme implementation (possibly using earlier
+SRFIs). This is the most desirable option, because then implementors
+can provide a (possibly slow) implementation with no effort.
+
+<LI>A mostly-portable solution that uses some kind of
+hooks provided in some Scheme interpreter/compiler.  In this case, a
+detailed specification of the hooks must be included so that the SRFI
+is self-contained.
+
+<LI>An implementation-specific solution.  Ideally, tricky issues that
+had to be dealt with in the implementation will be identified.
+
+<LI>A separately available implementation, where a reference
+implementation is large or requires extensive modifications (rather
+than just additions) to an existing implementation.  This
+implementation will eventually be archived along with the SRFI and the
+discussion related to it.
+
+<LI>An outline of how it might be implemented.  This should be
+considered a last resort, and in this case the rationale for the
+feature must be stronger.
+
+</OL>
+The reference implementation should normally conform to the
+specification in point 5.  If there is any variance (such as the
+implementation being overly restrictive), the
+<strong>specification</strong> will be considered correct, the
+variance should be explained, and a timetable provided for the
+reference implementation to meet the specification.
+<p>
+<LI>A proposal must be submitted in <strong>HTML 3.2</strong> format
+following the <A HREF=srfi-template.html>template located here</A>.
+If the author(s) are not familiar with this, the editors will accept
+Plain ISO Latin 1 text and convert it to HTML, after which any
+revisions must remain in HTML.  All proposals must be written in
+English, be properly formatted and be reasonably grammatical.
+<p>
+<LI>It must contain a copyright statement as follows (where
+<em>AUTHOR</em> should be replaced by the name(s) of the author(s) and
+<em>YEAR</em> will be the year in which the SRFI number is allocated):
+<UL>
+Copyright (C) <em>AUTHOR</em> (<em>YEAR</em>).  All Rights Reserved.
+<p>
+This document and translations of it may be copied and furnished to
+others, and derivative works that comment on or otherwise explain it
+or assist in its implmentation may be prepared, copied, published and
+distributed, in whole or in part, without restriction of any kind,
+provided that the above copyright notice and this paragraph are
+included on all such copies and derivative works.  However, this
+document itself may not be modified in any way, such as by removing
+the copyright notice or references to the Scheme Request For
+Implementation process or editors, except as needed for the purpose of
+developing SRFIs in which case the procedures for copyrights defined
+in the SRFI process must be followed, or as required to translate it
+into languages other than English.
+<p>
+The limited permissions granted above are perpetual and will not be
+revoked by the authors or their successors or assigns.
+<p>
+This document and the information contained herein is provided on an
+"AS IS" basis and THE AUTHORS AND THE SRFI EDITORS DISCLAIM ALL
+WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY
+WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY
+RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A
+PARTICULAR PURPOSE."
+</UL>
+</OL>
+
+The editors may not reject a proposal because they disagree with the
+importance of the proposal, or because they think it is a wrong-headed
+approach to the problem. The editors may, however, reject a proposal
+because it does not meet the requirements listed here.
+<p>
+In particular, lack of a reference
+implementation (as defined above) is grounds for rejection.  This can
+only occur if the ``reference implementation'' requirement is being
+met by an outlined implementation (type 5), and there is consensus
+that the implementation outline is not adequate.  Note that this is never a
+permanent rejection, because creation of an implementation of one of
+the other types is a complete refutation of this basis for rejection.
+<p>
+The other likely basis for rejection is an inadequate design
+specification.  In this case, the editors will attempt to help the
+author(s) conform to the requirements.
+<p>
+Remember, even if a proposal becomes an <em>accepted</em> SRFI, the need for it must be
+compelling enough for implementors to decide to incorporate it into
+their systems, or it will have been a waste of time and effort for
+everyone involved.  If the quality of any SRFI is not high, the
+likelihood of implementors adding this feature to their implementation
+is extremely low.
+
+</TD></TR>
+<TR VALIGN=TOP><TD ALIGN=CENTER><A NAME=definitions><H3>Definitions</H3></TD><TD>
+The following terms may be used in SRFIs with the corresponding definitions:
+<UL>
+<LI>The term "a SRFI-n conformant implementation" means an
+  implementation of Scheme which conforms to the specification described
+  in SRFI-n.
+
+</TD></TR>
+</TABLE>
+
+    <hr>
+    <address><a href="mailto:srfi-editors@srfi.schemers.org">The SRFI Editors</a></address>
+<!-- Created: Tue Sep 29 19:20:08 EDT 1998 -->
+<!-- hhmts start -->
+Last modified: Tue Nov  3 08:31:05 EST 1998
+<!-- hhmts end -->
+  </body>
+</html>
+<!--  LocalWords:  SRFI
+ -->
