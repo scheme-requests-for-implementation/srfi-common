@@ -42,7 +42,7 @@ feature.
 <TR VALIGN=TOP><TD ALIGN=CENTER><H3>Mechanism</H3></TD><TD>
 
 The site <A HREF="http://srfi.schemers.org/"><code>http://srfi.schemers.org/</code></A>
-will provide an archive of <em>pending</em>, <em>accepted</em> and <em>withdrawn</em> SRFIs and a
+will provide an archive of <em>draft</em>, <em>final</em> and <em>withdrawn</em> SRFIs and a
 submission process to submit SRFIs for consideration.
 <p>
 The editors of the SRFIs will be experienced members of the Scheme
@@ -52,9 +52,9 @@ which conforms to the <A HREF=#structure>structure requirements</A>
 below.
 <p>
 A moderated mailing list, <code>srfi-announce@srfi.schemers.org</code>,
-will be used to announce when new SRFI proposals become <em>pending</em>;
+will be used to announce when new SRFI proposals become <em>draft</em>;
 it will carry a final notification when
-the SRFI has been either <em>accepted</em> or <em>withdrawn</em>.
+the SRFI has been either <em>final</em> or <em>withdrawn</em>.
 Anyone can subscribe to the list, and implementors are
 especially encouraged to subscribe.
 <p>
@@ -62,7 +62,7 @@ There will be a mailing list created for the evaluation period of each
 SRFI where all discussion of the proposal will take place.  Anyone may
 join these lists.  The discussion will be archived and the archived
 discussion will remain part of the permanent record of the SRFI.  Once
-the SRFI is accepted or withdrawn, the mailing list will be closed.
+the SRFI is final or withdrawn, the mailing list will be closed.
 
 </TD></TR>
 <TR VALIGN=TOP><TD ALIGN=CENTER><H3>Process</H3></TD><TD>
@@ -80,16 +80,16 @@ withdraw the proposal.  Such a request must not reflect the personal
 bias of an editor.  Rather, it will be made strictly to maintain a
 high quality of submissions.  The editors may not turn a proposal back
 more than twice.  On the third submission, the editors will move the
-proposal to <em>pending</em> status if it conforms to the
+proposal to <em>draft</em> status if it conforms to the
 specification below.  At the discretion of the editors, a proposal
-that does not completely conform may be moved to <em>pending</em>
+that does not completely conform may be moved to <em>draft</em>
 status (although it must conform before it will be moved to
-<em>accepted</em> status).
+<em>final</em> status).
 <p>
 <LI>When the proposal has been vetted by the editors, it receives its
-SRFI number and becomes <em>pending</em>.  The editors will create a mailing
-list for the discussion of the proposal.  A proposal normally stays <em>pending</em> for
-<strong>60 days</strong>.  A short notice of the new pending SRFI, including the title
+SRFI number and becomes <em>draft</em>.  The editors will create a mailing
+list for the discussion of the proposal.  A proposal normally stays <em>draft</em> for
+<strong>60 days</strong>.  A short notice of the new draft SRFI, including the title
 and abstract, SRFI number, URL, and instructions to access the temporary
 mailing list, will be sent to <code>srfi-announce@srfi.schemers.org</code>.
 <p>
@@ -113,7 +113,7 @@ least 3 times and is not yet mature enough for standardization.
 to withdraw the proposal.  If the editors determine that insufficient
 time for discussion has followed a significant revision of the
 proposal, the proposal will be withdrawn.  Otherwise, the proposal
-will be accepted if it meets the requirements below.  The outcome will
+will be made final if it meets the requirements below.  The outcome will
 be announced to <code>srfi-announce@srfi.schemers.org</code>.
 <p>
 <LI>If the SRFI is withdrawn at the end of the comment period, it will
@@ -121,25 +121,25 @@ be moved to a <em>withdrawn</em> proposal archive.  At the discretion
 of the editors, subsequent related proposals (by the same or different
 authors) may be encouraged to include/modify the withdrawn proposal
 and may be treated as a reactivation of the withdrawn proposal and
-move it back to <em>pending</em>.  A withdrawn proposal may not
+move it back to <em>draft</em>.  A withdrawn proposal may not
 normally be reactivated until 30 days after the withdrawal.
 <p>
-<LI>When the SRFI is accepted, it will be placed on the list of <em>accepted</em>
+<LI>When the SRFI is accepted, it will be placed on the list of <em>final</em>
 SRFIs.  This will include a link to the history of the proposal,
 including all earlier versions and the archive of the discussion from
 the comment period.
 <p>
-Any identified SRFIs that are superseded or incompatible with the newly accepted SRFI will be updated to reflect this fact.
+Any identified SRFIs that are superseded or incompatible with the newly final SRFI will be updated to reflect this fact.
 
 </OL>
 
 Once the SRFI number has been assigned, the proposal will be in one of
-three states: <em>pending</em>, <em>accepted</em>, or
+three states: <em>draft</em>, <em>final</em>, or
 <em>withdrawn</em>.  Lists of proposals in all 3 states will be
 available and archived indefinitely and SRFI numbers will not be
-reused.  <!--Accepted SRFIs may be further thought of as being in one
+reused.  <!--Final SRFIs may be further thought of as being in one
 of three states: active, deprecated, or superseded.--> The
-<em>accepted</em> state is permanent, and the only change that may be
+<em>final</em> state is permanent, and the only change that may be
 made to such a SRFI is the updating of URLs (including related SRFIs)
 or noting the SRFI as deprecated, conflicted, or superseded by a subsequent SRFI.
 Every Scheme implementation is encouraged to provide implementations
@@ -266,7 +266,7 @@ The other likely basis for rejection is an inadequate design
 specification.  In this case, the editors will attempt to help the
 author(s) conform to the requirements.
 <p>
-Remember, even if a proposal becomes an <em>accepted</em> SRFI, the need for it must be
+Remember, even if a proposal becomes an <em>final</em> SRFI, the need for it must be
 compelling enough for implementors to decide to incorporate it into
 their systems, or it will have been a waste of time and effort for
 everyone involved.  If the quality of any SRFI is not high, the
@@ -288,7 +288,7 @@ The following terms may be used in SRFIs with the corresponding definitions:
     <address><a href="mailto:srfi-editors@srfi.schemers.org">The SRFI Editors</a></address>
 <!-- Created: Tue Sep 29 19:20:08 EDT 1998 -->
 <!-- hhmts start -->
-Last modified: Tue Nov  3 08:31:05 EST 1998
+Last modified: Mon Dec 21 20:46:20 MET 1998
 <!-- hhmts end -->
   </body>
 </html>
