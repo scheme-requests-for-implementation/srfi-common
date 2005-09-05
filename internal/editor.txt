@@ -1,0 +1,98 @@
+General remarks
+---------------
+
+The administration is works mostly through CVS.
+
+Set CVS_RSH to "ssh".  Moreover, add a clause like the following to
+.ssh/config:
+
+Host srfi.schemers.org
+BatchMode=yes
+Port=9876
+
+Then do this to check out the web tree:
+
+cvs -d :ext:srfi-aut@srfi.schemers.org:/afs/informatik.uni-tuebingen.de/home/srfi/srfi-cvs checkout srfi
+
+Replace the final "srfi" by the name of the module for checking out
+the other modules.
+
+There are three important modules:
+
+CVSROOT (of course)
+srfi      contains the web hierarchy
+software  contains associated software
+
+Check out at least software and srfi.
+
+Generally, a SRFI <n> resides as
+
+srfi-<n>/srfi-<n>.html in the srfi module.
+
+These files are magic.
+
+Checking in a new SRFI draft
+----------------------------
+
+Now what happens is that, if you check in such a file for the very
+first time, it will automatically create the mailing list and send a
+welcome message to srfi-announce.
+
+IMPORTANT NOTE: The commit magic checks that SRFI actually adheres to
+the HTML skeleton to extract author, title and so forth.  If it can't
+do that, the commit will fail.  (But it will tell you about it.)
+
+Therefore, before you add a new draft SRFI, you should check the
+header section for adherence to the template.  Also, you must add a
+status section (just copy & adjust one from one of the other SRFIs).
+Also, add your name in the "Editor" line at the bottom of the SRFI.
+
+For doing the commit, I suggest you use the script "register-srfi"
+from the software module, which performs the same checks on your side
+of CVS.  Run
+
+register-srfi srfi-<n>.html
+
+in the freshly created and CVS-added srfi-<n> subdirectory of the srfi
+module.
+
+This will create a skeleton index.html file, CVS-add both index.html
+and srfi-<n>.html, and commit them, which in turn does everything
+else.
+
+You can commit changes to both files afterwards to your hearts'
+desire.  Note that index.html points to the mailing list archives
+which are updated automatically.
+
+If you've committed a SRFI, please update draft-srfis.html,
+final-srfis.html, and withdrawn-srfis.html in the srfi module and
+commit the changes.  (Hint: automation of index generation is on the
+ToDo lists.)
+
+Note that you guys are moderators of srfi-announce.  Therefore, you
+will get every mail for your approval.  If you want to approve a mail
+sent to srfi-announce, resend it with a new header:
+
+Approved: dvanhorn@cs.uvm.edu
+
+(or the equivalent magic for the rest of us)
+
+THIS INCLUDES THE AUTOMATICALLY GENERATED ANNOUNCEMENTS.
+
+When re-sending the approved announcement of a draft SRFI, make sure
+you're using a MUA capable of posting news (or some other means for
+posting to Usenet).
+
+Finalizing a SRFI
+-----------------
+
+- Use register-srfi on finalized SRFIs: Change the status to ``final''
+  and call register-srfi instead of CVS-committing regularly.  This
+  will also auto-generate an appropriate index.html file.
+
+- The server-side commit script will auto-generate the finalization
+  announcement and send it to srfi-announce.  You still need to
+  re-send with an Approved: header.
+
+- Move the <LI> entry from draft-srfis.html to final-srfi.html.
+
