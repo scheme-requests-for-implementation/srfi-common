@@ -1,7 +1,8 @@
+
 General remarks
 ---------------
 
-The administration is works mostly through CVS.
+The administration of the SRFI repository is done mostly through CVS.
 
 Set CVS_RSH to "ssh".  Moreover, add a clause like the following to
 .ssh/config:
@@ -19,17 +20,29 @@ the other modules.
 
 There are three important modules:
 
-CVSROOT (of course)
-srfi      contains the web hierarchy
-software  contains associated software
+
+CVSROOT         contains meta-data about the CVS repository, including
+                for example the script which processes new SRFIs for
+                conformance and adds the appropriate mailing lists
+                (that script lives in CVSROOT/commitcheck)
+
+srfi            contains the web hierarchy, including this file which is at
+                srfi/internal/editor.txt
+
+software        contains associated software and utilities.  These are
+                mostly SCSH scripts, and are known to operate in SCSH 0.6.6
+
+
 
 Check out at least software and srfi.
 
-Generally, a SRFI <n> resides as
+Generally, the text of SRFI <n> resides in the srfi module, in:
 
-srfi-<n>/srfi-<n>.html in the srfi module.
+    srfi-<n>/srfi-<n>.html
 
-These files are magic.
+These files are magic, meaning that CVS is configured to do special
+processing on them.
+
 
 Checking in a new SRFI draft
 ----------------------------
@@ -38,20 +51,27 @@ Now what happens is that, if you check in such a file for the very
 first time, it will automatically create the mailing list and send a
 welcome message to srfi-announce.
 
+
 IMPORTANT NOTE: The commit magic checks that SRFI actually adheres to
-the HTML skeleton to extract author, title and so forth.  If it can't
-do that, the commit will fail.  (But it will tell you about it.)
+                the HTML skeleton to extract author, title and so
+                forth.  If it can't do that, the commit will fail.
+                (But it will tell you about it.)  Furthermore, the
+                checking is done using regular expressions and not by
+                parsing the HTML, so pay attention to line formatting.
+                
 
 Therefore, before you add a new draft SRFI, you should check the
 header section for adherence to the template.  Also, you must add a
-status section (just copy & adjust one from one of the other SRFIs).
+status section (just copy & adjust one from one of the other SRFIs
+such as SRFI-78.  Note that some of the older SRFIs don't reference
+the mailing list in the status section, which is considered bad form).
 Also, add your name in the "Editor" line at the bottom of the SRFI.
 
 For doing the commit, I suggest you use the script "register-srfi"
 from the software module, which performs the same checks on your side
 of CVS.  Run
 
-register-srfi srfi-<n>.html
+        register-srfi srfi-<n>.html
 
 in the freshly created and CVS-added srfi-<n> subdirectory of the srfi
 module.
