@@ -9,7 +9,6 @@ Set CVS_RSH to "ssh".  Moreover, add a clause like the following to
 
 Host srfi.schemers.org
 BatchMode=yes
-Port=9876
 
 Then do this to check out the web tree:
 
