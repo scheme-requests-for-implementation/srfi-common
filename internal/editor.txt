@@ -13,7 +13,7 @@ Port=9876
 
 Then do this to check out the web tree:
 
-cvs -d :ext:srfi-aut@srfi.schemers.org:/afs/informatik.uni-tuebingen.de/home/srfi/srfi-cvs checkout srfi
+cvs -d :ext:srfi@srfi.schemers.org:/afs/informatik.uni-tuebingen.de/home/srfi/srfi-cvs checkout srfi
 
 Replace the final "srfi" by the name of the module for checking out
 the other modules.
