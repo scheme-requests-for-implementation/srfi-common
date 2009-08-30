@@ -19,8 +19,8 @@ The following systems are claimed to support one or more SRFIs:
 	<DD><UL>
             <LI>ERR5RS, R6RS mode: 1, 2, 5, 6, 7, 8, 9, 11, 13, 14,
             16, 17, 19, 23, 25, 26, 27, 28, 29, 31, 38, 39, 41, 42,
-            43, 45, 48, 51, 54, 56, 59, 60, 61, 62, 63, 64, 66, 67, 
-            69, 71, 74, 78, 86, 87, 95, 96, 98
+            43, 45, 48, 51, 54, 59, 60, 61, 62, 63, 64, 66, 67, 69,
+            71, 74, 78, 86, 87, 95, 96, 97, 98
             <LI>R5RS mode: 0, 1, 2, 5, 6, 7, 8, 9, 11, 13, 14, 16, 17,
             19, 22, 23, 25, 26, 27, 28, 29, 30, 31, 37, 38, 39, 41,
             42, 43, 45, 48, 51, 54, 56, 59, 60, 61, 62, 63, 64, 66,
@@ -33,13 +33,16 @@ The following systems are claimed to support one or more SRFIs:
 	48, 54, 57, 59, 60, 61, 62, 63, 64, 66, 67, 69, 71, 74, 78,
 	86, 87
       <DT><A HREF="http://www.gnu.org/software/kawa/">Kawa</A> (1.9.90)
-	<DD>0, 1, 4, 6, 8, 9, 11, 16, 17, 23, 25, 26, 28, 30, 37, 39,
-	62, 64, 69, 95, 97
+	<DD>0, 1, 4, 6, 8, 9, 11, 13 (partial), 16, 17, 23, 25, 26,
+	28, 30, 37, 39, 48 (partial), 62, 64, 69, 88, 95, 97
 
       <DT><A HREF="http://www.gnu.org/software/guile/guile.html">Guile</A> (1.8.7)             
 	<DD>0, 1, 2, 4, 6, 8, 9, 10, 11, 13, 14, 16, 17, 19, 26, 31,
 	34, 35, 37, 39, 55, 60, 61, 69, 88
-      <DT><A HREF="http://www.call-with-current-continuation.org/chicken.html">Chicken 1.0</A> <DD>0,1,2,4,6,7,8,9,10,13,14,16,17,18,22,23,25,26,28,30,37,38,39,42
+      <DT><A HREF="http://www.call-with-current-continuation.org/chicken.html">Chicken</A> (4.1.0)
+	<DD>0, 1, 2, 4, 6, 8, 9, 10, 12, 13, 14, 16, 17, 18, 19, 23,
+	25, 26, 27, 28, 29, 30, 31, 34, 37, 38, 39, 40, 41, 42, 43,
+	45, 47, 55, 57, 60, 61, 62, 63, 66, 67, 69, 72, 85, 89, 95
       <DT><A HREF="http://www.s48.org">Scheme 48</A> (1.8)
 	<DD>1, 2, 4, 5, 6, 7, 8, 9, 11, 13, 14, 16, 17, 19, 22, 23,
 	25, 26, 27, 28, 31, 34, 35, 36, 37, 40, 42, 43, 45, 60, 61,
@@ -60,7 +63,20 @@ The following systems are claimed to support one or more SRFIs:
 	22, 23, 25, 26, 27, 28, 29, 30, 31, 34, 35, 36, 37, 38, 39,
 	40, 42, 43, 45, 55, 61, 62, 87
       <DT><A HREF="http://www.rscheme.org/">RScheme</A> <DD>(builtin): 0,6,10,28,30 (libraries): 1,2,4,9,18,27,34
-
+      <DT><A HREF="http://www.gnu.org/software/mit-scheme/">MIT/GNU Scheme</A> (20090107) 
+	<DD>0, 1, 2, 6, 8, 9, 23, 62, 69
+      <DT><A HREF="http://ikarus-scheme.org/">Ikarus</A> (0.0.3)
+	<DD>0, 1, 2, 6, 8, 9, 11, 13, 14, 16, 19, 23, 26, 27, 31, 37,
+	39, 41, 42, 43, 67, 78
+      <DT><A HREF="http://www.stklos.net/">STklos</A> (0.98)
+	<DD>0, 1, 2, 4, 6, 7, 8, 9, 10, 11, 13, 14, 16, 17, 18, 22,
+	23, 26, 27, 28, 30, 31, 34, 35, 36, 38, 39, 45, 48, 55, 59,
+	60, 62, 66, 69, 70, 88, 89
+      <DT><A HREF="http://dynamo.iro.umontreal.ca/~gambit/">Gambit</A> (4.5.1)
+        <DD>0, 4, 6, 8, 9, 18, 21, 22, 23, 27, 39
+      <DT><A HREF="http://code.google.com/p/sigscheme/">SigScheme</A> (0.8.3)
+	<DD>0, 1, 9, 43, 55, 69, 95
+	  
 </DL>
 Note that unless an implementation provides one of the availability
 SRFIs, an application cannot <strong>completely</strong> portably move between
