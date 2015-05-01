@@ -20,7 +20,9 @@ I'm making a few changes to the repository after conversion from CVS:
 
 - Extract the contents of all ".tar.gz" files so that individual implementation files are accessible directly
 
-- Point all links to <srfi.schemers.org> archives to where the Simplelists archives will be.
+- Check in all existing mailing list archives.
+
+- Point currently active (and future) archives to Simplelists, where they'll be uploaded.
 
 - Temporarily change all links to <srfi.schemers.org> to equivalent links on <srfi.speechcode.com> so that I can test before the DNS change.  I'll undo that change when we move the DNS for <srfi.schemers.org> to point to Github.
 
