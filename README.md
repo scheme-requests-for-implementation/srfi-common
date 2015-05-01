@@ -6,21 +6,21 @@
 
 **For more information on my proposal, see [Hosting](hosting-on-github.md).  Michael Sperber, current editor, has [approved my proposal](http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117), so now the work begins in earnest!**
 
-![SRFI](https://scheme-requests-for-implementation.github.io/srfis/srfi.png)
+![SRFI](https://scheme-requests-for-implementation.github.io/srfi/srfi.png)
 
 The "Scheme Requests for Implementation" (*SRFI*) process is a new
 approach to helping Scheme users to write portable and yet useful
 code.  It is a forum for people interested in coordinating libraries
 and other additions to the Scheme language between implementations.
 
-- [Scheme Systems Supporting SRFI](https://scheme-requests-for-implementation.github.io/srfis/srfi-implementers.html)
-- [The SRFI Process Document](https://scheme-requests-for-implementation.github.io/srfis/srfi-process.html)
-- [The SRFI FAQ](https://scheme-requests-for-implementation.github.io/srfis/srfi-faq.html)
-- [Final SRFIs](https://scheme-requests-for-implementation.github.io/srfis/final-srfis.html)
-- [Draft SRFIs](https://scheme-requests-for-implementation.github.io/srfis/draft-srfis.html)
-- [Withdrawn SRFIs](https://scheme-requests-for-implementation.github.io/srfis/withdrawn-srfis.html)
-- [SRFI Mailing Lists: Subscribing/Unsubscribing](https://scheme-requests-for-implementation.github.io/srfis/srfi-list-subscribe.html)
-- [SRFI History](https://scheme-requests-for-implementation.github.io/srfis/srfi-history.html)
-- [SRFI Editors](https://scheme-requests-for-implementation.github.io/srfis/srfi-editors.html)
+- [Scheme Systems Supporting SRFI](https://scheme-requests-for-implementation.github.io/srfi/srfi-implementers.html)
+- [The SRFI Process Document](https://scheme-requests-for-implementation.github.io/srfi/srfi-process.html)
+- [The SRFI FAQ](https://scheme-requests-for-implementation.github.io/srfi/srfi-faq.html)
+- [Final SRFIs](https://scheme-requests-for-implementation.github.io/srfi/final-srfis.html)
+- [Draft SRFIs](https://scheme-requests-for-implementation.github.io/srfi/draft-srfis.html)
+- [Withdrawn SRFIs](https://scheme-requests-for-implementation.github.io/srfi/withdrawn-srfis.html)
+- [SRFI Mailing Lists: Subscribing/Unsubscribing](https://scheme-requests-for-implementation.github.io/srfi/srfi-list-subscribe.html)
+- [SRFI History](https://scheme-requests-for-implementation.github.io/srfi/srfi-history.html)
+- [SRFI Editors](https://scheme-requests-for-implementation.github.io/srfi/srfi-editors.html)
 
 [The SRFI Editors](mailto:srfi-editors at srfi dot schemers dot org)
