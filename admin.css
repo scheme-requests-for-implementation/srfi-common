@@ -1,0 +1,17 @@
+body {
+  max-width: 40em;
+}
+form {
+  background-color: lightblue;
+  border-radius: 10px;
+  padding: 0.5em;
+}
+form input {
+  margin: 0.5em 0.75em 0.5em 0.5em;
+}
+span.antispam {
+  display: none;
+}
+.submit {
+  float: right;
+}
