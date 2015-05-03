@@ -2,7 +2,7 @@
 
 **N.B.: This is not the official SRFI web site.  The official site is http://srfi.schemers.org/.**
 
-**This repository matches the official site as of Thu 30 Apr 2015, but the mailing list archives are not included.  (They will be hosted elsewhere.)  Most documents are in the `gh-pages` branch so that they can be served directly from Github.**
+**This repository matches the official site as of Thu 30 Apr 2015.  The mailing list archives for all numbered SRFIs are included, but other mailing lists' archives are not yet included.  (They will be hosted elsewhere.)  Most documents are in the `gh-pages` branch so that they can be served directly from Github.**
 
 **For more information on my proposal, see [Hosting](hosting-on-github.md).  Michael Sperber, current editor, has [approved my proposal](http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117), so now the work begins in earnest!**
 
