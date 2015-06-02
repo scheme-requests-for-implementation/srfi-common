@@ -1,0 +1,27 @@
+* Scheme Requests for Implementation
+
+*N.B.: This is not the official SRFI web site.  The official site is http://srfi.schemers.org/.*
+
+*This repository matches the official site as of Thu 30 Apr 2015.  The mailing list archives for all numbered SRFIs are included, but other mailing lists' archives are not yet included.  (They will be hosted elsewhere.)  Most documents are in the `gh-pages` branch so that they can be served directly from Github.*
+
+*For more information on my proposal, see [[hosting-on-github.md][Hosting]].  Michael Sperber, current editor, has [[http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117][approved my proposal]], so now the work begins in earnest!*
+
+#+NAME: SRFI logo
+[[https://scheme-requests-for-implementation.github.io/srfi/srfi.png]]
+
+The "Scheme Requests for Implementation" (*SRFI*) process is a new
+approach to helping Scheme users to write portable and yet useful
+code.  It is a forum for people interested in coordinating libraries
+and other additions to the Scheme language between implementations.
+
+- [[https://scheme-requests-for-implementation.github.io/srfi/srfi-implementers.html][Scheme Systems Supporting SRFI]]
+- [[https://scheme-requests-for-implementation.github.io/srfi/srfi-process.html][The SRFI Process Document]]
+- [[https://scheme-requests-for-implementation.github.io/srfi/srfi-faq.html][The SRFI FAQ]]
+- [[https://scheme-requests-for-implementation.github.io/srfi/final-srfis.html][Final SRFIs]]
+- [[https://scheme-requests-for-implementation.github.io/srfi/draft-srfis.html][Draft SRFIs]]
+- [[https://scheme-requests-for-implementation.github.io/srfi/withdrawn-srfis.html][Withdrawn SRFIs]]
+- [[https://scheme-requests-for-implementation.github.io/srfi/srfi-list-subscribe.html][SRFI Mailing Lists: Subscribing/Unsubscribing]]
+- [[https://scheme-requests-for-implementation.github.io/srfi/srfi-history.html][SRFI History]]
+- [[https://scheme-requests-for-implementation.github.io/srfi/srfi-editors.html][SRFI Editors]]
+
+[[mailto:srfi-editors at srfi dot schemers dot org][The SRFI Editors]]
