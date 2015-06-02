@@ -4,7 +4,7 @@
 
 *This repository matches the official site as of Thu 30 Apr 2015.  The mailing list archives for all numbered SRFIs are included, but other mailing lists' archives are not yet included.  (They will be hosted elsewhere.)  Most documents are in the `gh-pages` branch so that they can be served directly from Github.*
 
-*For more information on my proposal, see [[hosting-on-github.md][Hosting]].  Michael Sperber, current editor, has [[http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117][approved my proposal]], so now the work begins in earnest!*
+*For more information on my proposal, see [[hosting-on-github.org][Hosting]].  Michael Sperber, current editor, has [[http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117][approved my proposal]], so now the work begins in earnest!*
 
 #+NAME: SRFI logo
 [[https://scheme-requests-for-implementation.github.io/srfi/srfi.png]]
