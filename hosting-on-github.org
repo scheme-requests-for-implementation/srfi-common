@@ -2,15 +2,15 @@
 
 I propose that we move the hosting of SRFIs to Github.  This will eliminate hosting costs and low-level system administration work, and will make it easier for editors and others to contribute because Git, Subversion, and all of Github's tools will be available for use.
 
-I've created this repository by running <cvs2git> on the existing <srfi.schemers.org> CVS repository, module "srfi", which I fetched on Thu 30 Apr 2015.  Until the official switch to Github, I'll keep it up to date as new changes are made in CVS.  All the existing content is in the <gh-pages> branch so that Github will host it directly.  The mailing list archives are not included in the CVS repository, but they will be preserved.
+I've created this repository (=srfi-common=) and the repository for each SRFI by running =cvs2git= on the existing =srfi.schemers.org= CVS repository, module "srfi", which I fetched on Thu 30 Apr 2015, then using =git filter-branch= to split into separate repositories.  Until the official switch to Github, I'll keep it up to date as new changes are made in CVS.  I'll host =srfi.schemers.org= on a [[https://www.linode.com/][Linode]] instance.  The mailing list archives are not included in the CVS repository, but they will be preserved.
 
-I have found a mailing list hosting provider, [[https://www.simplelists.com][simplelists.com]], who can host all of our mailing lists.  They will messages, archive them on the web, and handle subscription and unsubscription. They've agreed to upload our existing mailing list archives into the web archives they host and to make it possible for us to download new messages periodically.
+I have found a mailing list hosting provider, [[https://www.simplelists.com][Simplelists]], who can host all of our mailing lists.  They will messages, archive them on the web, and handle subscription and unsubscription. They've agreed to upload our existing mailing list archives into the web archives they host and to make it possible for us to download new messages periodically.
 
 I'm making a few changes to the repository after conversion from CVS:
 
-- Add "README.org" and this document, "hosting-on-github.org", both in the <master> branch.  (The "README.org" file is what users first see when visiting the home page for this repository on Github.)
+- Add "README.org" and this document, "hosting-on-github.org", both in the =master= branch.  (The "README.org" file is what users first see when visiting the home page for this repository on Github.)
 
-- Temporarily add a "CNAME" file pointing to "srfi.speechcode.com", a domain I control, so that I can test Github's domain hosting. Eventually, when we change the DNS address <srfi.schemers.org> to point to Github, I'll switch "CNAME" to "srfi.schemers.org" so that most existing links will continue to work.
+- Temporarily add a "CNAME" file pointing to "srfi.speechcode.com", a domain I control, so that I can test Github's domain hosting. Eventually, when we change the DNS address =srfi.schemers.org= to point to Github, I'll switch "CNAME" to "srfi.schemers.org" so that most existing links will continue to work.
 
 - Update every reference to the old way of subscribing and unsubscribing to mailing lists to use the Simplelists web forms. (Since there are so many such pages, I've included a trivial template engine and other code for automating that update.)
 
