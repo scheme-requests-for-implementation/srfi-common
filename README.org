@@ -7,7 +7,7 @@
 *For more information on my proposal, see [[hosting-on-github.org][Hosting]].  Michael Sperber, current editor, has [[http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117][approved my proposal]], so now the work begins in earnest!*
 
 #+NAME: SRFI logo
-[[https://scheme-requests-for-implementation.github.io/srfi-common/srfi.png]]
+[[https://raw.githubusercontent.com/scheme-requests-for-implementation/srfi-common/master/srfi.png]]
 
 The "Scheme Requests for Implementation" (*SRFI*) process is a new
 approach to helping Scheme users to write portable and yet useful
