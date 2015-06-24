@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title><*<title>*></title>
+    <link href="../admin.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <h1>SRFI <*<number>*>: <*<title>*></h1>
+    <h2>by <*<authors>*></h2>
+
+    <menu>
+      <li><a href="srfi-<*<number>*>.html">The SRFI Document</a></li>
+      <li><a href="mail-archive/maillist.html">Pre-Finalization Discussion Archive</a></li>
+      <li><a href="post-mail-archive/maillist.html">Post-Finalization Discussion Archive</a></li>
+    </menu>
+
+    <p>status: <*<status>*></p>
+
+    <form class="subscription" method="POST" action="http://www.simplelists.com/subscribe.php">
+      <input type="email" name="email" placeholder="Your email address">
+      <input type="text" name="name" placeholder="Your full name">
+      Daily digest:&nbsp;<input type="checkbox" name="digest" value=" digest">
+      <input class="submit" type="submit" name="submit" value="Subscribe to srfi-<*<number>*>">
+      <input type="hidden" name="action" value="subscribe">
+      <input type="hidden" name="list" value="srfi-<*<number>*>@srfi.simplelists.com"></form>
+
+    <form class="subscription" method="POST" action="http://www.simplelists.com/subscribe.php">
+      <input type="email" name="email" placeholder="Your email address">
+      <input class="submit" type="submit" name="submit" value="Unsubscribe from srfi-<*<number>*>">
+      <input type="hidden" name="action" value="unsubscribe">
+      <input type="hidden" name="list" value="srfi-<*<number>*>@srfi.simplelists.com"></form>
+
+    <p>Post to the post-finalization discussion list by sending mail
+      to <code>srfi-<*<number>*>@<span class="antispam">nospam</span>srfi.schemers.org</code>.</p>
+
+    <hr>
+    <address><a href="mailto:srfi minus editors at srfi dot schemers dot org">The SRFI Editors</a></address>
+  </body>
+</html>
