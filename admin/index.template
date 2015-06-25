@@ -13,7 +13,7 @@
       <li><a href="srfi-<*<number>*>.html">The SRFI Document</a></li>
       <li><a href="mail-archive/maillist.html">Pre-Finalization Discussion Archive</a></li>
       <li><a href="post-mail-archive/maillist.html">Post-Finalization Discussion Archive</a></li>
-      <li>status: <*<status>*></li>
+      <li>status: <em><*<status>*></em></li>
       <li><a href="https://github.com/scheme-requests-for-implementation/srfi-<*<number>*>">Git repo</a></li></menu>
 
     <form class="subscription" method="POST" action="http://www.simplelists.com/subscribe.php">
