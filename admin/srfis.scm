@@ -131,9 +131,9 @@
     (116 final "Immutable List Library" "John Cowan")
     (117 draft "Mutable Queues" "John Cowan")
     (118 draft "Simple adjustable-size strings" "Per Bothner")
-    (119 draft "wisp: simpler indentation-sensitive scheme" "Arne Babenhauserheide")
+    (119 final "wisp: simpler indentation-sensitive scheme" "Arne Babenhauserheide")
     (120 draft "Timer APIs" "Takashi Kato")
-    (121 draft "Generators" "Shiro Kawai, John Cowan, Thomas Gilray"))))
+    (121 draft "Generators" "Shiro Kawai, John Cowan, Thomas Gilray")))
 
 (define (create-github-repository number)
   (let ((description (caddr (assoc number srfis))))
