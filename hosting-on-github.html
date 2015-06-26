@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Hosting <a href="http://srfi.schemers.org/">srfi.schemers.org</a> on Github</title>
+<!-- 2015-06-26 Fri 14:31 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Arthur A. Gleckler" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="/admin.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Hosting <a href="http://srfi.schemers.org/">srfi.schemers.org</a> on Github</h1>
+<p>
+I propose that we move the hosting of SRFIs to Github.  This will eliminate hosting costs and low-level system administration work, and will make it easier for editors and others to contribute because Git, Subversion, and all of Github's tools will be available for use.
+</p>
+
+<p>
+I've created this repository (<code>srfi-common</code>) and the repository for each SRFI by running <code>cvs2git</code> on the existing <code>srfi.schemers.org</code> CVS repository, module "srfi", which I fetched on Thu 30 Apr 2015, then using <code>git filter-branch</code> to split into separate repositories.  Until the official switch to Github, I'll keep it up to date as new changes are made in CVS.  I'll host <code>srfi.schemers.org</code> on a <a href="https://www.linode.com/">Linode</a> instance.  The mailing list archives are not included in the CVS repository, but they will be preserved.
+</p>
+
+<p>
+I have found a mailing list hosting provider, <a href="https://www.simplelists.com">Simplelists</a>, who can host all of our mailing lists.  They will messages, archive them on the web, and handle subscription and unsubscription. They've agreed to upload our existing mailing list archives into the web archives they host and to make it possible for us to download new messages periodically.
+</p>
+
+<p>
+I'm making a few changes to the repository after conversion from CVS:
+</p>
+
+<ul class="org-ul">
+<li>Add "README.org" and this document, "hosting-on-github.org", both in the <code>master</code> branch.  (The "README.org" file is what users first see when visiting the home page for this repository on Github.)
+</li>
+
+<li>Temporarily add a "CNAME" file pointing to "srfi.speechcode.com", a domain I control, so that I can test Github's domain hosting. Eventually, when we change the DNS address <code>srfi.schemers.org</code> to point to Github, I'll switch "CNAME" to "srfi.schemers.org" so that most existing links will continue to work.
+</li>
+
+<li>Update every reference to the old way of subscribing and unsubscribing to mailing lists to use the Simplelists web forms. (Since there are so many such pages, I've included a trivial template engine and other code for automating that update.)
+</li>
+
+<li>Update and revise some of the text on the administrative pages.
+</li>
+
+<li>Replace links using all "viewcvs" URLs of previous revisions of SRFIs with ones pointing at versions explicitly checked into Git.
+</li>
+
+<li>Extract the contents of all ".tar.gz" files so that individual implementation files are accessible directly
+</li>
+
+<li>Check in all existing mailing list archives.
+</li>
+
+<li>Point currently active (and future) archives to Simplelists, where they'll be uploaded.
+</li>
+
+<li>Temporarily change all links to <a href="http://srfi.schemers.org/">srfi.schemers.org</a> to equivalent links on <a href="http://srfi.speechcode.com/">srfi.speechcode.com</a> so that I can test before the DNS change.  I'll undo that change when we move the DNS for <a href="http://srfi.schemers.org/">srfi.schemers.org</a> to point to Github.
+</li>
+</ul>
+
+<p>
+I believe that this will be a good way to continue the SRFI process, minimize the editors' workload, and make contributions easier.
+</p>
+
+<p>
+Michael Sperber <a href="http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117">has approved</a> this proposal, so I'm working on implementing it.
+</p>
+
+<p>
+— Arthur A. Gleckler</p>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Arthur A. Gleckler</p>
+<p class="date">Created: 2015-06-26 Fri 14:31</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,13 +1,15 @@
-* Scheme Requests for Implementation
+#+Title: Scheme Requests for Implementation
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/admin.css" />
+#+NAME: SRFI logo
+[[https://raw.githubusercontent.com/scheme-requests-for-implementation/srfi-common/master/srfi.png]]
 
 *N.B.: This is not the official SRFI web site.  The official site is http://srfi.schemers.org/.*
 
 *This repository matches the official site as of Thu 30 Apr 2015, but the mailing list archives are not included.  (They will be hosted elsewhere.)*
 
-*For more information on my proposal, see [[hosting-on-github.org][Hosting]].  Michael Sperber, current editor, has [[http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117][approved my proposal]], so now the work begins in earnest!*
-
-#+NAME: SRFI logo
-[[https://raw.githubusercontent.com/scheme-requests-for-implementation/srfi-common/master/srfi.png]]
+*For more information on my proposal, see [[file:hosting-on-github.html][Hosting]].  Michael Sperber, current editor, has [[http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117][approved my proposal]], so now the work begins in earnest!*
 
 The "Scheme Requests for Implementation" (*SRFI*) process is a new
 approach to helping Scheme users to write portable and yet useful
