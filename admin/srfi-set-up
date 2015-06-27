@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE=~/tmp/srfi/split
+SOURCE=~/srfi/split
 DESTINATION=/var/www/srfi
 cd $DESTINATION/
 find . -mindepth 1 -delete
