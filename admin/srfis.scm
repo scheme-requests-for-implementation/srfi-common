@@ -118,7 +118,7 @@
     (103 withdrawn "Library Files" "Derick Eddington")
     (104 withdrawn "Library Files Utilities" "Derick Eddington")
     (105 final "Curly-infix-expressions" "David A. Wheeler, Alan Manuel K. Gloria")
-    (106 draft "Basic socket interface" "Takashi Kato")
+    (106 final "Basic socket interface" "Takashi Kato")
     (107 final "XML reader syntax" "Per Bothner")
     (108 final "Named quasi-literal constructors" "Per Bothner")
     (109 final "Extended string quasi-literals" "Per Bothner")
