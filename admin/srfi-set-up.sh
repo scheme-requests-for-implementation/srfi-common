@@ -1,8 +1,9 @@
 #!/bin/bash
 
 SOURCE=~/srfi/split
-TEMP=`mktemp --directory`
 DESTINATION=/var/www/srfi
+PARENT=`dirname $DESTINATION`
+TEMP=`mktemp --directory --tmpdir=$PARENT`
 
 cd $SOURCE
 
@@ -22,4 +23,5 @@ do
 done
 cp -p $TEMP/README.html $TEMP/index.html
 chmod -R 0755 $TEMP
-mv --force $TEMP $DESTINATION
+cd $PARENT
+mv --force `basename $TEMP` `basename $DESTINATION`
