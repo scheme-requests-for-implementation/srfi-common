@@ -17,12 +17,12 @@ do
     N=`echo $DIR|cut -d '-' -f 2`
     NOTICE="<p style=\"max-width: 30em;\">This page is part of the web mail archives of <a href=\"http://srfi.schemers.org/srfi-$N\">SRFI $N</a> from before July 7th, 2015.  The new archives for SRFI $N are <a href=\"http://srfi-email.schemers.org/srfi-$N/\">here</a>.  Eventually, the entire history will be moved there, including any new messages.</p>"
 
-    pushd $DIR/mail-archive
-    insert_notice maillist.html
-    insert_notice threads.html
-    for MESSAGE in 'msg*.html'
-    do
-	insert_notice $MESSAGE
-    done
-    popd
+    if [ -d "$DIR/mail-archive" ]; then
+	pushd $DIR/mail-archive>/dev/null
+	for MESSAGE in `find . -name maillist.html -o -name threads.html -o -name 'msg*.html'`
+	do
+	    insert_notice $MESSAGE
+	done
+	popd>/dev/null
+    fi
 done
