@@ -3,7 +3,7 @@
 #+OPTIONS: toc:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/admin.css" />
 #+NAME: SRFI logo
-[[https://raw.githubusercontent.com/scheme-requests-for-implementation/srfi-common/master/srfi.png]]
+[[file:srfi.png]]
 
 *N.B.: This is not the official SRFI web site.  The official site is http://srfi.schemers.org/.*
 
@@ -16,14 +16,14 @@ approach to helping Scheme users to write portable and yet useful
 code.  It is a forum for people interested in coordinating libraries
 and other additions to the Scheme language between implementations.
 
-- [[https://scheme-requests-for-implementation.github.io/srfi/srfi-implementers.html][Scheme Systems Supporting SRFI]]
-- [[https://scheme-requests-for-implementation.github.io/srfi/srfi-process.html][The SRFI Process Document]]
-- [[https://scheme-requests-for-implementation.github.io/srfi/srfi-faq.html][The SRFI FAQ]]
-- [[https://scheme-requests-for-implementation.github.io/srfi/final-srfis.html][Final SRFIs]]
-- [[https://scheme-requests-for-implementation.github.io/srfi/draft-srfis.html][Draft SRFIs]]
-- [[https://scheme-requests-for-implementation.github.io/srfi/withdrawn-srfis.html][Withdrawn SRFIs]]
-- [[https://scheme-requests-for-implementation.github.io/srfi/srfi-list-subscribe.html][SRFI Mailing Lists: Subscribing/Unsubscribing]]
-- [[https://scheme-requests-for-implementation.github.io/srfi/srfi-history.html][SRFI History]]
-- [[https://scheme-requests-for-implementation.github.io/srfi/srfi-editors.html][SRFI Editors]]
+- [[file:srfi-implementers.html][Scheme Systems Supporting SRFI]]
+- [[file:srfi-process.html][The SRFI Process Document]]
+- [[file:srfi-faq.html][The SRFI FAQ]]
+- [[file:final-srfis.html][Final SRFIs]]
+- [[file:draft-srfis.html][Draft SRFIs]]
+- [[file:withdrawn-srfis.html][Withdrawn SRFIs]]
+- [[file:srfi-list-subscribe.html][SRFI Mailing Lists: Subscribing/Unsubscribing]]
+- [[file:srfi-history.html][SRFI History]]
+- [[file:srfi-editors.html][SRFI Editors]]
 
 [[mailto:srfi-editors at srfi dot schemers dot org][The SRFI Editors]]
