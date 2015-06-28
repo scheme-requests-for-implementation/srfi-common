@@ -1,8 +1,5 @@
 #!/bin/bash
 
-DESTINATION=/var/www/srfi
-cd $DESTINATION
-
 function insert_notice {
     FILE=$1
     TEMP=`mktemp`
