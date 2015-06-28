@@ -25,5 +25,6 @@ and other additions to the Scheme language between implementations.
 - [[file:srfi-list-subscribe.html][SRFI Mailing Lists: Subscribing/Unsubscribing]]
 - [[file:srfi-history.html][SRFI History]]
 - [[file:srfi-editors.html][SRFI Editors]]
+- [[file:srfi.tgz][srfi.tgz]], a complete archive of all SRFI documents and code
 
 [[mailto:srfi-editors at srfi dot schemers dot org][The SRFI Editors]]
