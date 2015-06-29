@@ -1,4 +1,4 @@
-#+Title: Hosting [[http://srfi.schemers.org/][srfi.schemers.org]] on Github
+#+Title: Hosting plan for srfi.schemers.org
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/admin.css" />
@@ -10,7 +10,7 @@ I have found a mailing list hosting provider, [[https://www.simplelists.com][Sim
 
 I'm making a few changes to the repository after conversion from CVS:
 
-- Add "README.org" and this document, "hosting-on-github.org", both in the =master= branch.  (The "README.org" file is what users first see when visiting the home page for this repository on Github.)
+- Add "README.org" and this document, "hosting-plan.org".  (The "README.org" file is what users first see when visiting the home page for this repository on Github.)
 
 - Temporarily add a "CNAME" file pointing to "srfi.speechcode.com", a domain I control, so that I can test Github's domain hosting. Eventually, when we change the DNS address =srfi.schemers.org= to point to Github, I'll switch "CNAME" to "srfi.schemers.org" so that most existing links will continue to work.
 
