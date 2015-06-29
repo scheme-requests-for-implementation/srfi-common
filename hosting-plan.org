@@ -2,34 +2,43 @@
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/admin.css" />
-I propose that we move the hosting of SRFIs to Github.  This will eliminate hosting costs and low-level system administration work, and will make it easier for editors and others to contribute because Git, Subversion, and all of Github's tools will be available for use.
+I propose that we change the hosting of SRFI as follows:
 
-I've created this repository (=srfi-common=) and the repository for each SRFI by running =cvs2git= on the existing =srfi.schemers.org= CVS repository, module "srfi", which I fetched on Thu 30 Apr 2015, then using =git filter-branch= to split into separate repositories.  Until the official switch to Github, I'll keep it up to date as new changes are made in CVS.  I'll host =srfi.schemers.org= on a [[https://www.linode.com/][Linode]] instance.  The mailing list archives are not included in the CVS repository, but they will be preserved.
+- store all code and documents in [[https://github.com/][Github]],
 
-I have found a mailing list hosting provider, [[https://www.simplelists.com][Simplelists]], who can host all of our mailing lists.  They will messages, archive them on the web, and handle subscription and unsubscription. They've agreed to upload our existing mailing list archives into the web archives they host and to make it possible for us to download new messages periodically.
+- use a web mail hosting provider, [[http://www.simplelists.com/][Simplelists]], rather than managing
+  mail archives and delivery ourselves, and
+
+- move the static hosting site to [[https://www.linode.com/][Linode]].
+
+This will reduce system administration work for editors, and will make contributions easier because Git, Subversion, and all of Github's tools will be available for use.
+
+I've created the repository containing this document (=srfi-common=) and the repository for each SRFI by running =cvs2git= on the existing =srfi.schemers.org= CVS repository, module =srfi=, then using =git filter-branch= to split it into separate repositories.  Until the official switch to Github, I'll keep it up to date as new changes are made in CVS.  I'll host =srfi.schemers.org= on a [[https://www.linode.com/][Linode]] instance.  The mailing list archives are not included in the CVS repository, but I've preserved them on Github, too.
+
+[[https://www.simplelists.com][Simplelists]] can host all of our mailing lists.  They will deliver messages, archive them on the web, and handle subscription and unsubscription.  They've agreed to upload our existing mailing list archives into the web archives they host and to make it possible for us to download new messages periodically.
 
 I'm making a few changes to the repository after conversion from CVS:
 
 - Add "README.org" and this document, "hosting-plan.org".  (The "README.org" file is what users first see when visiting the home page for this repository on Github.)
 
-- Temporarily add a "CNAME" file pointing to "srfi.speechcode.com", a domain I control, so that I can test Github's domain hosting. Eventually, when we change the DNS address =srfi.schemers.org= to point to Github, I'll switch "CNAME" to "srfi.schemers.org" so that most existing links will continue to work.
-
 - Update every reference to the old way of subscribing and unsubscribing to mailing lists to use the Simplelists web forms. (Since there are so many such pages, I've included a trivial template engine and other code for automating that update.)
 
 - Update and revise some of the text on the administrative pages.
 
-- Replace links using all "viewcvs" URLs of previous revisions of SRFIs with ones pointing at versions explicitly checked into Git.
+- Replace links using all "viewcvs" URLs of previous revisions of SRFI with ones pointing at versions explicitly checked into Git.
 
-- Extract the contents of all ".tar.gz" files so that individual implementation files are accessible directly
+- Extract the contents of all ".tar.gz" files so that individual implementation files are accessible directly.
 
 - Check in all existing mailing list archives.
 
 - Point currently active (and future) archives to Simplelists, where they'll be uploaded.
 
-- Temporarily change all links to [[http://srfi.schemers.org/][srfi.schemers.org]] to equivalent links on [[http://srfi.speechcode.com/][srfi.speechcode.com]] so that I can test before the DNS change.  I'll undo that change when we move the DNS for [[http://srfi.schemers.org/][srfi.schemers.org]] to point to Github.
+- Add links from the old email archives to the new ones.
+
+- Temporarily change all links to [[http://srfi.schemers.org/][srfi.schemers.org]] to equivalent links on [[http://srfi.speechcode.com/][srfi.speechcode.com]] so that I can test before the DNS change.  I'll undo that change when we move the DNS for [[http://srfi.schemers.org/][srfi.schemers.org]] to point to the new web host on Linode.
 
 I believe that this will be a good way to continue the SRFI process, minimize the editors' workload, and make contributions easier.
 
-Michael Sperber [[http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117][has approved]] this proposal, so I'm working on implementing it.
+Michael Sperber [[http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117][has approved]] an earlier version of this proposal, so I'm working on implementing it.
 
 — Arthur A. Gleckler

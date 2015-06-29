@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Hosting plan for srfi.schemers.org</title>
-<!-- 2015-06-29 Mon 12:49 -->
+<!-- 2015-06-29 Mon 14:45 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Arthur A. Gleckler" />
@@ -140,15 +140,31 @@ for the JavaScript code in this tag.
 <div id="content">
 <h1 class="title">Hosting plan for srfi.schemers.org</h1>
 <p>
-I propose that we move the hosting of SRFIs to Github.  This will eliminate hosting costs and low-level system administration work, and will make it easier for editors and others to contribute because Git, Subversion, and all of Github's tools will be available for use.
+I propose that we change the hosting of SRFI as follows:
+</p>
+
+<ul class="org-ul">
+<li>store all code and documents in <a href="https://github.com/">Github</a>,
+</li>
+
+<li>use a web mail hosting provider, <a href="http://www.simplelists.com/">Simplelists</a>, rather than managing
+mail archives and delivery ourselves, and
+</li>
+
+<li>move the static hosting site to <a href="https://www.linode.com/">Linode</a>.
+</li>
+</ul>
+
+<p>
+This will reduce system administration work for editors, and will make contributions easier because Git, Subversion, and all of Github's tools will be available for use.
 </p>
 
 <p>
-I've created this repository (<code>srfi-common</code>) and the repository for each SRFI by running <code>cvs2git</code> on the existing <code>srfi.schemers.org</code> CVS repository, module "srfi", which I fetched on Thu 30 Apr 2015, then using <code>git filter-branch</code> to split into separate repositories.  Until the official switch to Github, I'll keep it up to date as new changes are made in CVS.  I'll host <code>srfi.schemers.org</code> on a <a href="https://www.linode.com/">Linode</a> instance.  The mailing list archives are not included in the CVS repository, but they will be preserved.
+I've created the repository containing this document (<code>srfi-common</code>) and the repository for each SRFI by running <code>cvs2git</code> on the existing <code>srfi.schemers.org</code> CVS repository, module <code>srfi</code>, then using <code>git filter-branch</code> to split it into separate repositories.  Until the official switch to Github, I'll keep it up to date as new changes are made in CVS.  I'll host <code>srfi.schemers.org</code> on a <a href="https://www.linode.com/">Linode</a> instance.  The mailing list archives are not included in the CVS repository, but I've preserved them on Github, too.
 </p>
 
 <p>
-I have found a mailing list hosting provider, <a href="https://www.simplelists.com">Simplelists</a>, who can host all of our mailing lists.  They will messages, archive them on the web, and handle subscription and unsubscription. They've agreed to upload our existing mailing list archives into the web archives they host and to make it possible for us to download new messages periodically.
+<a href="https://www.simplelists.com">Simplelists</a> can host all of our mailing lists.  They will deliver messages, archive them on the web, and handle subscription and unsubscription.  They've agreed to upload our existing mailing list archives into the web archives they host and to make it possible for us to download new messages periodically.
 </p>
 
 <p>
@@ -159,19 +175,16 @@ I'm making a few changes to the repository after conversion from CVS:
 <li>Add "README.org" and this document, "hosting-plan.org".  (The "README.org" file is what users first see when visiting the home page for this repository on Github.)
 </li>
 
-<li>Temporarily add a "CNAME" file pointing to "srfi.speechcode.com", a domain I control, so that I can test Github's domain hosting. Eventually, when we change the DNS address <code>srfi.schemers.org</code> to point to Github, I'll switch "CNAME" to "srfi.schemers.org" so that most existing links will continue to work.
-</li>
-
 <li>Update every reference to the old way of subscribing and unsubscribing to mailing lists to use the Simplelists web forms. (Since there are so many such pages, I've included a trivial template engine and other code for automating that update.)
 </li>
 
 <li>Update and revise some of the text on the administrative pages.
 </li>
 
-<li>Replace links using all "viewcvs" URLs of previous revisions of SRFIs with ones pointing at versions explicitly checked into Git.
+<li>Replace links using all "viewcvs" URLs of previous revisions of SRFI with ones pointing at versions explicitly checked into Git.
 </li>
 
-<li>Extract the contents of all ".tar.gz" files so that individual implementation files are accessible directly
+<li>Extract the contents of all ".tar.gz" files so that individual implementation files are accessible directly.
 </li>
 
 <li>Check in all existing mailing list archives.
@@ -180,7 +193,10 @@ I'm making a few changes to the repository after conversion from CVS:
 <li>Point currently active (and future) archives to Simplelists, where they'll be uploaded.
 </li>
 
-<li>Temporarily change all links to <a href="http://srfi.schemers.org/">srfi.schemers.org</a> to equivalent links on <a href="http://srfi.speechcode.com/">srfi.speechcode.com</a> so that I can test before the DNS change.  I'll undo that change when we move the DNS for <a href="http://srfi.schemers.org/">srfi.schemers.org</a> to point to Github.
+<li>Add links from the old email archives to the new ones.
+</li>
+
+<li>Temporarily change all links to <a href="http://srfi.schemers.org/">srfi.schemers.org</a> to equivalent links on <a href="http://srfi.speechcode.com/">srfi.speechcode.com</a> so that I can test before the DNS change.  I'll undo that change when we move the DNS for <a href="http://srfi.schemers.org/">srfi.schemers.org</a> to point to the new web host on Linode.
 </li>
 </ul>
 
@@ -189,7 +205,7 @@ I believe that this will be a good way to continue the SRFI process, minimize th
 </p>
 
 <p>
-Michael Sperber <a href="http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117">has approved</a> this proposal, so I'm working on implementing it.
+Michael Sperber <a href="http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117">has approved</a> an earlier version of this proposal, so I'm working on implementing it.
 </p>
 
 <p>
@@ -197,7 +213,7 @@ Michael Sperber <a href="http://permalink.gmane.org/gmane.lisp.scheme.srfi.annou
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Arthur A. Gleckler</p>
-<p class="date">Created: 2015-06-29 Mon 12:49</p>
+<p class="date">Created: 2015-06-29 Mon 14:45</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
