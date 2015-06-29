@@ -7,7 +7,7 @@
 
 *N.B.: This is not the official SRFI web site.  The official site is http://srfi.schemers.org/.*
 
-*This repository matches the official site as of Fri 26 Jun 2015, including the mailing list archives.*
+*This repository matches the official site as of Mon 29 Jun 2015, including the mailing list archives.*
 
 *For more information on my proposal, see [[file:hosting-plan.html][Hosting]].  Michael Sperber, current editor, has [[http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117][approved my proposal]], so now the work begins in earnest!*
 
