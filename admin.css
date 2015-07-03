@@ -15,3 +15,8 @@ span.antispam {
 .submit {
   float: right;
 }
+.todo {
+  color: red;
+  font-family: monospace;
+  font-weight: bold;
+}
