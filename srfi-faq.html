@@ -1,238 +1,271 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Scheme Request for Implementation - FAQ</title>
-    <link href="admin.css" rel="stylesheet">
-  </head>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
 
-  <body>
-    <h1>Scheme Request for Implementation - FAQ</h1>
+<meta name="generator" content=
+"HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.15), see www.w3.org">
+  <meta charset="utf-8">
 
-The ``Scheme Request for Implementation'' process is <A
-HREF="srfi-process.html">documented elsewhere</A>.  This document is
+  <title>Scheme Request for Implementation - FAQ</title>
+  <link href="admin.css" rel="stylesheet" type="text/css">
+
+<h1>Scheme Request for Implementation - FAQ</h1>The ``Scheme
+Request for Implementation'' process is <a href=
+"srfi-process.html">documented elsewhere</a>. This document is
 intended to provide some of the rationale about SRFIs rather than
 cluttering up that document.
-<p>
-The SRFI process grew out of the Scheme Workshop held in Baltimore, MD, on September 26, 1998, where
-the attendees considered a number of proposals
-for standardized feature sets for inclusion in Scheme implementations.
-Many of the proposals received overwhelming support in a
-series of straw votes.  Along with this there was concern that the
-next Revised Report would not be produced for several years and this would
-prevent the timely implementation of standardized approaches to
-several important problems and needs in the Scheme community.
-<p>
-The SRFI process is a service being provided to the Scheme community by
-the editors, currently <a href="http://people.netscape.com/drush/">David
-Rush</a>, <a href="http://biblio06.fciencias.unam.mx/solsona/">Francisco
-Solsona</a>, <a
-href="http://www-pu.informatik.uni-tuebingen.de/users/sperber/">Mike
-Sperber</a>, and <a href="http://www.cs.uvm.edu/~dvanhorn/">David Van
-Horn</a>, with a home provided by the <a
-href="http://www-pu.informatik.uni-tuebingen.de/">Programming Languages
-and Compilers</a> group at the University of Tübingen.
 
-<DL>
+  <p>The SRFI process grew out of the Scheme Workshop held in
+  Baltimore, MD, on September 26, 1998, where the attendees
+  considered a number of proposals for standardized feature sets
+  for inclusion in Scheme implementations. Many of the proposals
+  received overwhelming support in a series of straw votes. Along
+  with this there was concern that the next Revised Report would
+  not be produced for several years and this would prevent the
+  timely implementation of standardized approaches to several
+  important problems and needs in the Scheme community.
 
-<DT><em>Are SRFIs standards?</em>
+  <p>The SRFI process is a service being provided to the Scheme
+  community by the editors, currently <a href=
+  "http://people.netscape.com/drush/">David Rush</a>, <a href=
+  "http://biblio06.fciencias.unam.mx/solsona/">Francisco
+  Solsona</a>, <a href=
+  "http://www-pu.informatik.uni-tuebingen.de/users/sperber/">Mike
+  Sperber</a>, and <a href="http://www.cs.uvm.edu/~dvanhorn/">David
+  Van Horn</a>, with a home provided by the <a href=
+  "http://www-pu.informatik.uni-tuebingen.de/">Programming
+  Languages and Compilers</a> group at the University of Tübingen.
 
-<DD>Yes and no.  SRFIs are <strong>not</strong> official standards.  There exist organizations
-such as ISO, IEEE, ANSI, etc. who are set up to develop official
-standards.  The SRFI process is designed as an attempt to maximize the
-quality of SRFIs within the constraint of not assigning authority to
-anyone.
-<p>
-There are official Scheme standards, ANSI-???? and IEEE-???.  SRFIs
-are in addition to these standards.
-<p>
-On the other hand, the process for creating SRFIs <strong>is</strong>
-standardized, and each final SRFI remains frozen and publicly available,
-hence they have many of the properties of standards.  So you might
-choose to think of them as unofficial standards.
+  <dl>
+    <dt><em>Are SRFIs standards?</em>
 
-<P><DT><em>Are SRFIs replacements for RnRS?</em>
+    <dd>
+      Yes and no. SRFIs are <strong>not</strong> official
+      standards. There exist organizations such as ISO, IEEE, ANSI,
+      etc. who are set up to develop official standards. The SRFI
+      process is designed as an attempt to maximize the quality of
+      SRFIs within the constraint of not assigning authority to
+      anyone.
 
-<DD>No.  The editors of the SRFIs do not currently include any of the
-editors of any of the Revised Reports.
-<p>
-Each Revised Report has been written by a different body, which
-determines what eventually is and is not included in that report.
-The SRFI process is orthogonal to all of these reports.  Authors of
-SRFIs must not expect that their SRFIs will be included, or even be
-considered, by the authors of reports.
-<p>
-Of course anyone, including authors of future Revised Reports, is
-welcome to employ the definition and rationale of an SRFI, the
-discussion surrounding its adoption, and its widespread implementation
-to argue that the authors of a standard or report should consider
-adding the contents of the SRFI to that standard.
-<p>
-If SRFIs had existed before R4RS, the macro appendix to that report
-might have made more sense to have been released as a SRFI.  But it
-didn't.  So it wasn't.
-<p>
-There is <strong>considerable</strong> value in reading the <A
-HREF="http://www.swiss.ai.mit.edu/projects/scheme/rrrs-archive.html">discussions
-of the RnRS authors</A>, as they have often considered issues that are
-candidates for SRFIs.
+      <p>There are official Scheme standards, ANSI-???? and
+      IEEE-???. SRFIs are in addition to these standards.
 
-<P><DT><A NAME=preliminary><em>Are SRFIs a discussion forum for preliminary ideas?</em></A>
+      <p>On the other hand, the process for creating SRFIs
+      <strong>is</strong> standardized, and each final SRFI remains
+      frozen and publicly available, hence they have many of the
+      properties of standards. So you might choose to think of them
+      as unofficial standards.
 
-<DD>No.  SRFIs stands for ``Scheme Request for Implementation''.  Note
-the last word.  If someone has amorphous ideas for something that
-would be cool, but has no idea how it might be done, they should
-discuss it in journals, workshops, seminars or <A
-HREF="news:comp.lang.scheme">news groups</A>.  When the discussions
-have coalesced to the point where an implementation strategy is
-apparent, then it is time to write up a SRFI proposal.
+    <dt><em>Are SRFIs replacements for RnRS?</em>
 
-<P><DT><em>I really think that there should be a place to archive non-implementation documents.</em>
+    <dd>
+      No. The editors of the SRFIs do not currently include any of
+      the editors of any of the Revised Reports.
 
-<DD>You're not alone!  There seem to be lots of people who disagree
-with the editors on this point.  We will almost certainly address this
-need in the not too distant future - possibly within the SRFI process,
-or more likely with a separate process.  If you have ideas on how this
-should be done, please send mail to <a
-href="mailto:srfi-editors at srfi dot schemers dot org">&lt;srfi minus editors at srfi dot schemers dot org&gt;</a>
+      <p>Each Revised Report has been written by a different body,
+      which determines what eventually is and is not included in
+      that report. The SRFI process is orthogonal to all of these
+      reports. Authors of SRFIs must not expect that their SRFIs
+      will be included, or even be considered, by the authors of
+      reports.
 
-<P><DT><em>Are SRFIs ``RFCs for the Scheme community''?</em>
+      <p>Of course anyone, including authors of future Revised
+      Reports, is welcome to employ the definition and rationale of
+      an SRFI, the discussion surrounding its adoption, and its
+      widespread implementation to argue that the authors of a
+      standard or report should consider adding the contents of the
+      SRFI to that standard.
 
-<DD>Not quite.  As RFC1796 (<A
-HREF="ftp://ftp.isi.edu/in-notes/rfc1796.txt">Not All RFCs are
-Standards</A>) says, RFCs serve a variety of purposes.  The SRFI
-editors feel that there are sufficient other venues for discussion of
-ideas.  The point of SRFIs is that a programmer can dependably test to
-see what features a Scheme implementation provides, and can therefore
-program in a portable way beyond the bounds of standardized Scheme.
+      <p>If SRFIs had existed before R4RS, the macro appendix to
+      that report might have made more sense to have been released
+      as a SRFI. But it didn't. So it wasn't.
 
-<P><DT><em>What's with all the time periods?  Why so little time?</em>
+      <p>There is <strong>considerable</strong> value in reading
+      the <a href=
+      "http://www.swiss.ai.mit.edu/projects/scheme/rrrs-archive.html">
+      discussions of the RnRS authors</a>, as they have often
+      considered issues that are candidates for SRFIs.
 
-<DD>The time periods are an attempt to drive the SRFI process as
-quickly as possible while maintaining sufficient time for sober second
-thought.  To maximize the quality of SRFIs, we want all of the
-relevant people to be involved in the discussion of any particular
-SRFI proposal.  Many of those people are very busy, and this mechanism
-constrains the time commitment they must make to stay on top of a
-proposal.  It also prevents discussion on a proposal from dragging on
-in an endless repetition of the same points, long after anyone's
-opinion is likely to be changed.
-<p>
-The other issue in the timing is to prevent editors from stone-walling
-a proposal.  It is not their job to make qualitative judgments about
-proposals, but rather to maintain the quality while expediting the
-creation of important unofficial standards.
-<p>
-If a proposal is still under discussion after 90 days, it means that
-it has been extended several times.  The editors will normally extend
-the discussion period to maintain a minimum of 15 days after any
-significant change.  Any proposal still under active discussion and
-revision after 90 days is not ready for codification.  It will then be
-withdrawn for a (normal) minimum of 30 days after which it may be
-resubmitted.  If it is now in good shape, it will likely become final
-after the 60 day discussion period.  Thus, it will have been delayed a
-maximum of 90 days.  This is likely to happen only in very exceptional
-cases, and is the only cost of the fixed time periods.
+    <dt><a name="preliminary"><em>Are SRFIs a discussion forum for
+    preliminary ideas?</em></a>
 
-<P><DT><A NAME=teeth><em>What kind of standards are these, anyway?  There aren't any teeth in the rules!</em></A>
+    <dd>No. SRFIs stands for ``Scheme Request for Implementation''.
+    Note the last word. If someone has amorphous ideas for
+    something that would be cool, but has no idea how it might be
+    done, they should discuss it in journals, workshops, seminars
+    or <a href="news:comp.lang.scheme">news groups</a>. When the
+    discussions have coalesced to the point where an implementation
+    strategy is apparent, then it is time to write up a SRFI
+    proposal.
 
-<DD>To have enforcement, there must be authority.  There is no
-absolute authority in the Scheme community, so there can be no
-absolute enforcement.  The final authority is the implementors.  If
-they believe that a particular SRFI documents a useful or important
-feature, they will add it to their implementations; if not, they
-won't.  The discussion relating to any SRFI will be retained
-indefinitely, and implementors can refer to that when making their
-decision.  Hence poorly worded, reasoned, or defended SRFIs will be
-nothing more than a waste of some time - regrettable, but necessary to
-retain an open process.
+    <dt><em>I really think that there should be a place to archive
+    non-implementation documents.</em>
 
-<P><DT><em>Why do I have to include a reference implementation?</em>
+    <dd>You're not alone! There seem to be lots of people who
+    disagree with the editors on this point. We will almost
+    certainly address this need in the not too distant future -
+    possibly within the SRFI process, or more likely with a
+    separate process. If you have ideas on how this should be done,
+    please send mail to <a href=
+    "mailto:srfi-editors%20at%20srfi%20dot%20schemers%20dot%20org">&lt;srfi
+    minus editors at srfi dot schemers dot org&gt;</a>
 
-<DD>See the discussion above about <A HREF="#preliminary">preliminary ideas</A>.  SRFIs are about
-implementation.  If you haven't either: (a) built one, or (b) have a very clear
-outline of how to build one, then you aren't documenting anything
-useful about implementation.  As the process document says: if you
-think the editors are wrong to withdraw your proposal because it
-doesn't have a sufficient outline of implementation, then prove us
-wrong by going and implementing it on some system.  Then your SRFI
-will return to draft, and eventually active status.
+    <dt><em>Are SRFIs ``RFCs for the Scheme community''?</em>
 
-<P><DT><em>Do SRFIs exist to describe the features of a particular Scheme implementation?</em>
+    <dd>Not quite. As RFC1796 (<a href=
+    "ftp://ftp.isi.edu/in-notes/rfc1796.txt">Not All RFCs are
+    Standards</a>) says, RFCs serve a variety of purposes. The SRFI
+    editors feel that there are sufficient other venues for
+    discussion of ideas. The point of SRFIs is that a programmer
+    can dependably test to see what features a Scheme
+    implementation provides, and can therefore program in a
+    portable way beyond the bounds of standardized Scheme.
 
-<DD>No.  Every SRFI should describe a cohesive feature set that is
-portable across a variety of Scheme implementations.  (Here we mean
-portable in the sense of being possible to implement, not in the sense
-of a portable implementation.)  Rather than testing to see if the
-implementation is, e.g. Guile-4.3c, a program should test for the
-particular features that it requires.
-<p>
-This is a lesson learned from the Emacs world where it used to be that
-code would check to see what version of Emacs it was running on and
-make assumptions about the features that that particular version provided.
-Unfortunately that made the code un-portable to alternative Emacs
-implementations that had the required features but different series of
-version numbers.  The same lesson can be observed in old C code that
-assumed that such-and-such a system had particular features.  More
-commonly today, C programs use a configuration program that determines
-what libraries and functions are available, regardless of the system
-or compiler.  The mechanism documented in <a
-href="srfi-7/">SRFI 7</a> essentially provides a similar
-capability, while staying within Scheme code.
-<p>
-The biggest advantage of checking for features rather than
-implementations is that code becomes portable to systems of which the
-author was unaware, if they provide the features that the program
-requires.
+    <dt><em>What's with all the time periods? Why so little
+    time?</em>
 
-<P><DT><em>The process document mentions that different SRFIs may
-conflict with each other.  Won't that make it impossible for an
-implementation to support conflicting SRFIs?</em>
-          
-<DD>Not necessarily.  See <a href="/srfi-7/">SRFI 7</a>.
+    <dd>
+      The time periods are an attempt to drive the SRFI process as
+      quickly as possible while maintaining sufficient time for
+      sober second thought. To maximize the quality of SRFIs, we
+      want all of the relevant people to be involved in the
+      discussion of any particular SRFI proposal. Many of those
+      people are very busy, and this mechanism constrains the time
+      commitment they must make to stay on top of a proposal. It
+      also prevents discussion on a proposal from dragging on in an
+      endless repetition of the same points, long after anyone's
+      opinion is likely to be changed.
 
-<A NAME="copyright"></A>
-<P><DT><em>Does the SRFI copyright permit using a SRFI sample
-implementation (or a derivative of one) in my Scheme implementation?</em>
+      <p>The other issue in the timing is to prevent editors from
+      stone-walling a proposal. It is not their job to make
+      qualitative judgments about proposals, but rather to maintain
+      the quality while expediting the creation of important
+      unofficial standards.
 
-<DD>Yes.
+      <p>If a proposal is still under discussion after 90 days, it
+      means that it has been extended several times. The editors
+      will normally extend the discussion period to maintain a
+      minimum of 15 days after any significant change. Any proposal
+      still under active discussion and revision after 90 days is
+      not ready for codification. It will then be withdrawn for a
+      (normal) minimum of 30 days after which it may be
+      resubmitted. If it is now in good shape, it will likely
+      become final after the 60 day discussion period. Thus, it
+      will have been delayed a maximum of 90 days. This is likely
+      to happen only in very exceptional cases, and is the only
+      cost of the fixed time periods.
 
-<P><DT><em>Does the SRFI copyright permit using parts of a SRFI in
-the documentation of my
-Scheme implementation?</em>
+    <dt><a name="teeth"><em>What kind of standards are these,
+    anyway? There aren't any teeth in the rules!</em></a>
 
-<DD>Yes.
+    <dd>To have enforcement, there must be authority. There is no
+    absolute authority in the Scheme community, so there can be no
+    absolute enforcement. The final authority is the implementors.
+    If they believe that a particular SRFI documents a useful or
+    important feature, they will add it to their implementations;
+    if not, they won't. The discussion relating to any SRFI will be
+    retained indefinitely, and implementors can refer to that when
+    making their decision. Hence poorly worded, reasoned, or
+    defended SRFIs will be nothing more than a waste of some time -
+    regrettable, but necessary to retain an open process.
 
-<P><DT><em>Where did the acronym come from?  It's a mouthful</em>
+    <dt><em>Why do I have to include a reference
+    implementation?</em>
 
-<DD>Alan Bawden suggested RFI at the Scheme workshop as a humorous
-reference to RFCs.  The S was added because the initial editors (and
-others) felt that ``Scheme'' should be in there somewhere.  If you
-pronounce it ``ess-are-eff-eye'' it certainly is a mouthful, but if
-you pronounce it ``surfie'', as we do, it's fine.  Scheme
-Implementation Request (SIR) was also proposed.
+    <dd>See the discussion above about <a href=
+    "#preliminary">preliminary ideas</a>. SRFIs are about
+    implementation. If you haven't either: (a) built one, or (b)
+    have a very clear outline of how to build one, then you aren't
+    documenting anything useful about implementation. As the
+    process document says: if you think the editors are wrong to
+    withdraw your proposal because it doesn't have a sufficient
+    outline of implementation, then prove us wrong by going and
+    implementing it on some system. Then your SRFI will return to
+    draft, and eventually active status.
 
-<P><DT><em>Are there any special considerations if I use Github to
-propose or comment on an SRFI?</em>
+    <dt><em>Do SRFIs exist to describe the features of a particular
+    Scheme implementation?</em>
 
-<DD>Please keep the discussion of each SRFI on its mailing list.  For
-example, if you create a pull request, send all your comments to the
-mailing list.  While Github's tools can be convenient, we don't want
-to lose any of our history to Github.  While their APIs make it
-straightforward to download almost everything (e.g. comments, issues,
-and pull requests), we don't have code in place to do that
-automatically.
+    <dd>
+      No. Every SRFI should describe a cohesive feature set that is
+      portable across a variety of Scheme implementations. (Here we
+      mean portable in the sense of being possible to implement,
+      not in the sense of a portable implementation.) Rather than
+      testing to see if the implementation is, e.g. Guile-4.3c, a
+      program should test for the particular features that it
+      requires.
 
-<P><DT><em>What if I don't want to use Github?</em>
+      <p>This is a lesson learned from the Emacs world where it
+      used to be that code would check to see what version of Emacs
+      it was running on and make assumptions about the features
+      that that particular version provided. Unfortunately that
+      made the code un-portable to alternative Emacs
+      implementations that had the required features but different
+      series of version numbers. The same lesson can be observed in
+      old C code that assumed that such-and-such a system had
+      particular features. More commonly today, C programs use a
+      configuration program that determines what libraries and
+      functions are available, regardless of the system or
+      compiler. The mechanism documented in <a href="srfi-7/">SRFI
+      7</a> essentially provides a similar capability, while
+      staying within Scheme code.
 
-<DD>If you'd rather not use Github to propose SRFIs or revisions to
-them, feel free to point the editors at alternate Git repos or to send
-us patch files.  (Patch files can be created using <code>git format-patch -M
-origin/master</code> or <code>git send-email</code>.)  If you're an
-SRFI author and would rather not use Git, either, just send updated
-files (or links to them) and we'll check in the changes.</DL>
+      <p>The biggest advantage of checking for features rather than
+      implementations is that code becomes portable to systems of
+      which the author was unaware, if they provide the features
+      that the program requires.
 
-    <hr>
-    <address><a href="mailto:srfi-editors at srfi dot schemers dot org">The SRFI Editors</a></address>
-  </body>
-</html>
+    <dt><em>The process document mentions that different SRFIs may
+    conflict with each other. Won't that make it impossible for an
+    implementation to support conflicting SRFIs?</em>
+
+    <dd>Not necessarily. See <a href="/srfi-7/">SRFI 7</a>.
+    <a name="copyright"></a>
+
+    <dt><em>Does the SRFI copyright permit using a SRFI sample
+    implementation (or a derivative of one) in my Scheme
+    implementation?</em>
+
+    <dd>Yes.
+
+    <dt><em>Does the SRFI copyright permit using parts of a SRFI in
+    the documentation of my Scheme implementation?</em>
+
+    <dd>Yes.
+
+    <dt><em>Where did the acronym come from? It's a mouthful</em>
+
+    <dd>Alan Bawden suggested RFI at the Scheme workshop as a
+    humorous reference to RFCs. The S was added because the initial
+    editors (and others) felt that ``Scheme'' should be in there
+    somewhere. If you pronounce it ``ess-are-eff-eye'' it certainly
+    is a mouthful, but if you pronounce it ``surfie'', as we do,
+    it's fine. Scheme Implementation Request (SIR) was also
+    proposed.
+
+    <dt><em>Are there any special considerations if I use Github to
+    propose or comment on an SRFI?</em>
+
+    <dd>Please keep the discussion of each SRFI on its mailing
+    list. For example, if you create a pull request, send all your
+    comments to the mailing list. While Github's tools can be
+    convenient, we don't want to lose any of our history to Github.
+    While their APIs make it straightforward to download almost
+    everything (e.g. comments, issues, and pull requests), we don't
+    have code in place to do that automatically.
+
+    <dt><em>What if I don't want to use Github?</em>
+
+    <dd>If you'd rather not use Github to propose SRFIs or
+    revisions to them, feel free to point the editors at alternate
+    Git repos or to send us patch files. (Patch files can be
+    created using <code>git format-patch -M origin/master</code> or
+    <code>git send-email</code>.) If you're an SRFI author and
+    would rather not use Git, either, just send updated files (or
+    links to them) and we'll check in the changes.
+  </dl>
+  <hr>
+
+  <address>
+    <a href=
+    "mailto:srfi-editors%20at%20srfi%20dot%20schemers%20dot%20org">The
+    SRFI Editors</a>
+  </address>
