@@ -1,6 +1,12 @@
 body {
   max-width: 46em;
 }
+dt {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
 form {
   background-color: lightblue;
   border-radius: 10px;
