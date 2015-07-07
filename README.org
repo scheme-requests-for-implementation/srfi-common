@@ -23,4 +23,4 @@ and other additions to the Scheme language between implementations.
 - [[file:srfi-editors.html][SRFI Editors]]
 - [[file:srfi.tgz][srfi.tgz]], a complete archive of all SRFI documents and code
 
-[[mailto:srfi-editors at srfi dot schemers dot org][The SRFI Editors]]
+— [[mailto:srfi-editors at srfi dot schemers dot org][the SRFI editors]] (email)
