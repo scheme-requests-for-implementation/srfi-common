@@ -22,13 +22,13 @@
       Daily digest:&nbsp;<input type="checkbox" name="digest" value=" digest">
       <input class="submit" type="submit" name="submit" value="Subscribe to srfi-<*<number>*>">
       <input type="hidden" name="action" value="subscribe">
-      <input type="hidden" name="list" value="srfi-<*<number>*>@srfi.simplelists.com"></form>
+      <input type="hidden" name="list" value="srfi-<*<number>*>@srfi.schemers.org"></form>
 
     <form class="subscription" method="POST" action="http://www.simplelists.com/subscribe.php">
       <input type="email" name="email" placeholder="Your email address">
       <input class="submit" type="submit" name="submit" value="Unsubscribe from srfi-<*<number>*>">
       <input type="hidden" name="action" value="unsubscribe">
-      <input type="hidden" name="list" value="srfi-<*<number>*>@srfi.simplelists.com"></form>
+      <input type="hidden" name="list" value="srfi-<*<number>*>@srfi.schemers.org"></form>
 
     <p>Post to the post-finalization discussion list by sending mail
       to <code>srfi-<*<number>*>@<span class="antispam">nospam</span>srfi.schemers.org</code>.</p>
