@@ -1,8 +1,8 @@
 #+Title: Scheme Requests for Implementation
-#+OPTIONS: num:nil
-#+OPTIONS: toc:nil
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/admin.css" />
 #+NAME: SRFI logo
+#+OPTIONS: num:nil
+#+OPTIONS: toc:nil
 [[file:srfi.png]]
 
 *This is the new =srfi.schemers.org=.  (See the new [[file:hosting-plan.html][Hosting Plan]].)*
