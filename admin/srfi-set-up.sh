@@ -27,7 +27,6 @@ do
     echo $DIR
     ((cd $SOURCE/srfi-$DIR && git archive --format=tgz HEAD)|tar xzf -)
 done
-$SOURCE/srfi-common/admin/link-to-new-archives.sh
 cp -p $TEMPDIR_NEW/README.html $TEMPDIR_NEW/index.html
 chmod -R 0755 $TEMPDIR_NEW
 mv -T $DESTINATION $TEMPDIR_DEL	  # race condition
