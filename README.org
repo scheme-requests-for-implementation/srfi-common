@@ -5,9 +5,10 @@
 #+OPTIONS: toc:nil
 [[file:srfi.png]]
 
-*This is the new =srfi.schemers.org=.  (See the new [[file:hosting-plan.html][Hosting Plan]].)*
+*=srfi.schemers.org= is now on [[http://srfi-email.schemers.org/srfi-announce/msg/2736115][new mail and web hosts]].  (See the new
+[[file:hosting-plan.html][Hosting Plan]].)*
 
-The "Scheme Requests for Implementation" (*SRFI*) process is a new
+The "Scheme Requests for Implementation" (*SRFI*) process is an
 approach to helping Scheme users to write portable and yet useful
 code.  It is a forum for people interested in coordinating libraries
 and other additions to the Scheme language between implementations.

@@ -4,22 +4,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Scheme Requests for Implementation</title>
-<!-- 2015-07-07 Tue 14:32 -->
+<!-- 2015-07-07T18:56:42-0700 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Arthur A. Gleckler" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -58,12 +65,12 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
   .footpara:nth-child(2) { display: inline; }
   .footpara { display: block; }
@@ -146,37 +153,28 @@ for the JavaScript code in this tag.
 </div>
 
 <p>
-<b>This is the new <code>srfi.schemers.org</code>.  (See the new <a href="hosting-plan.html">Hosting Plan</a>.)</b>
+<b><code>srfi.schemers.org</code> is now on <a href="http://srfi-email.schemers.org/srfi-announce/msg/2736115">new mail and web hosts</a>.  (See the new
+<a href="hosting-plan.html">Hosting Plan</a>.)</b>
 </p>
 
 <p>
-The "Scheme Requests for Implementation" (<b>SRFI</b>) process is a new
+The "Scheme Requests for Implementation" (<b>SRFI</b>) process is an
 approach to helping Scheme users to write portable and yet useful
 code.  It is a forum for people interested in coordinating libraries
 and other additions to the Scheme language between implementations.
 </p>
 
 <ul class="org-ul">
-<li><a href="srfi-implementers.html">Scheme Systems Supporting SRFI</a>
-</li>
-<li><a href="srfi-process.html">The SRFI Process Document</a>
-</li>
-<li><a href="srfi-faq.html">The SRFI FAQ</a>
-</li>
-<li><a href="final-srfis.html">Final SRFIs</a>
-</li>
-<li><a href="draft-srfis.html">Draft SRFIs</a>
-</li>
-<li><a href="withdrawn-srfis.html">Withdrawn SRFIs</a>
-</li>
-<li><a href="srfi-list-subscribe.html">SRFI Mailing Lists: Subscribing/Unsubscribing</a>
-</li>
-<li><a href="srfi-history.html">SRFI History</a>
-</li>
-<li><a href="srfi-editors.html">SRFI Editors</a>
-</li>
-<li><a href="srfi.tgz">srfi.tgz</a>, a complete archive of all SRFI documents and code
-</li>
+<li><a href="srfi-implementers.html">Scheme Systems Supporting SRFI</a></li>
+<li><a href="srfi-process.html">The SRFI Process Document</a></li>
+<li><a href="srfi-faq.html">The SRFI FAQ</a></li>
+<li><a href="final-srfis.html">Final SRFIs</a></li>
+<li><a href="draft-srfis.html">Draft SRFIs</a></li>
+<li><a href="withdrawn-srfis.html">Withdrawn SRFIs</a></li>
+<li><a href="srfi-list-subscribe.html">SRFI Mailing Lists: Subscribing/Unsubscribing</a></li>
+<li><a href="srfi-history.html">SRFI History</a></li>
+<li><a href="srfi-editors.html">SRFI Editors</a></li>
+<li><a href="srfi.tgz">srfi.tgz</a>, a complete archive of all SRFI documents and code</li>
 </ul>
 
 <p>
@@ -185,8 +183,7 @@ and other additions to the Scheme language between implementations.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Arthur A. Gleckler</p>
-<p class="date">Created: 2015-07-07 Tue 14:32</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2015-07-07T18:56:42-0700</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
