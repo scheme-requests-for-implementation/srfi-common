@@ -1,34 +1,68 @@
 #!/bin/bash
 
+# Use an overlay because we run <rsync> twice to copy the contents of
+# all the repositories in place, but we need to use <--delete> to
+# delete obsolete files.  Without an overlay, that would cause the
+# first <rsync>'s files to be deleted.  I'd prefer a less complex way
+# of doing this that was still fast.  Using an overlay has the side
+# benefit of making constructing "srfi.tgz" trivial without having to
+# jump through hoops for exclusions.
+
+# Note that, even in a writeable overlay (i.e. one where a <workdir>
+# is specified), writes to the underlying lower and upper filesystems
+# are not supported while the mount is active.  "If the underlying
+# filesystem is changed, the behavior of the overlay is undefined,
+# though it will not result in a crash or deadlock."  (See
+# <https://goo.gl/fXc9Zq>.)  So I do it anyway, then unmount and
+# re-mount.
+
+# TODO: Rewrite this in Scheme without overlays, combining the <rsync>
+# steps into one.
+
 SOURCE=~/srfi/split
 DESTINATION=/var/www/srfi
 PARENT=`dirname $DESTINATION`
-TEMPDIR_DEL=`mktemp --directory --tmpdir=$PARENT`
-TEMPDIR_NEW=`mktemp --directory --tmpdir=$PARENT`
+DESTINATION_UPPER=$PARENT/srfi-upper
+DESTINATION_LOWER=$PARENT/srfi-lower
 
-cd $SOURCE
+mkdir -p $DESTINATION_UPPER
+mkdir -p $DESTINATION_LOWER
 
-SRFI=(`find . -maxdepth 1 -type d -regex './srfi-[0-9]+'|awk -F './srfi-' '{print $2'}`)
-
-cd $TEMPDIR_NEW/
-for I in ${SRFI[@]}
-do
-    echo srfi-$I
-    mkdir $TEMPDIR_NEW/srfi-$I
-    (cd $SOURCE/srfi-$I && git archive --format=tgz HEAD)|(cd $TEMPDIR_NEW/srfi-$I; tar xzf -)
-done
+rsync \
+    --checksum \
+    --delete \
+    --exclude='*~' \
+    --exclude='.gitignore' \
+    --exclude='.git/' \
+    --exclude='srfi-common/' \
+    --exclude='srfi-email/' \
+    --progress \
+    --recursive \
+    --safe-links \
+    --times \
+    $SOURCE/ \
+    $DESTINATION_LOWER/
 
 TEMPFILE=`mktemp`
 
-tar czf $TEMPFILE .
-mv $TEMPFILE srfi.tgz
-for DIR in common email
-do
-    echo $DIR
-    ((cd $SOURCE/srfi-$DIR && git archive --format=tgz HEAD)|tar xzf -)
-done
-cp -p $TEMPDIR_NEW/README.html $TEMPDIR_NEW/index.html
-chmod -R 0755 $TEMPDIR_NEW
-mv -T $DESTINATION $TEMPDIR_DEL	  # race condition
-mv $TEMPDIR_NEW $DESTINATION
-rm -rf $TEMPDIR_DEL
+(cd $DESTINATION_LOWER/; tar czf $TEMPFILE --exclude=srfi.tgz .)
+mv $TEMPFILE $DESTINATION_UPPER/srfi.tgz
+rsync \
+    --checksum \
+    --delete \
+    --exclude='.gitignore' \
+    --exclude='.git/' \
+    --exclude='*~' \
+    --exclude='admin/' \
+    --progress \
+    --recursive \
+    --safe-links \
+    --times \
+    $SOURCE/srfi-common/* \
+    $SOURCE/srfi-email/* \
+    $DESTINATION_UPPER/
+cp --force -p $DESTINATION_UPPER/README.html $DESTINATION_UPPER/index.html
+chmod -R 0755 $DESTINATION_UPPER
+chmod -R 0755 $DESTINATION_LOWER
+echo "Don't forget to unmount and re-mount $DESTINATION."
+echo "Use <sudo srfi-remount.sh> after checking its contents." 
