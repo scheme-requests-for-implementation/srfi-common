@@ -42,3 +42,5 @@ I believe that this will be a good way to continue the SRFI process, minimize th
 Michael Sperber [[http://permalink.gmane.org/gmane.lisp.scheme.srfi.announce/117][has approved]] an earlier version of this proposal, so I'm working on implementing it.
 
 — Arthur A. Gleckler
+
+The history of this document (i.e. the =.org= source) is [[https://github.com/scheme-requests-for-implementation/srfi-common/commits/master/hosting-plan.org][here]].

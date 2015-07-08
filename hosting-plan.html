@@ -4,22 +4,29 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Hosting plan for srfi.schemers.org</title>
-<!-- 2015-06-29 Mon 14:45 -->
+<!-- 2015-07-07T19:12:46-0700 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <meta  name="author" content="Arthur A. Gleckler" />
+<meta  name="viewport" content="width=device-width, initial-scale=1" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
   .todo   { font-family: monospace; color: red; }
-  .done   { color: green; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -58,12 +65,12 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.right  { text-align: center;  }
-  th.left   { text-align: center;   }
-  th.center { text-align: center; }
-  td.right  { text-align: right;  }
-  td.left   { text-align: left;   }
-  td.center { text-align: center; }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
   dt { font-weight: bold; }
   .footpara:nth-child(2) { display: inline; }
   .footpara { display: block; }
@@ -144,15 +151,12 @@ I propose that we change the hosting of SRFI as follows:
 </p>
 
 <ul class="org-ul">
-<li>store all code and documents in <a href="https://github.com/">Github</a>,
-</li>
+<li>store all code and documents in <a href="https://github.com/">Github</a>,</li>
 
 <li>use a web mail hosting provider, <a href="http://www.simplelists.com/">Simplelists</a>, rather than managing
-mail archives and delivery ourselves, and
-</li>
+mail archives and delivery ourselves, and</li>
 
-<li>move the static hosting site to <a href="https://www.linode.com/">Linode</a>.
-</li>
+<li>move the static hosting site to <a href="https://www.linode.com/">Linode</a>.</li>
 </ul>
 
 <p>
@@ -164,7 +168,7 @@ I've created the repository containing this document (<code>srfi-common</code>) 
 </p>
 
 <p>
-<a href="https://www.simplelists.com">Simplelists</a> can host all of our mailing lists.  They will deliver messages, archive them on the web, and handle subscription and unsubscription.  They've agreed to upload our existing mailing list archives into the web archives they host and to make it possible for us to download new messages periodically.
+<a href="https://www.simplelists.com/">Simplelists</a> can host all of our mailing lists.  They will deliver messages, archive them on the web, and handle subscription and unsubscription.  They've agreed to upload our existing mailing list archives into the web archives they host and to make it possible for us to download new messages periodically.
 </p>
 
 <p>
@@ -172,32 +176,23 @@ I'm making a few changes to the repository after conversion from CVS:
 </p>
 
 <ul class="org-ul">
-<li>Add "README.org" and this document, "hosting-plan.org".  (The "README.org" file is what users first see when visiting the home page for this repository on Github.)
-</li>
+<li>Add "README.org" and this document, "hosting-plan.org".  (The "README.org" file is what users first see when visiting the home page for this repository on Github.)</li>
 
-<li>Update every reference to the old way of subscribing and unsubscribing to mailing lists to use the Simplelists web forms. (Since there are so many such pages, I've included a trivial template engine and other code for automating that update.)
-</li>
+<li>Update every reference to the old way of subscribing and unsubscribing to mailing lists to use the Simplelists web forms. (Since there are so many such pages, I've included a trivial template engine and other code for automating that update.)</li>
 
-<li>Update and revise some of the text on the administrative pages.
-</li>
+<li>Update and revise some of the text on the administrative pages.</li>
 
-<li>Replace links using all "viewcvs" URLs of previous revisions of SRFI with ones pointing at versions explicitly checked into Git.
-</li>
+<li>Replace links using all "viewcvs" URLs of previous revisions of SRFI with ones pointing at versions explicitly checked into Git.</li>
 
-<li>Extract the contents of all ".tar.gz" files so that individual implementation files are accessible directly.
-</li>
+<li>Extract the contents of all ".tar.gz" files so that individual implementation files are accessible directly.</li>
 
-<li>Check in all existing mailing list archives.
-</li>
+<li>Check in all existing mailing list archives.</li>
 
-<li>Point currently active (and future) archives to Simplelists, where they'll be uploaded.
-</li>
+<li>Point currently active (and future) archives to Simplelists, where they'll be uploaded.</li>
 
-<li>Add links from the old email archives to the new ones.
-</li>
+<li>Add links from the old email archives to the new ones.</li>
 
-<li>Temporarily change all links to <a href="http://srfi.schemers.org/">srfi.schemers.org</a> to equivalent links on <a href="http://srfi.speechcode.com/">srfi.speechcode.com</a> so that I can test before the DNS change.  I'll undo that change when we move the DNS for <a href="http://srfi.schemers.org/">srfi.schemers.org</a> to point to the new web host on Linode.
-</li>
+<li>Temporarily change all links to <a href="http://srfi.schemers.org/">srfi.schemers.org</a> to equivalent links on <a href="http://srfi.speechcode.com/">srfi.speechcode.com</a> so that I can test before the DNS change.  I'll undo that change when we move the DNS for <a href="http://srfi.schemers.org/">srfi.schemers.org</a> to point to the new web host on Linode.</li>
 </ul>
 
 <p>
@@ -209,12 +204,15 @@ Michael Sperber <a href="http://permalink.gmane.org/gmane.lisp.scheme.srfi.annou
 </p>
 
 <p>
-— Arthur A. Gleckler</p>
+— Arthur A. Gleckler
+</p>
+
+<p>
+The history of this document (i.e. the <code>.org</code> source) is <a href="https://github.com/scheme-requests-for-implementation/srfi-common/commits/master/hosting-plan.org">here</a>.</p>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Arthur A. Gleckler</p>
-<p class="date">Created: 2015-06-29 Mon 14:45</p>
-<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="date">Created: 2015-07-07T19:12:46-0700</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

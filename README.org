@@ -25,3 +25,5 @@ and other additions to the Scheme language between implementations.
 - [[file:srfi.tgz][srfi.tgz]], a complete archive of all SRFI documents and code
 
 — [[mailto:srfi-editors at srfi dot schemers dot org][the SRFI editors]] (email)
+
+The history of this document (i.e. the =.org= source) is [[https://github.com/scheme-requests-for-implementation/srfi-common/commits/master/README.org][here]].
