@@ -5,7 +5,7 @@
 #+OPTIONS: toc:nil
 [[file:srfi.png]]
 
-*=srfi.schemers.org= is now on [[http://srfi-email.schemers.org/srfi-announce/msg/2736115][new mail and web hosts]].  (See the new
+*srfi.schemers.org is now on [[http://srfi-email.schemers.org/srfi-announce/msg/2736115][new mail and web hosts]].  (See the new
 [[file:hosting-plan.html][Hosting Plan]].)*
 
 The "Scheme Requests for Implementation" (*SRFI*) process is an
