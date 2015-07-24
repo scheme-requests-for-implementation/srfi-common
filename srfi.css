@@ -1,0 +1,6 @@
+body {
+  max-width: 46em;
+}
+span.antispam {
+  display: none;
+}
