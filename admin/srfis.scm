@@ -133,7 +133,13 @@
     (118 final "Simple adjustable-size strings" "Per Bothner")
     (119 final "wisp: simpler indentation-sensitive scheme" "Arne Babenhauserheide")
     (120 draft "Timer APIs" "Takashi Kato")
-    (121 draft "Generators" "Shiro Kawai, John Cowan, Thomas Gilray")))
+    (121 draft "Generators" "Shiro Kawai, John Cowan, Thomas Gilray")
+    (122 draft "Intervals and Generalized Arrays" "Bradley J. Lucier")))
+
+;; This is the first SRFI whose email archive was hosted first on
+;; Simplelists.  SRFI with smaller numbers were originally hosted on
+;; Michael Sperber's FreeBSD system, so the archive links are different.
+(define first-simplelists-srfi 122)
 
 (define (create-github-repository number)
   (let ((description (caddr (assoc number srfis))))
