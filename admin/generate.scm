@@ -1,7 +1,5 @@
 ;;;; Generate "index.html" pages for SRFIs
 
-;;; Copyright MMXV Arthur A. Gleckler.  All rights reserved.
-
 ;; This runs on MIT Scheme.
 
 (declare (usual-integrations))
