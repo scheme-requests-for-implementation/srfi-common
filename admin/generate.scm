@@ -51,21 +51,37 @@
 		   (display (cadr association))
 		   (error "Missing variable." element))))))))
 
+(define index-template (read-template "srfi-common/admin/index.template"))
+(define archive-old-template
+  (read-template "srfi-common/admin/archive-old.template"))
+(define archive-simplelists-template
+  (read-template "srfi-common/admin/archive-simplelists.template"))
+
+(define (write-single-srfi-index-page srfi)
+  (let* ((number (car srfi))
+	 (archives
+	  (if (< number first-simplelists-srfi)
+	      archive-old-template
+	      (with-output-to-string
+		(lambda ()
+		  (invoke-template archive-simplelists-template
+				   `((number ,number)))))))
+	 (status (cadr srfi))
+	 (title (caddr srfi))
+	 (authors (cadddr srfi))
+	 (pathname (format #f "srfi-~A/index.html" number)))
+    (with-output-to-file pathname
+      (lambda ()
+	(invoke-template index-template
+			 `((authors ,authors)
+			   (email-archives ,archives)
+			   (number ,number)
+			   (status ,status)
+			   (title ,title)))))))
+
 (define (write-srfi-index-pages)
   (if (not (file-directory? "srfi-0"))
       (error "Working directory must contain all SRFI directories."))
-  (let ((template (read-template "srfi-common/admin/index.template")))
-    (do ((srfis srfis (cdr srfis)))
-	((null? srfis))
-      (let* ((srfi (car srfis))
-	     (number (car srfi))
-	     (status (cadr srfi))
-	     (title (caddr srfi))
-	     (authors (cadddr srfi))
-	     (pathname (format #f "srfi-~A/index.html" number)))
-	(with-output-to-file pathname
-	  (lambda ()
-	    (invoke-template template `((authors ,authors)
-					(number ,number)
-					(status ,status)
-					(title ,title)))))))))
+  (do ((srfis srfis (cdr srfis)))
+      ((null? srfis))
+    (write-single-srfi-index-page (car srfis))))
