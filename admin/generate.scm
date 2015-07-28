@@ -61,7 +61,9 @@
   (let* ((number (car srfi))
 	 (archives
 	  (if (< number first-simplelists-srfi)
-	      archive-old-template
+	      (with-output-to-string
+		(lambda ()
+		  (invoke-template archive-old-template '())))
 	      (with-output-to-string
 		(lambda ()
 		  (invoke-template archive-simplelists-template
