@@ -132,7 +132,7 @@
     (117 draft "Mutable Queues" "John Cowan")
     (118 final "Simple adjustable-size strings" "Per Bothner")
     (119 final "wisp: simpler indentation-sensitive scheme" "Arne Babenhauserheide")
-    (120 draft "Timer APIs" "Takashi Kato")
+    (120 final "Timer APIs" "Takashi Kato")
     (121 draft "Generators" "Shiro Kawai, John Cowan, Thomas Gilray")
     (122 draft "Intervals and Generalized Arrays" "Bradley J. Lucier")))
 
