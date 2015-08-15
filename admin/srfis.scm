@@ -134,7 +134,8 @@
     (119 final "wisp: simpler indentation-sensitive scheme" "Arne Babenhauserheide")
     (120 final "Timer APIs" "Takashi Kato")
     (121 draft "Generators" "Shiro Kawai, John Cowan, Thomas Gilray")
-    (122 draft "Intervals and Generalized Arrays" "Bradley J. Lucier")))
+    (122 draft "Intervals and Generalized Arrays" "Bradley J. Lucier")
+    (123 draft "Generic accessor and modifier operators" "Taylan Ulrich Bayırlı/Kammer")))
 
 ;; This is the first SRFI whose email archive was hosted first on
 ;; Simplelists.  SRFI with smaller numbers were originally hosted on
