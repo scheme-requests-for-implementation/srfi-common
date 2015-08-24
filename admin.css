@@ -18,6 +18,10 @@ form input {
 span.antispam {
   display: none;
 }
+img {
+  width: 100%;
+  max-width: 46em;
+}
 .submit {
   float: right;
 }
@@ -25,4 +29,9 @@ span.antispam {
   color: red;
   font-family: monospace;
   font-weight: bold;
+}
+@media only screen and (max-device-width: 480px) {
+  ul li {
+    padding: 6mm 0px;
+  }
 }
