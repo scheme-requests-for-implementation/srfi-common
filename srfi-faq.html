@@ -259,6 +259,33 @@ cluttering up that document.
     would rather not use Git, either, just send updated files (or
     links to them) and we'll check in the changes.
 
+    <dt>May I use Markdown or another format?
+
+    <dd>You may include a Markdown version, but you must still submit
+      the SRFI document as HTML.
+
+      <p>Below is a snippet from the <code>Makefile</code> of SRFI 123.
+      It generates HTML from Markdown using the Pandoc tool (GPL
+      licensed).  
+
+      <pre>
+      srfi-123.html: srfi-123.md
+	pandoc \
+	  --css=http://srfi.schemers.org/srfi.css \
+	  --from=markdown_github-hard_line_breaks \
+	  --include-in-header=header.html \
+	  --standalone \
+	  --to=html \
+	  srfi-123.md \
+	  >srfi-123.html
+      </pre>
+
+      <p>Remember that the editors need to make slight changes to the
+      document, e.g. to add to its history of drafts, and won't edit
+      the document in a format other than HTML.  We've made exceptions
+      for Markdown because of the ease of using Pandoc, but that's at
+      the editors' discretion.
+
     <dt>Whom should I contact if I find a problem with the web site, etc?
 
     <dd><a href="mailto:srfi-editors%20at%20srfi%20dot%20schemers%20dot%20org">The editors</a>.
