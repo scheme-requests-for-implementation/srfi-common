@@ -178,6 +178,29 @@ cluttering up that document.
     implementing it on some system. Then your SRFI will return to
     draft, and eventually active status.
 
+    <dt>What standard should my reference implementation use?
+
+    <dd>We encourage contributors to use R7RS combined with other
+    SRFIs as a basis.  However, some SRFIs will require features not
+    present in R7RS and other SRFIs, and that's okay.  Furthermore,
+    using other RnRS standards, as well as IEEE Scheme, is acceptable.
+
+    <dt>What should my reference implementation include?
+
+    <dd>It should implement all the features described in the SRFI document.
+
+      <p>It should also include automated tests.  Having them will
+      help implementors, and that will increase the likelihood that
+      your SRFI will be incorporated in Scheme implementations.  It
+      will also help users understand how your SRFI is to be used.
+
+      <p>However, if the reference implementation is trivial or not
+      really meant to be used, i.e. it is just a proof of concept,
+      it's okay to omit tests.  That should be a rare case.
+
+      <p>No specific test framework is required, but both SRFI 64 and
+      SRFI 78 are available.
+ 
     <dt>Do SRFIs exist to describe the features of a particular
     Scheme implementation?
 
