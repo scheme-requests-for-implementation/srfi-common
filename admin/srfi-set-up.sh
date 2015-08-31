@@ -6,11 +6,11 @@
 SOURCE=~/srfi/split
 DESTINATION=/var/www/srfi
 PARENT=`dirname $DESTINATION`
-DESTINATION_UPPER=$PARENT/srfi-upper
-DESTINATION_LOWER=$PARENT/srfi-lower
+DESTINATION_EMAIL=$PARENT/srfi-email
+DESTINATION_NO_EMAIL=$PARENT/srfi-no-email
 
-mkdir -p $DESTINATION_UPPER
-mkdir -p $DESTINATION_LOWER
+mkdir -p $DESTINATION_EMAIL
+mkdir -p $DESTINATION_NO_EMAIL
 
 rsync \
   --checksum \
@@ -25,12 +25,12 @@ rsync \
   --safe-links \
   --times \
   $SOURCE/ \
-  $DESTINATION_LOWER/
+  $DESTINATION_NO_EMAIL/
 
 TEMPFILE=`mktemp`
 
-(cd $DESTINATION_LOWER/; tar czf $TEMPFILE --exclude=srfi.tgz .)
-mv $TEMPFILE $DESTINATION_UPPER/srfi.tgz
+(cd $DESTINATION_NO_EMAIL/; tar czf $TEMPFILE --exclude=srfi.tgz .)
+mv $TEMPFILE $DESTINATION_EMAIL/srfi.tgz
 rsync \
   --checksum \
   --delete \
@@ -44,15 +44,15 @@ rsync \
   --times \
   $SOURCE/srfi-common/* \
   $SOURCE/srfi-email/* \
-  $DESTINATION_UPPER/
-cp --force -p $DESTINATION_UPPER/README.html $DESTINATION_UPPER/index.html
+  $DESTINATION_EMAIL/
+cp --force -p $DESTINATION_EMAIL/README.html $DESTINATION_EMAIL/index.html
 rsync \
   --checksum \
   --delete \
   --progress \
   --recursive \
   --times \
-  /var/www/srfi-lower/ \
-  /var/www/srfi-upper/ \
+  /var/www/srfi-no-email/ \
+  /var/www/srfi-email/ \
   $DESTINATION/
 chmod -R 0755 $DESTINATION/
