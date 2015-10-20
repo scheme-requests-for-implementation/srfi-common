@@ -138,7 +138,8 @@
     (123 final "Generic accessor and modifier operators" "Taylan Ulrich Bayırlı/Kammer")
     (124 draft "Ephemerons" "John Cowan")
     (125 draft "Intermediate hash tables" "John Cowan, Will Clinger")
-    (126 draft "R6RS-based hashtables" "Taylan Ulrich Bayırlı/Kammer")))
+    (126 draft "R6RS-based hashtables" "Taylan Ulrich Bayırlı/Kammer")
+    (127 draft "Lazy Sequences" "John Cowan")))
 
 ;; This is the first SRFI whose email archive was hosted first on
 ;; Simplelists.  SRFI with smaller numbers were originally hosted on
