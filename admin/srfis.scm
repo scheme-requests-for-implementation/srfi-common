@@ -136,7 +136,7 @@
     (121 draft "Generators" "Shiro Kawai, John Cowan, Thomas Gilray")
     (122 draft "Nonempty Intervals and Generalized Arrays" "Bradley J. Lucier")
     (123 final "Generic accessor and modifier operators" "Taylan Ulrich Bayırlı/Kammer")
-    (124 draft "Ephemerons" "John Cowan")
+    (124 final "Ephemerons" "John Cowan")
     (125 draft "Intermediate hash tables" "John Cowan, Will Clinger")
     (126 draft "R6RS-based hashtables" "Taylan Ulrich Bayırlı/Kammer")
     (127 draft "Lazy Sequences" "John Cowan")
