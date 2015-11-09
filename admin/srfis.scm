@@ -140,7 +140,9 @@
     (125 draft "Intermediate hash tables" "John Cowan, Will Clinger")
     (126 draft "R6RS-based hashtables" "Taylan Ulrich Bayırlı/Kammer")
     (127 draft "Lazy Sequences" "John Cowan")
-    (128 draft "Comparators (reduced)" "John Cowan")))
+    (128 draft "Comparators (reduced)" "John Cowan")
+
+    (132 draft "RESERVED FOR UPDATE TO SRFI 32" "John Cowan")))
 
 ;; This is the first SRFI whose email archive was hosted first on
 ;; Simplelists.  SRFI with smaller numbers were originally hosted on
