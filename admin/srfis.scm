@@ -141,6 +141,7 @@
     (126 draft "R6RS-based hashtables" "Taylan Ulrich Bayırlı/Kammer")
     (127 draft "Lazy Sequences" "John Cowan")
     (128 draft "Comparators (reduced)" "John Cowan")
+    (129 draft "Titlecase procedures" "John Cowan")
 
     (132 draft "RESERVED FOR UPDATE TO SRFI 32" "John Cowan")))
 
