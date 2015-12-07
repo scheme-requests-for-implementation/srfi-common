@@ -143,6 +143,7 @@
     (128 draft "Comparators (reduced)" "John Cowan")
     (129 draft "Titlecase procedures" "John Cowan")
     (130 draft "Character spans" "John Cowan, Will Clinger")
+    (131 draft "ERR5RS Record Syntax (reduced)" "John Cowan, Will Clinger")
 
     (132 draft "RESERVED FOR UPDATE TO SRFI 32" "John Cowan")))
 
