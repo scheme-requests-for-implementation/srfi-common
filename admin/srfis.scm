@@ -144,7 +144,9 @@
     (129 draft "Titlecase procedures" "John Cowan")
     (130 draft "String cursors" "John Cowan")
     (131 draft "ERR5RS Record Syntax (reduced)" "John Cowan, Will Clinger")
-    (132 draft "Sort Libraries" "Olin Shivers (edited by John Cowan)")))
+    (132 draft "Sort Libraries" "Olin Shivers (edited by John Cowan)")
+
+    (133 draft "RESERVED" "John Cowan")))
 
 ;; This is the first SRFI whose email archive was hosted first on
 ;; Simplelists.  SRFI with smaller numbers were originally hosted on
