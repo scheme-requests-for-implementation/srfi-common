@@ -145,8 +145,8 @@
     (130 draft "String cursors" "John Cowan")
     (131 draft "ERR5RS Record Syntax (reduced)" "John Cowan, Will Clinger")
     (132 draft "Sort Libraries" "Olin Shivers (edited by John Cowan)")
-
-    (133 draft "RESERVED" "John Cowan")))
+    (133 draft "Vector Library (R7RS-compatible)" "Taylor Campbell (with modifications by John Cowan)")
+    (134 draft "Immutable Deques" "Kevin Wortman, John Cowan")))
 
 ;; This is the first SRFI whose email archive was hosted first on
 ;; Simplelists.  SRFI with smaller numbers were originally hosted on
