@@ -133,7 +133,7 @@
     (118 final "Simple adjustable-size strings" "Per Bothner")
     (119 final "wisp: simpler indentation-sensitive scheme" "Arne Babenhauserheide")
     (120 final "Timer APIs" "Takashi Kato")
-    (121 draft "Generators" "Shiro Kawai, John Cowan, Thomas Gilray")
+    (121 final "Generators" "Shiro Kawai, John Cowan, Thomas Gilray")
     (122 draft "Nonempty Intervals and Generalized Arrays" "Bradley J. Lucier")
     (123 final "Generic accessor and modifier operators" "Taylan Ulrich Bayırlı/Kammer")
     (124 final "Ephemerons" "John Cowan")
