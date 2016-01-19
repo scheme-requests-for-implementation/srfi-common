@@ -139,7 +139,7 @@
     (124 final "Ephemerons" "John Cowan")
     (125 draft "Intermediate hash tables" "John Cowan, Will Clinger")
     (126 draft "R6RS-based hashtables" "Taylan Ulrich Bayırlı/Kammer")
-    (127 draft "Lazy Sequences" "John Cowan")
+    (127 final "Lazy Sequences" "John Cowan")
     (128 draft "Comparators (reduced)" "John Cowan")
     (129 draft "Titlecase procedures" "John Cowan")
     (130 draft "String cursors" "John Cowan")
