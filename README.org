@@ -1,6 +1,6 @@
 #+Title: Scheme Requests for Implementation
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/admin.css" />
-#+HTML_HEAD: <meta name=viewport content="width=device-width, initial-scale=1" />
+#+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1" />
 #+NAME: SRFI logo
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil
