@@ -143,7 +143,7 @@
     (128 draft "Comparators (reduced)" "John Cowan")
     (129 draft "Titlecase procedures" "John Cowan")
     (130 draft "String cursors" "John Cowan")
-    (131 draft "ERR5RS Record Syntax (reduced)" "John Cowan, Will Clinger")
+    (131 final "ERR5RS Record Syntax (reduced)" "John Cowan, Will Clinger")
     (132 draft "Sort Libraries" "Olin Shivers (edited by John Cowan)")
     (133 draft "Vector Library (R7RS-compatible)" "Taylor Campbell (with modifications by John Cowan)")
     (134 draft "Immutable Deques" "Kevin Wortman, John Cowan")))
