@@ -140,7 +140,7 @@
     (125 draft "Intermediate hash tables" "John Cowan, Will Clinger")
     (126 final "R6RS-based hashtables" "Taylan Ulrich Bayırlı/Kammer")
     (127 final "Lazy Sequences" "John Cowan")
-    (128 draft "Comparators (reduced)" "John Cowan")
+    (128 final "Comparators (reduced)" "John Cowan")
     (129 draft "Titlecase procedures" "John Cowan")
     (130 draft "String cursors" "John Cowan")
     (131 final "ERR5RS Record Syntax (reduced)" "John Cowan, Will Clinger")
