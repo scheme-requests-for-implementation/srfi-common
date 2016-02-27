@@ -157,7 +157,7 @@
   (let ((description (caddr (assoc number srfis))))
     (run-shell-command
      (format #f
-	     "curl -i -H 'Authorization: token ~A' -d '{ \"name\": \"srfi-~A\", \"description\": \"~A\" }' ~A~%"
+	     "curl -i -H 'Authorization: token ~A' -d '{ \"name\": \"srfi-~A\", \"description\": \"~A\", \"has_issues\": false }' ~A~%"
 	     github-authorization-token
 	     number
 	     description
