@@ -144,7 +144,7 @@
     (129 final "Titlecase procedures" "John Cowan")
     (130 draft "String cursors" "John Cowan")
     (131 final "ERR5RS Record Syntax (reduced)" "John Cowan, Will Clinger")
-    (132 draft "Sort Libraries" "Olin Shivers (edited by John Cowan)")
+    (132 draft "Sort Libraries" "John Cowan (based on SRFI 32 by Olin Shivers)")
     (133 draft "Vector Library (R7RS-compatible)" "John Cowan (based on SRFI 43 by Taylor Campbell)")
     (134 draft "Immutable Deques" "Kevin Wortman, John Cowan")))
 
