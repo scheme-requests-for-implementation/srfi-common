@@ -142,7 +142,7 @@
     (127 final "Lazy Sequences" "John Cowan")
     (128 final "Comparators (reduced)" "John Cowan")
     (129 final "Titlecase procedures" "John Cowan")
-    (130 draft "String cursors" "John Cowan")
+    (130 draft "Cursor-based string library" "John Cowan")
     (131 final "ERR5RS Record Syntax (reduced)" "John Cowan, Will Clinger")
     (132 draft "Sort Libraries" "John Cowan (based on SRFI 32 by Olin Shivers)")
     (133 final "Vector Library (R7RS-compatible)" "John Cowan (based on SRFI 43 by Taylor Campbell)")
