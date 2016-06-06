@@ -146,7 +146,10 @@
     (131 final "ERR5RS Record Syntax (reduced)" "John Cowan, Will Clinger")
     (132 final "Sort Libraries" "John Cowan (based on SRFI 32 by Olin Shivers)")
     (133 final "Vector Library (R7RS-compatible)" "John Cowan (based on SRFI 43 by Taylor Campbell)")
-    (134 draft "Immutable Deques" "Kevin Wortman, John Cowan")))
+    (134 draft "Immutable Deques" "Kevin Wortman, John Cowan")
+
+    ;; (135 draft "Immutable Texts" "Will Clinger")
+))
 
 ;; This is the first SRFI whose email archive was hosted first on
 ;; Simplelists.  SRFI with smaller numbers were originally hosted on
