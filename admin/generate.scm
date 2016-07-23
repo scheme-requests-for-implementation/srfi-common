@@ -56,6 +56,7 @@
   (read-template "srfi-common/admin/archive-old.template"))
 (define archive-simplelists-template
   (read-template "srfi-common/admin/archive-simplelists.template"))
+(define readme-template (read-template "srfi-common/admin/readme.template"))
 
 (define (write-single-srfi-index-page srfi)
   (let* ((number (car srfi))
@@ -77,6 +78,20 @@
 	(invoke-template index-template
 			 `((authors ,authors)
 			   (email-archives ,archives)
+			   (number ,number)
+			   (status ,status)
+			   (title ,title)))))))
+
+(define (write-single-srfi-readme srfi)
+  (let* ((number (car srfi))
+	 (status (cadr srfi))
+	 (title (caddr srfi))
+	 (authors (cadddr srfi))
+	 (pathname (format #f "srfi-~A/readme.org" number)))
+    (with-output-to-file pathname
+      (lambda ()
+	(invoke-template readme-template
+			 `((authors ,authors)
 			   (number ,number)
 			   (status ,status)
 			   (title ,title)))))))
