@@ -87,7 +87,7 @@
 	 (status (cadr srfi))
 	 (title (caddr srfi))
 	 (authors (cadddr srfi))
-	 (pathname (format #f "srfi-~A/readme.org" number)))
+	 (pathname (format #f "srfi-~A/README.org" number)))
     (with-output-to-file pathname
       (lambda ()
 	(invoke-template readme-template
