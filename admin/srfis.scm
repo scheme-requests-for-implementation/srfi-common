@@ -159,6 +159,8 @@
 ;; Michael Sperber's FreeBSD system, so the archive links are different.
 (define first-simplelists-srfi 122)
 
+(define srfi-no-post-mail '(104 117 118))
+
 (define (create-github-repository number)
   (let ((description (caddr (assoc number srfis))))
     (run-shell-command

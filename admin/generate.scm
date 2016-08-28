@@ -64,8 +64,13 @@
 	  (if (< number first-simplelists-srfi)
 	      (with-output-to-string
 		(lambda ()
-		  (invoke-template archive-old-template '())
-		  (newline)
+		  (invoke-template archive-old-template
+				   `((file-prefix "")
+				     (name-prefix "Pre")))
+		  (unless (memv number srfi-no-post-mail)
+		    (invoke-template archive-old-template
+				     `((file-prefix "post-")
+				       (name-prefix "Post"))))
 		  (invoke-template archive-simplelists-template
 				   `((number ,number)
 				     (prefix "Complete ")))))
