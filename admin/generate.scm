@@ -64,11 +64,16 @@
 	  (if (< number first-simplelists-srfi)
 	      (with-output-to-string
 		(lambda ()
-		  (invoke-template archive-old-template '())))
+		  (invoke-template archive-old-template '())
+		  (newline)
+		  (invoke-template archive-simplelists-template
+				   `((number ,number)
+				     (prefix "Complete ")))))
 	      (with-output-to-string
 		(lambda ()
 		  (invoke-template archive-simplelists-template
-				   `((number ,number)))))))
+				   `((number ,number)
+				     (prefix "")))))))
 	 (status (cadr srfi))
 	 (title (caddr srfi))
 	 (authors (cadddr srfi))
