@@ -147,7 +147,7 @@
     (132 final "Sort Libraries" "John Cowan (based on SRFI 32 by Olin Shivers)")
     (133 final "Vector Library (R7RS-compatible)" "John Cowan (based on SRFI 43 by Taylor Campbell)")
     (134 final "Immutable Deques" "Kevin Wortman, John Cowan")
-    (135 draft "Immutable Texts" "William D Clinger")
+    (135 final "Immutable Texts" "William D Clinger")
     (136 draft "Extensible record types" "Marc Nieper-Wißkirchen")
     (137 draft "Minimal Unique Types" "John Cowan, Marc Nieper-Wißkirchen")
     (138 draft "Compiling Scheme programs to executables" "Marc Nieper-Wißkirchen")
