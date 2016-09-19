@@ -155,7 +155,8 @@
     (140 draft "Immutable Strings" "Per Bothner")
     (141 draft "Integer division" "Taylor Campbell, John Cowan")
     (142 draft "Bitwise Operations" "John Cowan")
-    (143 draft "Fixnums" "John Cowan")))
+    (143 draft "Fixnums" "John Cowan")
+    (144 draft "Flonums" "John Cowan")))
 
 ;; This is the first SRFI whose email archive was hosted first on
 ;; Simplelists.  SRFI with smaller numbers were originally hosted on
