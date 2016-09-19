@@ -153,7 +153,8 @@
     (138 draft "Compiling Scheme programs to executables" "Marc Nieper-Wißkirchen")
     (139 draft "Syntax parameters" "Marc Nieper-Wißkirchen")
     (140 draft "Immutable Strings" "Per Bothner")
-    (141 draft "Integer division" "Taylor Campbell, John Cowan")))
+    (141 draft "Integer division" "Taylor Campbell, John Cowan")
+    (142 draft "Bitwise Operations" "John Cowan")))
 
 ;; This is the first SRFI whose email archive was hosted first on
 ;; Simplelists.  SRFI with smaller numbers were originally hosted on
