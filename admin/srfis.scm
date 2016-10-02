@@ -151,7 +151,7 @@
     (136 draft "Extensible record types" "Marc Nieper-Wißkirchen")
     (137 draft "Minimal Unique Types" "John Cowan, Marc Nieper-Wißkirchen")
     (138 final "Compiling Scheme programs to executables" "Marc Nieper-Wißkirchen")
-    (139 draft "Syntax parameters" "Marc Nieper-Wißkirchen")
+    (139 final "Syntax parameters" "Marc Nieper-Wißkirchen")
     (140 draft "Immutable Strings" "Per Bothner")
     (141 draft "Integer division" "Taylor Campbell, John Cowan")
     (142 draft "Bitwise Operations" "John Cowan")
