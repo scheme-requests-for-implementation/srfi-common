@@ -156,7 +156,8 @@
     (141 final "Integer division" "Taylor Campbell, John Cowan")
     (142 draft "Bitwise Operations" "John Cowan")
     (143 draft "Fixnums" "John Cowan")
-    (144 draft "Flonums" "John Cowan")))
+    (144 draft "Flonums" "John Cowan")
+    (145 draft "Denoting error situations in support of debugging, documentation and compiler optimizations" "Marc Nieper-Wißkirchen")))
 
 ;; This is the first SRFI whose email archive was hosted first on
 ;; Simplelists.  SRFI with smaller numbers were originally hosted on
