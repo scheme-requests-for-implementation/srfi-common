@@ -134,7 +134,7 @@
     (119 final "wisp: simpler indentation-sensitive scheme" "Arne Babenhauserheide" "2015/02/03")
     (120 final "Timer APIs" "Takashi Kato" "2015/2/4")
     (121 final "Generators" "Shiro Kawai, John Cowan, Thomas Gilray" "2015/01/27")
-    (122 draft "Nonempty Intervals and Generalized Arrays" "Bradley J. Lucier" "2015/7/27")
+    (122 final "Nonempty Intervals and Generalized Arrays" "Bradley J. Lucier" "2015/7/27")
     (123 final "Generic accessor and modifier operators" "Taylan Ulrich Bayırlı/Kammer" "2015/8/15")
     (124 final "Ephemerons" "John Cowan" "2015/9/6")
     (125 final "Intermediate hash tables" "John Cowan, Will Clinger" "2015/9/7")
