@@ -159,7 +159,7 @@
     (144 draft "Flonums" "John Cowan" "2016/9/20")
     (145 draft "Denoting error situations in support of debugging, documentation and compiler optimizations" "Marc Nieper-Wißkirchen" "2016/12/18")
     (146 draft "Maps" "Marc Nieper-Wißkirchen" "2016/12/18")
-    (147 draft "Custom macro transformers" "Marc Nieper-Wißkirchen") "2016/12/24"))
+    (147 draft "Custom macro transformers" "Marc Nieper-Wißkirchen" "2016/12/24")))
 
 ;; This is the first SRFI whose email archive was hosted first on
 ;; Simplelists.  SRFI with smaller numbers were originally hosted on
