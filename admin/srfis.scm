@@ -148,7 +148,7 @@
     (133 final "Vector Library (R7RS-compatible)" "John Cowan (based on SRFI 43 by Taylor Campbell)" "2015/12/16")
     (134 final "Immutable Deques" "Kevin Wortman, John Cowan" "2015/12/16")
     (135 final "Immutable Texts" "William D Clinger" "2016/6/6")
-    (136 draft "Extensible record types" "Marc Nieper-Wißkirchen" "2016/6/23")
+    (136 final "Extensible record types" "Marc Nieper-Wißkirchen" "2016/6/23")
     (137 final "Minimal Unique Types" "John Cowan, Marc Nieper-Wißkirchen" "2016/6/27")
     (138 final "Compiling Scheme programs to executables" "Marc Nieper-Wißkirchen" "2016/7/6")
     (139 final "Syntax parameters" "Marc Nieper-Wißkirchen" "2016/7/7")
