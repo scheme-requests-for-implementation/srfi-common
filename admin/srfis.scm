@@ -157,7 +157,7 @@
     (142 draft "Bitwise Operations" "John Cowan" "2016/9/20")
     (143 draft "Fixnums" "John Cowan" "2016/9/20")
     (144 draft "Flonums" "John Cowan" "2016/9/20")
-    (145 draft "Denoting error situations in support of debugging, documentation and compiler optimizations" "Marc Nieper-Wißkirchen" "2016/12/18")
+    (145 draft "Assumptions" "Marc Nieper-Wißkirchen" "2016/12/18")
     (146 draft "Mappings" "Marc Nieper-Wißkirchen" "2016/12/18")
     (147 draft "Custom macro transformers" "Marc Nieper-Wißkirchen" "2016/12/24")))
 
