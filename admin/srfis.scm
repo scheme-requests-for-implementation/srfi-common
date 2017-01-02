@@ -160,7 +160,8 @@
     (145 draft "Assumptions" "Marc Nieper-Wißkirchen" "2016/12/18")
     (146 draft "Mappings" "Marc Nieper-Wißkirchen" "2016/12/18")
     (147 draft "Custom macro transformers" "Marc Nieper-Wißkirchen" "2016/12/24")
-    (148 draft "Composable macros" "Marc Nieper-Wißkirchen" "2016/12/31")))
+    (148 draft "Composable macros" "Marc Nieper-Wißkirchen" "2016/12/31")
+    (149 draft "Basic Syntax-rules Template Extensions" "Marc Nieper-Wißkirchen" "2017/1/1")))
 
 ;; This is the first SRFI whose email archive was hosted first on
 ;; Simplelists.  SRFI with smaller numbers were originally hosted on
