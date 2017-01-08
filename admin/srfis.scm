@@ -21,6 +21,16 @@
   (draft-date srfi/draft-date)
   (final-date srfi/final-date))
 
+(set-record-type-unparser-method!
+ srfi
+ (standard-unparser-method
+  'srfi
+  (lambda (srfi port)
+    (write-char #\space)
+    (write (srfi/number srfi) port)
+    (write-char #\space)
+    (write (srfi/title srfi) port))))
+
 (define (make-srfi number status title authors draft-date #!optional final-date)
   (%make-srfi number
 	      status
