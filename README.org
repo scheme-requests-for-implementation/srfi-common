@@ -2,6 +2,7 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="/admin.css" />
 #+HTML_HEAD: <meta name="viewport" content="width=device-width, initial-scale=1" />
 #+NAME: SRFI logo
+#+OPTIONS: html-postamble:nil
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil
 [[file:srfi.png]]
