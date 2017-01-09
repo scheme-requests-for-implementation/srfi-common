@@ -27,6 +27,7 @@ and other additions to the Scheme language between implementations.
 Here's a graph of the total number of SRFIs since [[../srfi-0][SRFI 0]] was published
 on 1999/1/5:
 
+#+ATTR_HTML: :width 100%
 file:srfi.svg
 
 — [[mailto:srfi-editors at srfi dot schemers dot org][the SRFI editors]] (email)
