@@ -5,6 +5,7 @@
 #+OPTIONS: html-postamble:nil
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil
+
 [[file:srfi.png]]
 
 The "Scheme Requests for Implementation" (*SRFI*) process is an
@@ -22,6 +23,11 @@ and other additions to the Scheme language between implementations.
 - [[file:srfi-history.html][SRFI History]]
 - [[file:srfi-editors.html][SRFI Editors]]
 - [[file:srfi.tgz][srfi.tgz]], a complete archive of all SRFI documents and code
+
+Here's a graph of the total number of SRFIs since [[../srfi-0][SRFI 0]] was published
+on 1999/1/5:
+
+file:srfi.svg
 
 — [[mailto:srfi-editors at srfi dot schemers dot org][the SRFI editors]] (email)
 
