@@ -30,11 +30,12 @@
 	<li><a href="srfi.tgz">srfi.tgz</a>, a complete archive of all SRFI documents and code</li></ul>
 
       <div id="srfis">
-	<input class="search" placeholder="Search">
-	<button class="sort" data-sort="title">Sort by name</button>
-	<button class="sort" data-sort="number">Sort by number</button>
-	<button class="sort" data-sort="status">Sort by status</button>
-	<ul class="list">
+	<input class="search" placeholder="Search" />
+        Sort by
+        <button class="sort" data-sort="title">name</button>
+        <button class="sort" data-sort="number">number</button>
+        <button class="sort" data-sort="status">status</button>
+        <ul class="list">
 <*<srfi-list>*></ul></div>
 
       <p>
