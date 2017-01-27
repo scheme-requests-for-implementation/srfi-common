@@ -2,8 +2,8 @@
   <head>
     <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>Scheme Requests for Implementation</title>
-    <link rel="stylesheet" type="text/css" href="/admin.css" />
-    <link rel="stylesheet" type="text/css" href="/home.css" />
+    <link rel="stylesheet" type="text/css" href="admin.css" />
+    <link rel="stylesheet" type="text/css" href="home.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" /></head>
   <body>
     <div>
@@ -49,4 +49,4 @@
       <p>
 	The history of this document (i.e. the <code>.org</code> source) is <a href="https://github.com/scheme-requests-for-implementation/srfi-common/commits/master/README.org">here</a>.</p></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.4.1/list.min.js"></script>
-    <script src="/home.js" type="application/javascript"></script></body></html>
+    <script src="home.js" type="application/javascript"></script></body></html>
