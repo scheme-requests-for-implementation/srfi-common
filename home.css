@@ -42,7 +42,7 @@ h1 {
   padding: 7px 14px;
   margin-bottom: 10px
 }
-.search: focus {
+.search:focus {
   border-color: #aaa;
   outline: none;
 }
@@ -56,11 +56,11 @@ h1 {
   padding: 0 1em;
   text-decoration: none;
 }
-.sort: hover {
+.sort:hover {
   background-color: #1b8aba;
   text-decoration: none;
 }
-.sort: focus {
+.sort:focus {
   outline: none;
 }
 .sort:after {
