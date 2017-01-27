@@ -1,15 +1,11 @@
 .authors, .status {
   color: grey;
 }
-body {
-  font-size: 16px;
-}
 h1 {
   text-align: center;
 }
 .list {
   columns: 15em;
-  font-family: sans-serif;
   margin: 0;
   orphans: 3;
   padding: 20px 0 0;
