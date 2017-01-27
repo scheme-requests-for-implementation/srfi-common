@@ -40,6 +40,9 @@ h1 {
   font-weight: bold;
   margin: 0 0 0.3rem;
 }
+p a {
+  font-weight: bold;
+}
 .search {
   border: solid 1px #ccc;
   border-radius: 5px;
