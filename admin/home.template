@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Scheme Requests for Implementation</title>
+    <link rel="stylesheet" type="text/css" href="/admin.css" />
+    <link rel="stylesheet" type="text/css" href="/home.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+  <body>
+    <div id="content">
+      <h1 class="title">Scheme Requests for Implementation</h1>
+
+      <div class="figure">
+	<p><img src="srfi.png" alt="srfi.png" /></p></div>
+
+      <p>
+	The "Scheme Requests for Implementation" (<b>SRFI</b>) process is an
+	approach to helping Scheme users to write portable and yet useful
+	code.  It is a forum for people interested in coordinating libraries
+	and other additions to the Scheme language between implementations.</p>
+
+      <ul class="org-ul">
+	<li><a href="srfi-implementers.html">Scheme Systems Supporting SRFI</a></li>
+	<li><a href="srfi-process.html">The SRFI Process Document</a></li>
+	<li><a href="srfi-faq.html">The SRFI FAQ</a></li>
+	<li><a href="final-srfis.html">Final SRFIs</a></li>
+	<li><a href="draft-srfis.html">Draft SRFIs</a></li>
+	<li><a href="withdrawn-srfis.html">Withdrawn SRFIs</a></li>
+	<li><a href="srfi-list-subscribe.html">SRFI Mailing Lists: Subscribing/Unsubscribing</a></li>
+	<li><a href="srfi-history.html">SRFI History</a></li>
+	<li><a href="srfi-editors.html">SRFI Editors</a></li>
+	<li><a href="srfi.tgz">srfi.tgz</a>, a complete archive of all SRFI documents and code</li></ul>
+
+      <div id="srfis">
+	<input autofocus class="search" placeholder="Search">
+	<button class="sort" data-sort="title">Sort by name</button>
+	<button class="sort" data-sort="number">Sort by number</button>
+	<button class="sort" data-sort="status">Sort by status</button>
+	<ul class="list">
+<*<srfi-list>*></ul></div>
+
+      <p>
+	Here's a graph of the total number of SRFIs since <a href="../srfi-0">SRFI 0</a> was published
+	on 1999/1/5:</p>
+
+      <div class="figure">
+	<p><object type="image/svg+xml" data="srfi.svg" width="100%">
+	  Sorry, your browser does not support SVG.</object></p></div>
+
+      <p>
+	— <a href="mailto:srfi-editors%20at%20srfi%20dot%20schemers%20dot%20org">the SRFI editors</a> (email)</p>
+
+      <p>
+	The history of this document (i.e. the <code>.org</code> source) is <a href="https://github.com/scheme-requests-for-implementation/srfi-common/commits/master/README.org">here</a>.</p></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.4.1/list.min.js"></script>
+    <script src="/home.js" type="application/javascript"></script></body></html>

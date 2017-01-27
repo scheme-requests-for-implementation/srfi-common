@@ -45,11 +45,6 @@ rsync \
   $SOURCE/srfi-common/* \
   $SOURCE/srfi-email/* \
   $DESTINATION_EMAIL/
-cp \
-  --force \
-  -p \
-  $DESTINATION_EMAIL/README.html \
-  $DESTINATION_EMAIL/index.html
 rsync \
   --checksum \
   --delete \

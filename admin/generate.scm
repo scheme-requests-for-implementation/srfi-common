@@ -51,6 +51,10 @@
 		   (display (cadr association))
 		   (error "Missing variable." element))))))))
 
+(define home-template (read-template "srfi-common/admin/home.template"))
+(define home-srfi-template
+  (read-template "srfi-common/admin/home-srfi.template"))
+
 (define index-template (read-template "srfi-common/admin/index.template"))
 (define archive-old-template
   (read-template "srfi-common/admin/archive-old.template"))
@@ -112,3 +116,23 @@
   (do ((srfis srfis (cdr srfis)))
       ((null? srfis))
     (write-single-srfi-index-page (car srfis))))
+
+;; Note that this generates "index.html", which is separate from the
+;; "README.org" page.
+(define (write-srfi-home-page)
+  (let ((srfi-list
+	 (with-output-to-string
+	   (lambda ()
+	     (for-each (lambda (s)
+			 (let* ((number (srfi/number s))
+				(url (format #f "srfi-~A" number)))
+			   (invoke-template home-srfi-template
+					    `((name ,(srfi/title s))
+					      (number ,number)
+					      (status ,(srfi/status s))
+					      (url ,url)))))
+		       srfis)))))
+    (with-output-to-file "$ss/srfi-common/index.html"
+      (lambda ()
+	(invoke-template home-template
+			 `((srfi-list ,srfi-list)))))))

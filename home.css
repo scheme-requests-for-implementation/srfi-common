@@ -1,0 +1,98 @@
+h1 {
+  text-align: center;
+}
+.list {
+  columns: 15em;
+  font-family: sans-serif;
+  margin: 0;
+  orphans: 3;
+  padding: 20px 0 0;
+}
+.list a {
+  color: black;
+  display: block;
+  text-decoration: none;
+}
+.list > li {
+  box-shadow: inset 0 1px 0 #fff;
+  break-inside: avoid-column;
+  display: block;
+  padding: 10px;
+}
+.list > li.draft {
+  background-color: palegreen;
+}
+.list > li.final {
+  background-color: springgreen;
+}
+.list > li.withdrawn {
+  background-color: lightyellow;
+}
+.number:after {
+  content: ": ";
+}
+.name, .number {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 0 0.3rem;
+}
+.search {
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  padding: 7px 14px;
+  margin-bottom: 10px
+}
+.search: focus {
+  border-color: #aaa;
+  outline: none;
+}
+.sort {
+  background-color: #28a8e0;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  display: inline-block;
+  height: 30px;
+  padding: 0 1em;
+  text-decoration: none;
+}
+.sort: hover {
+  background-color: #1b8aba;
+  text-decoration: none;
+}
+.sort: focus {
+  outline: none;
+}
+.sort: after {
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  content: "";
+  height: 0;
+  position: relative;
+  right: -5px;
+  top: -10px;
+  width: 0;
+}
+.sort.asc: after {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  content: "";
+  height: 0;
+  position: relative;
+  right: -5px;
+  top: 13px;
+  width: 0;
+}
+.sort.desc: after {
+  border-bottom: 5px solid #fff;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  content: "";
+  height: 0;
+  position: relative;
+  right: -5px;
+  top: -10px;
+  width: 0;
+}
