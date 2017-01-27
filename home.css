@@ -1,6 +1,9 @@
 .authors, .status {
   color: grey;
 }
+body {
+  font-size: 16px;
+}
 h1 {
   text-align: center;
 }
@@ -35,7 +38,6 @@ h1 {
   content: ": ";
 }
 .name, .number {
-  font-size: 16px;
   font-weight: bold;
   margin: 0 0 0.3rem;
 }
