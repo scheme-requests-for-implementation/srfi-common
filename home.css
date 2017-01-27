@@ -55,7 +55,7 @@ p a {
   outline: none;
 }
 .sort {
-  background-color: #28a8e0;
+  background-color: black;
   border-radius: 6px;
   border: none;
   color: #fff;
@@ -64,12 +64,14 @@ p a {
   padding: 0 1em;
   text-decoration: none;
 }
+.sort:focus {
+  background-color: palegreen;
+  color: black;
+  outline: none;
+}
 .sort:hover {
   background-color: #1b8aba;
   text-decoration: none;
-}
-.sort:focus {
-  outline: none;
 }
 .sort:after {
   border-bottom: 5px solid transparent;
