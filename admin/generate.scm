@@ -127,7 +127,8 @@
 			 (let* ((number (srfi/number s))
 				(url (format #f "srfi-~A" number)))
 			   (invoke-template home-srfi-template
-					    `((name ,(srfi/title s))
+					    `((authors ,(srfi/authors s))
+					      (name ,(srfi/title s))
 					      (number ,number)
 					      (status ,(srfi/status s))
 					      (url ,url)))))

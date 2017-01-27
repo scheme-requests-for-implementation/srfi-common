@@ -32,6 +32,7 @@
       <div id="srfis">
 	<input class="search" placeholder="Search" />
         Sort by
+        <button class="sort" data-sort="authors">authors</button>
         <button class="sort" data-sort="title">name</button>
         <button class="sort" data-sort="number">number</button>
         <button class="sort" data-sort="status">status</button>

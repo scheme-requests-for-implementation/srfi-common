@@ -1,5 +1,5 @@
 var options = {
-  valueNames: [ "name", "number", "status" ]
+  valueNames: [ "authors", "name", "number", "status" ]
 };
 
-var userList = new List("srfis", options);
+var srfiList = new List("srfis", options);
