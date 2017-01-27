@@ -42,6 +42,24 @@
 <*<srfi-list>*></ul></div>
 
       <p>
+	In addition to the complete list above, there are detailed
+	lists of <a href="draft-srfis.html">draft</a>, <a
+	href="final-srfis.html">final</a>, and <a
+	href="withdrawn-srfis.html">withdrawn</a> SRFIs.</p>
+
+      <p>Every SRFI is hosted on Github, but if you'd like a complete
+	archive of all SRFI documents and code, please download <a
+href="srfi.tgz">srfi.tgz</a>.</p>
+
+      <p>
+	The SRFI process  has been important to the development of
+	some of the official Scheme standards, including <a
+	href="http://www.r6rs.org/">R<sup>6</sup>RS</a> and <a
+	href="http://r7rs.org">R<sup>7</sup>RS</a>.  It has been
+	running <a href="srfi-history.html">since 1998</a>, and there
+	have been many <a href="srfi-editors.html">different editors</a>.</p>
+
+      <p>
 	Here's a graph of the total number of SRFIs since <a href="../srfi-0">SRFI 0</a> was published
 	on 1999/1/5:</p>
 
