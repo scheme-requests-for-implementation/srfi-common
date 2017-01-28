@@ -117,6 +117,13 @@
       ((null? srfis))
     (write-single-srfi-index-page (car srfis))))
 
+(define (write-srfi-readmes)
+  (if (not (file-directory? "srfi-0"))
+      (error "Working directory must contain all SRFI directories."))
+  (do ((srfis srfis (cdr srfis)))
+      ((null? srfis))
+    (write-single-srfi-readme (car srfis))))
+
 ;; Note that this generates "index.html", which is separate from the
 ;; "README.org" page.
 (define (write-srfi-home-page)
