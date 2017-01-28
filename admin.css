@@ -13,6 +13,7 @@ dt {
   margin-top: 1em;
 }
 form {
+  border: solid 1px lightgrey;
   border-radius: 10px;
   margin: 1px;
   padding: 10px;
@@ -87,4 +88,7 @@ ul li {
   break-inside: avoid-column;
   display: block;
   padding: 10px;
+}
+ul li form {
+  border: none;
 }
