@@ -2,38 +2,72 @@
 <html>
   <head>
     <title><*<title>*></title>
-    <link href="../admin.css" rel="stylesheet">
+    <link href="../srfi-common/admin.css" rel="stylesheet">
+    <link href="../srfi-common/favicon.png" rel="icon" sizes="192x192" type="image/png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
   <body>
     <h1>SRFI <*<number>*>: <*<title>*></h1>
-    <h2>by <*<authors>*></h2>
+    <p class="authors">by <*<authors>*></p>
+    <p class="status">status: <em><*<status>*></em></p>
 
-    <menu>
+    <ul>
       <li><a href="srfi-<*<number>*>.html">The SRFI Document</a></li>
 <*<email-archives>*>
-      <li>status: <em><*<status>*></em></li>
-      <li><a href="https://github.com/scheme-requests-for-implementation/srfi-<*<number>*>">Git repo</a></li></menu>
-
-    <form class="subscription" method="POST" action="https://www.simplelists.com/subscribe.php">
-      <input type="email" name="email" placeholder="Your email address">
-      <input type="text" name="name" placeholder="Your full name">
-      Daily digest:&nbsp;<input type="checkbox" name="digest" value="digest">
-      <input class="submit" type="submit" name="submit" value="Subscribe to srfi-<*<number>*>">
-      <input type="hidden" name="action" value="subscribe">
-      <input type="hidden" name="list" value="srfi-<*<number>*>@srfi.schemers.org"></form>
-
-    <form class="subscription" method="POST" action="https://www.simplelists.com/subscribe.php">
-      <input type="email" name="email" placeholder="Your email address">
-      <input class="submit" type="submit" name="submit" value="Unsubscribe from srfi-<*<number>*>">
-      <input type="hidden" name="action" value="unsubscribe">
-      <input type="hidden" name="list" value="srfi-<*<number>*>@srfi.schemers.org"></form>
-
-    <p>Post to the discussion list by sending mail
-      to <code>srfi-<*<number>*>@<span class="antispam">nospam</span>srfi.schemers.org</code>.</p>
-
-    <hr>
-    <address><a href="mailto:srfi minus editors at srfi dot schemers dot org">The SRFI Editors</a></address>
-  </body>
-</html>
+      <li><a href="https://github.com/scheme-requests-for-implementation/srfi-<*<number>*>">Git repo (on Github)</a></li>
+      <li>
+        <a href="mailto:srfi-<*<number>*>@srfi.schemers.org"><code>srfi-<*<number>*>@<span class="antispam">nospam</span>srfi.schemers.org</code></a> (subscribers only)</li>
+      <li>
+        <form method="POST" action="https://www.simplelists.com/subscribe.php">
+          <div class="title">Subscribe to srfi-<*<number>*> mailing list</div>
+          <p>
+            <input id="sub-email"
+                   name="email"
+                   placeholder="email address"
+                   tabindex="1"
+                   type="email" >
+            <label for="sub-email">email address</label></p>
+          <p>
+            <input id="sub-name"
+                   name="name"
+                   placeholder="full name"
+                   tabindex="2"
+                   type="text" >
+            <label for="sub-name">full name</label></p>
+          <p>
+            <input id="sub-digest"
+                   name="digest"
+                   tabindex="3"
+                   type="checkbox"
+                   value="digest" >
+            <label for="sub-digest">daily digest?</label></p>
+          <input class="submit"
+                 name="submit"
+                 tabindex="4"
+                 type="submit"
+                 value="Subscribe to srfi-<*<number>*>" >
+          <input type="hidden" name="action" value="subscribe">
+          <input type="hidden" name="list" value="srfi-<*<number>*>@srfi.schemers.org"></form></li>
+      <li>
+        <form method="POST" action="https://www.simplelists.com/subscribe.php">
+          <p class="title">Unsubscribe from srfi-<*<number>*> mailing list</p>
+          <p>
+            <input id="unsub-email"
+                   name="email"
+                   placeholder="email address"
+                   tabindex="5"
+                   type="email" >
+            <label for="unsub-email">email address</label></p>
+          <input class="submit"
+                 name="submit"
+                 tabindex="6"
+                 type="submit"
+                 value="Unsubscribe from srfi-<*<number>*>" >
+          <input name="action"
+                 type="hidden"
+                 value="unsubscribe" >
+          <input name="list"
+                 type="hidden"
+                 value="srfi-<*<number>*>@srfi.schemers.org" ></form></li></ul></body></html>

@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Subscribing to a SRFI Mailing List</title>
-    <link href="/admin.css" rel="stylesheet">
+    <link href="admin.css" rel="stylesheet">
     <link href="favicon.png" rel="icon" sizes="192x192" type="image/png"></link>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 
@@ -15,46 +15,114 @@
       SRFI discussions.  Anyone can subscribe to any mailing list.
       Only subscribers can post.  Spammers will be ejected.</p>
 
-    <h2><code>srfi-announce@<span class="antispam">nospam</span>srfi.schemers.org</code></h2>
+    <h2><code>srfi-announce<wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></h2>
 
     <p>This is a moderated mailing list where all announcements about
       new SRFI proposals and changes in status are posted.</p>
 
-    <form class="subscription" method="POST" action="https://www.simplelists.com/subscribe.php">
-      <input type="email" name="email" placeholder="Your email address">
-      <input type="text" name="name" placeholder="Your full name">
-      Daily digest:&nbsp;<input type="checkbox" name="digest" value=" digest">
-      <input class="submit" type="submit" name="submit" value="Subscribe to srfi-announce">
-      <input type="hidden" name="action" value="subscribe">
-      <input type="hidden" name="list" value="srfi-announce@srfi.schemers.org"></form>
+    <form method="POST" action="https://www.simplelists.com/subscribe.php">
+      <p>
+	<input id="sub-announce-email"
+	       name="email"
+	       placeholder="email address"
+	       type="email">
+	<label for="sub-announce-email">email address</label></p>
+      <p>
+	<input id="sub-announce-name"
+	       name="name"
+	       placeholder="full name"
+	       type="text">
+	<label for="sub-announce-name">full name</label></p>
+      <p>
+	<input id="sub-announce-digest"
+	       name="digest"
+	       type="checkbox"
+	       value="digest">
+	<label for="sub-announce-digest">daily digest?</label></p>
+      <input class="submit"
+	     name="submit"
+	     type="submit"
+	     value="Subscribe to srfi-announce">
+      <input name="action"
+	     type="hidden"
+	     value="subscribe">
+      <input name="list"
+	     type="hidden"
+	     value="srfi-announce@srfi.schemers.org"></form>
 
-    <form class="subscription" method="POST" action="https://www.simplelists.com/subscribe.php">
-      <input type="email" name="email" placeholder="Your email address">
-      <input class="submit" type="submit" name="submit" value="Unsubscribe from srfi-announce">
-      <input type="hidden" name="action" value="unsubscribe">
-      <input type="hidden" name="list" value="srfi-announce@srfi.schemers.org"></form>
+    <form method="POST" action="https://www.simplelists.com/subscribe.php">
+      <p>
+	<input id="unsub-announce-email" 
+	       name="email"
+	       placeholder="email address"
+      	       type="email">
+	<label for="unsub-announce-email">email address</label></p>
+      <input class="submit"
+	     name="submit"
+	     type="submit"
+	     value="Unsubscribe from srfi-announce">
+      <input type="hidden"
+	     name="action"
+	     value="unsubscribe">
+      <input type="hidden"
+	     name="list"
+	     value="srfi-announce@srfi.schemers.org"></form>
 
-    <h2><code>srfi-discuss@<span class="antispam">nospam</span>srfi.schemers.org</code></h2>
+    <h2><code>srfi-discuss<wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></h2>
 
     <p>This is an unmoderated mailing list for general discussion of
       the SRFI process.  It is archived
       <a href="srfi-discuss/mail-archive/maillist.html">here</a>.</p>
 
-    <form class="subscription" method="POST" action="https://www.simplelists.com/subscribe.php">
-      <input type="email" name="email" placeholder="Your email address">
-      <input type="text" name="name" placeholder="Your full name">
-      Daily digest:&nbsp;<input type="checkbox" name="digest" value=" digest">
-      <input class="submit" type="submit" name="submit" value="Subscribe to srfi-discuss">
-      <input type="hidden" name="action" value="subscribe">
-      <input type="hidden" name="list" value="srfi-discuss@srfi.schemers.org"></form>
+    <form method="POST" action="https://www.simplelists.com/subscribe.php">
+      <p>
+	<input id="sub-discuss-email"
+	       name="email"
+	       placeholder="email address"
+	       type="email">
+	<label for="sub-discuss-email">email address</label></p>
+      <p>
+	<input id="sub-discuss-name"
+	       name="name"
+	       placeholder="full name"
+	       type="text">
+	<label for="sub-discuss-name">full name</label></p>
+      <p>
+	<input id="sub-discuss-digest"
+	       name="digest"
+	       type="checkbox"
+	       value="digest">
+	<label for="sub-discuss-digest">daily digest?</label></p>
+      <input class="submit"
+	     name="submit"
+	     type="submit"
+	     value="Subscribe to srfi-discuss">
+      <input name="action"
+	     type="hidden"
+	     value="subscribe">
+      <input name="list"
+	     type="hidden"
+	     value="srfi-discuss@srfi.schemers.org"></form>
 
-    <form class="subscription" method="POST" action="https://www.simplelists.com/subscribe.php">
-      <input type="email" name="email" placeholder="Your email address">
-      <input class="submit" type="submit" name="submit" value="Unsubscribe from srfi-discuss">
-      <input type="hidden" name="action" value="unsubscribe">
-      <input type="hidden" name="list" value="srfi-discuss@srfi.schemers.org"></form>
+      <form method="POST" action="https://www.simplelists.com/subscribe.php">
+	<p>
+	  <input id="unsub-discuss-email" 
+		 name="email"
+		 placeholder="email address"
+      		 type="email">
+	  <label for="unsub-discuss-email">email address</label></p>
+	<input class="submit"
+	       name="submit"
+	       type="submit"
+	       value="Unsubscribe from srfi-discuss">
+	<input type="hidden"
+	       name="action"
+	       value="unsubscribe">
+	<input type="hidden"
+	       name="list"
+	       value="srfi-discuss@srfi.schemers.org"></form>
 
-    <h2><code>srfi-<em>n</em>@<span class="antispam">nospam</span>srfi.schemers.org</code></h2>
+    <h2><code>srfi-<em>n</em><wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></h2>
 
     <p>There is a separate, unmoderated mailing list for discussion of
       each SRFI.  All discussion of SRFI proposals should take place
@@ -68,26 +136,58 @@
       one for SRFI 0</a>, and fill out the web form there.  There is a
       form there for unsubscribing, too.</p>
 
-    <h2><code>srfi-auto-subscribe@<span class="antispam">nospam</span>srfi.schemers.org</code></h2>
+    <h2><code>srfi-auto-subscribe<wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></h2>
 
     <p>Subscribe to this list if you'd like to receive messages from
       all SRFI-<em>n</em> discussion mailing lists.</p>
 
-    <form class="subscription" method="POST" action="https://www.simplelists.com/subscribe.php">
-      <input type="email" name="email" placeholder="Your email address">
-      <input type="text" name="name" placeholder="Your full name">
-      Daily digest:&nbsp;<input type="checkbox" name="digest" value=" digest">
-      <input class="submit" type="submit" name="submit" value="Subscribe to srfi-auto-subscribe">
-      <input type="hidden" name="action" value="subscribe">
-      <input type="hidden" name="list" value="srfi-auto-subscribe@srfi.schemers.org"></form>
+    <form method="POST" action="https://www.simplelists.com/subscribe.php">
+      <p>
+	<input id="sub-auto-subscribe-email"
+	       name="email"
+	       placeholder="email address"
+	       type="email">
+	<label for="sub-auto-subscribe-email">email address</label></p>
+      <p>
+	<input id="sub-auto-subscribe-name"
+	       name="name"
+	       placeholder="full name"
+	       type="text">
+	<label for="sub-auto-subscribe-name">full name</label></p>
+      <p>
+	<input id="sub-auto-subscribe-digest"
+	       name="digest"
+	       type="checkbox"
+	       value="digest">
+	<label for="sub-auto-subscribe-digest">daily digest?</label></p>
+      <input class="submit"
+	     name="submit"
+	     type="submit"
+	     value="Subscribe to srfi-auto-subscribe">
+      <input name="action"
+	     type="hidden"
+	     value="subscribe">
+      <input name="list"
+	     type="hidden"
+	     value="srfi-auto-subscribe@srfi.schemers.org"></form>
 
-    <form class="subscription" method="POST" action="https://www.simplelists.com/subscribe.php">
-      <input type="email" name="email" placeholder="Your email address">
-      <input class="submit" type="submit" name="submit" value="Unsubscribe from srfi-auto-subscribe">
-      <input type="hidden" name="action" value="unsubscribe">
-      <input type="hidden" name="list" value="srfi-auto-subscribe@srfi.schemers.org"></form>
+    <form method="POST" action="https://www.simplelists.com/subscribe.php">
+      <p>
+	<input id="unsub-auto-subscribe-email" 
+	       name="email"
+	       placeholder="email address"
+      	       type="email">
+	<label for="unsub-auto-subscribe-email">email address</label></p>
+      <input class="submit"
+	     name="submit"
+	     type="submit"
+	     value="Unsubscribe from srfi-auto-subscribe">
+      <input type="hidden"
+	     name="action"
+	     value="unsubscribe">
+      <input type="hidden"
+	     name="list"
+	     value="srfi-auto-subscribe@srfi.schemers.org"></form>
 
     <hr>
-    <address><a href="mailto:srfi-editors at srfi.schemers.org">The SRFI Editors</a></address>
-    <p>The history of this document is <a href="https://github.com/scheme-requests-for-implementation/srfi-common/commits/master/srfi-list-subscribe.html">here</a>.
-</body></html>
+    <address><a href="mailto:srfi-editors@srfi.schemers.org">The SRFI Editors</a></address></body></html>
