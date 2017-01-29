@@ -35,12 +35,12 @@ h1 {
 .list > li.withdrawn {
   border-left-color: yellow;
 }
-.number:after {
-  content: ": ";
-}
 .name, .number {
   font-weight: bold;
   margin: 0 0 0.3rem;
+}
+.number:after {
+  content: ": ";
 }
 p a {
   font-weight: bold;
