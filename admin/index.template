@@ -22,20 +22,14 @@
       <li>
         <form method="POST" action="https://www.simplelists.com/subscribe.php">
           <div class="title">Subscribe to srfi-<*<number>*> mailing list</div>
-          <p>
-            <input id="sub-email"
-                   name="email"
-                   placeholder="email address"
-                   tabindex="1"
-                   type="email" >
-            <label for="sub-email">email address</label></p>
-          <p>
-            <input id="sub-name"
-                   name="name"
-                   placeholder="full name"
-                   tabindex="2"
-                   type="text" >
-            <label for="sub-name">full name</label></p>
+          <input name="email"
+                 placeholder="email address"
+                 tabindex="1"
+                 type="email" >
+          <input name="name"
+                 placeholder="full name"
+                 tabindex="2"
+                 type="text" >
           <p>
             <input id="sub-digest"
                    name="digest"
@@ -53,13 +47,10 @@
       <li>
         <form method="POST" action="https://www.simplelists.com/subscribe.php">
           <p class="title">Unsubscribe from srfi-<*<number>*> mailing list</p>
-          <p>
-            <input id="unsub-email"
-                   name="email"
-                   placeholder="email address"
-                   tabindex="5"
-                   type="email" >
-            <label for="unsub-email">email address</label></p>
+          <input name="email"
+                 placeholder="email address"
+                 tabindex="5"
+                 type="email" >
           <input class="submit"
                  name="submit"
                  tabindex="6"
