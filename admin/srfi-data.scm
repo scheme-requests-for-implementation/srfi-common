@@ -13,7 +13,7 @@
   (12 withdrawn "Exception Handling" "William Clinger, R. Kent Dybvig, Matthew Flatt, and Marc Feeley" "1999/10/10" "2000/01/22")
   (13 final "String Libraries" "Olin Shivers" "1999/10/18" "2000/12/28")
   (14 final "Character-set Library" "Olin Shivers" "1999/10/30" "2000/12/28")
-  (15 withdrawn "Syntax for dynamic scoping" "Lars T Hansen" "1999/11/06" "03/10/2000")
+  (15 withdrawn "Syntax for dynamic scoping" "Lars T Hansen" "1999/11/06" "2000/03/10")
   (16 final "Syntax for procedures of variable arity" "Lars T Hansen" "1999/11/06" "2000/3/10")
   (17 final "Generalized set!" "Per Bothner" "2000/01/16" "2000/7/24")
   (18 final "Multithreading support" "Marc Feeley" "2000/02/07" "2001/3/14")
