@@ -187,3 +187,7 @@
 	(invoke-template srfi-list-template
 			 `((srfi-list ,srfi-list)
 			   (status ,status-name)))))))
+
+(define (write-srfi-status-pages)
+  (do-list (status '(draft final withdrawn))
+      (write-srfi-status status)))
