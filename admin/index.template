@@ -4,7 +4,7 @@
     <title><*<title>*></title>
     <link href="/admin.css" rel="stylesheet">
     <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 

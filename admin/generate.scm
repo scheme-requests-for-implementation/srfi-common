@@ -62,6 +62,11 @@
   (read-template "srfi-common/admin/archive-simplelists.template"))
 (define readme-template (read-template "srfi-common/admin/readme.template"))
 
+(define srfi-list-template
+  (read-template "srfi-common/admin/srfi-list.template"))
+(define srfi-list-item-template
+  (read-template "srfi-common/admin/srfi-list-item.template"))
+
 (define (write-single-srfi-index-page srfi)
   (let* ((number (srfi/number srfi))
 	 (archives
@@ -144,3 +149,35 @@
       (lambda ()
 	(invoke-template home-template
 			 `((srfi-list ,srfi-list)))))))
+
+(define (write-srfi-status status)
+  (let* ((status-name (case status
+			((draft) "Draft")
+			((final) "Final")
+			((withdrawn) "Withdrawn")
+			(else (error "Unknown status."))))
+	 (srfi-list
+	  (with-output-to-string
+	    (lambda ()
+	      (for-each (lambda (s)
+			  (let ((date (case status
+					((draft) (srfi/draft-date s))
+					((final) (srfi/done-date s))
+					((withdrawn) (srfi/done-date s))
+					(else (error "Unknown status."))))
+				(number (srfi/number s)))
+			    (invoke-template srfi-list-item-template
+					     `((authors ,(srfi/authors s))
+					       (date ,date)
+					       (date-type ,status-name)
+					       (name ,(srfi/title s))
+					       (number ,number)
+					       (status ,status)))))
+			(filter (lambda (s)
+				  (eq? (srfi/status s) status))
+				srfis))))))
+    (with-output-to-file (format #f "$ss/srfi-common/~A-srfis.html" status)
+      (lambda ()
+	(invoke-template srfi-list-template
+			 `((srfi-list ,srfi-list)
+			   (status ,status-name)))))))

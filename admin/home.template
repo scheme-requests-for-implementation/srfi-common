@@ -1,75 +1,74 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Scheme Requests for Implementation</title>
-    <link href="favicon.png" rel="icon" sizes="192x192" type="image/png"></link>
+    <link href="favicon.png" rel="icon" sizes="192x192" type="image/png" />
     <link rel="stylesheet" type="text/css" href="admin.css" />
     <link rel="stylesheet" type="text/css" href="home.css" />
+    <link rel="stylesheet" type="text/css" href="list.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" /></head>
   <body>
-    <div>
-      <h1>Scheme Requests for Implementation</h1>
+    <h1>Scheme Requests for Implementation</h1>
 
-      <img src="srfi.png" alt="srfi.png" />
+    <img src="srfi.png" alt="srfi.png" />
 
-      <p>
-	The purpose of the Scheme Requests for Implementation (SRFI)
-	process is to help Scheme users write portable, useful code.
-	We write concrete, detailed proposals and reference
-	implementations for libraries and other additions to the
-	Scheme language, and we encourage Scheme implementors to adopt
-	them.</p>
+    <p>
+      The purpose of the Scheme Requests for Implementation (SRFI)
+      process is to help Scheme users write portable, useful code.
+      We write concrete, detailed proposals and reference
+      implementations for libraries and other additions to the
+      Scheme language, and we encourage Scheme implementors to adopt
+      them.</p>
 
-      <p>
-	If you're interested in reading existing proposals, writing a
-	new one, providing feedback on a draft proposal, helping with
-	a reference implementation, or reporting a bug, please read
-	about <a href="srfi-process.html">our process</a>, skim our <a
-	href="srfi-faq.html">FAQ</a>, and <a
-	href="srfi-list-subscribe.html">subscribe</a> to some of our
-	mailing lists.</p>
+    <p>
+      If you're interested in reading existing proposals, writing a
+      new one, providing feedback on a draft proposal, helping with
+      a reference implementation, or reporting a bug, please read
+      about <a href="srfi-process.html">our process</a>, skim our <a
+      href="srfi-faq.html">FAQ</a>, and <a
+      href="srfi-list-subscribe.html">subscribe</a> to some of our
+      mailing lists.</p>
 
-      <p>
-	Here's a complete list of of more than 150 existing SRFIs:</p>
+    <p>
+      Here's a complete list of of more than 150 existing SRFIs:</p>
 
-      <div id="srfis">
-	<input class="search" placeholder="Search" tabindex="1" />
-        Sort by
-        <button class="sort" data-sort="authors" tabindex="2" >authors</button>
-        <button class="sort" data-sort="title" tabindex="3" >name</button>
-        <button class="sort" data-sort="number" tabindex="4" >number</button>
-        <button class="sort" data-sort="status" tabindex="5" >status</button>
-        <ul class="list">
+    <div id="srfis">
+      <input class="search" placeholder="Search" tabindex="1" />
+      Sort by
+      <button class="sort" data-sort="authors" tabindex="2" >authors</button>
+      <button class="sort" data-sort="name" tabindex="3" >name</button>
+      <button class="sort" data-sort="number" tabindex="4" >number</button>
+      <button class="sort" data-sort="status" tabindex="5" >status</button>
+      <ul class="list">
 <*<srfi-list>*></ul></div>
 
-      <p>
-	In addition to the complete list above, there are detailed
-	lists of <a href="draft-srfis.html">draft</a>, <a
-	href="final-srfis.html">final</a>, and <a
-	href="withdrawn-srfis.html">withdrawn</a> SRFIs.</p>
+    <p>
+      In addition to the complete list above, there are detailed
+      lists of <a href="draft-srfis.html">draft</a>, <a
+      href="final-srfis.html">final</a>, and <a
+      href="withdrawn-srfis.html">withdrawn</a> SRFIs.</p>
 
-      <p>Every SRFI is hosted on Github, but if you'd like a complete
-	archive of all SRFI documents and code, please download <a
+    <p>Every SRFI is hosted on Github, but if you'd like a complete
+      archive of all SRFI documents and code, please download <a
 href="srfi.tgz">srfi.tgz</a>.</p>
 
-      <p>
-	The SRFI process  has been important to the development of
-	some of the official Scheme standards, including <a
-	href="http://www.r6rs.org/">R<sup>6</sup>RS</a> and <a
-	href="http://r7rs.org">R<sup>7</sup>RS</a>.  It has been
-	running <a href="srfi-history.html">since 1998</a>, and there
-	have been many <a href="srfi-editors.html">different editors</a>.</p>
+    <p>
+      The SRFI process  has been important to the development of
+      some of the official Scheme standards, including <a
+      href="http://www.r6rs.org/">R<sup>6</sup>RS</a> and <a
+      href="http://r7rs.org">R<sup>7</sup>RS</a>.  It has been
+      running <a href="srfi-history.html">since 1998</a>, and there
+      have been many <a href="srfi-editors.html">different editors</a>.</p>
 
-      <p>
-	Here's a graph of the total number of SRFIs since <a href="../srfi-0">SRFI 0</a> was published
-	on 1999/1/5:</p>
+    <p>
+      Here's a graph of the total number of SRFIs since <a href="../srfi-0">SRFI 0</a> was published
+      on 1999/1/5:</p>
 
-      <object type="image/svg+xml" data="srfi.svg" width="100%" />
+    <object type="image/svg+xml" data="srfi.svg" width="100%" />
 
-      <p>
-	— <a href="mailto:srfi-editors%20at%20srfi%20dot%20schemers%20dot%20org">the SRFI editors</a> (email)</p>
+    <p>
+      — <a href="mailto:srfi-editors%20at%20srfi%20dot%20schemers%20dot%20org">the SRFI editors</a> (email)</p>
 
-      <p>
-	The history of this document (i.e. the <code>.org</code> source) is <a href="https://github.com/scheme-requests-for-implementation/srfi-common/commits/master/README.org">here</a>.</p></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.4.1/list.min.js"></script>
-    <script src="home.js" type="application/javascript"></script></body></html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.4.1/list.min.js" type="application/javascript"></script>
+    <script src="list.js" type="application/javascript"></script></body></html>

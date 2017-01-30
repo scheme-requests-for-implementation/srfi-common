@@ -1,589 +1,354 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//EN">
+<!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <link href="admin.css" rel="stylesheet" type="text/css">
-    <link href="favicon.png" rel="icon" sizes="192x192" type="image/png"></link>
+    <link href="list.css" rel="stylesheet" type="text/css">
+    <link href="favicon.png" rel="icon" sizes="192x192" type="image/png">
     <meta name=viewport content="width=device-width, initial-scale=1" />
     <title>Final Scheme Requests for Implementation</title>
   </head>
-
   <body>
     <h1>Final Scheme Requests for Implementation</h1>
-
-    <UL>
-      <LI><A HREF=srfi-0/>SRFI 0</A>: Feature-based conditional expansion construct
-	<UL>
-	  <LI>Draft: 1999/01/05-1999/04/04
-	  <LI>Revised: 1999/04/20
-	  <LI>Final: 1999/05/07
-	</UL></LI>
-      <LI><A HREF=srfi-1/>SRFI 1</A>: List Library
-	<UL>
-	  <LI>Draft: 1998/12/22-1999/03/09</LI>
-	  <LI>Revised: several times
-	  <LI>Final: 1999/10/09
-	</UL></LI>
-      <LI><A HREF=srfi-2/>SRFI 2</A>: AND-LET*: an AND with local bindings, a guarded LET* special form
-	<UL>
-	  <LI>Draft: 1998/12/28-1999/02/28
-	  <LI>Revised: 1999/02/09
-	  <LI>Final: 1999/03/01
-	</UL></LI>
-            <LI><A HREF=srfi-4/>SRFI 4</A>: Homogeneous numeric vector datatypes
-        <UL>
-          <LI>Draft: 1999/1/19-1999/03/19
-	  <LI>Final: 1999/5/22
-        </UL></LI>
-	<LI><A HREF=srfi-5/>SRFI 5</A>: A compatible <code>let</code> form with signatures and rest arguments
-	<UL>
-	  <LI>Draft: 1999/2/10-1999/04/12
-	  <LI>Final: 1999/4/26
-	</UL></LI>
-        <LI><A HREF=srfi-6/>SRFI 6</A>: Basic String Ports
-	<UL>
-          <LI>Draft: 1999/04/26-1999/06/24
-          <LI>Final: 1999/07/01
-	</UL></LI>
-        <LI><A HREF=srfi-7/>SRFI 7</A>: Feature-based program configuration language
-	<UL>
-	  <LI>Draft: 1999/05/26-1999/07/26
-	  <LI>Final: 1999/08/19
-	</UL></LI>
-      <LI><A HREF=srfi-8/>SRFI 8</A>: <code>receive</code>: Binding to multiple values
-	<UL>
-	  <LI>Draft: 1999/07/01-1999/08/30
-	  <LI>Final: 1999/08/30
-	</UL></LI>
-      <LI><A HREF=srfi-9/>SRFI 9</A>: Defining Record Types
-	<UL>
-	  <LI>Draft: 1999/07/07-1999/09/06
-	  <LI>Final: 1999/09/09
-	</UL></LI>
-      <LI><A HREF=srfi-10/>SRFI 10</A>: Sharp-Comma External Form
-        <UL>
-          <LI>Draft: 1999/09/21-1999/12/21
-          <LI>Final: 2000/01/13
-        </UL></LI>
-      <LI><A HREF=srfi-11/>SRFI 11</A>: Syntax for receiving multiple values
-	<UL>
-	  <LI>Draft: 1999/09/14-1999/11/12</LI>
-          <LI>Final: 2000/03/15</LI>
-	</UL></LI>
-      <LI><A HREF=srfi-13/>SRFI 13</A>: String Library
-	<UL>
-	  <LI>Draft: 1999/10/18-1999/12/16</LI>
-	  <LI>Final: 2000/12/28</LI>
-	</UL></LI>
-      <LI><A HREF=srfi-14/>SRFI 14</A>: Character-Set Library
-	<UL>
-	  <LI>Draft: 1999/10/30-1999/12/30</LI>
-	  <LI>Final: 2000/12/28</LI>
-	</UL></LI>
-      <LI><A HREF=srfi-16/>SRFI 16</A>: Syntax for procedures of variable arity
-	<UL>
-	  <LI>Draft: 1999/11/06-2000/01/07
-	  <LI>Final: 2000/03/10
-	</UL></LI>
-      <LI><A HREF=srfi-17/>SRFI 17</A>: Generalized set!
-	<UL>
-          <LI>Draft: 2000/01/16-2000/03/17
-	  <LI>Final: 2000/07/24
-	</UL></LI>
-      <LI><A HREF="srfi-18/">SRFI 18</A>: Multithreading support
-	<UL>
-          <LI>Draft: 2000/02/07-2000/04/06
-	  <LI>Final: 2001/03/14
-	</UL></LI>
-      <LI><A HREF=srfi-19/>SRFI 19</A>: Time Data Types and Procedures
-	<UL>
-          <LI>Draft: 2000/02/28-2000/08/28 </LI>
-          <LI>Final: 2000/08/31</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-21/">SRFI 21</A>: Real-time multithreading support
-	<UL>
-	  <LI>Draft: 2000/05/12-2000/07/11
-	  <LI>Final: 2001/03/02
-	</UL></LI>
-      <LI><A HREF="srfi-22/">SRFI 22</A>: Running Scheme Scripts on Unix
-	<UL>
-	  <LI>Draft: 2001/03/08-2001/06/08
-	  <li>Final: 2002/01/20
-	</UL></LI>
-      <LI><A HREF="srfi-23/">SRFI 23</A>: Error reporting mechanism
-	<UL>
-	  <LI>Draft: 2001/03/09-2001/06/09
-	  <LI>Final: 2001/06/22
-	</UL></LI>
-      <LI><A HREF="srfi-25/">SRFI 25</A>: Multi-dimensional Array Primitives
-	<UL>
-	  <LI>Draft: 2001/11/12-2002/01/11
-	  <LI>Final: 2002/05/21
-	</UL>
-      </LI>
-      <LI><A HREF="srfi-26/">SRFI 26</A>: Notation for Specializing Parameters without Currying
-	<UL>
-	  <LI>Draft: 2002/02/06-2002/04/06
-	    <LI> Final: 2002/02/14
-	</UL></LI>
-
-      <LI><A HREF="srfi-27/">SRFI 27</A>: Sources of Random Bits
-	<UL>
-	  <LI>Draft: 2002/02/12-2002/04/12
-	  <LI>Final: 2002/06/03
-	</UL></LI>
-      <LI><A HREF="srfi-28/">SRFI 28</A>: Basic Format Strings
-	<UL>
-	  <LI>Draft: 2002/03/22-2002/05/22</LI>
-	  <LI>Final: 2002/06/25</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-29/">SRFI 29</A>: Localization
-	<UL>
-	  <LI>Draft: 2002/03/26-2002/05/26
-	  <LI>Final: 2002/08/01
-	</UL></LI>
-      <LI><A HREF="srfi-30/">SRFI 30</A>: Nested Multi-line Comments
-	<UL>
-	  <LI>Draft: 2002/04/12-2002/06/10
-	  <LI>Final: 2002/08/07
-	</UL></LI>
-      <LI><A HREF="srfi-31/">SRFI 31</A>: A special form for recursive evaluation
-	<UL>
-	  <LI>Draft: 2002/05/24-2002/08/24
-	  <LI>Final: 2002/12/2
-	</UL></LI>
-      <LI><A HREF="srfi-34/">SRFI 34</A>: Exception Handling for Programs
-	<UL>
-	  <LI>Draft: 2002/07/23-2002/10/23
-	  <LI>Final: 2002/12/1
-	</UL></LI>
-      <LI><A HREF="srfi-35/">SRFI 35</A>: Conditions
-	<UL>
-	  <LI>Draft: 2002/07/23-2002/10/23
-	  <LI>Final: 2002/12/1
-	</UL></LI>
-      <LI><A HREF="srfi-36/">SRFI 36</A>: I/O Conditions
-	<UL>
-	  <LI>Draft: 2002/07/23-2002/10/23
-	  <LI>Final: 2002/12/1
-	</UL></LI>
-      <LI><A HREF="srfi-37/">SRFI 37</A>: args-fold: a program argument processor
-	<UL>
-	  <LI>Draft: 2002/09/23-2002/12/23
-	  <LI>Final: 2003/01/13
-	</UL></LI>
-      <LI><A HREF="srfi-38/">SRFI 38</A>: External Representation for Data With Shared Structure
-	<UL>
-	  <LI>Draft: 2002/12/16-2003/04/02</LI>
-	  <LI>Final: 2003/04/02</li>
-	</UL></LI>
-      <LI><A HREF="srfi-39/">SRFI 39</A>: Parameter objects
-	<UL>
-	  <LI>Draft: 2002/12/21-2003/02/18
-	  <LI>Final: 2003/06/30
-	</UL></LI>
-      <LI><A HREF="srfi-40/">SRFI 40</A>: A Library of Streams <em>(deprecated)</em>
-	<UL>
-	  <LI>Draft: 2003/02/03-2003/04/03
-	  <LI>Final: 2004/08/22
-	</UL></LI>
-      <LI><A HREF="srfi-41/">SRFI 41</A>: Streams
-	<UL>
-          <LI>Draft: 2007/10/21 - 2007/12/22</LI>
-	  <LI>Final: 2008/01/24
-	</UL></LI>
-      <LI><A HREF="srfi-42/">SRFI 42</A>: Eager Comprehensions
-	<UL>
-	  <LI>Draft: 2003/02/20-2003/04/20
-	  <LI>Final: 2003/07/07
-	</UL></LI>
-      <LI><A HREF="srfi-43/">SRFI 43</A>: Vector Library
-	<UL>
-	  <LI>Draft: 2003/04/03-2003/06/01
-	  <LI>Final: 2004/10/26
-	</UL></LI>
-
-      <LI><A HREF="srfi-44/">SRFI 44</A>: Collections
-	<UL>
-	  <LI>Draft: 2003/04/28-2003/07/28
-           <LI>Final: 2004/03/07
-	</UL></LI>
-      <LI><A HREF="srfi-45/">SRFI 45</A>: Primitives for expressing iterative lazy algorithms
-	<UL>
-	  <LI>Draft: 2003/09/23-2003/12/23</LI>
-	  <LI>Final: 2004/04/05</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-46/">SRFI 46</A>: Basic Syntax-rules Extensions
-	<UL>
-	  <LI>Draft: 2003/10/06-2005/02/28
-	  <LI>Final: 2005/02/28
-	</UL></LI>
-      <LI><A HREF="srfi-47/">SRFI 47</A>: Array
-	<UL>
-	  <LI>Draft: 2003/11/11-2004/02/11
-          <LI>Final: 2004/06/14
-	</UL></LI>
-      <LI><A HREF="srfi-48/">SRFI 48</A>: Intermediate Format Strings
-	<UL>
-	  <LI>Draft: 2003/11/25-2004/02/25</LI>
-	  <LI>Final: 2004/03/02</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-49/">SRFI 49</A>: Indentation-sensitive syntax
-	<UL>
-	  <LI>Draft: 2003/11/30-2004/01/28
-	  <LI>Final: 2005/07/22</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-51/">SRFI 51</A>: Handling rest list
-	<UL>
-	  <LI>Draft: 2004/01/18-2004/03/18
-	  <LI>Final: 2004/06/07</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-54/">SRFI 54</A>:  Formatting
-	<UL>
-	  <LI>Draft: 2004/03/22-2004/06/22</LI>
-	  <LI>Final: 2004/06/24</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-55/">SRFI 55</A>: <tt>require-extension</tt>
-	<UL>
-	  <LI>Draft: 2004/06/07-2004/08/05</LI>
-	  <LI>Final: 2004/11/05</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-57/">SRFI 57</A>: Records
-	<UL>
-	  <LI>Draft: 2004/09/08 - 2005/01/08</LI>
-	  <LI>Final: 2005/03/07</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-58/">SRFI 58</A>: Array Notation
-	<UL>
-	  <LI>Draft: 2004/11/26-2005/02/27</LI>
-          <LI>Final: 2005/03/08</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-59/">SRFI 59</A>: Vicinity
-	<UL>
-          <LI>Draft: 2004/12/30-2005/02/27</LI>
-          <LI>Final: 2005/03/08</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-60/">SRFI 60</A>: Integers as Bits
-	<UL>
-          <LI>Draft: 2005/01/03-2005/03/03</LI>
-          <LI>Final: 2005/03/08</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-61/">SRFI 61</A>: A more general <code>cond</code> clause
-	<UL>
-          <LI>Draft: 2005/01/03-2005/03/04</LI>
-          <LI>Final: 2005/07/21</LI>
-	</UL></LI>
-
-      <LI><A HREF="srfi-62/">SRFI 62</A>: S-expression comments
-	<UL>
-          <LI>Draft: 2005/01/03-2005/03/04</LI>
-          <LI>Final: 2005/07/21</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-63/">SRFI 63</A>: Homogeneous and Heterogeneous Arrays
-	<UL>
-          <LI>Draft: 2005/01/17-2005/03/18</LI>
-          <LI>Final: 2005/04/27</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-64/">SRFI 64</A>: A Scheme API for test suites
-	<UL>
-          <LI>Draft: 2005/01/28-2006/06/11</LI>
-          <LI>Final: 2006/06/18</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-66/">SRFI 66</A>: Octet Vectors
-	<UL>
-          <LI>Draft: 2005/03/11-2005/05/09</LI>
-          <LI>Final: 2005/12/15</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-67/">SRFI 67</A>: Compare Procedures
-	<UL>
-          <LI>Draft: 2005/04/05-2005/06/03</LI>
-	  <LI>Final: 2005/09/11</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-69/">SRFI 69</A>: Basic hash tables
-	<UL>
-          <LI>Draft: 2005/04/25-2005/09/09</LI>
-          <LI>Final: 2005/09/14</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-70/">SRFI 70</A>: Numbers
-	<UL>
-          <LI>Draft: 2005/05/15 - 2005/07/13</LI>
-	  <LI>Final: 2005/09/11</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-71/">SRFI 71</A>: <code>LET</code>-syntax for multiple values
-	<UL>
-          <LI>Draft: 2005/05/16 - 2005/08/12</LI>
-	  <LI>Final: 2005/08/12</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-72/">SRFI 72</A>: Simple hygienic macros
-	<UL>
-          <LI>Draft: 2005/06/14 - 2005/09/20</LI>
-	  <LI>Final: 2005/09/21</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-74/">SRFI 74</A>: Octet-Addressed Binary Blocks
-	<UL>
-          <LI>Draft: 2005/07/06 - 2005/09/04</LI>
-          <LI>Final: 2005/12/15</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-78/">SRFI 78</A>: Lightweight testing
-	<UL>
-          <LI>Draft: 2005/11/11-2006/01/31</LI>
-          <LI>Final: 2006/03/06</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-86/">SRFI 86</A>: MU and NU simulating VALUES & CALL-WITH-VALUES, and their related LET-syntax
-	<UL>
-          <LI>Draft: 2006/04/04 - 2006/06/01</LI>
-	  <LI>Final: 2006/06/20
-	</UL></LI>
-
-      <LI><A HREF="srfi-87/">SRFI 87</A>: =&gt; in case clauses
-	<UL>
-	<LI>Draft: 2006/04/10 - 2006/06/08</LI>
-	<LI>Final: 2006/10/18
-	</UL></LI>
-      <LI><A HREF="srfi-88/">SRFI 88</A>: Keyword Objects
-	<UL>
-          <LI>Draft: 2006/04/10 - 2006/07/10</LI>
-          <LI>Revised: 2007/03/28</LI>
-          <LI>Final: 2007/07/03</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-89/">SRFI 89</A>: Optional and named parameters
-	<UL>
-          <LI>Draft: 2006/04/10 - 2006/07/10</LI>
-          <LI>Revised: 2007/03/28</LI>
-          <LI>Final: 2007/07/10</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-90/">SRFI 90</A>: Extensible hash table constructor
-	<UL>
-          <LI>Draft: 2006/04/12 - 2006/06/11</LI>
-          <LI>Revised: 2007/03/28</LI>
-          <LI>Final: 2007/07/10</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-94/">SRFI 94</A>: Type-Restricted Numerical Functions
-	<UL>
-          <LI>Draft: 2006/09/14 - 2006/11/13</LI>
-          <LI>Final: 2007/01/30
-	</UL></LI>
-      <LI><A HREF="srfi-95/">SRFI 95</A>: Sorting and Merging
-	<UL>
-          <LI>Draft: 2006/10/17 - 2006/12/16</LI>
-          <LI>Final: 2007/01/29</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-96/">SRFI 96</A>: SLIB Prerequisites
-	<UL>
-          <LI>Draft: 2007/11/19 - 2008/02/17</LI>
-          <LI>Final: 2008/07/07</LI>
-        </UL></LI>
-      <LI><A HREF="srfi-97/">SRFI 97</A>: SRFI Libraries
-	<UL>
-          <LI>Draft: 2008/03/25 - 2008/08/22</LI>
-          <LI>Final: 2008/12/22</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-98/">SRFI 98</A>: An interface to access environment variables
-	<UL>
-          <LI>Draft: 2008/07/06 - 2008/09/06</LI>
-	  <LI>Final: 2008/09/19</LI>
-	</UL></LI>
-
-      <LI><A HREF="srfi-99/">SRFI 99</A>: ERR5RS Records
-	<UL>
-          <LI>Draft: 2008/07/22 - 2009/09/28</LI>
-          <LI>Final: 2009/10/07</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-100/">SRFI 100</A>: define-lambda-object
-	<UL>
-          <LI>Draft: 2009/09/09 - 2009/11/09</LI>
-          <LI>Final: 2010/06/21</LI>
-	</UL></LI>
-
-      <LI><A HREF="srfi-101/">SRFI 101</A>: Purely Functional Random-Access Pairs and Lists
-	<UL>
-          <LI>Draft: 2009/09/16 - 2009/11/16</LI>
-          <LI>Final: 2013/02/24</LI>
-	</UL></LI>
-
-      <LI><A HREF="srfi-105/">SRFI 105</A>: Curly-infix-expressions
-	<UL>
-          <LI>Draft: 2012/08/22 - 2012/10/22</LI>
-          <LI>Final: 2012/11/06</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-106/">SRFI 106</A>: Basic socket interface
-	<UL>
-          <LI>Draft: 2012/10/06 - 2012/12/06</LI>
-          <LI>Final: 2013/08/20</LI>
-	</UL></LI>
-
-      <LI><A HREF="srfi-107/">SRFI 107</A>: XML reader syntax
-	<UL>
-          <LI>Draft: 2012/11/10 - 2013/01/10</LI>
-          <LI>Final: 2013/12/22</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-108/">SRFI 108</A>: Named quasi-literal constructors
-	<UL>
-          <LI>Draft: 2012/11/10 - 2013/01/10</LI>
-          <LI>Final: 2013/06/21</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-109/">SRFI 109</A>: Extended string quasi-literals
-	<UL>
-          <LI>Draft: 2012/11/10 - 2013/01/10</LI>
-          <LI>Final: 2013/06/21</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-110/">SRFI 110</A>: Sweet-expressions (t-expressions)
-	<UL>
-          <LI>Draft: 2013/03/06 - 2013/03/06</LI>
-          <LI>Final: 2013/09/09</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-111/">SRFI 111</A>: Boxes
-	<UL>
-          <LI>Draft: 2013/04/25 - 2013/06/24</LI>
-          <LI>Final: 2013/07/03</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-112/">SRFI 112</A>: Environment Inquiry
-	<UL>
-          <LI>Draft: 2013/05/05 - 2013/07/05</LI>
-	  <li>Final: 2013/09/12</li>
-	</UL></LI>
-      <LI><A HREF="srfi-113/">SRFI 113</A>: Sets and Bags
-	<UL>
-          <LI>Draft: 2013/06/01 - 2013/08/01</LI>
-	  <li>Final: 2014/11/28</li>
-	</UL></LI>
-      <LI><A HREF="srfi-114/">SRFI 114</A>: Comparators
-	<UL>
-          <LI>Draft: 2013/06/15 - 2014/03/30</LI>
-          <LI>Final: 2014/03/31</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-115/">SRFI 115</A>: Scheme Regular Expressions
-	<UL>
-          <LI>Draft: 2013/10/12 - 2013/12/12</LI>
-          <LI>Final: 2014/07/14</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-116/">SRFI 116</A>: Immutable List Library
-	<UL>
-	  <li>Draft: 2014/09/08-2014/11/08</li>
-          <LI>Final: 2014/11/28</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-117/">SRFI 117</A>: Queues based on lists
-	<UL>
-	  <li>Draft: 2014/12/02-2015/02/02</li>
-	  <li>Final: 2015/08/25</li>
-	</UL></LI>
-      <LI><A HREF="srfi-118/">SRFI 118</A>: Simple adjustable-size strings
-	<UL>
-	  <li>Draft: 2014/12/20-2015/04/18</li>
-	  <li>Final: 2015/07/07</li>
-	</UL></LI>
-      <LI><A HREF="srfi-119/">SRFI 119</A>: wisp: simpler indentation-sensitive scheme
-	<UL>
-	  <li>Draft: 2015/02/03-2015/04/03</li>
-          <LI>Final: 2015/06/23</LI>
-	</UL></LI>
-      <LI><A HREF="srfi-120/">SRFI 120</A>: Timer APIs
-	<UL>
-	  <li>Final: 2015/02/03-2015/08/06</li>
-	</UL></LI>
-      <LI><A HREF="srfi-121/">SRFI 121</A>: Generators
-	<UL>
-	  <li>Draft: 2015/2/4</li>
-	  <li>Final: 2016/1/18</li>
-	</UL></LI>
-      <LI><A HREF="srfi-122/">SRFI 122</A>: Nonempty Intervals and Generalized Arrays
-	  <UL>
-	    <li>Draft: 2015/7/27</li>
-	    <li>Final: 2016/12/24</li>
-	  </UL></LI>
-      <LI><A HREF="srfi-123/">SRFI 123</A>: Generic accessor and modifier operators
-	<UL>
-	  <li>Draft: 2015/8/15-2015/9/7</li>
-	  <li>Final: 2015/10/14</li>
-	</UL></LI>
-      <LI><A HREF="srfi-124/">SRFI 124</A>: Ephemerons
-	<UL>
-	  <li>Draft: 2015/9/6</li>
-	  <li>Final: 2015/11/6</li>
-	</UL></LI>
-      <LI><A HREF="srfi-125/">SRFI 125</A>: Intermediate hash tables
-	<UL>
-	  <li>Draft: 2015/9/7</li>
-	  <li>Final: 2015/5/28</li>
-	</UL></LI>
-      <LI><A HREF="srfi-126/">SRFI 126</A>: R6RS-based hashtables
-	<UL>
-	  <li>Draft: 2015/9/8</li>
-	  <li>Final: 2016/2/1</li>
-	</UL></LI>
-      <LI><A HREF="srfi-127/">SRFI 127</A>: Lazy Sequences
-	<UL>
-	  <li>Draft: 2015/10/20</li>
-	  <li>Final: 2016/1/18</li>
-	</UL></LI>
-      <LI><A HREF="srfi-128/">SRFI 128</A>: Comparators (reduced)
-	<UL>
-	  <li>Draft: 2015/10/26</li>
-	  <li>Final: 2016/2/14</li>
-	</UL></LI>
-      <LI><A HREF="srfi-129/">SRFI 129</A>: Titlecase procedures
-	<UL>
-	  <li>Draft: 2015/11/30</li>
-	  <li>Final: 2016/3/8</li>
-	</UL></LI>
-      <LI><A HREF="srfi-130/">SRFI 130</A>: Cursor-based string library
-	<UL>
-	  <li>Draft: 2015/12/3</li>
-	  <li>Final: 2016/5/28</li>
-	</UL></LI>
-      <LI><A HREF="srfi-131/">SRFI 131</A>: ERR5RS Record Syntax (reduced)
-	<UL>
-	  <li>Draft: 2015/12/7</li>
-	  <li>Final: 2016/2/13</li>
-	</UL></LI>
-      <LI><A HREF="srfi-132/">SRFI 132</A>: Sort Libraries
-	<UL>
-	  <li>Draft: 2015/12/9</li>
-	  <li>Final: 2016/4/20</li>
-	</UL></LI>
-      <LI><A HREF="srfi-133/">SRFI 133</A>: Vector Library (R7RS-compatible)
-	<UL>
-	  <li>Draft: 2015/12/16</li>
-	  <li>Final: 2016/3/20</li>
-	</UL></LI>
-      <LI><A HREF="srfi-134/">SRFI 134</A>: Immutable Deques
-	<UL>
-	  <li>Draft: 2015/12/16</li>
-	  <li>Final: 2016/7/1</li>
-	</UL></LI>
-      <LI><A HREF="srfi-135/">SRFI 135</A>: Immutable Texts
-	<UL>
-	  <li>Draft: 2016/6/6</li>
-	  <li>Final: 2016/9/6</li>
-	</UL></LI>
-      <LI><A HREF="srfi-136/">SRFI 136</A>: Extensible record types
-	<UL>
-	  <li>Draft: 2016/6/23</li>
-	  <li>Final: 2016/12/25</li>
-	</UL></LI>
-      <LI><A HREF="srfi-137/">SRFI 137</A>: Minimal Unique Types
-	<UL>
-	  <li>Draft: 2016/6/27</li>
-	  <li>Final: 2016/10/4</li>
-	</UL></LI>
-      <LI><A HREF="srfi-138/">SRFI 138</A>: Compiling Scheme programs to executables
-	<UL>
-	  <li>Draft: 2016/7/6</li>
-	  <li>Final: 2016/9/28</li>
-	</UL></LI>
-      <LI><A HREF="srfi-139/">SRFI 139</A>: Syntax parameters
-	<UL>
-	  <li>Draft: 2016/7/7</li>
-	  <li>Final: 2016/10/2</li>
-	</UL></LI>
-      <LI><A HREF="srfi-141/">SRFI 141</A>: Integer division
-	<UL>
-	  <li>Draft: 2016/8/29</li>
-	  <li>Final: 2016/12/14</li>
-	</UL></LI>
-    </UL>
-
-    <hr>
-    <address><a href="mailto:srfi-editors at srfi dot schemers dot org">The SRFI Editors</a></address>
-    <p>The history of this document is <a href="https://github.com/scheme-requests-for-implementation/srfi-common/commits/master/final-srfis.html">here</a>.
-  </body>
-</html>
+    <div id="srfis">
+      <input class="search" placeholder="Search" tabindex="1" />
+      Sort by
+      <button class="sort" data-sort="authors" tabindex="2" >authors</button>
+      <button class="sort" data-sort="name" tabindex="3" >name</button>
+      <button class="sort" data-sort="number" tabindex="4" >number</button>
+      <ul class="list">
+      <li class="final"><a href="srfi-0/"><span class="number">0</span><span class="name">Feature-based conditional expansion construct</span>
+        <span class="authors">by Marc Feeley</span>
+	<span class="date">Final: 1999/5/7</span></a></li>
+      <li class="final"><a href="srfi-1/"><span class="number">1</span><span class="name">List Library</span>
+        <span class="authors">by Olin Shivers</span>
+	<span class="date">Final: 1999/10/9</span></a></li>
+      <li class="final"><a href="srfi-2/"><span class="number">2</span><span class="name">AND-LET*: an AND with local bindings, a guarded LET* special form</span>
+        <span class="authors">by Oleg Kiselyov</span>
+	<span class="date">Final: 1999/3/1</span></a></li>
+      <li class="final"><a href="srfi-4/"><span class="number">4</span><span class="name">Homogeneous numeric vector datatypes</span>
+        <span class="authors">by Marc Feeley</span>
+	<span class="date">Final: 1999/5/22</span></a></li>
+      <li class="final"><a href="srfi-5/"><span class="number">5</span><span class="name">A compatible let form with signatures and rest arguments</span>
+        <span class="authors">by Andy Gaynor</span>
+	<span class="date">Final: 1999/4/26</span></a></li>
+      <li class="final"><a href="srfi-6/"><span class="number">6</span><span class="name">Basic String Ports</span>
+        <span class="authors">by William D Clinger</span>
+	<span class="date">Final: 1999/7/1</span></a></li>
+      <li class="final"><a href="srfi-7/"><span class="number">7</span><span class="name">Feature-based program configuration language</span>
+        <span class="authors">by Richard Kelsey</span>
+	<span class="date">Final: 1999/8/19</span></a></li>
+      <li class="final"><a href="srfi-8/"><span class="number">8</span><span class="name">receive: Binding to multiple values</span>
+        <span class="authors">by John David Stone</span>
+	<span class="date">Final: 1999/8/30</span></a></li>
+      <li class="final"><a href="srfi-9/"><span class="number">9</span><span class="name">Defining Record Types</span>
+        <span class="authors">by Richard Kelsey</span>
+	<span class="date">Final: 1999/9/9</span></a></li>
+      <li class="final"><a href="srfi-10/"><span class="number">10</span><span class="name">#, external form</span>
+        <span class="authors">by Oleg Kiselyov</span>
+	<span class="date">Final: 2000/1/13</span></a></li>
+      <li class="final"><a href="srfi-11/"><span class="number">11</span><span class="name">Syntax for receiving multiple values</span>
+        <span class="authors">by Lars T Hansen</span>
+	<span class="date">Final: 2000/3/15</span></a></li>
+      <li class="final"><a href="srfi-13/"><span class="number">13</span><span class="name">String Libraries</span>
+        <span class="authors">by Olin Shivers</span>
+	<span class="date">Final: 2000/12/28</span></a></li>
+      <li class="final"><a href="srfi-14/"><span class="number">14</span><span class="name">Character-set Library</span>
+        <span class="authors">by Olin Shivers</span>
+	<span class="date">Final: 2000/12/28</span></a></li>
+      <li class="final"><a href="srfi-16/"><span class="number">16</span><span class="name">Syntax for procedures of variable arity.</span>
+        <span class="authors">by Lars T Hansen</span>
+	<span class="date">Final: 2000/3/10</span></a></li>
+      <li class="final"><a href="srfi-17/"><span class="number">17</span><span class="name">Generalized set!</span>
+        <span class="authors">by Per Bothner</span>
+	<span class="date">Final: 2000/7/24</span></a></li>
+      <li class="final"><a href="srfi-18/"><span class="number">18</span><span class="name">Multithreading support</span>
+        <span class="authors">by Marc Feeley</span>
+	<span class="date">Final: 2001/3/14</span></a></li>
+      <li class="final"><a href="srfi-19/"><span class="number">19</span><span class="name">Time Data Types and Procedures</span>
+        <span class="authors">by Will Fitzgerald</span>
+	<span class="date">Final: 2000/8/31</span></a></li>
+      <li class="final"><a href="srfi-21/"><span class="number">21</span><span class="name">Real-time multithreading support</span>
+        <span class="authors">by Marc Feeley</span>
+	<span class="date">Final: 2001/3/2</span></a></li>
+      <li class="final"><a href="srfi-22/"><span class="number">22</span><span class="name">Running Scheme Scripts on Unix</span>
+        <span class="authors">by Martin Gasbichler and Michael Sperber</span>
+	<span class="date">Final: 2002/1/20</span></a></li>
+      <li class="final"><a href="srfi-23/"><span class="number">23</span><span class="name">Error reporting mechanism</span>
+        <span class="authors">by Stephan Houben</span>
+	<span class="date">Final: 2001/6/22</span></a></li>
+      <li class="final"><a href="srfi-25/"><span class="number">25</span><span class="name">Multi-dimensional Array Primitives</span>
+        <span class="authors">by Jussi Piitulainen</span>
+	<span class="date">Final: 2002/5/21</span></a></li>
+      <li class="final"><a href="srfi-26/"><span class="number">26</span><span class="name">Notation for Specializing Parameters without Currying</span>
+        <span class="authors">by Sebastian Egner</span>
+	<span class="date">Final: 2002/2/14</span></a></li>
+      <li class="final"><a href="srfi-27/"><span class="number">27</span><span class="name">Sources of Random Bits</span>
+        <span class="authors">by Sebastian Egner</span>
+	<span class="date">Final: 2002/6/3</span></a></li>
+      <li class="final"><a href="srfi-28/"><span class="number">28</span><span class="name">Basic Format Strings </span>
+        <span class="authors">by Scott G. Miller</span>
+	<span class="date">Final: 2002/6/25</span></a></li>
+      <li class="final"><a href="srfi-29/"><span class="number">29</span><span class="name">Localization </span>
+        <span class="authors">by Scott G. Miller</span>
+	<span class="date">Final: 2002/8/1</span></a></li>
+      <li class="final"><a href="srfi-30/"><span class="number">30</span><span class="name">Nested Multi-line Comments</span>
+        <span class="authors">by Martin Gasbichler</span>
+	<span class="date">Final: 2002/8/7</span></a></li>
+      <li class="final"><a href="srfi-31/"><span class="number">31</span><span class="name">A special form `rec' for recursive evaluation</span>
+        <span class="authors">by Mirko.Luedde@Computer.Org</span>
+	<span class="date">Final: 2002/12/2</span></a></li>
+      <li class="final"><a href="srfi-34/"><span class="number">34</span><span class="name">Exception Handling for Programs</span>
+        <span class="authors">by Richard Kelsey and Michael Sperber</span>
+	<span class="date">Final: 2002/12/1</span></a></li>
+      <li class="final"><a href="srfi-35/"><span class="number">35</span><span class="name">Conditions</span>
+        <span class="authors">by Richard Kelsey and Michael Sperber</span>
+	<span class="date">Final: 2002/12/1</span></a></li>
+      <li class="final"><a href="srfi-36/"><span class="number">36</span><span class="name">I/O Conditions</span>
+        <span class="authors">by Michael Sperber</span>
+	<span class="date">Final: 2002/12/1</span></a></li>
+      <li class="final"><a href="srfi-37/"><span class="number">37</span><span class="name">args-fold: a program argument processor</span>
+        <span class="authors">by Anthony Carrico</span>
+	<span class="date">Final: 2003/1/13</span></a></li>
+      <li class="final"><a href="srfi-38/"><span class="number">38</span><span class="name">External Representation for Data With Shared Structure</span>
+        <span class="authors">by Ray Dillinger</span>
+	<span class="date">Final: 2003/4/2</span></a></li>
+      <li class="final"><a href="srfi-39/"><span class="number">39</span><span class="name">Parameter objects</span>
+        <span class="authors">by Marc Feeley</span>
+	<span class="date">Final: 2003/6/30</span></a></li>
+      <li class="final"><a href="srfi-40/"><span class="number">40</span><span class="name">A Library of Streams</span>
+        <span class="authors">by Philip L. Bewig</span>
+	<span class="date">Final: 2004/8/22</span></a></li>
+      <li class="final"><a href="srfi-41/"><span class="number">41</span><span class="name">Streams</span>
+        <span class="authors">by Philip L. Bewig</span>
+	<span class="date">Final: 2008/1/24</span></a></li>
+      <li class="final"><a href="srfi-42/"><span class="number">42</span><span class="name">Eager Comprehensions</span>
+        <span class="authors">by Sebastian Egner</span>
+	<span class="date">Final: 2003/7/7</span></a></li>
+      <li class="final"><a href="srfi-43/"><span class="number">43</span><span class="name">Vector library</span>
+        <span class="authors">by Taylor Campbell</span>
+	<span class="date">Final: 2004/10/26</span></a></li>
+      <li class="final"><a href="srfi-44/"><span class="number">44</span><span class="name">Collections</span>
+        <span class="authors">by Scott G. Miller</span>
+	<span class="date">Final: 2004/3/7</span></a></li>
+      <li class="final"><a href="srfi-45/"><span class="number">45</span><span class="name">Primitives for Expressing Iterative Lazy Algorithms</span>
+        <span class="authors">by André van Tonder</span>
+	<span class="date">Final: 2004/4/5</span></a></li>
+      <li class="final"><a href="srfi-46/"><span class="number">46</span><span class="name">Basic Syntax-rules Extensions</span>
+        <span class="authors">by Taylor Campbell</span>
+	<span class="date">Final: 2005/2/28</span></a></li>
+      <li class="final"><a href="srfi-47/"><span class="number">47</span><span class="name">Array</span>
+        <span class="authors">by Aubrey Jaffer</span>
+	<span class="date">Final: 2004/6/14</span></a></li>
+      <li class="final"><a href="srfi-48/"><span class="number">48</span><span class="name">Intermediate Format Strings</span>
+        <span class="authors">by Ken Dickey</span>
+	<span class="date">Final: 2004/3/2</span></a></li>
+      <li class="final"><a href="srfi-49/"><span class="number">49</span><span class="name">Indentation-sensitive syntax</span>
+        <span class="authors">by Egil Möller</span>
+	<span class="date">Final: 2005/7/22</span></a></li>
+      <li class="final"><a href="srfi-51/"><span class="number">51</span><span class="name">Handling rest list</span>
+        <span class="authors">by Joo ChurlSoo</span>
+	<span class="date">Final: 2004/6/7</span></a></li>
+      <li class="final"><a href="srfi-54/"><span class="number">54</span><span class="name">Formatting</span>
+        <span class="authors">by Joo ChurlSoo</span>
+	<span class="date">Final: 2004/6/24</span></a></li>
+      <li class="final"><a href="srfi-55/"><span class="number">55</span><span class="name">require-extension</span>
+        <span class="authors">by Felix L. Winkelmann and D.C. Frost</span>
+	<span class="date">Final: 2004/11/5</span></a></li>
+      <li class="final"><a href="srfi-57/"><span class="number">57</span><span class="name">Records</span>
+        <span class="authors">by André van Tonder</span>
+	<span class="date">Final: 2005/3/7</span></a></li>
+      <li class="final"><a href="srfi-58/"><span class="number">58</span><span class="name">Array Notation</span>
+        <span class="authors">by Aubrey Jaffer</span>
+	<span class="date">Final: 2005/3/8</span></a></li>
+      <li class="final"><a href="srfi-59/"><span class="number">59</span><span class="name">Vicinity</span>
+        <span class="authors">by Aubrey Jaffer</span>
+	<span class="date">Final: 2005/3/8</span></a></li>
+      <li class="final"><a href="srfi-60/"><span class="number">60</span><span class="name">Integers as Bits</span>
+        <span class="authors">by Aubrey Jaffer</span>
+	<span class="date">Final: 2005/3/8</span></a></li>
+      <li class="final"><a href="srfi-61/"><span class="number">61</span><span class="name">A more general cond clause</span>
+        <span class="authors">by Taylor Campbell</span>
+	<span class="date">Final: 2005/7/21</span></a></li>
+      <li class="final"><a href="srfi-62/"><span class="number">62</span><span class="name">S-expression comments</span>
+        <span class="authors">by Taylor Campbell</span>
+	<span class="date">Final: 2005/7/21</span></a></li>
+      <li class="final"><a href="srfi-63/"><span class="number">63</span><span class="name">Homogeneous and Heterogeneous Arrays</span>
+        <span class="authors">by Aubrey Jaffer</span>
+	<span class="date">Final: 2005/4/27</span></a></li>
+      <li class="final"><a href="srfi-64/"><span class="number">64</span><span class="name">A Scheme API for test suites</span>
+        <span class="authors">by Per Bothner</span>
+	<span class="date">Final: 2006/6/18</span></a></li>
+      <li class="final"><a href="srfi-66/"><span class="number">66</span><span class="name">Octet Vectors</span>
+        <span class="authors">by Michael Sperber</span>
+	<span class="date">Final: 2005/12/15</span></a></li>
+      <li class="final"><a href="srfi-67/"><span class="number">67</span><span class="name">Compare Procedures</span>
+        <span class="authors">by Sebastian Egner and Jens Axel Søgaard</span>
+	<span class="date">Final: 2005/9/11</span></a></li>
+      <li class="final"><a href="srfi-69/"><span class="number">69</span><span class="name">Basic hash tables</span>
+        <span class="authors">by Panu Kalliokoski</span>
+	<span class="date">Final: 2005/9/14</span></a></li>
+      <li class="final"><a href="srfi-70/"><span class="number">70</span><span class="name">Numbers</span>
+        <span class="authors">by Aubrey Jaffer</span>
+	<span class="date">Final: 2005/9/11</span></a></li>
+      <li class="final"><a href="srfi-71/"><span class="number">71</span><span class="name">Extended LET-syntax for multiple values</span>
+        <span class="authors">by Sebastian Egner</span>
+	<span class="date">Final: 2005/8/12</span></a></li>
+      <li class="final"><a href="srfi-72/"><span class="number">72</span><span class="name">Hygienic macros.</span>
+        <span class="authors">by André van Tonder</span>
+	<span class="date">Final: 2005/9/21</span></a></li>
+      <li class="final"><a href="srfi-74/"><span class="number">74</span><span class="name">Octet-Addressed Binary Blocks</span>
+        <span class="authors">by Michael Sperber</span>
+	<span class="date">Final: 2005/12/15</span></a></li>
+      <li class="final"><a href="srfi-78/"><span class="number">78</span><span class="name">Lightweight testing</span>
+        <span class="authors">by Sebastian Egner</span>
+	<span class="date">Final: 2006/3/6</span></a></li>
+      <li class="final"><a href="srfi-86/"><span class="number">86</span><span class="name">MU and NU simulating VALUES & CALL-WITH-VALUES, and their related LET-syntax</span>
+        <span class="authors">by Joo ChurlSoo</span>
+	<span class="date">Final: 2006/6/20</span></a></li>
+      <li class="final"><a href="srfi-87/"><span class="number">87</span><span class="name">=> in case clauses</span>
+        <span class="authors">by Chongkai Zhu</span>
+	<span class="date">Final: 2006/10/18</span></a></li>
+      <li class="final"><a href="srfi-88/"><span class="number">88</span><span class="name">Keyword objects</span>
+        <span class="authors">by Marc Feeley</span>
+	<span class="date">Final: 2007/7/3</span></a></li>
+      <li class="final"><a href="srfi-89/"><span class="number">89</span><span class="name">Optional positional and named parameters</span>
+        <span class="authors">by Marc Feeley</span>
+	<span class="date">Final: 2007/7/10</span></a></li>
+      <li class="final"><a href="srfi-90/"><span class="number">90</span><span class="name">Extensible hash table constructor</span>
+        <span class="authors">by Marc Feeley</span>
+	<span class="date">Final: 2007/7/10</span></a></li>
+      <li class="final"><a href="srfi-94/"><span class="number">94</span><span class="name">Type-Restricted Numerical Functions</span>
+        <span class="authors">by Aubrey Jaffer</span>
+	<span class="date">Final: 2007/1/30</span></a></li>
+      <li class="final"><a href="srfi-95/"><span class="number">95</span><span class="name">Sorting and Merging</span>
+        <span class="authors">by Aubrey Jaffer</span>
+	<span class="date">Final: 2007/1/29</span></a></li>
+      <li class="final"><a href="srfi-96/"><span class="number">96</span><span class="name">SLIB Prerequisites</span>
+        <span class="authors">by Aubrey Jaffer</span>
+	<span class="date">Final: 2008/7/7</span></a></li>
+      <li class="final"><a href="srfi-97/"><span class="number">97</span><span class="name">SRFI Libraries</span>
+        <span class="authors">by David Van Horn</span>
+	<span class="date">Final: 2008/12/22</span></a></li>
+      <li class="final"><a href="srfi-98/"><span class="number">98</span><span class="name">An interface to access environment variables.</span>
+        <span class="authors">by Taro Minowa (Higepon)</span>
+	<span class="date">Final: 2008/9/19</span></a></li>
+      <li class="final"><a href="srfi-99/"><span class="number">99</span><span class="name">ERR5RS Records</span>
+        <span class="authors">by William D Clinger</span>
+	<span class="date">Final: 2009/10/7</span></a></li>
+      <li class="final"><a href="srfi-100/"><span class="number">100</span><span class="name">define-lambda-object</span>
+        <span class="authors">by Joo ChurlSoo</span>
+	<span class="date">Final: 2010/6/21</span></a></li>
+      <li class="final"><a href="srfi-101/"><span class="number">101</span><span class="name">Purely Functional Random-Access Pairs and Lists</span>
+        <span class="authors">by David Van Horn</span>
+	<span class="date">Final: 2013/2/24</span></a></li>
+      <li class="final"><a href="srfi-105/"><span class="number">105</span><span class="name">Curly-infix-expressions</span>
+        <span class="authors">by David A. Wheeler, Alan Manuel K. Gloria</span>
+	<span class="date">Final: 2012/11/6</span></a></li>
+      <li class="final"><a href="srfi-106/"><span class="number">106</span><span class="name">Basic socket interface</span>
+        <span class="authors">by Takashi Kato</span>
+	<span class="date">Final: 2013/8/20</span></a></li>
+      <li class="final"><a href="srfi-107/"><span class="number">107</span><span class="name">XML reader syntax</span>
+        <span class="authors">by Per Bothner</span>
+	<span class="date">Final: 2013/12/22</span></a></li>
+      <li class="final"><a href="srfi-108/"><span class="number">108</span><span class="name">Named quasi-literal constructors</span>
+        <span class="authors">by Per Bothner</span>
+	<span class="date">Final: 2013/6/21</span></a></li>
+      <li class="final"><a href="srfi-109/"><span class="number">109</span><span class="name">Extended string quasi-literals</span>
+        <span class="authors">by Per Bothner</span>
+	<span class="date">Final: 2013/6/21</span></a></li>
+      <li class="final"><a href="srfi-110/"><span class="number">110</span><span class="name">Sweet-expressions (t-expressions)</span>
+        <span class="authors">by David A. Wheeler, Alan Manuel K. Gloria</span>
+	<span class="date">Final: 2013/9/9</span></a></li>
+      <li class="final"><a href="srfi-111/"><span class="number">111</span><span class="name">Boxes</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Final: 2013/7/3</span></a></li>
+      <li class="final"><a href="srfi-112/"><span class="number">112</span><span class="name">Environment Inquiry</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Final: 2013/9/12</span></a></li>
+      <li class="final"><a href="srfi-113/"><span class="number">113</span><span class="name">Sets and bags</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Final: 2014/11/28</span></a></li>
+      <li class="final"><a href="srfi-114/"><span class="number">114</span><span class="name">Comparators</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Final: 2014/3/31</span></a></li>
+      <li class="final"><a href="srfi-115/"><span class="number">115</span><span class="name">Scheme Regular Expressions</span>
+        <span class="authors">by Alex Shinn</span>
+	<span class="date">Final: 2014/7/14</span></a></li>
+      <li class="final"><a href="srfi-116/"><span class="number">116</span><span class="name">Immutable List Library</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Final: 2014/11/28</span></a></li>
+      <li class="final"><a href="srfi-117/"><span class="number">117</span><span class="name">Mutable Queues</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Final: 2015/8/25</span></a></li>
+      <li class="final"><a href="srfi-118/"><span class="number">118</span><span class="name">Simple adjustable-size strings</span>
+        <span class="authors">by Per Bothner</span>
+	<span class="date">Final: 2015/7/7</span></a></li>
+      <li class="final"><a href="srfi-119/"><span class="number">119</span><span class="name">wisp: simpler indentation-sensitive scheme</span>
+        <span class="authors">by Arne Babenhauserheide</span>
+	<span class="date">Final: 2015/6/23</span></a></li>
+      <li class="final"><a href="srfi-120/"><span class="number">120</span><span class="name">Timer APIs</span>
+        <span class="authors">by Takashi Kato</span>
+	<span class="date">Final: 2015/8/6</span></a></li>
+      <li class="final"><a href="srfi-121/"><span class="number">121</span><span class="name">Generators</span>
+        <span class="authors">by Shiro Kawai, John Cowan, Thomas Gilray</span>
+	<span class="date">Final: 2016/1/18</span></a></li>
+      <li class="final"><a href="srfi-122/"><span class="number">122</span><span class="name">Nonempty Intervals and Generalized Arrays</span>
+        <span class="authors">by Bradley J. Lucier</span>
+	<span class="date">Final: 2016/12/24</span></a></li>
+      <li class="final"><a href="srfi-123/"><span class="number">123</span><span class="name">Generic accessor and modifier operators</span>
+        <span class="authors">by Taylan Ulrich Bayırlı/Kammer</span>
+	<span class="date">Final: 2015/10/14</span></a></li>
+      <li class="final"><a href="srfi-124/"><span class="number">124</span><span class="name">Ephemerons</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Final: 2015/11/6</span></a></li>
+      <li class="final"><a href="srfi-125/"><span class="number">125</span><span class="name">Intermediate hash tables</span>
+        <span class="authors">by John Cowan, Will Clinger</span>
+	<span class="date">Final: 2015/5/28</span></a></li>
+      <li class="final"><a href="srfi-126/"><span class="number">126</span><span class="name">R6RS-based hashtables</span>
+        <span class="authors">by Taylan Ulrich Bayırlı/Kammer</span>
+	<span class="date">Final: 2016/2/1</span></a></li>
+      <li class="final"><a href="srfi-127/"><span class="number">127</span><span class="name">Lazy Sequences</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Final: 2016/1/18</span></a></li>
+      <li class="final"><a href="srfi-128/"><span class="number">128</span><span class="name">Comparators (reduced)</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Final: 2016/2/14</span></a></li>
+      <li class="final"><a href="srfi-129/"><span class="number">129</span><span class="name">Titlecase procedures</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Final: 2016/3/8</span></a></li>
+      <li class="final"><a href="srfi-130/"><span class="number">130</span><span class="name">Cursor-based string library</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Final: 2016/5/28</span></a></li>
+      <li class="final"><a href="srfi-131/"><span class="number">131</span><span class="name">ERR5RS Record Syntax (reduced)</span>
+        <span class="authors">by John Cowan, Will Clinger</span>
+	<span class="date">Final: 2016/2/13</span></a></li>
+      <li class="final"><a href="srfi-132/"><span class="number">132</span><span class="name">Sort Libraries</span>
+        <span class="authors">by John Cowan (based on SRFI 32 by Olin Shivers)</span>
+	<span class="date">Final: 2016/4/20</span></a></li>
+      <li class="final"><a href="srfi-133/"><span class="number">133</span><span class="name">Vector Library (R7RS-compatible)</span>
+        <span class="authors">by John Cowan (based on SRFI 43 by Taylor Campbell)</span>
+	<span class="date">Final: 2016/3/20</span></a></li>
+      <li class="final"><a href="srfi-134/"><span class="number">134</span><span class="name">Immutable Deques</span>
+        <span class="authors">by Kevin Wortman, John Cowan</span>
+	<span class="date">Final: 2016/7/1</span></a></li>
+      <li class="final"><a href="srfi-135/"><span class="number">135</span><span class="name">Immutable Texts</span>
+        <span class="authors">by William D Clinger</span>
+	<span class="date">Final: 2016/9/6</span></a></li>
+      <li class="final"><a href="srfi-136/"><span class="number">136</span><span class="name">Extensible record types</span>
+        <span class="authors">by Marc Nieper-Wißkirchen</span>
+	<span class="date">Final: 2016/12/25</span></a></li>
+      <li class="final"><a href="srfi-137/"><span class="number">137</span><span class="name">Minimal Unique Types</span>
+        <span class="authors">by John Cowan, Marc Nieper-Wißkirchen</span>
+	<span class="date">Final: 2016/10/4</span></a></li>
+      <li class="final"><a href="srfi-138/"><span class="number">138</span><span class="name">Compiling Scheme programs to executables</span>
+        <span class="authors">by Marc Nieper-Wißkirchen</span>
+	<span class="date">Final: 2016/9/28</span></a></li>
+      <li class="final"><a href="srfi-139/"><span class="number">139</span><span class="name">Syntax parameters</span>
+        <span class="authors">by Marc Nieper-Wißkirchen</span>
+	<span class="date">Final: 2016/10/2</span></a></li>
+      <li class="final"><a href="srfi-141/"><span class="number">141</span><span class="name">Integer division</span>
+        <span class="authors">by Taylor Campbell, John Cowan</span>
+	<span class="date">Final: 2016/12/14</span></a></li></ul></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.4.1/list.min.js" type="application/javascript"></script>
+    <script src="list.js" type="application/javascript"></script></body></html>

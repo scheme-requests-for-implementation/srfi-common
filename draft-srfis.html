@@ -1,71 +1,51 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//EN">
+<!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <link href="admin.css" rel="stylesheet" type="text/css">
-    <link href="favicon.png" rel="icon" sizes="192x192" type="image/png"></link>
+    <link href="list.css" rel="stylesheet" type="text/css">
+    <link href="favicon.png" rel="icon" sizes="192x192" type="image/png">
     <meta name=viewport content="width=device-width, initial-scale=1" />
     <title>Draft Scheme Requests for Implementation</title>
   </head>
-
   <body>
     <h1>Draft Scheme Requests for Implementation</h1>
-
-    <UL>
-      <LI><A HREF="srfi-140/">SRFI 140</A>: Immutable Strings
-	<UL>
-	  <li>Draft: 2016/7/11</li>
-	  <li>60-day deadline: 2016/9/9</li>
-	</UL></LI>
-      <LI><A HREF="srfi-142/">SRFI 142</A>: Bitwise Operations
-	<UL>
-	  <li>Draft: 2016/9/20</li>
-	  <li>60-day deadline: 2016/11/19</li>
-	</UL></LI>
-      <LI><A HREF="srfi-143/">SRFI 143</A>: Fixnums
-	<UL>
-	  <li>Draft: 2016/9/20</li>
-	  <li>60-day deadline: 2016/11/19</li>
-	</UL></LI>
-      <LI><A HREF="srfi-144/">SRFI 144</A>: Flonums
-	<UL>
-	  <li>Draft: 2016/9/20</li>
-	  <li>60-day deadline: 2016/11/19</li>
-	</UL></LI>
-      <LI><A HREF="srfi-145/">SRFI 145</A>: Assumptions
-	<UL>
-	  <li>Draft: 2016/12/18</li>
-	  <li>60-day deadline: 2017/2/16</li>
-	</UL></LI>
-      <LI><A HREF="srfi-146/">SRFI 146</A>: Mappings
-	<UL>
-	  <li>Draft: 2016/12/18</li>
-	  <li>60-day deadline: 2017/2/16</li>
-	</UL></LI>
-      <LI><A HREF="srfi-147/">SRFI 147</A>: Custom macro transformers
-	<UL>
-	  <li>Draft: 2016/12/24</li>
-	  <li>60-day deadline: 2017/2/22</li>
-	</UL></LI>
-      <LI><A HREF="srfi-148/">SRFI 148</A>: Composable macros
-	<UL>
-	  <li>Draft: 2017/1/1</li>
-	  <li>60-day deadline: 2017/3/2</li>
-	</UL></LI>
-      <LI><A HREF="srfi-149/">SRFI 149</A>: Basic Syntax-rules Template Extensions
-	<UL>
-	  <li>Draft: 2017/1/1</li>
-	  <li>60-day deadline: 2017/3/2</li>
-	</UL></LI>
-      <LI><A HREF="srfi-150/">SRFI 150</A>: Hygienic ERR5RS Record Syntax (reduced)
-	<UL>
-	  <li>Draft: 2017/1/2</li>
-	  <li>60-day deadline: 2017/3/3</li>
-	</UL></LI>
-   </UL>
-
-    <hr>
-    <address><a href="mailto:srfi minus editors at srfi dot schemers dot org">The SRFI Editors</a></address>
-    <p>The history of this document is <a href="https://github.com/scheme-requests-for-implementation/srfi-common/commits/master/draft-srfis.html">here</a>.
-
-  </body>
-</html>
+    <div id="srfis">
+      <input class="search" placeholder="Search" tabindex="1" />
+      Sort by
+      <button class="sort" data-sort="authors" tabindex="2" >authors</button>
+      <button class="sort" data-sort="name" tabindex="3" >name</button>
+      <button class="sort" data-sort="number" tabindex="4" >number</button>
+      <ul class="list">
+      <li class="draft"><a href="srfi-140/"><span class="number">140</span><span class="name">Immutable Strings</span>
+        <span class="authors">by Per Bothner</span>
+	<span class="date">Draft: 2016/7/11</span></a></li>
+      <li class="draft"><a href="srfi-142/"><span class="number">142</span><span class="name">Bitwise Operations</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Draft: 2016/9/20</span></a></li>
+      <li class="draft"><a href="srfi-143/"><span class="number">143</span><span class="name">Fixnums</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Draft: 2016/9/20</span></a></li>
+      <li class="draft"><a href="srfi-144/"><span class="number">144</span><span class="name">Flonums</span>
+        <span class="authors">by John Cowan</span>
+	<span class="date">Draft: 2016/9/20</span></a></li>
+      <li class="draft"><a href="srfi-145/"><span class="number">145</span><span class="name">Assumptions</span>
+        <span class="authors">by Marc Nieper-Wißkirchen</span>
+	<span class="date">Draft: 2016/12/18</span></a></li>
+      <li class="draft"><a href="srfi-146/"><span class="number">146</span><span class="name">Mappings</span>
+        <span class="authors">by Marc Nieper-Wißkirchen</span>
+	<span class="date">Draft: 2016/12/18</span></a></li>
+      <li class="draft"><a href="srfi-147/"><span class="number">147</span><span class="name">Custom macro transformers</span>
+        <span class="authors">by Marc Nieper-Wißkirchen</span>
+	<span class="date">Draft: 2016/12/24</span></a></li>
+      <li class="draft"><a href="srfi-148/"><span class="number">148</span><span class="name">Composable macros</span>
+        <span class="authors">by Marc Nieper-Wißkirchen</span>
+	<span class="date">Draft: 2016/12/31</span></a></li>
+      <li class="draft"><a href="srfi-149/"><span class="number">149</span><span class="name">Basic Syntax-rules Template Extensions</span>
+        <span class="authors">by Marc Nieper-Wißkirchen</span>
+	<span class="date">Draft: 2017/1/1</span></a></li>
+      <li class="draft"><a href="srfi-150/"><span class="number">150</span><span class="name">Hygienic ERR5RS Record Syntax (reduced)</span>
+        <span class="authors">by Marc Nieper-Wißkirchen</span>
+	<span class="date">Draft: 2017/1/2</span></a></li></ul></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.4.1/list.min.js" type="application/javascript"></script>
+    <script src="list.js" type="application/javascript"></script></body></html>
