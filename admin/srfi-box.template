@@ -1,2 +1,2 @@
 
-      <li class="<*<status>*>"><a href="srfi-<*<number>*>/"><span class="number"><*<number>*></span><span class="name"><*<name>*></span><span class="authors">by <*<authors>*></span><*<date-type>*>: <span class="date"><*<date>*></span></a></li>
+      <li class="<*<status>*>"><a href="srfi-<*<number>*>/"><span class="number"><*<number>*></span><span class="name"><*<name>*></span><span class="authors">by <*<authors>*></span><span class="date-group"><*<date-type>*>: <span class="date"><*<date>*></span></span></a></li>

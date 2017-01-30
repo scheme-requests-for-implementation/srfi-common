@@ -4,7 +4,7 @@
 .authors:before {
   content: ", "
 }
-.date {
+.date-group {
   color: grey;
   display: block;
   font-size: 80%;
