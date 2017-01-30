@@ -75,6 +75,7 @@ ul {
 ul a {
   display: block;
   margin: 0.5em 0 0.5em 0;
+  padding: 10px;
   text-decoration: none;
 }
 ul a:hover {
@@ -87,7 +88,6 @@ ul li {
   box-shadow: inset 0 1px 0 #fff;
   break-inside: avoid-column;
   display: block;
-  padding: 10px;
 }
 ul li form {
   border: none;
