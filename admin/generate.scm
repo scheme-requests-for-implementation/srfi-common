@@ -52,8 +52,9 @@
 		   (error "Missing variable." element))))))))
 
 (define home-template (read-template "srfi-common/admin/home.template"))
-(define home-srfi-template
-  (read-template "srfi-common/admin/home-srfi.template"))
+
+(define srfi-box-template
+  (read-template "srfi-common/admin/srfi-box.template"))
 
 (define index-template (read-template "srfi-common/admin/index.template"))
 (define archive-old-template
@@ -64,8 +65,6 @@
 
 (define srfi-list-template
   (read-template "srfi-common/admin/srfi-list.template"))
-(define srfi-list-item-template
-  (read-template "srfi-common/admin/srfi-list-item.template"))
 
 (define (write-single-srfi-index-page srfi)
   (let* ((number (srfi/number srfi))
@@ -129,6 +128,20 @@
       ((null? srfis))
     (write-single-srfi-readme (car srfis))))
 
+(define (srfi-date-to-show srfi)
+  (case (srfi/status srfi)
+    ((draft) (srfi/draft-date srfi))
+    ((final) (srfi/done-date srfi))
+    ((withdrawn) (srfi/done-date srfi))
+    (else (error "Unknown status."))))
+
+(define (status->name status)
+  (case status
+    ((draft) "Draft")
+    ((final) "Final")
+    ((withdrawn) "Withdrawn")
+    (else (error "Unknown status."))))
+
 ;; Note that this generates "index.html", which is separate from the
 ;; "README.org" page.
 (define (write-srfi-home-page)
@@ -137,12 +150,15 @@
 	   (lambda ()
 	     (for-each (lambda (s)
 			 (let* ((number (srfi/number s))
+				(status (srfi/status s))
 				(url (format #f "srfi-~A" number)))
-			   (invoke-template home-srfi-template
+			   (invoke-template srfi-box-template
 					    `((authors ,(srfi/authors s))
+					      (date ,(srfi-date-to-show s))
+					      (date-type ,(status->name status))
 					      (name ,(srfi/title s))
 					      (number ,number)
-					      (status ,(srfi/status s))
+					      (status ,status)
 					      (url ,url)))))
 		       srfis)))))
     (with-output-to-file "$ss/srfi-common/index.html"
@@ -151,28 +167,18 @@
 			 `((srfi-list ,srfi-list)))))))
 
 (define (write-srfi-status status)
-  (let* ((status-name (case status
-			((draft) "Draft")
-			((final) "Final")
-			((withdrawn) "Withdrawn")
-			(else (error "Unknown status."))))
+  (let* ((status-name (status->name status))
 	 (srfi-list
 	  (with-output-to-string
 	    (lambda ()
 	      (for-each (lambda (s)
-			  (let ((date (case status
-					((draft) (srfi/draft-date s))
-					((final) (srfi/done-date s))
-					((withdrawn) (srfi/done-date s))
-					(else (error "Unknown status."))))
-				(number (srfi/number s)))
-			    (invoke-template srfi-list-item-template
-					     `((authors ,(srfi/authors s))
-					       (date ,date)
-					       (date-type ,status-name)
-					       (name ,(srfi/title s))
-					       (number ,number)
-					       (status ,status)))))
+			  (invoke-template srfi-box-template
+					   `((authors ,(srfi/authors s))
+					     (date ,(srfi-date-to-show s))
+					     (date-type ,status-name)
+					     (name ,(srfi/title s))
+					     (number ,(srfi/number s))
+					     (status ,status))))
 			(filter (lambda (s)
 				  (eq? (srfi/status s) status))
 				srfis))))))
