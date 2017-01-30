@@ -1,6 +1,14 @@
 .authors, .status {
   color: grey;
 }
+.authors:before {
+  content: ", "
+}
+.date {
+  color: grey;
+  display: block;
+  font-size: 80%;
+}
 .list {
   columns: 15em;
   -moz-columns: 15em;
