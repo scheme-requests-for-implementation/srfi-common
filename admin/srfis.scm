@@ -26,9 +26,9 @@
  (standard-unparser-method
   'srfi
   (lambda (srfi port)
-    (write-char #\space)
+    (write-char #\space port)
     (write (srfi/number srfi) port)
-    (write-char #\space)
+    (write-char #\space port)
     (write (srfi/title srfi) port))))
 
 (define (make-srfi number status title authors draft-date #!optional done-date)
