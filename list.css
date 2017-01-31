@@ -1,7 +1,7 @@
 .authors, .status {
   color: grey;
 }
-.authors:before {
+.list .authors:before {
   content: ", "
 }
 .date-group {
