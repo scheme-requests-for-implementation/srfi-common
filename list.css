@@ -73,7 +73,7 @@ p a {
   text-decoration: none;
 }
 .sort:focus {
-  background-color: palegreen;
+  background-color: #88cc88;
   color: black;
   outline: none;
 }
