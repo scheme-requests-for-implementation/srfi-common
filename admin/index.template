@@ -19,7 +19,7 @@
 <*<email-archives>*>
       <li><a href="https://github.com/scheme-requests-for-implementation/srfi-<*<number>*>">Git repo (on Github)</a></li>
       <li>
-        <a href="mailto:srfi-<*<number>*>@srfi.schemers.org"><code>srfi-<*<number>*>@<span class="antispam">nospam</span>srfi.schemers.org</code></a> (subscribers only)</li>
+        <a href="mailto:srfi-<*<number>*>@srfi.schemers.org">srfi-<*<number>*>@<span class="antispam">nospam</span>srfi.schemers.org (subscribers only)</a></li>
       <li>
         <form method="POST" action="https://www.simplelists.com/subscribe.php">
           <div class="title">Subscribe to srfi-<*<number>*> mailing list</div>
