@@ -94,6 +94,7 @@
 		  (invoke-template archive-simplelists-template
 				   `((number ,number)
 				     (prefix "")))))))
+	 (date (srfi-date-to-show srfi))
 	 (status (srfi/status srfi))
 	 (title (srfi/title srfi))
 	 (authors (srfi/authors srfi))
@@ -102,6 +103,7 @@
       (lambda ()
 	(invoke-template index-template
 			 `((authors ,authors)
+			   (date ,date)
 			   (email-archives ,archives)
 			   (number ,number)
 			   (status ,status)

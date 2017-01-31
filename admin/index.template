@@ -12,7 +12,7 @@
   <body>
     <h1>SRFI <*<number>*>: <*<title>*></h1>
     <p class="authors">by <*<authors>*></p>
-    <p class="status">status: <em><*<status>*></em></p>
+    <p class="status">status: <em><*<status>*></em> (<*<date>*>)</p>
 
     <ul>
       <li><a href="srfi-<*<number>*>.html">The SRFI Document</a></li>
