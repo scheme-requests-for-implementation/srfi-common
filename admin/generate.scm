@@ -66,6 +66,13 @@
 (define srfi-list-template
   (read-template "srfi-common/admin/srfi-list.template"))
 
+(define (srfi-date-to-show srfi)
+  (case (srfi/status srfi)
+    ((draft) (srfi/draft-date srfi))
+    ((final) (srfi/done-date srfi))
+    ((withdrawn) (srfi/done-date srfi))
+    (else (error "Unknown status."))))
+
 (define (write-single-srfi-index-page srfi)
   (let* ((number (srfi/number srfi))
 	 (archives
@@ -127,13 +134,6 @@
   (do ((srfis srfis (cdr srfis)))
       ((null? srfis))
     (write-single-srfi-readme (car srfis))))
-
-(define (srfi-date-to-show srfi)
-  (case (srfi/status srfi)
-    ((draft) (srfi/draft-date srfi))
-    ((final) (srfi/done-date srfi))
-    ((withdrawn) (srfi/done-date srfi))
-    (else (error "Unknown status."))))
 
 (define (status->name status)
   (case status
