@@ -16,20 +16,20 @@ Scheme implementors to adopt them.
 
 If you're interested in reading existing proposals, writing a new one,
 providing feedback on a draft proposal, helping with a reference
-implementation, or reporting a bug, please read about [[srfi-process.html][our process]],
-skim our [[srfi-faq.html][FAQ]], and [[srfi-list-subscribe.html][subscribe]] to some of our mailing lists.
+implementation, or reporting a bug, please read about [[https://srfi.schemers.org/srfi-process.html][our process]],
+skim our [[https://srfi.schemers.org/srfi-faq.html][FAQ]], and [[https://srfi.schemers.org/srfi-list-subscribe.html][subscribe]] to some of our mailing lists.
 
 In addition to the complete list above, there are detailed lists of
-[[draft-srfis.html][draft]], [[final-srfis.html][final]], and [[withdrawn-srfis.html][withdrawn]] SRFIs.
+[[https://srfi.schemers.org/draft-srfis.html][draft]], [[https://srfi.schemers.org/final-srfis.html][final]], and [[https://srfi.schemers.org/withdrawn-srfis.html][withdrawn]] SRFIs.
 
 Every SRFI is hosted on Github, but if you'd like a complete archive
-of all SRFI documents and code, please download [[srfi.tgz][srfi.tgz]].
+of all SRFI documents and code, please download [[https://srfi.schemers.org/srfi.tgz][srfi.tgz]].
 
 The SRFI process has been important to the development of some of the
 official Scheme standards, including [[http://www.r6rs.org/][R6RS]] and [[http://r7rs.org][R7RS]].  It has been
-running [[srfi-history.html][since 1998]], and there have been many [[srfi-editors.html][different editors]].
+running [[https://srfi.schemers.org/srfi-history.html][since 1998]], and there have been many [[https://srfi.schemers.org/srfi-editors.html][different editors]].
 
-Here's a graph of the total number of SRFIs since [[../srfi-0][SRFI 0]] was published
+Here's a graph of the total number of SRFIs since [[https://srfi.schemers.org/srfi-0][SRFI 0]] was published
 on 1999/1/5:
 
 #+ATTR_HTML: :width 100%
