@@ -8,21 +8,26 @@
 
 [[file:srfi.png]]
 
-The "Scheme Requests for Implementation" (*SRFI*) process is an
-approach to helping Scheme users to write portable and yet useful
-code.  It is a forum for people interested in coordinating libraries
-and other additions to the Scheme language between implementations.
+The purpose of the Scheme Requests for Implementation (*SRFI*) process
+is to help Scheme users write portable, useful code.  We write
+concrete, detailed proposals and reference implementations for
+libraries and other additions to the Scheme language, and we encourage
+Scheme implementors to adopt them.
 
-- [[file:srfi-implementers.html][Scheme Systems Supporting SRFI]]
-- [[file:srfi-process.html][The SRFI Process Document]]
-- [[file:srfi-faq.html][The SRFI FAQ]]
-- [[file:final-srfis.html][Final SRFIs]]
-- [[file:draft-srfis.html][Draft SRFIs]]
-- [[file:withdrawn-srfis.html][Withdrawn SRFIs]]
-- [[file:srfi-list-subscribe.html][SRFI Mailing Lists: Subscribing/Unsubscribing]]
-- [[file:srfi-history.html][SRFI History]]
-- [[file:srfi-editors.html][SRFI Editors]]
-- [[file:srfi.tgz][srfi.tgz]], a complete archive of all SRFI documents and code
+If you're interested in reading existing proposals, writing a new one,
+providing feedback on a draft proposal, helping with a reference
+implementation, or reporting a bug, please read about [[srfi-process.html][our process]],
+skim our [[srfi-faq.html][FAQ]], and [[srfi-list-subscribe.html][subscribe]] to some of our mailing lists.
+
+In addition to the complete list above, there are detailed lists of
+[[draft-srfis.html][draft]], [[final-srfis.html][final]], and [[withdrawn-srfis.html][withdrawn]] SRFIs.
+
+Every SRFI is hosted on Github, but if you'd like a complete archive
+of all SRFI documents and code, please download [[srfi.tgz][srfi.tgz]].
+
+The SRFI process has been important to the development of some of the
+official Scheme standards, including [[http://www.r6rs.org/][R6RS]] and [[http://r7rs.org][R7RS]].  It has been
+running [[srfi-history.html][since 1998]], and there have been many [[srfi-editors.html][different editors]].
 
 Here's a graph of the total number of SRFIs since [[../srfi-0][SRFI 0]] was published
 on 1999/1/5:
@@ -31,5 +36,3 @@ on 1999/1/5:
 file:srfi.svg
 
 — [[mailto:srfi-editors at srfi dot schemers dot org][the SRFI editors]] (email)
-
-The history of this document (i.e. the =.org= source) is [[https://github.com/scheme-requests-for-implementation/srfi-common/commits/master/README.org][here]].
