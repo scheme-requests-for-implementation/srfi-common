@@ -110,10 +110,10 @@
 			   (title ,title)))))))
 
 (define (write-single-srfi-readme srfi)
-  (let* ((number (car srfi))
-	 (status (cadr srfi))
-	 (title (caddr srfi))
-	 (authors (cadddr srfi))
+  (let* ((number (srfi/number srfi))
+	 (status (srfi/status srfi))
+	 (title (srfi/title srfi))
+	 (authors (srfi/authors srfi))
 	 (pathname (format #f "srfi-~A/README.org" number)))
     (with-output-to-file pathname
       (lambda ()
