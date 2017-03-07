@@ -36,10 +36,10 @@
   border-left-color: #55aa55;
 }
 .list > li.final {
-  border-left-color: #aa5585;
+  border-left-color: purple;
 }
 .list > li.withdrawn {
-  border-left-color: #d49a6a;
+  border-left-color: lightgray;
 }
 .name, .number {
   font-weight: bold;
