@@ -143,7 +143,7 @@
   (142 draft "Bitwise Operations" "John Cowan" "2016/9/20")
   (143 draft "Fixnums" "John Cowan" "2016/9/20")
   (144 draft "Flonums" "John Cowan" "2016/9/20")
-  (145 draft "Assumptions" "Marc Nieper-Wißkirchen" "2016/12/18")
+  (145 final "Assumptions" "Marc Nieper-Wißkirchen" "2016/12/18" "2017/3/31")
   (146 draft "Mappings" "Marc Nieper-Wißkirchen" "2016/12/18")
   (147 final "Custom macro transformers" "Marc Nieper-Wißkirchen" "2016/12/24" "2017/3/7")
   (148 draft "Composable macros" "Marc Nieper-Wißkirchen" "2016/12/31")
