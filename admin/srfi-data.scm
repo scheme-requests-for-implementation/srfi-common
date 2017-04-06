@@ -140,7 +140,7 @@
   (139 final "Syntax parameters" "Marc Nieper-Wißkirchen" "2016/7/7" "2016/10/2")
   (140 draft "Immutable Strings" "Per Bothner" "2016/7/11")
   (141 final "Integer division" "Taylor Campbell, John Cowan" "2016/8/29" "2016/12/14")
-  (142 draft "Bitwise Operations" "John Cowan" "2016/9/20")
+  (142 final "Bitwise Operations" "John Cowan" "2016/9/20")
   (143 draft "Fixnums" "John Cowan" "2016/9/20")
   (144 draft "Flonums" "John Cowan" "2016/9/20")
   (145 final "Assumptions" "Marc Nieper-Wißkirchen" "2016/12/18" "2017/3/31")
