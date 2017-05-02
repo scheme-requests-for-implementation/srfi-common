@@ -71,5 +71,8 @@ href="srfi.tgz">srfi.tgz</a>.</p>
     <p>
       — <a href="mailto:srfi-editors%20at%20srfi%20dot%20schemers%20dot%20org">the SRFI editors</a> (email)</p>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.4.1/list.min.js" type="application/javascript"></script>
+    <script crossorigin="anonymous"
+	    integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm"
+	    src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"
+	    type="application/javascript"></script>
     <script src="list.js" type="application/javascript"></script></body></html>

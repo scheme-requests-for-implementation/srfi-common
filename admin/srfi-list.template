@@ -18,5 +18,8 @@
       <button class="sort" data-sort="name" tabindex="4" >name</button>
       <button class="sort" data-sort="number" tabindex="5" >number</button>
       <ul class="list"><*<srfi-list>*></ul></div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.4.1/list.min.js" type="application/javascript"></script>
+    <script crossorigin="anonymous"
+	    integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm"
+	    src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"
+	    type="application/javascript"></script>
     <script src="list.js" type="application/javascript"></script></body></html>
