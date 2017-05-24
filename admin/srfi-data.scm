@@ -138,7 +138,7 @@
   (137 final "Minimal Unique Types" "John Cowan, Marc Nieper-Wißkirchen" "2016/6/27" "2016/10/4")
   (138 final "Compiling Scheme programs to executables" "Marc Nieper-Wißkirchen" "2016/7/6" "2016/9/28")
   (139 final "Syntax parameters" "Marc Nieper-Wißkirchen" "2016/7/7" "2016/10/2")
-  (140 draft "Immutable Strings" "Per Bothner" "2016/7/11")
+  (140 final "Immutable Strings" "Per Bothner" "2016/7/11" "2017/5/24")
   (141 final "Integer division" "Taylor Campbell, John Cowan" "2016/8/29" "2016/12/14")
   (142 final "Bitwise Operations" "John Cowan" "2016/9/20" "2017/4/5")
   (143 draft "Fixnums" "John Cowan" "2016/9/20")
