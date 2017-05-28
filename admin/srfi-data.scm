@@ -141,7 +141,7 @@
   (140 final "Immutable Strings" "Per Bothner" "2016/7/11" "2017/5/24")
   (141 final "Integer division" "Taylor Campbell, John Cowan" "2016/8/29" "2016/12/14")
   (142 final "Bitwise Operations" "John Cowan" "2016/9/20" "2017/4/5")
-  (143 draft "Fixnums" "John Cowan" "2016/9/20")
+  (143 final "Fixnums" "John Cowan" "2016/9/20" "2017/5/27")
   (144 draft "Flonums" "John Cowan" "2016/9/20")
   (145 final "Assumptions" "Marc Nieper-Wißkirchen" "2016/12/18" "2017/3/31")
   (146 draft "Mappings" "Marc Nieper-Wißkirchen" "2016/12/18")
