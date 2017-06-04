@@ -149,4 +149,5 @@
   (148 draft "Composable macros" "Marc Nieper-Wißkirchen" "2016/12/31")
   (149 draft "Basic Syntax-rules Template Extensions" "Marc Nieper-Wißkirchen" "2017/1/1")
   (150 draft "Hygienic ERR5RS Record Syntax (reduced)" "Marc Nieper-Wißkirchen" "2017/1/2")
-  (151 draft "Bitwise Operations" "John Cowan" "2017/5/3"))
+  (151 draft "Bitwise Operations" "John Cowan" "2017/5/3")
+  (152 draft "String Library (reduced)" "John Cowan" "2017/6/3"))
