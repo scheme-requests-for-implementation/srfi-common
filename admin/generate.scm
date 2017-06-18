@@ -57,8 +57,6 @@
   (read-template "srfi-common/admin/srfi-box.template"))
 
 (define index-template (read-template "srfi-common/admin/index.template"))
-(define archive-old-template
-  (read-template "srfi-common/admin/archive-old.template"))
 (define archive-simplelists-template
   (read-template "srfi-common/admin/archive-simplelists.template"))
 (define readme-template (read-template "srfi-common/admin/readme.template"))
@@ -76,24 +74,11 @@
 (define (write-single-srfi-index-page srfi)
   (let* ((number (srfi/number srfi))
 	 (archives
-	  (if (< number first-simplelists-srfi)
-	      (with-output-to-string
-		(lambda ()
-		  (invoke-template archive-old-template
-				   `((file-prefix "")
-				     (name-prefix "Pre")))
-		  (unless (memv number srfi-no-post-mail)
-		    (invoke-template archive-old-template
-				     `((file-prefix "post-")
-				       (name-prefix "Post"))))
-		  (invoke-template archive-simplelists-template
-				   `((number ,number)
-				     (prefix "Complete ")))))
-	      (with-output-to-string
-		(lambda ()
-		  (invoke-template archive-simplelists-template
-				   `((number ,number)
-				     (prefix "")))))))
+	  (with-output-to-string
+	    (lambda ()
+	      (invoke-template archive-simplelists-template
+			       `((number ,number)
+				 (prefix ""))))))
 	 (date (srfi-date-to-show srfi))
 	 (status (srfi/status srfi))
 	 (title (srfi/title srfi))

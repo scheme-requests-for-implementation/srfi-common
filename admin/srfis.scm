@@ -42,13 +42,6 @@
 
 (define srfis (map (lambda (l) (apply make-srfi l)) srfi-data))
 
-;; This is the first SRFI whose email archive was hosted first on
-;; Simplelists.  SRFI with smaller numbers were originally hosted on
-;; Michael Sperber's FreeBSD system, so the archive links are different.
-(define first-simplelists-srfi 122)
-
-(define srfi-no-post-mail '(104 117 118 120 121))
-
 (define srfi-assoc
   (association-procedure = srfi/number))
 
