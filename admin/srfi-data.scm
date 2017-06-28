@@ -150,4 +150,5 @@
   (149 draft "Basic Syntax-rules Template Extensions" "Marc Nieper-Wißkirchen" "2017/1/1")
   (150 draft "Hygienic ERR5RS Record Syntax (reduced)" "Marc Nieper-Wißkirchen" "2017/1/2")
   (151 draft "Bitwise Operations" "John Cowan" "2017/5/3")
-  (152 draft "String Library (reduced)" "John Cowan" "2017/6/3"))
+  (152 draft "String Library (reduced)" "John Cowan" "2017/6/3")
+  (153 draft "Immutable ordered sets and bags" "John Cowan" "2017/6/28"))
