@@ -152,4 +152,5 @@
   (151 draft "Bitwise Operations" "John Cowan" "2017/5/3")
   (152 draft "String Library (reduced)" "John Cowan" "2017/6/3")
   (153 draft "Immutable ordered sets and bags" "John Cowan" "2017/6/28")
-  (154 draft "First-class dynamic environments" "Marc Nieper-Wißkirchen" "2017/7/3"))
+  (154 draft "First-class dynamic environments" "Marc Nieper-Wißkirchen" "2017/7/3")
+  (155 draft "Promises" "Marc Nieper-Wißkirchen" "2017/7/4"))
