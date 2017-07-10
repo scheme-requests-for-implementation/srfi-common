@@ -149,7 +149,7 @@
   (148 draft "Eager syntax-rules" "Marc Nieper-Wißkirchen" "2016/12/31")
   (149 final "Basic Syntax-rules Template Extensions" "Marc Nieper-Wißkirchen" "2017/1/1" "2017/7/8")
   (150 draft "Hygienic ERR5RS Record Syntax (reduced)" "Marc Nieper-Wißkirchen" "2017/1/2")
-  (151 draft "Bitwise Operations" "John Cowan" "2017/5/3")
+  (151 final "Bitwise Operations" "John Cowan" "2017/5/3" "2017/7/10")
   (152 draft "String Library (reduced)" "John Cowan" "2017/6/3")
   (153 draft "Immutable ordered sets and bags" "John Cowan" "2017/6/28")
   (154 draft "First-class dynamic environments" "Marc Nieper-Wißkirchen" "2017/7/3")
