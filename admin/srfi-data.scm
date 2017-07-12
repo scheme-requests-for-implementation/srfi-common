@@ -48,7 +48,7 @@
   (47 final "Array" "Aubrey Jaffer" "2003/11/11" "2004/6/14")
   (48 final "Intermediate Format Strings" "Ken Dickey" "2003/11/25" "2004/3/2")
   (49 final "Indentation-sensitive syntax" "Egil Möller" "2003/11/30" "2005/7/22")
-  (50 withdrawn "SRFI 50: Mixing Scheme and C" "Richard Kelsey and Michael Sperber" "2003/12/22" "2005/12/20")
+  (50 withdrawn "Mixing Scheme and C" "Richard Kelsey and Michael Sperber" "2003/12/22" "2005/12/20")
   (51 final "Handling rest list" "Joo ChurlSoo" "2004/01/18" "2004/6/7")
   (52 withdrawn "Permitting and Supporting Extended Character Sets" "Thomas Lord (lord@emf.net aka lord@gnu.org)" "2004/02/09" "2004/06/17")
   (53 withdrawn "Syntactic computations with computation-rules" "André van Tonder" "2004/03/16" "2004/09/06")
