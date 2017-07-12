@@ -14,6 +14,22 @@
 	    integrity="sha384-Ra6zh6uYMmH5ydwCqqMoykyf1T/+ZcnOQfFPhDrp2kI4OIxadnhsvvA2vv9A7xYv"
 	    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 	    type="text/javascript"></script>
+    <style>
+     .search {
+       border: solid 1px #ccc;
+       border-radius: 5px;
+       padding: 7px 14px;
+       margin-bottom: 10px;
+       margin-right: 2em;
+     }
+     .search:focus {
+       border-color: #aaa;
+       outline: none;
+     }
+     ul.list { list-style-type: none; magin: 0; padding: 0; }
+     ul.list > li > a { font-size: 2em; }
+     ul.list > li > .title { font-size: 2em; }
+    </style>
   </head>
 
   <body>
@@ -23,7 +39,7 @@
 <p>These are the abstracts from all SRFIs, collected on one page for easy reference.</p>
 
 <div id="srfis">
-  <input class="search" placeholder="Search" tabindex="1" />
+  <input class="search" placeholder="Search abstracts" tabindex="1" />
   <ul class="list">
 
 <li><a href="srfi-0">SRFI <span class="number">0</span></a>: <span class="title">Feature-based conditional expansion construct</span>
