@@ -976,7 +976,7 @@ advanced format strings in that it does not allow, aside from ~F, for controlled
   giving the programmer the ability to layout the code as to maximize
   readability.</p>
 
-<h2><a href="srfi-50/">SRFI 50</a>: SRFI 50: Mixing Scheme and C</h2>
+<h2><a href="srfi-50/">SRFI 50</a>: Mixing Scheme and C</h2>
 
 <p>This SRFI describes an interface for calling C functions from Scheme, calling Scheme functions from C, and allocating storage in the Scheme heap.  Scheme manages stub functions in C that negotiate between the calling conventions of Scheme and C and the memory allocation policies of both worlds. </p><p>The following facilities are available for interfacing between Scheme and C:</p><ul><li>Scheme code can call C functions.</li><li>The external interface provides full introspection for all Scheme objects.  External code may inspect, modify, and allocate Scheme objects arbitrarily.</li><li>External code may signal errors to the Scheme system.</li><li>External code may call back into Scheme.  Scheme correctly unrolls the process stack on non-local exits.</li><li>External modules may register bindings of names to values with a central registry accessible from Scheme.  Conversely, Scheme code can register shared bindings for access by C code.</li></ul><p>The interface is closely based on that of <a href="http://www.s48.org/">Scheme 48</a> and <a href="http://www.scsh.net/">scsh</a>.</p>
 
