@@ -1238,86 +1238,8 @@ easy to program and understand.</p>
 
 <h2><a href="srfi-66/">SRFI 66</a>: Octet Vectors</h2>
 
-<p>This reference implementation makes use of <a href="srfi-9/">SRFI 9</a> (Defining Record Types) and <a href="srfi-23/">SRFI 23</a> (Error reporting mechanism) .</p><pre>(define-record-type :u8vector
-  (really-make-u8vector elements)
-  u8vector?
-  (elements u8vector-elements))
-
-(define (ensure-octet thing)
-  (if (not (and (integer? thing)
-		(exact? thing)
-		(&gt;= thing 0)
-		(&lt;= thing 255)))
-      (error &quot;not a octet&quot; thing)))
-
-(define (make-u8vector k fill)
-  (ensure-octet fill)
-  (really-make-u8vector (make-vector k fill)))
-
-(define (list-&gt;u8vector octets)
-  (for-each ensure-octet octets)
-  (really-make-u8vector (apply vector octets)))
-
-(define (u8vector-&gt;list octets)
-  (vector-&gt;list (u8vector-elements octets)))
-
-(define (u8vector . octets)
-  (list-&gt;u8vector octets))
-
-(define (u8vector-length u8vector)
-  (vector-length (u8vector-elements u8vector)))
-
-(define (u8vector-ref u8vector k)
-  (vector-ref (u8vector-elements u8vector) k))
-
-(define (u8vector-set! u8vector k octet)
-  (ensure-octet octet)
-  (vector-set! (u8vector-elements u8vector) k octet))
-
-(define (u8vector-copy! source source-start target target-start count)
-  (if (&gt;= source-start target-start)
-      (do ((i 0 (+ i 1)))
-	  ((= i count))
-        (u8vector-set! target
-                          (+ target-start i)
-                          (u8vector-ref source (+ source-start i))))
-      (do ((i (- count 1) (- i 1)))
-	  ((= i -1))
-        (u8vector-set! target
-                          (+ target-start i)
-                          (u8vector-ref source (+ source-start i))))))
-
-(define (u8vector-copy u8vector)
-  (let* ((size (u8vector-length u8vector))
-	 (copy (make-u8vector size 0)))
-    (u8vector-copy! u8vector 0 copy 0 size)
-    copy))
-
-(define (u8vector=? u8vector-1 u8vector-2)
-  (let ((size (u8vector-length u8vector-1)))
-    (and (= size (u8vector-length u8vector-2))
-	 (let loop ((i 0))
-	   (or (&gt;= i size)
-	       (and (= (u8vector-ref u8vector-1)
-		       (u8vector-ref u8vector-2))
-		    (loop (+ 1 i))))))))
-
-(define (u8vector-compare u8vector-1 u8vector-2)
-  (let ((length-1 (u8vector-length u8vector-1))
-        (length-2 (u8vector-length u8vector-2)))
-    (cond
-      ((&lt; length-1 length-2) -1)
-      ((&gt; length-1 length-2)  1)
-      (else
-       (let loop ((i 0))
-         (if (= i length-1)
-             0
-             (let ((elt-1 (u8vector-ref u8vector-1 i))
-                   (elt-2 (u8vector-ref u8vector-2 i)))
-               (cond ((&lt; elt-1 elt-2) -1)
-                     ((&gt; elt-1 elt-2)  1)
-                     (else (loop (+ i 1)))))))))))
-</pre>
+<p>This SRFI defines a set of procedures for creating, accessing, and
+  manipulating uniform vectors of octets.</p>
 
 <h2><a href="srfi-67/">SRFI 67</a>: Compare Procedures</h2>
 
