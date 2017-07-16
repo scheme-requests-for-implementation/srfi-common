@@ -151,7 +151,7 @@
   (150 draft "Hygienic ERR5RS Record Syntax (reduced)" "Marc Nieper-Wißkirchen" "2017/1/2")
   (151 final "Bitwise Operations" "John Cowan" "2017/5/3" "2017/7/10")
   (152 draft "String Library (reduced)" "John Cowan" "2017/6/3")
-  (153 draft "Immutable ordered sets and bags" "John Cowan" "2017/6/28")
+  (153 draft "Ordered Sets and Bags" "John Cowan" "2017/6/28")
   (154 draft "First-class dynamic environments" "Marc Nieper-Wißkirchen" "2017/7/3")
   (155 draft "Promises" "Marc Nieper-Wißkirchen" "2017/7/4")
   (156 draft "Syntactic combiners for binary predicates" "Panicz Maciej Godek" "2017/7/10"))
