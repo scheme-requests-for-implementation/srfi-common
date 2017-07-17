@@ -2546,6 +2546,22 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       (&lt; _ y))</code> and <code>(lambda (_) (&lt; x _))</code>,
       respectively. This SRFI document also describes some other uses of the
       <code>is</code> macro and its limitations.</span>
+      <li>
+	<a href="srfi-157">SRFI <span class="number">157</span></a>: <span class="title">Continuation marks</span>
+	<p><span class="abstract">
+	  Continuation marks are a programming language feature that
+	allows to attach information to and to retrieve from
+	continuations, generalizing stack inspection.  Conceptually, a
+	continuation consists of a number of frames where each frame
+	stands for an active procedure call that is not a tail-call.  At
+	most one mark for a given key can be attached to a single frame.</span>
+      <p><span class="abstract">
+	Besides stack inspection, continuation marks can be used to
+	implement dynamic scope, delimited continuations, or delayed
+	evaluation that is able to handle iterative lazy algorithms.</span>
+      <p><span class="abstract">
+	This SRFI proposes to add continuation marks to the Scheme
+	programming language.</span>
   </ul>
   <script crossorigin="anonymous" integrity=
   "sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm"
