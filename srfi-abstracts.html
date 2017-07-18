@@ -43,6 +43,13 @@ type="text/javascript"></script>
    border-color: #aaa;
    outline: none;
  }
+ .status:after {
+   content: ")"
+ }
+ .status:before {
+   content: "("
+ }
+ }
  ul.list {
    list-style-type: none;
    magin: 0;
@@ -66,8 +73,7 @@ reference.
   <input class="search" placeholder="Search abstracts" tabindex="1">
   <ul class="list">
     <li>
-      <a href="srfi-0">SRFI <span class="number">0</span></a>: <span class=
-      "title">Feature-based conditional expansion construct</span>
+      <a href="srfi-0">SRFI <span class="number">0</span></a>: <span class="title">Feature-based conditional expansion construct</span> <span class="status">final</span>
       <p><span class="abstract">It is desirable that programs which depend on
       additions to standard Scheme name those additions. SRFIs provide the
       specifications of these additions ("features"), and SRFI 0 provides the
@@ -107,7 +113,7 @@ reference.
       generalizing the feature testing construct.</span>
     <li>
       <a href="srfi-1">SRFI <span class="number">1</span></a>: <span class=
-      "title">List Library</span>
+      "title">List Library</span> <span class="status">final</span>
       <p><span class="abstract"><abbr title=
       "Revised^5 Report on Scheme">R5RS</abbr> Scheme has an impoverished set
       of list-processing utilities, which is a problem for authors of portable
@@ -123,7 +129,7 @@ reference.
     <li>
       <a href="srfi-2">SRFI <span class="number">2</span></a>: <span class=
       "title">AND-LET*: an AND with local bindings, a guarded LET* special
-      form</span>
+      form</span> <span class="status">final</span>
       <p><span class="abstract">Like an ordinary AND, an AND-LET* special form
       evaluates its arguments -- expressions -- one after another in order,
       till the first one that yields #f. Unlike AND, however, a non-#f result
@@ -132,7 +138,7 @@ reference.
       AND.</span>
     <li>
       <a href="srfi-3">SRFI <span class="number">3</span></a>: <span class=
-      "title">List-Set Library</span>
+      "title">List-Set Library</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI proposes a coherent and comprehensive
       set of procedures for manipulating lists as sets; it is accompanied by a
       reference implementation of the spec. The reference implementation
@@ -147,7 +153,7 @@ reference.
       on large lists should use alternate techniques.</span>
     <li>
       <a href="srfi-4">SRFI <span class="number">4</span></a>: <span class=
-      "title">Homogeneous numeric vector datatypes</span>
+      "title">Homogeneous numeric vector datatypes</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI describes a set of datatypes for
       vectors whose elements are of the same numeric type (signed or unsigned
       exact integer or inexact real of a given precision). These datatypes
@@ -158,7 +164,7 @@ reference.
       homogeneous vectors).</span>
     <li>
       <a href="srfi-5">SRFI <span class="number">5</span></a>: <span class=
-      "title">A compatible let form with signatures and rest arguments</span>
+      "title">A compatible let form with signatures and rest arguments</span> <span class="status">final</span>
       <p><span class="abstract">The <i>named-let</i> incarnation of the
       <code>let</code> form has two slight inconsistencies with the
       <code>define</code> form. As defined, the <code>let</code> form makes no
@@ -169,7 +175,7 @@ reference.
       traditional <code>let</code> form but for minor extensions.</span>
     <li>
       <a href="srfi-6">SRFI <span class="number">6</span></a>: <span class=
-      "title">Basic String Ports</span>
+      "title">Basic String Ports</span> <span class="status">final</span>
       <p><span class="abstract">Scheme's i/o primitives are extended by adding
       three new procedures that</span>
       <ul>
@@ -182,7 +188,7 @@ reference.
       </ul>
     <li>
       <a href="srfi-7">SRFI <span class="number">7</span></a>: <span class=
-      "title">Feature-based program configuration language</span>
+      "title">Feature-based program configuration language</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI describes a configuration language to
       be used for specifing the set of Scheme features or extensions required
       to run a program. In addition to a list of required features, a program
@@ -193,7 +199,7 @@ reference.
       subset.</span>
     <li>
       <a href="srfi-8">SRFI <span class="number">8</span></a>: <span class=
-      "title">receive: Binding to multiple values</span>
+      "title">receive: Binding to multiple values</span> <span class="status">final</span>
       <p><span class="abstract">The only mechanism that R<sup>5</sup>RS
       provides for binding identifiers to the values of a multiple-valued
       expression is the primitive <code>call-with-values</code>. This SRFI
@@ -201,7 +207,7 @@ reference.
       bindings.</span>
     <li>
       <a href="srfi-9">SRFI <span class="number">9</span></a>: <span class=
-      "title">Defining Record Types</span>
+      "title">Defining Record Types</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI describes syntax for creating new
       data types, called record types. A predicate, constructor, and field
       accessors and modifiers are defined for each record type. Each new record
@@ -209,7 +215,7 @@ reference.
       and Scheme's predefined types.</span>
     <li>
       <a href="srfi-10">SRFI <span class="number">10</span></a>: <span class=
-      "title">#, external form</span>
+      "title">#, external form</span> <span class="status">final</span>
       <p><span class="abstract">The present SRFI proposes an extensible
       external representation of Scheme values, a notational convention for
       future SRFIs. This SRFI adds <code>#,(</code> as a new token and extends
@@ -225,13 +231,13 @@ reference.
       application.</span>
     <li>
       <a href="srfi-11">SRFI <span class="number">11</span></a>: <span class=
-      "title">Syntax for receiving multiple values</span>
+      "title">Syntax for receiving multiple values</span> <span class="status">final</span>
       <p><span class="abstract">The SRFI introduces syntactic forms LET-VALUES
       and LET*-VALUES that bind the values of expressions that return multiple
       values.</span>
     <li>
       <a href="srfi-12">SRFI <span class="number">12</span></a>: <span class=
-      "title">Exception Handling</span>
+      "title">Exception Handling</span> <span class="status">withdrawn</span>
       <p><span class="abstract">The SRFI defines exception-handling constructs
       for Scheme, including</span>
       <ul>
@@ -254,7 +260,7 @@ reference.
       exception; such a specification is left open for future SRFIs.</span>
     <li>
       <a href="srfi-13">SRFI <span class="number">13</span></a>: <span class=
-      "title">String Libraries</span>
+      "title">String Libraries</span> <span class="status">final</span>
       <p><span class="abstract"><abbr title=
       "Revised^5 Report on Scheme">R5RS</abbr> Scheme has an impoverished set
       of string-processing utilities, which is a problem for authors of
@@ -273,7 +279,7 @@ reference.
       "Revised^5 Report on Scheme">R5RS</abbr>.</span>
     <li>
       <a href="srfi-14">SRFI <span class="number">14</span></a>: <span class=
-      "title">Character-set Library</span>
+      "title">Character-set Library</span> <span class="status">final</span>
       <p><span class="abstract">The ability to efficiently represent and
       manipulate sets of characters is an unglamorous but very useful
       capability for text-processing code -- one that tends to pop up in the
@@ -298,17 +304,17 @@ reference.
       </ul>
     <li>
       <a href="srfi-15">SRFI <span class="number">15</span></a>: <span class=
-      "title">Syntax for dynamic scoping</span>
+      "title">Syntax for dynamic scoping</span> <span class="status">withdrawn</span>
       <p><span class="abstract">FLUID-LET, a binding syntax for dynamic
       scoping, is introduced.</span>
     <li>
       <a href="srfi-16">SRFI <span class="number">16</span></a>: <span class=
-      "title">Syntax for procedures of variable arity</span>
+      "title">Syntax for procedures of variable arity</span> <span class="status">final</span>
       <p><span class="abstract">CASE-LAMBDA, a syntax for procedures with a
       variable number of arguments, is introduced.</span>
     <li>
       <a href="srfi-17">SRFI <span class="number">17</span></a>: <span class=
-      "title">Generalized set!</span>
+      "title">Generalized set!</span> <span class="status">final</span>
       <p><span class="abstract">This is a proposal to allow procedure calls
       that evaluate to the "value of a location" to be used to <em>set</em> the
       value of the location, when used as the first operand of
@@ -333,7 +339,7 @@ reference.
       procedure value, rather than a name.</span>
     <li>
       <a href="srfi-18">SRFI <span class="number">18</span></a>: <span class=
-      "title">Multithreading support</span>
+      "title">Multithreading support</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines the following multithreading
       datatypes for Scheme</span>
       <ul>
@@ -346,7 +352,7 @@ reference.
       exceptions and some multithreading exception datatypes.</span>
     <li>
       <a href="srfi-19">SRFI <span class="number">19</span></a>: <span class=
-      "title">Time Data Types and Procedures</span>
+      "title">Time Data Types and Procedures</span> <span class="status">final</span>
       <p><span class="abstract">Points in time are represented a the number of
       seconds (with nanosecond precision) since "the epoch," a zero point in
       time. Several standard variants are defined, including UTC (universal
@@ -364,7 +370,7 @@ reference.
       representations of dates.</span>
     <li>
       <a href="srfi-20">SRFI <span class="number">20</span></a>: <span class=
-      "title">Simple object system</span>
+      "title">Simple object system</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI presents an object system to define
       classes, generic functions as well as to support some level of
       introspection. This object system is based on Meroon-V3 which is itself
@@ -373,7 +379,7 @@ reference.
       distributed and used since 1992.</span>
     <li>
       <a href="srfi-21">SRFI <span class="number">21</span></a>: <span class=
-      "title">Real-time multithreading support</span>
+      "title">Real-time multithreading support</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines the following multithreading
       datatypes for Scheme</span>
       <ul>
@@ -386,7 +392,7 @@ reference.
       exceptions and some multithreading exception datatypes.</span>
     <li>
       <a href="srfi-22">SRFI <span class="number">22</span></a>: <span class=
-      "title">Running Scheme Scripts on Unix</span>
+      "title">Running Scheme Scripts on Unix</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI describes basic prerequisites for
       running Scheme programs as Unix scripts in a uniform way. Specifically,
       it describes:</span>
@@ -400,21 +406,21 @@ reference.
       </ul>
     <li>
       <a href="srfi-23">SRFI <span class="number">23</span></a>: <span class=
-      "title">Error reporting mechanism</span>
+      "title">Error reporting mechanism</span> <span class="status">final</span>
       <p><span class="abstract">A mechanism is proposed to allow Scheme code to
       report errors and abort execution. The proposed mechanism is already
       implemented in several Scheme systems and can be implemented, albeit
       imperfectly, in any R5RS conforming Scheme.</span>
     <li>
       <a href="srfi-24">SRFI <span class="number">24</span></a>: <span class=
-      "title">Define-syntax in local lexical scopes</span>
+      "title">Define-syntax in local lexical scopes</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This document specifies a proper extension to
       Scheme which allows <b>define-syntax</b> forms to appear in those places
       where local definitions can appear (R5RS, 5.2.2). A corresponding
       letrec-variant is described.</span>
     <li>
       <a href="srfi-25">SRFI <span class="number">25</span></a>: <span class=
-      "title">Multi-dimensional Array Primitives</span>
+      "title">Multi-dimensional Array Primitives</span> <span class="status">final</span>
       <p><span class="abstract">A core set of procedures for creating and
       manipulating heterogeneous multidimensional arrays is proposed. The
       design is consistent with the rest of Scheme and independent of other
@@ -425,7 +431,7 @@ reference.
       contribution by Alan Bawden in 1993.</span>
     <li>
       <a href="srfi-26">SRFI <span class="number">26</span></a>: <span class=
-      "title">Notation for Specializing Parameters without Currying</span>
+      "title">Notation for Specializing Parameters without Currying</span> <span class="status">final</span>
       <p><span class="abstract">When programming in functional style, it is
       frequently necessary to specialize some of the parameters of a
       multi-parameter procedure. For example, from the binary operation
@@ -489,7 +495,7 @@ reference.
       such as <code>lambda</code>.</span>
     <li>
       <a href="srfi-27">SRFI <span class="number">27</span></a>: <span class=
-      "title">Sources of Random Bits</span>
+      "title">Sources of Random Bits</span> <span class="status">final</span>
       <p><span class="abstract">This document specifies an interface to sources
       of random bits, or "random sources" for brevity. In particular, there are
       three different ways to use the interface, with varying demands on the
@@ -528,14 +534,14 @@ reference.
       reliable, and efficient way.</span>
     <li>
       <a href="srfi-28">SRFI <span class="number">28</span></a>: <span class=
-      "title">Basic Format Strings</span>
+      "title">Basic Format Strings</span> <span class="status">final</span>
       <p><span class="abstract">This document specifies Format Strings, a
       method of interpreting a Scheme string which contains a number of escape
       sequences that are replaced with other string data according to the
       semantics of each sequence.</span>
     <li>
       <a href="srfi-29">SRFI <span class="number">29</span></a>: <span class=
-      "title">Localization</span>
+      "title">Localization</span> <span class="status">final</span>
       <p><span class="abstract">This document specifies an interface to
       retrieving and displaying locale sensitive messages. A Scheme program can
       register one or more translations of templated messages, and then write
@@ -543,13 +549,13 @@ reference.
       the locale under which the Scheme system is running.</span>
     <li>
       <a href="srfi-30">SRFI <span class="number">30</span></a>: <span class=
-      "title">Nested Multi-line Comments</span>
+      "title">Nested Multi-line Comments</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI extends R5RS by possibly nested,
       multi-line comments. Multi-line comments start with <code>#|</code> and
       end with <code>|#</code>.</span>
     <li>
       <a href="srfi-31">SRFI <span class="number">31</span></a>: <span class=
-      "title">A special form `rec' for recursive evaluation</span>
+      "title">A special form `rec' for recursive evaluation</span> <span class="status">final</span>
       <p><span class="abstract">We propose the implementation of a special form
       called <code>rec</code>. This form is a generalization and combination of
       the forms <code>rec</code> and <code>named-lambda</code> of
@@ -563,7 +569,7 @@ reference.
       external environment.</span>
     <li>
       <a href="srfi-32">SRFI <span class="number">32</span></a>: <span class=
-      "title">Sort Libraries</span>
+      "title">Sort Libraries</span> <span class="status">withdrawn</span>
       <p><span class="abstract">Current Scheme sorting packages are, every one
       of them, surprisingly bad. I've designed the API for a full-featured sort
       toolkit, which I propose as an SRFI. The spec comes with 1200 lines of
@@ -572,7 +578,7 @@ reference.
       what you have.</span>
     <li>
       <a href="srfi-33">SRFI <span class="number">33</span></a>: <span class=
-      "title">Integer Bitwise-operation Library</span>
+      "title">Integer Bitwise-operation Library</span> <span class="status">withdrawn</span>
       <p><span class="abstract">R5RS Scheme has no utilities for performing
       bitwise logical operations on integers or bitstrings, which is a problem
       for authors of portable code. This SRFI proposes a coherent and
@@ -589,7 +595,7 @@ reference.
       *parameter conventions*, however, is. Hence this SRFI.</span>
     <li>
       <a href="srfi-34">SRFI <span class="number">34</span></a>: <span class=
-      "title">Exception Handling for Programs</span>
+      "title">Exception Handling for Programs</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines exception-handling and
       exception-raising constructs for Scheme, including</span>
       <ul>
@@ -604,14 +610,14 @@ reference.
       Dybvig, Matthew Flatt, and Marc Feeley.</span>
     <li>
       <a href="srfi-35">SRFI <span class="number">35</span></a>: <span class=
-      "title">Conditions</span>
+      "title">Conditions</span> <span class="status">final</span>
       <p><span class="abstract">The SRFI defines constructs for creating and
       inspecting <i>condition</i> types and values. A condition value
       encapsulates information about an exceptional situation, or exception.
       This SRFI also defines a few basic condition types.</span>
     <li>
       <a href="srfi-36">SRFI <span class="number">36</span></a>: <span class=
-      "title">I/O Conditions</span>
+      "title">I/O Conditions</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI specifies a set of condition types
       for I/O errors. The condition types are defined in terms of <a href=
       "srfi-35/">SRFI 35</a>. Moreover, this SRFI requires a Scheme system
@@ -622,7 +628,7 @@ reference.
       I/O operations</a>.</span>
     <li>
       <a href="srfi-37">SRFI <span class="number">37</span></a>: <span class=
-      "title">args-fold: a program argument processor</span>
+      "title">args-fold: a program argument processor</span> <span class="status">final</span>
       <p><span class="abstract">Many operating systems make the set of argument
       strings used to invoke a program available (often following the program
       name string in an array called argv). Most programs need to parse and
@@ -631,7 +637,7 @@ reference.
       to POSIX and GNU C Library Reference Manual guidelines.</span>
     <li>
       <a href="srfi-38">SRFI <span class="number">38</span></a>: <span class=
-      "title">External Representation for Data With Shared Structure</span>
+      "title">External Representation for Data With Shared Structure</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI proposes
       <tt>(write-with-shared-structure)</tt> and
       <tt>(read-with-shared-structure)</tt>, procedures for writing and reading
@@ -650,7 +656,7 @@ reference.
       shorter names.</span>
     <li>
       <a href="srfi-39">SRFI <span class="number">39</span></a>: <span class=
-      "title">Parameter objects</span>
+      "title">Parameter objects</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines <i>parameter</i> objects, the
       procedure <code>make-parameter</code> to create parameter objects and the
       <code>parameterize</code> special form to dynamically bind parameter
@@ -661,7 +667,7 @@ reference.
       parameter object to be changed for the dynamic extent of its body.</span>
     <li>
       <a href="srfi-40">SRFI <span class="number">40</span></a>: <span class=
-      "title">A Library of Streams</span>
+      "title">A Library of Streams</span> <span class="status">final</span>
       <p><span class="abstract">Along with higher-order functions, one of the
       hallmarks of functional programming is lazy evaluation. A primary
       manifestation of lazy evaluation is lazy lists, generally called streams
@@ -682,7 +688,7 @@ reference.
       use.</span>
     <li>
       <a href="srfi-41">SRFI <span class="number">41</span></a>: <span class=
-      "title">Streams</span>
+      "title">Streams</span> <span class="status">final</span>
       <p><span class="abstract c1">Streams, sometimes called
       lazy lists, are a sequential data structure containing elements computed
       only on demand. A stream is either null or is a pair with a stream in its
@@ -704,7 +710,7 @@ reference.
       <p><span class="abstract c2">(import (streams))</span>
     <li>
       <a href="srfi-42">SRFI <span class="number">42</span></a>: <span class=
-      "title">Eager Comprehensions</span>
+      "title">Eager Comprehensions</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines a modular and portable
       mechanism for eager comprehensions extending the algorithmic language
       Scheme [R5RS]. An eager comprehension is a convenient notation for one or
@@ -712,7 +718,7 @@ reference.
       accumulating this sequence into a result.</span>
     <li>
       <a href="srfi-43">SRFI <span class="number">43</span></a>: <span class=
-      "title">Vector library</span>
+      "title">Vector library</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI proposes a comprehensive and complete
       library of vector operations accompanied by a freely available and
       complete reference implementation. The reference implementation is
@@ -727,7 +733,7 @@ reference.
       library / unit called <tt>vector-lib</tt>.</span>
     <li>
       <a href="srfi-44">SRFI <span class="number">44</span></a>: <span class=
-      "title">Collections</span>
+      "title">Collections</span> <span class="status">final</span>
       <p><span class="abstract">A Collections API which defines a common naming
       scheme and set of operations for creating, accessing, and manipulating
       common datastructures in Scheme. The API defines accessors, a common
@@ -738,7 +744,7 @@ reference.
       Scheme string is provided.</span>
     <li>
       <a href="srfi-45">SRFI <span class="number">45</span></a>: <span class=
-      "title">Primitives for Expressing Iterative Lazy Algorithms</span>
+      "title">Primitives for Expressing Iterative Lazy Algorithms</span> <span class="status">final</span>
       <p><span class="abstract">Lazy evaluation is traditionally simulated in
       Scheme using <code>delay</code> and <code>force</code>. However, these
       primitives are not powerful enough to express a large class of lazy
@@ -776,7 +782,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       replaced by the SRFI-45 definitions of delay and force.</span>
     <li>
       <a href="srfi-46">SRFI <span class="number">46</span></a>: <span class=
-      "title">Basic Syntax-rules Extensions</span>
+      "title">Basic Syntax-rules Extensions</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI proposes two extensions to the
       R5RS<sup>1</sup> <code>syntax-rules</code> pattern language: the first
       allows <code>syntax-rules</code> macros to generate macros, where the
@@ -784,7 +790,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       macro-generating macros; the second allows for 'tail patterns.'</span>
     <li>
       <a href="srfi-47">SRFI <span class="number">47</span></a>: <span class=
-      "title">Array</span>
+      "title">Array</span> <span class="status">final</span>
       <p><span class="abstract">"slib/array.scm" synthesizes array ideas from
       Common-Lisp and Alan Bawden with homogeneous vector ideas from <a href=
       "srfi-4/">SRFI-4</a> and <a href=
@@ -792,7 +798,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       integrates homogeneous and heterogeneous arrays into Scheme.</span>
     <li>
       <a href="srfi-48">SRFI <span class="number">48</span></a>: <span class=
-      "title">Intermediate Format Strings</span>
+      "title">Intermediate Format Strings</span> <span class="status">final</span>
       <p><span class="abstract">This document specifies Format Strings, a
       method of interpreting a Scheme string which contains a number of format
       directives that are replaced with other string data according to the
@@ -802,7 +808,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       for controlled positioning of text within fields.</span>
     <li>
       <a href="srfi-49">SRFI <span class="number">49</span></a>: <span class=
-      "title">Indentation-sensitive syntax</span>
+      "title">Indentation-sensitive syntax</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI descibes a new syntax for Scheme,
       called I-expressions, whith equal descriptive power as S-expressions. The
       syntax uses indentation to group expressions, and has no special cases
@@ -813,7 +819,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       code as to maximize readability.</span>
     <li>
       <a href="srfi-50">SRFI <span class="number">50</span></a>: <span class=
-      "title">Mixing Scheme and C</span>
+      "title">Mixing Scheme and C</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI describes an interface for calling C
       functions from Scheme, calling Scheme functions from C, and allocating
       storage in the Scheme heap. Scheme manages stub functions in C that
@@ -840,7 +846,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       "http://www.scsh.net/">scsh</a>.</span>
     <li>
       <a href="srfi-51">SRFI <span class="number">51</span></a>: <span class=
-      "title">Handling rest list</span>
+      "title">Handling rest list</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI introduces the
       <code>rest-values</code> procedure which has three modes of
       operation:</span>
@@ -857,7 +863,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       rest arguments that are returned by <code>rest-values</code>.</span>
     <li>
       <a href="srfi-52">SRFI <span class="number">52</span></a>: <span class=
-      "title">Permitting and Supporting Extended Character Sets</span>
+      "title">Permitting and Supporting Extended Character Sets</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI describes how to modify the
       <i>Revised Report</i> (<a href=
       "http://www.schemers.org/Documents/Standards/R5RS/">R5RS</a>) in order to
@@ -900,26 +906,26 @@ construction of eager promises in cases where efficiency is a concern.<br>
       use a different implementation.</span>
     <li>
       <a href="srfi-53">SRFI <span class="number">53</span></a>: <span class=
-      "title">Syntactic computations with computation-rules</span>
+      "title">Syntactic computations with computation-rules</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI provides a portable framework for
       writing complex high-level macros that perform nontrivial computations
       during expansion.</span>
     <li>
       <a href="srfi-54">SRFI <span class="number">54</span></a>: <span class=
-      "title">Formatting</span>
+      "title">Formatting</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI introduces the CAT procedure that
       converts any object to a string. It takes one object as the first
       argument and accepts a variable number of optional arguments, unlike the
       procedure called FORMAT.</span>
     <li>
       <a href="srfi-55">SRFI <span class="number">55</span></a>: <span class=
-      "title">require-extension</span>
+      "title">require-extension</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI specifies an extremely simple
       facility for making an extension or library available to a Scheme
       toplevel environment.</span>
     <li>
       <a href="srfi-56">SRFI <span class="number">56</span></a>: <span class=
-      "title">Binary I/O</span>
+      "title">Binary I/O</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI extends Scheme with procedures to
       read and write binary data to and from ports, including utility
       procedures for writing various integer and floating point values in both
@@ -928,7 +934,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       ports.</span>
     <li>
       <a href="srfi-57">SRFI <span class="number">57</span></a>: <span class=
-      "title">Records</span>
+      "title">Records</span> <span class="status">final</span>
       <p><span class="abstract">We describe a syntax for defining record types.
       A predicate, constructor, and field accessors and modifiers may be
       specified for each record type. We also introduce a syntax for declaring
@@ -939,7 +945,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       and for functional record update, and for composing records.</span>
     <li>
       <a href="srfi-58">SRFI <span class="number">58</span></a>: <span class=
-      "title">Array Notation</span>
+      "title">Array Notation</span> <span class="status">final</span>
       <p><span class="abstract"><a href="srfi-47/">SRFI-47</a> and its
       successor <a href="srfi-63/">SRFI-63</a> provide both homogeneous numeric
       and heterogeneous multidimensional arrays which subsume Scheme vectors.
@@ -948,7 +954,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       notation for denoting homogeneous numeric arrays.</span>
     <li>
       <a href="srfi-59">SRFI <span class="number">59</span></a>: <span class=
-      "title">Vicinity</span>
+      "title">Vicinity</span> <span class="status">final</span>
       <p><span class="abstract">A vicinity is a descriptor for a place in the
       file system. Vicinities hide from the programmer the concepts of host,
       volume, directory, and version. Vicinities express only the concept of a
@@ -959,7 +965,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       <em>in</em>dependent.</span>
     <li>
       <a href="srfi-60">SRFI <span class="number">60</span></a>: <span class=
-      "title">Integers as Bits</span>
+      "title">Integers as Bits</span> <span class="status">final</span>
       <p><span class="abstract">Treating integers as two's-complement strings
       of bits is an arcane but important domain of computer science. It is used
       for:</span>
@@ -982,14 +988,14 @@ construction of eager promises in cases where efficiency is a concern.<br>
       </ul>
     <li>
       <a href="srfi-61">SRFI <span class="number">61</span></a>: <span class=
-      "title">A more general cond clause</span>
+      "title">A more general cond clause</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI proposes an extension to the
       <code>cond</code> syntax to allow a more general clause, one that allows
       binding the results of tests as in the <code>=&gt;</code> clauses and
       user-defined meaning of the success &amp; failure of tests.</span>
     <li>
       <a href="srfi-62">SRFI <span class="number">62</span></a>: <span class=
-      "title">S-expression comments</span>
+      "title">S-expression comments</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI proposes a simple extension to
       Scheme's lexical syntax that allows individual S-expressions to be made
       into comments, ignored by the reader. This contrasts with the standard
@@ -999,7 +1005,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       S-expressions.</span>
     <li>
       <a href="srfi-63">SRFI <span class="number">63</span></a>: <span class=
-      "title">Homogeneous and Heterogeneous Arrays</span>
+      "title">Homogeneous and Heterogeneous Arrays</span> <span class="status">final</span>
       <p><span class="abstract">The SRFI, which is to supersede <a href=
       "srfi-47/">SRFI-47</a>, "Array",</span>
       <ul>
@@ -1022,7 +1028,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       the homogeneous and heterogeneous arrays described here.</span>
     <li>
       <a href="srfi-64">SRFI <span class="number">64</span></a>: <span class=
-      "title">A Scheme API for test suites</span>
+      "title">A Scheme API for test suites</span> <span class="status">final</span>
       <p><span class="abstract">This defines an API for writing <dfn>test
       suites</dfn>, to make it easy to portably test Scheme APIs, libraries,
       applications, and implementations. A test suite is a collection of
@@ -1033,7 +1039,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
     <li>
       <a href="srfi-65">SRFI <span class="number">65</span></a>: <span class=
       "title">define-immutable: A Syntax to Define Identifiers With Immutable
-      Values</span>
+      Values</span> <span class="status">withdrawn</span>
       <p><span class="abstract">The <tt>define-immutable</tt> form defines an
       identifier whose value never changes.</span>
       <p><span class="abstract">The expression part of the definition is
@@ -1058,12 +1064,12 @@ construction of eager promises in cases where efficiency is a concern.<br>
 </span></pre>
     <li>
       <a href="srfi-66">SRFI <span class="number">66</span></a>: <span class=
-      "title">Octet Vectors</span>
+      "title">Octet Vectors</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines a set of procedures for
       creating, accessing, and manipulating uniform vectors of octets.</span>
     <li>
       <a href="srfi-67">SRFI <span class="number">67</span></a>: <span class=
-      "title">Compare Procedures</span>
+      "title">Compare Procedures</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI can be seen as an extension of the
       standard procedures <tt>=</tt>, <tt>&lt;</tt>, <tt>char&lt;?</tt> etc. of
       R<sup>5</sup>RS -- or even as a replacement. The primary design aspect in
@@ -1092,7 +1098,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       general order statistics.</span>
     <li>
       <a href="srfi-68">SRFI <span class="number">68</span></a>: <span class=
-      "title">Comprehensive I/O</span>
+      "title">Comprehensive I/O</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI defines a comprehensive I/O subsystem
       for Scheme with three layers, where each layer is built on top of the one
       below it:</span>
@@ -1138,7 +1144,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       one or several of the layers specified in this SRFI.</span>
     <li>
       <a href="srfi-69">SRFI <span class="number">69</span></a>: <span class=
-      "title">Basic hash tables</span>
+      "title">Basic hash tables</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines basic hash tables. Hash
       tables are widely recognised as a fundamental data structure for a wide
       variety of applications. A hash table is a data structure that:</span>
@@ -1166,7 +1172,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       </ol>
     <li>
       <a href="srfi-70">SRFI <span class="number">70</span></a>: <span class=
-      "title">Numbers</span>
+      "title">Numbers</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI proposes text to replace section 6.2
       "Numbers" of R5RS in order to extend its capabilities, correct errors in
       its specification, make it more explicit about limitations of precision
@@ -1202,7 +1208,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       </ul>
     <li>
       <a href="srfi-71">SRFI <span class="number">71</span></a>: <span class=
-      "title">Extended LET-syntax for multiple values</span>
+      "title">Extended LET-syntax for multiple values</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI is a proposal for extending
       <code>let</code>, <code>let*</code>, and <code>letrec</code> for
       receiving multiple values. The syntactic extension is fully compatible
@@ -1270,7 +1276,7 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br>
       these operations cannot be procedures.</span>
     <li>
       <a href="srfi-72">SRFI <span class="number">72</span></a>: <span class=
-      "title">Hygienic macros</span>
+      "title">Hygienic macros</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI describes a procedural macro proposal
       for Scheme with the following features:</span>
       <ul>
@@ -1312,7 +1318,7 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br>
       </ul>
     <li>
       <a href="srfi-73">SRFI <span class="number">73</span></a>: <span class=
-      "title">Exact Infinities</span>
+      "title">Exact Infinities</span> <span class="status">withdrawn</span>
       <p><span class="abstract">Many Scheme implementations support exact
       arbitrary-precision integer arithmetic as well as exact rational number
       computation. This SRFI extends the rational numbers of R5RS by adding two
@@ -1323,7 +1329,7 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br>
       checks.</span>
     <li>
       <a href="srfi-74">SRFI <span class="number">74</span></a>: <span class=
-      "title">Octet-Addressed Binary Blocks</span>
+      "title">Octet-Addressed Binary Blocks</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines a set of procedures for
       creating, accessing, and manipulating octet-addressed blocks of binary
       data, in short, <i>blobs</i>. The SRFI provides access primitives for
@@ -1331,7 +1337,7 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br>
       choice of unsigned and two's complement representations.</span>
     <li>
       <a href="srfi-75">SRFI <span class="number">75</span></a>: <span class=
-      "title">R6RS Unicode data</span>
+      "title">R6RS Unicode data</span> <span class="status">withdrawn</span>
       <p><span class="abstract">Unicode is a widespread universal character
       code that supports most of the world's (natural) languages. The
       extensions to Scheme specified in this SRFI concern the support of
@@ -1341,7 +1347,7 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br>
       SRFIs to specify.</span>
     <li>
       <a href="srfi-76">SRFI <span class="number">76</span></a>: <span class=
-      "title">R6RS Records</span>
+      "title">R6RS Records</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI describes abstractions for creating
       new data types representing records - data structures with named fields.
       This SRFI comes in four parts:</span>
@@ -1360,7 +1366,7 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br>
       </ul>
     <li>
       <a href="srfi-77">SRFI <span class="number">77</span></a>: <span class=
-      "title">Preliminary Proposal for R6RS Arithmetic</span>
+      "title">Preliminary Proposal for R6RS Arithmetic</span> <span class="status">withdrawn</span>
       <p><span class="abstract">Scheme's arithmetic system was designed to
       allow a wide variety of implementations. After many years of
       implementation experience, however, most implementations now fall into a
@@ -1418,7 +1424,7 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br>
       </ul>
     <li>
       <a href="srfi-78">SRFI <span class="number">78</span></a>: <span class=
-      "title">Lightweight testing</span>
+      "title">Lightweight testing</span> <span class="status">final</span>
       <p><span class="abstract">A simple mechanism is defined for testing
       Scheme programs. As a most primitive example, the expression</span>
       <pre><span class="abstract">
@@ -1468,7 +1474,7 @@ features of this SRFI are:</span>
       </ul>
     <li>
       <a href="srfi-79">SRFI <span class="number">79</span></a>: <span class=
-      "title">Primitive I/O</span>
+      "title">Primitive I/O</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI defines a simple, primitive I/O
       subsystem for Scheme that is intended to function as the lowest layer of
       a more comprehensive suite of I/O layers. It provides unbuffered I/O, and
@@ -1486,7 +1492,7 @@ features of this SRFI are:</span>
       80 (Stream I/O)</a> and <a href="srfi-81/">SRFI 81 (Port I/O)</a>.</span>
     <li>
       <a href="srfi-80">SRFI <span class="number">80</span></a>: <span class=
-      "title">Stream I/O</span>
+      "title">Stream I/O</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI defines an I/O layer for lazy, mostly
       functional buffered streams.</span>
       <p><span class="abstract">The layer architecture is similar to the upper
@@ -1508,7 +1514,7 @@ features of this SRFI are:</span>
       in <a href="srfi-79/">SRFI 79 (Primitive I/O)</a>.</span>
     <li>
       <a href="srfi-81">SRFI <span class="number">81</span></a>: <span class=
-      "title">Port I/O</span>
+      "title">Port I/O</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI defines an I/O layer similar in
       nature to the ports subsystem in R5RS, and provides conventional,
       imperative buffered input and output.</span>
@@ -1528,13 +1534,13 @@ features of this SRFI are:</span>
       in <a href="srfi-79/">SRFI 79 (Primitive I/O)</a>.</span>
     <li>
       <a href="srfi-82">SRFI <span class="number">82</span></a>: <span class=
-      "title">Stream Ports</span>
+      "title">Stream Ports</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI augments <a href="srfi-81/">SRFI 81
       (Port I/O)</a> by allowing ports to be constructed from streams as
       described in <a href="srfi-80/">SRFI 80 (Stream I/O)</a>.</span>
     <li>
       <a href="srfi-83">SRFI <span class="number">83</span></a>: <span class=
-      "title">R6RS Library Syntax</span>
+      "title">R6RS Library Syntax</span> <span class="status">withdrawn</span>
       <p><span class="abstract">The module system presented here is designed to
       let programmers share libraries, i.e., code that is intended to be
       incorporated into larger programs, and especially into programs that use
@@ -1546,7 +1552,7 @@ features of this SRFI are:</span>
       <!-- ISSUES -->
     <li>
       <a href="srfi-84">SRFI <span class="number">84</span></a>: <span class=
-      "title">Universal Identifiers</span>
+      "title">Universal Identifiers</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI proposes a social convention to allow
       programmers to easily create short, simple Scheme symbols which are
       guaranteed to be universally unique: No other programmer also following
@@ -1556,7 +1562,7 @@ features of this SRFI are:</span>
       resources.</span>
     <li>
       <a href="srfi-85">SRFI <span class="number">85</span></a>: <span class=
-      "title">Recursive Equivalence Predicates</span>
+      "title">Recursive Equivalence Predicates</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI defines two related equivalence
       predicates that are recursive, not just partial recursive: they terminate
       on all arguments. One of these predicates, <code>equiv?</code>, is
@@ -1566,7 +1572,7 @@ features of this SRFI are:</span>
     <li>
       <a href="srfi-86">SRFI <span class="number">86</span></a>: <span class=
       "title">MU and NU simulating VALUES &amp; CALL-WITH-VALUES, and their
-      related LET-syntax</span>
+      related LET-syntax</span> <span class="status">final</span>
       <p><span class="abstract">Unlike the
       <code>values</code>/<code>call-with-values</code> mechanism of R5RS, this
       SRFI uses an explicit representation for multiple return values as a
@@ -1592,13 +1598,13 @@ features of this SRFI are:</span>
       functions such as escape, recursion, etc.</span>
     <li>
       <a href="srfi-87">SRFI <span class="number">87</span></a>: <span class=
-      "title">=&gt; in case clauses</span>
+      "title">=&gt; in case clauses</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI proposes an extension to the
       <code>case</code> syntax to allow the <code>=&gt;</code> clauses as in
       <code>cond</code>.</span>
     <li>
       <a href="srfi-88">SRFI <span class="number">88</span></a>: <span class=
-      "title">Keyword objects</span>
+      "title">Keyword objects</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines <i>keyword</i> objects, a
       data type similar to Scheme symbols. Keyword objects have the same
       lexical syntax as symbols but they must end in a colon. Moreover keyword
@@ -1609,7 +1615,7 @@ features of this SRFI are:</span>
       syntax required to accomodate keywords.</span>
     <li>
       <a href="srfi-89">SRFI <span class="number">89</span></a>: <span class=
-      "title">Optional positional and named parameters</span>
+      "title">Optional positional and named parameters</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI specifies the <tt>define*</tt> and
       <tt>lambda*</tt> special forms. These forms extend the R5RS
       <tt>define</tt> and <tt>lambda</tt> special forms to simplify the use of
@@ -1622,7 +1628,7 @@ features of this SRFI are:</span>
       in R5RS.</span>
     <li>
       <a href="srfi-90">SRFI <span class="number">90</span></a>: <span class=
-      "title">Extensible hash table constructor</span>
+      "title">Extensible hash table constructor</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI specifies the procedure
       <tt>make-table</tt>, a hash table constructor compatible with <a href=
       "srfi-69/">SRFI 69 (Basic hash tables)</a>. The procedure
@@ -1637,7 +1643,7 @@ features of this SRFI are:</span>
       implementations.</span>
     <li>
       <a href="srfi-91">SRFI <span class="number">91</span></a>: <span class=
-      "title">Extended ports</span>
+      "title">Extended ports</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI specifies an extension to the R5RS
       ports that supports several useful features: binary I/O and text I/O,
       bulk I/O, file opening attributes, and bidirectional ports. Binary I/O is
@@ -1652,7 +1658,7 @@ features of this SRFI are:</span>
       R5RS but may provide additional functionality.</span>
     <li>
       <a href="srfi-92">SRFI <span class="number">92</span></a>: <span class=
-      "title">ALAMBDA and ALAMBDA*</span>
+      "title">ALAMBDA and ALAMBDA*</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI introduces ALAMBDA and ALAMBDA*, each
       of which has two modes of operation:</span>
       <ol>
@@ -1663,7 +1669,7 @@ features of this SRFI are:</span>
       </ol>
     <li>
       <a href="srfi-93">SRFI <span class="number">93</span></a>: <span class=
-      "title">R6RS Syntax-Case Macros</span>
+      "title">R6RS Syntax-Case Macros</span> <span class="status">withdrawn</span>
       <p><span class="abstract">The syntactic abstraction system described here
       extends the R5RS macro system with support for writing low-level macros
       in a high-level style, with automatic syntax checking, input
@@ -1678,7 +1684,7 @@ features of this SRFI are:</span>
       and other tools.</span>
     <li>
       <a href="srfi-94">SRFI <span class="number">94</span></a>: <span class=
-      "title">Type-Restricted Numerical Functions</span>
+      "title">Type-Restricted Numerical Functions</span> <span class="status">final</span>
       <p><span class="abstract">In the coding of numerial calculations in
       latent-typed languages it is good practice to assure that those
       calculations are using the intended number system. The most common number
@@ -1688,19 +1694,19 @@ features of this SRFI are:</span>
       declaration.</span>
     <li>
       <a href="srfi-95">SRFI <span class="number">95</span></a>: <span class=
-      "title">Sorting and Merging</span>
+      "title">Sorting and Merging</span> <span class="status">final</span>
       <p><span class="abstract">Sorting and Merging are useful operations
       deserving a common API.</span>
     <li>
       <a href="srfi-96">SRFI <span class="number">96</span></a>: <span class=
-      "title">SLIB Prerequisites</span>
+      "title">SLIB Prerequisites</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI specifies a set of procedures and
       macros presenting a uniform interface sufficient to host the <a href=
       "http://swiss.csail.mit.edu/~jaffer/SLIB">SLIB Scheme Library</a>
       system.</span>
     <li>
       <a href="srfi-97">SRFI <span class="number">97</span></a>: <span class=
-      "title">SRFI Libraries</span>
+      "title">SRFI Libraries</span> <span class="status">final</span>
       <p><span class="abstract">Over the past ten years, numerous libraries
       have been specified via the Scheme Requests for Implementation process.
       Yet until the recent ratification of the Revised<sup>6</sup> Report on
@@ -1719,14 +1725,14 @@ implementors.
       --></span>
     <li>
       <a href="srfi-98">SRFI <span class="number">98</span></a>: <span class=
-      "title">An interface to access environment variables</span>
+      "title">An interface to access environment variables</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI specifies the procedure
       get-environment-variable, which gets the value of the specified
       environment variable, and the procedure get-environment-variables, which
       gets an association list of all environment variables.</span>
     <li>
       <a href="srfi-99">SRFI <span class="number">99</span></a>: <span class=
-      "title">ERR5RS Records</span>
+      "title">ERR5RS Records</span> <span class="status">final</span>
       <p><span class="abstract">Many Scheme programmers have considered records
       to be one of the most important features missing from the R5RS. The R6RS
       proposed a record system, but its design has been widely criticized and
@@ -1740,7 +1746,7 @@ implementors.
       several worthwhile improvements over the R6RS system.</span>
     <li>
       <a href="srfi-100">SRFI <span class="number">100</span></a>: <span class=
-      "title">define-lambda-object</span>
+      "title">define-lambda-object</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI introduces a macro,
       DEFINE-LAMBDA-OBJECT which defines a set of procedures, that is, a group,
       two constructors, and a predicate. The constructors also make a group of
@@ -1752,7 +1758,7 @@ implementors.
       fields, and common sharing fields.</span>
     <li>
       <a href="srfi-101">SRFI <span class="number">101</span></a>: <span class=
-      "title">Purely Functional Random-Access Pairs and Lists</span>
+      "title">Purely Functional Random-Access Pairs and Lists</span> <span class="status">final</span>
       <p><span class="abstract">Random-access lists [1] are a purely functional
       data structure for representing lists of values. A random-access list may
       act as a drop in replacement for the usual linear-access pair and list
@@ -1767,7 +1773,7 @@ implementors.
       base library and list utility standard library [3].</span>
     <li>
       <a href="srfi-102">SRFI <span class="number">102</span></a>: <span class=
-      "title">Procedure Arity Inspection</span>
+      "title">Procedure Arity Inspection</span> <span class="status">withdrawn</span>
       <p><span class="abstract">Many Scheme systems provide mechanisms for
       inspecting the arity of a procedural value, making it a common feature,
       however there is no standard interface. As a result there is no portable
@@ -1776,7 +1782,7 @@ implementors.
       existing Scheme systems' facilities and prior proposals.</span>
     <li>
       <a href="srfi-103">SRFI <span class="number">103</span></a>: <span class=
-      "title">Library Files</span>
+      "title">Library Files</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI defines a standard for locating files
       containing libraries with list-of-symbols library names, for unixes and
       Windows. It defines a standard for files containing R6RS libraries. It
@@ -1784,13 +1790,13 @@ implementors.
       <!-- ======================================================================= -->
     <li>
       <a href="srfi-104">SRFI <span class="number">104</span></a>: <span class=
-      "title">Library Files Utilities</span>
+      "title">Library Files Utilities</span> <span class="status">withdrawn</span>
       <p><span class="abstract">This SRFI implements <a href=
       "srfi-103/">SRFI&nbsp;103: Library Files</a> as a library. It is useful
       for working with library files.</span>
     <li>
       <a href="srfi-105">SRFI <span class="number">105</span></a>: <span class=
-      "title">Curly-infix-expressions</span>
+      "title">Curly-infix-expressions</span> <span class="status">final</span>
       <p><span class="abstract">Lisp-based languages, like Scheme, are almost
       the only programming languages in modern use that do not support infix
       notation. In addition, most languages allow infix expressions to be
@@ -1826,12 +1832,12 @@ implementors.
       SRFI, but curly-infix-expressions are useful on their own.</span>
     <li>
       <a href="srfi-106">SRFI <span class="number">106</span></a>: <span class=
-      "title">Basic socket interface</span>
+      "title">Basic socket interface</span> <span class="status">final</span>
       <p><span class="abstract">This document specifies basic socket
       interfaces.</span>
     <li>
       <a href="srfi-107">SRFI <span class="number">107</span></a>: <span class=
-      "title">XML reader syntax</span>
+      "title">XML reader syntax</span> <span class="status">final</span>
       <p><span class="abstract">We specify a reader extension that reads data
       in a superset of XML/HTML format, and produces conventional
       S-expressions. We also suggest a possible semantics interpretation of how
@@ -1839,7 +1845,7 @@ implementors.
       non-normative.</span>
     <li>
       <a href="srfi-108">SRFI <span class="number">108</span></a>: <span class=
-      "title">Named quasi-literal constructors</span>
+      "title">Named quasi-literal constructors</span> <span class="status">final</span>
       <p><span class="abstract">This specifies an extensible reader syntax for
       named value constructors. A reader prefix is followed by a <q>tag</q> (an
       identifier), and then expressions and literal text parameters. The tag
@@ -1855,7 +1861,7 @@ implementors.
       <a href="srfi-107/">SRFI-107 (XML reader syntax)</a>.</span>
     <li>
       <a href="srfi-109">SRFI <span class="number">109</span></a>: <span class=
-      "title">Extended string quasi-literals</span>
+      "title">Extended string quasi-literals</span> <span class="status">final</span>
       <p><span class="abstract">This specifies a reader extension for extended
       string quasi-literals, including nicer multi-line strings, and enclosed
       unquoted expressions.</span>
@@ -1865,7 +1871,7 @@ implementors.
       of syntax.</span>
     <li>
       <a href="srfi-110">SRFI <span class="number">110</span></a>: <span class=
-      "title">Sweet-expressions (t-expressions)</span>
+      "title">Sweet-expressions (t-expressions)</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI describes a set of syntax extensions
       for Scheme, called sweet-expressions (t-expressions), that has the same
       descriptive power as s-expressions but is designed to be easier for
@@ -1909,13 +1915,13 @@ define fibfast(n)   ; Typical function notation
       </table>
     <li>
       <a href="srfi-111">SRFI <span class="number">111</span></a>: <span class=
-      "title">Boxes</span>
+      "title">Boxes</span> <span class="status">final</span>
       <p><span class="abstract">Boxes are objects with a single mutable state.
       Several Schemes have them, sometimes called <i>cells</i>. A constructor,
       predicate, accessor, and mutator are provided.</span>
     <li>
       <a href="srfi-112">SRFI <span class="number">112</span></a>: <span class=
-      "title">Environment Inquiry</span>
+      "title">Environment Inquiry</span> <span class="status">final</span>
       <p><span class="abstract">This is a proposal for environment inquiry,
       providing human-readable information <em>at run time</em> about the
       hardware and software configuration on which a Scheme program is being
@@ -1923,7 +1929,7 @@ define fibfast(n)   ; Typical function notation
       Posix <code>uname()</code> system call.</span>
     <li>
       <a href="srfi-113">SRFI <span class="number">113</span></a>: <span class=
-      "title">Sets and bags</span>
+      "title">Sets and bags</span> <span class="status">final</span>
       <p><span class="abstract"><em>Sets</em> and <em>bags</em> (also known as
       multisets) are unordered collections that can contain any Scheme object.
       Sets enforce the constraint that no two elements can be the same in the
@@ -1931,7 +1937,7 @@ define fibfast(n)   ; Typical function notation
       not.</span>
     <li>
       <a href="srfi-114">SRFI <span class="number">114</span></a>: <span class=
-      "title">Comparators</span>
+      "title">Comparators</span> <span class="status">final</span>
       <p><span class="abstract">This proposal is a rewrite of <a href=
       "srfi-67/">SRFI 67</a>, Compare Procedures, extending it from procedures
       that represent a total order to procedure bundles that represent one or
@@ -1941,14 +1947,14 @@ define fibfast(n)   ; Typical function notation
       data structures.</span>
     <li>
       <a href="srfi-115">SRFI <span class="number">115</span></a>: <span class=
-      "title">Scheme Regular Expressions</span>
+      "title">Scheme Regular Expressions</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI provides a library for matching
       strings with regular expressions described using the SRE "Scheme Regular
       Expression" notation first introduced by SCSH, and extended heavily by
       IrRegex.</span>
     <li>
       <a href="srfi-116">SRFI <span class="number">116</span></a>: <span class=
-      "title">Immutable List Library</span>
+      "title">Immutable List Library</span> <span class="status">final</span>
       <p><span class="abstract">Scheme currently does not provide immutable
       pairs corresponding to its existing mutable pairs, although most uses of
       pairs do not exploit their mutability. The <a href=
@@ -1961,7 +1967,7 @@ define fibfast(n)   ; Typical function notation
       portable (to systems with SRFI 9) and efficient.</span>
     <li>
       <a href="srfi-117">SRFI <span class="number">117</span></a>: <span class=
-      "title">Mutable Queues</span>
+      "title">Mutable Queues</span> <span class="status">final</span>
       <p><span class="abstract">List queues are mutable ordered collections
       that can contain any Scheme object. Each list queue is based on an
       ordinary Scheme list containing the elements of the list queue by
@@ -1971,7 +1977,7 @@ define fibfast(n)   ; Typical function notation
       disjoint from other types of Scheme objects.</span>
     <li>
       <a href="srfi-118">SRFI <span class="number">118</span></a>: <span class=
-      "title">Simple adjustable-size strings</span>
+      "title">Simple adjustable-size strings</span> <span class="status">final</span>
       <p><span class="abstract">Scheme specifies mutable fixed-length strings.
       We add two procedures <code>string-append!</code> and
       <code>string-replace!</code> which allow the size of the string to
@@ -1980,7 +1986,7 @@ define fibfast(n)   ; Typical function notation
       variable-size strings.</span>
     <li>
       <a href="srfi-119">SRFI <span class="number">119</span></a>: <span class=
-      "title">wisp: simpler indentation-sensitive scheme</span>
+      "title">wisp: simpler indentation-sensitive scheme</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI describes a simple syntax which
       allows making scheme easier to read for newcomers while keeping the
       simplicity, generality and elegance of s-expressions. Similar to <a href=
@@ -2030,12 +2036,12 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       </blockquote>
     <li>
       <a href="srfi-120">SRFI <span class="number">120</span></a>: <span class=
-      "title">Timer APIs</span>
+      "title">Timer APIs</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines interfaces to handle timer
       processes.</span>
     <li>
       <a href="srfi-121">SRFI <span class="number">121</span></a>: <span class=
-      "title">Generators</span>
+      "title">Generators</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines utility procedures that
       create, transform, and consume generators. A generator is simply a
       procedure with no arguments that works as a source of a series of values.
@@ -2047,7 +2053,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       Generators provide lightweight laziness.</span>
     <li>
       <a href="srfi-122">SRFI <span class="number">122</span></a>: <span class=
-      "title">Nonempty Intervals and Generalized Arrays</span>
+      "title">Nonempty Intervals and Generalized Arrays</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI specifies an array mechanism for
       Scheme. Arrays as defined here are quite general; at their most basic, an
       array is simply a mapping, or function, from multi-indices of exact
@@ -2063,7 +2069,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       use cases.</span>
     <li>
       <a href="srfi-123">SRFI <span class="number">123</span></a>: <span class=
-      "title">Generic accessor and modifier operators</span>
+      "title">Generic accessor and modifier operators</span> <span class="status">final</span>
       <p><span class="abstract">Lisp dialects including Scheme have
       traditionally lacked short, simple, generic syntax for accessing and
       modifying the fields of arbitrary "collection" objects. We fill this gap
@@ -2071,7 +2077,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       setter.</span>
     <li>
       <a href="srfi-124">SRFI <span class="number">124</span></a>: <span class=
-      "title">Ephemerons</span>
+      "title">Ephemerons</span> <span class="status">final</span>
       <p><span class="abstract">An ephemeron is an object with two components
       called its <em>key</em> and its <em>datum</em>. It differs from an
       ordinary pair as follows: if the garbage collector (GC) can prove that
@@ -2085,7 +2091,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       thanks from the MIT Scheme Reference Manual.</span>
     <li>
       <a href="srfi-125">SRFI <span class="number">125</span></a>: <span class=
-      "title">Intermediate hash tables</span>
+      "title">Intermediate hash tables</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines an interface to hash tables,
       which are widely recognized as a fundamental data structure for a wide
       variety of applications. A hash table is a data structure that:</span>
@@ -2118,14 +2124,14 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       </ul>
     <li>
       <a href="srfi-126">SRFI <span class="number">126</span></a>: <span class=
-      "title">R6RS-based hashtables</span>
+      "title">R6RS-based hashtables</span> <span class="status">final</span>
       <p><span class="abstract">We provide a hashtable API that takes the R6RS
       hashtables API as a basis and makes backwards compatible additions such
       as support for weak hashtables, external representation, API support for
       double hashing implementations, and utility procedures.</span>
     <li>
       <a href="srfi-127">SRFI <span class="number">127</span></a>: <span class=
-      "title">Lazy Sequences</span>
+      "title">Lazy Sequences</span> <span class="status">final</span>
       <p><span class="abstract">Lazy sequences (or lseqs, pronounced
       "ell-seeks") are a generalization of lists. In particular, an lseq is
       either a proper list or a dotted list whose last cdr is a <a href=
@@ -2139,7 +2145,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       1</a>.</span>
     <li>
       <a href="srfi-128">SRFI <span class="number">128</span></a>: <span class=
-      "title">Comparators (reduced)</span>
+      "title">Comparators (reduced)</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI provides <i>comparators</i>, which
       bundle a type test predicate, an equality predicate, an ordering
       predicate, and a hash function (the last two are optional) into a single
@@ -2148,13 +2154,13 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       structures.</span>
     <li>
       <a href="srfi-129">SRFI <span class="number">129</span></a>: <span class=
-      "title">Titlecase procedures</span>
+      "title">Titlecase procedures</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines R7RS-style
       <tt>char-title-case?</tt>, <tt>char-titlecase</tt>, and
       <tt>string-titlecase</tt> procedures.</span>
     <li>
       <a href="srfi-130">SRFI <span class="number">130</span></a>: <span class=
-      "title">Cursor-based string library</span>
+      "title">Cursor-based string library</span> <span class="status">final</span>
       <p><span class="abstract"><abbr title=
       "Revised&lt;sup&gt;5&lt;/sup&gt; Report on Scheme">R5RS</abbr> Scheme has
       an impoverished set of string-processing utilities, which is a problem
@@ -2172,7 +2178,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       "Revised&lt;sup&gt;7&lt;/sup&gt; Report on Scheme">R7RS</abbr>.</span>
     <li>
       <a href="srfi-131">SRFI <span class="number">131</span></a>: <span class=
-      "title">ERR5RS Record Syntax (reduced)</span>
+      "title">ERR5RS Record Syntax (reduced)</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI is a reduced version of the SRFI 99
       syntactic layer that can be implemented with <tt>syntax-rules</tt>
       without requiring low-level macros. Like SRFI-99's syntax layer, it is
@@ -2181,12 +2187,12 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       <a href="srfi-99/">SRFI 99</a>.</span>
     <li>
       <a href="srfi-132">SRFI <span class="number">132</span></a>: <span class=
-      "title">Sort Libraries</span>
+      "title">Sort Libraries</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI describes the API for a full-featured
       sort toolkit.</span>
     <li>
       <a href="srfi-133">SRFI <span class="number">133</span></a>: <span class=
-      "title">Vector Library (R7RS-compatible)</span>
+      "title">Vector Library (R7RS-compatible)</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI proposes a comprehensive library of
       vector operations accompanied by a freely available and complete
       reference implementation. The reference implementation is unencumbered by
@@ -2195,7 +2201,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       implementation-specific optimization as well.</span>
     <li>
       <a href="srfi-134">SRFI <span class="number">134</span></a>: <span class=
-      "title">Immutable Deques</span>
+      "title">Immutable Deques</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI defines immutable deques. A deque is
       a double-ended queue, a sequence which allows elements to be added or
       removed efficiently from either end. A structure is immutable when all
@@ -2203,7 +2209,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       procedures specified here ends with an exclamation point.</span>
     <li>
       <a href="srfi-135">SRFI <span class="number">135</span></a>: <span class=
-      "title">Immutable Texts</span>
+      "title">Immutable Texts</span> <span class="status">final</span>
       <p><span class="abstract">In Scheme, strings are a mutable data type.
       Although it "is an error" (<abbr title=
       "Revised&lt;sup&gt;5&lt;/sup&gt; Report on Scheme">R5RS</abbr> and
@@ -2235,7 +2241,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       inefficiencies associated with the mutability of Scheme's strings.</span>
     <li>
       <a href="srfi-136">SRFI <span class="number">136</span></a>: <span class=
-      "title">Extensible record types</span>
+      "title">Extensible record types</span> <span class="status">final</span>
       <p><span class="abstract">SRFI 9 and the compatible R7RS-small provide
       Scheme with record types. The basic problem that is solved by these
       record types is that they allow the user to introduce new types, disjoint
@@ -2248,19 +2254,19 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       problem, namely the introduction of subtypes.</span>
     <li>
       <a href="srfi-137">SRFI <span class="number">137</span></a>: <span class=
-      "title">Minimal Unique Types</span>
+      "title">Minimal Unique Types</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI is intended to standardize a
       primitive run-time mechanism to create disjoint types.</span>
     <li>
       <a href="srfi-138">SRFI <span class="number">138</span></a>: <span class=
-      "title">Compiling Scheme programs to executables</span>
+      "title">Compiling Scheme programs to executables</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI describes, for sufficiently
       POSIX-compatible systems, a portable interface for compiling Scheme
       programs conforming to the R7RS to binaries that can be directly executed
       on the host system.</span>
     <li>
       <a href="srfi-139">SRFI <span class="number">139</span></a>: <span class=
-      "title">Syntax parameters</span>
+      "title">Syntax parameters</span> <span class="status">final</span>
       <p><span class="abstract">Syntax parameters are to the expansion process
       of a Scheme program what parameters are to the evaluation process of a
       Scheme program. They allow hygienic implementation of syntactic forms
@@ -2268,7 +2274,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       unhygienically.</span>
     <li>
       <a href="srfi-140">SRFI <span class="number">140</span></a>: <span class=
-      "title">Immutable Strings</span>
+      "title">Immutable Strings</span> <span class="status">final</span>
       <p><span class="abstract">This attempts to solve the same issues with
       R7RS strings raised by <a href="srfi-135/">SRFI-135</a>, but with better
       integration with the Scheme language.</span>
@@ -2302,12 +2308,12 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       "srfi-118/">SRFI-118</a>.</span>
     <li>
       <a href="srfi-141">SRFI <span class="number">141</span></a>: <span class=
-      "title">Integer division</span>
+      "title">Integer division</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI provides a fairly complete set of
       integral division and remainder operators.</span>
     <li>
       <a href="srfi-142">SRFI <span class="number">142</span></a>: <span class=
-      "title">Bitwise Operations</span>
+      "title">Bitwise Operations</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI proposes a coherent and comprehensive
       set of procedures for performing bitwise logical operations on integers;
       it is accompanied by a reference implementation of the spec in terms of a
@@ -2341,14 +2347,14 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       algorithms.</span>
     <li>
       <a href="srfi-143">SRFI <span class="number">143</span></a>: <span class=
-      "title">Fixnums</span>
+      "title">Fixnums</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI describes arithmetic procedures
       applicable to a limited range of exact integers only. These procedures
       are semantically similar to the corresponding generic-arithmetic
       procedures, but allow more efficient implementations.</span>
     <li>
       <a href="srfi-144">SRFI <span class="number">144</span></a>: <span class=
-      "title">Flonums</span>
+      "title">Flonums</span> <span class="status">draft</span>
       <p><span class="abstract">This SRFI describes numeric procedures
       applicable to <em>flonums</em>, a subset of the inexact real numbers
       provided by a Scheme implementation. In most Schemes, the flonums and the
@@ -2357,7 +2363,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       implementations.</span>
     <li>
       <a href="srfi-145">SRFI <span class="number">145</span></a>: <span class=
-      "title">Assumptions</span>
+      "title">Assumptions</span> <span class="status">final</span>
       <p><span class="abstract">A means to denote the invalidity of certain
       code paths in a Scheme program is proposed. It allows Scheme code to turn
       the evaluation into a user-defined error that need not be signalled by
@@ -2365,7 +2371,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       produce better code and to issue better warnings about dead code.</span>
     <li>
       <a href="srfi-146">SRFI <span class="number">146</span></a>: <span class=
-      "title">Mappings</span>
+      "title">Mappings</span> <span class="status">draft</span>
       <p><span class="abstract"><em>Mappings</em> are finite sets of
       associations, where each association is a pair consisting of a key and an
       arbitrary Scheme value. The keys are elements of a suitable domain. Each
@@ -2374,7 +2380,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       stored in the mapping when the key is given.</span>
     <li>
       <a href="srfi-147">SRFI <span class="number">147</span></a>: <span class=
-      "title">Custom macro transformers</span>
+      "title">Custom macro transformers</span> <span class="status">final</span>
       <p><span class="abstract">Each syntax definition assigns a macro
       transformer to a keyword. The macro transformer is specified by a
       transformer spec, which is either an instance of
@@ -2386,7 +2392,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       is called a <em>custom macro transformer</em>.</span>
     <li>
       <a href="srfi-148">SRFI <span class="number">148</span></a>: <span class=
-      "title">Eager syntax-rules</span>
+      "title">Eager syntax-rules</span> <span class="status">draft</span>
       <p><span class="abstract">Writing powerful <code>syntax-rules</code>
       macros is hard because they do not compose well: The arguments of a macro
       expansion are not expanded. This SRFI defines an easy to comprehend
@@ -2396,7 +2402,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       any Scheme implementation conforming to the R7RS.</span>
     <li>
       <a href="srfi-149">SRFI <span class="number">149</span></a>: <span class=
-      "title">Basic Syntax-rules Template Extensions</span>
+      "title">Basic Syntax-rules Template Extensions</span> <span class="status">final</span>
       <p><span class="abstract">The rules for valid
       <code>&lt;template&gt;</code>s of <code>&lt;syntax rules&gt;</code> are
       slightly softened to allow for more than one consecutive
@@ -2406,7 +2412,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       subpattern in which they occur.</span>
     <li>
       <a href="srfi-150">SRFI <span class="number">150</span></a>: <span class=
-      "title">Hygienic ERR5RS Record Syntax (reduced)</span>
+      "title">Hygienic ERR5RS Record Syntax (reduced)</span> <span class="status">draft</span>
       <p><span class="abstract">This SRFI provides a specification and portable
       implementation of an extension of the ERR5RS record syntax of <a href=
       "srfi-131/">SRFI 131</a>, where field names inserted by macro
@@ -2417,7 +2423,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       datums, like numbers and strings.</span>
     <li>
       <a href="srfi-151">SRFI <span class="number">151</span></a>: <span class=
-      "title">Bitwise Operations</span>
+      "title">Bitwise Operations</span> <span class="status">final</span>
       <p><span class="abstract">This SRFI proposes a coherent and comprehensive
       set of procedures for performing bitwise logical operations on integers;
       it is accompanied by a reference implementation of the spec in terms of a
@@ -2464,7 +2470,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       </ol>
     <li>
       <a href="srfi-152">SRFI <span class="number">152</span></a>: <span class=
-      "title">String Library (reduced)</span>
+      "title">String Library (reduced)</span> <span class="status">draft</span>
       <p><span class="abstract">Scheme has an impoverished set of
       string-processing utilities, which is a problem for authors of portable
       code. This SRFI proposes a coherent and comprehensive set of
@@ -2474,7 +2480,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       procedures.</span>
     <li>
       <a href="srfi-153">SRFI <span class="number">153</span></a>: <span class=
-									 "title">Ordered Sets and Bags</span>
+									 "title">Ordered Sets and Bags</span> <span class="status">draft</span>
       <p><span class="abstract"><em>Isets</em> and <em>ibags</em> (also known
       as multisets) are immutable collections that can contain any Scheme
       object. Isets enforce the constraint that no two elements can be the same
@@ -2483,7 +2489,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       determined by the comparator used to create it.</span>
     <li>
       <a href="srfi-154">SRFI <span class="number">154</span></a>: <span class=
-      "title">First-class dynamic environments</span>
+      "title">First-class dynamic environments</span> <span class="status">draft</span>
       <p><span class="abstract">Scheme has the notion of the <em>dynamic
       extent</em> of a procedure call. A number of standard Scheme procedures
       and syntaxes like <code>dynamic-wind</code>,
@@ -2495,7 +2501,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       environment.</span>
     <li>
       <a href="srfi-155">SRFI <span class="number">155</span></a>: <span class=
-      "title">Promises</span>
+      "title">Promises</span> <span class="status">draft</span>
       <p><span class="abstract">Scheme, like ML, is a programming language with
       strict evaluation while others, like Haskell, use lazy evaluation.
       Scheme, however, possesses the primitives <code>delay</code> and
@@ -2513,7 +2519,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       evaluated.</span>
     <li>
       <a href="srfi-156">SRFI <span class="number">156</span></a>: <span class=
-      "title">Syntactic combiners for binary predicates</span>
+      "title">Syntactic combiners for binary predicates</span> <span class="status">draft</span>
       <p><span class="abstract">The power and universality of the prefix
       notation employed by Scheme and other dialects of Lisp can be
       intimidating. However, we find that there are occasions when prefix
@@ -2547,7 +2553,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       respectively. This SRFI document also describes some other uses of the
       <code>is</code> macro and its limitations.</span>
       <li>
-	<a href="srfi-157">SRFI <span class="number">157</span></a>: <span class="title">Continuation marks</span>
+	<a href="srfi-157">SRFI <span class="number">157</span></a>: <span class="title">Continuation marks</span> <span class="status">draft</span>
 	<p><span class="abstract">
 	  Continuation marks are a programming language feature that
 	allows one to attach information to and retrieve information from
