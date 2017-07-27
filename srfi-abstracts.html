@@ -2800,18 +2800,20 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       determined by the comparator used to create it.
       </div>
     <li>
-      <a href="srfi-154">SRFI <span class="number">154</span></a>: <span class=
-      "title">First-class dynamic environments</span> <span class="status">draft</span>
+      <a href="srfi-154">SRFI <span class="number">154</span></a>: <span class="title">First-class dynamic extents</span> <span class="status">draft</span>
       <div class="abstract">
-      <p>Scheme has the notion of the <em>dynamic
-      extent</em> of a procedure call. A number of standard Scheme procedures
-      and syntaxes like <code>dynamic-wind</code>,
-      <code>call-with-current-continuation</code>, and
-      <code>parameterize</code> deal with the dynamic extent indirectly. This
-      SRFI reifies the dynamic extent into a first-class value together with a
-      well-defined procedural interface and a syntax to create procedures that
-      remember not only the environment at creation time but also their dynamic
-      environment.
+	<p>Scheme has the notion of the <em>dynamic extent</em> of a
+	procedure call.  A number of standard Scheme procedures and
+	syntaxes
+	like <code>dynamic-wind</code>, <code>call-with-current-continuation</code>,
+	and <code>parameterize</code>
+	deal with the dynamic extent indirectly.
+
+	<p>This SRFI reifies the dynamic extent into a first-class value
+	together with a well-defined procedural interface and a syntax to
+	create procedures that remember not only their environment at
+	creation time but also their dynamic extent, which includes their
+	dynamic environment. 
       </div>
     <li>
       <a href="srfi-155">SRFI <span class="number">155</span></a>: <span class=
