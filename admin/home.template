@@ -33,6 +33,11 @@
       mailing lists.</p>
 
     <p>
+      In addition to the complete list below, there are detailed lists
+      of <a href="draft-srfis.html">draft</a>, <a href="final-srfis.html">final</a>, 
+      and <a href="withdrawn-srfis.html">withdrawn</a> SRFIs.</p>
+
+    <p>
       Here's a complete list of of more than 150 existing SRFIs:</p>
 
     <div id="srfis">
@@ -45,12 +50,6 @@
       <button class="sort" data-sort="status" tabindex="6" >status</button>
       <ul class="list">
 <*<srfi-list>*></ul></div>
-
-    <p>
-      In addition to the complete list above, there are detailed
-      lists of <a href="draft-srfis.html">draft</a>, <a
-      href="final-srfis.html">final</a>, and <a
-      href="withdrawn-srfis.html">withdrawn</a> SRFIs.</p>
 
     <p>Every SRFI is hosted on Github, but if you'd like a complete
       archive of all SRFI documents and code, please download <a
