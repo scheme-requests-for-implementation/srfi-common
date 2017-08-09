@@ -146,7 +146,7 @@
   (145 final "Assumptions" "Marc Nieper-Wißkirchen" "2016/12/18" "2017/3/31")
   (146 draft "Mappings" "Marc Nieper-Wißkirchen" "2016/12/18")
   (147 final "Custom macro transformers" "Marc Nieper-Wißkirchen" "2016/12/24" "2017/3/7")
-  (148 draft "Eager syntax-rules" "Marc Nieper-Wißkirchen" "2016/12/31")
+  (148 final "Eager syntax-rules" "Marc Nieper-Wißkirchen" "2016/12/31" "2017/8/8")
   (149 final "Basic Syntax-rules Template Extensions" "Marc Nieper-Wißkirchen" "2017/1/1" "2017/7/8")
   (150 draft "Hygienic ERR5RS Record Syntax (reduced)" "Marc Nieper-Wißkirchen" "2017/1/2")
   (151 final "Bitwise Operations" "John Cowan" "2017/5/3" "2017/7/10")
