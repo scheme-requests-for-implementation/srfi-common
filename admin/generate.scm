@@ -53,8 +53,8 @@
 
 (define home-template (read-template "srfi-common/admin/home.template"))
 
-(define srfi-box-template
-  (read-template "srfi-common/admin/srfi-box.template"))
+(define srfi-card-template
+  (read-template "srfi-common/admin/srfi-card.template"))
 
 (define index-template (read-template "srfi-common/admin/index.template"))
 (define archive-simplelists-template
@@ -140,7 +140,7 @@
 				(status (srfi/status s))
 				(url (format #f "srfi-~A" number)))
 			   (invoke-template
-			    srfi-box-template
+			    srfi-card-template
 			    `((authors ,(srfi/authors s))
 			      (date ,(srfi-date-to-show s))
 			      (date-type ,(status->name status))
@@ -161,7 +161,7 @@
 	    (lambda ()
 	      (for-each (lambda (s)
 			  (invoke-template
-			   srfi-box-template
+			   srfi-card-template
 			   `((authors ,(srfi/authors s))
 			     (date ,(srfi-date-to-show s))
 			     (date-type ,status-name)
