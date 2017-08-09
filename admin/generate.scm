@@ -51,6 +51,11 @@
 		   (display (cadr association))
 		   (error "Missing variable." element))))))))
 
+(define (invoke-template/string template variables)
+  (with-output-to-string
+    (lambda ()
+      (invoke-template template variables))))
+
 (define home-template (read-template "srfi-common/admin/home.template"))
 
 (define srfi-card-template
@@ -74,11 +79,10 @@
 (define (write-single-srfi-index-page srfi)
   (let* ((number (srfi/number srfi))
 	 (archives
-	  (with-output-to-string
-	    (lambda ()
-	      (invoke-template archive-simplelists-template
-			       `((number ,number)
-				 (prefix ""))))))
+	  (invoke-template/string
+	   archive-simplelists-template
+	   `((number ,number)
+	     (prefix ""))))
 	 (date (srfi-date-to-show srfi))
 	 (status (srfi/status srfi))
 	 (title (srfi/title srfi))
