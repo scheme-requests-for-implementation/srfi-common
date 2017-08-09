@@ -139,14 +139,15 @@
 			 (let* ((number (srfi/number s))
 				(status (srfi/status s))
 				(url (format #f "srfi-~A" number)))
-			   (invoke-template srfi-box-template
-					    `((authors ,(srfi/authors s))
-					      (date ,(srfi-date-to-show s))
-					      (date-type ,(status->name status))
-					      (name ,(srfi/title s))
-					      (number ,number)
-					      (status ,status)
-					      (url ,url)))))
+			   (invoke-template
+			    srfi-box-template
+			    `((authors ,(srfi/authors s))
+			      (date ,(srfi-date-to-show s))
+			      (date-type ,(status->name status))
+			      (name ,(srfi/title s))
+			      (number ,number)
+			      (status ,status)
+			      (url ,url)))))
 		       srfis)))))
     (with-output-to-file "$ss/srfi-common/index.html"
       (lambda ()
@@ -159,13 +160,14 @@
 	  (with-output-to-string
 	    (lambda ()
 	      (for-each (lambda (s)
-			  (invoke-template srfi-box-template
-					   `((authors ,(srfi/authors s))
-					     (date ,(srfi-date-to-show s))
-					     (date-type ,status-name)
-					     (name ,(srfi/title s))
-					     (number ,(srfi/number s))
-					     (status ,status))))
+			  (invoke-template
+			   srfi-box-template
+			   `((authors ,(srfi/authors s))
+			     (date ,(srfi-date-to-show s))
+			     (date-type ,status-name)
+			     (name ,(srfi/title s))
+			     (number ,(srfi/number s))
+			     (status ,status))))
 			(filter (lambda (s)
 				  (eq? (srfi/status s) status))
 				srfis))))))
