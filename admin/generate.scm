@@ -113,8 +113,12 @@
 
 (define (see-also-text srfi)
   (define (srfi-link srfi)
-    (let ((n (number->string srfi)))
-      (format #f "[[https://srfi.schemers.org/srfi-~A/][SRFI ~A]]" n n)))
+    (let ((n (srfi/number srfi)))
+      (format #f
+	      "[[https://srfi.schemers.org/srfi-~A/][SRFI ~A: ~A]]"
+	      n
+	      n
+	      (srfi/title srfi))))
   (let ((others (srfi/see-also srfi)))
     (if (null? others)
 	""
@@ -122,7 +126,8 @@
 	 see-also-text-template
 	 `((srfis
 	    ,(string-join-english
-	      (map srfi-link (sort others <)))))))))
+	      (map (lambda (n) (srfi-link (srfi-assoc n srfis)))
+		   (sort others <)))))))))
 
 (define (write-single-srfi-readme srfi)
   (let* ((number (srfi/number srfi))
@@ -169,9 +174,8 @@
 (define (srfi-anchor-fragment srfi)
   (invoke-template/string
    srfi-anchor-template
-   `((number ,(number->string (if (number? srfi)
-				 srfi
-				 (srfi/number srfi)))))))
+   `((number ,(number->string (srfi/number srfi)))
+     (title ,(srfi/title srfi)))))
 
 (define (string-join-english string-list)
   "Return a string constructed by appending the elements of
@@ -203,7 +207,7 @@ and \", and\" otherwise."
 	 see-also-html-template
 	 `((srfis
 	    ,(string-join-english
-	      (map srfi-anchor-fragment
+	      (map (lambda (n) (srfi-anchor-fragment (srfi-assoc n srfis)))
 		   (sort others <)))))))))
 
 (define (write-srfi-card srfi)
