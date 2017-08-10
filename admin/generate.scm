@@ -61,11 +61,11 @@
 
 (define home-template (read-template "srfi-common/admin/home.template"))
 
-(define replace-template
-  (read-template "srfi-common/admin/replace.template"))
+(define see-also-html-template
+  (read-template "srfi-common/admin/see-also-html.template"))
 
-(define replace-text-template
-  (read-template "srfi-common/admin/replace-text.template"))
+(define see-also-text-template
+  (read-template "srfi-common/admin/see-also-text.template"))
 
 (define srfi-card-template
   (read-template "srfi-common/admin/srfi-card.template"))
@@ -107,41 +107,22 @@
 			   (date ,date)
 			   (email-archives ,archives)
 			   (number ,number)
-			   (replaced-by
-			    ,(srfi-replace-fragment
-			      "replaced-by"
-			      (string-append
-			       "This SRFI has been "
-			       (faq-anchor-fragment "replacement"
-						    "replaced by"))
-			      (srfi-replaced-by srfi)))
-			   (replaces
-			    ,(srfi-replace-fragment
-			      "replaces"
-			      (string-append
-			       "This SRFI is intended to "
-			       (faq-anchor-fragment "replacement" "replace"))
-			      (srfi/replaces srfi)))
+			   (see-also ,(see-also-html srfi))
 			   (status ,status)
 			   (title ,title)))))))
 
-(define (srfi-replace-text prefix srfis)
+(define (see-also-text srfi)
   (define (srfi-link srfi)
     (let ((n (number->string srfi)))
-      (string-append
-       "[[https://srfi.schemers.org/srfi-"
-       n
-       "/][SRFI "
-       n
-       "]]")))
-  (if (null? srfis)
-      ""
-      (invoke-template/string
-       replace-text-template
-       `((prefix ,prefix)
-	 (srfis
-	  ,(string-join-english
-	    (map srfi-link (sort srfis <))))))))
+      (format #f "[[https://srfi.schemers.org/srfi-~A/][SRFI ~A]]" n n)))
+  (let ((others (srfi/see-also srfi)))
+    (if (null? others)
+	""
+	(invoke-template/string
+	 see-also-text-template
+	 `((srfis
+	    ,(string-join-english
+	      (map srfi-link (sort others <)))))))))
 
 (define (write-single-srfi-readme srfi)
   (let* ((number (srfi/number srfi))
@@ -154,12 +135,7 @@
 	(invoke-template readme-template
 			 `((authors ,authors)
 			   (number ,number)
-			   (replaced-by ,(srfi-replace-text
-					  "It has been replaced by"
-					  (srfi-replaced-by srfi)))
-			   (replaces ,(srfi-replace-text
-				       "It is intended to replace"
-				       (srfi/replaces srfi)))
+			   (see-also ,(see-also-text srfi))
 			   (status ,status)
 			   (title ,title)))))))
 
@@ -219,17 +195,16 @@ and \", and\" otherwise."
 		     (else (write-string ", ")
 			   (next (cdr remaining))))))))))
 
-(define (srfi-replace-fragment class prefix srfis)
-  (if (null? srfis)
-      ""
-      (invoke-template/string
-       replace-template
-       `((class ,class)
-	 (prefix ,prefix)
-	 (srfis
-	  ,(string-join-english
-	    (map srfi-anchor-fragment
-		 (sort srfis <))))))))
+(define (see-also-html srfi)
+  (let ((others (srfi/see-also srfi)))
+    (if (null? others)
+	""
+	(invoke-template/string
+	 see-also-html-template
+	 `((srfis
+	    ,(string-join-english
+	      (map srfi-anchor-fragment
+		   (sort others <)))))))))
 
 (define (write-srfi-card srfi)
   (let ((status (srfi/status srfi)))
@@ -240,14 +215,7 @@ and \", and\" otherwise."
        (date-type ,(status->name status))
        (name ,(srfi/title srfi))
        (number ,(srfi/number srfi))
-       (replaced-by ,(srfi-replace-fragment
-		      "replaced-by"
-		      (faq-anchor-fragment "replacement" "Replaced by")
-		      (srfi-replaced-by srfi)))
-       (replaces ,(srfi-replace-fragment
-		   "replaces"
-		   (faq-anchor-fragment "replacement" "Replaces")
-		   (srfi/replaces srfi)))
+       (see-also ,(see-also-html srfi))
        (status ,status)))))
 
 ;; Note that this generates "index.html", which is separate from the

@@ -5,8 +5,7 @@
 .card {
   padding: 10px;
 }
-.card .replaced-by,
-.card .replaces {
+.card .see-also {
   color: grey;
   font-size: 80%;
 }
@@ -78,10 +77,6 @@
 p a {
   font-weight: bold;
 }
-.replaced-by a,
-.replaces a {
-  position: relative;
-}
 .search {
   border: solid 1px #ccc;
   border-radius: 5px;
@@ -92,6 +87,9 @@ p a {
 .search:focus {
   border-color: #aaa;
   outline: none;
+}
+.see-also a {
+  position: relative;
 }
 .sort {
   background-color: #116611;
