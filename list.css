@@ -1,8 +1,14 @@
-.authors, .status {
+.authors,
+.status {
   color: grey;
 }
 .card {
   padding: 10px;
+}
+.card .replaced-by,
+.card .replaces {
+  color: grey;
+  font-size: 80%;
 }
 .card-anchor {
   border-radius: 0 10px 10px 0;
@@ -22,6 +28,18 @@
   display: block;
   font-size: 80%;
   padding-top: 0.25em;
+}
+.info {
+  position: relative;
+}
+.info a {
+  display: block;
+  margin: 0.5em 0 0.5em 0;
+  padding: 10px;
+  text-decoration: none;
+}
+.info a:hover {
+  text-decoration: underline;
 }
 .list {
   columns: 15em;
@@ -49,7 +67,8 @@
   border: solid 2px blue;
   border-left-width: 15px;
 }
-.name, .number {
+.name,
+.number {
   font-weight: bold;
   margin: 0 0 0.3rem;
 }
@@ -59,11 +78,8 @@
 p a {
   font-weight: bold;
 }
-.replaced-by, .replaces {
-  color: grey;
-  font-size: 80%;
-}
-.replaced-by a, .replaces a {
+.replaced-by a,
+.replaces a {
   position: relative;
 }
 .search {

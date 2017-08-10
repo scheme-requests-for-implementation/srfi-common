@@ -14,7 +14,7 @@
     <p class="authors">by <*<authors>*></p>
     <p class="status">status: <em><*<status>*></em> (<*<date>*>)</p><*<replaces>*><*<replaced-by>*>
 
-    <ul>
+    <ul class="info">
       <li><a href="srfi-<*<number>*>.html">The SRFI Document</a></li>
 <*<email-archives>*>
       <li><a href="https://github.com/scheme-requests-for-implementation/srfi-<*<number>*>">Git repo (on Github)</a></li>
