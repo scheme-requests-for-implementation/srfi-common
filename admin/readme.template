@@ -2,13 +2,13 @@
 
 ** by <*<authors>*>
 
-This repository hosts [[http://srfi.schemers.org/srfi-<*<number>*>/][SRFI <*<number>*>]]: <*<title>*>, a [[http://srfi.schemers.org/][Scheme Request for Implementation]].
+This repository hosts [[https://srfi.schemers.org/srfi-<*<number>*>/][SRFI <*<number>*>]]: <*<title>*>, a [[https://srfi.schemers.org/][Scheme Request for Implementation]].
 
 This SRFI is in /<*<status>*>/ status.
 
-The full documentation for this SRFI can be found in the [[http://srfi.schemers.org/srfi-<*<number>*>/srfi-<*<number>*>.html][SRFI Document]].
+The full documentation for this SRFI can be found in the [[https://srfi.schemers.org/srfi-<*<number>*>/srfi-<*<number>*>.html][SRFI Document]].
 
-If you'd like to participate in the discussion of this SRFI, or report issues with it, please [[http://srfi.schemers.org/srfi-<*<number>*>/][join the SRFI-<*<number>*> mailing list]] and send your message there.
+If you'd like to participate in the discussion of this SRFI, or report issues with it, please [[shttp://srfi.schemers.org/srfi-<*<number>*>/][join the SRFI-<*<number>*> mailing list]] and send your message there.
 
 Thank you.
 
