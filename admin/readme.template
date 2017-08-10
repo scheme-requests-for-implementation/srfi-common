@@ -4,7 +4,7 @@
 
 This repository hosts [[https://srfi.schemers.org/srfi-<*<number>*>/][SRFI <*<number>*>]]: <*<title>*>, a [[https://srfi.schemers.org/][Scheme Request for Implementation]].
 
-This SRFI is in /<*<status>*>/ status.
+This SRFI is in /<*<status>*>/ status.<*<replaces>*><*<replaced-by>*>
 
 The full documentation for this SRFI can be found in the [[https://srfi.schemers.org/srfi-<*<number>*>/srfi-<*<number>*>.html][SRFI Document]].
 

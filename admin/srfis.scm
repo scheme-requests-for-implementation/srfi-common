@@ -12,12 +12,13 @@
   "https://api.github.com/orgs/scheme-requests-for-implementation/repos")
 
 (define-record-type srfi
-    (%make-srfi number status title authors done-date draft-date)
+    (%make-srfi number status title authors replaces done-date draft-date)
     srfi?
   (number     srfi/number)
   (status     srfi/status)
   (title      srfi/title)
   (authors    srfi/authors)
+  (replaces   srfi/replaces)
   (done-date  srfi/done-date)
   (draft-date srfi/draft-date))		; final or withdrawn
 
@@ -31,16 +32,38 @@
     (write-char #\space port)
     (write (srfi/title srfi) port))))
 
-(define (make-srfi number status title authors draft-date #!optional done-date)
+(define (make-srfi number
+		   status
+		   title
+		   authors
+		   replaces
+		   draft-date
+		   #!optional done-date)
   (%make-srfi number
 	      status
 	      title
 	      authors
+	      replaces
 	      (and (not (default-object? done-date))
 		   done-date)
 	      draft-date))
 
 (define srfis (map (lambda (l) (apply make-srfi l)) srfi-data))
+
+(define srfi-replaced-by
+  (let ((table (make-eqv-hash-table)))
+    (for-each (lambda (s)
+		(for-each
+		 (lambda (n)
+		   (hash-table/modify!
+		    table
+		    n
+		    '()
+		    (lambda (replaced-by) (cons (srfi/number s) replaced-by))))
+		 (srfi/replaces s)))
+	      srfis)
+    (lambda (srfi)
+      (hash-table/get table (srfi/number srfi) '()))))
 
 (define srfi-assoc
   (association-procedure = srfi/number))
