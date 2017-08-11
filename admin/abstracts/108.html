@@ -1,0 +1,13 @@
+      <p>This specifies an extensible reader syntax for
+      named value constructors. A reader prefix is followed by a <q>tag</q> (an
+      identifier), and then expressions and literal text parameters. The tag
+      can be though of as a class name, and the expression and literal text are
+      arguments to an object constructor call. The reader translates
+      <code>&amp;<var>tag</var>{...}</code> to a list
+      <code>($construct$:<var>tag</var> ...)</code>, where
+      <code>$construct$:<var>tag</var></code> is normally bound to a predefined
+      macro.
+      <p>This propsal depends on <a href=
+      "srfi-109/">SRFI-109 (extended string quasi-literals)</a> (in spite of
+      having a lower number). It also shares quite of bit of syntax with
+      <a href="srfi-107/">SRFI-107 (XML reader syntax)</a>.

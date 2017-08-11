@@ -1,0 +1,19 @@
+      <p>This SRFI defines an I/O layer for lazy, mostly
+      functional buffered streams.
+      <p>The layer architecture is similar to the upper
+      three layers of the I/O subsystem in <a href=
+      "http://www.standardml.org/Basis/">The Standard ML Basis
+      Library</a>.
+      <p>In particular, this layer provides
+      <ul>
+        <li>buffered reading and writing
+        <li>arbitrary lookahead
+        <li>dynamic redirection of input or
+        output
+        <li>binary and text I/O, mixed if needed
+        <li>translated data streams
+        <li>the ability to create I/O streams from
+        arbitrary readers and writers
+      </ul>
+      <p>It builds on the Primitive I/O layer specified
+      in <a href="srfi-79/">SRFI 79 (Primitive I/O)</a>.

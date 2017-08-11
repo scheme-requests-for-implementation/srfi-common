@@ -1,0 +1,26 @@
+      <p>This SRFI can be seen as an extension of the
+      standard procedures <tt>=</tt>, <tt>&lt;</tt>, <tt>char&lt;?</tt> etc. of
+      R<sup>5</sup>RS -- or even as a replacement. The primary design aspect in
+      this SRFI is the separation of <em>representing</em> a total order and
+      <em>using it.</em> For representing the order, we have chosen for truly
+      3-way comparisons. For using it we provide an extensive set of
+      operations, each of which accepts a procedure used for comparison. Since
+      these compare procedures are often optional, comparing built-in types is
+      as convenient as R<sup>5</sup>RS , sometimes more convenient: For
+      example, testing if the integer index <em>i</em> lies in the integer
+      range {0, <tt>...</tt>, <em>n</em> <tt>-</tt> 1} can be written as
+      <tt>(&lt;=/&lt;? 0 i n)</tt>, implicitly invoking
+      <tt>default-compare</tt>.
+      <p>As soon as new total orders are required, the
+      infrastructure provided by this SRFI is far more convenient and often
+      even more efficient than building each total order from scratch.
+      <p>Moreover, in case Scheme users and implementors
+      find this mechanism useful and adopt it, the benefit of having a uniform
+      interface to total orders to be used in data structures will manifest
+      itself. Most concretely, a new sorting procedure in the spirit of this
+      SRFI would have the interface <tt>(my-sort [ <i>compare</i> ]
+      <i>xs</i>)</tt>, using <tt>default-compare</tt> if the optional
+      <i>compare</i> was not provided. Then <tt>my-sort</tt> could be defined
+      using the entire infrastructure of this SRFI: Efficient 2- and 3-way
+      branching, testing for chains and pairwise inequality, min/max, and
+      general order statistics.

@@ -1,0 +1,23 @@
+      <p>Unlike the
+      <code>values</code>/<code>call-with-values</code> mechanism of R5RS, this
+      SRFI uses an explicit representation for multiple return values as a
+      single value, namely a procedure. Decomposition of multiple values is
+      done by simple application. Each of the two macros, <code>mu</code> and
+      <code>nu</code>, evaluates to a procedure that takes one procedure
+      argument. The <code>mu</code> and <code>nu</code> can be compared with
+      <code>lambda</code>. While <code>lambda</code> expression that consists
+      of &lt;formals&gt; and &lt;body&gt; requires some actual arguments later
+      when the evaluated <code>lambda</code> expression is called,
+      <code>mu</code> and <code>nu</code> expressions that consist of
+      &lt;expression&gt;s corresponding to actual arguments of
+      <code>lambda</code> require &lt;formals&gt; and &lt;body&gt;, that is, an
+      evaluated <code>lambda</code> expression, later when the evaluated
+      <code>mu</code> and <code>nu</code> expressions are called.
+      <p>This SRFI also introduces new
+      <code>let</code>-syntax depending on <code>mu</code> and <code>nu</code>
+      to manipulate multiple values, <code>alet</code> and <code>alet*</code>
+      that are compatible with <code>let</code> and <code>let*</code> of R5RS
+      in single value bindings. They also have a binding form making use of
+      <code>values</code> and <code>call-with-values</code> to handle multiple
+      values. In addition, they have several new binding forms for useful
+      functions such as escape, recursion, etc.

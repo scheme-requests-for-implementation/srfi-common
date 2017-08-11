@@ -1,0 +1,33 @@
+      <p>This SRFI proposes text to replace section 6.2
+      "Numbers" of R5RS in order to extend its capabilities, correct errors in
+      its specification, make it more explicit about limitations of precision
+      and magnitude, and improve portability between implementations. More
+      specifically, this new text:
+      <ul>
+        <li>incorporates an inexact real positive
+        infinity and an inexact real negative infinity,
+        <li>extends number syntax to incorporate inexact
+        real infinities,
+        <li>adapts Common-Lisp semantics for
+        <samp>`expt'</samp> and extends them to include inexact real
+        infinities,
+        <li>corrects the description of
+        <samp>`sqrt'</samp>,
+        <li>sharpens the distinction between exact and
+        inexact numbers,
+        <li>removes a contradiction related to
+        exactness,
+        <li>extends <samp>`gcd'</samp> and
+        <samp>`lcm'</samp> to exact rational numbers,
+        <li>extends <samp>`quotient'</samp>,
+        <samp>`modulo'</samp>, and <samp>`remainder'</samp> to finite real
+        numbers,
+        <li>clarifies the behavior of
+        <samp>`inexact-&gt;exact'</samp> applied to an exact argument,
+        <li>clarifies the behavior of
+        <samp>`exact-&gt;inexact'</samp> applied to an inexact argument,
+        <li>adds convenience procedures
+        <samp>`exact-round'</samp>, <samp>`exact-ceiling'</samp>,
+        <samp>`exact-floor'</samp>, and <samp>`exact-truncate'</samp>,
+        <li>and adds examples.
+      </ul>

@@ -1,0 +1,44 @@
+      <p>This SRFI proposes a coherent and comprehensive
+      set of procedures for performing bitwise logical operations on integers;
+      it is accompanied by a reference implementation of the spec in terms of a
+      set of seven core operators. The sample implementation is portable, as
+      efficient as practical with pure Scheme arithmetic (it is much more
+      efficient to replace the core operators with C or assembly language if
+      possible), and open source.
+      <p>The precise semantics of these operators is
+      almost never an issue. A consistent, portable set of <em>names</em> and
+      <em>parameter conventions</em>, however, is. Hence this SRFI, which is
+      based mainly on <a href="srfi-33/">SRFI 33</a>, with some changes and
+      additions from <a href=
+      "http://srfi.schemers.org/srfi-33/mail-archive/msg00023.html">Olin's late
+      revisions to SRFI 33</a> (which were never consummated). <a href=
+      "srfi-60/">SRFI 60</a> (based on SLIB) is smaller but has a few
+      procedures of its own; some of its procedures have both native (often
+      Common Lisp) and SRFI 33 names. They have been incorporated into this
+      SRFI. <a href=
+      "http://www.r6rs.org/final/html/r6rs-lib/r6rs-lib-Z-H-12.html#node_sec_11.4">
+      R6RS</a> is a subset of SRFI 60, except that all procedure names begin
+      with a <tt>bitwise-</tt> prefix. A few procedures have been added from
+      the general vector <a href="srfi-133/">SRFI 133</a>.
+      <p>Among the applications of bitwise operations
+      are: hashing, Galois-field calculations of error-detecting and
+      error-correcting codes, cryptography and ciphers, pseudo-random number
+      generation, register-transfer-level modeling of digital logic designs,
+      Fast-Fourier transforms, packing and unpacking numbers in persistent data
+      structures, space-filling curves with applications to dimension reduction
+      and sparse multi-dimensional database indexes, and generating approximate
+      seed values for root-finders and transcendental function
+      algorithms.
+      <p>This SRFI differs from SRFI 142 in only two
+      ways:
+      <ol>
+        <li>
+          <p>The <tt>bitwise-if</tt> function has the
+          argument ordering of SLIB, SRFI 60, and R6RS rather than the ordering
+          of SRFI 33.
+        <li>
+          <p>The order in which bits are processed by
+          the procedures listed in the "Bits conversion" section has been
+          clarified and some of the procedures' names have been changed. See
+          "Bit processing order" for details.
+      </ol>

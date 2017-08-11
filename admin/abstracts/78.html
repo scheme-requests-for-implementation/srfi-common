@@ -1,0 +1,47 @@
+      <p>A simple mechanism is defined for testing
+      Scheme programs. As a most primitive example, the expression
+      <pre>
+   (check (+ 1 1) =&gt; 3)
+</pre>evaluates the expression <code>(+ 1
+1)</code> and compares the result with the expected result 3 provided after the
+syntactic keyword <code>=&gt;</code>. Then the outcome of this comparison is
+reported in human-readable form by printing a message of the form
+      <pre>
+   (+ 1 1) =&gt; 2 ; *** failed ***
+   ; expected result: 3
+</pre>Moreover, the outcome of any executed check
+is recorded in a global state counting the number of correct and failed checks
+and storing the first failed check. At the end of a file, or at any other
+point, the user can print a summary using <code>check-report</code>.
+      <p>In addition to the simple test above, it is
+      also possible to execute a parametric sequence of checks. Syntactically,
+      this takes the form of an eager comprehension in the sense of <a href=
+      "srfi-42/">SRFI 42</a> [5]. For example,
+      <pre>
+   (check-ec (:range e 100)
+             (:let x (expt 2.0 e))
+             (= (+ x 1) x) =&gt; #f (e x))
+</pre>This statement runs the variable <code>
+      e</code> through {0..99} and for each binding defines <code>x</code> as
+      <code>(expt 2.0 e)</code>. Then it is checked if <code>(+ x 1)</code> is
+      equal to <code>x</code>, and it is expected that this is not the case
+      (i.e. expected value is <code>#f</code>). The trailing <code>(e x)</code>
+      tells the reporting mechanism to print the values of both <code>e</code>
+      and <code>x</code> in case of a failed check. The output could look like
+      this:
+      <pre>
+   (let ((e 53) (x 9007199254740992.0)) (= (+ x 1) x)) =&gt; #t ; *** failed ***
+    ; expected result: #f
+</pre>The specification of bindings to report,
+<code>(e x)</code> in the example, is optional but very informative. Other
+features of this SRFI are:
+      <ul>
+        <li>A way to specify a different equality
+        predicate (default is <code>equal?</code>).
+        <li>Controlling the amount of reporting being
+        printed.
+        <li>Switching off the execution and reporting of
+        checks entriely.
+        <li>Retrieving a boolean if all checks have been
+        executed and passed.
+      </ul>

@@ -1,0 +1,29 @@
+      <p>In Scheme, strings are a mutable data type.
+      Although it "is an error" (<abbr title=
+      "Revised&lt;sup&gt;5&lt;/sup&gt; Report on Scheme">R5RS</abbr> and
+      <abbr title=
+      "Revised&lt;sup&gt;7&lt;/sup&gt; Report on Scheme">R7RS</abbr>) to use
+      <code>string-set!</code> on literal strings or on strings returned by
+      <code>symbol-&gt;string</code>, and any attempt to do so "should raise an
+      exception" (<abbr title=
+      "Revised&lt;sup&gt;6&lt;/sup&gt; Report on Scheme">R6RS</abbr>), all
+      other strings are mutable.
+      <p>Although many mutable strings are never
+      actually mutated, the mere possibility of mutation complicates
+      specifications of libraries that use strings, encourages precautionary
+      copying of strings, and precludes structure sharing that could otherwise
+      be used to make procedures such as <code>substring</code> and
+      <code>string-append</code> faster and more space-efficient.
+      <p>This <abbr title=
+      "Scheme Request for Implementation">SRFI</abbr> specifies a new data type
+      of immutable texts. It comes with efficient and portable sample
+      implementations that guarantee O(1) indexing for both sequential and
+      random access, even in systems whose <code>string-ref</code> procedure
+      takes linear time.
+      <p>The operations of this new data type include
+      analogues for all of the non-mutating operations on strings specified by
+      the R7RS and most of those specified by <abbr title=
+      "String cursors"><a href="srfi-130/">SRFI 130</a></abbr>, but the
+      immutability of texts and uniformity of character-based indexing simplify
+      the specification of those operations while avoiding several
+      inefficiencies associated with the mutability of Scheme's strings.

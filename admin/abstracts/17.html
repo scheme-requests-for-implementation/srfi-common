@@ -1,0 +1,22 @@
+      <p>This is a proposal to allow procedure calls
+      that evaluate to the "value of a location" to be used to <em>set</em> the
+      value of the location, when used as the first operand of
+      <code>set!</code>.For example:
+      <pre>
+(set! (car x) (car y))
+</pre>becomes equivalent to
+      <pre>
+(set-car! x (car y))
+</pre>
+      <p>Many programming languages have the concept of
+      an <i>lvalue</i>. that is an "expression" that "evaluates" to a location,
+      and which can appear on the left-hand-side of an assignment. Common Lisp
+      has a related concept of "generalized variables" which can be used in
+      <code>setf</code> and some other special forms. However, the Common Lisp
+      concept is based on the idea of compile-time recognition of special
+      "location-producing" functions; this does not seem to be in the "spirit
+      of Scheme".
+      <p>This SRFI proposes an extension of
+      <code>set!</code> so that it provides similar functionality as Common
+      Lisp's <code>setf</code>, except that the updater is associated with a
+      procedure value, rather than a name.

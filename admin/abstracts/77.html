@@ -1,0 +1,55 @@
+      <p>Scheme's arithmetic system was designed to
+      allow a wide variety of implementations. After many years of
+      implementation experience, however, most implementations now fall into a
+      small number of categories, and the benefits of continued experimentation
+      no longer justify the confusion and portability problems that have
+      resulted from giving implementations so much freedom in this area.
+      Moreover, the R5RS generic arithmetic is difficult to implement as
+      efficiently as purely fixnum or purely flonum arithmetic. (Fixnum
+      arithmetic is typically limited-precision integer arithmetic implemented
+      using one or more representations that may be especially efficient on the
+      executing machine; flonum arithmetic is typically limited-precision
+      floating-point arithmetic using one or more representations that may be
+      especially efficient on the executing machine.)
+      <p>This SRFI is an effort to extend and clarify
+      the R5RS arithmetic to make it more portable, more comprehensive, and
+      enable faster programs.
+      <p>Furthermore, one of us (Sperber) has argued
+      that Scheme's arithmetic requires radical overhaul. The other (Clinger)
+      agrees that revisions are needed. Whether these revisions qualify as
+      radical is best left to the judgement of individual readers.
+      <p>This SRFI proposes to revise section 6.2
+      ("Numbers") of R5RS by:
+      <ul>
+        <li>requiring a Scheme implementation to provide
+        the full tower, including exact rationals of arbitrary precision, exact
+        rectangular complex numbers with rational real and imaginary parts, and
+        inexact real and complex arithmetic
+        <li>defining fixnum arithmetic (parameterized by
+        precision)
+        <li>defining flonum arithmetic
+        (inexactly)
+        <li>defining new procedures for performing exact
+        arithmetic
+        <li>defining new procedures for performing
+        inexact arithmetic
+        <li>describing the external representation and
+        semantics of 0.0, -0.0, infinities and NaNs for systems that implement
+        inexact real arithmetic using IEEE binary floating point&lt;?
+        <li>changing the specification of
+        <code>eqv?</code> to behave more sensibly with inexact numbers
+        <li>defining Scheme's real numbers to be the
+        complex numbers whose imaginary part is an exact zero
+        <li>adding an external representation for
+        inexact numbers that expresses the precision of a binary floating point
+        representation
+        <li>defining procedures for some new operations,
+        including integer division and remainder on real numbers, and bitwise
+        operations,
+        <li>restricting the domains of some R5RS
+        procedures
+        <li>clarifying the semantics of some R5RS
+        procedures
+        <li>possibly changing the semantics of some R5RS
+        procedures
+      </ul>

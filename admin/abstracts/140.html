@@ -1,0 +1,31 @@
+      <p>This attempts to solve the same issues with
+      R7RS strings raised by <a href="srfi-135/">SRFI-135</a>, but with better
+      integration with the Scheme language.
+      <p>We propose to retain the name <dfn>string</dfn>
+      as the type of sequences of Unicode characters (scalar values). There are
+      two standard subtypes of string:
+      <ul>
+        <li>Immutable strings, also called
+        <dfn>istrings</dfn>, cannot be modified after they have been created.
+        Calling <code>string-set!</code> on an istring throws an error. On the
+        other hand, the core operations <code>string-ref</code> and
+        <code>string-length</code> are guaranteed to be O(1).
+        <li>Mutable strings can be modified
+        <q>in-place</q> using <code>string-set!</code> and other operations.
+        However, <code>string-ref</code>, <code>string-set!</code>, or
+        <code>string-length</code> have no performance guarantees. On many
+        implementation they may take time proportional to the length of the
+        string.
+      </ul>
+      <p>An implementation may support other kinds of
+      strings. For example on the Java platform it may be reasonable to
+      consider any instance of <code>java.lang.CharSequence</code> to be a
+      string.
+      <p>The main part of the proposal specifies the
+      default bindings of various procedure names, as might be pre-defined in a
+      REPL. Specifically, some procedures that traditionally return mutable
+      strings are changed to return istrings. We later discuss compatibility
+      and other library issues.
+      <p>This combines <a href="srfi-13/">SRFI-13</a>,
+      <a href="srfi-135/">SRFI-135</a>, and <a href=
+      "srfi-118/">SRFI-118</a>.

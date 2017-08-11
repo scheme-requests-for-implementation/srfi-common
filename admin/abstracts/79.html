@@ -1,0 +1,15 @@
+      <p>This SRFI defines a simple, primitive I/O
+      subsystem for Scheme that is intended to function as the lowest layer of
+      a more comprehensive suite of I/O layers. It provides unbuffered I/O, and
+      is close to what a typical operating system offers. Thus, its interface
+      is suitable for implementing high-throughput and zero-copy I/O.
+      <p>The Primitive I/O layer also allows clients to
+      implement custom data sources and sinks via a simple interface.
+      <p>Moreover, this SRFI defines a condition
+      hierarchy specifying common I/O-related exceptional situations.
+      <p>The Primitive I/O layer only handles
+      blocking-I/O. Non-blocking and selective I/O is left for another
+      SRFI.
+      <p>This I/O layer was designed in conjunction with
+      two other layers that can be built on top of it: <a href="srfi-80/">SRFI
+      80 (Stream I/O)</a> and <a href="srfi-81/">SRFI 81 (Port I/O)</a>.

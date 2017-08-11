@@ -1,0 +1,65 @@
+      <p>This SRFI is a proposal for extending
+      <code>let</code>, <code>let*</code>, and <code>letrec</code> for
+      receiving multiple values. The syntactic extension is fully compatible
+      with the existing syntax. It is the intention that single-value bindings,
+      i.e. <code>(let ((var expr)) ...)</code>, and multiple-value binding can
+      be mixed freely and conveniently.
+      <p>The most simple form of the new syntax is best
+      explained by an example:
+      <pre>
+(define (quo-rem x y)
+  (values (quotient x y) (remainder x y)))
+
+(define (quo x y)
+  (let ((q r (quo-rem x y)))
+    q))
+</pre>
+      <p>The procedure <code>quo-rem</code> delivers two
+      values to its continuation. These values are received as <code>q</code>
+      and <code>r</code> in the <code>let</code>-expression of the procedure
+      <code>quo</code>. In other words, the syntax of <code>let</code> is
+      extended such that several variables can be specified---and these
+      variables receive the values delivered by the expression <code>(quo-rem x
+      y)</code>.
+      <p>The syntax of <code>let</code> is further
+      extended to cases in which a rest argument receives the list of all
+      residual values. Again by example,
+      <pre>
+(let (((values y1 y2 . y3+) (foo x)))
+   body)
+</pre>In this example, <code>values</code> is a
+syntactic keyword indicating the presence of multiple values to be received,
+and <code>y1</code>, <code>y2</code>, and <code>y3+</code>, resp., are
+variables bound to the first value, the second value, and the list of the
+remaining values, resp., as produced by <code>(foo x)</code>. The syntactic
+keyword <code>values</code> allows receiving all values as in <code>(let
+(((values . xs) (foo x))) body)</code>. It also allows receiving no values at
+all as in <code>(let (((values) (for-each foo list))) body)</code>.<br>
+      <br>
+      <p>A common application of binding multiple values
+      is decomposing data structures into their components. This mechanism is
+      illustrated in its most primitive form as follows: The procedure
+      <code>uncons</code> (defined below) decomposes a pair <code>x</code> into
+      its car and its cdr and delivers them as two values to its continuation.
+      Then an extended <code>let</code> can receive these values:
+      <pre>
+(let ((car-x cdr-x (uncons x)))
+  (foo car-x cdr-x))
+</pre>
+      <p>Of course, for pairs this method is probably
+      neither faster nor clearer than using the procedures <code>car</code> and
+      <code>cdr</code>. However, for data structures doing substantial work
+      upon decomposition this is different: Extracting the element of highest
+      priority from a priority queue, while at the same time constructing the
+      residual queue, can both be more efficient and more convenient than doing
+      both operations independently. In fact, the <code>quo-rem</code> example
+      illustrates this point already as both quotient and remainder are
+      probably computed by a common exact division algorithm. (And often
+      caching is used to avoid executing this algorithm twice as often as
+      needed.)
+      <p>As the last feature of this SRFI, a mechanism
+      is specified to store multiple values in heap-allocated data structures.
+      For this purpose, <code>values-&gt;list</code> and
+      <code>values-&gt;vector</code> construct a list (a vector, resp.) storing
+      all values delivered by evaluating their argument expression. Note that
+      these operations cannot be procedures.

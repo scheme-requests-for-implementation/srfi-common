@@ -1,0 +1,41 @@
+      <p>This SRFI describes a set of syntax extensions
+      for Scheme, called sweet-expressions (t-expressions), that has the same
+      descriptive power as s-expressions but is designed to be easier for
+      humans to read. The sweet-expression syntax enables the use of
+      syntactically-meaningful indentation to group expressions (similar to
+      Python), and it builds on the infix and traditional function notation
+      defined in <a href="srfi-105/">SRFI-105 (curly-infix-expressions)</a>.
+      Unlike nearly all past efforts to improve s-expression readability,
+      sweet-expressions are general (the notation is independent from any
+      underlying semantic) and homoiconic (the underlying data structure is
+      clear from the syntax). This notation was developed by the “<a href=
+      "http://readable.sourceforge.net/">Readable Lisp S-expressions
+      Project</a>” and can be used for both programs and data.
+      <p>Sweet-expressions can be considered a set of
+      additional abbreviations, just as <tt>'x</tt> already abbreviates
+      <tt>(quote&nbsp;x)</tt>. Sweet-expressions and traditionally formatted
+      s-expressions can be freely mixed; this provides backwards compatibility,
+      simplifies transition, and enables developers to maximize readability.
+      Here is an example of a sweet-expression and its equivalent s-expression
+      (note that a sweet-expression reader would accept <em>either</em>
+      format):
+      <table border="1" cellpadding="4">
+        <tr>
+          <th>sweet-expression
+          <th>s-expression
+        <tr>
+          <td>
+            <pre>
+define fibfast(n)   ; Typical function notation
+  if {n &lt; 2}        ; Indentation, infix {...}
+     n              ; Single expr = no new list
+     fibup n 2 1 0  ; Simple function calls
+</pre>
+          <td>
+            <pre>
+(define (fibfast n)
+  (if (&lt; n 2)
+      n
+      (fibup n 2 1 0)))
+</pre>
+      </table>

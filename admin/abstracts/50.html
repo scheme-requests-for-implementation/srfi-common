@@ -1,0 +1,24 @@
+      <p>This SRFI describes an interface for calling C
+      functions from Scheme, calling Scheme functions from C, and allocating
+      storage in the Scheme heap. Scheme manages stub functions in C that
+      negotiate between the calling conventions of Scheme and C and the memory
+      allocation policies of both worlds.
+      <p>The following facilities are available for
+      interfacing between Scheme and C:
+      <ul>
+        <li>Scheme code can call C functions.
+        <li>The external interface provides full
+        introspection for all Scheme objects. External code may inspect,
+        modify, and allocate Scheme objects arbitrarily.
+        <li>External code may signal errors to the
+        Scheme system.
+        <li>External code may call back into Scheme.
+        Scheme correctly unrolls the process stack on non-local exits.
+        <li>External modules may register bindings of
+        names to values with a central registry accessible from Scheme.
+        Conversely, Scheme code can register shared bindings for access by C
+        code.
+      </ul>
+      <p>The interface is closely based on that of
+      <a href="http://www.s48.org/">Scheme 48</a> and <a href=
+      "http://www.scsh.net/">scsh</a>.

@@ -1,0 +1,4 @@
+    <li>
+      <a href="srfi-<*<number>*>">SRFI <span class="number"><*<number>*></span></a>: <span class="title"><*<title>*></span> <span class="status"><*<status>*></span>
+      <div class="abstract">
+      <*<body>*></div>

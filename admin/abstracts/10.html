@@ -1,0 +1,13 @@
+      <p>The present SRFI proposes an extensible
+      external representation of Scheme values, a notational convention for
+      future SRFIs. This SRFI adds <code>#,(</code> as a new token and extends
+      production rules of the grammar for a Scheme reader. The
+      <code>#,()</code> form can be used for example to denote values that do
+      not have a convenient printed representation, as well for conditional
+      code compilation. It is proposed that future SRFIs that contain new read
+      syntax for values use the <code>#,()</code> notation with an appropriate
+      tag symbol.
+      <p>As a particular example and the reference
+      implementation for the <code>#,()</code> convention, this SRFI describes
+      an interpretation of the <code>#,()</code> external form as a read-time
+      application.

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.5.20">
+<meta charset="utf-8">
+<title>SRFI Abstracts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/srfi.css" type="text/css">
+<link href="/favicon.png" rel="icon" sizes="192x192" type="image/png">
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+     });
+</script>
+<script crossorigin="anonymous" integrity=
+"sha384-Ra6zh6uYMmH5ydwCqqMoykyf1T/+ZcnOQfFPhDrp2kI4OIxadnhsvvA2vv9A7xYv" src=
+"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+type="text/javascript"></script>
+<style>
+ .abstract {
+   display: block;
+   margin-bottom: 1em;
+ }
+ body {
+   font-family: sans-serif;
+   max-width: 46em;
+ }
+ h1 {
+   text-align: center;
+ }
+ img {
+   display: block;
+   float: right;
+   padding-bottom: 1em;
+   width: 400px;
+ }
+ .search {
+   border: solid 1px #ccc;
+   border-radius: 5px;
+   padding: 7px 14px;
+   margin-bottom: 10px;
+   margin-right: 2em;
+ }
+ .search:focus {
+   border-color: #aaa;
+   outline: none;
+ }
+ .status {
+   color: lightgrey;
+   font-size: 2em;
+ }
+ .status:after {
+   content: ")"
+ }
+ .status:before {
+   content: "("
+ }
+ ul.list {
+   list-style-type: none;
+   magin: 0;
+   padding: 0;
+ }
+ ul.list > li > a {
+   font-size: 2em;
+ }
+ .title {
+   font-size: 2em;
+ }
+</style>
+<style type="text/css">
+ span.c2 {font-family: monospace}
+ span.c1 {font-family: serif}
+</style>
+<h1><a href="/">SRFI</a> Abstracts</h1>
+<img src="word-cloud.svg" />
+<p>These are the abstracts from all SRFIs, collected on one page for easy
+reference.
+<div id="srfis">
+  <input class="search" placeholder="Search abstracts" tabindex="1">
+  <ul class="list">
+<*<abstracts>*>
+  </ul>
+  <script crossorigin="anonymous" integrity=
+  "sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm"
+  src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js" type=
+  "application/javascript"></script>
+  <script type="application/javascript">
+
+  var options = { valueNames: [ "abstract", "number", "title"]};
+  var srfiList = new List("srfis", options);
+  </script>
+</div>
+

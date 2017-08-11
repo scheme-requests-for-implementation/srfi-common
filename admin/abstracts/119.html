@@ -1,0 +1,47 @@
+      <p>This SRFI describes a simple syntax which
+      allows making scheme easier to read for newcomers while keeping the
+      simplicity, generality and elegance of s-expressions. Similar to <a href=
+      "srfi-110/">SRFI 110</a>, <a href="srfi-49/">SRFI 49</a> and Python it
+      uses indentation to group expressions. Like <a href="srfi-110/">SRFI
+      110</a> wisp is general and homoiconic.
+      <p>Different from its predecessors, wisp only uses
+      the absolute minimum of additional syntax-elements which are required for
+      writing and exchanging arbitrary code-structures. As syntax elements it
+      only uses a colon surrounded by whitespace, the period followed by
+      whitespace as first code-character on the line and optional underscores
+      followed by whitespace at the beginning of the line.
+      <p>It resolves a limitation of <a href=
+      "srfi-110/">SRFI 110</a> and <a href="srfi-49/">SRFI 49</a>, both of
+      which force the programmer to use a single argument per line if the
+      arguments to a procedure need to be continued after a
+      procedure-call.
+      <p>Wisp expressions can include arbitrary
+      s-expressions and as such provide backwards compatibility.
+      <blockquote>
+        <table>
+          <tr>
+            <th>wisp
+            <th>s-exp
+          <tr>
+            <td>
+              <pre>
+<b>define</b> : <i>factorial</i> n
+__  <b>if</b> : <i>zero?</i> n
+____   . 1
+____   <i>*</i> n : <i>factorial</i> (- n 1)
+
+<i>display</i> : <i>factorial</i> 5
+<i>newline</i>
+</pre>
+            <td>
+              <pre>
+(<b>define</b> (<i>factorial</i> n)
+    (<b>if</b> (<i>zero?</i> n)
+       1
+       (<i>*</i> n (<i>factorial</i> (- n 1)))))
+
+(<i>display</i> (<i>factorial</i> 5))
+(<i>newline</i>)
+</pre>
+        </table>
+      </blockquote>

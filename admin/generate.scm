@@ -56,6 +56,12 @@
     (lambda ()
       (invoke-template template variables))))
 
+(define abstract-single-template
+  (read-template "srfi-common/admin/abstract-single.template"))
+
+(define abstracts-template
+  (read-template "srfi-common/admin/abstracts.template"))
+
 (define faq-anchor-template
   (read-template "srfi-common/admin/faq-anchor.template"))
 
@@ -251,4 +257,25 @@ and \", and\" otherwise."
 
 (define (write-srfi-status-pages)
   (do-list (status '(draft final withdrawn))
-      (write-srfi-status status)))
+    (write-srfi-status status)))
+
+(define (srfi-abstract n)
+  (read-entire-file
+   (format #f "$ss/srfi-common/admin/abstracts/~A.html" n)))
+
+(define (write-srfi-abstracts-page)
+  (define (wrap-abstract srfi)
+    (let ((n (srfi/number srfi)))
+      (invoke-template/string
+       abstract-single-template
+       `((body ,(srfi-abstract n))
+	 (number ,(number->string n))
+	 (status ,(srfi/status srfi))
+	 (title ,(srfi/title srfi))))))
+  (with-output-to-file "$ss/srfi-common/srfi-abstracts.html"
+    (lambda ()
+      (invoke-template
+       abstracts-template
+       `((abstracts
+	  ,(string-join "\n"
+			(map wrap-abstract srfis))))))))

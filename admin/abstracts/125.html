@@ -1,0 +1,30 @@
+      <p>This SRFI defines an interface to hash tables,
+      which are widely recognized as a fundamental data structure for a wide
+      variety of applications. A hash table is a data structure that:
+      <ul>
+        <li>Is disjoint from all other types.
+        <li>
+          Provides a mapping from objects known as
+          <em>keys</em> to corresponding objects known as
+          <em>values</em>.
+          <ul>
+            <li>Keys may be any Scheme objects in some
+            kinds of hash tables, but are restricted in other kinds.
+            <li>Values may be any Scheme objects.
+          </ul>
+        <li>Has no intrinsic order for the key-value
+        <em>associations</em> it contains.
+        <li>Provides an <em>equality predicate</em>
+        which defines when a proposed key is the same as an existing key. No
+        table may contain more than one value for a given key.
+        <li>Provides a <em>hash function</em> which maps
+        a candidate key into a non-negative exact integer.
+        <li>Supports mutation as the primary means of
+        setting the contents of a table.
+        <li>Provides key lookup and destructive update
+        in (expected) amortized constant time, provided a satisfactory hash
+        function is available.
+        <li>Does not guarantee that whole-table
+        operations work in the presence of concurrent mutation of the whole
+        hash table (values may be safely mutated).
+      </ul>

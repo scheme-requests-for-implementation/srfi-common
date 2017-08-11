@@ -1,0 +1,39 @@
+      <p>This SRFI describes a procedural macro proposal
+      for Scheme with the following features:
+      <ul>
+        <li>
+          <h3>Improved hygiene:</h3>
+          <p>We argue that conventional hygiene
+          algorithms may lead to accidental variable capture errors in
+          procedural macros. We propose an improved algorithm that avoids these
+          problems.
+        <li>
+          <h3>Reflective tower:</h3>
+          <p>We specify a reflective tower of arbitrary
+          height, and propose a refinement of lexical scoping that takes into
+          account the phase of use of an identifier in determining its
+          meaning.
+        <li>
+          <h3>Syntax-case:</h3>
+          <p>In the current proposal, the
+          <tt>syntax-case</tt> form is expressible as a macro in terms of a
+          simpler set of primitives and is specified as library syntax.
+        <li>
+          <h3>Procedural interface:</h3>
+          <p>The primitive interface for manipulating
+          compound syntax objects consists of procedures rather than special
+          forms. In particular, the traditional abstractions <tt>car</tt>,
+          <tt>cdr</tt>, <tt>cons</tt> , <tt>...</tt> can be used on syntactic
+          data.
+        <li>
+          <h3>Fast hygiene algorithm:</h3>
+          <p>The reference implementation documents a
+          fast imperative hygiene algorithm that is eager and linear in
+          expression size.
+        <li>
+          <h3>Capturing identifiers:</h3>
+          <p>A primitive
+          <tt>make-capturing-identifier</tt> is provided for intentional
+          variable capture and for building expansion-time fluid binding
+          constructs.
+      </ul>

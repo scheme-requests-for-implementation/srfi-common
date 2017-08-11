@@ -1,0 +1,9 @@
+      <p>Each syntax definition assigns a macro
+      transformer to a keyword. The macro transformer is specified by a
+      transformer spec, which is either an instance of
+      <code>syntax-rules</code>, an existing syntactic keyword (including macro
+      keywords and the syntactic keywords that introduce the core forms, like
+      <code>lambda</code>, <code>if</code>, or <code>define</code>), or a use
+      of a macro that eventually expands into an instance of
+      <code>syntax-rules</code>. In the latter case, the keyword of macro use
+      is called a <em>custom macro transformer</em>.

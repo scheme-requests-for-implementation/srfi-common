@@ -1,0 +1,22 @@
+      <p>The <tt>define-immutable</tt> form defines an
+      identifier whose value never changes.
+      <p>The expression part of the definition is
+      evaluated lazily: it is not evaluated unless and until the identifier is
+      evaluated. This permits an immutable definition to use other definitions
+      in more ways than is possible when using <tt>define</tt> in internal
+      definitions.
+      <p>A series of immutable definitions have simple
+      semantics, making them easy to program and understand.
+      <pre>
+    (let ()
+      (define-immutable x (+ z 5))
+      (define-immutable y (/ 100 4))
+      (define-immutable z (add-10 y))
+      (define-immutable add-10 (add-n 10))
+      (define-immutable (add-n n)
+        (lambda (x)
+          (+ n x)))
+      x)
+  =&gt;
+    40
+</pre>

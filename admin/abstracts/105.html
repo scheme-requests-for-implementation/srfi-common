@@ -1,0 +1,33 @@
+      <p>Lisp-based languages, like Scheme, are almost
+      the only programming languages in modern use that do not support infix
+      notation. In addition, most languages allow infix expressions to be
+      combined with function call notation of the form
+      <code><var>f</var>(<var>x</var>)</code>. This SRFI provides these
+      capabilities, both for developers who already use Scheme and want these
+      conveniences, and also for other developers who may choose to use other
+      languages in part because they miss these conveniences. Scheme currently
+      reserves <code>{</code>...<code>}</code> “for possible future extensions
+      to the language”. We propose that <code>{</code>...<code>}</code> be used
+      to support “curly-infix-expression” notation as a homoiconic infix
+      abbreviation, as a modification of the Scheme reader. It is an
+      abbreviation in much the same way that <samp>'x</samp> is an abbreviation
+      for <samp>(quote&nbsp;x)</samp>.
+      <p>A <dfn>curly-infix list</dfn> introduces a list
+      whose visual presentation can be in infix order instead of prefix order.
+      For example, <samp>{n&nbsp;&gt;&nbsp;5}</samp> ⇒
+      <samp>(&gt;&nbsp;n&nbsp;5)</samp>, and
+      <samp>{a&nbsp;+&nbsp;b&nbsp;+&nbsp;c}</samp> ⇒
+      <samp>(+&nbsp;a&nbsp;b&nbsp;c)</samp>. By intent, there is no precedence,
+      but e.g., <samp>{x&nbsp;+&nbsp;{y&nbsp;*&nbsp;z}}</samp> maps cleanly to
+      <samp>(+&nbsp;x&nbsp;(*&nbsp;y&nbsp;z))</samp>. Forms with mixed infix
+      operators and other complications have “<code>$nfx$</code>” prepended to
+      enable later processing, e.g.,
+      <samp>{4&nbsp;+&nbsp;5&nbsp;*&nbsp;6}</samp> ⇒
+      <samp>($nfx$&nbsp;4&nbsp;+&nbsp;5&nbsp;*&nbsp;6)</samp>. Also, inside a
+      curly-infix list (recursively), expressions of the form
+      <code><var>f</var>(</code>...<code>)</code> are simply an abbreviation
+      for <code>(<var>f</var>&nbsp;</code>...<code>)</code>.
+      <p>Note that this is derived from the “<a href=
+      "http://readable.sourceforge.net/">readable</a>” project. We intend to
+      later submit at least one additional SRFI that will build on top of this
+      SRFI, but curly-infix-expressions are useful on their own.

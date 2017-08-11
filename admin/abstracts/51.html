@@ -1,0 +1,14 @@
+      <p>This SRFI introduces the
+      <code>rest-values</code> procedure which has three modes of
+      operation:
+      <ol>
+        <li>it processes a rest list after checking its
+        elements with default values or predicate procedures,
+        <li>it processes a rest list with default values
+        without checking its elements,
+        <li>it processes a default list whose elements
+        are lists or pairs, after checking their elements that are default
+        values or predicate procedures with the elements of a rest list,
+      </ol>
+      <p>and eight macros which additionally check the
+      rest arguments that are returned by <code>rest-values</code>.

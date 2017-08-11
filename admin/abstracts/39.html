@@ -1,0 +1,8 @@
+      <p>This SRFI defines <i>parameter</i> objects, the
+      procedure <code>make-parameter</code> to create parameter objects and the
+      <code>parameterize</code> special form to dynamically bind parameter
+      objects. In the dynamic environment, each parameter object is bound to a
+      cell containing the value of the parameter. When a procedure is called
+      the called procedure inherits the dynamic environment from the caller.
+      The <code>parameterize</code> special form allows the binding of a
+      parameter object to be changed for the dynamic extent of its body.

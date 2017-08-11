@@ -1,0 +1,35 @@
+      <p>Lazy evaluation is traditionally simulated in
+      Scheme using <code>delay</code> and <code>force</code>. However, these
+      primitives are not powerful enough to express a large class of lazy
+      algorithms that are iterative. Indeed, it is folklore in the Scheme
+      community that typical iterative lazy algorithms written using
+      <code>delay</code> and <code>force</code> will often require unbounded
+      memory.
+      <p>Although varous modifications of
+      <code>delay</code> and <code>force</code> had been proposed to resolve
+      this problem (see e.g., the SRFI-40 discussion list) they all fail some
+      of the benchmarks provided below. To our knowledge, the current SRFI
+      provides the first exhaustive solution to this problem.
+      <p>As motivation, we first explain how the usual
+      laziness encoding using only <code>delay</code> and <code>force</code>
+      will break the iterative behavior of typical algorithms that would have
+      been properly tail-recursive in a true lazy language, causing the
+      computation to require unbounded memory.
+      <p>The problem is then resolved by introducing a
+      set of three operations:
+      <pre>
+    {<code>lazy</code>, <code>delay</code>, <code>force</code>}
+</pre>which allow the programmer to succinctly
+express lazy algorithms while retaining bounded space behavior in cases that
+are properly tail-recursive. A general recipe for using these primitives is
+provided. An additional procedure <code>{eager}</code> is provided for the
+construction of eager promises in cases where efficiency is a concern.<br>
+
+      <br>
+      <p>Although this SRFI redefines <code>delay</code>
+      and <code>force</code>, the extension is conservative in the sense that
+      the semantics of the subset {<code>delay</code>, <code>force</code>} in
+      isolation (i.e., as long as the program does not use <code>lazy</code>)
+      agrees with that in R5RS. In other words, no program that uses the R5RS
+      definitions of delay and force will break if those definition are
+      replaced by the SRFI-45 definitions of delay and force.

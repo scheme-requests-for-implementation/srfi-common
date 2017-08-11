@@ -1,0 +1,61 @@
+      <p>When programming in functional style, it is
+      frequently necessary to specialize some of the parameters of a
+      multi-parameter procedure. For example, from the binary operation
+      <code>cons</code> one might want to obtain the unary operation
+      <code>(lambda (x) (cons 1 x))</code>. This specialization of parameters
+      is also known as "partial application", "operator section" or
+      "projection".
+      <p>The mechanism proposed here allows to write
+      this sort of specialization in a simple and compact way. The mechanism is
+      best explained by a few examples:
+      <table>
+        <tr>
+          <td><code>(cut cons (+ a 1) &lt;&gt;)</code>
+          <td>is the same as
+          <td><code>(lambda (x2) (cons (+ a 1) x2))</code>
+        <tr>
+          <td><code>(cut list 1 &lt;&gt; 3 &lt;&gt; 5)</code>
+          <td>is the same as
+          <td><code>(lambda (x2 x4) (list 1 x2 3 x4 5))</code>
+        <tr>
+          <td><code>(cut list)</code>
+          <td>is the same as
+          <td><code>(lambda () (list))</code>
+        <tr>
+          <td><code>(cut list 1 &lt;&gt; 3 &lt;...&gt;)</code>
+          <td>is the same as
+          <td><code>(lambda (x2 . xs) (apply list 1 x2 3 xs))</code>
+        <tr>
+          <td><code>(cut &lt;&gt; a b)</code>
+          <td>is the same as
+          <td><code>(lambda (f) (f a b))</code>
+      </table>
+      <p>As you see, the macro <code>cut</code>
+      specializes some of the parameters of its first argument. The parameters
+      that are to show up as formal variables of the result are indicated by
+      the symbol <code>&lt;&gt;</code>, pronouced as "slot". In addition, the
+      symbol <code>&lt;...&gt;</code>, pronounced as "rest-slot", matches all
+      residual arguments of a variable argument procedure. As you can see from
+      the last example above, the first argument can also be a slot, as one
+      should expect in Scheme.
+      <p>In addition to <code>cut</code>, there is a
+      variant called <code>cute</code> (a mnemonic for "<code>cut</code> with
+      evaluated non-slots") which evaluates the non-slot expressions at the
+      time the procedure is specialized, not at the time the specialized
+      procedure is called. For example,
+      <table>
+        <tr>
+          <td><code>(cute cons (+ a 1) &lt;&gt;)</code>
+          <td>is the same as
+          <td><code>(let ((a1 (+ a 1))) (lambda (x2) (cons a1 x2)))</code>
+      </table>
+      <p>As you see from comparing this example with the
+      first example above, the <code>cute</code>-variant will evaluate <code>(+
+      a 1)</code> once, while the <code>cut</code>-variant will evaluate it
+      during every invokation of the resulting procedure.
+      <p>The mechanism proposed in this SRFI allows
+      specializing any subset of the variables of a procedure. The result can
+      be of fixed arity or of variable arity. The mechanism does not allow
+      permutation, omission, duplication or any other processing of the
+      arguments; for this it is necessary to write to use a different mechanism
+      such as <code>lambda</code>.

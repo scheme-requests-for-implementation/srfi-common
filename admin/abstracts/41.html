@@ -1,0 +1,19 @@
+      <p><span class="c1">Streams, sometimes called
+      lazy lists, are a sequential data structure containing elements computed
+      only on demand. A stream is either null or is a pair with a stream in its
+      cdr. Since elements of a stream are computed only when accessed, streams
+      can be infinite. Once computed, the value of a stream element is cached
+      in case it is needed again.</span>
+      <p><span class="c1">Streams without memoization
+      were first described by Peter Landin in 1965. Memoization became accepted
+      as an essential feature of streams about a decade later. Today, streams
+      are the signature data type of functional programming languages such as
+      Haskell.</span>
+      <p><span class="c1">This Scheme Request for
+      Implementation describes two libraries for operating on streams: a
+      canonical set of stream primitives and a set of procedures and syntax
+      derived from those primitives that permits convenient expression of
+      stream operations. They rely on facilities provided by R6RS, including
+      libraries, records, and error reporting. To load both stream libraries,
+      say:</span>
+      <p><span class="c2">(import (streams))</span>

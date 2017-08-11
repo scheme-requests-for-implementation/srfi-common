@@ -1,0 +1,32 @@
+      <p>The power and universality of the prefix
+      notation employed by Scheme and other dialects of Lisp can be
+      intimidating. However, we find that there are occasions when prefix
+      syntax can be confusing and lead to code that is not self-documenting. We
+      have identified that one of such cases is the use of asymmetrical binary
+      predicates.
+      <p>Probably the most common examples are the
+      numerical comparison predicates <code>&lt;</code>, <code>&lt;=</code>,
+      <code>&gt;=</code> and <code>&gt;</code>. It is non obvious, for
+      instance, how the expression <code>(&lt; a b)</code> should be
+      pronounced.
+      <p>The problem gets more serious in the case of
+      user-defined binary predicates. For example, in the expression
+      <code>(divides? x y)</code> the role of arguments is unclear: we don't
+      know whether the author of the <code>divides?</code> predicate intended
+      it to check whether <code>x</code> divides <code>y</code> or whether
+      <code>y</code> divides <code>x</code>.
+      <p>And while there seems to exist a silent
+      convention among Schemers to interpret predicates like
+      <code>(has-something-to? x y)</code> as "<code>x</code> has something to
+      <code>y</code>", we believe that this convention should be made explicit,
+      and confirmed by the forms available in the language.
+      <p>We therefore propose a thin layer of "syntactic
+      stevia" that can be implemented using regular Scheme macros. We suggest,
+      that the code <code>(is x &lt; y)</code> should be transformed to
+      <code>(&lt; x y)</code>, and <code>(is x &lt; y &lt;= z)</code> -- to
+      <code>(and (&lt; x y) (&lt;= y z))</code>. In addition, we suggest
+      special meaning to the <code>_</code> symbol: <code>(is _ &lt; y)</code>
+      and <code>(is x &lt; _)</code> should be transformed to <code>(lambda (_)
+      (&lt; _ y))</code> and <code>(lambda (_) (&lt; x _))</code>,
+      respectively. This SRFI document also describes some other uses of the
+      <code>is</code> macro and its limitations.

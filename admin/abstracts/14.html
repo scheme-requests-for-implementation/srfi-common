@@ -1,0 +1,22 @@
+      <p>The ability to efficiently represent and
+      manipulate sets of characters is an unglamorous but very useful
+      capability for text-processing code -- one that tends to pop up in the
+      definitions of other libraries. Hence it is useful to specify a general
+      substrate for this functionality early. This SRFI defines a general
+      library that provides this functionality.
+      <p>It is accompanied by a reference implementation
+      for the spec. The reference implementation is fairly efficient,
+      straightforwardly portable, and has a "free software" copyright. The
+      implementation is tuned for "small" 7 or 8 bit character types, such as
+      ASCII or Latin-1; the data structures and algorithms would have to be
+      altered for larger 16 or 32 bit character types such as Unicode --
+      however, the specs have been carefully designed with these larger
+      character types in mind.
+      <p>Several forthcoming SRFIs can be defined in
+      terms of this one:
+      <ul>
+        <li>string library
+        <li>delimited input procedures (<em>e.g.</em>,
+        <code>read-line</code>)
+        <li>regular expressions
+      </ul>
