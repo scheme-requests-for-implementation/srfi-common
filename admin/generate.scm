@@ -94,8 +94,13 @@
     ((withdrawn) (srfi/done-date srfi))
     (else (error "Unknown status."))))
 
+(define (srfi-abstract n)
+  (read-entire-file
+   (format #f "$ss/srfi-common/admin/abstracts/~A.html" n)))
+
 (define (write-single-srfi-index-page srfi)
   (let* ((number (srfi/number srfi))
+	 (abstract (srfi-abstract number))
 	 (archives
 	  (invoke-template/string
 	   archive-simplelists-template
@@ -109,7 +114,8 @@
     (with-output-to-file pathname
       (lambda ()
 	(invoke-template index-template
-			 `((authors ,authors)
+			 `((abstract ,abstract)
+			   (authors ,authors)
 			   (date ,date)
 			   (email-archives ,archives)
 			   (number ,number)
@@ -258,10 +264,6 @@ and \", and\" otherwise."
 (define (write-srfi-status-pages)
   (do-list (status '(draft final withdrawn))
     (write-srfi-status status)))
-
-(define (srfi-abstract n)
-  (read-entire-file
-   (format #f "$ss/srfi-common/admin/abstracts/~A.html" n)))
 
 (define (write-srfi-abstracts-page)
   (define (wrap-abstract srfi)
