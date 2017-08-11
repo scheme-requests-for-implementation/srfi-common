@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <title>SRFI Abstracts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="srfi.css" type="text/css">
+<link rel="stylesheet" href="/srfi.css" type="text/css">
 <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png">
 <script type="text/x-mathjax-config">
      MathJax.Hub.Config({
@@ -950,8 +950,8 @@ construction of eager promises in cases where efficiency is a concern.<br>
     <li>
       <a href="srfi-58">SRFI <span class="number">58</span></a>: <span class="title">Array Notation</span> <span class="status">final</span>
       <div class="abstract">
-            <p><a href="srfi-47/">SRFI-47</a> and its
-      successor <a href="srfi-63/">SRFI-63</a> provide both homogeneous numeric
+            <p><a href="/srfi-47/">SRFI-47</a> and its
+      successor <a href="/srfi-63/">SRFI-63</a> provide both homogeneous numeric
       and heterogeneous multidimensional arrays which subsume Scheme vectors.
       The notation presented here builds upon Common-Lisp array syntax to
       represent heterogeneous arrays; and introduces a new Scheme-based
@@ -1003,7 +1003,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
             <p>This SRFI proposes a simple extension to
       Scheme's lexical syntax that allows individual S-expressions to be made
       into comments, ignored by the reader. This contrasts with the standard
-      Lisp semicolon commnets, which make the reader ignore the remainder of
+      Lisp semicolon comments, which make the reader ignore the remainder of
       the line, and the slightly less common block comments, as <a href="">SRFI
       30</a> defines: both of these mechanisms comment out slices of text, not
       S-expressions.</div>
@@ -1016,7 +1016,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
         <li>synthesizes array concepts from Common-Lisp
         and Alan Bawden's "array.scm";
         <li>incorporates all the uniform vector types
-        from <a href="srfi-4/">SFRI-4</a> "Homogeneous numeric vector
+        from <a href="/srfi-4/">SFRI-4</a> "Homogeneous numeric vector
         datatypes";
         <li>adds a boolean uniform array type;
         <li>adds 16.bit and 128.bit floating-point
@@ -1491,8 +1491,8 @@ features of this SRFI are:
       blocking-I/O. Non-blocking and selective I/O is left for another
       SRFI.
       <p>This I/O layer was designed in conjunction with
-      two other layers that can be built on top of it: <a href="srfi-80/">SRFI
-      80 (Stream I/O)</a> and <a href="srfi-81/">SRFI 81 (Port I/O)</a>.</div>
+      two other layers that can be built on top of it: <a href="/srfi-80/">SRFI
+      80 (Stream I/O)</a> and <a href="/srfi-81/">SRFI 81 (Port I/O)</a>.</div>
     <li>
       <a href="srfi-80">SRFI <span class="number">80</span></a>: <span class="title">Stream I/O</span> <span class="status">withdrawn</span>
       <div class="abstract">
@@ -1514,7 +1514,7 @@ features of this SRFI are:
         arbitrary readers and writers
       </ul>
       <p>It builds on the Primitive I/O layer specified
-      in <a href="srfi-79/">SRFI 79 (Primitive I/O)</a>.</div>
+      in <a href="/srfi-79/">SRFI 79 (Primitive I/O)</a>.</div>
     <li>
       <a href="srfi-81">SRFI <span class="number">81</span></a>: <span class="title">Port I/O</span> <span class="status">withdrawn</span>
       <div class="abstract">
@@ -1534,13 +1534,13 @@ features of this SRFI are:
         from readers and writers
       </ul>
       <p>It builds on the Primitive I/O layer specified
-      in <a href="srfi-79/">SRFI 79 (Primitive I/O)</a>.</div>
+      in <a href="/srfi-79/">SRFI 79 (Primitive I/O)</a>.</div>
     <li>
       <a href="srfi-82">SRFI <span class="number">82</span></a>: <span class="title">Stream Ports</span> <span class="status">withdrawn</span>
       <div class="abstract">
-            <p>This SRFI augments <a href="srfi-81/">SRFI 81
+            <p>This SRFI augments <a href="/srfi-81/">SRFI 81
       (Port I/O)</a> by allowing ports to be constructed from streams as
-      described in <a href="srfi-80/">SRFI 80 (Stream I/O)</a>.</div>
+      described in <a href="/srfi-80/">SRFI 80 (Stream I/O)</a>.</div>
     <li>
       <a href="srfi-83">SRFI <span class="number">83</span></a>: <span class="title">R6RS Library Syntax</span> <span class="status">withdrawn</span>
       <div class="abstract">
@@ -1639,7 +1639,7 @@ features of this SRFI are:
       parameters are: the initial size, the minimum and maximum load factor,
       the key equivalence function, the key hashing function, whether the
       references to the keys are weak, and similarly for the values. By using
-      optional named parameters, as specified in <a href="srfi-89/">SRFI 89
+      optional named parameters, as specified in <a href="/srfi-89/">SRFI 89
       (Optional positional and named parameters)</a>, the constructor's API can
       be easily extended in a backward compatible way by other SRFIs and Scheme
       implementations.</div>
@@ -1859,7 +1859,7 @@ implementors.
       <p>This propsal depends on <a href=
       "srfi-109/">SRFI-109 (extended string quasi-literals)</a> (in spite of
       having a lower number). It also shares quite of bit of syntax with
-      <a href="srfi-107/">SRFI-107 (XML reader syntax)</a>.</div>
+      <a href="/srfi-107/">SRFI-107 (XML reader syntax)</a>.</div>
     <li>
       <a href="srfi-109">SRFI <span class="number">109</span></a>: <span class="title">Extended string quasi-literals</span> <span class="status">final</span>
       <div class="abstract">
@@ -1879,7 +1879,7 @@ implementors.
       humans to read. The sweet-expression syntax enables the use of
       syntactically-meaningful indentation to group expressions (similar to
       Python), and it builds on the infix and traditional function notation
-      defined in <a href="srfi-105/">SRFI-105 (curly-infix-expressions)</a>.
+      defined in <a href="/srfi-105/">SRFI-105 (curly-infix-expressions)</a>.
       Unlike nearly all past efforts to improve s-expression readability,
       sweet-expressions are general (the notation is independent from any
       underlying semantic) and homoiconic (the underlying data structure is
@@ -1991,8 +1991,8 @@ define fibfast(n)   ; Typical function notation
             <p>This SRFI describes a simple syntax which
       allows making scheme easier to read for newcomers while keeping the
       simplicity, generality and elegance of s-expressions. Similar to <a href=
-      "srfi-110/">SRFI 110</a>, <a href="srfi-49/">SRFI 49</a> and Python it
-      uses indentation to group expressions. Like <a href="srfi-110/">SRFI
+      "srfi-110/">SRFI 110</a>, <a href="/srfi-49/">SRFI 49</a> and Python it
+      uses indentation to group expressions. Like <a href="/srfi-110/">SRFI
       110</a> wisp is general and homoiconic.
       <p>Different from its predecessors, wisp only uses
       the absolute minimum of additional syntax-elements which are required for
@@ -2001,7 +2001,7 @@ define fibfast(n)   ; Typical function notation
       whitespace as first code-character on the line and optional underscores
       followed by whitespace at the beginning of the line.
       <p>It resolves a limitation of <a href=
-      "srfi-110/">SRFI 110</a> and <a href="srfi-49/">SRFI 49</a>, both of
+      "srfi-110/">SRFI 110</a> and <a href="/srfi-49/">SRFI 49</a>, both of
       which force the programmer to use a single argument per line if the
       arguments to a procedure need to be continued after a
       procedure-call.
@@ -2142,7 +2142,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       returns an end-of-file object. Consequently, lazy sequences cannot
       reliably contain end-of-file objects.
       <p>This SRFI provides a set of procedures suitable
-      for operating on lazy sequences based on <a href="srfi-1/">SRFI
+      for operating on lazy sequences based on <a href="/srfi-1/">SRFI
       1</a>.</div>
     <li>
       <a href="srfi-128">SRFI <span class="number">128</span></a>: <span class="title">Comparators (reduced)</span> <span class="status">final</span>
@@ -2184,8 +2184,8 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       syntactic layer that can be implemented with <tt>syntax-rules</tt>
       without requiring low-level macros. Like SRFI-99's syntax layer, it is
       backward compatible with the <code>define-record-type</code> macro from
-      <a href="srfi-9/">SRFI 9</a> or R7RS-small. It is forward compatible with
-      <a href="srfi-99/">SRFI 99</a>.</div>
+      <a href="/srfi-9/">SRFI 9</a> or R7RS-small. It is forward compatible with
+      <a href="/srfi-99/">SRFI 99</a>.</div>
     <li>
       <a href="srfi-132">SRFI <span class="number">132</span></a>: <span class="title">Sort Libraries</span> <span class="status">final</span>
       <div class="abstract">
@@ -2236,7 +2236,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       <p>The operations of this new data type include
       analogues for all of the non-mutating operations on strings specified by
       the R7RS and most of those specified by <abbr title=
-      "String cursors"><a href="srfi-130/">SRFI 130</a></abbr>, but the
+      "String cursors"><a href="/srfi-130/">SRFI 130</a></abbr>, but the
       immutability of texts and uniformity of character-based indexing simplify
       the specification of those operations while avoiding several
       inefficiencies associated with the mutability of Scheme's strings.</div>
@@ -2277,7 +2277,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       <a href="srfi-140">SRFI <span class="number">140</span></a>: <span class="title">Immutable Strings</span> <span class="status">final</span>
       <div class="abstract">
             <p>This attempts to solve the same issues with
-      R7RS strings raised by <a href="srfi-135/">SRFI-135</a>, but with better
+      R7RS strings raised by <a href="/srfi-135/">SRFI-135</a>, but with better
       integration with the Scheme language.
       <p>We propose to retain the name <dfn>string</dfn>
       as the type of sequences of Unicode characters (scalar values). There are
@@ -2304,8 +2304,8 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       REPL. Specifically, some procedures that traditionally return mutable
       strings are changed to return istrings. We later discuss compatibility
       and other library issues.
-      <p>This combines <a href="srfi-13/">SRFI-13</a>,
-      <a href="srfi-135/">SRFI-135</a>, and <a href=
+      <p>This combines <a href="/srfi-13/">SRFI-13</a>,
+      <a href="/srfi-135/">SRFI-135</a>, and <a href=
       "srfi-118/">SRFI-118</a>.</div>
     <li>
       <a href="srfi-141">SRFI <span class="number">141</span></a>: <span class="title">Integer division</span> <span class="status">final</span>
@@ -2325,7 +2325,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       <p>The precise semantics of these operators is
       almost never an issue. A consistent, portable set of <em>names</em> and
       <em>parameter conventions</em>, however, is. Hence this SRFI, which is
-      based mainly on <a href="srfi-33/">SRFI 33</a>, with some changes and
+      based mainly on <a href="/srfi-33/">SRFI 33</a>, with some changes and
       additions from <a href=
       "http://srfi.schemers.org/srfi-33/mail-archive/msg00023.html">Olin's late
       revisions to SRFI 33</a> (which were never consummated). <a href=
@@ -2336,7 +2336,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       "http://www.r6rs.org/final/html/r6rs-lib/r6rs-lib-Z-H-12.html#node_sec_11.4">
       R6RS</a> is a subset of SRFI 60, except that all procedure names begin
       with a <tt>bitwise-</tt> prefix. A few procedures have been added from
-      the general vector <a href="srfi-133/">SRFI 133</a>.
+      the general vector <a href="/srfi-133/">SRFI 133</a>.
       <p>Among the applications of bitwise operations
       are: hashing, Galois-field calculations of error-detecting and
       error-correcting codes, cryptography and ciphers, pseudo-random number
@@ -2441,7 +2441,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       <p>The precise semantics of these operators is
       almost never an issue. A consistent, portable set of <em>names</em> and
       <em>parameter conventions</em>, however, is. Hence this SRFI, which is
-      based mainly on <a href="srfi-33/">SRFI 33</a>, with some changes and
+      based mainly on <a href="/srfi-33/">SRFI 33</a>, with some changes and
       additions from <a href=
       "http://srfi.schemers.org/srfi-33/mail-archive/msg00023.html">Olin's late
       revisions to SRFI 33</a> (which were never consummated). <a href=
@@ -2452,7 +2452,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       "http://www.r6rs.org/final/html/r6rs-lib/r6rs-lib-Z-H-12.html#node_sec_11.4">
       R6RS</a> is a subset of SRFI 60, except that all procedure names begin
       with a <tt>bitwise-</tt> prefix. A few procedures have been added from
-      the general vector <a href="srfi-133/">SRFI 133</a>.
+      the general vector <a href="/srfi-133/">SRFI 133</a>.
       <p>Among the applications of bitwise operations
       are: hashing, Galois-field calculations of error-detecting and
       error-correcting codes, cryptography and ciphers, pseudo-random number
