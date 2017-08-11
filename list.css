@@ -48,9 +48,12 @@
   padding: 20px 0 0;
 }
 .list > li {
+  border: solid 2px lightgrey;
+  border-radius: 10px;
   border-left-width: 15px;
   box-shadow: inset 0 1px 0 #fff;
   break-inside: avoid-column;
+  display: block;
   position: relative;
 }
 .list > li.draft {
@@ -143,7 +146,8 @@ p a {
   top: -10px;
   width: 0;
 }
-.info {
+.info,
+.list {
   columns: 15em;
   -moz-columns: 15em;
   orphans: 3;
