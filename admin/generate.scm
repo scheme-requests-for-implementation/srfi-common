@@ -240,7 +240,7 @@ and \", and\" otherwise."
   (let ((srfi-list
 	 (with-output-to-string
 	   (lambda ()
-	     (for-each write-srfi-card srfis)))))
+	     (for-each write-srfi-card (reverse srfis))))))
     (with-output-to-file "$ss/srfi-common/index.html"
       (lambda ()
 	(invoke-template home-template
