@@ -155,4 +155,5 @@
   (154 draft "First-class dynamic extents" "Marc Nieper-Wißkirchen" () "2017/7/3")
   (155 draft "Promises" "Marc Nieper-Wißkirchen" (45) "2017/7/4")
   (156 draft "Syntactic combiners for binary predicates" "Panicz Maciej Godek" () "2017/7/10")
-  (157 draft "Continuation marks" "Marc Nieper-Wißkirchen" () "2017/7/17"))
+  (157 draft "Continuation marks" "Marc Nieper-Wißkirchen" () "2017/7/17")
+  (158 draft "Generators and Accumulators" "Shiro Kawai, John Cowan, Thomas Gilray" () "2017/8/12"))

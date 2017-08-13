@@ -2590,6 +2590,24 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
 
   This SRFI proposes to add continuation marks to the Scheme
   programming language.</div>
+    <li>
+      <a href="srfi-158">SRFI <span class="number">158</span></a>: <span class="title">Generators and Accumulators</span> <span class="status">draft</span>
+      <div class="abstract">
+      <p>This SRFI defines utility procedures that create, transform, and consume generators.
+  A generator is simply a procedure with no arguments that works
+  as a source of values.  Every time it is called,
+  it yields a value.  Generators may be finite or infinite; a finite
+  generator returns an end-of-file object to indicate that it is exhausted.
+  For example, <code>read-char</code>, <code>read-line</code>,
+  and <code>read</code> are generators that
+  generate characters, lines, and objects from the current input port.
+  Generators provide lightweight laziness.
+</p>
+
+<p>This SRFI also defines procedures that return accumulators.
+  An accumulator is the inverse of a generator:  it is a procedure of one argument
+  that works as a sink of values.
+</p></div>
   </ul>
   <script crossorigin="anonymous" integrity=
   "sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm"
