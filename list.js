@@ -23,3 +23,5 @@ var options = {
               ]};
 
 var srfiList = new List("srfis", options);
+
+srfiList.sort("number", { order: "desc" });
