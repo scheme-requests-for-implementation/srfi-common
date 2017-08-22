@@ -8,6 +8,6 @@
   In addition, we suggest special meaning to the <code>_</code> symbol:
   <code>(is _ &lt; y)</code> and <code>(is x &lt; _)</code>
   should be transformed to <code>(lambda (_) (&lt; _ y))</code>
-  and <code>(lambda (_) (&lt x _))</code>, respectively.
+  and <code>(lambda (_) (&lt; x _))</code>, respectively.
   This SRFI document also describes some other uses of the
   <code>is</code> macro and its limitations.</p>
