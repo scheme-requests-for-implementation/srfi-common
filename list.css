@@ -40,13 +40,6 @@
 .info a:hover {
   text-decoration: underline;
 }
-.list {
-  columns: 15em;
-  -moz-columns: 15em;
-  margin: 0;
-  orphans: 3;
-  padding: 20px 0 0;
-}
 .list > li {
   border: solid 2px lightgrey;
   border-radius: 10px;
@@ -151,7 +144,7 @@ p a {
   columns: 15em;
   -moz-columns: 15em;
   orphans: 3;
-  margin-bottom: 1px;
+  margin: 0 0 1px 0;
   padding: 0;
 }
 .info > li {
