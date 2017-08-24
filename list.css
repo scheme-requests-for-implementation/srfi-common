@@ -40,6 +40,24 @@
 .info a:hover {
   text-decoration: underline;
 }
+.info,
+.list {
+  columns: 15em;
+  -moz-columns: 15em;
+  orphans: 3;
+  margin: 0 0 1px 0;
+  padding: 0;
+}
+.info > li {
+  border: solid 2px lightgrey;
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 #fff;
+  break-inside: avoid-column;
+  display: block;
+}
+.info > li form {
+  border: none;
+}
 .list > li {
   border: solid 2px lightgrey;
   border-radius: 10px;
@@ -138,22 +156,4 @@ p a {
   right: -5px;
   top: -10px;
   width: 0;
-}
-.info,
-.list {
-  columns: 15em;
-  -moz-columns: 15em;
-  orphans: 3;
-  margin: 0 0 1px 0;
-  padding: 0;
-}
-.info > li {
-  border: solid 2px lightgrey;
-  border-radius: 10px;
-  box-shadow: inset 0 1px 0 #fff;
-  break-inside: avoid-column;
-  display: block;
-}
-.info > li form {
-  border: none;
 }
