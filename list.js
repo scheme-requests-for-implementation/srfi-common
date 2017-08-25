@@ -1,4 +1,4 @@
-var options = {
+let options = {
   sortFunction: function(itemA, itemB, options) {
     let column = options.valueName;
     let sort = srfiList.utils.naturalSort;
@@ -22,6 +22,6 @@ var options = {
                 { name: "status", attr: "data-status" }
               ]};
 
-var srfiList = new List("srfis", options);
+let srfiList = new List("srfis", options);
 
 srfiList.sort("number", { order: "desc" });
