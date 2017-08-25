@@ -223,14 +223,16 @@ and \", and\" otherwise."
 		   (sort others <)))))))))
 
 (define (write-srfi-card srfi)
-  (let ((status (srfi/status srfi)))
+  (let ((n (srfi/number srfi))
+	(status (srfi/status srfi)))
     (invoke-template
      srfi-card-template
-     `((authors ,(srfi/authors srfi))
+     `((abstract ,(srfi-abstract n))
+       (authors ,(srfi/authors srfi))
        (date ,(srfi-date-to-show srfi))
        (date-type ,(status->name status))
        (name ,(srfi/title srfi))
-       (number ,(srfi/number srfi))
+       (number ,n)
        (see-also ,(see-also-html srfi))
        (status ,status)))))
 

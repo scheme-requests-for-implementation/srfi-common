@@ -7,7 +7,16 @@
     <link rel="stylesheet" type="text/css" href="admin.css" />
     <link rel="stylesheet" type="text/css" href="home.css" />
     <link rel="stylesheet" type="text/css" href="list.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+     });
+    </script>
+    <script crossorigin="anonymous" integrity=
+	    "sha384-Ra6zh6uYMmH5ydwCqqMoykyf1T/+ZcnOQfFPhDrp2kI4OIxadnhsvvA2vv9A7xYv" src=
+	    "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+	    type="text/javascript"></script></head>
   <body>
     <h1>Scheme Requests for Implementation</h1>
 
@@ -27,8 +36,7 @@
       feedback on a draft proposal, helping with a reference
       implementation, or reporting a bug, please read about <a
       href="srfi-process.html">our process</a>, skim our <a
-      href="srfi-faq.html">FAQ</a> and <a
-      href="srfi-abstracts.html">searchable abstracts</a>, and <a
+      href="srfi-faq.html">FAQ</a>, and <a
       href="srfi-list-subscribe.html">subscribe</a> to some of our
       mailing lists.</p>
 
@@ -41,14 +49,17 @@
       Here's a complete list of of more than 150 existing SRFIs:</p>
 
     <div id="srfis">
-      <input class="search" placeholder="Search" tabindex="1" />
+      <input class="search" id="search" placeholder="Search" tabindex="1" />
       Sort by
-      <button class="sort" data-sort="authors" tabindex="2" >authors</button>
-      <button class="sort" data-sort="date" tabindex="3" >date</button>
-      <button class="sort" data-sort="name" tabindex="4" >name</button>
-      <button class="sort" data-sort="number" tabindex="5" >number</button>
-      <button class="sort" data-sort="status" tabindex="6" >status</button>
-      <ul class="list">
+      <button class="controls sort" data-sort="authors" tabindex="2" >authors</button>
+      <button class="controls sort" data-sort="date" tabindex="3" >date</button>
+      <button class="controls sort" data-sort="name" tabindex="4" >name</button>
+      <button class="controls sort" data-sort="number" tabindex="5" >number</button>
+      <button class="controls sort" data-sort="status" tabindex="6" >status</button>
+      <label class="checkbox-label controls">
+	<input class="controls" id="abstracts-control" tabindex="7" type="checkbox">
+	Show abstracts</label>
+      <ul class="summary list">
 <*<srfi-list>*></ul></div>
 
     <p>Every SRFI is hosted on Github, but if you'd like a complete

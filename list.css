@@ -42,11 +42,14 @@
 }
 .info,
 .list {
-  columns: 15em;
-  -moz-columns: 15em;
   orphans: 3;
   margin: 0 0 1px 0;
   padding: 0;
+}
+.info,
+.list.summary {
+  columns: 15em;
+  -moz-columns: 15em;
 }
 .info > li {
   border: solid 2px lightgrey;
@@ -57,6 +60,9 @@
 }
 .info > li form {
   border: none;
+}
+.invisible {
+  display: none;
 }
 .list > li {
   border: solid 2px lightgrey;
@@ -105,26 +111,27 @@ p a {
 .see-also a {
   position: relative;
 }
-.sort {
+.controls {
   background-color: #116611;
   border-radius: 6px;
   border: none;
   color: #fff;
   display: inline-block;
+  font-size: 15px;
   height: 30px;
   padding: 0 1em;
   text-decoration: none;
 }
-.sort:focus {
+.controls:focus {
   background-color: #88cc88;
   color: black;
   outline: none;
 }
-.sort:hover {
+.controls:hover {
   background-color: #1b8aba;
   text-decoration: none;
 }
-.sort:after {
+.controls:after {
   border-bottom: 5px solid transparent;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
@@ -135,7 +142,7 @@ p a {
   top: -10px;
   width: 0;
 }
-.sort.asc:after {
+.controls.asc:after {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid #fff;
@@ -146,7 +153,7 @@ p a {
   top: 13px;
   width: 0;
 }
-.sort.desc:after {
+.controls.desc:after {
   border-bottom: 5px solid #fff;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
@@ -156,4 +163,17 @@ p a {
   right: -5px;
   top: -10px;
   width: 0;
+}
+.checkbox-label {
+  margin-bottom: 10px;
+}
+.checkbox-label input {
+  position: relative;
+  vertical-align: middle;
+}
+.detailed .abstract {
+  display: block;
+}
+.summary .abstract {
+  display: none;
 }
