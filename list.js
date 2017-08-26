@@ -81,7 +81,6 @@ function decodeURL(url) {
   return { abstracts, query, sort };
 }
 
-// <> Make this work with local or remote URLs, not just "index.html" ones.
 function encodeURL(abstracts, query, sort) {
   // Drop defaults.
   let elements =
@@ -92,10 +91,9 @@ function encodeURL(abstracts, query, sort) {
           ? [`sort=${sort.column}-${sort.order}`]
           : []);
 
-  return "index.html"
-    + (elements.length == 0
-       ? ""
-       : "?" + elements.join("&"));
+  return elements.length == 0
+    ? ""
+    : "?" + elements.join("&");
 }
 
 function updateURL(url, { abstracts=null, query=null, sort=null }) {
