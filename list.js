@@ -140,12 +140,15 @@ function obeyQueryParameters(_) {
 window.onpopstate = obeyQueryParameters;
 
 function changeURL(replace, components) {
-  let newURL = updateURL(new URL(document.location), components);
+  let existing = new URL(document.location);
+  let newURL = updateURL(existing, components);
 
-  if (replace) {
-    history.replaceState(newURL, "home", newURL);
-  } else {
-    history.pushState(newURL, "home", newURL);
+  if (existing.toString() !== newURL) {
+    if (replace) {
+      history.replaceState(newURL, "home", newURL);
+    } else {
+      history.pushState(newURL, "home", newURL);
+    }
   }
 }
 
