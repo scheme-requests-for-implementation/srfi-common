@@ -135,7 +135,7 @@ function obeyQueryParameters(_) {
 
 window.onpopstate = obeyQueryParameters;
 
-function changeURL(event, replace, components) {
+function changeURL(replace, components) {
   let newURL = updateURL(new URL(document.location), components);
 
   if (replace) {
@@ -143,24 +143,21 @@ function changeURL(event, replace, components) {
   } else {
     history.pushState(newURL, "home", newURL);
   }
-
-  if (event) {
-    event.preventDefault();
-    event.stopPropagation();
-  }
 }
 
 abstractsControl.addEventListener(
   "change",
   function(event) {
     obeyAbstracts(choice(this.checked));
-    changeURL(event, false, { abstracts: choice(this.checked) });
+    changeURL(false, { abstracts: choice(this.checked) });
+    event.preventDefault();
+    event.stopPropagation();
   });
 
 searchControl.addEventListener(
   "input",
   function(event) {
-    changeURL(null, true, { query: this.value });
+    changeURL(true, { query: this.value });
   });
 
 let observer = new MutationObserver(
@@ -173,9 +170,9 @@ let observer = new MutationObserver(
       assertValidColumn(column);
 
       if (classes.contains("asc")) {
-        changeURL(null, false, { sort: { column: column, order: "asc" } });
+        changeURL(false, { sort: { column: column, order: "asc" } });
       } else if (classes.contains("desc")) {
-        changeURL(null, false, { sort: { column: column, order: "desc" } });
+        changeURL(false, { sort: { column: column, order: "desc" } });
       }
     }
   });
