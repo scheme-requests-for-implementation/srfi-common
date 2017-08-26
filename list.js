@@ -103,7 +103,6 @@ function updateURL(url, { abstracts=null, query=null, sort=null }) {
   return url.protocol
     + "//"
     + url.host
-    + "/"
     + url.pathname
     + encodeURL(abstracts || oldAbstracts,
                 query === null ? oldQuery : query,
