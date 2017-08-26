@@ -100,9 +100,14 @@ function updateURL(url, { abstracts=null, query=null, sort=null }) {
   let { abstracts: oldAbstracts, query: oldQuery, sort: oldSort }
       = decodeURL(url);
 
-  return encodeURL(abstracts || oldAbstracts,
-                   query === null ? oldQuery : query,
-                   sort || oldSort);
+  return url.protocol
+    + "//"
+    + url.host
+    + "/"
+    + url.pathname
+    + encodeURL(abstracts || oldAbstracts,
+                query === null ? oldQuery : query,
+                sort || oldSort);
 }
 
 function obeyAbstracts(abstracts) {
