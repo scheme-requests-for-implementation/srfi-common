@@ -137,10 +137,14 @@ function obeyQueryParameters(_) {
 
 window.onpopstate = obeyQueryParameters;
 
-function changeURL(components, event) {
+function changeURL(event, replace, components) {
   let newURL = updateURL(new URL(document.location), components);
 
-  history.pushState({}, "home", newURL);
+  if (replace) {
+    history.replaceState(newURL, "home", newURL);
+  } else {
+    history.pushState(newURL, "home", newURL);
+  }
 
   if (event) {
     event.preventDefault();
@@ -152,13 +156,13 @@ abstractsControl.addEventListener(
   "change",
   function(event) {
     obeyAbstracts(choice(this.checked));
-    changeURL({ abstracts: choice(this.checked) }, event);
+    changeURL(event, false, { abstracts: choice(this.checked) });
   });
 
 searchControl.addEventListener(
   "input",
   function(event) {
-    changeURL({ query: this.value }, null);
+    changeURL(null, true, { query: this.value });
   });
 
 let observer = new MutationObserver(
@@ -171,9 +175,9 @@ let observer = new MutationObserver(
       assertValidColumn(column);
 
       if (classes.contains("asc")) {
-        changeURL({ sort: { column: column, order: "asc" } }, null);
+        changeURL(null, false, { sort: { column: column, order: "asc" } });
       } else if (classes.contains("desc")) {
-        changeURL({ sort: { column: column, order: "desc" } }, null);
+        changeURL(null, false, { sort: { column: column, order: "desc" } });
       }
     }
   });
