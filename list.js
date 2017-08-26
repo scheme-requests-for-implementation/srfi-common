@@ -155,13 +155,10 @@ abstractsControl.addEventListener(
     changeURL({ abstracts: choice(this.checked) }, event);
   });
 
-["input"].forEach(
-  function(type) {
-    searchControl.addEventListener(
-      type,
-      function(event) {
-        changeURL({ query: this.value }, null);
-      });
+searchControl.addEventListener(
+  "input",
+  function(event) {
+    changeURL({ query: this.value }, null);
   });
 
 let observer = new MutationObserver(
