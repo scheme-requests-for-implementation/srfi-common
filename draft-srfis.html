@@ -11,13 +11,16 @@
   <body>
     <h1>Draft Scheme Requests for Implementation</h1>
     <div id="srfis">
-      <input class="search" placeholder="Search" tabindex="1" />
+      <input class="search" id="search" placeholder="Search" tabindex="1" />
       Sort by
-      <button class="sort" data-sort="authors" tabindex="2" >authors</button>
-      <button class="sort" data-sort="date" tabindex="3" >date</button>
-      <button class="sort" data-sort="name" tabindex="4" >name</button>
-      <button class="sort" data-sort="number" tabindex="5" >number</button>
-      <ul class="list">
+      <button class="controls sort" data-sort="authors" tabindex="2" >authors</button>
+      <button class="controls sort" data-sort="date" tabindex="3" >date</button>
+      <button class="controls sort" data-sort="name" tabindex="4" >name</button>
+      <button class="controls sort" data-sort="number" tabindex="5" >number</button>
+      <label class="checkbox-label controls">
+	<input class="controls" id="abstracts-control" tabindex="7" type="checkbox">
+	Show abstracts</label>
+      <ul class="summary list">
       <li class="card draft"><a class="card-anchor" href="srfi-146/"></a><span class="number">146</span><span class="name">Mappings</span><span class="authors">by Marc Nieper-Wißkirchen</span><span class="date-group">Draft: <span class="date">2016/12/18</span></span><span class="status" data-status="draft"></span><div class="abstract">      <p><em>Mappings</em> are finite sets of
       associations, where each association is a pair consisting of a key and an
       arbitrary Scheme value. The keys are elements of a suitable domain. Each

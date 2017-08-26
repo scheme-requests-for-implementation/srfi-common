@@ -11,13 +11,16 @@
   <body>
     <h1>Final Scheme Requests for Implementation</h1>
     <div id="srfis">
-      <input class="search" placeholder="Search" tabindex="1" />
+      <input class="search" id="search" placeholder="Search" tabindex="1" />
       Sort by
-      <button class="sort" data-sort="authors" tabindex="2" >authors</button>
-      <button class="sort" data-sort="date" tabindex="3" >date</button>
-      <button class="sort" data-sort="name" tabindex="4" >name</button>
-      <button class="sort" data-sort="number" tabindex="5" >number</button>
-      <ul class="list">
+      <button class="controls sort" data-sort="authors" tabindex="2" >authors</button>
+      <button class="controls sort" data-sort="date" tabindex="3" >date</button>
+      <button class="controls sort" data-sort="name" tabindex="4" >name</button>
+      <button class="controls sort" data-sort="number" tabindex="5" >number</button>
+      <label class="checkbox-label controls">
+	<input class="controls" id="abstracts-control" tabindex="7" type="checkbox">
+	Show abstracts</label>
+      <ul class="summary list">
       <li class="card final"><a class="card-anchor" href="srfi-0/"></a><span class="number">0</span><span class="name">Feature-based conditional expansion construct</span><span class="authors">by Marc Feeley</span><span class="date-group">Final: <span class="date">1999/5/7</span></span><span class="status" data-status="final"></span><div class="abstract">      <p>It is desirable that programs which depend on
       additions to standard Scheme name those additions. SRFIs provide the
       specifications of these additions ("features"), and SRFI 0 provides the
