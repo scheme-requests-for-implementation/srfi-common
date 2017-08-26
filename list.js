@@ -177,8 +177,6 @@ let observer = new MutationObserver(
     }
   });
 
-// <> Push sorting state to URL.  Decode changes by looking for "asc" or "desc"
-// class in <classList> of a <button>.
 for (let button of sortControls) {
   observer.observe(button, { attributes: true });
 }
