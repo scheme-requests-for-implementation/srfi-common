@@ -279,11 +279,10 @@ function enableMultiSelect(control, update) {
     }
   );
   select.addEventListener(
-    "click",
+    "change",
     function(event) {
       event.preventDefault();
       event.stopPropagation();
-      select.focus();
 
       let values = Array.from(select.options)
           .filter(s => s.selected)
