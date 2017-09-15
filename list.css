@@ -22,7 +22,8 @@
 .list .authors:before {
   content: ", "
 }
-.date-group {
+.date-group,
+.keywords {
   color: grey;
   display: block;
   font-size: 80%;
@@ -61,7 +62,8 @@
 .info > li form {
   border: none;
 }
-.invisible {
+.card.invisible-keywords,
+.card.invisible-status {
   display: none;
 }
 .list > li {
@@ -116,11 +118,14 @@ p a {
   border-radius: 6px;
   border: none;
   color: #fff;
+  cursor: pointer;
   display: inline-block;
   font-size: 15px;
   height: 30px;
+  margin: 0.1em;
   padding: 0 1em;
   text-decoration: none;
+  text-align: left;
 }
 .controls:focus {
   background-color: #88cc88;
@@ -171,8 +176,50 @@ p a {
   position: relative;
   vertical-align: middle;
 }
+.chosen {
+  vertical-align: middle;
+}
 .detailed .abstract {
   display: block;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown button {
+  width: 8em;
+}
+.dropdown .options {
+  background-color: #f6f6f6;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  display: none;
+  overflow: auto;
+  position: absolute;
+  z-index: 1;
+}
+.dropdown select {
+  overflow-y: auto;
+  width: 12em;
+}
+.dropdown.show-options .options {
+  display: block;
+}
+#parameters {
+  border: solid 2px lightgrey;
+  border-radius: 6px;
+  margin: 1em 0 1em 0;
+  padding: 1em;
+}
+#parameters > div {
+  display: table-row;
+}
+#parameters > div button {
+  display: table-cell;
+  width: 8em;
+}
+#parameters > div > span:nth-child(1) {
+  display: table-cell;
+  padding-right: 0.5em;
+  text-align: right;
 }
 .summary .abstract {
   display: none;

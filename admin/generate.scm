@@ -61,6 +61,9 @@
 
 (define home-template (read-template "srfi-common/admin/home.template"))
 
+(define keyword-option-template
+  (read-template "srfi-common/admin/keyword-option.template"))
+
 (define see-also-html-template
   (read-template "srfi-common/admin/see-also-html.template"))
 
@@ -77,9 +80,6 @@
 
 (define srfi-anchor-template
   (read-template "srfi-common/admin/srfi-anchor.template"))
-
-(define srfi-list-template
-  (read-template "srfi-common/admin/srfi-list.template"))
 
 (define (srfi-date-to-show srfi)
   (case (srfi/status srfi)
@@ -216,8 +216,14 @@ and \", and\" otherwise."
 	      (map (lambda (n) (srfi-anchor-fragment (srfi-assoc n srfis)))
 		   (sort others <)))))))))
 
+(define (keyword->name value)
+  (let ((a (assoc value srfi-keywords)))
+    (assert a "No such keyword.")
+    (cadr a)))
+
 (define (write-srfi-card srfi)
   (let ((n (srfi/number srfi))
+	(keywords (srfi/keywords srfi))
 	(status (srfi/status srfi)))
     (invoke-template
      srfi-card-template
@@ -225,10 +231,21 @@ and \", and\" otherwise."
        (authors ,(srfi/authors srfi))
        (date ,(srfi-date-to-show srfi))
        (date-type ,(status->name status))
+       (keyword-names ,(string-join ", " (map keyword->name keywords)))
+       (keyword-values ,(string-join "," keywords))
        (name ,(srfi/title srfi))
        (number ,n)
        (see-also ,(see-also-html srfi))
        (status ,status)))))
+
+(define (keyword-options)
+  (with-output-to-string
+    (lambda ()
+      (do-list (k srfi-keywords)
+	(invoke-template
+	 keyword-option-template
+	 `((name ,(cadr k))
+	   (value ,(car k))))))))
 
 ;; Note that this generates "index.html", which is separate from the
 ;; "README.org" page.
@@ -240,23 +257,5 @@ and \", and\" otherwise."
     (with-output-to-file "$ss/srfi-common/index.html"
       (lambda ()
 	(invoke-template home-template
-			 `((srfi-list ,srfi-list)))))))
-
-(define (write-srfi-status status)
-  (let* ((status-name (status->name status))
-	 (srfi-list
-	  (with-output-to-string
-	    (lambda ()
-	      (for-each write-srfi-card
-			(filter (lambda (s)
-				  (eq? (srfi/status s) status))
-				srfis))))))
-    (with-output-to-file (format #f "$ss/srfi-common/~A-srfis.html" status)
-      (lambda ()
-	(invoke-template srfi-list-template
-			 `((srfi-list ,srfi-list)
-			   (status ,status-name)))))))
-
-(define (write-srfi-status-pages)
-  (do-list (status '(draft final withdrawn))
-    (write-srfi-status status)))
+			 `((keyword-options ,(keyword-options))
+			   (srfi-list ,srfi-list)))))))

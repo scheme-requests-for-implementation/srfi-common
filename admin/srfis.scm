@@ -12,13 +12,14 @@
   "https://api.github.com/orgs/scheme-requests-for-implementation/repos")
 
 (define-record-type srfi
-    (%make-srfi number status title authors see-also done-date draft-date)
+    (%make-srfi number status title authors see-also keywords done-date draft-date)
     srfi?
   (number     srfi/number)
   (status     srfi/status)
   (title      srfi/title)
   (authors    srfi/authors)
   (see-also   srfi/see-also)
+  (keywords   srfi/keywords)
   (done-date  srfi/done-date)
   (draft-date srfi/draft-date))		; final or withdrawn
 
@@ -37,6 +38,7 @@
 		   title
 		   authors
 		   see-also
+		   keywords
 		   draft-date
 		   #!optional done-date)
   (%make-srfi number
@@ -44,11 +46,41 @@
 	      title
 	      authors
 	      see-also
+	      keywords
 	      (and (not (default-object? done-date))
 		   done-date)
 	      draft-date))
 
 (define srfis (map (lambda (l) (apply make-srfi l)) srfi-data))
+
+(define srfi-keywords
+  '(("algorithm" "Algorithm")
+    ("arithmetic" "Arithmetic")
+    ("assignment" "Assignment")
+    ("binding" "Binding")
+    ("comparison" "Comparison")
+    ("concurrency" "Concurrency")
+    ("continuations" "Continuations")
+    ("control-flow" "Control Flow")
+    ("data-structure" "Data Structure")
+    ("error-handling" "Error Handling")
+    ("exceptions" "Exceptions")
+    ("features" "Features")
+    ("i/o" "I/O")
+    ("internationalization" "Internationalization")
+    ("introspection" "Introspection")
+    ("lazy-evaluation" "Lazy Evaluation")
+    ("miscellaneous" "Miscellaneous")
+    ("modules" "Modules")
+    ("multiple-value-returns" "Multiple Value Returns")
+    ("operating-system" "Operating System")
+    ("optimization" "Optimization")
+    ("parameters" "Parameters")
+    ("pattern-matching" "Pattern Matching")
+    ("reader-syntax" "Reader Syntax")
+    ("syntax" "Syntax")
+    ("testing" "Testing")
+    ("type-checking" "Type Checking")))
 
 (define srfi-assoc
   (association-procedure = srfi/number))
