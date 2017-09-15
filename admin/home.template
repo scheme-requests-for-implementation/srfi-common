@@ -46,7 +46,7 @@
       and <a href="withdrawn-srfis.html">withdrawn</a> SRFIs.</p>
 
     <p>
-      Here's a complete list of of more than 150 existing SRFIs:</p>
+      Here's a complete list of existing SRFIs:</p>
 
     <div id="srfis">
       <input class="search" id="search" placeholder="Search" tabindex="1" />
