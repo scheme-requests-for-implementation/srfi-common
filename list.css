@@ -63,7 +63,8 @@
   border: none;
 }
 .card.invisible-keywords,
-.card.invisible-status {
+.card.invisible-status,
+.invisible {
   display: none;
 }
 .list > li {
@@ -203,7 +204,8 @@ p a {
 .dropdown.show-options .options {
   display: block;
 }
-#parameters {
+#parameters,
+noscript p {
   border: solid 2px lightgrey;
   border-radius: 6px;
   margin: 1em 0 1em 0;

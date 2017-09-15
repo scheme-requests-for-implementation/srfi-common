@@ -332,3 +332,4 @@ for (let button of sortControls) {
 }
 
 obeyQueryParameters(null);
+document.querySelector(".invisible").classList.remove("invisible");

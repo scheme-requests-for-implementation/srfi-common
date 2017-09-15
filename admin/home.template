@@ -41,10 +41,14 @@
       mailing lists.</p>
 
     <p>
-      Here's a complete list of existing SRFIs:</p>
+      Here are the SRFIs:</p>
+
+    <noscript><p>Javascript is not enabled in your browser, so
+      filtering, searching, and sorting the list of SRFIs is turned
+      off.</p></noscript>
 
     <div id="srfis">
-      <div id="parameters">
+      <div class="invisible" id="parameters">
 	<div>
 	  <span>Search for</span>
 	  <input class="search" id="search" placeholder="numbers or words" tabindex="1" /></div>
