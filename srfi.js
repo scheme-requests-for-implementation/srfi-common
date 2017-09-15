@@ -269,6 +269,7 @@ function enableMultiSelect(control, update) {
     "click",
     function(event) {
       event.preventDefault();
+      event.stopPropagation();
       for (let s of Array.from(document.querySelectorAll(".show-options"))) {
         if (s != control) {
           s.classList.remove("show-options");
@@ -278,15 +279,10 @@ function enableMultiSelect(control, update) {
     }
   );
   select.addEventListener(
-    "mousedown",
+    "click",
     function(event) {
       event.preventDefault();
       event.stopPropagation();
-
-      let scroll = select.scrollTop;
-
-      event.target.selected = !event.target.selected;
-      // setTimeout(() => select.scrollTop = scroll, 0);
       select.focus();
 
       let values = Array.from(select.options)
@@ -295,7 +291,6 @@ function enableMultiSelect(control, update) {
 
       update(values);
     });
-  select.addEventListener("mousemove", event => event.preventDefault());
 }
 
 enableMultiSelect(statusesControl,
