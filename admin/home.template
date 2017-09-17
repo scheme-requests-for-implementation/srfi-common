@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Scheme Requests for Implementation</title>
+    <link rel="preload" href="srfi.js" as="script" />
     <link href="favicon.png" rel="icon" sizes="192x192" type="image/png" />
     <link rel="stylesheet" type="text/css" href="admin.css" />
     <link rel="stylesheet" type="text/css" href="home.css" />
