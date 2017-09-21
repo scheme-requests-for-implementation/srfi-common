@@ -47,6 +47,9 @@
   margin: 0 0 1px 0;
   padding: 0;
 }
+.list li {
+  page-break-inside: avoid;
+}
 .info,
 .list.summary {
   columns: 15em;
