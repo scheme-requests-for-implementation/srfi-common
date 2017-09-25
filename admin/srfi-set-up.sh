@@ -12,6 +12,11 @@ DESTINATION_NO_EMAIL=$PARENT/srfi-no-email
 mkdir -p $DESTINATION_EMAIL
 mkdir -p $DESTINATION_NO_EMAIL
 
+# Delete ".tgz" files so rsync won't report that it's deleting them.
+pushd $DESTINATION_NO_EMAIL/
+for SRFI in srfi-*; do rm -f $SRFI/$SRFI.tgz; done
+popd
+
 rsync \
   --checksum \
   --delete \
@@ -29,8 +34,14 @@ rsync \
 
 TEMPFILE=`mktemp`
 
-(cd $DESTINATION_NO_EMAIL/; tar czf $TEMPFILE --exclude=srfi.tgz .)
+pushd $DESTINATION_NO_EMAIL/
+tar czf $TEMPFILE --exclude=srfi.tgz .
 mv $TEMPFILE $DESTINATION_EMAIL/srfi.tgz
+for SRFI in srfi-*;
+do
+    (tar czf $SRFI.tgz $SRFI/; mv $SRFI.tgz $SRFI)
+done
+popd
 rsync \
   --checksum \
   --delete \
