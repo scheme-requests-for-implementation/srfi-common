@@ -134,7 +134,7 @@
   (132 final "Sort Libraries" "John Cowan (based on SRFI 32 by Olin Shivers)" () ("algorithm") "2015/12/9" "2016/4/20")
   (133 final "Vector Library (R7RS-compatible)" "John Cowan (based on SRFI 43 by Taylor Campbell)" (43) ("data-structure") "2015/12/16" "2016/3/20")
   (134 final "Immutable Deques" "Kevin Wortman, John Cowan" () ("data-structure") "2015/12/16" "2016/7/1")
-  (135 final "Immutable Texts" "William D Clinger" (118 130 152) ("data-structure") "2016/6/6" "2016/9/6")
+  (135 final "Immutable Texts" "William D Clinger" (118 130 140 152) ("data-structure") "2016/6/6" "2016/9/6")
   (136 final "Extensible record types" "Marc Nieper-Wißkirchen" () ("data-structure") "2016/6/23" "2016/12/25")
   (137 final "Minimal Unique Types" "John Cowan, Marc Nieper-Wißkirchen" () ("data-structure") "2016/6/27" "2016/10/4")
   (138 final "Compiling Scheme programs to executables" "Marc Nieper-Wißkirchen" () ("operating-system") "2016/7/6" "2016/9/28")
