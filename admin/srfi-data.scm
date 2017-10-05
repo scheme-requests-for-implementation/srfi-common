@@ -151,7 +151,7 @@
   (149 final "Basic Syntax-rules Template Extensions" "Marc Nieper-Wißkirchen" () ("syntax") "2017/1/1" "2017/7/8")
   (150 draft "Hygienic ERR5RS Record Syntax (reduced)" "Marc Nieper-Wißkirchen" (131) ("data-structure") "2017/1/2")
   (151 final "Bitwise Operations" "John Cowan" (142) ("data-structure") "2017/5/3" "2017/7/10")
-  (152 draft "String Library (reduced)" "John Cowan" (130 135) ("data-structure") "2017/6/3")
+  (152 final "String Library (reduced)" "John Cowan" (130 135) ("data-structure") "2017/6/3" "2017/10/4")
   (153 draft "Ordered Sets and Bags" "John Cowan" () ("data-structure") "2017/6/28")
   (154 draft "First-class dynamic extents" "Marc Nieper-Wißkirchen" () ("miscellaneous") "2017/7/3")
   (155 draft "Promises" "Marc Nieper-Wißkirchen" (45) ("data-structure" "lazy-evaluation") "2017/7/4")
