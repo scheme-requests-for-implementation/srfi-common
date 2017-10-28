@@ -157,5 +157,5 @@
   (155 draft "Promises" "Marc Nieper-Wißkirchen" (45) ("data-structure" "lazy-evaluation") "2017/7/4")
   (156 draft "Syntactic combiners for binary predicates" "Panicz Maciej Godek" () ("syntax") "2017/7/10")
   (157 draft "Continuation marks" "Marc Nieper-Wißkirchen" () ("continuations") "2017/7/17")
-  (158 draft "Generators and Accumulators" "Shiro Kawai, John Cowan, Thomas Gilray" (121) ("data-structure") "2017/8/12")
+  (158 final "Generators and Accumulators" "Shiro Kawai, John Cowan, Thomas Gilray" (121) ("data-structure") "2017/8/12" "2017/10/27")
   (159 draft "Combinator Formatting" "Alex Shinn" () ("i/o") "2017/8/21"))
