@@ -128,20 +128,28 @@
   An accumulator is the inverse of a generator:  it is a procedure of one argument
   that works as a sink of values.
 </p></div></li>
-      <li class="card draft"><a class="card-anchor" href="srfi-157/"></a><span class="number">157</span><span class="name">Continuation marks</span><span class="authors">by Marc Nieper-Wißkirchen</span><span class="date-group">Draft: <span class="date">2017/7/17</span></span><span class="keywords" data-keywords="continuations">Keywords: Continuations</span><span class="status" data-status="draft"></span><div class="abstract"><p>
-  Continuation marks are a programming language feature that
-  allows one to attach information to and retrieve information from
+      <li class="card final"><a class="card-anchor" href="srfi-157/"></a><span class="number">157</span><span class="name">Continuation marks</span><span class="authors">by Marc Nieper-Wißkirchen</span><span class="date-group">Final: <span class="date">2018/1/29</span></span><span class="keywords" data-keywords="continuations">Keywords: Continuations</span><span class="status" data-status="final"></span><div class="abstract"><p>
+  Continuation marks are a programming language feature that allows
+  one to attach information to and retrieve information from
   continuations, generalizing stack inspection.  Conceptually, a
-  continuation consists of a number of frames where each frame
-  stands for an active procedure call that is not a tail call.  At
-  most one mark for a given key can be attached to a single frame.
+  continuation consists of a number of frames where each frame stands
+  for an active procedure call that is not a tail call.  A
+  continuation mark is then a key-value pair associated with a frame,
+  with keys compared using <code>eq?</code>.
+  At most one mark for a given key can be attached to a single frame.
+</p>
+
 <p>
   Besides stack inspection, continuation marks can be used to
   implement dynamic scope, delimited continuations, or delayed
   evaluation that is able to handle iterative lazy algorithms.
-
+</p>
+<p>
   This SRFI proposes to add continuation marks to the Scheme
-  programming language.</div></li>
+  programming language.  The interface defined here is modelled after
+  Racket's continuation marks.  It does not include all forms and
+  procedures provided by Racket but provides a compatible subset.
+</p></div></li>
       <li class="card final"><a class="card-anchor" href="srfi-156/"></a><span class="number">156</span><span class="name">Syntactic combiners for binary predicates</span><span class="authors">by Panicz Maciej Godek</span><span class="date-group">Final: <span class="date">2017/12/18</span></span><span class="keywords" data-keywords="syntax">Keywords: Syntax</span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-26/">SRFI 26: Notation for Specializing Parameters without Currying</a>.</span><div class="abstract"><p>Recognizing binary predicates as a specific area
   in which the use of prefix operators is an impediment,
   we propose a thin layer of "syntactic stevia" for in-fixing
