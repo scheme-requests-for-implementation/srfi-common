@@ -201,12 +201,11 @@
 	create procedures that remember not only their environment at
 	creation time but also their dynamic extent, which includes their
 	dynamic environment.</div></li>
-      <li class="card draft"><a class="card-anchor" href="srfi-153/"></a><span class="number">153</span><span class="name">Ordered Sets and Bags</span><span class="authors">by John Cowan</span><span class="date-group">Draft: <span class="date">2017/6/28</span></span><span class="keywords" data-keywords="data-structure">Keywords: Data Structure</span><span class="status" data-status="draft"></span><div class="abstract">      <p><em>Isets</em> and <em>ibags</em> (also known
-      as multisets) are immutable collections that can contain any Scheme
-      object. Isets enforce the constraint that no two elements can be the same
-      in the sense of the iset's associated <em>equality predicate</em>; ibags
-      do not. The elements in an iset or ibag appear in a fixed order
-      determined by the comparator used to create it.</div></li>
+      <li class="card draft"><a class="card-anchor" href="srfi-153/"></a><span class="number">153</span><span class="name">Ordered Sets</span><span class="authors">by John Cowan</span><span class="date-group">Draft: <span class="date">2017/6/28</span></span><span class="keywords" data-keywords="data-structure">Keywords: Data Structure</span><span class="status" data-status="draft"></span><div class="abstract"><p><em>Osets</em> are immutable collections that can contain any Scheme
+  object. Osets enforce the constraint that no two elements can be the same
+  in the sense of the oset's associated <em>equality predicate</em>
+  The elements in an oset appear in a fixed order determined by the
+  comparator used to create it.</p></div></li>
       <li class="card final"><a class="card-anchor" href="srfi-152/"></a><span class="number">152</span><span class="name">String Library (reduced)</span><span class="authors">by John Cowan</span><span class="date-group">Final: <span class="date">2017/10/4</span></span><span class="keywords" data-keywords="data-structure">Keywords: Data Structure</span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-130/">SRFI 130: Cursor-based string library</a> and <a href="/srfi-135/">SRFI 135: Immutable Texts</a>.</span><div class="abstract">      <p>Scheme has an impoverished set of
       string-processing utilities, which is a problem for authors of portable
       code. This SRFI proposes a coherent and comprehensive set of
