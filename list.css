@@ -19,9 +19,6 @@
   width: 100%;
   z-index: 0;
 }
-.list .authors:before {
-  content: ", "
-}
 .date-group,
 .keywords {
   color: grey;
@@ -96,9 +93,6 @@
 .number {
   font-weight: bold;
   margin: 0 0 0.3rem;
-}
-.number:after {
-  content: ": ";
 }
 p a {
   font-weight: bold;
