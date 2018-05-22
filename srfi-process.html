@@ -181,12 +181,21 @@ considered a last resort, and in this case the rationale for the
 feature must be stronger.
 
 </OL>
-The reference implementation should normally conform to the
+<p>The reference implementation should normally conform to the
 specification in point 5.  If there is any variance (such as the
 implementation being overly restrictive), the
 <strong>specification</strong> will be considered correct, the
 variance should be explained, and a timetable provided for the
-reference implementation to meet the specification.
+reference implementation to meet the specification.</p>
+
+<p>The reference implementation should include automated tests.  Tests
+make porting to new Scheme implementations easier.  They also help
+users understand how your SRFI is to be used.  However, if the
+reference implementation is trivial or not really meant to be used,
+i.e. it is just a proof of concept, it's okay to omit tests.  That
+should be a rare case.  No specific test framework is required, but
+both SRFI 64 and SRFI 78 are available.
+
 <LI>A proposal must be submitted in <strong>HTML</strong> (3.2 or later) format
 following the <A HREF="srfi-template.html">template located here</A>.
 If the author(s) are not familiar with this, the editors will accept
