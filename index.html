@@ -109,6 +109,14 @@
 	    abstracts</label></div></div>
       <ul class="summary list">
 
+      <li class="card draft"><a class="card-anchor" href="srfi-160/"></a><a href="srfi-160/"><span class="number">160</span></a>: <span class="name">Homogeneous numeric vector libraries</span><span class="authors">, by John Cowan (based on SRFI 4 by Marc Feeley)</span><span class="date-group">Draft: <span class="date">2018/5/21</span></span><span class="keywords" data-keywords="data-structure">Keywords: Data Structure</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-4/">SRFI 4: Homogeneous numeric vector datatypes</a>.</span><div class="abstract"><p>This SRFI describes a set of datatypes for vectors whose elements are
+of the same numeric type (signed or unsigned exact integer or inexact
+number of a given precision).  These datatypes support operations
+analogous to the Scheme vector type, but they are distinct datatypes.
+An external representation is specified which may be supported by the
+<code>read</code> and <code>write</code> procedures and by the program
+parser (i.e. programs can contain references to literal homogeneous
+vectors).</p></div></li>
       <li class="card final"><a class="card-anchor" href="srfi-159/"></a><a href="srfi-159/"><span class="number">159</span></a>: <span class="name">Combinator Formatting</span><span class="authors">, by Alex Shinn</span><span class="date-group">Final: <span class="date">2018/1/17</span></span><span class="keywords" data-keywords="i/o">Keywords: I/O</span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-28/">SRFI 28: Basic Format Strings </a> and <a href="/srfi-48/">SRFI 48: Intermediate Format Strings</a>.</span><div class="abstract"><p>A library of procedures for formatting Scheme objects to text in
   various ways, and for easily concatenating, composing and extending
   these formatters efficiently without resorting to capturing and

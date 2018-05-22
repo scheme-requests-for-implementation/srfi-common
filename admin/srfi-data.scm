@@ -158,4 +158,5 @@
   (156 final "Syntactic combiners for binary predicates" "Panicz Maciej Godek" (26) ("syntax") "2017/7/10" "2017/12/18")
   (157 final "Continuation marks" "Marc Nieper-Wißkirchen" () ("continuations") "2017/7/17" "2018/1/29")
   (158 final "Generators and Accumulators" "Shiro Kawai, John Cowan, Thomas Gilray" (121) ("data-structure") "2017/8/12" "2017/10/27")
-  (159 final "Combinator Formatting" "Alex Shinn" (28 48) ("i/o") "2017/8/21" "2018/1/17"))
+  (159 final "Combinator Formatting" "Alex Shinn" (28 48) ("i/o") "2017/8/21" "2018/1/17")
+  (160 draft "Homogeneous numeric vector libraries" "John Cowan (based on SRFI 4 by Marc Feeley)" (4) ("data-structure") "2018/5/21"))
