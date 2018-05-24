@@ -145,7 +145,7 @@
   (143 final "Fixnums" "John Cowan" () ("arithmetic") "2016/9/20" "2017/5/27")
   (144 final "Flonums" "John Cowan, Will Clinger" () ("arithmetic") "2016/9/20" "2017/7/17")
   (145 final "Assumptions" "Marc Nieper-Wißkirchen" () ("optimization") "2016/12/18" "2017/3/31")
-  (146 draft "Mappings" "Arthur A. Gleckler, Marc Nieper-Wißkirchen" () ("data-structure") "2016/12/18")
+  (146 final "Mappings" "Arthur A. Gleckler, Marc Nieper-Wißkirchen" () ("data-structure") "2016/12/18" "2018/5/24")
   (147 final "Custom macro transformers" "Marc Nieper-Wißkirchen" () ("syntax") "2016/12/24" "2017/3/7")
   (148 final "Eager syntax-rules" "Marc Nieper-Wißkirchen" () ("syntax") "2016/12/31" "2017/8/8")
   (149 final "Basic Syntax-rules Template Extensions" "Marc Nieper-Wißkirchen" () ("syntax") "2017/1/1" "2017/7/8")
