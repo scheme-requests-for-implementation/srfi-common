@@ -152,7 +152,7 @@
   (150 final "Hygienic ERR5RS Record Syntax (reduced)" "Marc Nieper-Wißkirchen" (9 99 131) ("data-structure") "2017/1/2" "2018/1/16")
   (151 final "Bitwise Operations" "John Cowan" (142) ("data-structure") "2017/5/3" "2017/7/10")
   (152 final "String Library (reduced)" "John Cowan" (130 135) ("data-structure") "2017/6/3" "2017/10/4")
-  (153 draft "Ordered Sets" "John Cowan" () ("data-structure") "2017/6/28")
+  (153 withdrawn "Ordered Sets" "John Cowan" () ("data-structure") "2017/6/28" "2018/7/8")
   (154 draft "First-class dynamic extents" "Marc Nieper-Wißkirchen" () ("miscellaneous") "2017/7/3")
   (155 draft "Promises" "Marc Nieper-Wißkirchen" (45) ("data-structure" "lazy-evaluation") "2017/7/4")
   (156 final "Syntactic combiners for binary predicates" "Panicz Maciej Godek" (26) ("syntax") "2017/7/10" "2017/12/18")
