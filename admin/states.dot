@@ -5,4 +5,5 @@ digraph srfi_states {
   DRAFT -> FINAL [label=" Finalize.", fontsize="8"];
   DRAFT -> WITHDRAWN [label=" Withdraw from consideration.", fontsize="8"];
   FINAL -> FINAL [label=" Publish errata.", fontsize="8"];
+  FINAL -> WITHDRAWN [label=" Publish replacement.", fontsize="8"];
 }
