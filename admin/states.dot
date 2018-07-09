@@ -1,5 +1,6 @@
 digraph srfi_states {
-	invisible_start [shape=point, style=invis]
+	rankdir=LR;
+	invisible_start [shape=point, style=invis];
 	invisible_start -> DRAFT [label=" Publish first draft.", fontsize="8"];
 	DRAFT -> DRAFT [label=" Publish new draft.", fontsize="8"];
 	DRAFT -> FINAL [label=" Finalize.", fontsize="8"];
