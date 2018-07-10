@@ -153,7 +153,7 @@ should explain why the present proposal is a substantial improvement.
 <LI>It must contain a detailed specification.  This should be detailed
 enough that a conforming implementation could be completely created
 from this description.
-<LI>It must contain a reference implementation.  This requirement may be met
+<LI>It must contain a sample implementation.  This requirement may be met
 (in order from the most to the least preferred) by:
 
 <OL>
@@ -169,7 +169,7 @@ is self-contained.
 <LI>An implementation-specific solution.  Ideally, tricky issues that
 had to be dealt with in the implementation will be identified.
 
-<LI>A separately available implementation, where a reference
+<LI>A separately available implementation, where a sample
 implementation is large or requires extensive modifications (rather
 than just additions) to an existing implementation.  This
 implementation will eventually be archived along with the SRFI and the
@@ -180,17 +180,17 @@ considered a last resort, and in this case the rationale for the
 feature must be stronger.
 
 </OL>
-<p>The reference implementation should normally conform to the
+<p>The sample implementation should normally conform to the
 specification in point 5.  If there is any variance (such as the
 implementation being overly restrictive), the
 <strong>specification</strong> will be considered correct, the
 variance should be explained, and a timetable provided for the
-reference implementation to meet the specification.</p>
+sample implementation to meet the specification.</p>
 
-<p>The reference implementation should include automated tests.  Tests
+<p>The sample implementation should include automated tests.  Tests
 make porting to new Scheme implementations easier.  They also help
 users understand how your SRFI is to be used.  However, if the
-reference implementation is trivial or not really meant to be used,
+sample implementation is trivial or not really meant to be used,
 i.e. it is just a proof of concept, it's okay to omit tests.  That
 should be a rare case.  No specific test framework is required, but
 both SRFI 64 and SRFI 78 are available.
@@ -239,9 +239,9 @@ importance of the proposal, or because they think it is a wrong-headed
 approach to the problem. The editors may, however, reject a proposal
 because it does not meet the requirements listed here.
 <p>
-In particular, lack of a reference
+In particular, lack of a sample
 implementation (as defined above) is grounds for rejection.  This can
-only occur if the "reference implementation" requirement is being
+only occur if the "sample implementation" requirement is being
 met by an outlined implementation (type 5), and there is consensus
 that the implementation outline is not adequate.  Note that this is never a
 permanent rejection, because creation of an implementation of one of
