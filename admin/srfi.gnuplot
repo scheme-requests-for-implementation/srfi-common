@@ -1,8 +1,8 @@
 set output "/tmp/srfi.svg"
 set grid xtics ytics
-set style line 1 dt 1   lt rgb "black" lw 0.5
-set style line 2 dt "." lt rgb "black" lw 1
-set style line 3 dt "-" lt rgb "black" lw 0.5
+set style line 1 lt rgb "black" lw 0.5
+set style line 2 lt rgb "#800080" lw 0.5
+set style line 3 lt rgb "gray" lw 0.5
 set terminal svg font "Arial,14" linewidth 3
 set tics font "Arial,10"
 set timefmt "%Y/%m/%d"
