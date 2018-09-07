@@ -1,0 +1,16 @@
+<p>
+  Unifiable boxes are, like the boxes
+  of <a href="https://srfi.schemers.org/srfi-111/srfi-111.html">SRFI
+  111</a>, objects with a single mutable state.  A constructor,
+  predicate, accessor, and mutator are provided.
+</p>
+
+<p>
+  In addition to the state, an equality predicate and union operations (link,
+  union, unify) are provided.  Applying a union operation to two
+  unifiable boxes makes the two boxes equal (in the sense of the
+  equality predicate).  As a consequence, their state will also become
+  identical.  In the case of link and union, it will be the state of one
+  of the two unioned boxes.  In the case of unify, the state is
+  determined by a supplied unification procedure.
+</p>
