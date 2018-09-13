@@ -160,4 +160,5 @@
   (158 final "Generators and Accumulators" "Shiro Kawai, John Cowan, Thomas Gilray" (121) ("data-structure") "2017/8/12" "2017/10/27")
   (159 final "Combinator Formatting" "Alex Shinn" (28 48) ("i/o") "2017/8/21" "2018/1/17")
   (160 draft "Homogeneous numeric vector libraries" "John Cowan (based on SRFI 4 by Marc Feeley)" (4) ("data-structure") "2018/5/21")
-  (161 draft "Unifiable Boxes" "Marc Nieper-Wißkirchen" () ("data-structure") "2018/9/6"))
+  (161 draft "Unifiable Boxes" "Marc Nieper-Wißkirchen" () ("data-structure") "2018/9/6")
+  (162 draft "Comparators sublibrary" "John Cowan" (128) ("comparison") "2018/9/12"))
