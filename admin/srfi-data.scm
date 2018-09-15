@@ -154,7 +154,7 @@
   (152 final "String Library (reduced)" "John Cowan" (130 135) ("data-structure") "2017/6/3" "2017/10/4")
   (153 withdrawn "Ordered Sets" "John Cowan" () ("data-structure") "2017/6/28" "2018/7/8")
   (154 final "First-class dynamic extents" "Marc Nieper-Wißkirchen" (157) ("miscellaneous") "2017/7/3" "2018/9/15")
-  (155 draft "Promises" "Marc Nieper-Wißkirchen" (45) ("data-structure" "lazy-evaluation") "2017/7/4")
+  (155 final "Promises" "Marc Nieper-Wißkirchen" (45) ("data-structure" "lazy-evaluation") "2017/7/4" "2018/9/15")
   (156 final "Syntactic combiners for binary predicates" "Panicz Maciej Godek" (26) ("syntax") "2017/7/10" "2017/12/18")
   (157 final "Continuation marks" "Marc Nieper-Wißkirchen" () ("continuations") "2017/7/17" "2018/1/29")
   (158 final "Generators and Accumulators" "Shiro Kawai, John Cowan, Thomas Gilray" (121) ("data-structure") "2017/8/12" "2017/10/27")

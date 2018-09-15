@@ -193,16 +193,15 @@ vectors).</p></div></li>
   and <code>(lambda (_) (&lt; x _))</code>, respectively.
   This SRFI document also describes some other uses of the
   <code>is</code> macro and its limitations.</p></div></li>
-      <li class="card draft"><a class="card-anchor" href="srfi-155/"></a><a href="srfi-155/"><span class="number">155</span></a>: <span class="name">Promises</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="date-group">Draft: <span class="date">2017/7/4</span></span><span class="keywords" data-keywords="data-structure,lazy-evaluation">Keywords: Data Structure, Lazy Evaluation</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-45/">SRFI 45: Primitives for Expressing Iterative Lazy Algorithms</a>.</span><div class="abstract">	<p>
+      <li class="card final"><a class="card-anchor" href="srfi-155/"></a><a href="srfi-155/"><span class="number">155</span></a>: <span class="name">Promises</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="date-group">Final: <span class="date">2018/9/15</span></span><span class="keywords" data-keywords="data-structure,lazy-evaluation">Keywords: Data Structure, Lazy Evaluation</span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-45/">SRFI 45: Primitives for Expressing Iterative Lazy Algorithms</a>.</span><div class="abstract">	<p>
 	  Scheme, like ML, is a programming language with strict evaluation
 	  while others, like Haskell, use lazy evaluation.  Scheme, however,
 	  possesses the primitives <code>delay</code> and <code>force</code>
-	  that make it possible to express lazy algorithms in the Scheme
-	  programming language.
+	  that make it possible to express lazy algorithms.
 
 	<p>
 	  Lazy evaluation does not go well in conjunction with imperative,
-	  non-functional, side effecting code.  It should, however, be
+	  non-functional, side-effecting code.  It should, however, be
 	  applicable in a purely functional setting.  This is the case for the
 	  delayed evaluation model as described in the R7RS as long as no
 	  dynamically bound variables, also known as parameter objects, are
