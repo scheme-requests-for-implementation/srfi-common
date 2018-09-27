@@ -113,18 +113,27 @@ present on the web site, in full &mdash; just marked withdrawn.
 
 </OL>
 
-Once the SRFI number has been assigned, the proposal will be in one of
-three states: <em>draft</em>, <em>final</em>, or
-<em>withdrawn</em>.  Lists of proposals in all 3 states will be
-available and archived indefinitely and SRFI numbers will not be
-reused.  <!--Final SRFIs may be further thought of as being in one
-of three states: active, deprecated, or superseded.--> The
-<em>final</em> state is permanent, and the only change that may be
-made to such a SRFI is the updating of URLs (including related SRFIs)
-or noting the SRFI as deprecated, conflicted, or superseded by a subsequent SRFI.
-Every Scheme implementation is encouraged to provide implementations
-of active SRFIs where possible, and to retain existing implementations
-of deprecated SRFIs for a reasonable time period.
+<p>Once the SRFI number has been assigned, the proposal will be in one
+of three states: <em>draft</em>, <em>final</em>, or
+<em>withdrawn</em>.  Lists of proposals in all three states will be
+available and archived indefinitely, and SRFI numbers will not be
+reused.
+
+The only changes that may be made to a <em>final</em> SRFI are:
+
+<ol>
+  <li>updating of URLs (including those of related SRFIs)</li>
+  <li>noting that the SRFI has been deprecated or has been superseded
+    by a subsequent SRFI</li>
+  <li>withdrawing the SRFI, but only with permission of the author,
+    and only if a replacement SRFI has been made final</li>
+  <li>improving the sample implementation and tests</li>
+  <li>correcting errors (but not errors of design), e.g. spelling
+    errors, typos, or contradictory statements</li></ol>
+
+<p>Every Scheme implementation is encouraged to provide
+implementations of final SRFIs where possible, and to retain existing
+implementations of deprecated SRFIs for a reasonable time period.
 
 <p>
 New standards, such as R<sup>n</sup>RS, may supersede or conflict with existing
