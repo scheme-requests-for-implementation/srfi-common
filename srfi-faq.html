@@ -142,7 +142,7 @@ cluttering up that document.
       minimum of 15 days after any significant change. Any proposal
       still under active discussion and revision after 90 days is
       not ready for codification. It will then be withdrawn for a
-      (normal) minimum of 30 days after which it may be
+      (normal) minimum of 30 days, after which it may be
       resubmitted. If it is now in good shape, it will likely
       become final after the 60-day discussion period. Thus, it
       will have been delayed a maximum of 90 days. This is likely
@@ -159,8 +159,8 @@ cluttering up that document.
     important feature, they will add it to their implementations;
     if not, they won't. The discussion relating to any SRFI will be
     retained indefinitely, and implementors can refer to that when
-    making their decision. Hence poorly worded, reasoned, or
-    defended SRFIs will be nothing more than a waste of some time -
+    making their decision. Hence poorly worded, poorly reasoned, or
+    poorly defended SRFIs will be nothing more than a waste of some time &mdash;
     regrettable, but necessary to retain an open process.
 
     <dt>Why do I have to include a reference
@@ -215,10 +215,10 @@ cluttering up that document.
       <p>This is a lesson learned from the Emacs world where it
       used to be that code would check to see what version of Emacs
       it was running on and make assumptions about the features
-      that that particular version provided. Unfortunately that
+      that that particular version provided. Unfortunately, that
       made the code un-portable to alternative Emacs
       implementations that had the required features but different
-      series of version numbers. The same lesson can be observed in
+      version numbers. The same lesson can be observed in
       old C code that assumed that such-and-such a system had
       particular features. More commonly today, C programs use a
       configuration program that determines what libraries and
@@ -229,7 +229,7 @@ cluttering up that document.
 
       <p>The biggest advantage of checking for features rather than
       implementations is that code becomes portable to systems of
-      which the author was unaware, if they provide the features
+      which the author was unaware, assuming that they provide the features
       that the program requires.
 
     <dt>The process document mentions that different SRFIs may
@@ -332,10 +332,9 @@ cluttering up that document.
 	117</a>.</p>
 
       <p>Otherwise, or until the author has expressed an opinion, we
-	add a link to an <a href="http://srfi.schemers.org/srfi-48/errata.html">errata
-	page</a> to the Status section.  See the example of <a
-	href="http://srfi.schemers.org/srfi-48/srfi-48.html">SRFI
-	48</a>.  That way, the document remains unchanged, but
+	add a link to an errata page to the Status section.  See the
+	example of <a href="http://srfi.schemers.org/srfi-48/srfi-48.html">SRFI
+	48</a> (<a href="http://srfi.schemers.org/srfi-48/errata.html">SRFI 48 errata</a>).  That way, the document remains unchanged, but
 	everyone can easily find the correction.</p>
 
       <p>In either case, a tag like <code>errata-1</code> is added in
