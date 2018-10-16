@@ -161,4 +161,4 @@
   (159 final "Combinator Formatting" "Alex Shinn" (28 48) ("i/o") "2017/8/21" "2018/1/17")
   (160 draft "Homogeneous numeric vector libraries" "John Cowan (based on SRFI 4 by Marc Feeley)" (4) ("data-structure") "2018/5/21")
   (161 draft "Unifiable Boxes" "Marc Nieper-Wißkirchen" () ("data-structure") "2018/9/6")
-  (162 draft "Comparators sublibrary" "John Cowan" (128) ("comparison") "2018/9/12"))
+  (162 draft "Comparators sublibrary" "John Cowan" (128) ("comparison") "2018/10/15"))
