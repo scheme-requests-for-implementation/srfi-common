@@ -42,6 +42,14 @@
       mailing lists.</p>
 
     <p>
+      Arthur A. Gleckler, current SRFI editor, gave a talk
+      (<a href="https://www.youtube.com/watch?v=YuqZKHwUygU">YouTube
+      video</a>, <a href="https://www.brinckerhoff.org/scheme2018/papers/Gleckler.pdf">PDF
+      of paper</a>) on SRFI, its history, and future plans at
+      the <a href="https://www.brinckerhoff.org/scheme2018/">2018
+      Scheme Workshop</a>.</p>
+
+    <p>
       Here are the SRFIs:</p>
 
     <noscript><p>Javascript is not enabled in your browser, so
