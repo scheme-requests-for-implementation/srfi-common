@@ -127,14 +127,16 @@
   <a href="https://docs.racket-lang.org/math/array.html">math.array</a> package
   and other sources.  It has been implemented in the <a href="https://www.gnu.org/software/kawa/Arrays.html">Kawa dialect of Scheme</a>.</div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-163/"></a><a href="srfi-163/"><span class="number">163</span></a>: <span class="name">Enhanced array literals</span><span class="authors">, by Per Bothner</span><span class="date-group">Draft: <span class="date">2018/11/1</span></span><span class="keywords" data-keywords="reader-syntax">Keywords: Reader Syntax</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-4/">SRFI 4: Homogeneous numeric vector datatypes</a>, <a href="/srfi-25/">SRFI 25: Multi-dimensional Array Primitives</a>, <a href="/srfi-58/">SRFI 58: Array Notation</a>, <a href="/srfi-122/">SRFI 122: Nonempty Intervals and Generalized Arrays</a>, and <a href="/srfi-164/">SRFI 164: Enhanced multi-dimensional Arrays</a>.</span><div class="abstract"><p>This is a specification of a reader form (literals)
-  for multi-dimensional arrays.
-  It is an extension of the Common Lisp array reader syntax to handle
-  non-zero lower bounds, optional explicit bounds,
-  and optional uniform element types (compatible with <a href="https://srfi.schemers.org/srfi-4">SRFI 4</a>).
+for multi-dimensional arrays.
+It is an extension of the Common Lisp array reader syntax to handle
+non-zero lower bounds, optional explicit bounds,
+and optional uniform element types (compatible with <a href="https://srfi.schemers.org/srfi-4">SRFI 4</a>).
 It can be used in conjunction with <a href="https://srfi.schemers.org/srfi-25">SRFI 25</a>, <a href="https://srfi.schemers.org/srfi-122">SRFI 122</a>,
 or  <a href="https://srfi.schemers.org/srfi-164">SRFI 164</a>.
-  These extensions were implemented in Guile (except the handling of rank-0 arrays),
-  and later in Kawa.</p></div></li>
+These extensions were implemented in Guile (except the handling of rank-0 arrays),
+and later in Kawa.
+<p>There are recommendations for output formatting
+and a suggested <code>format-array</code> procedure.</div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-162/"></a><a href="srfi-162/"><span class="number">162</span></a>: <span class="name">Comparators sublibrary</span><span class="authors">, by John Cowan</span><span class="date-group">Draft: <span class="date">2018/10/15</span></span><span class="keywords" data-keywords="comparison">Keywords: Comparison</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-128/">SRFI 128: Comparators (reduced)</a>.</span><div class="abstract"><p>
 This SRFI provides a few extra procedures and comparators to go
 with SRFI 128, Comparators.  Implementers are urged to add them to
