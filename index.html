@@ -146,18 +146,18 @@ as a separate library.
       <li class="card draft"><a class="card-anchor" href="srfi-161/"></a><a href="srfi-161/"><span class="number">161</span></a>: <span class="name">Unifiable Boxes</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="date-group">Draft: <span class="date">2018/9/6</span></span><span class="keywords" data-keywords="data-structure">Keywords: Data Structure</span><span class="status" data-status="draft"></span><div class="abstract"><p>
   Unifiable boxes are, like the boxes
   of <a href="https://srfi.schemers.org/srfi-111/srfi-111.html">SRFI
-  111</a>, objects with a single mutable state.  A constructor,
+    111</a>, objects with a single mutable state.  A constructor,
   predicate, accessor, and mutator are provided.
 </p>
 
 <p>
-  In addition to the state, an equality predicate and union operations (link,
-  union, unify) are provided.  Applying a union operation to two
-  unifiable boxes makes the two boxes equal (in the sense of the
-  equality predicate).  As a consequence, their state will also become
-  identical.  In the case of link and union, it will be the state of one
-  of the two unioned boxes.  In the case of unify, the state is
-  determined by a supplied unification procedure.
+In addition to this, an equality predicate and union operations (link,
+union, unify) are provided.  Applying a union operation to two
+unifiable boxes makes the two boxes equal (in the sense of the
+equality predicate).  As a consequence, their state will also become
+identical.  In the case of link and union, it will be the state of one
+of the two unioned boxes.  In the case of unify, the state is
+determined by a supplied unification procedure.
 </p></div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-160/"></a><a href="srfi-160/"><span class="number">160</span></a>: <span class="name">Homogeneous numeric vector libraries</span><span class="authors">, by John Cowan (based on SRFI 4 by Marc Feeley)</span><span class="date-group">Draft: <span class="date">2018/5/21</span></span><span class="keywords" data-keywords="data-structure">Keywords: Data Structure</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-4/">SRFI 4: Homogeneous numeric vector datatypes</a>.</span><div class="abstract"><p>This SRFI describes a set of operations on SRFI 4 homogeneous vector
 types (plus a few additional types) that are closely analogous
