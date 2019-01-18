@@ -162,5 +162,5 @@
   (160 draft "Homogeneous numeric vector libraries" "John Cowan (based on SRFI 4 by Marc Feeley)" (4) ("data-structure") "2018/5/21")
   (161 draft "Unifiable Boxes" "Marc Nieper-Wißkirchen" () ("data-structure") "2018/9/6")
   (162 draft "Comparators sublibrary" "John Cowan" (128) ("comparison") "2018/10/15")
-  (163 draft "Enhanced array literals" "Per Bothner" (4 25 122 58 164) ("reader-syntax") "2018/11/1")
+  (163 final "Enhanced array literals" "Per Bothner" (4 25 122 58 164) ("reader-syntax") "2018/11/1" "2019/1/18")
   (164 draft "Enhanced multi-dimensional Arrays" "Per Bothner" (4 122 163) ("data-structure") "2018/11/2"))
