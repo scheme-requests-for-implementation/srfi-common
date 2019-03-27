@@ -164,4 +164,5 @@
   (162 draft "Comparators sublibrary" "John Cowan" (128) ("comparison") "2018/10/15")
   (163 final "Enhanced array literals" "Per Bothner" (4 25 122 58 164) ("reader-syntax") "2018/11/1" "2019/1/18")
   (164 draft "Enhanced multi-dimensional Arrays" "Per Bothner" (4 122 163) ("data-structure") "2018/11/2")
-  (165 draft "The Environment Monad" "Marc Nieper-Wißkirchen" (159) ("miscellaneous") "2019/2/13"))
+  (165 draft "The Environment Monad" "Marc Nieper-Wißkirchen" (159 166) ("miscellaneous") "2019/2/13")
+  (166 draft "Monadic Formatting" "Alex Shinn" (159) ("i/o") "2019/3/27"))
