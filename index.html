@@ -119,6 +119,20 @@
 	    abstracts</label></div></div>
       <ul class="summary list">
 
+      <li class="card draft"><a class="card-anchor" href="srfi-169/"></a><a href="srfi-169/"><span class="number">169</span></a>: <span class="name">Underscores in Numbers</span><span class="authors">, by Lassi Kortela</span><span class="date-group">Draft: <span class="date">2019/4/18</span></span><span class="keywords" data-keywords="syntax">Keywords: Syntax</span><span class="status" data-status="draft"></span><div class="abstract"><p>Many people find that large numbers are easier to read when the
+  digits are broken into small groups.  For example the number
+  `1582439` might be easier to read if written as `1 582 439`.  This
+  applies to source code as it does to other writing.  We propose an
+  extension of Scheme syntax to allow the underscore as a digit
+  separator in numerical constants.</p></div></li>
+      <li class="card draft"><a class="card-anchor" href="srfi-168/"></a><a href="srfi-168/"><span class="number">168</span></a>: <span class="name">Generic Tuple Store Database</span><span class="authors">, by Amirouche Boubekki</span><span class="date-group">Draft: <span class="date">2019/4/18</span></span><span class="keywords" data-keywords="i/o">Keywords: I/O</span><span class="status" data-status="draft"></span><div class="abstract"><p>This library is a generic approach to the database abstractions
+  known as triplestore and quadstore.  Generic Tuple Store Database
+  implements n-tuple ordered sets and associated primitives for
+  working with them in the context of data management.</p></div></li>
+      <li class="card draft"><a class="card-anchor" href="srfi-167/"></a><a href="srfi-167/"><span class="number">167</span></a>: <span class="name">Ordered Key Value Store</span><span class="authors">, by Amirouche Boubekki</span><span class="date-group">Draft: <span class="date">2019/4/18</span></span><span class="keywords" data-keywords="i/o">Keywords: I/O</span><span class="status" data-status="draft"></span><div class="abstract"><p>This library describe an interface for ordered key-value store that
+  is suitable to implement a storage engine for the generic tuple
+  store SRFI.  It maps cleanly with existing ordered key-value
+  databases that may or may not provide transactions.</p></div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-166/"></a><a href="srfi-166/"><span class="number">166</span></a>: <span class="name">Monadic Formatting</span><span class="authors">, by Alex Shinn</span><span class="date-group">Draft: <span class="date">2019/3/27</span></span><span class="keywords" data-keywords="i/o">Keywords: I/O</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-159/">SRFI 159: Combinator Formatting</a>.</span><div class="abstract"><p>
   A library of procedures for formatting Scheme objects to text in
   various ways, and for easily concatenating, composing and extending
@@ -127,7 +141,19 @@
 
 <p>
   This SRFI is an updated version of SRFI 159, primarily with the
-  difference that state variables are hygienic.</p></div></li>
+  difference that state variables are hygienic.</p>
+
+<p>
+Summary of differences from SRFI 159:
+<ul>
+  <li>State variables are first class and hygienic</li>
+  <li>Added <code>written-shared</code>, <code>pretty-shared</code></li>
+  <li>Added <code>as-color</code>, <code>pretty-colored</code></li>
+  <li>Added <code>ambiguous-is-wide?</code> state variable</li>
+  <li>Restored non-uniform comma rules as needed in India</li>
+  <li>Restored <code>upcased</code> and <code>downcased</code></li>
+  <li>Several clarifications and more examples</li>
+</ul></div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-165/"></a><a href="srfi-165/"><span class="number">165</span></a>: <span class="name">The Environment Monad</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="date-group">Draft: <span class="date">2019/2/13</span></span><span class="keywords" data-keywords="miscellaneous">Keywords: Miscellaneous</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-159/">SRFI 159: Combinator Formatting</a> and <a href="/srfi-166/">SRFI 166: Monadic Formatting</a>.</span><div class="abstract">Monads model computations.  The environment monad models
 computations that depend on values from a shared environment.
 These computations can read values from the environment, pass
