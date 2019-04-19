@@ -166,6 +166,6 @@
   (164 draft "Enhanced multi-dimensional Arrays" "Per Bothner" (4 122 163) ("data-structure") "2018/11/2")
   (165 draft "The Environment Monad" "Marc Nieper-Wißkirchen" (159 166) ("miscellaneous") "2019/2/13")
   (166 draft "Monadic Formatting" "Alex Shinn" (159) ("i/o") "2019/3/27")
-  (167 draft "Ordered Key Value Store" "Amirouche Boubekki" () ("i/o") "2019/4/18")
-  (168 draft "Generic Tuple Store Database" "Amirouche Boubekki" () ("i/o") "2019/4/18")
+  (167 draft "Ordered Key Value Store" "Amirouche Boubekki" (168) ("i/o") "2019/4/18")
+  (168 draft "Generic Tuple Store Database" "Amirouche Boubekki" (167) ("i/o") "2019/4/18")
   (169 draft "Underscores in Numbers" "Lassi Kortela" () ("syntax") "2019/4/18"))
