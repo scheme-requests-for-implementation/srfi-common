@@ -39,20 +39,24 @@
   text-decoration: underline;
 }
 .info,
-.list {
+.list,
+.posts {
   orphans: 3;
   margin: 0 0 1px 0;
   padding: 0;
 }
-.list li {
+.list li,
+.post li {
   page-break-inside: avoid;
 }
 .info,
-.list.summary {
+.list.summary,
+.posts {
   columns: 15em;
   -moz-columns: 15em;
 }
-.info > li {
+.info > li,
+.posts > li {
   border: solid 2px lightgrey;
   border-radius: 10px;
   box-shadow: inset 0 1px 0 #fff;

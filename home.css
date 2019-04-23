@@ -1,3 +1,27 @@
 h1 {
   text-align: center;
 }
+h2 {
+  font-size: 120%;
+}
+option {
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+  border-left-width: 15px;
+  font-size: 150%;
+}
+option.draft {
+  border-left-color: #55aa55;
+}
+option.final {
+  border-left-color: purple;
+}
+option.withdrawn {
+  border-left-color: lightgray;
+}
+.posts h2 {
+  margin-top: 0;
+}
+select {
+  border: none;
+}

@@ -41,18 +41,32 @@
       href="srfi-list-subscribe.html">subscribe</a> to some of our
       mailing lists.</p>
 
-    <p>
-      Arthur A. Gleckler, current SRFI editor, gave a talk entitled
-      Growing Schemes: Twenty Years of Scheme Requests for
-      Implementation
-      (<a href="https://www.youtube.com/watch?v=YuqZKHwUygU">YouTube</a>,
-      <a href="https://www.brinckerhoff.org/scheme2018/papers/Gleckler.pdf">PDF</a>)
-      on SRFI, its history, and future plans at
-      the <a href="https://www.brinckerhoff.org/scheme2018/">2018
-      Scheme Workshop</a>.</p>
+    <ul class="posts">
+      <li class="card">
+	<h2>New mailing lists</h2>
+	<p>As of April, 2019, there are two new mailing lists for
+	  discussing specific topics we hope may lead to SRFIs and
+	  other cooperative work:</p>
+	<dl>
+	  <dt>Schemedoc (<a href="https://srfi-email.schemers.org/schemedoc">archive</a>)</dt>
+	  <dd>collecting, organizing, and serving indexes of Scheme code
+	    found in SRFIs, Scheme implementations, RnRS standards, etc.</dd>
+	  <dt>Schemeweb (<a href="https://srfi-email.schemers.org/schemeweb">archive</a>)</dt>
+	  <dd>web technology implemented in Scheme, e.g. web servers and
+	    web request handlers</dd></dl>
+	<p>All are welcome to join the discussion.
+	  <a href="scheme-lists-subscribe.html">Subscribe here</a>.</p></li>
+      <li class="card">
+	<h2>SRFI talk at Scheme Workshop</h2>
+	<p>
+	  At the <a href="https://www.brinckerhoff.org/scheme2018/">2018 Scheme
+	  Workshop</a>, SRFI editor Arthur A. Gleckler gave a talk
+	  entitled Growing Schemes: Twenty Years of Scheme Requests for
+	  Implementation (<a href="https://www.youtube.com/watch?v=YuqZKHwUygU">YouTube</a>,
+	  <a href="https://www.brinckerhoff.org/scheme2018/papers/Gleckler.pdf">PDF</a>)
+	  on SRFI, its history, and future plans.</p></li></ul>
 
-    <p>
-      Here are the SRFIs:</p>
+    <h2>The SRFIs</h2>
 
     <noscript><p>Javascript is not enabled in your browser, so
       filtering, searching, and sorting the list of SRFIs is turned
@@ -76,9 +90,9 @@
 	    <button class="controls">status</button>
 	    <div class="options">
 	      <select multiple size="3">
-		<option value="draft">Draft</option>
-		<option value="final">Final</option>
-		<option value="withdrawn">Withdrawn</option></select></div>
+		<option class="draft" value="draft">Draft</option>
+		<option class="final" value="final">Final</option>
+		<option class="withdrawn" value="withdrawn">Withdrawn</option></select></div>
 	    <span class="chosen"></span></div>
 	  <div class="dropdown" id="keywords">
 	    <button class="controls">keywords</button>
@@ -92,6 +106,8 @@
 	    abstracts</label></div></div>
       <ul class="summary list">
 <*<srfi-list>*></ul></div>
+
+    <h2>History</h2>
 
     <p>Every SRFI is hosted on Github, but if you'd like a complete
       archive of all SRFI documents and code, please download <a
