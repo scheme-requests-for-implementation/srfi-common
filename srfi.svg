@@ -432,7 +432,20 @@
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
+	<path stroke='black'  d='M543.6,390.5 L543.6,385.3 M549.9,390.5 L549.9,385.3 M556.2,390.5 L556.2,385.3  '/></g>
+<g fill="none" color="black" stroke="black" stroke-width="1.50" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
+<g fill="none" color="gray" stroke="currentColor" stroke-width="1.50" stroke-linecap="butt" stroke-linejoin="miter">
+	<path stroke='gray' stroke-dasharray='2,4' class="gridline"  d='M562.4,390.5 L562.4,63.1  '/></g>
+<g fill="none" color="gray" stroke="gray" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
+</g>
+<g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
+	<path stroke='black'  d='M562.4,390.5 L562.4,380.0  '/>	<g transform="translate(560.1,402.5) rotate(45)" stroke="none" fill="black" font-family="Arial" font-size="10.00"  text-anchor="start">
+		<text><tspan font-family="Arial" >01/01/2019</tspan></text>
+	</g>
+</g>
+<g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
+	<path stroke='black'  d='M568.6,390.5 L568.6,385.3  '/></g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(316.9,36.2)" stroke="none" fill="black" font-family="Arial" font-size="14.00"  text-anchor="middle">
 		<text><tspan font-family="Arial" >Cumulative SRFIs</tspan></text>
