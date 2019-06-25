@@ -169,4 +169,5 @@
   (167 draft "Ordered Key Value Store" "Amirouche Boubekki" (168) ("i/o") "2019/4/18")
   (168 draft "Generic Tuple Store Database" "Amirouche Boubekki" (167) ("i/o") "2019/4/18")
   (169 draft "Underscores in Numbers" "Lassi Kortela" () ("syntax") "2019/4/18")
-  (170 draft "POSIX API" "Olin Shivers (original author), John Cowan (editor and shepherd)" () ("operating-system") "2019/5/4"))
+  (170 draft "POSIX API" "Olin Shivers (original author), John Cowan (editor and shepherd)" () ("operating-system") "2019/5/4")
+  (171 draft "Transducers" "Linus Björnstam" () ("data-structure") "2019/6/20"))
