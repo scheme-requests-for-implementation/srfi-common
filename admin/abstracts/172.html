@@ -1,0 +1,9 @@
+<p>This SRFI provides two libraries for use with R7RS that provide a
+way to sandbox the <code>eval</code> procedure to make it safer to use
+in evaluating Scheme expressions of doubtful provenance.  The intention
+is to call <code>eval</code>, passing it an S-expression representing a
+Scheme procedure and the environment defined by one of these libraries.
+Since code evaluated by <code>eval</code> runs in a null lexical
+environment, the resulting procedure can then be invoked with less
+concern about possible side effects.
+</p>
