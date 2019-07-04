@@ -15,9 +15,9 @@
      });
     </script>
     <script crossorigin="anonymous" integrity=
-	    "sha384-Ra6zh6uYMmH5ydwCqqMoykyf1T/+ZcnOQfFPhDrp2kI4OIxadnhsvvA2vv9A7xYv" src=
-	    "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-	    type="text/javascript"></script></head>
+            "sha384-Ra6zh6uYMmH5ydwCqqMoykyf1T/+ZcnOQfFPhDrp2kI4OIxadnhsvvA2vv9A7xYv" src=
+            "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+            type="text/javascript"></script></head>
   <body>
     <h1>Scheme Requests for Implementation</h1>
 
@@ -43,28 +43,30 @@
 
     <ul class="posts">
       <li class="card">
-	<h2>New mailing lists</h2>
-	<p>As of April, 2019, there are two new mailing lists for
-	  discussing specific topics we hope may lead to SRFIs and
-	  other cooperative work:</p>
-	<dl>
-	  <dt>Schemedoc (<a href="https://srfi-email.schemers.org/schemedoc">archive</a>)</dt>
-	  <dd>collecting, organizing, and serving indexes of Scheme code
-	    found in SRFIs, Scheme implementations, RnRS standards, etc.</dd>
-	  <dt>Schemeweb (<a href="https://srfi-email.schemers.org/schemeweb">archive</a>)</dt>
-	  <dd>web technology implemented in Scheme, e.g. web servers and
-	    web request handlers</dd></dl>
-	<p>All are welcome to join the discussion.
-	  <a href="scheme-lists-subscribe.html">Subscribe here</a>.</p></li>
+        <span class="firefox-column-workaround">
+          <h2>New mailing lists</h2>
+          <p>As of April, 2019, there are two new mailing lists for
+            discussing specific topics we hope may lead to SRFIs and
+            other cooperative work:</p>
+          <dl>
+            <dt>Schemedoc (<a href="https://srfi-email.schemers.org/schemedoc">archive</a>)</dt>
+            <dd>collecting, organizing, and serving indexes of Scheme code
+              found in SRFIs, Scheme implementations, RnRS standards, etc.</dd>
+            <dt>Schemeweb (<a href="https://srfi-email.schemers.org/schemeweb">archive</a>)</dt>
+            <dd>web technology implemented in Scheme, e.g. web servers and
+              web request handlers</dd></dl>
+          <p>All are welcome to join the discussion.
+            <a href="scheme-lists-subscribe.html">Subscribe here</a>.</p></span></li>
       <li class="card">
-	<h2>SRFI talk at Scheme Workshop</h2>
-	<p>
-	  At the <a href="https://www.brinckerhoff.org/scheme2018/">2018 Scheme
-	  Workshop</a>, SRFI editor Arthur A. Gleckler gave a talk
-	  entitled Growing Schemes: Twenty Years of Scheme Requests for
-	  Implementation (<a href="https://www.youtube.com/watch?v=YuqZKHwUygU">YouTube</a>,
-	  <a href="https://www.brinckerhoff.org/scheme2018/papers/Gleckler.pdf">PDF</a>)
-	  on SRFI, its history, and future plans.</p></li></ul>
+        <span class="firefox-column-workaround">
+          <h2>SRFI talk at Scheme Workshop</h2>
+          <p>
+            At the <a href="https://www.brinckerhoff.org/scheme2018/">2018 Scheme
+            Workshop</a>, SRFI editor Arthur A. Gleckler gave a talk
+            entitled Growing Schemes: Twenty Years of Scheme Requests for
+            Implementation (<a href="https://www.youtube.com/watch?v=YuqZKHwUygU">YouTube</a>,
+            <a href="https://www.brinckerhoff.org/scheme2018/papers/Gleckler.pdf">PDF</a>)
+            on SRFI, its history, and future plans.</p></span></li></ul>
 
     <h2>The SRFIs</h2>
 
@@ -74,63 +76,63 @@
 
     <div id="srfis">
       <div class="invisible" id="parameters">
-	<div>
-	  <span>Search for</span>
-	  <input class="search" id="search" placeholder="numbers or words" tabindex="1" /></div>
-	<div>
-	  <span>Sort by</span>
-	  <button class="controls sort" data-sort="authors" tabindex="2" >authors</button>
-	  <button class="controls sort" data-sort="date" tabindex="3" >date</button>
-	  <button class="controls sort" data-sort="name" tabindex="4" >name</button>
-	  <button class="controls sort" data-sort="number" tabindex="5" >number</button>
-	  <button class="controls sort" data-sort="status" tabindex="6" >status</button></div>
-	<div>
-	  <span>Filter by </span>
-	  <div class="dropdown" id="statuses">
-	    <button class="controls">status</button>
-	    <div class="options">
-	      <select multiple size="3">
-		<option class="draft" value="draft">Draft</option>
-		<option class="final" value="final">Final</option>
-		<option class="withdrawn" value="withdrawn">Withdrawn</option></select></div>
-	    <span class="chosen"></span></div>
-	  <div class="dropdown" id="keywords">
-	    <button class="controls">keywords</button>
-	    <div class="options">
-	      <select multiple size="27">
-		    <option value="algorithm">Algorithm</option>
-		    <option value="arithmetic">Arithmetic</option>
-		    <option value="assignment">Assignment</option>
-		    <option value="binding">Binding</option>
-		    <option value="comparison">Comparison</option>
-		    <option value="concurrency">Concurrency</option>
-		    <option value="continuations">Continuations</option>
-		    <option value="control-flow">Control Flow</option>
-		    <option value="data-structure">Data Structure</option>
-		    <option value="error-handling">Error Handling</option>
-		    <option value="exceptions">Exceptions</option>
-		    <option value="features">Features</option>
-		    <option value="i/o">I/O</option>
-		    <option value="internationalization">Internationalization</option>
-		    <option value="introspection">Introspection</option>
-		    <option value="lazy-evaluation">Lazy Evaluation</option>
-		    <option value="miscellaneous">Miscellaneous</option>
-		    <option value="modules">Modules</option>
-		    <option value="multiple-value-returns">Multiple Value Returns</option>
-		    <option value="operating-system">Operating System</option>
-		    <option value="optimization">Optimization</option>
-		    <option value="parameters">Parameters</option>
-		    <option value="pattern-matching">Pattern Matching</option>
-		    <option value="reader-syntax">Reader Syntax</option>
-		    <option value="syntax">Syntax</option>
-		    <option value="testing">Testing</option>
-		    <option value="type-checking">Type Checking</option></select></div>
-	    <span class="chosen"></span></div></div>
-	<div>
-	  <span>Show</span>
-	  <label class="checkbox-label controls">
-	    <input class="controls" id="abstracts-control" tabindex="7" type="checkbox">
-	    abstracts</label></div></div>
+        <div>
+          <span>Search for</span>
+          <input class="search" id="search" placeholder="numbers or words" tabindex="1" /></div>
+        <div>
+          <span>Sort by</span>
+          <button class="controls sort" data-sort="authors" tabindex="2" >authors</button>
+          <button class="controls sort" data-sort="date" tabindex="3" >date</button>
+          <button class="controls sort" data-sort="name" tabindex="4" >name</button>
+          <button class="controls sort" data-sort="number" tabindex="5" >number</button>
+          <button class="controls sort" data-sort="status" tabindex="6" >status</button></div>
+        <div>
+          <span>Filter by </span>
+          <div class="dropdown" id="statuses">
+            <button class="controls">status</button>
+            <div class="options">
+              <select multiple size="3">
+                <option class="draft" value="draft">Draft</option>
+                <option class="final" value="final">Final</option>
+                <option class="withdrawn" value="withdrawn">Withdrawn</option></select></div>
+            <span class="chosen"></span></div>
+          <div class="dropdown" id="keywords">
+            <button class="controls">keywords</button>
+            <div class="options">
+              <select multiple size="27">
+                    <option value="algorithm">Algorithm</option>
+                    <option value="arithmetic">Arithmetic</option>
+                    <option value="assignment">Assignment</option>
+                    <option value="binding">Binding</option>
+                    <option value="comparison">Comparison</option>
+                    <option value="concurrency">Concurrency</option>
+                    <option value="continuations">Continuations</option>
+                    <option value="control-flow">Control Flow</option>
+                    <option value="data-structure">Data Structure</option>
+                    <option value="error-handling">Error Handling</option>
+                    <option value="exceptions">Exceptions</option>
+                    <option value="features">Features</option>
+                    <option value="i/o">I/O</option>
+                    <option value="internationalization">Internationalization</option>
+                    <option value="introspection">Introspection</option>
+                    <option value="lazy-evaluation">Lazy Evaluation</option>
+                    <option value="miscellaneous">Miscellaneous</option>
+                    <option value="modules">Modules</option>
+                    <option value="multiple-value-returns">Multiple Value Returns</option>
+                    <option value="operating-system">Operating System</option>
+                    <option value="optimization">Optimization</option>
+                    <option value="parameters">Parameters</option>
+                    <option value="pattern-matching">Pattern Matching</option>
+                    <option value="reader-syntax">Reader Syntax</option>
+                    <option value="syntax">Syntax</option>
+                    <option value="testing">Testing</option>
+                    <option value="type-checking">Type Checking</option></select></div>
+            <span class="chosen"></span></div></div>
+        <div>
+          <span>Show</span>
+          <label class="checkbox-label controls">
+            <input class="controls" id="abstracts-control" tabindex="7" type="checkbox">
+            abstracts</label></div></div>
       <ul class="summary list">
 
       <li class="card draft"><a class="card-anchor" href="srfi-172/"></a><a href="srfi-172/"><span class="number">172</span></a>: <span class="name">Two Safer Subsets of R7RS</span><span class="authors">, by John Cowan</span><span class="date-group">Draft: <span class="date">2019/7/2</span></span><span class="keywords" data-keywords="miscellaneous">Keywords: Miscellaneous</span><span class="status" data-status="draft"></span><div class="abstract"><p>This SRFI provides two libraries for use with R7RS that provide a
@@ -2330,7 +2332,7 @@ href="srfi.tgz">srfi.tgz</a>.</p>
     SRFI editors</a>.</p>
 
     <script crossorigin="anonymous"
-	    integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm"
-	    src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"
-	    type="application/javascript"></script>
+            integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm"
+            src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"
+            type="application/javascript"></script>
     <script src="srfi.js" type="application/javascript"></script></body></html>

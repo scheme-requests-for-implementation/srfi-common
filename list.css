@@ -26,6 +26,9 @@
   font-size: 80%;
   padding-top: 0.25em;
 }
+.firefox-column-workaround {
+  display: inline-block;
+}
 .info {
   position: relative;
 }
