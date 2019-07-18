@@ -78,11 +78,11 @@
     ("parameters" "Parameters")
     ("pattern-matching" "Pattern Matching")
     ("reader-syntax" "Reader Syntax")
+    ("superseded" "Superseded")	; This one is of a different category
+				; than the rest.
     ("syntax" "Syntax")
     ("testing" "Testing")
-    ("type-checking" "Type Checking")
-    ("superseded" "Superseded")))	; This one is of a different
-					; category than the rest.
+    ("type-checking" "Type Checking")))
 
 (define srfi-assoc
   (association-procedure = srfi/number))
