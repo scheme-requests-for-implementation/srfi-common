@@ -120,7 +120,7 @@
   (118 final "Simple adjustable-size strings" "Per Bothner" (135 140) ("data-structure") "2014/12/20" "2015/7/7")
   (119 final "wisp: simpler indentation-sensitive scheme" "Arne Babenhauserheide" () ("reader-syntax") "2015/02/03" "2015/6/23")
   (120 final "Timer APIs" "Takashi Kato" () ("miscellaneous") "2015/2/4" "2015/8/6")
-  (121 withdrawn "Generators" "Shiro Kawai, John Cowan, Thomas Gilray" (158) ("data-structure" "superseded") "2015/01/27" "2016/1/18")
+  (121 withdrawn "Generators" "Shiro Kawai, John Cowan, Thomas Gilray" (158) ("data-structure" "superseded") "2015/01/27" "2019/7/18")
   (122 final "Nonempty Intervals and Generalized Arrays" "Bradley J. Lucier" () ("data-structure") "2015/7/27" "2016/12/24")
   (123 final "Generic accessor and modifier operators" "Taylan Ulrich Bayırlı/Kammer" () ("miscellaneous") "2015/8/15" "2015/10/14")
   (124 final "Ephemerons" "John Cowan" () ("data-structure") "2015/9/6" "2015/11/6")
