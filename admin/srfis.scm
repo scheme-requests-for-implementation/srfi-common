@@ -80,7 +80,9 @@
     ("reader-syntax" "Reader Syntax")
     ("syntax" "Syntax")
     ("testing" "Testing")
-    ("type-checking" "Type Checking")))
+    ("type-checking" "Type Checking")
+    ("superseded" "Superseded")))	; This one is of a different
+					; category than the rest.
 
 (define srfi-assoc
   (association-procedure = srfi/number))
