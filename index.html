@@ -144,7 +144,17 @@ Scheme procedure and the environment defined by one of these libraries.
 Since code evaluated by <code>eval</code> runs in a null lexical
 environment, the resulting procedure can then be invoked with less
 concern about possible side effects.
-</p></div></li>
+</p>
+
+<p><b>Use of these libraries does not provide any sort of safety
+guarantee.  There are still many loopholes uncaught, including
+attempts to process circular structure and over-allocation of memory.
+The claim is only that the probability of such an attack is reduced,
+not that it is eliminated.
+However, using these libraries is a simple provision that is easy to
+implement and easy to use.  For higher safety, it can readily be
+combined with other provisions.
+</b></p></div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-171/"></a><a href="srfi-171/"><span class="number">171</span></a>: <span class="name">Transducers</span><span class="authors">, by Linus Björnstam</span><span class="date-group">Draft: <span class="date">2019/6/20</span></span><span class="keywords" data-keywords="data-structure">Keywords: Data Structure</span><span class="status" data-status="draft"></span><div class="abstract"><p>A library implementing transducers &mdash; composable algorithmic
   transformations.  Scheme has many different ways of expressing
   transformations over different collection types, but they are all

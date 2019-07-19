@@ -7,3 +7,13 @@ Since code evaluated by <code>eval</code> runs in a null lexical
 environment, the resulting procedure can then be invoked with less
 concern about possible side effects.
 </p>
+
+<p><b>Use of these libraries does not provide any sort of safety
+guarantee.  There are still many loopholes uncaught, including
+attempts to process circular structure and over-allocation of memory.
+The claim is only that the probability of such an attack is reduced,
+not that it is eliminated.
+However, using these libraries is a simple provision that is easy to
+implement and easy to use.  For higher safety, it can readily be
+combined with other provisions.
+</b></p>
