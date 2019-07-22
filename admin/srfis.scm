@@ -12,12 +12,12 @@
   "https://api.github.com/orgs/scheme-requests-for-implementation/repos")
 
 (define-record-type srfi
-    (%make-srfi number status title authors see-also keywords done-date draft-date)
+    (make-srfi number status title authors see-also keywords done-date draft-date)
     srfi?
   (number     srfi/number)
   (status     srfi/status)
   (title      srfi/title)
-  (authors    srfi/authors)
+  (authors    srfi/authors)		; <> Consider making this a list.
   (see-also   srfi/see-also)
   (keywords   srfi/keywords)
   (done-date  srfi/done-date)
@@ -28,30 +28,38 @@
  (standard-unparser-method
   'srfi
   (lambda (srfi port)
-    (write-char #\space port)
+    (write-string " #" port)
     (write (srfi/number srfi) port)
     (write-char #\space port)
     (write (srfi/title srfi) port))))
 
-(define (make-srfi number
-		   status
-		   title
-		   authors
-		   see-also
-		   keywords
-		   draft-date
-		   #!optional done-date)
-  (%make-srfi number
-	      status
-	      title
-	      authors
-	      see-also
-	      keywords
-	      (and (not (default-object? done-date))
-		   done-date)
-	      draft-date))
+(define (alist->srfi alist)
+  (make-srfi (srfi-attribute alist 'number)
+	     (srfi-attribute alist 'status)
+	     (srfi-attribute alist 'title)
+	     (srfi-attribute alist 'authors)
+	     (srfi-attribute alist 'see-also 'multiple)
+	     (srfi-attribute alist 'keywords 'multiple)
+	     (srfi-attribute alist 'done-date #f 'optional)
+	     (srfi-attribute alist 'draft-date)))
 
-(define srfis (map (lambda (l) (apply make-srfi l)) srfi-data))
+(define (read-srfi-data pathname)
+  (with-input-from-file pathname
+    (lambda ()
+      (let next ((accumulator '()))
+	(let ((record (read)))
+	  (if (eof-object? record)
+	      (reverse! accumulator)
+	      (next (cons (alist->srfi record) accumulator))))))))
+
+(define (srfi-attribute alist name #!optional multiple? optional?)
+  (let ((multiple? (if (default-object? multiple?) #f multiple?))
+	(optional? (if (default-object? optional?) #f optional?)))
+    (cond ((assq name alist)
+	   => (lambda (a)
+		(if multiple? (cdr a) (cadr a))))
+	  (optional? #f)
+	  (else (error "Missing required attribute." name alist)))))
 
 (define srfi-keywords
   '(("algorithm" "Algorithm")
