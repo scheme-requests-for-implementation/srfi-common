@@ -6,7 +6,7 @@
 #+OPTIONS: num:nil
 #+OPTIONS: toc:nil
 
-[[file:srfi.png]]
+[[file:srfi-logo.svg]]
 
 The purpose of the Scheme Requests for Implementation (*SRFI*) process
 is to help Scheme users write portable, useful code.  We write
