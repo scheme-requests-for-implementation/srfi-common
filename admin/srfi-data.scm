@@ -938,7 +938,7 @@
  (done-date "2014/11/28"))
 ((number 117)
  (status final)
- (title "Mutable Queues")
+ (title "Queues based on lists")
  (authors "John Cowan")
  (see-also)
  (keywords "data-structure")
