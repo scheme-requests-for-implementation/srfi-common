@@ -1284,7 +1284,7 @@
  (status draft)
  (title "Homogeneous numeric vector libraries")
  (authors "John Cowan (based on SRFI 4 by Marc Feeley)")
- (see-also 4 133 152)
+ (see-also 4 74 133 152)
  (optionally-depends-on 121)
  (keywords "data-structure")
  (draft-date "2018/5/21"))
