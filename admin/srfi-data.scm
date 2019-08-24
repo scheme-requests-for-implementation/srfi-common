@@ -876,7 +876,7 @@
  (status final)
  (title "Extended string quasi-literals")
  (authors "Per Bothner")
- (see-also)
+ (see-also 107 108)
  (keywords "reader-syntax")
  (draft-date "2012/11/10")
  (done-date "2013/6/21"))
