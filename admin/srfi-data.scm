@@ -1283,7 +1283,7 @@
 ((number 160)
  (status final)
  (title "Homogeneous numeric vector libraries")
- (authors "John Cowan (based on SRFI 4 by Marc Feeley), Shiro Kawai (contributed a major patch)")
+ (authors "John Cowan (based on SRFI 4 by Marc Feeley) and Shiro Kawai (contributed a major patch)")
  (see-also 4 74 133 152)
  (optionally-depends-on 121)
  (keywords "data-structure")
