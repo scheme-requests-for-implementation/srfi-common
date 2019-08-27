@@ -1302,7 +1302,7 @@
  (status draft)
  (title "Comparators sublibrary")
  (authors "John Cowan")
- (see-also 128)
+ (see-also 114 128)
  (alternative-to 114)
  (optionally-depends-on 128)
  (sample-implementation-languages r7rs-small chibi)
