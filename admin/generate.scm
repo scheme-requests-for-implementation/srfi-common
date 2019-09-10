@@ -81,6 +81,12 @@
 (define srfi-anchor-template
   (read-template "srfi-common/admin/srfi-anchor.template"))
 
+(define srfi-list-subscribe-template
+  (read-template "srfi-common/admin/srfi-list-subscribe.template"))
+
+(define srfi-list-template
+  (read-template "srfi-common/admin/srfi-list.template"))
+
 (define (srfi-date-to-show srfi)
   (case (srfi/status srfi)
     ((draft) (srfi/draft-date srfi))
@@ -259,3 +265,40 @@ and \", and\" otherwise."
 	(invoke-template home-template
 			 `((keyword-options ,(keyword-options))
 			   (srfi-list ,srfi-list)))))))
+
+(define (write-srfi-subscribe-form name description)
+  (with-output-to-string
+    (lambda ()
+      (invoke-template srfi-list-template
+		       `((description ,description)
+			 (name ,name))))))
+
+(define (write-srfi-list-subscribe-page)
+  (with-output-to-file "$ss/srfi-common/srfi-list-subscribe.html"
+    (lambda ()
+      (invoke-template
+       srfi-list-subscribe-template
+       `((announce
+	  ,(write-srfi-subscribe-form
+	    "srfi-announce"
+	    "This is a moderated mailing list where all announcements about new SRFI proposals and changes in status are posted."))
+	 (discuss
+	  ,(write-srfi-subscribe-form
+	    "srfi-discuss"
+	    "This is an unmoderated mailing list for general discussion of the SRFI process.  It is archived <a href=\"https://srfi-email.schemers.org/srfi-discuss\">here</a>."))
+	 (srfi-auto-subscribe
+	  ,(write-srfi-subscribe-form
+	    "srfi-auto-subscribe"
+	    "Subscribe to this list if you'd like to receive messages from <a href=\"#srfi-announce\"><code>srfi-announce</code></a>, <a href=\"#srfi-discuss\"><code>srfi-discuss</code></a>, and all <a href=\"#srfi-n\">srfi-<em>n</em></a> discussion mailing lists.  Note that this list does <em>not</em> deliver messages from <a href=\"#schemedoc\"><code>schemedoc</code></a>, <a href=\"#schemepersist\"><code>schemepersist</code></a>, or <a href=\"#schemeweb\"><code>schemeweb</code></a>.  You can subscribe to them independently."))
+	 (schemedoc
+	  ,(write-srfi-subscribe-form
+	    "schemedoc"
+	    "This is an unmoderated discussion of collecting, organizing, and serving indexes of Scheme code found in SRFIs, Scheme implementations, R<sup>n</sup>RS standards, etc."))
+	 (schemepersist
+	  ,(write-srfi-subscribe-form
+	    "schemepersist"
+	    "This is an unmoderated discussion of persistent storage for Scheme implementations, including existing, new, and improved persistence libraries; interface protocols to support; SRFIs to write; etc."))
+	 (schemeweb
+	  ,(write-srfi-subscribe-form
+	    "schemeweb"
+	    "This is an unmoderated discussion of web technology implemented in Scheme, e.g. web servers and web request handlers.")))))))

@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>Subscribing to a SRFI Mailing List</title>
-    <link href="/admin.css" rel="stylesheet">
+    <link rel="preload" href="maillist.js" as="script" />
+    <link href="admin.css" rel="stylesheet">
+    <link href="list.css" rel="stylesheet" type="text/css" />
     <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 
@@ -10,185 +12,330 @@
     <h1>SRFI Mailing Lists</h1>
 
     <p>There are many SRFI mailing lists, including one for
-      announcements, one for general discussion of the SRFI process,
-      one for each SRFI, and one to subscribe to all of the individual
-      SRFI discussions.  Anyone can subscribe to any mailing list.
-      Only subscribers can post.  Spammers will be ejected.</p>
+      <a href="#srfi-announce">announcements</a>, one for
+      <a href="#srfi-discuss">general discussion</a> of the SRFI process,
+      one for <a href="#srfi-n">each SRFI</a>, one to
+      <a href="#srfi-auto-subscribe">subscribe to all</a> of the
+      individual SRFI discussions, and several for discussing
+      <a href="#scheme-topics">Scheme topics</a> not directly related to
+      SRFIs</a>.  Anyone can subscribe to any mailing list.  Only
+      subscribers can post. Spammers will be ejected.</p>
 
-    <h2><code>srfi-announce<wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></h2>
+    <h2>SRFI-specific Lists</h2>
 
-    <p>This is a moderated mailing list where all announcements about
-      new SRFI proposals and changes in status are posted.</p>
+    <ul class="posts wide">
+      <li class="card maillist">
+	<span class="firefox-column-workaround">
+	  <h3 id="srfi-n"><code>srfi-<em>n</em><wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></h3>
 
-    <form method="POST" action="https://www.simplelists.com/subscribe.php">
-      <p>
-	<input id="sub-announce-email"
-	       name="email"
-	       placeholder="email address"
-	       type="email">
-	<label for="sub-announce-email">email address</label></p>
-      <p>
-	<input id="sub-announce-name"
-	       name="name"
-	       placeholder="full name"
-	       type="text">
-	<label for="sub-announce-name">full name</label></p>
-      <p>
-	<input id="sub-announce-digest"
-	       name="digest"
-	       type="checkbox"
-	       value="digest">
-	<label for="sub-announce-digest">daily digest?</label></p>
-      <input class="submit"
-	     name="submit"
-	     type="submit"
-	     value="Subscribe to srfi-announce">
-      <input name="action"
-	     type="hidden"
-	     value="subscribe">
-      <input name="list"
-	     type="hidden"
-	     value="srfi-announce@srfi.schemers.org"></form>
+	  <p>There is a separate, unmoderated mailing list for discussion of
+	    each SRFI.  All discussion of specific SRFI proposals should
+	    take place on these lists, as not all interested parties
+	    participate in other venues such as
+	    <a href="https://groups.google.com/forum/#!forum/comp.lang.scheme">comp.lang.scheme</a>
+	    and <a href="https://www.reddit.com/r/scheme/">r/scheme</a>.</p>
 
-    <form method="POST" action="https://www.simplelists.com/subscribe.php">
-      <p>
-	<input id="unsub-announce-email" 
-	       name="email"
-	       placeholder="email address"
-      	       type="email">
-	<label for="unsub-announce-email">email address</label></p>
-      <input class="submit"
-	     name="submit"
-	     type="submit"
-	     value="Unsubscribe from srfi-announce">
-      <input type="hidden"
-	     name="action"
-	     value="unsubscribe">
-      <input type="hidden"
-	     name="list"
-	     value="srfi-announce@srfi.schemers.org"></form>
+	  <p>To subscribe to the mailing list for a particular SRFI, visit
+	    that SRFI's page,
+	    e.g. <a href="http://srfi.schemers.org/srfi-0/">the
+	    one for SRFI 0</a>, and fill out the web form there.  There is a
+	    form there for unsubscribing, too.</p></span></li></ul>
 
-    <h2><code>srfi-discuss<wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></h2>
+    <h2>General SRFI Topics</h2>
 
-    <p>This is an unmoderated mailing list for general discussion of
-      the SRFI process.  It is archived
-      <a href="https://srfi-email.schemers.org/srfi-discuss">here</a>.</p>
+    <ul class="posts">
+            <li class="card maillist">
+	<span class="firefox-column-workaround">
+	  <h3 id="srfi-announce"><a href="https://srfi-email.schemers.org/srfi-announce"><code>srfi-announce<wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></a></h3>
 
-    <form method="POST" action="https://www.simplelists.com/subscribe.php">
-      <p>
-	<input id="sub-discuss-email"
-	       name="email"
-	       placeholder="email address"
-	       type="email">
-	<label for="sub-discuss-email">email address</label></p>
-      <p>
-	<input id="sub-discuss-name"
-	       name="name"
-	       placeholder="full name"
-	       type="text">
-	<label for="sub-discuss-name">full name</label></p>
-      <p>
-	<input id="sub-discuss-digest"
-	       name="digest"
-	       type="checkbox"
-	       value="digest">
-	<label for="sub-discuss-digest">daily digest?</label></p>
-      <input class="submit"
-	     name="submit"
-	     type="submit"
-	     value="Subscribe to srfi-discuss">
-      <input name="action"
-	     type="hidden"
-	     value="subscribe">
-      <input name="list"
-	     type="hidden"
-	     value="srfi-discuss@srfi.schemers.org"></form>
+	  <p>This is a moderated mailing list where all announcements about new SRFI proposals and changes in status are posted.</p>
 
-      <form method="POST" action="https://www.simplelists.com/subscribe.php">
-	<p>
-	  <input id="unsub-discuss-email" 
-		 name="email"
-		 placeholder="email address"
-      		 type="email">
-	  <label for="unsub-discuss-email">email address</label></p>
-	<input class="submit"
-	       name="submit"
-	       type="submit"
-	       value="Unsubscribe from srfi-discuss">
-	<input type="hidden"
-	       name="action"
-	       value="unsubscribe">
-	<input type="hidden"
-	       name="list"
-	       value="srfi-discuss@srfi.schemers.org"></form>
+	  <div class="subunsub">
+	    <button class="invisible sub">Subscribe</button>
+	    <button class="invisible unsub">Unsubscribe</button>
+	    <button class="close invisible">X</button>
+	    <form class="sub" method="POST" action="https://www.simplelists.com/subscribe.php">
+	      <p><input name="email" placeholder="email address" type="email"></p>
+	      <p><input name="name"
+			placeholder="full name"
+			type="text"></p>
+	      <p><input id="sub-srfi-announce-digest"
+			name="digest"
+			type="checkbox"
+			value="digest">
+		<label for="sub-srfi-announce-digest">daily digest?</label></p>
+	      <input class="submit"
+		     name="submit"
+		     type="submit"
+		     value="Subscribe to srfi-announce">
+	      <input name="action"
+		     type="hidden"
+		     value="subscribe">
+	      <input name="list"
+		     type="hidden"
+		     value="srfi-announce@srfi.schemers.org"></form>
 
-    <h2><code>srfi-<em>n</em><wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></h2>
+	      <form class="unsub" method="POST" action="https://www.simplelists.com/subscribe.php">
+		<p>
+		  <input name="email"
+			 placeholder="email address"
+			 type="email"></p>
+		  <input class="submit"
+			 name="submit"
+			 type="submit"
+			 value="Unsubscribe from srfi-announce">
+		  <input type="hidden"
+			 name="action"
+			 value="unsubscribe">
+		  <input type="hidden"
+			 name="list"
+			 value="srfi-announce@srfi.schemers.org"></form></div></span></li>
+            <li class="card maillist">
+	<span class="firefox-column-workaround">
+	  <h3 id="srfi-discuss"><a href="https://srfi-email.schemers.org/srfi-discuss"><code>srfi-discuss<wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></a></h3>
 
-    <p>There is a separate, unmoderated mailing list for discussion of
-      each SRFI.  All discussion of SRFI proposals should take place
-      on these lists, as not all interested parties participate in
-      other venues such as
-      <a href="https://groups.google.com/forum/#!forum/comp.lang.scheme">comp.lang.scheme</a>.</p>
+	  <p>This is an unmoderated mailing list for general discussion of the SRFI process.  It is archived <a href="https://srfi-email.schemers.org/srfi-discuss">here</a>.</p>
 
-    <p>To subscribe to the mailing list for a particular SRFI, visit
-      that SRFI's page,
-      e.g. <a href="http://srfi.schemers.org/srfi-0/">the
-      one for SRFI 0</a>, and fill out the web form there.  There is a
-      form there for unsubscribing, too.</p>
+	  <div class="subunsub">
+	    <button class="invisible sub">Subscribe</button>
+	    <button class="invisible unsub">Unsubscribe</button>
+	    <button class="close invisible">X</button>
+	    <form class="sub" method="POST" action="https://www.simplelists.com/subscribe.php">
+	      <p><input name="email" placeholder="email address" type="email"></p>
+	      <p><input name="name"
+			placeholder="full name"
+			type="text"></p>
+	      <p><input id="sub-srfi-discuss-digest"
+			name="digest"
+			type="checkbox"
+			value="digest">
+		<label for="sub-srfi-discuss-digest">daily digest?</label></p>
+	      <input class="submit"
+		     name="submit"
+		     type="submit"
+		     value="Subscribe to srfi-discuss">
+	      <input name="action"
+		     type="hidden"
+		     value="subscribe">
+	      <input name="list"
+		     type="hidden"
+		     value="srfi-discuss@srfi.schemers.org"></form>
 
-    <h2><code>srfi-auto-subscribe<wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></h2>
+	      <form class="unsub" method="POST" action="https://www.simplelists.com/subscribe.php">
+		<p>
+		  <input name="email"
+			 placeholder="email address"
+			 type="email"></p>
+		  <input class="submit"
+			 name="submit"
+			 type="submit"
+			 value="Unsubscribe from srfi-discuss">
+		  <input type="hidden"
+			 name="action"
+			 value="unsubscribe">
+		  <input type="hidden"
+			 name="list"
+			 value="srfi-discuss@srfi.schemers.org"></form></div></span></li>
+            <li class="card maillist">
+	<span class="firefox-column-workaround">
+	  <h3 id="srfi-auto-subscribe"><a href="https://srfi-email.schemers.org/srfi-auto-subscribe"><code>srfi-auto-subscribe<wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></a></h3>
 
-    <p>Subscribe to this list if you'd like to receive messages from
-      <code>srfi-announce</code>, <code>srfi-discuss</code>, and
-      all SRFI-<em>n</em> discussion mailing lists.</p>
+	  <p>Subscribe to this list if you'd like to receive messages from <a href="#srfi-announce"><code>srfi-announce</code></a>, <a href="#srfi-discuss"><code>srfi-discuss</code></a>, and all <a href="#srfi-n">srfi-<em>n</em></a> discussion mailing lists.  Note that this list does <em>not</em> deliver messages from <a href="#schemedoc"><code>schemedoc</code></a>, <a href="#schemepersist"><code>schemepersist</code></a>, or <a href="#schemeweb"><code>schemeweb</code></a>.  You can subscribe to them independently.</p>
 
-    <form method="POST" action="https://www.simplelists.com/subscribe.php">
-      <p>
-	<input id="sub-auto-subscribe-email"
-	       name="email"
-	       placeholder="email address"
-	       type="email">
-	<label for="sub-auto-subscribe-email">email address</label></p>
-      <p>
-	<input id="sub-auto-subscribe-name"
-	       name="name"
-	       placeholder="full name"
-	       type="text">
-	<label for="sub-auto-subscribe-name">full name</label></p>
-      <p>
-	<input id="sub-auto-subscribe-digest"
-	       name="digest"
-	       type="checkbox"
-	       value="digest">
-	<label for="sub-auto-subscribe-digest">daily digest?</label></p>
-      <input class="submit"
-	     name="submit"
-	     type="submit"
-	     value="Subscribe to srfi-auto-subscribe">
-      <input name="action"
-	     type="hidden"
-	     value="subscribe">
-      <input name="list"
-	     type="hidden"
-	     value="srfi-auto-subscribe@srfi.schemers.org"></form>
+	  <div class="subunsub">
+	    <button class="invisible sub">Subscribe</button>
+	    <button class="invisible unsub">Unsubscribe</button>
+	    <button class="close invisible">X</button>
+	    <form class="sub" method="POST" action="https://www.simplelists.com/subscribe.php">
+	      <p><input name="email" placeholder="email address" type="email"></p>
+	      <p><input name="name"
+			placeholder="full name"
+			type="text"></p>
+	      <p><input id="sub-srfi-auto-subscribe-digest"
+			name="digest"
+			type="checkbox"
+			value="digest">
+		<label for="sub-srfi-auto-subscribe-digest">daily digest?</label></p>
+	      <input class="submit"
+		     name="submit"
+		     type="submit"
+		     value="Subscribe to srfi-auto-subscribe">
+	      <input name="action"
+		     type="hidden"
+		     value="subscribe">
+	      <input name="list"
+		     type="hidden"
+		     value="srfi-auto-subscribe@srfi.schemers.org"></form>
 
-    <form method="POST" action="https://www.simplelists.com/subscribe.php">
-      <p>
-	<input id="unsub-auto-subscribe-email" 
-	       name="email"
-	       placeholder="email address"
-      	       type="email">
-	<label for="unsub-auto-subscribe-email">email address</label></p>
-      <input class="submit"
-	     name="submit"
-	     type="submit"
-	     value="Unsubscribe from srfi-auto-subscribe">
-      <input type="hidden"
-	     name="action"
-	     value="unsubscribe">
-      <input type="hidden"
-	     name="list"
-	     value="srfi-auto-subscribe@srfi.schemers.org"></form>
+	      <form class="unsub" method="POST" action="https://www.simplelists.com/subscribe.php">
+		<p>
+		  <input name="email"
+			 placeholder="email address"
+			 type="email"></p>
+		  <input class="submit"
+			 name="submit"
+			 type="submit"
+			 value="Unsubscribe from srfi-auto-subscribe">
+		  <input type="hidden"
+			 name="action"
+			 value="unsubscribe">
+		  <input type="hidden"
+			 name="list"
+			 value="srfi-auto-subscribe@srfi.schemers.org"></form></div></span></li></ul>
+
+    <h2 id="scheme-topics">Scheme Topics</h2>
+
+    <p>Scheme Topics mailing lists are for discussing specific
+      subjects that we hope may lead to SRFIs and other cooperative
+      work, but which are currently not ready for specific proposals
+      through the SRFI process.  As with all these mailing lists,
+      anyone can subscribe.  None of these mailing lists is included
+      in the <a href="#srfi-auto-subscribe"><code>srfi-auto-subscribe</code></a>
+      mailing list, which includes all the other SRFI mailing lists.</p>
+
+    <ul class="posts">
+            <li class="card maillist">
+	<span class="firefox-column-workaround">
+	  <h3 id="schemedoc"><a href="https://srfi-email.schemers.org/schemedoc"><code>schemedoc<wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></a></h3>
+
+	  <p>This is an unmoderated discussion of collecting, organizing, and serving indexes of Scheme code found in SRFIs, Scheme implementations, R<sup>n</sup>RS standards, etc.</p>
+
+	  <div class="subunsub">
+	    <button class="invisible sub">Subscribe</button>
+	    <button class="invisible unsub">Unsubscribe</button>
+	    <button class="close invisible">X</button>
+	    <form class="sub" method="POST" action="https://www.simplelists.com/subscribe.php">
+	      <p><input name="email" placeholder="email address" type="email"></p>
+	      <p><input name="name"
+			placeholder="full name"
+			type="text"></p>
+	      <p><input id="sub-schemedoc-digest"
+			name="digest"
+			type="checkbox"
+			value="digest">
+		<label for="sub-schemedoc-digest">daily digest?</label></p>
+	      <input class="submit"
+		     name="submit"
+		     type="submit"
+		     value="Subscribe to schemedoc">
+	      <input name="action"
+		     type="hidden"
+		     value="subscribe">
+	      <input name="list"
+		     type="hidden"
+		     value="schemedoc@srfi.schemers.org"></form>
+
+	      <form class="unsub" method="POST" action="https://www.simplelists.com/subscribe.php">
+		<p>
+		  <input name="email"
+			 placeholder="email address"
+			 type="email"></p>
+		  <input class="submit"
+			 name="submit"
+			 type="submit"
+			 value="Unsubscribe from schemedoc">
+		  <input type="hidden"
+			 name="action"
+			 value="unsubscribe">
+		  <input type="hidden"
+			 name="list"
+			 value="schemedoc@srfi.schemers.org"></form></div></span></li>
+            <li class="card maillist">
+	<span class="firefox-column-workaround">
+	  <h3 id="schemepersist"><a href="https://srfi-email.schemers.org/schemepersist"><code>schemepersist<wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></a></h3>
+
+	  <p>This is an unmoderated discussion of persistent storage for Scheme implementations, including existing, new, and improved persistence libraries; interface protocols to support; SRFIs to write; etc.</p>
+
+	  <div class="subunsub">
+	    <button class="invisible sub">Subscribe</button>
+	    <button class="invisible unsub">Unsubscribe</button>
+	    <button class="close invisible">X</button>
+	    <form class="sub" method="POST" action="https://www.simplelists.com/subscribe.php">
+	      <p><input name="email" placeholder="email address" type="email"></p>
+	      <p><input name="name"
+			placeholder="full name"
+			type="text"></p>
+	      <p><input id="sub-schemepersist-digest"
+			name="digest"
+			type="checkbox"
+			value="digest">
+		<label for="sub-schemepersist-digest">daily digest?</label></p>
+	      <input class="submit"
+		     name="submit"
+		     type="submit"
+		     value="Subscribe to schemepersist">
+	      <input name="action"
+		     type="hidden"
+		     value="subscribe">
+	      <input name="list"
+		     type="hidden"
+		     value="schemepersist@srfi.schemers.org"></form>
+
+	      <form class="unsub" method="POST" action="https://www.simplelists.com/subscribe.php">
+		<p>
+		  <input name="email"
+			 placeholder="email address"
+			 type="email"></p>
+		  <input class="submit"
+			 name="submit"
+			 type="submit"
+			 value="Unsubscribe from schemepersist">
+		  <input type="hidden"
+			 name="action"
+			 value="unsubscribe">
+		  <input type="hidden"
+			 name="list"
+			 value="schemepersist@srfi.schemers.org"></form></div></span></li>
+            <li class="card maillist">
+	<span class="firefox-column-workaround">
+	  <h3 id="schemeweb"><a href="https://srfi-email.schemers.org/schemeweb"><code>schemeweb<wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></a></h3>
+
+	  <p>This is an unmoderated discussion of web technology implemented in Scheme, e.g. web servers and web request handlers.</p>
+
+	  <div class="subunsub">
+	    <button class="invisible sub">Subscribe</button>
+	    <button class="invisible unsub">Unsubscribe</button>
+	    <button class="close invisible">X</button>
+	    <form class="sub" method="POST" action="https://www.simplelists.com/subscribe.php">
+	      <p><input name="email" placeholder="email address" type="email"></p>
+	      <p><input name="name"
+			placeholder="full name"
+			type="text"></p>
+	      <p><input id="sub-schemeweb-digest"
+			name="digest"
+			type="checkbox"
+			value="digest">
+		<label for="sub-schemeweb-digest">daily digest?</label></p>
+	      <input class="submit"
+		     name="submit"
+		     type="submit"
+		     value="Subscribe to schemeweb">
+	      <input name="action"
+		     type="hidden"
+		     value="subscribe">
+	      <input name="list"
+		     type="hidden"
+		     value="schemeweb@srfi.schemers.org"></form>
+
+	      <form class="unsub" method="POST" action="https://www.simplelists.com/subscribe.php">
+		<p>
+		  <input name="email"
+			 placeholder="email address"
+			 type="email"></p>
+		  <input class="submit"
+			 name="submit"
+			 type="submit"
+			 value="Unsubscribe from schemeweb">
+		  <input type="hidden"
+			 name="action"
+			 value="unsubscribe">
+		  <input type="hidden"
+			 name="list"
+			 value="schemeweb@srfi.schemers.org"></form></div></span></li></ul>
 
     <hr>
-    <address><a href="mailto:srfi-editors@srfi.schemers.org">The SRFI Editors</a></address></body></html>
+
+    <address><a href="mailto:srfi-editors@srfi.schemers.org">The
+      SRFI Editors</a></address>
+
+    <script src="maillist.js" type="application/javascript"></script></body></html>

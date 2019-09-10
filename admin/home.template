@@ -43,32 +43,26 @@
       <code>srfi-auto-subscribe</code> (subscribes to almost
       everything).  (You must subscribe in order to post messages.)</p>
 
-    <ul class="posts">
+    <ul class="posts wide">
       <li class="card">
         <span class="firefox-column-workaround">
-          <h2>New mailing lists</h2>
-          <p>As of April, 2019, there are two new mailing lists for
-            discussing specific topics we hope may lead to SRFIs and
-            other cooperative work:</p>
-          <dl>
-            <dt>Schemedoc (<a href="https://srfi-email.schemers.org/schemedoc">archive</a>)</dt>
-            <dd>collecting, organizing, and serving indexes of Scheme code
-              found in SRFIs, Scheme implementations, RnRS standards, etc.</dd>
-            <dt>Schemeweb (<a href="https://srfi-email.schemers.org/schemeweb">archive</a>)</dt>
-            <dd>web technology implemented in Scheme, e.g. web servers and
-              web request handlers</dd></dl>
-          <p>All are welcome to join the discussion.
-            <a href="scheme-lists-subscribe.html">Subscribe here</a>.</p></span></li>
-      <li class="card">
-        <span class="firefox-column-workaround">
-          <h2>SRFI talk at Scheme Workshop</h2>
-          <p>
-            At the <a href="https://www.brinckerhoff.org/scheme2018/">2018 Scheme
-            Workshop</a>, SRFI editor Arthur A. Gleckler gave a talk
-            entitled Growing Schemes: Twenty Years of Scheme Requests for
-            Implementation (<a href="https://www.youtube.com/watch?v=YuqZKHwUygU">YouTube</a>,
-            <a href="https://www.brinckerhoff.org/scheme2018/papers/Gleckler.pdf">PDF</a>)
-            on SRFI, its history, and future plans.</p></span></li></ul>
+          <h2>New mailing list: <a href="srfi-list-subscribe.html#schemepersist"><code>schemepersist</code></a></h2>
+          <p>As of September, 2019, there is a new Scheme Topics
+            mailing list: <a href="srfi-list-subscribe.html#schemepersist"><code>schemepersist</code></a>.
+	    <code>Schemepersist</code> is for discussing persistent
+	    storage for Scheme implementations, including existing,
+	    new, and improved persistence libraries; interface
+	    protocols to support; SRFIs to write; etc.</p>
+
+	  <p>Scheme Topics mailing lists are for discussing specific
+	    subjects that we hope may lead to SRFIs and other
+	    cooperative work, but which are currently not ready for
+	    specific proposals through the SRFI process.  The other
+	    two Scheme Topics lists are <a href="https://srfi-email.schemers.org/schemedoc"><code>schemedoc</code></a>
+	    and <a href="https://srfi-email.schemers.org/schemeweb"><code>schemeweb</code></a>.</p> 
+
+	  <p>Everyone is welcome to join our discussions.
+	    <a href="scheme-lists-subscribe.html">Subscribe here</a>.</p></span></li></ul>
 
     <h2>The SRFIs</h2>
 
@@ -126,10 +120,21 @@ href="srfi.tgz">srfi.tgz</a>.</p>
       have been many <a href="srfi-editors.html">different editors</a>.</p>
 
     <p>
+      At the <a href="https://www.brinckerhoff.org/scheme2018/">2018 Scheme
+      Workshop</a>, SRFI editor Arthur A. Gleckler gave a talk
+      entitled Growing Schemes: Twenty Years of Scheme Requests for
+      Implementation (<a href="https://www.youtube.com/watch?v=YuqZKHwUygU">YouTube</a>,
+      <a href="https://www.brinckerhoff.org/scheme2018/papers/Gleckler.pdf">PDF</a>)
+      on SRFI, its history, and future plans.</p>
+
+    <p>
       Here's a graph of the total number of SRFIs since <a href="../srfi-0">SRFI 0</a> was published
       on 1999/1/5:</p>
 
     <object type="image/svg+xml" data="srfi.svg" width="100%"></object>
+
+
+    <hr />
 
     <p>Here is <a href="srfi-privacy.html">our privacy statement</a>.
 

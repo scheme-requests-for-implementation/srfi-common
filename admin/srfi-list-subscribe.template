@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//EN">
+<html>
+  <head>
+    <title>Subscribing to a SRFI Mailing List</title>
+    <link rel="preload" href="maillist.js" as="script" />
+    <link href="admin.css" rel="stylesheet">
+    <link href="list.css" rel="stylesheet" type="text/css" />
+    <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+
+  <body>
+    <h1>SRFI Mailing Lists</h1>
+
+    <p>There are many SRFI mailing lists, including one for
+      <a href="#srfi-announce">announcements</a>, one for
+      <a href="#srfi-discuss">general discussion</a> of the SRFI process,
+      one for <a href="#srfi-n">each SRFI</a>, one to
+      <a href="#srfi-auto-subscribe">subscribe to all</a> of the
+      individual SRFI discussions, and several for discussing
+      <a href="#scheme-topics">Scheme topics</a> not directly related to
+      SRFIs</a>.  Anyone can subscribe to any mailing list.  Only
+      subscribers can post. Spammers will be ejected.</p>
+
+    <h2>SRFI-specific Lists</h2>
+
+    <ul class="posts wide">
+      <li class="card maillist">
+	<span class="firefox-column-workaround">
+	  <h3 id="srfi-n"><code>srfi-<em>n</em><wbr>@<span class="antispam">nospam</span>srfi.schemers.org</code></h3>
+
+	  <p>There is a separate, unmoderated mailing list for discussion of
+	    each SRFI.  All discussion of specific SRFI proposals should
+	    take place on these lists, as not all interested parties
+	    participate in other venues such as
+	    <a href="https://groups.google.com/forum/#!forum/comp.lang.scheme">comp.lang.scheme</a>
+	    and <a href="https://www.reddit.com/r/scheme/">r/scheme</a>.</p>
+
+	  <p>To subscribe to the mailing list for a particular SRFI, visit
+	    that SRFI's page,
+	    e.g. <a href="http://srfi.schemers.org/srfi-0/">the
+	    one for SRFI 0</a>, and fill out the web form there.  There is a
+	    form there for unsubscribing, too.</p></span></li></ul>
+
+    <h2>General SRFI Topics</h2>
+
+    <ul class="posts">
+      <*<announce>*>
+      <*<discuss>*>
+      <*<srfi-auto-subscribe>*></ul>
+
+    <h2 id="scheme-topics">Scheme Topics</h2>
+
+    <p>Scheme Topics mailing lists are for discussing specific
+      subjects that we hope may lead to SRFIs and other cooperative
+      work, but which are currently not ready for specific proposals
+      through the SRFI process.  As with all these mailing lists,
+      anyone can subscribe.  None of these mailing lists is included
+      in the <a href="#srfi-auto-subscribe"><code>srfi-auto-subscribe</code></a>
+      mailing list, which includes all the other SRFI mailing lists.</p>
+
+    <ul class="posts">
+      <*<schemedoc>*>
+      <*<schemepersist>*>
+      <*<schemeweb>*></ul>
+
+    <hr>
+
+    <address><a href="mailto:srfi-editors@srfi.schemers.org">The
+      SRFI Editors</a></address>
+
+    <script src="maillist.js" type="application/javascript"></script></body></html>

@@ -5,6 +5,9 @@
 .card {
   padding: 10px;
 }
+.card h3 {
+  margin-top: 0;
+}
 .card .see-also {
   color: grey;
   font-size: 80%;
@@ -58,6 +61,9 @@
   columns: 15em;
   -moz-columns: 15em;
 }
+.posts.wide {
+  columns: 30em;
+}
 .info > li,
 .posts > li {
   border: solid 2px lightgrey;
@@ -95,6 +101,9 @@
 .list > li:hover {
   border: solid 2px blue;
   border-left-width: 15px;
+}
+.maillist {
+  margin-bottom: 1em;
 }
 .name,
 .number {

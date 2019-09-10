@@ -6,6 +6,12 @@ body {
   font-size: 18px;
   max-width: 46em;
 }
+button.close {
+  font-weight: bold;
+  padding: 5px 12px 5px 12px;
+  position: absolute;
+  right: 1em;
+}
 dt {
   display: block;
   font-size: 1.2em;
@@ -24,7 +30,7 @@ form input {
   margin: 0;
   outline: 0;
   padding: 9px;
-  width: 18em;
+  width: 20em;
 }
 form input[type="checkbox"] {
   transform: scale(2, 2);
@@ -33,14 +39,21 @@ form input[type="checkbox"] {
 form label {
   margin-left: 0.25em;
 }
-form .submit {
+form .submit,
+button.close,
+button.sub,
+button.unsub {
   background: #116611;
   border-radius: 3px;
   border: none;
   color: white;
   cursor: pointer;
-  padding: 10px 25px 10px 25px;
   text-shadow: 1px 1px 1px #9E3F3F;
+}
+form .submit,
+button.sub,
+button.unsub {
+  padding: 10px 25px 10px 25px;
 }
 form .submit:hover {
   text-decoration: underline;
@@ -59,6 +72,9 @@ span.antispam {
 img {
   width: 100%;
   max-width: 46em;
+}
+.subunsub {
+  position: relative;
 }
 .todo {
   color: red;
