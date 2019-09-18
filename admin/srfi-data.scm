@@ -1352,7 +1352,7 @@
  (status draft)
  (title "Ordered Key Value Store")
  (authors "Amirouche Boubekki")
- (see-also 168)
+ (see-also 168 173)
  (depends-on 158)
  (sample-implementation-depends-on 146)
  (keywords "i/o")
