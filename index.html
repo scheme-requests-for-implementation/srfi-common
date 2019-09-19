@@ -402,7 +402,7 @@ vectors.</p></div></li>
       SRFI. <a href=
       "http://www.r6rs.org/final/html/r6rs-lib/r6rs-lib-Z-H-12.html#node_sec_11.4">
       R6RS</a> is a subset of SRFI 60, except that all procedure names begin
-      with a <tt>bitwise-</tt> prefix. A few procedures have been added from
+      with a <code>bitwise-</code> prefix. A few procedures have been added from
       the general vector <a href="/srfi-133/">SRFI 133</a>.
       <p>Among the applications of bitwise operations
       are: hashing, Galois-field calculations of error-detecting and
@@ -417,7 +417,7 @@ vectors.</p></div></li>
       ways:
       <ol>
         <li>
-          <p>The <tt>bitwise-if</tt> function has the
+          <p>The <code>bitwise-if</code> function has the
           argument ordering of SLIB, SRFI 60, and R6RS rather than the ordering
           of SRFI 33.
         <li>
@@ -504,7 +504,7 @@ vectors.</p></div></li>
       SRFI. <a href=
       "http://www.r6rs.org/final/html/r6rs-lib/r6rs-lib-Z-H-12.html#node_sec_11.4">
       R6RS</a> is a subset of SRFI 60, except that all procedure names begin
-      with a <tt>bitwise-</tt> prefix. A few procedures have been added from
+      with a <code>bitwise-</code> prefix. A few procedures have been added from
       the general vector <a href="/srfi-133/">SRFI 133</a>.
       <p>Among the applications of bitwise operations
       are: hashing, Galois-field calculations of error-detecting and
@@ -612,7 +612,7 @@ vectors.</p></div></li>
       <li class="card final"><a class="card-anchor" href="srfi-132/"></a><a href="srfi-132/"><span class="number">132</span></a>: <span class="name">Sort Libraries</span><span class="authors">, by John Cowan (based on SRFI 32 by Olin Shivers)</span><span class="date-group">Final: <span class="date">2016/4/20</span></span><span class="keywords" data-keywords="algorithm">Keywords: Algorithm</span><span class="status" data-status="final"></span><div class="abstract">      <p>This SRFI describes the API for a full-featured
       sort toolkit.</div></li>
       <li class="card final"><a class="card-anchor" href="srfi-131/"></a><a href="srfi-131/"><span class="number">131</span></a>: <span class="name">ERR5RS Record Syntax (reduced)</span><span class="authors">, by John Cowan, Will Clinger</span><span class="date-group">Final: <span class="date">2016/2/13</span></span><span class="keywords" data-keywords="data-structure">Keywords: Data Structure</span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-150/">SRFI 150: Hygienic ERR5RS Record Syntax (reduced)</a>.</span><div class="abstract">      <p>This SRFI is a reduced version of the SRFI 99
-      syntactic layer that can be implemented with <tt>syntax-rules</tt>
+      syntactic layer that can be implemented with <code>syntax-rules</code>
       without requiring low-level macros. Like SRFI-99's syntax layer, it is
       backward compatible with the <code>define-record-type</code> macro from
       <a href="/srfi-9/">SRFI 9</a> or R7RS-small. It is forward compatible with
@@ -633,8 +633,8 @@ vectors.</p></div></li>
       13, as well as all procedures already present in <abbr title=
       "Revised&lt;sup&gt;7&lt;/sup&gt; Report on Scheme">R7RS</abbr>.</div></li>
       <li class="card final"><a class="card-anchor" href="srfi-129/"></a><a href="srfi-129/"><span class="number">129</span></a>: <span class="name">Titlecase procedures</span><span class="authors">, by John Cowan</span><span class="date-group">Final: <span class="date">2016/3/8</span></span><span class="keywords" data-keywords="internationalization">Keywords: Internationalization</span><span class="status" data-status="final"></span><div class="abstract">      <p>This SRFI defines R7RS-style
-      <tt>char-title-case?</tt>, <tt>char-titlecase</tt>, and
-      <tt>string-titlecase</tt> procedures.</div></li>
+      <code>char-title-case?</code>, <code>char-titlecase</code>, and
+      <code>string-titlecase</code> procedures.</div></li>
       <li class="card final"><a class="card-anchor" href="srfi-128/"></a><a href="srfi-128/"><span class="number">128</span></a>: <span class="name">Comparators (reduced)</span><span class="authors">, by John Cowan</span><span class="date-group">Final: <span class="date">2016/2/14</span></span><span class="keywords" data-keywords="comparison">Keywords: Comparison</span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-114/">SRFI 114: Comparators</a>.</span><div class="abstract">      <p>This SRFI provides <i>comparators</i>, which
       bundle a type test predicate, an equality predicate, an ordering
       predicate, and a hash function (the last two are optional) into a single
@@ -834,8 +834,8 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       "http://readable.sourceforge.net/">Readable Lisp S-expressions
       Project</a>” and can be used for both programs and data.
       <p>Sweet-expressions can be considered a set of
-      additional abbreviations, just as <tt>'x</tt> already abbreviates
-      <tt>(quote&nbsp;x)</tt>. Sweet-expressions and traditionally formatted
+      additional abbreviations, just as <code>'x</code> already abbreviates
+      <code>(quote&nbsp;x)</code>. Sweet-expressions and traditionally formatted
       s-expressions can be freely mixed; this provides backwards compatibility,
       simplifies transition, and enables developers to maximize readability.
       Here is an example of a sweet-expression and its equivalent s-expression
@@ -1032,9 +1032,9 @@ implementors.
       All procedures which have the same name as in R5RS are compatible with
       R5RS but may provide additional functionality.</div></li>
       <li class="card final"><a class="card-anchor" href="srfi-90/"></a><a href="srfi-90/"><span class="number">90</span></a>: <span class="name">Extensible hash table constructor</span><span class="authors">, by Marc Feeley</span><span class="date-group">Final: <span class="date">2007/7/10</span></span><span class="keywords" data-keywords="data-structure">Keywords: Data Structure</span><span class="status" data-status="final"></span><div class="abstract">      <p>This SRFI specifies the procedure
-      <tt>make-table</tt>, a hash table constructor compatible with <a href=
+      <code>make-table</code>, a hash table constructor compatible with <a href=
       "/srfi-69/">SRFI 69 (Basic hash tables)</a>. The procedure
-      <tt>make-table</tt> allows various parameters of the hash table to be
+      <code>make-table</code> allows various parameters of the hash table to be
       specified with optional named parameters when it is constructed. These
       parameters are: the initial size, the minimum and maximum load factor,
       the key equivalence function, the key hashing function, whether the
@@ -1043,9 +1043,9 @@ implementors.
       (Optional positional and named parameters)</a>, the constructor's API can
       be easily extended in a backward compatible way by other SRFIs and Scheme
       implementations.</div></li>
-      <li class="card final"><a class="card-anchor" href="srfi-89/"></a><a href="srfi-89/"><span class="number">89</span></a>: <span class="name">Optional positional and named parameters</span><span class="authors">, by Marc Feeley</span><span class="date-group">Final: <span class="date">2007/7/10</span></span><span class="keywords" data-keywords="binding">Keywords: Binding</span><span class="status" data-status="final"></span><div class="abstract">      <p>This SRFI specifies the <tt>define*</tt> and
-      <tt>lambda*</tt> special forms. These forms extend the R5RS
-      <tt>define</tt> and <tt>lambda</tt> special forms to simplify the use of
+      <li class="card final"><a class="card-anchor" href="srfi-89/"></a><a href="srfi-89/"><span class="number">89</span></a>: <span class="name">Optional positional and named parameters</span><span class="authors">, by Marc Feeley</span><span class="date-group">Final: <span class="date">2007/7/10</span></span><span class="keywords" data-keywords="binding">Keywords: Binding</span><span class="status" data-status="final"></span><div class="abstract">      <p>This SRFI specifies the <code>define*</code> and
+      <code>lambda*</code> special forms. These forms extend the R5RS
+      <code>define</code> and <code>lambda</code> special forms to simplify the use of
       optional positional and named parameters. Optional positional parameters,
       optional named parameters and required named parameters are covered by
       this SRFI. The formal parameter list syntax specified in this SRFI is
@@ -1057,8 +1057,8 @@ implementors.
       data type similar to Scheme symbols. Keyword objects have the same
       lexical syntax as symbols but they must end in a colon. Moreover keyword
       objects are self-evaluating. Procedures for converting between strings
-      and keyword objects (<tt>string-&gt;keyword</tt> and
-      <tt>keyword-&gt;string</tt>) and a type predicate (<tt>keyword?</tt>) are
+      and keyword objects (<code>string-&gt;keyword</code> and
+      <code>keyword-&gt;string</code>) and a type predicate (<code>keyword?</code>) are
       defined. Finally this SRFI specifies the changes to the Scheme lexical
       syntax required to accomodate keywords.</div></li>
       <li class="card final"><a class="card-anchor" href="srfi-87/"></a><a href="srfi-87/"><span class="number">87</span></a>: <span class="name">=> in case clauses</span><span class="authors">, by Chongkai Zhu</span><span class="date-group">Final: <span class="date">2006/10/18</span></span><span class="keywords" data-keywords="control-flow">Keywords: Control Flow</span><span class="status" data-status="final"></span><div class="abstract">      <p>This SRFI proposes an extension to the
@@ -1319,14 +1319,14 @@ features of this SRFI are:
         <li>
           <h3>Syntax-case:</h3>
           <p>In the current proposal, the
-          <tt>syntax-case</tt> form is expressible as a macro in terms of a
+          <code>syntax-case</code> form is expressible as a macro in terms of a
           simpler set of primitives and is specified as library syntax.
         <li>
           <h3>Procedural interface:</h3>
           <p>The primitive interface for manipulating
           compound syntax objects consists of procedures rather than special
-          forms. In particular, the traditional abstractions <tt>car</tt>,
-          <tt>cdr</tt>, <tt>cons</tt> , <tt>...</tt> can be used on syntactic
+          forms. In particular, the traditional abstractions <code>car</code>,
+          <code>cdr</code>, <code>cons</code> , <code>...</code> can be used on syntactic
           data.
         <li>
           <h3>Fast hygiene algorithm:</h3>
@@ -1336,7 +1336,7 @@ features of this SRFI are:
         <li>
           <h3>Capturing identifiers:</h3>
           <p>A primitive
-          <tt>make-capturing-identifier</tt> is provided for intentional
+          <code>make-capturing-identifier</code> is provided for intentional
           variable capture and for building expansion-time fluid binding
           constructs.
       </ul></div></li>
@@ -1507,7 +1507,7 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br>
       <p>However, all of these could be added on top of
       one or several of the layers specified in this SRFI.</div></li>
       <li class="card final"><a class="card-anchor" href="srfi-67/"></a><a href="srfi-67/"><span class="number">67</span></a>: <span class="name">Compare Procedures</span><span class="authors">, by Sebastian Egner and Jens Axel Søgaard</span><span class="date-group">Final: <span class="date">2005/9/11</span></span><span class="keywords" data-keywords="comparison">Keywords: Comparison</span><span class="status" data-status="final"></span><div class="abstract">      <p>This SRFI can be seen as an extension of the
-      standard procedures <tt>=</tt>, <tt>&lt;</tt>, <tt>char&lt;?</tt> etc. of
+      standard procedures <code>=</code>, <code>&lt;</code>, <code>char&lt;?</code> etc. of
       R<sup>5</sup>RS -- or even as a replacement. The primary design aspect in
       this SRFI is the separation of <em>representing</em> a total order and
       <em>using it.</em> For representing the order, we have chosen for truly
@@ -1516,9 +1516,9 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br>
       these compare procedures are often optional, comparing built-in types is
       as convenient as R<sup>5</sup>RS , sometimes more convenient: For
       example, testing if the integer index <em>i</em> lies in the integer
-      range {0, <tt>...</tt>, <em>n</em> <tt>-</tt> 1} can be written as
-      <tt>(&lt;=/&lt;? 0 i n)</tt>, implicitly invoking
-      <tt>default-compare</tt>.
+      range {0, <code>...</code>, <em>n</em> <code>-</code> 1} can be written as
+      <code>(&lt;=/&lt;? 0 i n)</code>, implicitly invoking
+      <code>default-compare</code>.
       <p>As soon as new total orders are required, the
       infrastructure provided by this SRFI is far more convenient and often
       even more efficient than building each total order from scratch.
@@ -1526,20 +1526,20 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br>
       find this mechanism useful and adopt it, the benefit of having a uniform
       interface to total orders to be used in data structures will manifest
       itself. Most concretely, a new sorting procedure in the spirit of this
-      SRFI would have the interface <tt>(my-sort [ <i>compare</i> ]
-      <i>xs</i>)</tt>, using <tt>default-compare</tt> if the optional
-      <i>compare</i> was not provided. Then <tt>my-sort</tt> could be defined
+      SRFI would have the interface <code>(my-sort [ <i>compare</i> ]
+      <i>xs</i>)</code>, using <code>default-compare</code> if the optional
+      <i>compare</i> was not provided. Then <code>my-sort</code> could be defined
       using the entire infrastructure of this SRFI: Efficient 2- and 3-way
       branching, testing for chains and pairwise inequality, min/max, and
       general order statistics.</div></li>
       <li class="card final"><a class="card-anchor" href="srfi-66/"></a><a href="srfi-66/"><span class="number">66</span></a>: <span class="name">Octet Vectors</span><span class="authors">, by Michael Sperber</span><span class="date-group">Final: <span class="date">2005/12/15</span></span><span class="keywords" data-keywords="data-structure">Keywords: Data Structure</span><span class="status" data-status="final"></span><div class="abstract">      <p>This SRFI defines a set of procedures for
       creating, accessing, and manipulating uniform vectors of octets.</div></li>
-      <li class="card withdrawn"><a class="card-anchor" href="srfi-65/"></a><a href="srfi-65/"><span class="number">65</span></a>: <span class="name">define-immutable: A Syntax to Define Identifiers With Immutable Values</span><span class="authors">, by Andrew Wilcox</span><span class="date-group">Withdrawn: <span class="date">2005/05/17</span></span><span class="keywords" data-keywords="binding,lazy-evaluation">Keywords: Binding, Lazy Evaluation</span><span class="status" data-status="withdrawn"></span><div class="abstract">      <p>The <tt>define-immutable</tt> form defines an
+      <li class="card withdrawn"><a class="card-anchor" href="srfi-65/"></a><a href="srfi-65/"><span class="number">65</span></a>: <span class="name">define-immutable: A Syntax to Define Identifiers With Immutable Values</span><span class="authors">, by Andrew Wilcox</span><span class="date-group">Withdrawn: <span class="date">2005/05/17</span></span><span class="keywords" data-keywords="binding,lazy-evaluation">Keywords: Binding, Lazy Evaluation</span><span class="status" data-status="withdrawn"></span><div class="abstract">      <p>The <code>define-immutable</code> form defines an
       identifier whose value never changes.
       <p>The expression part of the definition is
       evaluated lazily: it is not evaluated unless and until the identifier is
       evaluated. This permits an immutable definition to use other definitions
-      in more ways than is possible when using <tt>define</tt> in internal
+      in more ways than is possible when using <code>define</code> in internal
       definitions.
       <p>A series of immutable definitions have simple
       semantics, making them easy to program and understand.
@@ -1809,7 +1809,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       internal implementation detail, in an implementation that supports a
       module or structure or package or library or unit (et cetera) systems,
       these procedures should be contained in a module / structure / package /
-      library / unit called <tt>vector-lib</tt>.</div></li>
+      library / unit called <code>vector-lib</code>.</div></li>
       <li class="card final"><a class="card-anchor" href="srfi-42/"></a><a href="srfi-42/"><span class="number">42</span></a>: <span class="name">Eager Comprehensions</span><span class="authors">, by Sebastian Egner</span><span class="date-group">Final: <span class="date">2003/7/7</span></span><span class="keywords" data-keywords="control-flow">Keywords: Control Flow</span><span class="status" data-status="final"></span><div class="abstract">      <p>This SRFI defines a modular and portable
       mechanism for eager comprehensions extending the algorithmic language
       Scheme [R5RS]. An eager comprehension is a convenient notation for one or
@@ -1861,20 +1861,20 @@ construction of eager promises in cases where efficiency is a concern.<br>
       The <code>parameterize</code> special form allows the binding of a
       parameter object to be changed for the dynamic extent of its body.</div></li>
       <li class="card final"><a class="card-anchor" href="srfi-38/"></a><a href="srfi-38/"><span class="number">38</span></a>: <span class="name">External Representation for Data With Shared Structure</span><span class="authors">, by Ray Dillinger</span><span class="date-group">Final: <span class="date">2003/4/2</span></span><span class="keywords" data-keywords="i/o">Keywords: I/O</span><span class="status" data-status="final"></span><div class="abstract">      <p>This SRFI proposes
-      <tt>(write-with-shared-structure)</tt> and
-      <tt>(read-with-shared-structure)</tt>, procedures for writing and reading
+      <code>(write-with-shared-structure)</code> and
+      <code>(read-with-shared-structure)</code>, procedures for writing and reading
       external representations of data containing shared structure. These
       procedures implement a proposed standard external notation for data
       containing shared structure.
       <p>This SRFI permits but does not require
-      replacing the standard <tt>(write)</tt> and <tt>(read)</tt> functions.
+      replacing the standard <code>(write)</code> and <code>(read)</code> functions.
       These functions may be implemented without the overhead in time and space
       required to detect and specify shared structure.
       <p>An implementation conforms to this SRFI if it
-      provides procedures named <tt>(write-with-shared-structure)</tt> and
-      <tt>(read-with-shared-structure)</tt>, which produce and read the same
+      provides procedures named <code>(write-with-shared-structure)</code> and
+      <code>(read-with-shared-structure)</code>, which produce and read the same
       notation as produced by the reference implementation. It may also provide
-      <tt>(read/ss)</tt> and <tt>(write/ss)</tt>, equivalent functions with
+      <code>(read/ss)</code> and <code>(write/ss)</code>, equivalent functions with
       shorter names.</div></li>
       <li class="card final"><a class="card-anchor" href="srfi-37/"></a><a href="srfi-37/"><span class="number">37</span></a>: <span class="name">args-fold: a program argument processor</span><span class="authors">, by Anthony Carrico</span><span class="date-group">Final: <span class="date">2003/1/13</span></span><span class="keywords" data-keywords="operating-system">Keywords: Operating System</span><span class="status" data-status="final"></span><div class="abstract">      <p>Many operating systems make the set of argument
       strings used to invoke a program available (often following the program
