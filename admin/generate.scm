@@ -297,7 +297,7 @@ and \", and\" otherwise."
 	 (schemepersist
 	  ,(write-srfi-subscribe-form
 	    "schemepersist"
-	    "This is an unmoderated discussion of persistent storage for Scheme implementations, including existing, new, and improved persistence libraries; interface protocols to support; SRFIs to write; etc."))
+	    "This is an unmoderated discussion of persistent storage and serialization for Scheme implementations, including existing, new, and improved persistence libraries; interface protocols to support; SRFIs to write; etc."))
 	 (schemeweb
 	  ,(write-srfi-subscribe-form
 	    "schemeweb"
