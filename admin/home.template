@@ -46,21 +46,21 @@
     <ul class="posts wide">
       <li class="card">
         <span class="firefox-column-workaround">
-          <h2>New mailing list: <a href="srfi-list-subscribe.html#schemepersist"><code>schemepersist</code></a></h2>
-          <p>As of September, 2019, there is a new Scheme Topics
-            mailing list: <a href="srfi-list-subscribe.html#schemepersist"><code>schemepersist</code></a>.
-	    <code>Schemepersist</code> is for discussing persistent
-	    storage and serialization for Scheme implementations,
-	    including existing, new, and improved persistence
-	    libraries; interface protocols to support; SRFIs to write;
-	    etc.</p>
+          <h2>New mailing list: <a href="srfi-list-subscribe.html#schemecomm"><code>schemecomm</code></a></h2>
+          <p>As of October, 2019, there is a fourth Scheme Topics
+            mailing list: <a href="srfi-list-subscribe.html#schemecomm"><code>schemecomm</code></a>.
+	    <code>Schemecomm</code> is for discussing all kinds of
+	    machine-to-machine communications in Scheme, e.g. UDP/TCP/web
+	    sockets, distributed hash tables, and radio.</p>
 
 	  <p>Scheme Topics mailing lists are for discussing specific
 	    subjects that we hope may lead to SRFIs and other
 	    cooperative work, but which are currently not ready for
 	    specific proposals through the SRFI process.  The other
-	    two Scheme Topics lists are <a href="https://srfi-email.schemers.org/schemedoc"><code>schemedoc</code></a>
-	    and <a href="https://srfi-email.schemers.org/schemeweb"><code>schemeweb</code></a>.</p> 
+	    three Scheme Topics lists are <a
+	    href="https://srfi-email.schemers.org/schemedoc"><code>schemedoc</code></a>,
+	    <a href="https://srfi-email.schemers.org/schemepersist"><code>schemepersist</code></a>,
+	    and <a href="https://srfi-email.schemers.org/schemeweb"><code>schemeweb</code></a>.</p>
 
 	  <p>Everyone is welcome to join our discussions.
 	    <a href="srfi-list-subscribe.html">Subscribe here</a>.</p></span></li></ul>

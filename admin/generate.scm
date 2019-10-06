@@ -290,6 +290,10 @@ and \", and\" otherwise."
 	  ,(write-srfi-subscribe-form
 	    "srfi-auto-subscribe"
 	    "Subscribe to this list if you'd like to receive messages from <a href=\"#srfi-announce\"><code>srfi-announce</code></a>, <a href=\"#srfi-discuss\"><code>srfi-discuss</code></a>, and all <a href=\"#srfi-n\">srfi-<em>n</em></a> discussion mailing lists.  Note that this list does <em>not</em> deliver messages from <a href=\"#schemedoc\"><code>schemedoc</code></a>, <a href=\"#schemepersist\"><code>schemepersist</code></a>, or <a href=\"#schemeweb\"><code>schemeweb</code></a>.  You can subscribe to them independently."))
+	 (schemecomm
+	  ,(write-srfi-subscribe-form
+	    "schemecomm"
+	    "This is an unmoderated discussion of support for all kinds of machine-to-machine communications in Scheme, e.g. UDP/TCP/web sockets, distributed hash tables, and radio."))
 	 (schemedoc
 	  ,(write-srfi-subscribe-form
 	    "schemedoc"

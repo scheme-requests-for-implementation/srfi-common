@@ -59,6 +59,7 @@
       mailing list, which includes all the other SRFI mailing lists.</p>
 
     <ul class="posts">
+      <*<schemecomm>*>
       <*<schemedoc>*>
       <*<schemepersist>*>
       <*<schemeweb>*></ul>
