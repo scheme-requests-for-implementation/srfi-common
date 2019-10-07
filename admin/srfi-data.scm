@@ -1376,7 +1376,7 @@
 ((number 170)
  (status draft)
  (title "POSIX API")
- (authors "Olin Shivers (original author), John Cowan (editor and shepherd)")
+ (authors "Olin Shivers (original author), John Cowan (editor and shepherd), Harold Ancell (editor)")
  (see-also)
  (keywords "operating-system")
  (draft-date "2019/5/4"))
