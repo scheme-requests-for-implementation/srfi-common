@@ -133,6 +133,13 @@
             abstracts</label></div></div>
       <ul class="summary list">
 
+      <li class="card draft"><a class="card-anchor" href="srfi-177/"></a><a href="srfi-177/"><span class="number">177</span></a>: <span class="name">Portable keyword arguments</span><span class="authors">, by Lassi Kortela</span><span class="date-group">Draft: <span class="date">2019/10/16</span></span><span class="keywords" data-keywords="binding">Keywords: Binding</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-88/">SRFI 88: Keyword objects</a> and <a href="/srfi-89/">SRFI 89: Optional positional and named parameters</a>.</span><div class="abstract"><p>Many Scheme implementations have keyword arguments but they have
+not been widely standardized. This SRFI defines the macros
+<code>keyword-lambda</code> and <code>keyword-call</code>. They can be
+used identically in every major implementation currently in use,
+making it safe to use keyword arguments in portable code.  The macros
+expand to native keyword arguments in Schemes that have them, letting
+programmers mix portable code and implementation-specific code.</p></div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-176/"></a><a href="srfi-176/"><span class="number">176</span></a>: <span class="name">Version flag</span><span class="authors">, by Lassi Kortela</span><span class="date-group">Draft: <span class="date">2019/10/6</span></span><span class="keywords" data-keywords="operating-system">Keywords: Operating System</span><span class="status" data-status="draft"></span><div class="abstract"><p>This SRFI defines a standard command-line flag to get version
   information from a Scheme implementation.  The output is
   Line-oriented S-expressions which are easy to parse from Scheme, C,
@@ -1051,7 +1058,7 @@ implementors.
       (Optional positional and named parameters)</a>, the constructor's API can
       be easily extended in a backward compatible way by other SRFIs and Scheme
       implementations.</div></li>
-      <li class="card final"><a class="card-anchor" href="srfi-89/"></a><a href="srfi-89/"><span class="number">89</span></a>: <span class="name">Optional positional and named parameters</span><span class="authors">, by Marc Feeley</span><span class="date-group">Final: <span class="date">2007/7/10</span></span><span class="keywords" data-keywords="binding">Keywords: Binding</span><span class="status" data-status="final"></span><div class="abstract">      <p>This SRFI specifies the <code>define*</code> and
+      <li class="card final"><a class="card-anchor" href="srfi-89/"></a><a href="srfi-89/"><span class="number">89</span></a>: <span class="name">Optional positional and named parameters</span><span class="authors">, by Marc Feeley</span><span class="date-group">Final: <span class="date">2007/7/10</span></span><span class="keywords" data-keywords="binding">Keywords: Binding</span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-88/">SRFI 88: Keyword objects</a> and <a href="/srfi-177/">SRFI 177: Portable keyword arguments</a>.</span><div class="abstract">      <p>This SRFI specifies the <code>define*</code> and
       <code>lambda*</code> special forms. These forms extend the R5RS
       <code>define</code> and <code>lambda</code> special forms to simplify the use of
       optional positional and named parameters. Optional positional parameters,
@@ -1061,7 +1068,7 @@ implementors.
       nevertheless offers similar functionality and a nicer syntax. Formal
       parameter lists which conform to the R5RS syntax have the same meaning as
       in R5RS.</div></li>
-      <li class="card final"><a class="card-anchor" href="srfi-88/"></a><a href="srfi-88/"><span class="number">88</span></a>: <span class="name">Keyword objects</span><span class="authors">, by Marc Feeley</span><span class="date-group">Final: <span class="date">2007/7/3</span></span><span class="keywords" data-keywords="reader-syntax">Keywords: Reader Syntax</span><span class="status" data-status="final"></span><div class="abstract">      <p>This SRFI defines <i>keyword</i> objects, a
+      <li class="card final"><a class="card-anchor" href="srfi-88/"></a><a href="srfi-88/"><span class="number">88</span></a>: <span class="name">Keyword objects</span><span class="authors">, by Marc Feeley</span><span class="date-group">Final: <span class="date">2007/7/3</span></span><span class="keywords" data-keywords="reader-syntax">Keywords: Reader Syntax</span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-89/">SRFI 89: Optional positional and named parameters</a> and <a href="/srfi-177/">SRFI 177: Portable keyword arguments</a>.</span><div class="abstract">      <p>This SRFI defines <i>keyword</i> objects, a
       data type similar to Scheme symbols. Keyword objects have the same
       lexical syntax as symbols but they must end in a colon. Moreover keyword
       objects are self-evaluating. Procedures for converting between strings
