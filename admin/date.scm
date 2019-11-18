@@ -4,7 +4,7 @@
 
 ;; This runs on MIT Scheme.
 
-;; TODO(arthur): Make this into an SRFI.  The closest SRFI we have is
+;; TODO(arthur): Make this into a SRFI.  The closest SRFI we have is
 ;; SRFI 19 Time Data Types and Procedures, but that doesn't support
 ;; date calculations.  For this code, we just need next-day.
 
