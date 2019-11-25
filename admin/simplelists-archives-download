@@ -1,14 +1,15 @@
 #!/bin/bash
 
+# Download all SRFI web archives from Simplelists.
+
 set -e
 
-echo SIMPLELISTS_COOKIE=<INSERT_COOKIE_HERE>
-declare -A lists
+export SIMPLELISTS_AUTH_COOKIE=<INSERT_COOKIE_HERE>
 
-# I extracted this list from the dropdown on the Simplelists > List
-# Settings > Select list dropdown.
+# I extracted the data for this list from the dropdown on the
+# Simplelists > List Settings > Select list dropdown.
 
-# lists[44023]=schemecomm
+lists[44023]=schemecomm
 lists[40839]=schemedoc
 lists[43635]=schemepersist
 lists[40711]=schemeweb
@@ -122,7 +123,7 @@ lists[14029]=srfi-106
 lists[14031]=srfi-107
 lists[14033]=srfi-108
 lists[14035]=srfi-109
-#lists[14037]=srfi-110
+lists[14037]=srfi-110
 lists[14039]=srfi-111
 lists[14041]=srfi-112
 lists[14043]=srfi-113
@@ -203,7 +204,7 @@ for ml in "${!lists[@]}"; do
     -H 'SRFI archive fetch client' \
     -H 'Accept-Encoding: gzip, deflate, br' \
     -H 'Accept-Language: en-US,en;q=0.9' \
-    -H "Cookie: SL_WEBADMIN=${SIMPLELISTS_COOKIE}" \
+    -H "Cookie: SL_WEBADMIN=${SIMPLELISTS_AUTH_COOKIE}" \
     --compressed \
     >$dl/simplelists/${lists[$ml]}.mbox
   sleep 5
