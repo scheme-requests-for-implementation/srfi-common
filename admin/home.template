@@ -19,17 +19,16 @@
             "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
             type="text/javascript"></script></head>
   <body>
-    <h1>Scheme Requests for Implementation</h1>
-
     <img src="srfi-logo.svg" alt="SRFI logo" />
 
+    <h1>Scheme Requests for Implementation</h1>
+
     <p>
-      The purpose of the Scheme Requests for Implementation (SRFI)
-      process is to help Scheme users write portable, useful code.
-      We write concrete, detailed proposals and sample
-      implementations for libraries and other additions to the
-      Scheme language, and we encourage Scheme implementors to adopt
-      them.</p>
+      Since 1998, the Scheme Requests for Implementation (SRFI)
+      process has been helping Scheme users write portable, useful
+      Scheme code.  We write concrete, detailed proposals and sample
+      implementations for libraries and other additions to the Scheme
+      language, and we encourage Scheme implementors to adopt them.</p>
 
     <p>
       If you're interested in reading existing proposals, writing a
@@ -39,31 +38,24 @@
       href="srfi-process.html">our process</a>, skim our <a
       href="srfi-faq.html">FAQ</a>, and subscribe to some of our
       <a href="srfi-list-subscribe.html">mailing lists</a>, including
-      <code>srfi-announce</code>, <code>srfi-discuss</code>, and
-      <code>srfi-auto-subscribe</code> (subscribes to almost
-      everything).  (You must subscribe in order to post messages.)</p>
+      <a href="https://srfi-email.schemers.org/srfi-announce">srfi-announce</a> and
+      <a href="https://srfi-email.schemers.org/srfi-discuss">srfi-discuss</a>.</p>
 
-    <ul class="posts wide">
-      <li class="card">
-        <span class="firefox-column-workaround">
-          <h2>New mailing list: <a href="srfi-list-subscribe.html#schemecomm"><code>schemecomm</code></a></h2>
-          <p>As of October, 2019, there is a fourth Scheme Topics
-            mailing list: <a href="srfi-list-subscribe.html#schemecomm"><code>schemecomm</code></a>.
-	    <code>Schemecomm</code> is for discussing all kinds of
-	    machine-to-machine communications in Scheme, e.g. UDP/TCP/web
-	    sockets, distributed hash tables, and radio.</p>
+    <p>
+      In addition to mailing lists about SRFIs, we host the Scheme
+      Topics mailing lists, which are for discussing specific subjects
+      that we hope may lead to SRFIs and other cooperative work, but
+      which are currently not ready for specific proposals through the
+      SRFI process.  So far, we have these lists: <a
+      href=https://srfi-email.schemers.org/schemedoc">schemecomm</a>,
+      <a href="https://srfi-email.schemers.org/schemedoc"><code>schemedoc</code></a>,
+      <a href="https://srfi-email.schemers.org/schemepersist"><code>schemepersist</code></a>,
+      and <a href="https://srfi-email.schemers.org/schemeweb"><code>schemeweb</code></a>.</p>
 
-	  <p>Scheme Topics mailing lists are for discussing specific
-	    subjects that we hope may lead to SRFIs and other
-	    cooperative work, but which are currently not ready for
-	    specific proposals through the SRFI process.  The other
-	    three Scheme Topics lists are <a
-	    href="https://srfi-email.schemers.org/schemedoc"><code>schemedoc</code></a>,
-	    <a href="https://srfi-email.schemers.org/schemepersist"><code>schemepersist</code></a>,
-	    and <a href="https://srfi-email.schemers.org/schemeweb"><code>schemeweb</code></a>.</p>
-
-	  <p>Everyone is welcome to join our discussions.
-	    <a href="srfi-list-subscribe.html">Subscribe here</a>.</p></span></li></ul>
+    <p>
+      Everyone is welcome to join our discussions.  Please
+      <a href="srfi-list-subscribe.html">subscribe here</a>.  (You
+      must subscribe in order to post messages.)</p>
 
     <h2>The SRFIs</h2>
 
