@@ -47,7 +47,7 @@
       that we hope may lead to SRFIs and other cooperative work, but
       which are currently not ready for specific proposals through the
       SRFI process.  So far, we have these lists: <a
-      href=https://srfi-email.schemers.org/schemecomm">schemecomm</a>,
+      href="https://srfi-email.schemers.org/schemecomm"><code>schemecomm</code></a>,
       <a href="https://srfi-email.schemers.org/schemedoc"><code>schemedoc</code></a>,
       <a href="https://srfi-email.schemers.org/schemepersist"><code>schemepersist</code></a>,
       and <a href="https://srfi-email.schemers.org/schemeweb"><code>schemeweb</code></a>.</p>
