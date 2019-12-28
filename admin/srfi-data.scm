@@ -1493,6 +1493,7 @@
  (status final)
  (title "ASCII character library")
  (authors "Lassi Kortela")
+ (library-name ascii)
  (see-also)
  (keywords "data-structure")
  (draft-date "2019/9/18")
