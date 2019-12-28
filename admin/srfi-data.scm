@@ -1369,7 +1369,7 @@
  (done-date "2019/11/8"))
 ((number 169)
  (status final)
- (title "Underscores in Numbers")
+ (title "Underscores in numbers")
  (authors "Lassi Kortela")
  (see-also)
  (keywords "syntax")
