@@ -1520,7 +1520,7 @@
  (keywords "data-structure")
  (draft-date "2019/12/22"))
 ((number 179)
- (status final)
+ (status draft)
  (title "Nonempty Intervals and Generalized Arrays (Updated)")
  (authors "Bradley J. Lucier")
  (see-also 164 122)
