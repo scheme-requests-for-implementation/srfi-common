@@ -1089,7 +1089,7 @@
  (title "Comparators (reduced)")
  (authors "John Cowan")
  (library-name comparators)
- (see-also 114)
+ (see-also 114 162)
  (keywords "comparison")
  (draft-date "2015/10/26")
  (done-date "2016/2/14"))
