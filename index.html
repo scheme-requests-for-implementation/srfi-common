@@ -125,6 +125,27 @@
             abstracts</label></div></div>
       <ul class="summary list">
 
+      <li class="card draft"><a class="card-anchor" href="srfi-182/"></a><a href="srfi-182/"><span class="number">182</span></a>: <span class="name">ADBMAL, ALET, and ALET*</span><span class="authors">, by Joo ChurlSoo</span><span class="date-group">Draft: <span class="date">2020/2/21</span></span><span class="keywords" data-keywords="data-structure,multiple-value-returns">Keywords: Data Structure, Multiple Value Returns</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-2/">SRFI 2: AND-LET*: an AND with local bindings, a guarded LET* special form</a>, <a href="/srfi-11/">SRFI 11: Syntax for receiving multiple values</a>, <a href="/srfi-51/">SRFI 51: Handling rest list</a>, <a href="/srfi-54/">SRFI 54: Formatting</a>, <a href="/srfi-71/">SRFI 71: Extended LET-syntax for multiple values</a>, and <a href="/srfi-86/">SRFI 86: MU and NU simulating VALUES & CALL-WITH-VALUES, and their related LET-syntax</a>.</span><div class="abstract"><p>Unlike the VALUES and CALL-WITH-VALUES mechanism of R5RS, this one
+uses an explicit representation for multiple return values as a single
+value, namely a procedure.  Decomposition of multiple values is done
+by simple application.  The macro, ADBMAL, evaluates to a procedure
+that takes one procedure argument.  The ADBMAL macro can be compared
+with LAMBDA.  While a LAMBDA expression that consists of
+&lt;formals&gt; and &lt;body&gt; requires some actual arguments later
+when the evaluated LAMBDA expression is called, an ADBMAL expression
+that consists of &lt;expression&gt;s corresponding to actual arguments
+of LAMBDA requires &lt;formals&gt; and &lt;body&gt;, that is, an
+evaluated LAMBDA expression, later when the evaluated ADBMAL
+expression is called.</p>
+
+<p>This SRFI also introduces the new LET-syntax ALET and ALET*, which
+depend on ADBMAL to manipulate multiple values, and which are
+compatible with LET and LET* of R5RS in single-value bindings.  They
+also have a binding form making use of VALUES and CALL-WITH-VALUES to
+handle multiple values, and new binding forms for list, cons, and
+other multiple values.  In addition, they have several new binding
+forms for useful functions such as escape, iteration, optional
+arguments, etc.</p></div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-181/"></a><a href="srfi-181/"><span class="number">181</span></a>: <span class="name">Custom ports</span><span class="authors">, by John Cowan</span><span class="date-group">Draft: <span class="date">2020/2/15</span></span><span class="keywords" data-keywords="i/o">Keywords: I/O</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-81/">SRFI 81: Port I/O</a>, <a href="/srfi-82/">SRFI 82: Stream Ports</a>, and <a href="/srfi-91/">SRFI 91: Extended ports</a>.</span><div class="abstract"><p>This is an extract from the R6RS that documents its support for custom ports.
 These provide a hook into the Scheme port system from below, allowing the
 creation of binary and textual ports that behave exactly like file, string,

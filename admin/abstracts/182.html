@@ -1,0 +1,21 @@
+<p>Unlike the VALUES and CALL-WITH-VALUES mechanism of R5RS, this one
+uses an explicit representation for multiple return values as a single
+value, namely a procedure.  Decomposition of multiple values is done
+by simple application.  The macro, ADBMAL, evaluates to a procedure
+that takes one procedure argument.  The ADBMAL macro can be compared
+with LAMBDA.  While a LAMBDA expression that consists of
+&lt;formals&gt; and &lt;body&gt; requires some actual arguments later
+when the evaluated LAMBDA expression is called, an ADBMAL expression
+that consists of &lt;expression&gt;s corresponding to actual arguments
+of LAMBDA requires &lt;formals&gt; and &lt;body&gt;, that is, an
+evaluated LAMBDA expression, later when the evaluated ADBMAL
+expression is called.</p>
+
+<p>This SRFI also introduces the new LET-syntax ALET and ALET*, which
+depend on ADBMAL to manipulate multiple values, and which are
+compatible with LET and LET* of R5RS in single-value bindings.  They
+also have a binding form making use of VALUES and CALL-WITH-VALUES to
+handle multiple values, and new binding forms for list, cons, and
+other multiple values.  In addition, they have several new binding
+forms for useful functions such as escape, iteration, optional
+arguments, etc.</p>
