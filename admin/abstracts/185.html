@@ -1,0 +1,8 @@
+<p>
+Scheme specifies mutable fixed-size strings.
+<a href="https://srfi.schemers.org/srfi-118/srfi-118.html">SRFI 118</a>
+adds two procedures <code>string-append!</code> and
+<code>string-replace!</code> which allow the size of the string to change.
+This SRFI provides two linear-update versions of these procedures:
+that is, the implementation may change the string size or return a
+new string instead.
