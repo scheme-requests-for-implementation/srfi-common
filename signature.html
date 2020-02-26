@@ -67,6 +67,9 @@
   </head>
   <body>
     <!--
+	 exit return-code
+	 ...
+
 	 string->vector string			&xrarr; char-vector (R7RS-small)
 	 string->vector string start		&xrarr; char-vector
 	 string->vector string start end	&xrarr; char-vector
@@ -83,6 +86,10 @@
     -->
     <h2>Signatures</h2>
     <dl class="signatures">
+      <dt id="exit">
+	<dfn>exit</dfn><var>status-code</var></dt>
+      <dd>
+	<p>Kill current process, returning <var>status-code<var>.</p></dd>
       <dt id="string2foo">
 	<dfn>string->foo</dfn><var>string</var><span> &xrarr; foo-vector</span></dt>
       <dt id="string2quux">
