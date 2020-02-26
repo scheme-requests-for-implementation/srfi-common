@@ -38,6 +38,17 @@
        display: table-cell;
        white-space: nowrap;
      }
+     dl.signatures dt dfn::before {
+       content: "(";
+       font-family: sans-serif;
+       font-style: normal;
+       font-weight: normal;
+     }
+     dl.signatures dt var::after {
+       content: ")";
+       font-style: normal;
+       padding-left: 0.1em;
+     }
      dl.signatures dt>p,
      dl.signatures dt>span,
      dl.signatures dt>var {
@@ -67,21 +78,21 @@
   </head>
   <body>
     <!--
-	 exit return-code
+	 (exit return-code)
 	 ...
 
-	 string->vector string			&xrarr; char-vector (R7RS-small)
-	 string->vector string start		&xrarr; char-vector
-	 string->vector string start end	&xrarr; char-vector
-	 string->list	string			&xrarr; char-list   (R7RS-small)
-	 string->list	string start		&xrarr; char-list
-	 string->list	string start end	&xrarr; char-list
+	 (string->vector string)		&xrarr; char-vector (R7RS-small)
+	 (string->vector string start)		&xrarr; char-vector
+	 (string->vector string start end)	&xrarr; char-vector
+	 (string->list	 string)		&xrarr; char-list   (R7RS-small)
+	 (string->list	 string start)		&xrarr; char-list
+	 (string->list	 string start end)	&xrarr; char-list
 	 ...
 
-	 vector->string char-vector		&xrarr; string (R7RS-small)
-	 vector->string char-vector start	&xrarr; string
-	 vector->string char-vector start end	&xrarr; string
-	 list->string char-list			&xrarr; string (R5RS)
+	 (vector->string char-vector)		&xrarr; string (R7RS-small)
+	 (vector->string char-vector start)	&xrarr; string
+	 (vector->string char-vector start end) &xrarr; string
+	 (list->string char-list)		&xrarr; string (R5RS)
 	 ...
     -->
     <h2>Signatures</h2>
