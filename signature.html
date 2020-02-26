@@ -54,11 +54,6 @@
      dl.signatures dt>span {
        font-style: italic;
      }
-     dl.signatures dt>span::before {
-       content: "⟶";
-       font-weight: 100;
-       padding: 0 0.5em;
-     }
      dl.signatures dt var {
        font-weight: normal;
      }
@@ -89,36 +84,36 @@
     <h2>Signatures</h2>
     <dl class="signatures">
       <dt id="string2foo">
-	<code>string->foo</code><var>string</var><span>foo-vector</span></dt>
+	<code>string->foo</code><var>string</var><span> ⟶ foo-vector</span></dt>
       <dt id="string2quux">
-	<code>string->quux</code><var>string</var><span>quux-vector</span></dt>
+	<code>string->quux</code><var>string</var><span> ⟶ quux-vector</span></dt>
       <dd>
 	<p>I have no idea what these procedures do.</p></dd>
       <div>
 	<dt id="string2vector">
-	  <code>string->vector</code><var>string</var><span>char-vector</span><p>(R7RS-small)</p></dt>
+	  <code>string->vector</code><var>string</var><span> ⟶ char-vector</span><p>(R7RS-small)</p></dt>
 	<dt>
-	  <code>string->vector</code><var>string start</var><span>char-vector</span></dt>
+	  <code>string->vector</code><var>string start</var><span> ⟶ char-vector</span></dt>
 	<dt>
-	  <code>string->vector</code><var>string start end</var><span>char-vector</span></dt>
+	  <code>string->vector</code><var>string start end</var><span> ⟶ char-vector</span></dt>
 	<dt id="string2list">
-	  <code>string->list</code><var>string</var><span>char-list</span><p>(R7RS-small)</p></dt>
+	  <code>string->list</code><var>string</var><span> ⟶ char-list</span><p>(R7RS-small)</p></dt>
 	<dt>
-	  <code>string->list</code><var>string start</var><span>char-list</span></dt>
+	  <code>string->list</code><var>string start</var><span> ⟶ char-list</span></dt>
 	<dt>
-	  <code>string->list</code><var>string start end</var><span>char-list</span></dt></div>
+	  <code>string->list</code><var>string start end</var><span> ⟶ char-list</span></dt></div>
       <dd>
 	These procedures return a newly allocated (unless empty) vector or
 	list of the characters that make up the given substring.</dd>
       <div>
 	<dt id="vector2string">
-	  <code>vector->string</code><var>char-vector</var><span>string</span><p>(R7RS-small)</p></dt>
+	  <code>vector->string</code><var>char-vector</var><span> ⟶ string</span><p>(R7RS-small)</p></dt>
 	<dt>
-	  <code>vector->string</code><var>char-vector start</var><span>string</span></dt>
+	  <code>vector->string</code><var>char-vector start</var><span> ⟶ string</span></dt>
 	<dt>
-	  <code>vector->string</code><var>char-vector start end</var><span>string</span></dt>
+	  <code>vector->string</code><var>char-vector start end</var><span> ⟶ string</span></dt>
 	<dt class="aligned" id="list2string">
-	  <code>list->string</code><var>char-list</var><span>string</span><p>(R5RS)</p></dt></div>
+	  <code>list->string</code><var>char-list</var><span> ⟶ string</span><p>(R5RS)</p></dt></div>
       <dd>
 	These procedures return a string containing the characters of
 	the given (sub)vector or list.  The behavior of the string
