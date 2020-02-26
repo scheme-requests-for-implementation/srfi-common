@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Foo</title>
+    <style>
+     a.eponymous {
+       font-family: Monaco, Courier, monospace;
+       overflow-wrap: break-word;
+       word-break: break-all;
+       word-wrap: break-word;
+     }
+     .antispam {
+       display: none;
+     }
+     body {
+       font-family: sans-serif;
+       font-size: 18px;
+       margin-left: 1em;
+       max-width: 46em;
+     }
+     dl.signatures dd {
+       margin-bottom: 0.5em;
+       margin-top: 0.5em;
+     }
+     dl.signatures>div {
+       display: table;
+     }
+     dl.signatures>div>dt {
+       display: table-row;
+     }
+     dl.signatures>div>dt>code,
+     dl.signatures>div>dt>p,
+     dl.signatures>div>dt>span,
+     dl.signatures>div>dt>var {
+       display: table-cell;
+     }
+     dl.signatures dt>p,
+     dl.signatures dt>span,
+     dl.signatures dt>var {
+       padding-left: 0.5em;
+     }
+     dl.signatures dt>code:first-child {
+       font-family: Monaco, Courier, monospace;
+       font-style: normal;
+       font-weight: bold;
+     }
+     dl.signatures dt>p {
+       display: inline;
+     }
+     dl.signatures dt>span {
+       font-style: italic;
+     }
+     dl.signatures dt>span::before {
+       content: "⟶";
+       font-weight: 100;
+       padding: 0 0.5em;
+     }
+     dl.signatures dt var {
+       font-weight: normal;
+     }
+     h1, h2 {
+       color: blue;
+     }
+     h1 {
+       text-align: center;
+     }
+    </style>
+  </head>
+  <body>
+    <!--
+	 string->vector string           ⟶ char-vector (R7RS-small)
+	 string->vector string start     ⟶ char-vector
+	 string->vector string start end ⟶ char-vector
+	 string->list   string           ⟶ char-list   (R7RS-small)
+	 string->list   string start     ⟶ char-list
+	 string->list   string start end ⟶ char-list
+	 ...
+
+	 vector->string char-vector ⟶ string (R7RS-small)
+	 vector->string char-vector start ⟶ string (R7RS-small)
+	 vector->string char-vector start end ⟶ string (R7RS-small)
+	 list->string char-list ⟶ string (R5RS)
+	 ...
+    -->
+    <h2>Signatures</h2>
+    <dl class="signatures">
+      <dt id="string2foo">
+	<code>string->foo</code><var>string</var><span>foo-vector</span></dt>
+      <dt id="string2quux">
+	<code>string->quux</code><var>string</var><span>quux-vector</span></dt>
+      <dd>
+	<p>I have no idea what these procedures do.</p></dd>
+      <div>
+	<dt id="string2vector">
+	  <code>string->vector</code><var>string</var><span>char-vector</span><p>(R7RS-small)</p></dt>
+	<dt>
+	  <code>string->vector</code><var>string start</var><span>char-vector</span></dt>
+	<dt>
+	  <code>string->vector</code><var>string start end</var><span>char-vector</span></dt>
+	<dt id="string2list">
+	  <code>string->list</code><var>string</var><span>char-list</span><p>(R7RS-small)</p></dt>
+	<dt>
+	  <code>string->list</code><var>string start</var><span>char-list</span></dt>
+	<dt>
+	  <code>string->list</code><var>string start end</var><span>char-list</span></dt></div>
+      <dd>
+	These procedures return a newly allocated (unless empty) vector or
+	list of the characters that make up the given substring.</dd>
+      <div>
+	<dt id="vector2string">
+	  <code>vector->string</code><var>char-vector</var><span>string</span><p>(R7RS-small)</p></dt>
+	<dt>
+	  <code>vector->string</code><var>char-vector start</var><span>string</span></dt>
+	<dt>
+	  <code>vector->string</code><var>char-vector start end</var><span>string</span></dt>
+	<dt class="aligned" id="list2string">
+	  <code>list->string</code><var>char-list</var><span>string</span><p>(R5RS)</p></dt></div>
+      <dd>
+	These procedures return a string containing the characters of
+	the given (sub)vector or list.  The behavior of the string
+	will not be affected by subsequent mutation of the given
+	vector or list.</dd></dl></body></html>
