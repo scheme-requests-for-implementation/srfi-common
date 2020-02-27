@@ -33,25 +33,12 @@
      }
      dl.signatures>div>dt>dfn,
      dl.signatures>div>dt>p,
-     dl.signatures>div>dt>span,
-     dl.signatures>div>dt>var {
+     dl.signatures>div>dt>span {
        display: table-cell;
        white-space: nowrap;
      }
-     dl.signatures dt dfn::before {
-       content: "(";
-       font-family: sans-serif;
-       font-style: normal;
-       font-weight: normal;
-     }
-     dl.signatures dt var::after {
-       content: ")";
-       font-style: normal;
-       padding-left: 0.1em;
-     }
      dl.signatures dt>p,
-     dl.signatures dt>span,
-     dl.signatures dt>var {
+     dl.signatures dt>span {
        padding-left: 0.5em;
      }
      dl.signatures dt>dfn:first-child {
@@ -61,12 +48,6 @@
      }
      dl.signatures dt>p {
        display: inline;
-     }
-     dl.signatures dt>span {
-       font-style: italic;
-     }
-     dl.signatures dt var {
-       font-weight: normal;
      }
      h1, h2 {
        color: blue;
@@ -98,40 +79,40 @@
     <h2>Signatures</h2>
     <dl class="signatures">
       <dt id="exit">
-	<dfn>exit</dfn><var>status-code</var></dt>
+	(<dfn>exit</dfn><span><var>status-code</var>)</span></dt>
       <dd>
 	<p>Kill current process, returning <var>status-code<var>.</p></dd>
       <dt id="string2foo">
-	<dfn>string->foo</dfn><var>string</var><span> &xrarr; foo-vector</span></dt>
+	(<dfn>string->foo</dfn><span><var>string</var>)</span><span> &xrarr; foo-vector</span></dt>
       <dt id="string2quux">
-	<dfn>string->quux</dfn><var>string</var><span> &xrarr; quux-vector</span></dt>
+	(<dfn>string->quux</dfn><span><var>string</var>)</span><span> &xrarr; quux-vector</span></dt>
       <dd>
 	<p>I have no idea what these procedures do.</p></dd>
       <div>
 	<dt id="string2vector">
-	  <dfn>string->vector</dfn><var>string</var><span> &xrarr; char-vector</span><p>(R7RS-small)</p></dt>
+	  (<dfn>string->vector</dfn><span><var>string</var>)</span><span> &xrarr; char-vector</span><p>(R7RS-small)</p></dt>
 	<dt>
-	  <dfn>string->vector</dfn><var>string start</var><span> &xrarr; char-vector</span></dt>
+	  (<dfn>string->vector</dfn><span><var>string</var> <var>start</var>)</span><span> &xrarr; char-vector</span></dt>
 	<dt>
-	  <dfn>string->vector</dfn><var>string start end</var><span> &xrarr; char-vector</span></dt>
+	  (<dfn>string->vector</dfn><span><var>string</var> <var>start</var> <var>end</var>)</span><span> &xrarr; char-vector</span></dt>
 	<dt id="string2list">
-	  <dfn>string->list</dfn><var>string</var><span> &xrarr; char-list</span><p>(R7RS-small)</p></dt>
+	  (<dfn>string->list</dfn><span><var>string</var>)</span><span> &xrarr; char-list</span><p>(R7RS-small)</p></dt>
 	<dt>
-	  <dfn>string->list</dfn><var>string start</var><span> &xrarr; char-list</span></dt>
+	  (<dfn>string->list</dfn><span><var>string</var> <var>start</var>)</span><span> &xrarr; char-list</span></dt>
 	<dt>
-	  <dfn>string->list</dfn><var>string start end</var><span> &xrarr; char-list</span></dt></div>
+	  (<dfn>string->list</dfn><span><var>string</var> <var>start</var> <var>end</var>)</span><span> &xrarr; char-list</span></dt></div>
       <dd>
 	These procedures return a newly allocated (unless empty) vector or
 	list of the characters that make up the given substring.</dd>
       <div>
 	<dt id="vector2string">
-	  <dfn>vector->string</dfn><var>char-vector</var><span> &xrarr; string</span><p>(R7RS-small)</p></dt>
+	  (<dfn>vector->string</dfn><span><var>char-vector</var>)</span><span> &xrarr; string</span><p>(R7RS-small)</p></dt>
 	<dt>
-	  <dfn>vector->string</dfn><var>char-vector start</var><span> &xrarr; string</span></dt>
+	  (<dfn>vector->string</dfn><span><var>char-vector</var> <var>start</var>)</span><span> &xrarr; string</span></dt>
 	<dt>
-	  <dfn>vector->string</dfn><var>char-vector start end</var><span> &xrarr; string</span></dt>
+	  (<dfn>vector->string</dfn><span><var>char-vector</var> <var>start</var> <var>end</var>)</span><span> &xrarr; string</span></dt>
 	<dt class="aligned" id="list2string">
-	  <dfn>list->string</dfn><var>char-list</var><span> &xrarr; string</span><p>(R5RS)</p></dt></div>
+	  (<dfn>list->string</dfn><span><var>char-list</var>)</span><span> &xrarr; string</span><p>(R5RS)</p></dt></div>
       <dd>
 	These procedures return a string containing the characters of
 	the given (sub)vector or list.  The behavior of the string
