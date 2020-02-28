@@ -18,6 +18,9 @@
        margin-left: 1em;
        max-width: 46em;
      }
+     dl.signatures dt code {
+       font-weight: bold;
+     }
      dl.signatures dd {
        margin-bottom: 0.5em;
        margin-top: 0.5em;
@@ -117,4 +120,14 @@
 	These procedures return a string containing the characters of
 	the given (sub)vector or list.  The behavior of the string
 	will not be affected by subsequent mutation of the given
-	vector or list.</dd></dl></body></html>
+	vector or list.</dd>
+      <div>
+	<dt id="arg-ands">
+	  (<dfn>arg-ands</dfn><span> (<var>variable</var> <var>expr</var> ...) ...)</span><span></span><p>syntax</p></dt>
+	<dt>
+	  (<dfn>arg-ands</dfn><span> (<var>caller</var> <var>variable</var> <var>expr</var> ...) ...)</span><span></span><p>syntax</p></dt>
+	<dt>
+	  (<dfn>arg-ands</dfn><span><code>common</code> (<var>variable</var> <var>expr</var> ...) ...)</span><span></span><p>syntax</p></dt>
+	<dt>
+	  (<dfn>arg-ands</dfn><span><code>common</code> <var>caller</var> (<var>variable</var> <var>expr</var> ...) ...)</span><span></span><p>syntax</p></dt></div>
+      <dd>From SRFI 51.</dd></dl></body></html>
