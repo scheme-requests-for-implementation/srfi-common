@@ -186,13 +186,14 @@ a compact string representation compatible with Common Lisp is specified,
 which may be supported by the <code>read</code> and <code>write</code>
 procedures and by the program parser so that programs can contain
 references to literal bitvectors.</div></li>
-      <li class="card draft"><a class="card-anchor" href="srfi-177/"></a><a href="srfi-177/"><span class="number">177</span></a>: <span class="name">Portable keyword arguments</span><span class="authors">, by Lassi Kortela</span><span class="date-group">Draft: <span class="date">2019/10/16</span></span><span class="keywords" data-keywords="binding">Keywords: Binding</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-88/">SRFI 88: Keyword objects</a> and <a href="/srfi-89/">SRFI 89: Optional positional and named parameters</a>.</span><div class="abstract"><p>Many Scheme implementations have keyword arguments but they have
-not been widely standardized. This SRFI defines the macros
-<code>keyword-lambda</code> and <code>keyword-call</code>. They can be
-used identically in every major implementation currently in use,
-making it safe to use keyword arguments in portable code.  The macros
-expand to native keyword arguments in Schemes that have them, letting
-programmers mix portable code and implementation-specific code.</p></div></li>
+      <li class="card draft"><a class="card-anchor" href="srfi-177/"></a><a href="srfi-177/"><span class="number">177</span></a>: <span class="name">Portable keyword arguments</span><span class="authors">, by Lassi Kortela</span><span class="date-group">Draft: <span class="date">2019/10/16</span></span><span class="keywords" data-keywords="binding">Keywords: Binding</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-88/">SRFI 88: Keyword objects</a> and <a href="/srfi-89/">SRFI 89: Optional positional and named parameters</a>.</span><div class="abstract"><p>Many Scheme implementations have keyword arguments, but they
+have not been widely standardized. This SRFI defines the macros
+<code>lambda/kw</code> and <code>call/kw</code>. They can be used
+identically in every major implementation currently in use,
+making it safe to use keyword arguments in portable code. The
+macros expand to native keyword arguments in Schemes that have
+them, letting programmers mix portable code and
+implementation-specific code.</p></div></li>
       <li class="card final"><a class="card-anchor" href="srfi-176/"></a><a href="srfi-176/"><span class="number">176</span></a>: <span class="name">Version flag</span><span class="authors">, by Lassi Kortela</span><span class="date-group">Final: <span class="date">2020/2/24</span></span><span class="keywords" data-keywords="operating-system">Keywords: Operating System</span><span class="status" data-status="final"></span><div class="abstract"><p>This SRFI defines a standard command-line flag to get version
   information from a Scheme implementation.  The output is
   Line-oriented S-expressions which are easy to parse from Scheme, C,
