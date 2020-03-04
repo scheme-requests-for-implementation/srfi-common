@@ -1299,3 +1299,6 @@
 ((signature (program program-clause-0 program-clause ...))
  (source (srfi 7))
  (kind syntax))
+((signature (receive formals expression body))
+ (source (srfi 8))
+ (kind syntax))
