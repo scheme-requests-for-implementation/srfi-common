@@ -1,3 +1,10 @@
+((signature (cond-expand cond-expand-clause-0
+			 cond-expand-clause ...))
+ (signature (cond-expand cond-expand-clause ...
+			 (else command-or-definition ...)))
+ (literals else)
+ (source (srfi 0))
+ (kind syntax))
 ((signature (cons a d)
 	    (returns pair))
  (fragment "cons")
