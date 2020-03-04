@@ -1302,3 +1302,9 @@
 ((signature (receive formals expression body))
  (source (srfi 8))
  (kind syntax))
+((signature (define-record-type type-name
+		(constructor-name field-tag ...)
+		predicate-name
+	      field-spec ...))
+ (source (srfi 9))
+ (kind syntax))
