@@ -1296,3 +1296,6 @@
 ((signature (get-output-string output-port) (returns string))
  (source (srfi 6))
  (kind procedure))
+((signature (program program-clause-0 program-clause ...))
+ (source (srfi 7))
+ (kind syntax))
