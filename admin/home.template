@@ -122,7 +122,7 @@ href="srfi.tgz">srfi.tgz</a>.</p>
 
     <p>
       Here's a graph of the total number of SRFIs since <a href="../srfi-0">SRFI 0</a> was published
-      on 1999/1/5:</p>
+      on 1999-01-05:</p>
 
     <object type="image/svg+xml" data="srfi.svg" width="100%"></object>
 

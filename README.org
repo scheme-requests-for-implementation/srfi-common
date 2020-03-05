@@ -30,7 +30,7 @@ official Scheme standards, including [[http://www.r6rs.org/][R6RS]] and [[http:/
 running [[https://srfi.schemers.org/srfi-history.html][since 1998]], and there have been many [[https://srfi.schemers.org/srfi-editors.html][different editors]].
 
 Here's a graph of the total number of SRFIs since [[https://srfi.schemers.org/srfi-0][SRFI 0]] was published
-on 1999/1/5:
+on 1999-01-05:
 
 #+ATTR_HTML: :width 100%
 [[file:srfi.svg]]

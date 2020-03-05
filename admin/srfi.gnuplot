@@ -9,7 +9,7 @@ set tics font "Arial,10"
 set timefmt "%Y-%m-%d"
 set title "Cumulative SRFIs"
 set xdata time
-set xtics "1998-1-1",31557600,"2020-12-31" nomirror rotate by -45
+set xtics "1998-01-01",31557600,"2020-12-31" nomirror rotate by -45
 unset border
 show grid
 plot "/tmp/srfi-all.dat" using 1:2 title "all" with lines ls 1, \
