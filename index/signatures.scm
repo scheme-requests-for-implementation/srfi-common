@@ -2249,3 +2249,6 @@
 ((signature (fluid-let bindings body))
  (source (srfi 15))
  (kind syntax))
+((signature (case-lambda clause ...))
+ (source (srfi 16))
+ (kind syntax))
