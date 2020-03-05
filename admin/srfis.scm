@@ -12,12 +12,14 @@
   "https://api.github.com/orgs/scheme-requests-for-implementation/repos")
 
 (define-record-type srfi
-    (make-srfi number status title authors see-also keywords done-date draft-date)
+    (make-srfi number status title authors based-on see-also keywords
+     done-date draft-date)
     srfi?
   (number     srfi/number)
   (status     srfi/status)
   (title      srfi/title)
-  (authors    srfi/authors)		; <> Consider making this a list.
+  (authors    srfi/authors)
+  (based-on   srfi/based-on)
   (see-also   srfi/see-also)
   (keywords   srfi/keywords)
   (done-date  srfi/done-date)
@@ -37,8 +39,9 @@
   (make-srfi (srfi-attribute alist 'number)
 	     (srfi-attribute alist 'status)
 	     (srfi-attribute alist 'title)
-	     (srfi-attribute alist 'authors)
-	     (srfi-attribute alist 'see-also 'multiple)
+	     (srfi-attribute alist 'author 'multiple-distinct)
+             (srfi-attribute alist 'based-on 'multiple 'optional)
+	     (srfi-attribute alist 'see-also 'multiple 'optional)
 	     (srfi-attribute alist 'keywords 'multiple)
 	     (srfi-attribute alist 'done-date #f 'optional)
 	     (srfi-attribute alist 'draft-date)))
@@ -52,14 +55,22 @@
 	      (reverse! accumulator)
 	      (next (cons (alist->srfi record) accumulator))))))))
 
-(define (srfi-attribute alist name #!optional multiple? optional?)
-  (let ((multiple? (if (default-object? multiple?) #f multiple?))
-	(optional? (if (default-object? optional?) #f optional?)))
-    (cond ((assq name alist)
-	   => (lambda (a)
-		(if multiple? (cdr a) (cadr a))))
-	  (optional? #f)
-	  (else (error "Missing required attribute." name alist)))))
+(define (srfi-attribute alist name #!optional multiple optional?)
+  (let ((multiple  (if (default-object? multiple)  #f multiple))
+        (optional? (if (default-object? optional?) #f optional?))
+        (matches   (filter (lambda (entry) (eq? name (car entry)))
+                           alist)))
+    (when (and (null? matches) (not optional?))
+      (error "Missing required attribute." name alist))
+    (case multiple
+      ((#f)
+       (unless (and (= 1 (length matches)) (= 2 (length (car matches))))
+         (error "Duplicate property." name alist)))
+      ((multiple)
+       (append-map cdr matches))
+      ((multiple-distinct)
+       (map cdr matches))
+      (else (error "Bad argument")))))
 
 (define srfi-keywords
   '(("algorithm" "Algorithm")

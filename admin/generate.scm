@@ -98,6 +98,16 @@
   (read-entire-file
    (format #f "$ss/srfi-common/admin/abstracts/~A.html" n)))
 
+(define (format-srfi-authors authors)
+  (string-join-english
+   (map (lambda (author)
+          (let ((author-name (car author)))
+            (if (null? (cdr author))
+                author-name
+                (let ((author-role (cadr author)))
+                  (string-append author-name " (" author-role ")")))))
+        authors)))
+
 (define (write-single-srfi-index-page srfi)
   (let* ((number (srfi/number srfi))
 	 (abstract (srfi-abstract number))
@@ -110,6 +120,7 @@
 	 (status (srfi/status srfi))
 	 (title (srfi/title srfi))
 	 (authors (srfi/authors srfi))
+         (based-on (srfi/based-on srfi))
 	 (pathname (format #f "srfi-~A/index.html" number)))
     (with-output-to-file pathname
       (lambda ()
