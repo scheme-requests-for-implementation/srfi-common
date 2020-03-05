@@ -67,9 +67,19 @@ of `string', in order, having divided `string' wherever
 		      (next-index (re-match-end-index 0 registers)))
 		(list (transform (substring string index size)))))))))
 
-(define (parse-y/m/d date-string)
+(define (ymd->iso-date-string ymd)
+  (define (pad digits num)
+    (let* ((num (number->string num))
+           (pad (max 0 (- digits (string-length num)))))
+      (string-append (make-string pad #\0) num)))
+  (let ((y (list-ref ymd 0))
+        (m (list-ref ymd 1))
+        (d (list-ref ymd 2)))
+    (string-append (pad 4 y) "-" (pad 2 m) "-" (pad 2 d))))
+
+(define (parse-iso-date date-string)
   (let ((date-list
-	 (split-string-transform date-string "/" string->number)))
+	 (split-string-transform date-string "-" string->number)))
     (make-absolute-date
      (cadr date-list)
      (caddr date-list)
@@ -79,7 +89,7 @@ of `string', in order, having divided `string' wherever
   (fold-right
    (lambda (s accumulator)
      (if (date s)
-	 (cons (parse-y/m/d (date s)) accumulator)
+	 (cons (parse-iso-date (date s)) accumulator)
 	 accumulator))
    '()
    (filter (lambda (s) (select (srfi/status s))) srfis)))
@@ -115,12 +125,7 @@ of `string', in order, having divided `string' wherever
 	  ((null? counts))
 	(let ((c (car counts))
 	      (ymd (absolute->year-month-day (+ i start-date))))
-	  (format #t
-		  "~A/~A/~A ~A~%"
-		  (car ymd)
-		  (cadr ymd)
-		  (caddr ymd)
-		  c))))))
+          (format #t "~A ~A~%" (ymd->iso-date-string ymd) c))))))
 
 (define (write-srfi-data)
   (let* ((done-dates (srfi-dates srfi/done-date (lambda (s) #t)))
