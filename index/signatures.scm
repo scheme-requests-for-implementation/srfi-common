@@ -1997,7 +1997,6 @@
  (fragment "char-set:full")
  (source (srfi 14))
  (kind other))
-
 ((signature (char-set? obj)
 	    (returns boolean))
  (fragment "char-set-p")
@@ -2247,4 +2246,6 @@
  (fragment "char-set-diff+intersection!")
  (source (srfi 14))
  (kind procedure))
-
+((signature (fluid-let bindings body))
+ (source (srfi 15))
+ (kind syntax))
