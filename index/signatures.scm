@@ -1,3 +1,8 @@
+;; I've included identifiers from some SRFIs that are in "withdrawn" status.
+;; Those can be filtered out using the status in "srfi-data.scm", if desired, so
+;; I'm going to leave them in the database.  However, to save effort, I'm not
+;; going to add any more withdrawn SRFIs.
+
 ((signature (cond-expand cond-expand-clause-0
 			 cond-expand-clause ...))
  (signature (cond-expand cond-expand-clause ...
