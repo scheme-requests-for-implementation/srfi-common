@@ -1147,7 +1147,7 @@
  (author "John Cowan")
  (based-on "Based on SRFI 32 by Olin Shivers.")
  (library-name sorting)
- (see-also)
+ (see-also 32)
  (keywords "algorithm")
  (draft-date "2015-12-09")
  (done-date "2016-04-20"))
