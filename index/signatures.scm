@@ -3056,3 +3056,7 @@
 	    (returns (or string #f)))
  (source (srfi 29))
  (kind procedure))
+((signature (rec variable expression))
+ (signature (rec (variable-0 variable ...) body))
+ (source (srfi 31))
+ (kind syntax))
