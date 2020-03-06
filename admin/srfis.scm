@@ -13,7 +13,7 @@
 
 (define-record-type srfi
     (make-srfi number status title authors based-on see-also keywords
-     done-date draft-date)
+	       done-date draft-date)
     srfi?
   (number     srfi/number)
   (status     srfi/status)
@@ -40,7 +40,7 @@
 	     (srfi-attribute alist 'status)
 	     (srfi-attribute alist 'title)
 	     (srfi-attribute alist 'author 'multiple-distinct)
-             (srfi-attribute alist 'based-on 'multiple 'optional)
+             (srfi-attribute alist 'based-on #f 'optional)
 	     (srfi-attribute alist 'see-also 'multiple 'optional)
 	     (srfi-attribute alist 'keywords 'multiple)
 	     (srfi-attribute alist 'done-date #f 'optional)
@@ -64,12 +64,15 @@
       (error "Missing required attribute." name alist))
     (case multiple
       ((#f)
-       (unless (and (= 1 (length matches)) (= 2 (length (car matches))))
-         (error "Duplicate property." name alist)))
-      ((multiple)
-       (append-map cdr matches))
-      ((multiple-distinct)
-       (map cdr matches))
+       (cond (optional? (if (null? matches) #f (cadar matches)))
+	     (else
+	      (unless (or (null? matches)
+			  (and (= 1 (length matches))
+			       (= 2 (length (car matches)))))
+		(error "Duplicate property." name alist))
+	      (cadar matches))))
+      ((multiple) (append-map cdr matches))
+      ((multiple-distinct) (map cdr matches))
       (else (error "Bad argument")))))
 
 (define srfi-keywords
@@ -97,8 +100,8 @@
     ("parameters" "Parameters")
     ("pattern-matching" "Pattern Matching")
     ("reader-syntax" "Reader Syntax")
-    ("superseded" "Superseded")	; This one is of a different category
-				; than the rest.
+    ("superseded" "Superseded")		; This one is of a different category
+					; than the rest.
     ("syntax" "Syntax")
     ("testing" "Testing")
     ("type-checking" "Type Checking")))

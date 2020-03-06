@@ -21,6 +21,7 @@
   <body>
     <h1>SRFI <*<number>*>: <*<title>*></h1>
     <p class="authors">by <*<authors>*></p>
+    <p class="based-on"><*<based-on>*></p>
     <p class="status">status: <em><*<status>*></em> (<*<date>*>)</p><*<see-also>*>
 
     <ul class="info">

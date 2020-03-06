@@ -120,13 +120,13 @@
 	 (status (srfi/status srfi))
 	 (title (srfi/title srfi))
 	 (authors (srfi/authors srfi))
-         (based-on (srfi/based-on srfi))
 	 (pathname (format #f "srfi-~A/index.html" number)))
     (with-output-to-file pathname
       (lambda ()
 	(invoke-template index-template
 			 `((abstract ,abstract)
-			   (authors ,authors)
+			   (authors ,(format-srfi-authors authors))
+			   (based-on ,(or (srfi/based-on srfi) ""))
 			   (date ,date)
 			   (email-archives ,archives)
 			   (number ,number)
@@ -153,7 +153,10 @@
 		   (sort others <)))))))))
 
 (define (write-single-srfi-readme srfi)
-  (let* ((number (srfi/number srfi))
+  (let* ((based-on (cond ((srfi/based-on srfi)
+			  => (lambda (s) (string-append s "\n\n")))
+			 (else "")))
+	 (number (srfi/number srfi))
 	 (status (srfi/status srfi))
 	 (title (srfi/title srfi))
 	 (authors (srfi/authors srfi))
@@ -161,7 +164,8 @@
     (with-output-to-file pathname
       (lambda ()
 	(invoke-template readme-template
-			 `((authors ,authors)
+			 `((authors ,(format-srfi-authors authors))
+			   (based-on ,based-on)
 			   (number ,number)
 			   (see-also ,(see-also-text srfi))
 			   (status ,status)
@@ -245,7 +249,8 @@ and \", and\" otherwise."
     (invoke-template
      srfi-card-template
      `((abstract ,(srfi-abstract n))
-       (authors ,(srfi/authors srfi))
+       (authors ,(format-srfi-authors (srfi/authors srfi)))
+       (based-on ,(or (srfi/based-on srfi) ""))
        (date ,(srfi-date-to-show srfi))
        (date-type ,(status->name status))
        (keyword-names ,(string-join ", " (map keyword->name keywords)))
