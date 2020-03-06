@@ -2942,3 +2942,6 @@
 ((signature (uncaught-exception-reason exc))
  (source (srfi 21))
  (kind procedure))
+((signature (error reason arg ...))
+ (source (srfi 23))
+ (kind procedure))
