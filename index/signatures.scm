@@ -3021,3 +3021,6 @@
 ((signature (random-source-make-reals s unit) (returns rand))
  (source (srfi 27))
  (kind procedure))
+((signature (format format-string obj ...) (returns string))
+ (source (srfi 28))
+ (kind procedure))
