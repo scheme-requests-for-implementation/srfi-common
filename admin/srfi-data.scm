@@ -1608,6 +1608,7 @@
  (status draft)
  (title "Transcoders and transcoded ports")
  (author "John Cowan")
+ (based-on "Based on R6RS.")
  (see-also 181)
  (keywords "i/o")
  (draft-date "2020-03-09"))
