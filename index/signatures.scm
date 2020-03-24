@@ -3576,7 +3576,8 @@
  (fragment "reverse-list-to-vector")
  (source (srfi 43))
  (kind procedure))
-
+
+SRFI 44
 collection-fold-left collection fold-function seed ...
 %-fold-left % fold-function seed ... => seed ...
 collection-fold-right collection fold-function seed ...
@@ -3747,13 +3748,13 @@ list-insert! list index value => list
 list-delete-at list index => list
 list-delete-at! list index => list
 make-alist-map [equivalence-function] => alist-map
-alist-map [equivalence-function] (key . value) ... =>
+alist-map [equivalence-function] (key . value) ... => alist-map
 alist-map-fold-left alist-map fold-function seeds ...
 alist-map-fold-right alist-map fold-function seeds ...
 alist-map-fold-keys-left alist-map fold-function seeds
 alist-map-fold-keys-right alist-map fold-function seeds
 alist-map-equivalence-function alist-map => procedure
-alist-map-key-equivalence-function alist-map =>
+alist-map-key-equivalence-function alist-map => procedure
 alist-map-count alist-map value => exact integer
 alist-map-key-count alist-map value => exact integer
 alist-map-contains-key? alist-map value => boolean
@@ -3767,10 +3768,10 @@ alist-map-get alist-map key => value
 alist-map-get-all alist-map key => list
 alist-map-put alist-map key value => alist-map value
 alist-map-put! alist-map key value => alist-map value
-alist-map-replace-all alist-map key value ... =>
-alist-map-replace-all! alist-map key value ... =>
-alist-map-update alist-map key func [absence-thunk]=>
-alist-map-update! alist-map key func [absence-thunk]=>
+alist-map-replace-all alist-map key value ... => alist-map
+alist-map-replace-all! alist-map key value ... => alist-map
+alist-map-update alist-map key func [absence-thunk]=> alist-map
+alist-map-update! alist-map key func [absence-thunk]=> alist-map
 alist-map-update-all alist-map key func
 alist-map-update-all! alist-map key func
 alist-map-delete alist-map key => alist-map
@@ -3787,8 +3788,8 @@ alist-map-add-from alist-map dict => alist-map
 alist-map-add-from! alist-map dict => alist-map
 make-vector size [default] => vector
 vector value ... => vector
-vector-fold-left vector fold-function seeds ... =>
-vector-fold-right vector fold-function seeds ... =>
+vector-fold-left vector fold-function seeds ... => seeds ...
+vector-fold-right vector fold-function seeds ... => seeds ...
 vector-equivalence-function vector => procedure
 vector-copy vector [start [end]] => vector
 vector->list vector => list
@@ -3808,8 +3809,8 @@ vector-replace-from! dest-start source-vector
 vector= elt= vectors ... => boolean
 make-string size [default-character] => string
 string character ... => string
-string-fold-left string fold-function seeds ... =>
-string-fold-right string fold-function seeds ... =>
+string-fold-left string fold-function seeds ... => seeds ...
+string-fold-right string fold-function seeds ... => seeds ...
 string-equivalence-function string => procedure
 string-copy string [start [end]]=> string
 string->list string => list
