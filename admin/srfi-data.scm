@@ -1624,6 +1624,6 @@
  (status draft)
  (title "Splicing binding constructs for syntactic keywords")
  (author "Marc Nieper-Wißkirchen")
- (see-also 93 148)
+ (see-also 93 188)
  (keywords  "syntax")
  (draft-date "2020-03-25"))
