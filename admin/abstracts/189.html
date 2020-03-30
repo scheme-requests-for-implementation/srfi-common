@@ -1,0 +1,13 @@
+<p>This SRFI defines two disjoint immutable container types
+known as Maybe and Either,
+both of which can contain at most one object known as their payload.
+A Maybe object is either a Just object or the unique object Nothing
+(which has no payload); an Either object is either
+a Right object or a Left object.  Maybe represents the concept of an
+optional value; Either represents the concept of a value which is
+either correct (Right) or an error (Left).</p>
+<p>Note that the terms Maybe, Just, Nothing, Either, Right, and Left
+are capitalized in this SRFI so as not to be confused with their
+ordinary use as English words.  Thus &quot;returns Nothing&quot; means
+&quot;returns the unique Nothing object&quot;; &quot;returns nothing&quot; could be
+interpreted as &quot;returns no values&quot;.</p>
