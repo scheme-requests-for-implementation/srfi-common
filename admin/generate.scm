@@ -279,7 +279,8 @@ and \", and\" otherwise."
     (with-output-to-file "$ss/srfi-common/index.html"
       (lambda ()
 	(invoke-template home-template
-			 `((keyword-options ,(keyword-options))
+			 `((keyword-count ,(1+ (length srfi-keywords)))
+			   (keyword-options ,(keyword-options))
 			   (srfi-list ,srfi-list)))))))
 
 (define (write-srfi-subscribe-form name description)

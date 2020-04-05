@@ -79,17 +79,19 @@
         <div>
           <span>Filter by </span>
           <div class="dropdown" id="statuses">
-            <button class="controls">status</button>
+            <button class="controls">status<span> ×</span></button>
             <div class="options">
-              <select multiple size="3">
-                <option class="draft" value="draft">Draft</option>
-                <option class="final" value="final">Final</option>
-                <option class="withdrawn" value="withdrawn">Withdrawn</option></select></div>
+              <select multiple size="4">
+                <option selected value="any">any</option>
+                <option value="draft">Draft</option>
+                <option value="final">Final</option>
+                <option value="withdrawn">Withdrawn</option></select></div>
             <span class="chosen"></span></div>
           <div class="dropdown" id="keywords">
-            <button class="controls">keywords</button>
+            <button class="controls">keywords<span> ×</span></button>
             <div class="options">
-              <select multiple size="27"><*<keyword-options>*></select></div>
+              <select multiple size="<*<keyword-count>*>">
+                <option selected value="any">any</option><*<keyword-options>*></select></div>
             <span class="chosen"></span></div></div>
         <div>
           <span>Show</span>

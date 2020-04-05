@@ -143,8 +143,6 @@ p a {
   text-align: left;
 }
 .controls:focus {
-  background-color: #88cc88;
-  color: black;
   outline: none;
 }
 .controls:hover {
@@ -211,12 +209,37 @@ p a {
   position: absolute;
   z-index: 1;
 }
+.dropdown option {
+  border: solid 1px white;
+}
 .dropdown select {
   overflow-y: auto;
-  width: 12em;
+  width: 16em;
+}
+.dropdown button span {
+  display: none;
+}
+.dropdown.show-options button span {
+  display: inline;
+  float: right;
+  font-weight: bold;
 }
 .dropdown.show-options .options {
   display: block;
+}
+option:hover {
+  background: lightblue;
+}
+option:hover:before {
+  font-weight: bold;
+}
+option:checked:before {
+  content: "☑ ";
+  font-style: normal;
+}
+option:not(checked):before {
+  content: "☐ ";
+  font-style: normal;
 }
 #parameters,
 noscript p {

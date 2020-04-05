@@ -6,18 +6,23 @@ h2 {
   font-size: 120%;
 }
 option {
-  border: solid 1px lightgrey;
-  border-radius: 10px;
-  border-left-width: 15px;
   font-size: 150%;
 }
-option.draft {
+#statuses option {
+  border: solid 1px white;
+  border-radius: 10px;
+  border-left-width: 15px;
+}
+#statuses option[value="any"] {
+  font-style: italic;
+}
+#statuses option[value="draft"] {
   border-left-color: #55aa55;
 }
-option.final {
+#statuses option[value="final"] {
   border-left-color: purple;
 }
-option.withdrawn {
+#statuses option[value="withdrawn"] {
   border-left-color: lightgray;
 }
 .posts h2 {

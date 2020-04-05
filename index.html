@@ -79,45 +79,47 @@
         <div>
           <span>Filter by </span>
           <div class="dropdown" id="statuses">
-            <button class="controls">status</button>
+            <button class="controls">status<span> ×</span></button>
             <div class="options">
-              <select multiple size="3">
-                <option class="draft" value="draft">Draft</option>
-                <option class="final" value="final">Final</option>
-                <option class="withdrawn" value="withdrawn">Withdrawn</option></select></div>
+              <select multiple size="4">
+                <option selected value="any">any</option>
+                <option value="draft">Draft</option>
+                <option value="final">Final</option>
+                <option value="withdrawn">Withdrawn</option></select></div>
             <span class="chosen"></span></div>
           <div class="dropdown" id="keywords">
-            <button class="controls">keywords</button>
+            <button class="controls">keywords<span> ×</span></button>
             <div class="options">
-              <select multiple size="27">
-                    <option value="algorithm">Algorithm</option>
-                    <option value="arithmetic">Arithmetic</option>
-                    <option value="assignment">Assignment</option>
-                    <option value="binding">Binding</option>
-                    <option value="comparison">Comparison</option>
-                    <option value="concurrency">Concurrency</option>
-                    <option value="continuations">Continuations</option>
-                    <option value="control-flow">Control Flow</option>
-                    <option value="data-structure">Data Structure</option>
-                    <option value="error-handling">Error Handling</option>
-                    <option value="exceptions">Exceptions</option>
-                    <option value="features">Features</option>
-                    <option value="i/o">I/O</option>
-                    <option value="internationalization">Internationalization</option>
-                    <option value="introspection">Introspection</option>
-                    <option value="lazy-evaluation">Lazy Evaluation</option>
-                    <option value="miscellaneous">Miscellaneous</option>
-                    <option value="modules">Modules</option>
-                    <option value="multiple-value-returns">Multiple Value Returns</option>
-                    <option value="operating-system">Operating System</option>
-                    <option value="optimization">Optimization</option>
-                    <option value="parameters">Parameters</option>
-                    <option value="pattern-matching">Pattern Matching</option>
-                    <option value="reader-syntax">Reader Syntax</option>
-                    <option value="superseded">Superseded</option>
-                    <option value="syntax">Syntax</option>
-                    <option value="testing">Testing</option>
-                    <option value="type-checking">Type Checking</option></select></div>
+              <select multiple size="29">
+                <option selected value="any">any</option>
+                <option value="algorithm">Algorithm</option>
+                <option value="arithmetic">Arithmetic</option>
+                <option value="assignment">Assignment</option>
+                <option value="binding">Binding</option>
+                <option value="comparison">Comparison</option>
+                <option value="concurrency">Concurrency</option>
+                <option value="continuations">Continuations</option>
+                <option value="control-flow">Control Flow</option>
+                <option value="data-structure">Data Structure</option>
+                <option value="error-handling">Error Handling</option>
+                <option value="exceptions">Exceptions</option>
+                <option value="features">Features</option>
+                <option value="i/o">I/O</option>
+                <option value="internationalization">Internationalization</option>
+                <option value="introspection">Introspection</option>
+                <option value="lazy-evaluation">Lazy Evaluation</option>
+                <option value="miscellaneous">Miscellaneous</option>
+                <option value="modules">Modules</option>
+                <option value="multiple-value-returns">Multiple Value Returns</option>
+                <option value="operating-system">Operating System</option>
+                <option value="optimization">Optimization</option>
+                <option value="parameters">Parameters</option>
+                <option value="pattern-matching">Pattern Matching</option>
+                <option value="reader-syntax">Reader Syntax</option>
+                <option value="superseded">Superseded</option>
+                <option value="syntax">Syntax</option>
+                <option value="testing">Testing</option>
+                <option value="type-checking">Type Checking</option></select></div>
             <span class="chosen"></span></div></div>
         <div>
           <span>Show</span>

@@ -159,6 +159,9 @@ function updateMultiSelect(control, values) {
   };
   control.querySelector(".chosen").innerHTML =
     choiceEnglish(names);
+  if (set.size == 0) {
+    control.querySelector("[value=\"any\"]").selected = true;
+  }
 }
 
 function srfiCards() {
@@ -288,7 +291,7 @@ function enableMultiSelect(control, update) {
           .filter(s => s.selected)
           .map(s => s.value);
 
-      update(values);
+      update(values.includes("any") ? [] : values);
     });
 }
 
