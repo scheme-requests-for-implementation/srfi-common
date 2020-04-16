@@ -175,14 +175,15 @@ Scheme port system from below, allowing the creation of textual ports
 that provide non-default encoding and decoding from arbitrary binary
 ports.  It has been lightly edited to fit R7RS style.</p></div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-185/"></a><a href="srfi-185/"><span class="number">185</span></a>: <span class="name">Linear adjustable-size strings</span><span class="authors">, by John Cowan</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-02-24</span></span><span class="keywords" data-keywords="data-structure">Keywords: Data Structure</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-13/">SRFI 13: String Libraries</a>, <a href="/srfi-118/">SRFI 118: Simple adjustable-size strings</a>, <a href="/srfi-130/">SRFI 130: Cursor-based string library</a>, <a href="/srfi-140/">SRFI 140: Immutable Strings</a>, and <a href="/srfi-152/">SRFI 152: String Library (reduced)</a>.</span><div class="abstract"><p>
-Scheme specifies mutable fixed-size strings.
+Scheme specifies mutable fixed-length strings.
 <a href="https://srfi.schemers.org/srfi-118/srfi-118.html">SRFI 118</a>
 adds two procedures <code>string-append!</code> and
-<code>string-replace!</code> which allow the size of the string to change.
+<code>string-replace!</code> which allow the length of the string to change.
 This SRFI provides two linear-update versions of these procedures:
-that is, the implementation may change the string size or return a
+that is, the implementation may change the string length or return a
 new string instead.
-</div></li>
+In addition, two convenience macros are provided that make the
+procedures somewhat easier to use.</div></li>
       <li class="card withdrawn"><a class="card-anchor" href="srfi-184/"></a><a href="srfi-184/"><span class="number">184</span></a>: <span class="name">define-record-lambda</span><span class="authors">, by Joo ChurlSoo</span><span class="based-on"></span><span class="date-group">Withdrawn: <span class="date">2020-03-27</span></span><span class="keywords" data-keywords="data-structure">Keywords: Data Structure</span><span class="status" data-status="withdrawn"></span><span class="see-also">See also <a href="/srfi-9/">SRFI 9: Defining Record Types</a> and <a href="/srfi-100/">SRFI 100: define-lambda-object</a>.</span><div class="abstract"><p>This SRFI introduces a macro, DEFINE-RECORD-LAMBDA, that defines a
   set of procedures, that is, a group of constructors and a predicate.
   The constructors also make a group of procedures, namely record
