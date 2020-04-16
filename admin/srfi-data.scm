@@ -1602,7 +1602,7 @@
  (done-date "2020-03-27"))
 ((number 185)
  (status draft)
- (title "Linear adjustable-size strings")
+ (title "Linear adjustable-length strings")
  (author "John Cowan")
  (see-also 13 118 130 140 152)
  (keywords "data-structure")
