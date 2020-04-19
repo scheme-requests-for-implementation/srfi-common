@@ -1,3 +1,7 @@
+.abstract a,
+.see-also a {
+  position: relative;
+}
 .authors,
 .based-on,
 .status {
@@ -124,9 +128,6 @@ p a {
 .search:focus {
   border-color: #aaa;
   outline: none;
-}
-.see-also a {
-  position: relative;
 }
 .controls {
   background-color: #116611;
