@@ -185,8 +185,8 @@ ports.  It has been lightly edited to fit R7RS style.</p></div></li>
       <li class="card final"><a class="card-anchor" href="srfi-185/"></a><a href="srfi-185/"><span class="number">185</span></a>: <span class="name">Linear adjustable-length strings</span><span class="authors">, by John Cowan</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2020-04-26</span></span><span class="keywords" data-keywords="data-structure">Keywords: Data Structure</span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-13/">SRFI 13: String Libraries</a>, <a href="/srfi-118/">SRFI 118: Simple adjustable-size strings</a>, <a href="/srfi-130/">SRFI 130: Cursor-based string library</a>, <a href="/srfi-140/">SRFI 140: Immutable Strings</a>, and <a href="/srfi-152/">SRFI 152: String Library (reduced)</a>.</span><div class="abstract"><p>
 Scheme specifies mutable fixed-length strings.
 <a href="https://srfi.schemers.org/srfi-118/srfi-118.html">SRFI 118</a>
-adds two procedures <code>string-append!</code> and
-<code>string-replace!</code> which allow the length of the string to change.
+adds two procedures, <code>string-append!</code> and
+<code>string-replace!</code>, which allow the length of the string to change.
 This SRFI provides two linear-update versions of these procedures:
 that is, the implementation may change the string length or return a
 new string instead.
