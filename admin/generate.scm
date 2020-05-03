@@ -117,6 +117,7 @@
 	   `((number ,number)
 	     (prefix ""))))
 	 (date (srfi-date-to-show srfi))
+	 (keywords (srfi/keywords srfi))
 	 (status (srfi/status srfi))
 	 (title (srfi/title srfi))
 	 (authors (srfi/authors srfi))
@@ -129,6 +130,8 @@
 			   (based-on ,(or (srfi/based-on srfi) ""))
 			   (date ,date)
 			   (email-archives ,archives)
+			   (keyword-names
+			    ,(string-join ", " (map keyword->name keywords)))
 			   (number ,number)
 			   (see-also ,(see-also-html srfi))
 			   (status ,status)
@@ -156,6 +159,7 @@
   (let* ((based-on (cond ((srfi/based-on srfi)
 			  => (lambda (s) (string-append s "\n\n")))
 			 (else "")))
+	 (keywords (srfi/keywords srfi))
 	 (number (srfi/number srfi))
 	 (status (srfi/status srfi))
 	 (title (srfi/title srfi))
@@ -166,6 +170,8 @@
 	(invoke-template readme-template
 			 `((authors ,(format-srfi-authors authors))
 			   (based-on ,based-on)
+			   (keyword-names
+			    ,(string-join ", " (map keyword->name keywords)))
 			   (number ,number)
 			   (see-also ,(see-also-text srfi))
 			   (status ,status)
