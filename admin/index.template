@@ -23,7 +23,7 @@
     <p class="authors">by <*<authors>*></p>
     <p class="based-on"><*<based-on>*></p>
     <p class="status">status: <em><*<status>*></em> (<*<date>*>)</p>
-    <p class="keywords">keywords: <*<keyword-names>*></p><*<see-also>*>
+    <p class="keywords">keywords: <*<keyword-links>*></p><*<see-also>*>
 
     <ul class="info">
       <li><a href="srfi-<*<number>*>.html">The SRFI Document</a></li>

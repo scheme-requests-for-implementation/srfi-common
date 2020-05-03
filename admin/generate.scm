@@ -108,6 +108,23 @@
                   (string-append author-name " (" author-role ")")))))
         authors)))
 
+(define (keyword->name keyword)
+  (let ((a (assq keyword srfi-keywords)))
+    (assert a "No such keyword.")
+    (cadr a)))
+
+(define (keyword->link keyword)
+  (format #f
+	  "<a href=\"https://srfi.schemers.org/?keywords=~A\">~A</a>"
+	  keyword
+	  (keyword->name keyword)))
+
+(define (keyword->org-link keyword)
+  (format #f
+	  "[[https://srfi.schemers.org/?keywords=~A][~A]]"
+	  keyword
+	  (keyword->name keyword)))
+
 (define (write-single-srfi-index-page srfi)
   (let* ((number (srfi/number srfi))
 	 (abstract (srfi-abstract number))
@@ -130,8 +147,9 @@
 			   (based-on ,(or (srfi/based-on srfi) ""))
 			   (date ,date)
 			   (email-archives ,archives)
-			   (keyword-names
-			    ,(string-join ", " (map keyword->name keywords)))
+			   (keyword-links
+			    ,(string-join ", "
+					  (map keyword->org-link keywords)))
 			   (number ,number)
 			   (see-also ,(see-also-html srfi))
 			   (status ,status)
@@ -171,7 +189,8 @@
 			 `((authors ,(format-srfi-authors authors))
 			   (based-on ,based-on)
 			   (keyword-names
-			    ,(string-join ", " (map keyword->name keywords)))
+			    ,(string-join ", "
+					  (map keyword->org-link keywords)))
 			   (number ,number)
 			   (see-also ,(see-also-text srfi))
 			   (status ,status)
@@ -243,11 +262,6 @@ and \", and\" otherwise."
 	      (map (lambda (n) (srfi-anchor-fragment (srfi-assoc n srfis)))
 		   (sort others <)))))))))
 
-(define (keyword->name value)
-  (let ((a (assq value srfi-keywords)))
-    (assert a "No such keyword.")
-    (cadr a)))
-
 (define (write-srfi-card srfi)
   (let ((n (srfi/number srfi))
 	(keywords (srfi/keywords srfi))
@@ -259,7 +273,7 @@ and \", and\" otherwise."
        (based-on ,(or (srfi/based-on srfi) ""))
        (date ,(srfi-date-to-show srfi))
        (date-type ,(status->name status))
-       (keyword-names ,(string-join ", " (map keyword->name keywords)))
+       (keyword-links ,(string-join ", " (map keyword->link keywords)))
        (keyword-values ,(string-join "," (map symbol->string keywords)))
        (name ,(srfi/title srfi))
        (number ,n)

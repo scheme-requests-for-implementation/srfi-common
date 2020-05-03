@@ -1,4 +1,5 @@
 .abstract a,
+.keywords a,
 .see-also a {
   position: relative;
 }
