@@ -100,6 +100,7 @@
     ("parameters" "Parameters")
     ("pattern-matching" "Pattern Matching")
     ("reader-syntax" "Reader Syntax")
+    ("r6rs-process" "part of R6RS process")
     ("superseded" "Superseded")		; This one is of a different category
 					; than the rest.
     ("syntax" "Syntax")
