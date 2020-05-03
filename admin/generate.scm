@@ -148,8 +148,7 @@
 			   (date ,date)
 			   (email-archives ,archives)
 			   (keyword-links
-			    ,(string-join ", "
-					  (map keyword->org-link keywords)))
+			    ,(string-join ", " (map keyword->link keywords)))
 			   (number ,number)
 			   (see-also ,(see-also-html srfi))
 			   (status ,status)
