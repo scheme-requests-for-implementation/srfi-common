@@ -1,12 +1,16 @@
 .abstract a,
-.keywords a,
+p.keywords a,
 .see-also a {
   position: relative;
 }
 .authors,
 .based-on,
+p.keywords,
 .status {
   color: grey;
+}
+p.keywords {
+  font-weight: bold;
 }
 .card {
   padding: 10px;
@@ -29,7 +33,7 @@
   z-index: 0;
 }
 .date-group,
-.keywords {
+span.keywords {
   color: grey;
   display: block;
   font-size: 80%;
