@@ -238,7 +238,7 @@ and \", and\" otherwise."
 		   (sort others <)))))))))
 
 (define (keyword->name value)
-  (let ((a (assoc value srfi-keywords)))
+  (let ((a (assq value srfi-keywords)))
     (assert a "No such keyword.")
     (cadr a)))
 
@@ -254,7 +254,7 @@ and \", and\" otherwise."
        (date ,(srfi-date-to-show srfi))
        (date-type ,(status->name status))
        (keyword-names ,(string-join ", " (map keyword->name keywords)))
-       (keyword-values ,(string-join "," keywords))
+       (keyword-values ,(string-join "," (map symbol->string keywords)))
        (name ,(srfi/title srfi))
        (number ,n)
        (see-also ,(see-also-html srfi))
