@@ -101,6 +101,7 @@
     (pattern-matching "Pattern Matching")
     (reader-syntax "Reader Syntax")
     (r6rs-process "R6RS process")
+    (randomness "Randomness")
     (superseded "Superseded")
     (syntax "Syntax")
     (testing "Testing")
