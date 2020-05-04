@@ -90,7 +90,7 @@
           <div class="dropdown" id="keywords">
             <button class="controls">keywords<span> ×</span></button>
             <div class="options">
-              <select multiple size="30">
+              <select multiple size="31">
                 <option selected value="any">any</option>
                 <option value="algorithm">Algorithm</option>
                 <option value="arithmetic">Arithmetic</option>
@@ -117,6 +117,7 @@
                 <option value="pattern-matching">Pattern Matching</option>
                 <option value="reader-syntax">Reader Syntax</option>
                 <option value="r6rs-process">R6RS process</option>
+                <option value="randomness">Randomness</option>
                 <option value="superseded">Superseded</option>
                 <option value="syntax">Syntax</option>
                 <option value="testing">Testing</option>
@@ -129,6 +130,12 @@
             abstracts</label></div></div>
       <ul class="summary list">
 
+      <li class="card draft"><a class="card-anchor" href="srfi-194/"></a><a href="srfi-194/"><span class="number">194</span></a>: <span class="name">Random data generators</span><span class="authors">, by Shiro Kawai (design), Arvydas Silanskas (implementation), and John Cowan (editor and shepherd)</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-05-04</span></span><span class="keywords" data-keywords="randomness">Keywords: <a href="https://srfi.schemers.org/?keywords=randomness">Randomness</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-27/">SRFI 27: Sources of Random Bits</a>.</span><div class="abstract"><p>This SRFI defines a set of
+<a href="https://srfi.schemers.org/srfi-158/srfi-158.html">SRFI 158</a>
+generators and generator makers that yield random data of specific
+ranges and distributions.  It is intended to be implemented on top of
+<a href="https://srfi.schemers.org/srfi-27/srfi-27.html">SRFI 27</a>,
+which provides the underlying source of random integers and floats.</p></div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-193/"></a><a href="srfi-193/"><span class="number">193</span></a>: <span class="name">Command lines</span><span class="authors">, by Lassi Kortela</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-04-19</span></span><span class="keywords" data-keywords="operating-system">Keywords: <a href="https://srfi.schemers.org/?keywords=operating-system">Operating System</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-22/">SRFI 22: Running Scheme Scripts on Unix</a>.</span><div class="abstract"><p>R<sup>6</sup>RS and R<sup>7</sup>RS define a
 <strong>command-line</strong> procedure. While a useful baseline,
 the specification is not detailed enough to cover all practical
@@ -2083,7 +2090,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       method of interpreting a Scheme string which contains a number of escape
       sequences that are replaced with other string data according to the
       semantics of each sequence.</div></li>
-      <li class="card final"><a class="card-anchor" href="srfi-27/"></a><a href="srfi-27/"><span class="number">27</span></a>: <span class="name">Sources of Random Bits</span><span class="authors">, by Sebastian Egner</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2002-06-03</span></span><span class="keywords" data-keywords="miscellaneous">Keywords: <a href="https://srfi.schemers.org/?keywords=miscellaneous">Miscellaneous</a></span><span class="status" data-status="final"></span><div class="abstract">      <p>This document specifies an interface to sources
+      <li class="card final"><a class="card-anchor" href="srfi-27/"></a><a href="srfi-27/"><span class="number">27</span></a>: <span class="name">Sources of Random Bits</span><span class="authors">, by Sebastian Egner</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2002-06-03</span></span><span class="keywords" data-keywords="randomness">Keywords: <a href="https://srfi.schemers.org/?keywords=randomness">Randomness</a></span><span class="status" data-status="final"></span><div class="abstract">      <p>This document specifies an interface to sources
       of random bits, or "random sources" for brevity. In particular, there are
       three different ways to use the interface, with varying demands on the
       quality of the source and the amount of control over the production
