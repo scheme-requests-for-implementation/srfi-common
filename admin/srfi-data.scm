@@ -1681,7 +1681,7 @@
  (draft-date "2020-05-04"))
 ((number 195)
  (status draft)
- (title "Multiple value boxes")
+ (title "Multiple-value boxes")
  (author "Marc Nieper-Wißkirchen")
  (see-also 111)
  (keywords data-structure)
