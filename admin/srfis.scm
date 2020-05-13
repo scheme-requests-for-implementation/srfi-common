@@ -101,6 +101,7 @@
     (pattern-matching "Pattern Matching")
     (r6rs-process "R6RS process")
     (r7rs-large-red "R7RS Large, Red Edition")
+    (r7rs-large-tangerine "R7RS Large, Tangerine Edition")
     (randomness "Randomness")
     (reader-syntax "Reader Syntax")
     (superseded "Superseded")
