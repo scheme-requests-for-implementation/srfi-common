@@ -25,7 +25,6 @@ rsync \
   --exclude='.git/' \
   --exclude='srfi-common/' \
   --exclude='srfi-email/' \
-  --progress \
   --recursive \
   --safe-links \
   --times \
