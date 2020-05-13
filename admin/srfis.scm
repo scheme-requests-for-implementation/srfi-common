@@ -100,6 +100,7 @@
     (parameters "Parameters")
     (pattern-matching "Pattern Matching")
     (r6rs-process "R6RS process")
+    (r7rs-large-red "R7RS-large (Red)")
     (randomness "Randomness")
     (reader-syntax "Reader Syntax")
     (superseded "Superseded")
