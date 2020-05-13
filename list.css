@@ -220,7 +220,7 @@ p a {
 }
 .dropdown select {
   overflow-y: auto;
-  width: 19em;
+  width: 23em;
 }
 .dropdown button span {
   display: none;
