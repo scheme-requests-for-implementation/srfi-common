@@ -1049,7 +1049,7 @@
  (author "John Cowan")
  (author "Thomas Gilray")
  (see-also 158)
- (keywords data-structure r7rs-large r7rs-large-red superseded)
+ (keywords data-structure r7rs-large-red superseded)
  (draft-date "2015-01-27")
  (done-date "2019-07-18"))
 ((number 122)
