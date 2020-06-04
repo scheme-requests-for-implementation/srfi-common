@@ -1485,7 +1485,7 @@
  (title "POSIX API")
  (author "Olin Shivers" "original author")
  (author "John Cowan" "editor and shepherd")
- (author "Harold Ancell" "editor")
+ (author "Harold Ancell" "implementer and editor")
  (based-on "Based on scsh by Olin Shivers.")
  (see-also)
  (keywords operating-system)
