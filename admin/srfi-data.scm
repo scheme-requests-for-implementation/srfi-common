@@ -1697,7 +1697,7 @@
  (draft-date "2020-05-17"))
 ((number 197)
  (status draft)
- (title "Threading Macros")
+ (title "Expression Chaining Operators")
  (author "Adam Nelson")
  (keywords syntax)
  (draft-date "2020-06-08"))
