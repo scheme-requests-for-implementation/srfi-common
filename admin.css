@@ -72,9 +72,10 @@ label {
 span.antispam {
   display: none;
 }
-img {
-  width: 100%;
-  max-width: 46em;
+img.srfi-logo {
+  margin-right: 0.5em;
+  vertical-align: middle;
+  width: 4em;
 }
 .subunsub {
   position: relative;
