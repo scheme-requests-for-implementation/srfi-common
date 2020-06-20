@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>Scheme Requests for Implementation</title>
-    <link rel="preload" href="srfi.js" as="script" />
-    <link href="favicon.png" rel="icon" sizes="192x192" type="image/png" />
-    <link rel="stylesheet" type="text/css" href="admin.css" />
-    <link rel="stylesheet" type="text/css" href="home.css" />
-    <link rel="stylesheet" type="text/css" href="list.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preload" href="srfi.js" as="script">
+    <link href="favicon.png" rel="icon" sizes="192x192" type="image/png">
+    <link rel="stylesheet" type="text/css" href="admin.css">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="list.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/x-mathjax-config">
      MathJax.Hub.Config({
        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
@@ -16,8 +16,7 @@
     </script>
     <script crossorigin="anonymous" integrity=
             "sha384-Ra6zh6uYMmH5ydwCqqMoykyf1T/+ZcnOQfFPhDrp2kI4OIxadnhsvvA2vv9A7xYv" src=
-            "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-            type="text/javascript"></script></head>
+            "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></head>
   <body>
     <h1><img class="srfi-logo" src="srfi-logo.svg" alt="SRFI logo" />Scheme Requests for Implementation</h1>
 
@@ -77,6 +76,5 @@
 
     <script crossorigin="anonymous"
             integrity="sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm"
-            src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"
-            type="application/javascript"></script>
-    <script src="srfi.js" type="application/javascript"></script></body></html>
+            src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="srfi.js"></script></body></html>
