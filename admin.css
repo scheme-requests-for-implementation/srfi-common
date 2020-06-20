@@ -53,23 +53,6 @@ button.unsub {
   cursor: pointer;
   text-shadow: 1px 1px 1px #9E3F3F;
 }
-#cumulative-srfis {
-  border: 1px solid lightgrey;
-  float: right;
-  margin: 1em 0 1em 1em;
-  max-width: calc(100% - 2em);
-  padding: 1em;
-  transition: width 0.25s ease-in 0.5s;
-  width: 40%;
-}
-#cumulative-srfis:hover {
-  margin-left: 0;
-  transition: all 0.25s ease-in 0.5s;
-  width: 100%;
-}
-#cumulative-srfis img {
-  width: 100%;
-}
 form .submit,
 button.sub,
 button.unsub {
@@ -105,4 +88,45 @@ img.srfi-logo {
   color: red;
   font-family: monospace;
   font-weight: bold;
+}
+figcaption {
+  text-align: center;
+}
+figure {
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  cursor: zoom-in;
+  float: right;
+  margin: 1em 0 1em 1em;
+  max-width: calc(100% - 2em);
+  padding: 1em;
+  transition: width 0.25s ease-in 0.5s;
+  width: 40%;
+}
+figure a {
+  cursor: inherit;
+}
+figure img {
+  cursor: inherit;
+  width: 100%;
+}
+figure span {
+  display: none;
+  font-size: 200%;
+}
+figure span a {
+  cursor: zoom-out;
+  text-decoration: none;
+}
+figure:target {
+  cursor: default;
+  margin-left: 0;
+  pointer-events: none;
+  transition: all 0.25s ease-in 0.5s;
+  width: 100%;
+}
+figure:target span {
+  display: inline;
+  float: right;
+  pointer-events: initial;
 }
