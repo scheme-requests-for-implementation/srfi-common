@@ -1,15 +1,15 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.2//EN">
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Subscribing to a SRFI Mailing List</title>
+    <meta charset="utf-8" />
+    <title>SRFI Mailing Lists</title>
     <link rel="preload" href="maillist.js" as="script" />
-    <link href="admin.css" rel="stylesheet">
-    <link href="list.css" rel="stylesheet" type="text/css" />
     <link href="/favicon.png" rel="icon" sizes="192x192" type="image/png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-
+    <link href="admin.css" rel="stylesheet" type="text/css" />
+    <link href="list.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /></head>
   <body>
-    <h1>SRFI Mailing Lists</h1>
+    <h1><a href="/"><img class="srfi-logo" src="srfi-logo.svg" alt="SRFI logo" /></a>SRFI Mailing Lists</h1>
 
     <p>There are many SRFI mailing lists, including one for
       <a href="#srfi-announce">announcements</a>, one for

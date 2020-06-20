@@ -53,6 +53,19 @@ button.unsub {
   cursor: pointer;
   text-shadow: 1px 1px 1px #9E3F3F;
 }
+#cumulative-srfis {
+  border: 1px solid black;
+  float: right;
+  padding: 1em;
+  transition: width 0.25s ease-in 0.5s;
+  width: 50%;
+}
+#cumulative-srfis:hover {
+  width: 90%;
+}
+#cumulative-srfis img {
+  width: 100%;
+}
 form .submit,
 button.sub,
 button.unsub {
@@ -65,6 +78,10 @@ form .title {
   color: black;
   font-size: 120%;
   margin-top: 0;
+}
+h1 {
+  font-size: 150%;
+  margin: 0;
 }
 label {
   white-space: nowrap;
