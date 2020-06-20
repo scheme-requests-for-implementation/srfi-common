@@ -96,11 +96,12 @@ figure {
   border: 1px solid lightgrey;
   border-radius: 10px;
   cursor: zoom-in;
+  display: block;
   float: right;
   margin: 1em 0 1em 1em;
   max-width: calc(100% - 2em);
   padding: 1em;
-  transition: width 0.25s ease-in 0.5s;
+  position: relative;
   width: 40%;
 }
 figure a {
@@ -122,11 +123,12 @@ figure:target {
   cursor: default;
   margin-left: 0;
   pointer-events: none;
-  transition: all 0.25s ease-in 0.5s;
   width: 100%;
 }
 figure:target span {
   display: inline;
-  float: right;
   pointer-events: initial;
+  position: absolute;
+  right: 0.25em;
+  top: 0em;
 }
