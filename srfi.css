@@ -8,6 +8,15 @@ body {
   font-size: 18px;
   max-width: 46em;
 }
+body h1:first-child {
+  font-size: 150%;
+  margin: 0;
+}
+img.srfi-logo {
+  margin-right: 0.5em;
+  vertical-align: middle;
+  width: 4em;
+}
 span.antispam {
   display: none;
 }
