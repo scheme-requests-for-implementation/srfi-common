@@ -98,12 +98,13 @@
             abstracts</label></div></div>
       <ul class="summary list">
 
-      <li class="card draft"><a class="card-anchor" href="srfi-199/"></a><a href="srfi-199/"><span class="number">199</span></a>: <span class="name">POSIX errno manipulation</span><span class="authors">, by Harold Ancell</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-06-25</span></span><span class="keywords" data-keywords="operating-system">Keywords: <a href="https://srfi.schemers.org/?keywords=operating-system">Operating System</a></span><span class="status" data-status="draft"></span><div class="abstract"><p>The majority of P<small>OSIX</small> system and library calls
-  require accesing errno to discern the specific cause of an error,
-  and some require setting it to 0 before calling them.  This SRFI
-  specifies procedures to both retrieve its value, and to set it.
+      <li class="card draft"><a class="card-anchor" href="srfi-199/"></a><a href="srfi-199/"><span class="number">199</span></a>: <span class="name">POSIX errno manipulation</span><span class="authors">, by Harold Ancell</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-06-25</span></span><span class="keywords" data-keywords="operating-system">Keywords: <a href="https://srfi.schemers.org/?keywords=operating-system">Operating System</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-170/">SRFI 170: POSIX API</a> and <a href="/srfi-198/">SRFI 198: POSIX system call exceptions</a>.</span><div class="abstract"><p>The majority of P<small>OSIX</small> system and library calls
+  require accessing <code>errno</code> to discern the specific cause
+  of an error, and some require setting it to 0 before calling them.
+  This SRFI specifies procedures to both retrieve its value, and to
+  set it.
 </p></div></li>
-      <li class="card draft"><a class="card-anchor" href="srfi-198/"></a><a href="srfi-198/"><span class="number">198</span></a>: <span class="name">POSIX system call exceptions</span><span class="authors">, by John Cowan (editor and shepherd) and Harold Ancell (implementer and editor)</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-06-16</span></span><span class="keywords" data-keywords="operating-system">Keywords: <a href="https://srfi.schemers.org/?keywords=operating-system">Operating System</a></span><span class="status" data-status="draft"></span><div class="abstract"><p>
+      <li class="card draft"><a class="card-anchor" href="srfi-198/"></a><a href="srfi-198/"><span class="number">198</span></a>: <span class="name">POSIX system call exceptions</span><span class="authors">, by John Cowan (editor and shepherd) and Harold Ancell (implementer and editor)</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-06-16</span></span><span class="keywords" data-keywords="operating-system">Keywords: <a href="https://srfi.schemers.org/?keywords=operating-system">Operating System</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-170/">SRFI 170: POSIX API</a> and <a href="/srfi-199/">SRFI 199: POSIX errno manipulation</a>.</span><div class="abstract"><p>
 When errors in P<small>OSIX</small> system calls are mapped to Scheme exceptions,
 this small SRFI provides the means to construct, signal, and extract
 information from those signals in a reasonably uniform way.
@@ -305,7 +306,7 @@ combined with other provisions.
   unique to whatever base type they work on.  This SRFI proposes a new
   construct, the transducer, that is oblivious to the context in which
   it is being used.</p></div></li>
-      <li class="card draft"><a class="card-anchor" href="srfi-170/"></a><a href="srfi-170/"><span class="number">170</span></a>: <span class="name">POSIX API</span><span class="authors">, by Olin Shivers (original author), John Cowan (editor and shepherd), and Harold Ancell (implementer and editor)</span><span class="based-on">Based on scsh by Olin Shivers.</span><span class="date-group">Draft: <span class="date">2019-05-04</span></span><span class="keywords" data-keywords="operating-system">Keywords: <a href="https://srfi.schemers.org/?keywords=operating-system">Operating System</a></span><span class="status" data-status="draft"></span><div class="abstract"><p>
+      <li class="card draft"><a class="card-anchor" href="srfi-170/"></a><a href="srfi-170/"><span class="number">170</span></a>: <span class="name">POSIX API</span><span class="authors">, by Olin Shivers (original author), John Cowan (editor and shepherd), and Harold Ancell (implementer and editor)</span><span class="based-on">Based on scsh by Olin Shivers.</span><span class="date-group">Draft: <span class="date">2019-05-04</span></span><span class="keywords" data-keywords="operating-system">Keywords: <a href="https://srfi.schemers.org/?keywords=operating-system">Operating System</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-198/">SRFI 198: POSIX system call exceptions</a> and <a href="/srfi-199/">SRFI 199: POSIX errno manipulation</a>.</span><div class="abstract"><p>
 The host environment is the set of resources, such as the filesystem,
 network and processes, that are managed by the operating system on top of
 which a Scheme program is executing. This SRFI specifies some of the ways the host
