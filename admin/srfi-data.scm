@@ -1735,6 +1735,6 @@
  (status draft)
  (title "Pattern-matching Variant of the and-let* Form that Supports Multiple Values")
  (author "Panicz Maciej Godek")
- (see-also 2)
+ (see-also 2 200)
  (keywords binding control-flow pattern-matching)
  (draft-date "2020-06-25"))
