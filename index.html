@@ -98,6 +98,11 @@
             abstracts</label></div></div>
       <ul class="summary list">
 
+      <li class="card draft"><a class="card-anchor" href="srfi-199/"></a><a href="srfi-199/"><span class="number">199</span></a>: <span class="name">POSIX errno manipulation</span><span class="authors">, by Harold Ancell</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-06-25</span></span><span class="keywords" data-keywords="operating-system">Keywords: <a href="https://srfi.schemers.org/?keywords=operating-system">Operating System</a></span><span class="status" data-status="draft"></span><div class="abstract"><p>The majority of P<small>OSIX</small> system and library calls
+  require accesing errno to discern the specific cause of an error,
+  and some require setting it to 0 before calling them.  This SRFI
+  specifies procedures to both retrieve its value, and to set it.
+</p></div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-198/"></a><a href="srfi-198/"><span class="number">198</span></a>: <span class="name">POSIX system call exceptions</span><span class="authors">, by John Cowan (editor and shepherd) and Harold Ancell (implementer and editor)</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-06-16</span></span><span class="keywords" data-keywords="operating-system">Keywords: <a href="https://srfi.schemers.org/?keywords=operating-system">Operating System</a></span><span class="status" data-status="draft"></span><div class="abstract"><p>
 When errors in P<small>OSIX</small> system calls are mapped to Scheme exceptions,
 this small SRFI provides the means to construct, signal, and extract

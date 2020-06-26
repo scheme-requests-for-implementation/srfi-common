@@ -1709,5 +1709,11 @@
  (author "Harold Ancell" "implementer and editor")
  (keywords operating-system)
  (draft-date "2020-06-16"))
+((number 199)
+ (status draft)
+ (title "POSIX errno manipulation")
+ (author "Harold Ancell")
+ (keywords operating-system)
+ (draft-date "2020-06-25"))
 ;; Numbers 200-202 are reserved for Panicz Maciej Godek, assuming that he gets
 ;; me all three drafts soon.
