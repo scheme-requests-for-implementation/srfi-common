@@ -2741,7 +2741,7 @@
 			 :mono-field-name form
 			 :poly-field-name form ...
 			 :poly-field-length size
-			 ... ))
+			 ...))
  (source (srfi 20))
  (kind syntax))
 ((signature (object? value))
@@ -5084,7 +5084,7 @@
  (kind procedure))
 ((signature (vector->string vec) (returns string))
  (signature (vector->string vec start) (returns string))
- (signature (vector->string vec start end ) (returns string))
+ (signature (vector->string vec start end) (returns string))
  (fragment "vector-to-string")
  (source (srfi 133))
  (kind procedure))
