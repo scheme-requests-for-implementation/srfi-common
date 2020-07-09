@@ -1747,5 +1747,5 @@
  (title "A Simple Picture Language in the Style of SICP")
  (author "Vladimir Nikishkin")
  (see-also)
- (keywords binding control-flow pattern-matching)
+ (keywords miscellaneous)
  (draft-date "2020-06-25"))
