@@ -1713,6 +1713,7 @@
  (title "POSIX system call exceptions")
  (author "John Cowan" "editor and shepherd")
  (author "Harold Ancell" "implementer and editor")
+ (author "Lassi Kortela")
  (keywords error-handling operating-system)
  (draft-date "2020-06-16")
  (see-also 170 199))
