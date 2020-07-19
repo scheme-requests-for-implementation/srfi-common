@@ -1668,7 +1668,7 @@
  (status draft)
  (title "Port Positioning")
  (author "John Cowan")
- (author "Shiro Kawai" "(implementation; requires a hook)")
+ (author "Shiro Kawai" "implementation; requires a hook")
  (see-also 181)
  (based-on "Based on R6RS.")
  (keywords i/o)
