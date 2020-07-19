@@ -1711,7 +1711,7 @@
  (draft-date "2020-06-08"))
 ((number 198)
  (status draft)
- (title "POSIX system call exceptions")
+ (title "Foreign Interface Error Handling")
  (author "John Cowan" "editor and shepherd")
  (author "Harold Ancell" "implementer and editor")
  (author "Lassi Kortela")
