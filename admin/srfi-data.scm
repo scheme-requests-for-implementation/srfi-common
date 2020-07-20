@@ -1714,7 +1714,7 @@
  (title "Foreign Interface Error Handling")
  (author "John Cowan" "editor and shepherd")
  (author "Harold Ancell" "implementer and editor")
- (author "Lassi Kortela")
+ (author "Lassi Kortela" "architect")
  (keywords error-handling operating-system)
  (draft-date "2020-06-16")
  (see-also 170 199))
