@@ -5605,3 +5605,6 @@
 ((signature (string-titlecase))
  (source (srfi 129))
  (kind procedure))
+((signature (define-record-type))
+ (source (srfi 131))
+ (kind syntax))
