@@ -4746,7 +4746,7 @@
 ((signature (hash-table-map proc comparator hash-table))
  (source (srfi 125))
  (kind procedure))
-((signature (make-hash-table comparator).)
+((signature (make-hash-table comparator))
  (source (srfi 125))
  (kind procedure))
 ((signature (hash-table-for-each proc hash-table))
