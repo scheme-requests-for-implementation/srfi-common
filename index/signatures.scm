@@ -3764,7 +3764,7 @@
  (signature (hash-by-identity object bound) (returns integer))
  (source (srfi 69))
  (kind procedure))
-((signature (get-environment-variable name) (returns string-or-false))
+((signature (get-environment-variable name) (returns (or string #f)))
  (source (srfi 98))
  (kind procedure))
 ((signature (get-environment-variables) (returns alist))
