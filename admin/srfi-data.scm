@@ -1380,7 +1380,7 @@
  (title "Combinator Formatting")
  (author "Alex Shinn")
  (see-also 28 48 166)
- (keywords i/o r7rs-large r7rs-large-tangerine)
+ (keywords i/o r7rs-large r7rs-large-tangerine superseded)
  (draft-date "2017-08-21")
  (done-date "2020-07-31"))
 ((number 160)
