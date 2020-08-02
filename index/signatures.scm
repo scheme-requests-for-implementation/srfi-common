@@ -3236,7 +3236,7 @@
  (kind procedure))
 ((signature (stream-drop n stream))
  (source (srfi 41))
- (kind procedure)) procedure
+ (kind procedure))
 ((signature (stream-drop-while pred? stream))
  (source (srfi 41))
  (kind procedure))
