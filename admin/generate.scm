@@ -338,6 +338,10 @@ and \", and\" otherwise."
 	  ,(write-srfi-subscribe-form
 	    "schemepersist"
 	    "This is an unmoderated discussion of persistent storage and serialization for Scheme implementations, including existing, new, and improved persistence libraries; interface protocols to support; SRFIs to write; etc."))
+	 (schemeregistry
+	  ,(write-srfi-subscribe-form
+	    "schemeregistry"
+	    "This is an unmoderated discussion of the Scheme Registry, a database of defined symbols, identifiers and other pieces of data used by Scheme standards and implementations."))
 	 (schemeweb
 	  ,(write-srfi-subscribe-form
 	    "schemeweb"
