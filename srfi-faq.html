@@ -302,7 +302,42 @@
       document, e.g. to add to its history of drafts, and won't edit
       the document in a format other than HTML.  We've made exceptions
       for Markdown because of the ease of using Pandoc, but that's at
-      the editors' discretion.
+      the editors' discretion.</p>
+
+    <dt id="conventions">What linguistic conventions do SRFIs use?
+
+    <dd>
+      <p>Starting in about 2019, new SRFIs use some of the conventions
+	of the R7RS Small report
+	(<a href="https://small.r7rs.org/attachment/r7rs.pdf">PDF</a>),
+	section 1.3.2, a shortened form of which appears here.  Note
+	that SRFIs before about 2019 may not follow these conventions.</p>
+
+      <p>When speaking of an error situation, we use the phrase “an
+	error is signaled” to indicate that implementations must
+	detect and report the error by raising a non-continuable
+	exception, as if by the procedure <code>raise</code>.  The
+	phrase “an error that satisfies <i>predicate</i> is signaled”
+	means that an error is signaled as above. Furthermore, if the
+	object that is signaled is passed to the specified predicate,
+	the predicate returns <code>#t</code>.</p>
+
+      <p>The phrase "is an error," however, means that implementations
+	are not required to detect or report the error.  In fact, the
+	implementation may take any action whatsoever, such as
+	signaling an error, extending a procedure’s behavior, or
+	failing catastrophically.  If the value of an expression is
+	said to be “unspecified,” then the expression must evaluate to
+	some object without signaling an error, but the value depends
+	on the implementation.</p>
+
+      <p>Finally, the words and phrases “must,” “must not,” “shall,”
+	“shall not,” “should,” “should not,” “may,” “required,”
+	“recommended,” and “optional" are to be interpreted as
+	described in <a href="https://www.ietf.org/rfc/rfc2119.html">RFC 2119</a>
+	unless otherwise specified.  They are used only with reference
+	to implementer or implementation behavior, not with reference
+	to programmer or program behavior.</p></dd>
 
     <dt>May I contribute code to a final SRFI, e.g. an implementation
       of the SRFI for a specific Scheme implementation?
