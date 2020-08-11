@@ -1689,6 +1689,7 @@
  (author "Shiro Kawai" "design")
  (author "Arvydas Silanskas" "implementation")
  (author "John Cowan" "editor and shepherd")
+ (author "Linas Vepštas" "implementation")
  (see-also 27)
  (keywords randomness)
  (draft-date "2020-05-04"))
