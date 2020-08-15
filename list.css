@@ -44,6 +44,7 @@ span.keywords {
 }
 .info {
   position: relative;
+  top: 1em;
 }
 .info a {
   display: block;
