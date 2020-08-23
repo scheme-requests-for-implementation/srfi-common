@@ -1709,7 +1709,7 @@
  (draft-date "2020-05-17"))
 ((number 197)
  (status draft)
- (title "Expression Chaining Operators")
+ (title "Pipeline Operators")
  (author "Adam Nelson")
  (keywords syntax)
  (draft-date "2020-06-08"))
