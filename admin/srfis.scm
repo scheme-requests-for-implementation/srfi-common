@@ -77,7 +77,6 @@
 
 (define srfi-keywords
   '((algorithm "Algorithm")
-    (arithmetic "Arithmetic")
     (assignment "Assignment")
     (binding "Binding")
     (comparison "Comparison")
@@ -95,6 +94,7 @@
     (miscellaneous "Miscellaneous")
     (modules "Modules")
     (multiple-value-returns "Multiple Value Returns")
+    (numeric "Numeric")
     (operating-system "Operating System")
     (optimization "Optimization")
     (parameters "Parameters")
