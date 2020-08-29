@@ -94,7 +94,7 @@
     (miscellaneous "Miscellaneous")
     (modules "Modules")
     (multiple-value-returns "Multiple Value Returns")
-    (numeric "Numeric")
+    (numbers "Numbers")
     (operating-system "Operating System")
     (optimization "Optimization")
     (parameters "Parameters")
