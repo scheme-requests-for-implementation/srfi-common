@@ -342,6 +342,10 @@ and \", and\" otherwise."
 	  ,(write-srfi-subscribe-form
 	    "schemeregistry"
 	    "This is an unmoderated discussion of the Scheme Registry, a database of defined symbols, identifiers and other pieces of data used by Scheme standards and implementations."))
+	 (schemetest
+	  ,(write-srfi-subscribe-form
+	    "schemetest"
+	    "This is an unmoderated discussion of anything and everything having to do with testing in the world of Scheme."))
 	 (schemeweb
 	  ,(write-srfi-subscribe-form
 	    "schemeweb"
