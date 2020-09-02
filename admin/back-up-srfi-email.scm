@@ -225,7 +225,6 @@
     (53578 srfi-209)
     (53588 srfi-210)
     (13631 srfi-announce)
-    (13635 srfi-auto-subscribe)
     (13133 srfi-discuss)
     (13633 srfi-editors)
     (42845 stickers)))
