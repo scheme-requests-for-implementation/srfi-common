@@ -1,8 +1,3 @@
-(define auth-token "<>")		; Extract this <SL_WEBADMIN> cookie
-					; value by logging into the Simplelists
-					; site and extracting the cookie from
-					; the browser.  Never save it to Git.
-
 ;; <> Automate extracting these numbers from the <option> lists on
 ;; <https://www.simplelists.com/members/managelists.php>.
 
@@ -242,5 +237,9 @@
   (display name)
   (curl-http-get (list (cookie auth-token)) (url id) (mbox name)))
 
-(for-each (lambda (l) (back-up-list (car l) (cadr l) auth-token))
-	  srfi-lists)
+; Extract the <SL_WEBADMIN> cookie value by logging into the Simplelists site
+; and extracting the cookie from the browser.  Pass it to
+; `back-up-srfi-email'.
+(define (back-up-srfi-email auth-token)
+  (for-each (lambda (l) (back-up-list (car l) (cadr l) auth-token))
+	    srfi-lists))
