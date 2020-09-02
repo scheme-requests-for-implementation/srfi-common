@@ -1,3 +1,9 @@
+a.eponymous {
+  font-family: Monaco, Courier, monospace;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  word-wrap: break-word;
+}
 .announcement {
   background: lightgreen;
   border: solid 1px lightgrey;
@@ -11,7 +17,7 @@
   display: block;
 }
 body {
-  font-family: sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 18px;
   max-width: 46em;
 }
