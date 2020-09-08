@@ -1,4 +1,6 @@
-<p>This SRFI is a lightly edited version of parts of
+<p>This SRFI is derived from parts of
+<a href="http://www.r6rs.org/final/html/r6rs-lib/r6rs-lib-Z-H-1.html#node_toc_node_sec_8.2.4">
+library section 8.2.4</a>,
 <a href="http://www.r6rs.org/final/html/r6rs-lib/r6rs-lib-Z-H-9.html#node_sec_8.2.7">
 library section 8.2.7</a>,
 <a href="http://www.r6rs.org/final/html/r6rs-lib/r6rs-lib-Z-H-9.html#node_sec_8.2.10">
@@ -7,5 +9,14 @@ library section 8.2.10</a>, and
 library section 8.2.13</a>
 of the R6RS.
 These sections are themselves based on parts of
-<a href="http://srfi.schemers.org/srfi-79/srfi-79.html">SRFI 79</a>.
-These procedures provide support for transcoders and transcoded ports.</p>
+<a href="http://srfi.schemers.org/srfi-79/srfi-79.html">SRFI 79</a>,
+<a href="http://srfi.schemers.org/srfi-80/srfi-80.html">SRFI 80</a> and
+<a href="http://srfi.schemers.org/srfi-81/srfi-81.html">SRFI 81</a>.
+These procedures provide a hook into the Scheme port system from below, allowing the
+creation of custom ports that behave as much as possible like the standard
+file, string, and bytevector ports, but that call a procedure to produce
+data to input ports or to consume data from output ports.
+Procedures for creating ports that transcode
+between bytes and characters are an important special
+case and are also documented in this SRFI.
+</p>
