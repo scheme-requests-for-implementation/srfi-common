@@ -1788,7 +1788,7 @@
  (title "String-notated bytevectors")
  (author "Daphne Preston-Kendal" "external notation")
  (author "John Cowan" "procedure design")
- (author "Wolfgang Corcoran-Mathe" "implementatio")
+ (author "Wolfgang Corcoran-Mathe" "implementation")
  (see-also)
  (keywords reader-syntax)
  (draft-date "2020-08-15"))
