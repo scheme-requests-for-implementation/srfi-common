@@ -1680,7 +1680,7 @@
  (done-date "2020-07-31"))
 ((number 193)
  (status draft)
- (title "Command lines")
+ (title "Command line")
  (author "Lassi Kortela")
  (see-also 22)
  (keywords operating-system)
