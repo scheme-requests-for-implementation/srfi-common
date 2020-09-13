@@ -192,12 +192,17 @@ information from Scheme interfaces with "foreign" systems such as the
 P<small>OSIX</small> API, databases, and libraries.
 </p></div></li>
       <li class="card final"><a class="card-anchor" href="srfi-197/"></a><a href="srfi-197/"><span class="number">197</span></a>: <span class="name">Pipeline Operators</span><span class="authors">, by Adam Nelson</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2020-09-12</span></span><span class="keywords" data-keywords="syntax">Keywords: <a href="https://srfi.schemers.org/?keywords=syntax">Syntax</a></span><span class="status" data-status="final"></span><div class="abstract"><p>Many functional languages provide pipeline operators, like Clojure's <code>-&gt;</code> or OCaml's <code>|&gt;</code>. Pipelines are a simple, terse, and readable way to write deeply-nested expressions. This SRFI defines a family of <code>chain</code> and <code>nest</code> pipeline operators, which can rewrite nested expressions like <code>(a b (c d (e f g)))</code> as a sequence of operations: <code>(chain g (e f _) (c d _) (a b _))</code>.</p></div></li>
-      <li class="card draft"><a class="card-anchor" href="srfi-196/"></a><a href="srfi-196/"><span class="number">196</span></a>: <span class="name">Range Objects</span><span class="authors">, by John Cowan (text) and Wolfgang Corcoran-Mathe (sample implementation)</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-05-17</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="draft"></span><div class="abstract"><p>Ranges are immutable collections that can be enumerated but are
-represented algorithmically rather than by a per-element data
-structure.  This SRFI defines a large subset of the sequence operations
-defined on lists, vectors, and other collections.  If necessary,
-a range can be converted to a list or vector of its elements or a generator
-that will lazily produce each element in the range.</p></div></li>
+      <li class="card draft"><a class="card-anchor" href="srfi-196/"></a><a href="srfi-196/"><span class="number">196</span></a>: <span class="name">Range Objects</span><span class="authors">, by John Cowan (text) and Wolfgang Corcoran-Mathe (sample implementation)</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-05-17</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="draft"></span><div class="abstract"><p>Ranges are collections somewhat similar to vectors, except that
+  they are immutable and have algorithmic representations instead of
+  the uniform per-element data structure of vectors. The storage required is
+  usually less than the size of the same collection stored in a
+  vector and the time needed to reference a particular element is
+  typically less for a range than for the same collection stored in a
+  list. This SRFI defines a large subset of the sequence operations
+  defined on lists, vectors, strings, and other collections.  If
+  necessary, a range can be converted to a list, vector, or string of
+  its elements or a generator that will lazily produce each element in
+  the range.</p></div></li>
       <li class="card final"><a class="card-anchor" href="srfi-195/"></a><a href="srfi-195/"><span class="number">195</span></a>: <span class="name">Multiple-value boxes</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2020-08-28</span></span><span class="keywords" data-keywords="data-structure,multiple-value-returns">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a>, <a href="https://srfi.schemers.org/?keywords=multiple-value-returns">Multiple Value Returns</a></span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-111/">SRFI 111: Boxes</a> and <a href="/srfi-189/">SRFI 189: Maybe and Either: optional container types</a>.</span><div class="abstract"><p>
   This SRFI extends the specification of the boxes
   of <a href="https://srfi.schemers.org/srfi-111/srfi-111.html">SRFI

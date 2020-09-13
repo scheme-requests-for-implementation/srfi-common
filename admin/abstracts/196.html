@@ -1,6 +1,11 @@
-<p>Ranges are immutable collections that can be enumerated but are
-represented algorithmically rather than by a per-element data
-structure.  This SRFI defines a large subset of the sequence operations
-defined on lists, vectors, and other collections.  If necessary,
-a range can be converted to a list or vector of its elements or a generator
-that will lazily produce each element in the range.</p>
+<p>Ranges are collections somewhat similar to vectors, except that
+  they are immutable and have algorithmic representations instead of
+  the uniform per-element data structure of vectors. The storage required is
+  usually less than the size of the same collection stored in a
+  vector and the time needed to reference a particular element is
+  typically less for a range than for the same collection stored in a
+  list. This SRFI defines a large subset of the sequence operations
+  defined on lists, vectors, strings, and other collections.  If
+  necessary, a range can be converted to a list, vector, or string of
+  its elements or a generator that will lazily produce each element in
+  the range.</p>
