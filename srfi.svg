@@ -7,7 +7,7 @@
 >
 
 <title>Gnuplot</title>
-<desc>Produced by GNUPLOT 5.2 patchlevel 8 </desc>
+<desc>Produced by GNUPLOT 5.4 patchlevel 0 </desc>
 
 <g id="gnuplot_canvas">
 
@@ -1712,7 +1712,7 @@
 		L568.2,173.3 L568.3,173.3 L568.4,173.3 L568.5,173.3 L568.6,173.3 L568.7,173.3 L568.8,173.3 L568.9,173.3
 		L569.0,173.3 L569.1,173.3 L569.2,173.3 L569.3,173.3 L569.3,171.8 L569.4,170.3 L569.5,170.3 L569.5,168.9
 		L569.6,168.9 L569.7,168.9 L569.8,168.9 L569.9,168.9 L570.0,168.9 L570.1,168.9 L570.2,168.9 L570.2,167.4
-		L570.3,167.4 L570.4,165.9 L570.5,164.4 L570.6,164.4 L570.7,164.4 L570.8,162.9  '/></g>
+		L570.3,167.4 L570.4,165.9 L570.5,164.4 L570.6,164.4 L570.7,164.4 L570.8,161.5  '/></g>
 	</g>
 	<g id="gnuplot_plot_3" ><title>withdrawn</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.50" stroke-linecap="butt" stroke-linejoin="miter">
