@@ -1824,7 +1824,7 @@
  (draft-date "2020-08-29"))
 ((number 211)
  (status draft)
- (title "Namespaces for Scheme Macro Systems")
+ (title "Scheme Macro Libraries")
  (author "Marc Nieper-Wißkirchen")
  (see-also)
  (keywords syntax)
