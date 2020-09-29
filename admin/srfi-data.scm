@@ -1836,4 +1836,10 @@
  (see-also)
  (keywords syntax)
  (draft-date "2020-09-22"))
-;; 213 is assigned to Marc Nieper-Wißkirchen's forthcoming Identifier Properties.
+((number 213)
+ (status draft)
+ (title "Identifier Properties")
+ (author "Marc Nieper-Wißkirchen")
+ (see-also)
+ (keywords binding syntax)
+ (draft-date "2020-09-29"))
