@@ -5912,3 +5912,6 @@
 ((signature (fxbit-field-reverse i start end))
  (source (srfi 143))
  (kind procedure))
+((signature (assume obj message ...))
+ (source (srfi 145))
+ (kind syntax))
