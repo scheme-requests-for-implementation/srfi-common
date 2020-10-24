@@ -152,10 +152,18 @@ interchangeably as literal identifiers in
 and can be both imported under the same name without conflicts.</div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-205/"></a><a href="srfi-205/"><span class="number">205</span></a>: <span class="name">POSIX Terminal Fundamentals</span><span class="authors">, by John Cowan (author) and Harold Ancell (author and editor)</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-07-23</span></span><span class="keywords" data-keywords="operating-system">Keywords: <a href="https://srfi.schemers.org/?keywords=operating-system">Operating System</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-170/">SRFI 170: POSIX API</a> and <a href="/srfi-198/">SRFI 198: Foreign Interface Status</a>.</span><div class="abstract"><p>
 This SRFI describes procedures for command-line and terminal interface
-programs to use to safely change and reset terminal modes, for example
-from cooked to raw and back, and for serial-line device manipulation
-for interfacing with embedded hardware and the like.
-</p></div></li>
+programs to safely change and reset terminal modes, for example from
+cooked to raw and back, and for serial-line device manipulation for
+interfacing with embedded hardware and the like.
+</p>
+<p>
+It is intended to provide all the
+<a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/termios.h.html">termios structure</a>
+functionality a modern Scheme programmer might desire by supplying a
+<a href="https://pubs.opengroup.org/onlinepubs/9699919799/utilities/stty.html">stty</a>
+procedure, and simple abstractions on top of it.
+</p>
+</div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-204/"></a><a href="srfi-204/"><span class="number">204</span></a>: <span class="name">Wright-Cartwright-Shinn Pattern Matcher</span><span class="authors">, by Felix Thibault</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-07-15</span></span><span class="keywords" data-keywords="pattern-matching">Keywords: <a href="https://srfi.schemers.org/?keywords=pattern-matching">Pattern Matching</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-200/">SRFI 200: Pattern Matching</a> and <a href="/srfi-201/">SRFI 201: Syntactic Extensions to the Core Scheme Bindings</a>.</span><div class="abstract"><p>Pattern matching decomposes a compound data structure
 into parts and assigns those parts to variables. This
 SRFI describes a pattern-matching library already in use by
