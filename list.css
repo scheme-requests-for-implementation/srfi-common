@@ -212,6 +212,7 @@ p a {
   background-color: #f6f6f6;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   display: none;
+  max-height: 50vh;
   overflow: auto;
   position: absolute;
   z-index: 1;
