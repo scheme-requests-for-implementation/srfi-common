@@ -105,6 +105,7 @@
     (r7rs-large-tangerine "R7RS Large: Tangerine Edition")
     (randomness "Randomness")
     (reader-syntax "Reader Syntax")
+    (sicp "SICP")
     (superseded "Superseded")
     (syntax "Syntax")
     (testing "Testing")
