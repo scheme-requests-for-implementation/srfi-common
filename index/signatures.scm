@@ -6043,3 +6043,8 @@
 ((signature (make-bitwise-generator i))
  (source (srfi 151))
  (kind procedure))
+((signature (syntax-rules ellipsis-identifier (literal-identifier ...)
+			  (pattern template)
+			  ...))
+ (source (srfi 46))
+ (kind syntax))
