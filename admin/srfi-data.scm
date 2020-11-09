@@ -1270,6 +1270,8 @@
  (author "Arthur A. Gleckler")
  (author "Marc Nieper-Wißkirchen")
  (see-also)
+ (sample-implementation-languages r7rs-small)
+ (sample-implementation-depends-on 1 2 8 121 128 145)
  (keywords data-structure r7rs-large r7rs-large-tangerine)
  (draft-date "2016-12-18")
  (done-date "2018-05-24"))
