@@ -1805,7 +1805,7 @@
 ((number 208)
  (status draft)
  (title "NaN procedures")
- (author "Emmanuel Medernach" "concept")
+ (author "Emmanuel Medernach" "design")
  (author "John Cowan" "editor")
  (author "Wolfgang Corcoran-Mathe" "implementation")
  (see-also)
