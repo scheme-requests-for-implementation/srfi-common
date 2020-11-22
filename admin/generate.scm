@@ -325,7 +325,7 @@ and \", and\" otherwise."
 	 (srfi-auto-subscribe
 	  ,(write-srfi-subscribe-form
 	    "srfi-auto-subscribe"
-	    "Subscribe to this list if you'd like to receive messages from <a href=\"#srfi-announce\"><code>srfi-announce</code></a>, <a href=\"#srfi-discuss\"><code>srfi-discuss</code></a>, and all <a href=\"#srfi-n\">srfi-<em>n</em></a> discussion mailing lists.  Note that this list does <em>not</em> deliver messages from <a href=\"#schemedoc\"><code>schemedoc</code></a>, <a href=\"#schemepersist\"><code>schemepersist</code></a>, or <a href=\"#schemeweb\"><code>schemeweb</code></a>.  You can subscribe to them independently."))
+	    "Subscribe to this list if you'd like to receive messages from <a href=\"#srfi-announce\"><code>srfi-announce</code></a>, <a href=\"#srfi-discuss\"><code>srfi-discuss</code></a>, and all <a href=\"#srfi-n\">srfi-<em>n</em></a> discussion mailing lists.  Note that this list does <em>not</em> deliver messages from <a href=\"#schemedoc\"><code>schemedoc</code></a>, <a href=\"#schemeorg\"><code>schemeorg</code></a>,<a href=\"#schemepersist\"><code>schemepersist</code></a>, or <a href=\"#schemeweb\"><code>schemeweb</code></a>.  You can subscribe to them independently."))
 	 (schemecomm
 	  ,(write-srfi-subscribe-form
 	    "schemecomm"
@@ -334,6 +334,10 @@ and \", and\" otherwise."
 	  ,(write-srfi-subscribe-form
 	    "schemedoc"
 	    "This is an unmoderated discussion of collecting, organizing, and serving indexes of Scheme code found in SRFIs, Scheme implementations, R<sup>n</sup>RS standards, etc."))
+	 (schemeorg
+	  ,(write-srfi-subscribe-form
+	    "schemeorg"
+	    "This is an unmoderated discussion of the <code>scheme.org</code> domain and its subdomains and how they will be organized."))
 	 (schemepersist
 	  ,(write-srfi-subscribe-form
 	    "schemepersist"
