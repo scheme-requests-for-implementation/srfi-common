@@ -209,14 +209,14 @@ Interpretation of Computer Programs</cite>.</p>
 
 <p>It aims to close the gap between the Scheme suggested for study in
 the book and portable Scheme.</p></div></li>
-      <li class="card draft"><a class="card-anchor" href="srfi-202/"></a><a href="srfi-202/"><span class="number">202</span></a>: <span class="name">Pattern-matching Variant of the and-let* Form that Supports Multiple Values</span><span class="authors">, by Panicz Maciej Godek</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-06-25</span></span><span class="keywords" data-keywords="binding,control-flow,pattern-matching">Keywords: <a href="https://srfi.schemers.org/?keywords=binding">Binding</a>, <a href="https://srfi.schemers.org/?keywords=control-flow">Control Flow</a>, <a href="https://srfi.schemers.org/?keywords=pattern-matching">Pattern Matching</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-2/">SRFI 2: AND-LET*: an AND with local bindings, a guarded LET* special form</a> and <a href="/srfi-200/">SRFI 200: Pattern Matching</a>.</span><div class="abstract"><p>The SRFI-2 library introduced the <code>and-let*</code> form
+      <li class="card final"><a class="card-anchor" href="srfi-202/"></a><a href="srfi-202/"><span class="number">202</span></a>: <span class="name">Pattern-matching Variant of the and-let* Form that Supports Multiple Values</span><span class="authors">, by Panicz Maciej Godek</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2020-11-28</span></span><span class="keywords" data-keywords="binding,control-flow,pattern-matching">Keywords: <a href="https://srfi.schemers.org/?keywords=binding">Binding</a>, <a href="https://srfi.schemers.org/?keywords=control-flow">Control Flow</a>, <a href="https://srfi.schemers.org/?keywords=pattern-matching">Pattern Matching</a></span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-2/">SRFI 2: AND-LET*: an AND with local bindings, a guarded LET* special form</a> and <a href="/srfi-200/">SRFI 200: Pattern Matching</a>.</span><div class="abstract"><p>The SRFI-2 library introduced the <code>and-let*</code> form
   for short-circuited evaluation in the style of the <code>and</code>
-  form with the ability to capture the (non-<code>#f</code>) results
-  in the style of the <code>let*</code> form. This document extends
-  the <code>and-let*</code> form with the abilities to pattern-match
-  (or "destructurally bind") the values of evaluated expressions
-  (where the match failure causes short-circuiting rather than
-  raising an error), and to handle multiple values (where only the
+  form, with the ability to capture the (non-<code>#f</code>) results
+  in the style of the <code>let*</code> form.  This document extends
+  the <code>and-let*</code> form with the ability to pattern-match (or
+  "destructurally bind") the values of evaluated expressions (where
+  the match failure causes short-circuiting rather than raising an
+  error) and the ability to handle multiple values (where only the
   falsehood of the first value causes short-circuiting).
 </p></div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-201/"></a><a href="srfi-201/"><span class="number">201</span></a>: <span class="name">Syntactic Extensions to the Core Scheme Bindings</span><span class="authors">, by Panicz Maciej Godek</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2020-06-25</span></span><span class="keywords" data-keywords="binding,pattern-matching,syntax">Keywords: <a href="https://srfi.schemers.org/?keywords=binding">Binding</a>, <a href="https://srfi.schemers.org/?keywords=pattern-matching">Pattern Matching</a>, <a href="https://srfi.schemers.org/?keywords=syntax">Syntax</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-8/">SRFI 8: receive: Binding to multiple values</a>, <a href="/srfi-11/">SRFI 11: Syntax for receiving multiple values</a>, <a href="/srfi-71/">SRFI 71: Extended LET-syntax for multiple values</a>, and <a href="/srfi-200/">SRFI 200: Pattern Matching</a>.</span><div class="abstract"><p>This document describes a handful of syntactic extensions
