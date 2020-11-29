@@ -23,6 +23,8 @@
     (write-char #\space port)
     (write (srfi/title srfi) port))))
 
+;; Update "admin/srfis.scm" at <git@github.com:srfi-explorations/emacs-srfi>
+;; whenever this changes.
 (define srfi-keywords
   '((algorithm "Algorithm")
     (assignment "Assignment")
