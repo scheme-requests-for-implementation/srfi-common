@@ -41,7 +41,7 @@
     (lazy-evaluation "Lazy Evaluation")
     (miscellaneous "Miscellaneous")
     (modules "Modules")
-    (multiple-value-returns "Multiple Value Returns")
+    (multiple-value-returns "Multiple-Value Returns")
     (numbers "Numbers")
     (operating-system "Operating System")
     (optimization "Optimization")
