@@ -79,11 +79,11 @@ and \", and\" otherwise."
 	(else
 	 (let ((output (open-output-string)))
 	   (let next ((remaining string-list))
-	     (write-string (car remaining))
+	     (write-string (car remaining) output)
 	     (cond ((null? (cddr remaining))
-		    (write-string ", and ")
-		    (write-string (cadr remaining)))
-		   (else (write-string ", ")
+		    (write-string ", and " output)
+		    (write-string (cadr remaining) output))
+		   (else (write-string ", " output)
 			 (next (cdr remaining)))))
 	   (get-output-string output)))))
 
