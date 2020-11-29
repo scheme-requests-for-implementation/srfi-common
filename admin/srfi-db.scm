@@ -64,3 +64,35 @@
 	  ((= number (srfi/number (car srfis)))
 	   (car srfis))
 	  (else (find (cdr srfis))))))
+
+(define (string-join-english string-list)
+  "Return a string constructed by appending the elements of
+`string-list', separating them with \", \" except for the last pair,
+which should be separated by \" and\" if there are only two elements
+and \", and\" otherwise."
+  (cond ((null? string-list) "")
+	((null? (cdr string-list)) (car string-list))
+	((null? (cddr string-list))
+	 (string-append (car string-list)
+			" and "
+			(cadr string-list)))
+	(else
+	 (with-output-to-string
+	   (lambda ()
+	     (let next ((remaining string-list))
+	       (write-string (car remaining))
+	       (cond ((null? (cddr remaining))
+		      (write-string ", and ")
+		      (write-string (cadr remaining)))
+		     (else (write-string ", ")
+			   (next (cdr remaining))))))))))
+
+(define (format-srfi-authors authors)
+  (string-join-english
+   (map (lambda (author)
+          (let ((author-name (car author)))
+            (if (null? (cdr author))
+                author-name
+                (let ((author-role (cadr author)))
+                  (string-append author-name " (" author-role ")")))))
+        authors)))
