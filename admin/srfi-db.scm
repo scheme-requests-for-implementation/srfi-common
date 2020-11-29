@@ -77,15 +77,15 @@ and \", and\" otherwise."
 			" and "
 			(cadr string-list)))
 	(else
-	 (with-output-to-string
-	   (lambda ()
-	     (let next ((remaining string-list))
-	       (write-string (car remaining))
-	       (cond ((null? (cddr remaining))
-		      (write-string ", and ")
-		      (write-string (cadr remaining)))
-		     (else (write-string ", ")
-			   (next (cdr remaining))))))))))
+	 (let ((output (open-output-string)))
+	   (let next ((remaining string-list))
+	     (write-string (car remaining))
+	     (cond ((null? (cddr remaining))
+		    (write-string ", and ")
+		    (write-string (cadr remaining)))
+		   (else (write-string ", ")
+			 (next (cdr remaining)))))
+	   (get-output-string output)))))
 
 (define (format-srfi-authors authors)
   (string-join-english
