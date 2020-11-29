@@ -1,9 +1,9 @@
-(import (chibi html-parser))
 (import (chibi show))
 (import (chibi show pretty))
 (import (chibi sxml))
 (import (srfi 1))
 (import (srfi 19))
+(import (srfi 132))
 
 (define (pp object) (show #t (pretty object)))
 
@@ -51,10 +51,22 @@
     (lambda (year month day)
       (date->rss-time day month year))))
 
-(define (srfi-abstract-html srfi)
-  (let ((n (srfi/number srfi)))
-    (call-with-input-file (show #f "abstracts/" n ".html")
-      html->sxml)))
+(define (iso-date->date string)
+  (call-with-values (lambda () (parse-iso-date string))
+    (lambda (year month day)
+      (make-date 0 0 0 12 day month year -480))))
+
+(define (read-entire-file pathname)
+  (call-with-input-file pathname
+    (lambda (input)
+      (let ((output (open-output-string)))
+	(let loop ()
+	  (let ((buffer (read-string 1024 input)))
+	    (cond ((eof-object? buffer)
+		   (get-output-string output))
+		  (else
+		   (write-string buffer output)
+		   (loop)))))))))
 
 (define (srfi-guid srfi)
   (let ((n (srfi/number srfi)))
@@ -64,7 +76,9 @@
   (let ((n (srfi/number srfi)))
     (show #f "https://srfi.schemers.org/srfi-" n "/srfi-" n ".html")))
 
-;; <> Add description of the change in state of the SRFI.
+(define (srfi-update-date srfi)
+  (or (srfi/done-date srfi)
+      (srfi/draft-date srfi)))
 
 (define (srfi-item srfi)
   (let ((n (srfi/number srfi)))
@@ -72,10 +86,12 @@
 	      (show #f "SRFI " n ": " (srfi/title srfi))
 	      (srfi-url srfi)
 	      (format-srfi-authors (srfi/authors srfi))
-	      (iso-date->rss-time
-	       (or (srfi/done-date srfi)
-		   (srfi/draft-date srfi)))
-	      (srfi-abstract-html srfi))))
+	      (iso-date->rss-time (srfi-update-date srfi))
+	      `("SRFI "
+		,n
+		" is now in "
+		(em ,(srfi/status srfi))
+		" status."))))
 
 ;; <> Incorporate the output HTML from this procedure into the SRFI home page.
 (define (header-rss-link url)
@@ -85,17 +101,19 @@
       (img (@ (alt "RSS")
 	      (src "/blog/rss.svg")))))
 
-;; <> Drop duplicates, e.g. remove draft when finalization or withdrawal
-;; happens.
-
 (define (srfi-feed)
-  (rss-outline
-   (rss-channel "Scheme Requests for Implementation"
-		"https://srfi.schemers.org/"
-		"Updates to SRFI documents"
-		"https://srfi.schemers.org/rss"
-		"en-US"
-		(map srfi-item (read-srfi-data "srfi-data.scm")))))
+  (define (srfi-time srfi)
+    (date->time-utc (iso-date->date (srfi-update-date srfi))))
+  (let ((srfis (list-sort
+		(lambda (s1 s2) (time>? (srfi-time s1) (srfi-time s2)))
+		(read-srfi-data "srfi-data.scm"))))
+    (rss-outline
+     (rss-channel "Scheme Requests for Implementation"
+		  "https://srfi.schemers.org/"
+		  "Updates to SRFI documents"
+		  "https://srfi.schemers.org/rss"
+		  "en-US"
+		  (map srfi-item srfis)))))
 
 (define (main)
   (sxml-display-as-html (srfi-feed)))
