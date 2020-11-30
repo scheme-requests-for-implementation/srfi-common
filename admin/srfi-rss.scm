@@ -93,14 +93,6 @@
 		(em ,(srfi/status srfi))
 		" status."))))
 
-;; <> Incorporate the output HTML from this procedure into the SRFI home page.
-(define (header-rss-link url)
-  `(a (@ (href ,url)
-         (rel "alternate")
-         (type "application/rss+xml"))
-      (img (@ (alt "RSS")
-	      (src "/blog/rss.svg")))))
-
 (define (srfi-feed)
   (define (srfi-time srfi)
     (date->time-utc (iso-date->date (srfi-update-date srfi))))
