@@ -1814,7 +1814,7 @@
  (draft-date "2020-08-28"))
 ((number 209)
  (status draft)
- (title "Enumerations and Enum Sets")
+ (title "Enums and Enum Sets")
  (author "John Cowan" "text")
  (author "Wolfgang Corcoran-Mathe" "implementation")
  (see-also)
