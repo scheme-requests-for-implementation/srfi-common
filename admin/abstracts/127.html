@@ -1,10 +1,10 @@
       <p>Lazy sequences (or lseqs, pronounced
       "ell-seeks") are a generalization of lists. In particular, an lseq is
-      either a proper list or a dotted list whose last cdr is a <a href="/srfi-121/">SRFI 121</a> generator. A generator is a procedure that can
+      either a proper list or a dotted list whose last cdr is a <a href="https://srfi.schemers.org/srfi-121/">SRFI 121</a> generator. A generator is a procedure that can
       be invoked with no arguments in order to lazily supply additional
       elements of the lseq. When a generator has no more elements to return, it
       returns an end-of-file object. Consequently, lazy sequences cannot
       reliably contain end-of-file objects.
       <p>This SRFI provides a set of procedures suitable
-      for operating on lazy sequences based on <a href="/srfi-1/">SRFI
+      for operating on lazy sequences based on <a href="https://srfi.schemers.org/srfi-1/">SRFI
       1</a>.
