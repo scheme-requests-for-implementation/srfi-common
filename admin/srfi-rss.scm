@@ -88,7 +88,6 @@
 		" is now in "
 		(em ,(srfi/status srfi))
 		" status."
-		(h2 "Abstract")
 		(blockquote ,(srfi-abstract srfi))))))
 
 (define (srfi-feed)
