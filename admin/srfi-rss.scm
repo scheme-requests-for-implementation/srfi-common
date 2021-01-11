@@ -91,7 +91,14 @@
 		,n
 		" is now in "
 		(em ,(srfi/status srfi))
-		" status."))))
+		" status."
+		(h2 "Abstract")
+		(blockquote
+		 ,(read-entire-file
+		   (string-append (get-environment-variable "sc")
+				  "/admin/abstracts/"
+				  (number->string (srfi/number srfi))
+				  ".html")))))))
 
 (define (srfi-feed)
   (define (srfi-time srfi)
