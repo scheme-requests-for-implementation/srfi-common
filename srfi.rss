@@ -1,4 +1,12 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 206: Auxiliary Syntax Keywords</title><link>https://srfi.schemers.org/srfi-206/srfi-206.html</link><guid>https://srfi.schemers.org/srfi-206</guid><description>SRFI 206 is now in <em>final</em> status.<blockquote>This SRFI defines a mechanism for defining auxiliary syntax
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 215: Central Log Exchange</title><link>https://srfi.schemers.org/srfi-215/srfi-215.html</link><guid>https://srfi.schemers.org/srfi-215</guid><description>SRFI 215 is now in <em>final</em> status.<blockquote>    <p>
+      This SRFI specifies a central log exchange for Scheme that
+      connects log producers with log consumers. It allows multiple
+      logging systems to interoperate and co-exist in the same
+      program. Library code can produce log messages without knowledge
+      of which log system is actually used. Simple applications can
+      easily get logs on standard output, while more advanced
+      applications can send them to a full logging system.
+    </p></blockquote></description><dc:creator>Göran Weinholt</dc:creator><pubDate>Mon, 11 Jan 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 206: Auxiliary Syntax Keywords</title><link>https://srfi.schemers.org/srfi-206/srfi-206.html</link><guid>https://srfi.schemers.org/srfi-206</guid><description>SRFI 206 is now in <em>final</em> status.<blockquote>This SRFI defines a mechanism for defining auxiliary syntax
 keywords independently in different modules in such a way that
 they still have the same binding so that they can be used
 interchangeably as literal identifiers in
@@ -46,15 +54,7 @@ Students, however, are expected to be able to just write</p>
  <pre>
  (include (srfi sicp))</pre>
  <p>and have the code from the book run without problems (apart from those intended by the book authors).
-</p></blockquote></description><dc:creator>Vladimir Nikishkin</dc:creator><pubDate>Wed, 04 Nov 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 215: Central Log Exchange</title><link>https://srfi.schemers.org/srfi-215/srfi-215.html</link><guid>https://srfi.schemers.org/srfi-215</guid><description>SRFI 215 is now in <em>draft</em> status.<blockquote>    <p>
-      This SRFI specifies a central log exchange for Scheme that
-      connects log producers with log consumers. It allows multiple
-      logging systems to interoperate and co-exist in the same
-      program. Library code can produce log messages without knowledge
-      of which log system is actually used. Simple applications can
-      easily get logs on standard output, while more advanced
-      applications can send them to a full logging system.
-    </p></blockquote></description><dc:creator>Göran Weinholt</dc:creator><pubDate>Tue, 03 Nov 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 207: String-notated bytevectors</title><link>https://srfi.schemers.org/srfi-207/srfi-207.html</link><guid>https://srfi.schemers.org/srfi-207</guid><description>SRFI 207 is now in <em>final</em> status.<blockquote><p>To ease the human reading and writing of Scheme code involving
+</p></blockquote></description><dc:creator>Vladimir Nikishkin</dc:creator><pubDate>Wed, 04 Nov 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 207: String-notated bytevectors</title><link>https://srfi.schemers.org/srfi-207/srfi-207.html</link><guid>https://srfi.schemers.org/srfi-207</guid><description>SRFI 207 is now in <em>final</em> status.<blockquote><p>To ease the human reading and writing of Scheme code involving
 binary data that for mnemonic reasons corresponds
 as a whole or in part to ASCII-coded text, a notation
 for bytevectors is defined which allows printable ASCII characters
@@ -543,7 +543,7 @@ and a suggested <code>format-array</code> procedure.</p></blockquote></descripti
       and motivates our choice of the even style. A companion SRFI 41 Stream
       Library provides additional procedures and syntax which make for more
       convenient processing of streams and shows several examples of their
-      use.</p></blockquote></description><dc:creator>Philip L. Bewig</dc:creator><pubDate>Thu, 10 Aug 2017 12:00:00 -0800</pubDate></item><item><title>SRFI 114: Comparators</title><link>https://srfi.schemers.org/srfi-114/srfi-114.html</link><guid>https://srfi.schemers.org/srfi-114</guid><description>SRFI 114 is now in <em>withdrawn</em> status.<blockquote>      <p>This proposal is a rewrite of <a href="/srfi-67/">SRFI 67</a>, Compare Procedures, extending it from procedures
+      use.</p></blockquote></description><dc:creator>Philip L. Bewig</dc:creator><pubDate>Thu, 10 Aug 2017 12:00:00 -0800</pubDate></item><item><title>SRFI 114: Comparators</title><link>https://srfi.schemers.org/srfi-114/srfi-114.html</link><guid>https://srfi.schemers.org/srfi-114</guid><description>SRFI 114 is now in <em>withdrawn</em> status.<blockquote>      <p>This proposal is a rewrite of <a href="https://srfi.schemers.org/srfi-67/">SRFI 67</a>, Compare Procedures, extending it from procedures
       that represent a total order to procedure bundles that represent one or
       more of a total order, an equality predicate, and a hash function. By
       packaging these procedures together, along with a type test predicate,
@@ -558,15 +558,15 @@ and a suggested <code>format-array</code> procedure.</p></blockquote></descripti
       </p><p>The precise semantics of these operators is
       almost never an issue. A consistent, portable set of <em>names</em> and
       <em>parameter conventions</em>, however, is. Hence this SRFI, which is
-      based mainly on <a href="/srfi-33/">SRFI 33</a>, with some changes and
+      based mainly on <a href="https://srfi.schemers.org/srfi-33/">SRFI 33</a>, with some changes and
       additions from <a href="http://srfi.schemers.org/srfi-33/mail-archive/msg00023.html">Olin's late
-      revisions to SRFI 33</a> (which were never consummated). <a href="/srfi-60/">SRFI 60</a> (based on SLIB) is smaller but has a few
+      revisions to SRFI 33</a> (which were never consummated). <a href="https://srfi.schemers.org/srfi-60/">SRFI 60</a> (based on SLIB) is smaller but has a few
       procedures of its own; some of its procedures have both native (often
       Common Lisp) and SRFI 33 names. They have been incorporated into this
       SRFI. <a href="http://www.r6rs.org/final/html/r6rs-lib/r6rs-lib-Z-H-12.html#node_sec_11.4">
       R6RS</a> is a subset of SRFI 60, except that all procedure names begin
       with a <code>bitwise-</code> prefix. A few procedures have been added from
-      the general vector <a href="/srfi-133/">SRFI 133</a>.
+      the general vector <a href="https://srfi.schemers.org/srfi-133/">SRFI 133</a>.
       </p><p>Among the applications of bitwise operations
       are: hashing, Galois-field calculations of error-detecting and
       error-correcting codes, cryptography and ciphers, pseudo-random number
@@ -596,15 +596,15 @@ and a suggested <code>format-array</code> procedure.</p></blockquote></descripti
       </p><p>The precise semantics of these operators is
       almost never an issue. A consistent, portable set of <em>names</em> and
       <em>parameter conventions</em>, however, is. Hence this SRFI, which is
-      based mainly on <a href="/srfi-33/">SRFI 33</a>, with some changes and
+      based mainly on <a href="https://srfi.schemers.org/srfi-33/">SRFI 33</a>, with some changes and
       additions from <a href="http://srfi.schemers.org/srfi-33/mail-archive/msg00023.html">Olin's late
-      revisions to SRFI 33</a> (which were never consummated). <a href="/srfi-60/">SRFI 60</a> (based on SLIB) is smaller but has a few
+      revisions to SRFI 33</a> (which were never consummated). <a href="https://srfi.schemers.org/srfi-60/">SRFI 60</a> (based on SLIB) is smaller but has a few
       procedures of its own; some of its procedures have both native (often
       Common Lisp) and SRFI 33 names. They have been incorporated into this
       SRFI. <a href="http://www.r6rs.org/final/html/r6rs-lib/r6rs-lib-Z-H-12.html#node_sec_11.4">
       R6RS</a> is a subset of SRFI 60, except that all procedure names begin
       with a <code>bitwise-</code> prefix. A few procedures have been added from
-      the general vector <a href="/srfi-133/">SRFI 133</a>.
+      the general vector <a href="https://srfi.schemers.org/srfi-133/">SRFI 133</a>.
       </p><p>Among the applications of bitwise operations
       are: hashing, Galois-field calculations of error-detecting and
       error-correcting codes, cryptography and ciphers, pseudo-random number
@@ -636,7 +636,7 @@ and a suggested <code>format-array</code> procedure.</p></blockquote></descripti
       applicable to a limited range of exact integers only. These procedures
       are semantically similar to the corresponding generic-arithmetic
       procedures, but allow more efficient implementations.</p></blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Sat, 27 May 2017 12:00:00 -0800</pubDate></item><item><title>SRFI 140: Immutable Strings</title><link>https://srfi.schemers.org/srfi-140/srfi-140.html</link><guid>https://srfi.schemers.org/srfi-140</guid><description>SRFI 140 is now in <em>final</em> status.<blockquote>      <p>This attempts to solve the same issues with
-      R7RS strings raised by <a href="/srfi-135/">SRFI-135</a>, but with better
+      R7RS strings raised by <a href="https://srfi.schemers.org/srfi-135/">SRFI-135</a>, but with better
       integration with the Scheme language.
       </p><p>We propose to retain the name <dfn>string</dfn>
       as the type of sequences of Unicode characters (scalar values). There are
@@ -663,8 +663,8 @@ and a suggested <code>format-array</code> procedure.</p></blockquote></descripti
       REPL. Specifically, some procedures that traditionally return mutable
       strings are changed to return istrings. We later discuss compatibility
       and other library issues.
-      </p><p>This combines <a href="/srfi-13/">SRFI-13</a>,
-      <a href="/srfi-135/">SRFI-135</a>, and <a href="/srfi-118/">SRFI-118</a>.</p></li></p></blockquote></description><dc:creator>Per Bothner</dc:creator><pubDate>Wed, 24 May 2017 12:00:00 -0800</pubDate></item><item><title>SRFI 145: Assumptions</title><link>https://srfi.schemers.org/srfi-145/srfi-145.html</link><guid>https://srfi.schemers.org/srfi-145</guid><description>SRFI 145 is now in <em>final</em> status.<blockquote>      <p>A means to denote the invalidity of certain
+      </p><p>This combines <a href="https://srfi.schemers.org/srfi-13/">SRFI-13</a>,
+      <a href="https://srfi.schemers.org/srfi-135/">SRFI-135</a>, and <a href="/srfi-118/">SRFI-118</a>.</p></li></p></blockquote></description><dc:creator>Per Bothner</dc:creator><pubDate>Wed, 24 May 2017 12:00:00 -0800</pubDate></item><item><title>SRFI 145: Assumptions</title><link>https://srfi.schemers.org/srfi-145/srfi-145.html</link><guid>https://srfi.schemers.org/srfi-145</guid><description>SRFI 145 is now in <em>final</em> status.<blockquote>      <p>A means to denote the invalidity of certain
       code paths in a Scheme program is proposed. It allows Scheme code to turn
       the evaluation into a user-defined error that need not be signalled by
       the implementation. Optimizing compilers may use these denotations to
@@ -726,7 +726,7 @@ and a suggested <code>format-array</code> procedure.</p></blockquote></descripti
       takes linear time.
       </p><p>The operations of this new data type include
       analogues for all of the non-mutating operations on strings specified by
-      the R7RS and most of those specified by <abbr title="String cursors"><a href="/srfi-130/">SRFI 130</a></abbr>, but the
+      the R7RS and most of those specified by <abbr title="String cursors"><a href="https://srfi.schemers.org/srfi-130/">SRFI 130</a></abbr>, but the
       immutability of texts and uniformity of character-based indexing simplify
       the specification of those operations while avoiding several
       inefficiencies associated with the mutability of Scheme's strings.</p></blockquote></description><dc:creator>William D Clinger</dc:creator><pubDate>Tue, 06 Sep 2016 12:00:00 -0800</pubDate></item><item><title>SRFI 134: Immutable Deques</title><link>https://srfi.schemers.org/srfi-134/srfi-134.html</link><guid>https://srfi.schemers.org/srfi-134</guid><description>SRFI 134 is now in <em>final</em> status.<blockquote>      <p>This SRFI defines immutable deques. A deque is
@@ -761,19 +761,19 @@ and a suggested <code>format-array</code> procedure.</p></blockquote></descripti
       syntactic layer that can be implemented with <code>syntax-rules</code>
       without requiring low-level macros. Like SRFI-99's syntax layer, it is
       backward compatible with the <code>define-record-type</code> macro from
-      <a href="/srfi-9/">SRFI 9</a> or R7RS-small. It is forward compatible with
-      <a href="/srfi-99/">SRFI 99</a>.</p></blockquote></description><dc:creator>John Cowan and Will Clinger</dc:creator><pubDate>Sat, 13 Feb 2016 12:00:00 -0800</pubDate></item><item><title>SRFI 126: R6RS-based hashtables</title><link>https://srfi.schemers.org/srfi-126/srfi-126.html</link><guid>https://srfi.schemers.org/srfi-126</guid><description>SRFI 126 is now in <em>final</em> status.<blockquote>      <p>We provide a hashtable API that takes the R6RS
+      <a href="https://srfi.schemers.org/srfi-9/">SRFI 9</a> or R7RS-small. It is forward compatible with
+      <a href="https://srfi.schemers.org/srfi-99/">SRFI 99</a>.</p></blockquote></description><dc:creator>John Cowan and Will Clinger</dc:creator><pubDate>Sat, 13 Feb 2016 12:00:00 -0800</pubDate></item><item><title>SRFI 126: R6RS-based hashtables</title><link>https://srfi.schemers.org/srfi-126/srfi-126.html</link><guid>https://srfi.schemers.org/srfi-126</guid><description>SRFI 126 is now in <em>final</em> status.<blockquote>      <p>We provide a hashtable API that takes the R6RS
       hashtables API as a basis and makes backwards compatible additions such
       as support for weak hashtables, external representation, API support for
       double hashing implementations, and utility procedures.</p></blockquote></description><dc:creator>Taylan Ulrich Bayırlı/Kammer</dc:creator><pubDate>Mon, 01 Feb 2016 12:00:00 -0800</pubDate></item><item><title>SRFI 127: Lazy Sequences</title><link>https://srfi.schemers.org/srfi-127/srfi-127.html</link><guid>https://srfi.schemers.org/srfi-127</guid><description>SRFI 127 is now in <em>final</em> status.<blockquote>      <p>Lazy sequences (or lseqs, pronounced
       "ell-seeks") are a generalization of lists. In particular, an lseq is
-      either a proper list or a dotted list whose last cdr is a <a href="/srfi-121/">SRFI 121</a> generator. A generator is a procedure that can
+      either a proper list or a dotted list whose last cdr is a <a href="https://srfi.schemers.org/srfi-121/">SRFI 121</a> generator. A generator is a procedure that can
       be invoked with no arguments in order to lazily supply additional
       elements of the lseq. When a generator has no more elements to return, it
       returns an end-of-file object. Consequently, lazy sequences cannot
       reliably contain end-of-file objects.
       </p><p>This SRFI provides a set of procedures suitable
-      for operating on lazy sequences based on <a href="/srfi-1/">SRFI
+      for operating on lazy sequences based on <a href="https://srfi.schemers.org/srfi-1/">SRFI
       1</a>.</p></blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Mon, 18 Jan 2016 12:00:00 -0800</pubDate></item><item><title>SRFI 124: Ephemerons</title><link>https://srfi.schemers.org/srfi-124/srfi-124.html</link><guid>https://srfi.schemers.org/srfi-124</guid><description>SRFI 124 is now in <em>final</em> status.<blockquote>      <p>An ephemeron is an object with two components
       called its <em>key</em> and its <em>datum</em>. It differs from an
       ordinary pair as follows: if the garbage collector (GC) can prove that
@@ -802,8 +802,8 @@ and a suggested <code>format-array</code> procedure.</p></blockquote></descripti
       <code>make-string</code> and <code>string-copy</code> return
       variable-size strings.</p></blockquote></description><dc:creator>Per Bothner</dc:creator><pubDate>Tue, 07 Jul 2015 12:00:00 -0800</pubDate></item><item><title>SRFI 119: wisp: simpler indentation-sensitive scheme</title><link>https://srfi.schemers.org/srfi-119/srfi-119.html</link><guid>https://srfi.schemers.org/srfi-119</guid><description>SRFI 119 is now in <em>final</em> status.<blockquote>      <p>This SRFI describes a simple syntax which
       allows making scheme easier to read for newcomers while keeping the
-      simplicity, generality and elegance of s-expressions. Similar to <a href="/srfi-110/">SRFI 110</a>, <a href="/srfi-49/">SRFI 49</a> and Python it
-      uses indentation to group expressions. Like <a href="/srfi-110/">SRFI
+      simplicity, generality and elegance of s-expressions. Similar to <a href="https://srfi.schemers.org/srfi-110/">SRFI 110</a>, <a href="/srfi-49/">SRFI 49</a> and Python it
+      uses indentation to group expressions. Like <a href="https://srfi.schemers.org/srfi-110/">SRFI
       110</a> wisp is general and homoiconic.
       </p><p>Different from its predecessors, wisp only uses
       the absolute minimum of additional syntax-elements which are required for
@@ -811,7 +811,7 @@ and a suggested <code>format-array</code> procedure.</p></blockquote></descripti
       only uses a colon surrounded by whitespace, the period followed by
       whitespace as first code-character on the line and optional underscores
       followed by whitespace at the beginning of the line.
-      </p><p>It resolves a limitation of <a href="/srfi-110/">SRFI 110</a> and <a href="/srfi-49/">SRFI 49</a>, both of
+      </p><p>It resolves a limitation of <a href="https://srfi.schemers.org/srfi-110/">SRFI 110</a> and <a href="/srfi-49/">SRFI 49</a>, both of
       which force the programmer to use a single argument per line if the
       arguments to a procedure need to be continued after a
       procedure-call.
@@ -902,7 +902,7 @@ ____   <i>*</i> n : <i>factorial</i> (- n 1)
       humans to read. The sweet-expression syntax enables the use of
       syntactically-meaningful indentation to group expressions (similar to
       Python), and it builds on the infix and traditional function notation
-      defined in <a href="/srfi-105/">SRFI-105 (curly-infix-expressions)</a>.
+      defined in <a href="https://srfi.schemers.org/srfi-105/">SRFI-105 (curly-infix-expressions)</a>.
       Unlike nearly all past efforts to improve s-expression readability,
       sweet-expressions are general (the notation is independent from any
       underlying semantic) and homoiconic (the underlying data structure is
@@ -947,12 +947,12 @@ define fibfast(n)   ; Typical function notation
       <code>($construct$:<var>tag</var> ...)</code>, where
       <code>$construct$:<var>tag</var></code> is normally bound to a predefined
       macro.
-      </p><p>This propsal depends on <a href="/srfi-109/">SRFI-109 (extended string quasi-literals)</a> (in spite of
+      </p><p>This propsal depends on <a href="https://srfi.schemers.org/srfi-109/">SRFI-109 (extended string quasi-literals)</a> (in spite of
       having a lower number). It also shares quite of bit of syntax with
-      <a href="/srfi-107/">SRFI-107 (XML reader syntax)</a>.</p></blockquote></description><dc:creator>Per Bothner</dc:creator><pubDate>Fri, 21 Jun 2013 12:00:00 -0800</pubDate></item><item><title>SRFI 109: Extended string quasi-literals</title><link>https://srfi.schemers.org/srfi-109/srfi-109.html</link><guid>https://srfi.schemers.org/srfi-109</guid><description>SRFI 109 is now in <em>final</em> status.<blockquote>      <p>This specifies a reader extension for extended
+      <a href="https://srfi.schemers.org/srfi-107/">SRFI-107 (XML reader syntax)</a>.</p></blockquote></description><dc:creator>Per Bothner</dc:creator><pubDate>Fri, 21 Jun 2013 12:00:00 -0800</pubDate></item><item><title>SRFI 109: Extended string quasi-literals</title><link>https://srfi.schemers.org/srfi-109/srfi-109.html</link><guid>https://srfi.schemers.org/srfi-109</guid><description>SRFI 109 is now in <em>final</em> status.<blockquote>      <p>This specifies a reader extension for extended
       string quasi-literals, including nicer multi-line strings, and enclosed
       unquoted expressions.
-      </p><p>This proposal is related to <a href="/srfi-108/">SRFI-108 (named quasi-literal constructors)</a> and <a href="/srfi-107/">SRFI-107 (XML reader syntax)</a>, as they share quite a bit
+      </p><p>This proposal is related to <a href="https://srfi.schemers.org/srfi-108/">SRFI-108 (named quasi-literal constructors)</a> and <a href="/srfi-107/">SRFI-107 (XML reader syntax)</a>, as they share quite a bit
       of syntax.</p></blockquote></description><dc:creator>Per Bothner</dc:creator><pubDate>Fri, 21 Jun 2013 12:00:00 -0800</pubDate></item><item><title>SRFI 103: Library Files</title><link>https://srfi.schemers.org/srfi-103/srfi-103.html</link><guid>https://srfi.schemers.org/srfi-103</guid><description>SRFI 103 is now in <em>withdrawn</em> status.<blockquote>      <p>This SRFI defines a standard for locating files
       containing libraries with list-of-symbols library names, for unixes and
       Windows. It defines a standard for files containing R6RS libraries. It
@@ -1011,7 +1011,7 @@ define fibfast(n)   ; Typical function notation
       (CLOS). The macro has no explicit field accessors and mutators but parent
       groups, required fields, optional fields, automatic fields, read-write
       fields, read-only fields, inaccessible hidden fields, immutable virtual
-      fields, and common sharing fields.</p></blockquote></description><dc:creator>Joo ChurlSoo</dc:creator><pubDate>Mon, 21 Jun 2010 12:00:00 -0800</pubDate></item><item><title>SRFI 104: Library Files Utilities</title><link>https://srfi.schemers.org/srfi-104/srfi-104.html</link><guid>https://srfi.schemers.org/srfi-104</guid><description>SRFI 104 is now in <em>withdrawn</em> status.<blockquote>      <p>This SRFI implements <a href="/srfi-103/">SRFI 103: Library Files</a> as a library. It is useful
+      fields, and common sharing fields.</p></blockquote></description><dc:creator>Joo ChurlSoo</dc:creator><pubDate>Mon, 21 Jun 2010 12:00:00 -0800</pubDate></item><item><title>SRFI 104: Library Files Utilities</title><link>https://srfi.schemers.org/srfi-104/srfi-104.html</link><guid>https://srfi.schemers.org/srfi-104</guid><description>SRFI 104 is now in <em>withdrawn</em> status.<blockquote>      <p>This SRFI implements <a href="https://srfi.schemers.org/srfi-103/">SRFI 103: Library Files</a> as a library. It is useful
       for working with library files.</p></blockquote></description><dc:creator>Derick Eddington</dc:creator><pubDate>Sun, 23 May 2010 12:00:00 -0800</pubDate></item><item><title>SRFI 99: ERR5RS Records</title><link>https://srfi.schemers.org/srfi-99/srfi-99.html</link><guid>https://srfi.schemers.org/srfi-99</guid><description>SRFI 99 is now in <em>final</em> status.<blockquote>      <p>Many Scheme programmers have considered records
       to be one of the most important features missing from the R5RS. The R6RS
       proposed a record system, but its design has been widely criticized and
@@ -1070,13 +1070,13 @@ implementors.
       nevertheless offers similar functionality and a nicer syntax. Formal
       parameter lists which conform to the R5RS syntax have the same meaning as
       in R5RS.</p></blockquote></description><dc:creator>Marc Feeley</dc:creator><pubDate>Tue, 10 Jul 2007 12:00:00 -0800</pubDate></item><item><title>SRFI 90: Extensible hash table constructor</title><link>https://srfi.schemers.org/srfi-90/srfi-90.html</link><guid>https://srfi.schemers.org/srfi-90</guid><description>SRFI 90 is now in <em>final</em> status.<blockquote>      <p>This SRFI specifies the procedure
-      <code>make-table</code>, a hash table constructor compatible with <a href="/srfi-69/">SRFI 69 (Basic hash tables)</a>. The procedure
+      <code>make-table</code>, a hash table constructor compatible with <a href="https://srfi.schemers.org/srfi-69/">SRFI 69 (Basic hash tables)</a>. The procedure
       <code>make-table</code> allows various parameters of the hash table to be
       specified with optional named parameters when it is constructed. These
       parameters are: the initial size, the minimum and maximum load factor,
       the key equivalence function, the key hashing function, whether the
       references to the keys are weak, and similarly for the values. By using
-      optional named parameters, as specified in <a href="/srfi-89/">SRFI 89
+      optional named parameters, as specified in <a href="https://srfi.schemers.org/srfi-89/">SRFI 89
       (Optional positional and named parameters)</a>, the constructor's API can
       be easily extended in a backward compatible way by other SRFIs and Scheme
       implementations.</p></blockquote></description><dc:creator>Marc Feeley</dc:creator><pubDate>Tue, 10 Jul 2007 12:00:00 -0800</pubDate></item><item><title>SRFI 91: Extended ports</title><link>https://srfi.schemers.org/srfi-91/srfi-91.html</link><guid>https://srfi.schemers.org/srfi-91</guid><description>SRFI 91 is now in <em>withdrawn</em> status.<blockquote>      <p>This SRFI specifies an extension to the R5RS
@@ -1128,7 +1128,7 @@ implementors.
         arbitrary readers and writers
       </li></ul><li>
       <p>It builds on the Primitive I/O layer specified
-      in <a href="/srfi-79/">SRFI 79 (Primitive I/O)</a>.</p></li></p></blockquote></description><dc:creator>Michael Sperber</dc:creator><pubDate>Mon, 20 Nov 2006 12:00:00 -0800</pubDate></item><item><title>SRFI 81: Port I/O</title><link>https://srfi.schemers.org/srfi-81/srfi-81.html</link><guid>https://srfi.schemers.org/srfi-81</guid><description>SRFI 81 is now in <em>withdrawn</em> status.<blockquote>      <p>This SRFI defines an I/O layer similar in
+      in <a href="https://srfi.schemers.org/srfi-79/">SRFI 79 (Primitive I/O)</a>.</p></li></p></blockquote></description><dc:creator>Michael Sperber</dc:creator><pubDate>Mon, 20 Nov 2006 12:00:00 -0800</pubDate></item><item><title>SRFI 81: Port I/O</title><link>https://srfi.schemers.org/srfi-81/srfi-81.html</link><guid>https://srfi.schemers.org/srfi-81</guid><description>SRFI 81 is now in <em>withdrawn</em> status.<blockquote>      <p>This SRFI defines an I/O layer similar in
       nature to the ports subsystem in R5RS, and provides conventional,
       imperative buffered input and output.
       </p><p>The layer architecture is similar to the upper
@@ -1143,9 +1143,9 @@ implementors.
         from readers and writers
       </li></ul><li>
       <p>It builds on the Primitive I/O layer specified
-      in <a href="/srfi-79/">SRFI 79 (Primitive I/O)</a>.</p></li></p></blockquote></description><dc:creator>Michael Sperber</dc:creator><pubDate>Mon, 20 Nov 2006 12:00:00 -0800</pubDate></item><item><title>SRFI 82: Stream Ports</title><link>https://srfi.schemers.org/srfi-82/srfi-82.html</link><guid>https://srfi.schemers.org/srfi-82</guid><description>SRFI 82 is now in <em>withdrawn</em> status.<blockquote>      <p>This SRFI augments <a href="/srfi-81/">SRFI 81
+      in <a href="https://srfi.schemers.org/srfi-79/">SRFI 79 (Primitive I/O)</a>.</p></li></p></blockquote></description><dc:creator>Michael Sperber</dc:creator><pubDate>Mon, 20 Nov 2006 12:00:00 -0800</pubDate></item><item><title>SRFI 82: Stream Ports</title><link>https://srfi.schemers.org/srfi-82/srfi-82.html</link><guid>https://srfi.schemers.org/srfi-82</guid><description>SRFI 82 is now in <em>withdrawn</em> status.<blockquote>      <p>This SRFI augments <a href="https://srfi.schemers.org/srfi-81/">SRFI 81
       (Port I/O)</a> by allowing ports to be constructed from streams as
-      described in <a href="/srfi-80/">SRFI 80 (Stream I/O)</a>.</p></blockquote></description><dc:creator>Michael Sperber</dc:creator><pubDate>Mon, 20 Nov 2006 12:00:00 -0800</pubDate></item><item><title>SRFI 79: Primitive I/O</title><link>https://srfi.schemers.org/srfi-79/srfi-79.html</link><guid>https://srfi.schemers.org/srfi-79</guid><description>SRFI 79 is now in <em>withdrawn</em> status.<blockquote>      <p>This SRFI defines a simple, primitive I/O
+      described in <a href="https://srfi.schemers.org/srfi-80/">SRFI 80 (Stream I/O)</a>.</p></blockquote></description><dc:creator>Michael Sperber</dc:creator><pubDate>Mon, 20 Nov 2006 12:00:00 -0800</pubDate></item><item><title>SRFI 79: Primitive I/O</title><link>https://srfi.schemers.org/srfi-79/srfi-79.html</link><guid>https://srfi.schemers.org/srfi-79</guid><description>SRFI 79 is now in <em>withdrawn</em> status.<blockquote>      <p>This SRFI defines a simple, primitive I/O
       subsystem for Scheme that is intended to function as the lowest layer of
       a more comprehensive suite of I/O layers. It provides unbuffered I/O, and
       is close to what a typical operating system offers. Thus, its interface
@@ -1158,8 +1158,8 @@ implementors.
       blocking-I/O. Non-blocking and selective I/O is left for another
       SRFI.
       </p><p>This I/O layer was designed in conjunction with
-      two other layers that can be built on top of it: <a href="/srfi-80/">SRFI
-      80 (Stream I/O)</a> and <a href="/srfi-81/">SRFI 81 (Port I/O)</a>.</p></blockquote></description><dc:creator>Michael Sperber</dc:creator><pubDate>Thu, 16 Nov 2006 12:00:00 -0800</pubDate></item><item><title>SRFI 84: Universal Identifiers</title><link>https://srfi.schemers.org/srfi-84/srfi-84.html</link><guid>https://srfi.schemers.org/srfi-84</guid><description>SRFI 84 is now in <em>withdrawn</em> status.<blockquote>      <p>This SRFI proposes a social convention to allow
+      two other layers that can be built on top of it: <a href="https://srfi.schemers.org/srfi-80/">SRFI
+      80 (Stream I/O)</a> and <a href="https://srfi.schemers.org/srfi-81/">SRFI 81 (Port I/O)</a>.</p></blockquote></description><dc:creator>Michael Sperber</dc:creator><pubDate>Thu, 16 Nov 2006 12:00:00 -0800</pubDate></item><item><title>SRFI 84: Universal Identifiers</title><link>https://srfi.schemers.org/srfi-84/srfi-84.html</link><guid>https://srfi.schemers.org/srfi-84</guid><description>SRFI 84 is now in <em>withdrawn</em> status.<blockquote>      <p>This SRFI proposes a social convention to allow
       programmers to easily create short, simple Scheme symbols which are
       guaranteed to be universally unique: No other programmer also following
       this SRFI will accidentally create a symbol eq? to yours.
@@ -1311,7 +1311,7 @@ and storing the first failed check. At the end of a file, or at any other
 point, the user can print a summary using <code>check-report</code>.
       </p><p>In addition to the simple test above, it is
       also possible to execute a parametric sequence of checks. Syntactically,
-      this takes the form of an eager comprehension in the sense of <a href="/srfi-42/">SRFI 42</a> [5]. For example,
+      this takes the form of an eager comprehension in the sense of <a href="https://srfi.schemers.org/srfi-42/">SRFI 42</a> [5]. For example,
       <pre>
    (check-ec (:range e 100)
              (:let x (expt 2.0 e))
@@ -1639,12 +1639,12 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br></br>
       x)
   =>
     40
-</pre></p></blockquote></description><dc:creator>Andrew Wilcox</dc:creator><pubDate>Tue, 17 May 2005 12:00:00 -0800</pubDate></item><item><title>SRFI 63: Homogeneous and Heterogeneous Arrays</title><link>https://srfi.schemers.org/srfi-63/srfi-63.html</link><guid>https://srfi.schemers.org/srfi-63</guid><description>SRFI 63 is now in <em>final</em> status.<blockquote>      <p>The SRFI, which is to supersede <a href="/srfi-47/">SRFI-47</a>, "Array",
+</pre></p></blockquote></description><dc:creator>Andrew Wilcox</dc:creator><pubDate>Tue, 17 May 2005 12:00:00 -0800</pubDate></item><item><title>SRFI 63: Homogeneous and Heterogeneous Arrays</title><link>https://srfi.schemers.org/srfi-63/srfi-63.html</link><guid>https://srfi.schemers.org/srfi-63</guid><description>SRFI 63 is now in <em>final</em> status.<blockquote>      <p>The SRFI, which is to supersede <a href="https://srfi.schemers.org/srfi-47/">SRFI-47</a>, "Array",
       <ul>
         <li>synthesizes array concepts from Common-Lisp
         and Alan Bawden's "array.scm";
         </li><li>incorporates all the uniform vector types
-        from <a href="/srfi-4/">SFRI-4</a> "Homogeneous numeric vector
+        from <a href="https://srfi.schemers.org/srfi-4/">SFRI-4</a> "Homogeneous numeric vector
         datatypes";
         </li><li>adds a boolean uniform array type;
         </li><li>adds 16.bit and 128.bit floating-point
@@ -1657,8 +1657,8 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br></br>
       vectors as the one-dimensional case, obviating the need for SRFI-4.<br></br>
       <br></br>
       <p>SRFI-58 gives a read/write invariant syntax for
-      the homogeneous and heterogeneous arrays described here.</p></li></p></blockquote></description><dc:creator>Aubrey Jaffer</dc:creator><pubDate>Wed, 27 Apr 2005 12:00:00 -0800</pubDate></item><item><title>SRFI 58: Array Notation</title><link>https://srfi.schemers.org/srfi-58/srfi-58.html</link><guid>https://srfi.schemers.org/srfi-58</guid><description>SRFI 58 is now in <em>final</em> status.<blockquote>      <p><a href="/srfi-47/">SRFI-47</a> and its
-      successor <a href="/srfi-63/">SRFI-63</a> provide both homogeneous numeric
+      the homogeneous and heterogeneous arrays described here.</p></li></p></blockquote></description><dc:creator>Aubrey Jaffer</dc:creator><pubDate>Wed, 27 Apr 2005 12:00:00 -0800</pubDate></item><item><title>SRFI 58: Array Notation</title><link>https://srfi.schemers.org/srfi-58/srfi-58.html</link><guid>https://srfi.schemers.org/srfi-58</guid><description>SRFI 58 is now in <em>final</em> status.<blockquote>      <p><a href="https://srfi.schemers.org/srfi-47/">SRFI-47</a> and its
+      successor <a href="https://srfi.schemers.org/srfi-63/">SRFI-63</a> provide both homogeneous numeric
       and heterogeneous multidimensional arrays which subsume Scheme vectors.
       The notation presented here builds upon Common-Lisp array syntax to
       represent heterogeneous arrays; and introduces a new Scheme-based
@@ -1755,7 +1755,7 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br></br>
       which is an extension of ASCII (it will require very minor modifications
       for each particular implementation). Other implementations may need to
       use a different implementation.</p></blockquote></description><dc:creator>Thomas Lord</dc:creator><pubDate>Thu, 17 Jun 2004 12:00:00 -0800</pubDate></item><item><title>SRFI 47: Array</title><link>https://srfi.schemers.org/srfi-47/srfi-47.html</link><guid>https://srfi.schemers.org/srfi-47</guid><description>SRFI 47 is now in <em>final</em> status.<blockquote>      <p>"slib/array.scm" synthesizes array ideas from
-	Common-Lisp and Alan Bawden with homogeneous vector ideas from <a href="/srfi-4/">SRFI-4</a>
+	Common-Lisp and Alan Bawden with homogeneous vector ideas from <a href="https://srfi.schemers.org/srfi-4/">SRFI-4</a>
 	and <a href="http://swissnet.ai.mit.edu/~jaffer/SCM">SCM</a>. The result portably
       integrates homogeneous and heterogeneous arrays into Scheme.</p></blockquote></description><dc:creator>Aubrey Jaffer</dc:creator><pubDate>Mon, 14 Jun 2004 12:00:00 -0800</pubDate></item><item><title>SRFI 51: Handling rest list</title><link>https://srfi.schemers.org/srfi-51/srfi-51.html</link><guid>https://srfi.schemers.org/srfi-51</guid><description>SRFI 51 is now in <em>final</em> status.<blockquote>      <p>This SRFI introduces the
       <code>rest-values</code> procedure which has three modes of
@@ -1814,7 +1814,7 @@ construction of eager promises in cases where efficiency is a concern.<br></br>
       Scheme string is provided.</p></blockquote></description><dc:creator>Scott G. Miller</dc:creator><pubDate>Sun, 07 Mar 2004 12:00:00 -0800</pubDate></item><item><title>SRFI 48: Intermediate Format Strings</title><link>https://srfi.schemers.org/srfi-48/srfi-48.html</link><guid>https://srfi.schemers.org/srfi-48</guid><description>SRFI 48 is now in <em>final</em> status.<blockquote>      <p>This document specifies Format Strings, a
       method of interpreting a Scheme string which contains a number of format
       directives that are replaced with other string data according to the
-      semantics of each directive. This SRFI extends <a href="/srfi-28">SRFI-28</a> in being more generally useful but is less general
+      semantics of each directive. This SRFI extends <a href="https://srfi.schemers.org/srfi-28">SRFI-28</a> in being more generally useful but is less general
       than advanced format strings in that it does not allow, aside from ~F,
       for controlled positioning of text within fields.</p></blockquote></description><dc:creator>Ken Dickey</dc:creator><pubDate>Tue, 02 Mar 2004 12:00:00 -0800</pubDate></item><item><title>SRFI 32: Sort Libraries</title><link>https://srfi.schemers.org/srfi-32/srfi-32.html</link><guid>https://srfi.schemers.org/srfi-32</guid><description>SRFI 32 is now in <em>withdrawn</em> status.<blockquote>      <p>Current Scheme sorting packages are, every one
       of them, surprisingly bad. I've designed the API for a full-featured sort
@@ -1884,12 +1884,12 @@ construction of eager promises in cases where efficiency is a concern.<br></br>
         </li><li>a <code>raise</code> procedure for invoking
         the current exception handler.
       </li></ul><li>
-      <p>This SRFI is based on (withdrawn) <a href="/srfi-12/">SRFI 12: Exception Handling</a> by William Clinger, R. Kent
+      <p>This SRFI is based on (withdrawn) <a href="https://srfi.schemers.org/srfi-12/">SRFI 12: Exception Handling</a> by William Clinger, R. Kent
       Dybvig, Matthew Flatt, and Marc Feeley.</p></li></p></blockquote></description><dc:creator>Richard Kelsey and Michael Sperber</dc:creator><pubDate>Sun, 01 Dec 2002 12:00:00 -0800</pubDate></item><item><title>SRFI 35: Conditions</title><link>https://srfi.schemers.org/srfi-35/srfi-35.html</link><guid>https://srfi.schemers.org/srfi-35</guid><description>SRFI 35 is now in <em>final</em> status.<blockquote>      <p>The SRFI defines constructs for creating and
       inspecting <i>condition</i> types and values. A condition value
       encapsulates information about an exceptional situation, or exception.
       This SRFI also defines a few basic condition types.</p></blockquote></description><dc:creator>Richard Kelsey and Michael Sperber</dc:creator><pubDate>Sun, 01 Dec 2002 12:00:00 -0800</pubDate></item><item><title>SRFI 36: I/O Conditions</title><link>https://srfi.schemers.org/srfi-36/srfi-36.html</link><guid>https://srfi.schemers.org/srfi-36</guid><description>SRFI 36 is now in <em>final</em> status.<blockquote>      <p>This SRFI specifies a set of condition types
-      for I/O errors. The condition types are defined in terms of <a href="/srfi-35/">SRFI 35</a>. Moreover, this SRFI requires a Scheme system
+      for I/O errors. The condition types are defined in terms of <a href="https://srfi.schemers.org/srfi-35/">SRFI 35</a>. Moreover, this SRFI requires a Scheme system
       implementing it to raise exceptions in the sense of <a href="http://srfi.schemers.org/srfi-34/">SRFI 34</a> for errors occurring
       during the execution of the R5RS <a href="http://www.schemers.org/Documents/Standards/R5RS/HTML/r5rs-Z-H-9.html#%_sec_6.6">
       I/O operations</a>.</p></blockquote></description><dc:creator>Michael Sperber</dc:creator><pubDate>Sun, 01 Dec 2002 12:00:00 -0800</pubDate></item><item><title>SRFI 30: Nested Multi-line Comments</title><link>https://srfi.schemers.org/srfi-30/srfi-30.html</link><guid>https://srfi.schemers.org/srfi-30</guid><description>SRFI 30 is now in <em>final</em> status.<blockquote>      <p>This SRFI extends R5RS by possibly nested,
@@ -2209,7 +2209,7 @@ construction of eager promises in cases where efficiency is a concern.<br></br>
       <p>("Reader syntax" refers to aspects of the
       syntax described by the grammars in the Scheme reports.)
       </p><p>The former class of features will probably
-      include most SRFIs, exemplified by the list library specified in <a href="/srfi-1/">SRFI 1</a>. The latter class includes Unicode source code
+      include most SRFIs, exemplified by the list library specified in <a href="https://srfi.schemers.org/srfi-1/">SRFI 1</a>. The latter class includes Unicode source code
       support and different kinds of parentheses.
       </p><p>Control over the presence of individual
       features will vary over different Scheme systems. A given feature may be
