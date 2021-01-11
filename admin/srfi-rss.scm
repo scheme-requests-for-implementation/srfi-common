@@ -1,3 +1,4 @@
+(import (chibi html-parser))
 (import (chibi show))
 (import (chibi show pretty))
 (import (chibi sxml))
@@ -56,18 +57,6 @@
     (lambda (year month day)
       (make-date 0 0 0 12 day month year -480))))
 
-(define (read-entire-file pathname)
-  (call-with-input-file pathname
-    (lambda (input)
-      (let ((output (open-output-string)))
-	(let loop ()
-	  (let ((buffer (read-string 1024 input)))
-	    (cond ((eof-object? buffer)
-		   (get-output-string output))
-		  (else
-		   (write-string buffer output)
-		   (loop)))))))))
-
 (define (srfi-guid srfi)
   (let ((n (srfi/number srfi)))
     (show #f "https://srfi.schemers.org/srfi-" n)))
@@ -79,6 +68,13 @@
 (define (srfi-update-date srfi)
   (or (srfi/done-date srfi)
       (srfi/draft-date srfi)))
+
+(define (srfi-abstract srfi)
+  (let ((pathname (string-append (get-environment-variable "sc")
+				 "/admin/abstracts/"
+				 (number->string (srfi/number srfi))
+				 ".html")))
+    (cdr (call-with-input-file pathname html->sxml))))
 
 (define (srfi-item srfi)
   (let ((n (srfi/number srfi)))
@@ -93,12 +89,7 @@
 		(em ,(srfi/status srfi))
 		" status."
 		(h2 "Abstract")
-		(blockquote
-		 ,(read-entire-file
-		   (string-append (get-environment-variable "sc")
-				  "/admin/abstracts/"
-				  (number->string (srfi/number srfi))
-				  ".html")))))))
+		(blockquote ,(srfi-abstract srfi))))))
 
 (define (srfi-feed)
   (define (srfi-time srfi)
