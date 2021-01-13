@@ -1,4 +1,11 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 215: Central Log Exchange</title><link>https://srfi.schemers.org/srfi-215/srfi-215.html</link><guid>https://srfi.schemers.org/srfi-215</guid><description>SRFI 215 is now in <em>final</em> status.<blockquote>    <p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 201: Syntactic Extensions to the Core Scheme Bindings</title><link>https://srfi.schemers.org/srfi-201/srfi-201.html</link><guid>https://srfi.schemers.org/srfi-201</guid><description>SRFI 201 is now in <em>final</em> status.<blockquote><p>This document describes a handful of syntactic extensions
+  to the core bindings of the Scheme programming language.
+  In particular, it proposes to extend the binding forms
+  <code>lambda</code>, <code>let</code>,
+  <code>let*</code> with pattern matching capabilities, to extend the forms <code>let</code>
+  and <code>or</code> with the ability
+  to handle multiple values, and to extend the form <code>define</code> with
+  the ability of defining "curried" functions.</p></blockquote></description><dc:creator>Panicz Maciej Godek</dc:creator><pubDate>Wed, 13 Jan 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 215: Central Log Exchange</title><link>https://srfi.schemers.org/srfi-215/srfi-215.html</link><guid>https://srfi.schemers.org/srfi-215</guid><description>SRFI 215 is now in <em>final</em> status.<blockquote>    <p>
       This SRFI specifies a central log exchange for Scheme that
       connects log producers with log consumers. It allows multiple
       logging systems to interoperate and co-exist in the same
@@ -240,14 +247,7 @@ Scheme systems' facilities and prior proposals.</p></blockquote></description><d
   those implementations and provides extrinsic rationale for that syntax.
   It also provides a simple implementation of a pattern matcher
   which conforms to the specification of a pattern language provided
-  in this document.</p></blockquote></description><dc:creator>Panicz Maciej Godek</dc:creator><pubDate>Thu, 25 Jun 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 201: Syntactic Extensions to the Core Scheme Bindings</title><link>https://srfi.schemers.org/srfi-201/srfi-201.html</link><guid>https://srfi.schemers.org/srfi-201</guid><description>SRFI 201 is now in <em>draft</em> status.<blockquote><p>This document describes a handful of syntactic extensions
-  to the core bindings of the Scheme programming language.
-  In particular, it proposes to extend the binding forms
-  <code>lambda</code>, <code>let</code>,
-  <code>let*</code> with pattern matching capabilities, to extend the forms <code>let*</code>
-  and <code>or</code> with the ability
-  to handle multiple values, and to extend the form <code>define</code> with
-  the ability of defining "curried" functions.</p></blockquote></description><dc:creator>Panicz Maciej Godek</dc:creator><pubDate>Thu, 25 Jun 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 190: Coroutine Generators</title><link>https://srfi.schemers.org/srfi-190/srfi-190.html</link><guid>https://srfi.schemers.org/srfi-190</guid><description>SRFI 190 is now in <em>final</em> status.<blockquote><p>This SRFI defines syntax to create
+  in this document.</p></blockquote></description><dc:creator>Panicz Maciej Godek</dc:creator><pubDate>Thu, 25 Jun 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 190: Coroutine Generators</title><link>https://srfi.schemers.org/srfi-190/srfi-190.html</link><guid>https://srfi.schemers.org/srfi-190</guid><description>SRFI 190 is now in <em>final</em> status.<blockquote><p>This SRFI defines syntax to create
   <a href="https://srfi.schemers.org/srfi-121/">SRFI
     121</a>/<a href="https://srfi.schemers.org/srfi-158/">158</a>
   coroutine generators conveniently and in the flavor of Python
