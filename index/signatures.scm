@@ -7044,3 +7044,6 @@
 ((signature (array-set! array obj index1 index2 ...))
  (source (srfi 47))
  (kind procedure))
+((signature (cat object option ...))
+ (source (srfi 54))
+ (kind procedure))
