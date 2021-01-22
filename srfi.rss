@@ -32,36 +32,7 @@ using any set of Unicode digits that support positional notation.</p></blockquot
   the match failure causes short-circuiting rather than raising an
   error) and the ability to handle multiple values (where only the
   falsehood of the first value causes short-circuiting).
-</p></blockquote></description><dc:creator>Panicz Maciej Godek</dc:creator><pubDate>Sat, 28 Nov 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 216: SICP Prerequisites (Portable)</title><link>https://srfi.schemers.org/srfi-216/srfi-216.html</link><guid>https://srfi.schemers.org/srfi-216</guid><description>SRFI 216 is now in <em>draft</em> status.<blockquote><p>
-   This SRFI follows
-    <a href="https://srfi.schemers.org/srfi-203/">
-     SRFI 203
-    </a>
-   in providing "out-of-the-box" support for hosting the exercises suggested by
-    <a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">
-     Structure and Interpretation of Computer Programs
-    </a>
-   in portable Scheme.
-</p>
-
-<p>
-Whereas SRFI 203 focused on the necessarily non-portable aspects of the problem set (the graphics), this SRFI aims to provide support for the rest of the features, which are far more widespread, often already provided, and in reality mostly need just a common vocabulary.
-</p>
-
-<p>
-This SRFI provides subroutines for working with time data, multi-threading, streams and SICP names for <code>true</code> and <code>false</code>.
-</p>
-
-<p>
-None of these subroutines are fit for production use, and are only designed for pedagogical purposes.
-</p>
-
-<p>
-Students, however, are expected to be able to just write</p>
- <pre>
- (include (srfi sicp))</pre>
- <p>and have the code from the book run without problems (apart from those intended by the book authors).
-</p></blockquote></description><dc:creator>Vladimir Nikishkin</dc:creator><pubDate>Wed, 04 Nov 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 207: String-notated bytevectors</title><link>https://srfi.schemers.org/srfi-207/srfi-207.html</link><guid>https://srfi.schemers.org/srfi-207</guid><description>SRFI 207 is now in <em>final</em> status.<blockquote><p>To ease the human reading and writing of Scheme code involving
+</p></blockquote></description><dc:creator>Panicz Maciej Godek</dc:creator><pubDate>Sat, 28 Nov 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 207: String-notated bytevectors</title><link>https://srfi.schemers.org/srfi-207/srfi-207.html</link><guid>https://srfi.schemers.org/srfi-207</guid><description>SRFI 207 is now in <em>final</em> status.<blockquote><p>To ease the human reading and writing of Scheme code involving
 binary data that for mnemonic reasons corresponds
 as a whole or in part to ASCII-coded text, a notation
 for bytevectors is defined which allows printable ASCII characters
@@ -303,7 +274,36 @@ as an extension of the optional arguments of
   information from a Scheme implementation.  The output is
   Line-oriented S-expressions which are easy to parse from Scheme, C,
   and shell scripts and can co-exist with non-S-expression output.  A
-  standard vocabulary is defined; extensions are easy to make.</p></blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Mon, 24 Feb 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 174: POSIX Timespecs</title><link>https://srfi.schemers.org/srfi-174/srfi-174.html</link><guid>https://srfi.schemers.org/srfi-174</guid><description>SRFI 174 is now in <em>final</em> status.<blockquote><p>This SRFI defines the trivial type <i>timespec</i>, which is used
+  standard vocabulary is defined; extensions are easy to make.</p></blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Mon, 24 Feb 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 216: SICP Prerequisites (Portable)</title><link>https://srfi.schemers.org/srfi-216/srfi-216.html</link><guid>https://srfi.schemers.org/srfi-216</guid><description>SRFI 216 is now in <em>final</em> status.<blockquote><p>
+   This SRFI follows
+    <a href="https://srfi.schemers.org/srfi-203/">
+     SRFI 203
+    </a>
+   in providing "out-of-the-box" support for hosting the exercises suggested by
+    <a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">
+     Structure and Interpretation of Computer Programs
+    </a>
+   in portable Scheme.
+</p>
+
+<p>
+Whereas SRFI 203 focused on the necessarily non-portable aspects of the problem set (the graphics), this SRFI aims to provide support for the rest of the features, which are far more widespread, often already provided, and in reality mostly need just a common vocabulary.
+</p>
+
+<p>
+This SRFI provides procedures for working with time data, multi-threading, and streams, as well as SICP names for <code>true</code> and <code>false</code>.
+</p>
+
+<p>
+None of these procedures is fit for production use.  They are only designed for pedagogical purposes.
+</p>
+
+<p>
+Students, however, are expected to be able to just write</p>
+ <pre>
+ (include (srfi sicp))</pre>
+ <p>and have the code from the book run without problems (apart from those intended by the book authors).
+</p></blockquote></description><dc:creator>Vladimir Nikishkin</dc:creator><pubDate>Tue, 21 Jan 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 174: POSIX Timespecs</title><link>https://srfi.schemers.org/srfi-174/srfi-174.html</link><guid>https://srfi.schemers.org/srfi-174</guid><description>SRFI 174 is now in <em>final</em> status.<blockquote><p>This SRFI defines the trivial type <i>timespec</i>, which is used
 to represent the <code>struct timespec</code> defined by the
 <a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/time.h.html">
 P<small>OSIX</small> <code>&lt;time.h></code> header</a>.</p></blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Sat, 21 Dec 2019 12:00:00 -0800</pubDate></item><item><title>SRFI 175: ASCII character library</title><link>https://srfi.schemers.org/srfi-175/srfi-175.html</link><guid>https://srfi.schemers.org/srfi-175</guid><description>SRFI 175 is now in <em>final</em> status.<blockquote>  <p>This SRFI defines ASCII-only equivalents to many of the
