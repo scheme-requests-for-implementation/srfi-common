@@ -19,7 +19,7 @@
             "sha384-Ra6zh6uYMmH5ydwCqqMoykyf1T/+ZcnOQfFPhDrp2kI4OIxadnhsvvA2vv9A7xYv" src=
             "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></head>
   <body>
-    <h1><img class="srfi-logo" src="srfi-logo.svg" alt="SRFI logo" />Scheme Requests for Implementation</h1>
+    <h1><img class="srfi-logo" src="srfi-logo.svg" alt="SRFI surfboard logo" />Scheme Requests for Implementation</h1>
 
     <p class="hide">SRFIs extend the Scheme programming language.  You
       can help. <a href="about.html">Learn more</a>.</p>
