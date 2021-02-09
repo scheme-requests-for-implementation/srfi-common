@@ -1,0 +1,11 @@
+  <p>Many language-agnostic programming tools rely on specially
+  formatted source code comments to annotate the code with
+  metadata. Such "magic comments" are hard for both humans and
+  computers to parse reliably, as the purpose of a comment is to be
+  free-form text that is not interpreted by machine.</p>
+  <p>This SRFI extends the standard Scheme directive syntax
+  (<code>#!</code>) to support <em>line directives</em>. They look
+  like magic comments to language-agnostic tools but read as
+  S-expressions in Scheme, combining the portability of magic
+  comments with the well-defined syntax and easy parsing of
+  ordinary Scheme code.</p>

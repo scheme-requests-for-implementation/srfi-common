@@ -108,6 +108,17 @@
             abstracts</label></div></div>
       <ul class="summary list">
 
+      <li class="card draft"><a class="card-anchor" href="srfi-220/"></a><a href="srfi-220/"><span class="number">220</span></a>: <span class="name">Line directives</span><span class="authors">, by Lassi Kortela</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2021-02-09</span></span><span class="keywords" data-keywords="reader-syntax">Keywords: <a href="https://srfi.schemers.org/?keywords=reader-syntax">Reader Syntax</a></span><span class="status" data-status="draft"></span><div class="abstract">  <p>Many language-agnostic programming tools rely on specially
+  formatted source code comments to annotate the code with
+  metadata. Such "magic comments" are hard for both humans and
+  computers to parse reliably, as the purpose of a comment is to be
+  free-form text that is not interpreted by machine.</p>
+  <p>This SRFI extends the standard Scheme directive syntax
+  (<code>#!</code>) to support <em>line directives</em>. They look
+  like magic comments to language-agnostic tools but read as
+  S-expressions in Scheme, combining the portability of magic
+  comments with the well-defined syntax and easy parsing of
+  ordinary Scheme code.</p></div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-219/"></a><a href="srfi-219/"><span class="number">219</span></a>: <span class="name">Define higher-order lambda</span><span class="authors">, by Lassi Kortela</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2021-02-03</span></span><span class="keywords" data-keywords="binding,syntax">Keywords: <a href="https://srfi.schemers.org/?keywords=binding">Binding</a>, <a href="https://srfi.schemers.org/?keywords=syntax">Syntax</a></span><span class="status" data-status="draft"></span><div class="abstract"><p>This SRFI codifies the following shorthand syntax, which some
   Scheme implementations have had for a long time.</p>
   <pre>(define ((outer-name outer-args ...) inner-args ...)
