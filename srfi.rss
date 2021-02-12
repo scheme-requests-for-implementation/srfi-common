@@ -119,12 +119,11 @@ case and are also documented in this SRFI.
 transcoders and transcoded ports.  These provide a hook into the
 Scheme port system from below, allowing the creation of textual ports
 that provide non-default encoding and decoding from arbitrary binary
-ports.  It has been lightly edited to fit R7RS style.</p></blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Tue, 08 Sep 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 210: Procedures and Syntax for Multiple Values</title><link>https://srfi.schemers.org/srfi-210/srfi-210.html</link><guid>https://srfi.schemers.org/srfi-210</guid><description>SRFI 210 is now in <em>draft</em> status.<blockquote><p>
-  This SRFI extends the Scheme standard with a number of
-  procedures and syntax dealing with multiple values, including
-  syntax to create lists and vectors from expressions returning
-  multiple values and procedures returning the elements of a list
-  or vector as multiple values.
+ports.  It has been lightly edited to fit R7RS style.</p></blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Tue, 08 Sep 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 210: Procedures and Syntax for Multiple Values</title><link>https://srfi.schemers.org/srfi-210/srfi-210.html</link><guid>https://srfi.schemers.org/srfi-210</guid><description>SRFI 210 is now in <em>final</em> status.<blockquote><p>
+  This SRFI extends the Scheme standard with procedures and syntax
+  dealing with multiple values, including syntax to create lists and
+  vectors from expressions returning multiple values and procedures
+  returning the elements of a list or vector as multiple values.
 </p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sat, 29 Aug 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 195: Multiple-value boxes</title><link>https://srfi.schemers.org/srfi-195/srfi-195.html</link><guid>https://srfi.schemers.org/srfi-195</guid><description>SRFI 195 is now in <em>final</em> status.<blockquote><p>
   This SRFI extends the specification of the boxes
   of <a href="https://srfi.schemers.org/srfi-111/srfi-111.html">SRFI
