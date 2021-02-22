@@ -8795,3 +8795,6 @@
 ((signature (lambda* extended-formals body))
  (source (srfi 89))
  (kind syntax))
+((signature (define-lambda-object group-spec field-spec))
+ (source (srfi 100))
+ (kind syntax))
