@@ -238,10 +238,8 @@
     (42845 stickers)))
 
 (define (back-up-list id name auth-token)
-  (define (cookie token)
-    `("Cookie" . (format #f "SL_WEBADMIN=~A" auth-token)))
-  (define (mbox name)
-    (format #f "~A.mbox" name))
+  (define (cookie token) `("Authorization" . (format "Bearer ~A" auth-token)))
+  (define (mbox name) (format #f "~A.mbox" name))
   (define (url id)
     (format #f
 	    "https://www.simplelists.com/members/listsettings.php?download=~A"
