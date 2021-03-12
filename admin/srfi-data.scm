@@ -1858,7 +1858,7 @@
  (status draft)
  (title "Flexvectors")
  (author "Adam Nelson")
- (see-also 10 117 125 133 134 158)
+ (see-also 117 125 133 134 158)
  (keywords data-structure)
  (draft-date "2020-10-07"))
 ((number 215)
