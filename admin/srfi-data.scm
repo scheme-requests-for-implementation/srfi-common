@@ -1930,5 +1930,5 @@
  (title "Generalized binary search procedures")
  (author "Daphne Preston-Kendal")
  (see-also 43 133)
- (keywords data-structure)
+ (keywords miscellaneous)
  (draft-date "2021-03-14"))
