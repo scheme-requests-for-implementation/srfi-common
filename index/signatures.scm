@@ -9249,3 +9249,13 @@
 ((signature (syntax-rules template))
  (source (srfi 72))
  (kind syntax))
+((signature (make-table
+	     test: test
+	     hash: hash
+	     size: size
+	     min-load: min-load
+	     max-load: max-load
+	     weak-keys: weak-keys
+	     weak-values: weak-values))
+ (source (srfi 90))
+ (kind procedure))
