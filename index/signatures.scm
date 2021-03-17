@@ -8810,3 +8810,6 @@
 ((signature (register-getter-with-setter! type getter sparse?))
  (source (srfi 123))
  (kind procedure))
+((signature (define-syntax-parameter keyword transformer-spec))
+ (source (srfi 139))
+ (kind syntax))
