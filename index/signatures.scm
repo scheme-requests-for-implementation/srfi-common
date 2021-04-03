@@ -9813,3 +9813,6 @@
  (signature (specialized-array-reshape array new-domain copy-on-failure?))
  (source (srfi 179))
  (kind procedure))
+((signature (letrec-mixed (syntax-spec ...) (binding-spec ...) body))
+ (source (srfi 24))
+ (kind syntax))
