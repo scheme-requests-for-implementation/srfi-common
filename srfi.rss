@@ -1,4 +1,14 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 219: Define higher-order lambda</title><link>https://srfi.schemers.org/srfi-219/srfi-219.html</link><guid>https://srfi.schemers.org/srfi-219</guid><description>SRFI 219 is now in <em>final</em> status.<blockquote><p>This SRFI codifies the following shorthand syntax, which some
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 220: Line directives</title><link>https://srfi.schemers.org/srfi-220/srfi-220.html</link><guid>https://srfi.schemers.org/srfi-220</guid><description>SRFI 220 is now in <em>withdrawn</em> status.<blockquote>  <p>Many language-agnostic programming tools rely on specially
+  formatted source code comments to annotate the code with
+  metadata. Such "magic comments" are hard for both humans and
+  computers to parse reliably, as the purpose of a comment is to be
+  free-form text that is not interpreted by machine.</p>
+  <p>This SRFI extends the standard Scheme directive syntax
+  (<code>#!</code>) to support <em>line directives</em>. They look
+  like magic comments to language-agnostic tools but read as
+  S-expressions in Scheme, combining the portability of magic
+  comments with the well-defined syntax and easy parsing of
+  ordinary Scheme code.</p></blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Tue, 20 Apr 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 219: Define higher-order lambda</title><link>https://srfi.schemers.org/srfi-219/srfi-219.html</link><guid>https://srfi.schemers.org/srfi-219</guid><description>SRFI 219 is now in <em>final</em> status.<blockquote><p>This SRFI codifies the following shorthand syntax, which some
   Scheme implementations have had for a long time.</p>
   <pre>(define ((outer-name outer-args ...) inner-args ...)
   inner-body ...)</pre></blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Sun, 04 Apr 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 224: Integer Mappings</title><link>https://srfi.schemers.org/srfi-224/srfi-224.html</link><guid>https://srfi.schemers.org/srfi-224</guid><description>SRFI 224 is now in <em>draft</em> status.<blockquote><p>Integer maps, or <em>imappings</em>, are finite sets, where each element is
@@ -32,17 +42,7 @@ implementation-specified bounds.)</p></blockquote></description><dc:creator>John
   returning the elements of a list or vector as multiple values.
 </p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 12 Feb 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 212: Aliases</title><link>https://srfi.schemers.org/srfi-212/srfi-212.html</link><guid>https://srfi.schemers.org/srfi-212</guid><description>SRFI 212 is now in <em>final</em> status.<blockquote><p>This SRFI introduces <em>alias definitions</em>, a syntactic
 extension.  An alias definition transfers the binding of one
-identifier to another, effectively aliasing the identifier.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 12 Feb 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 220: Line directives</title><link>https://srfi.schemers.org/srfi-220/srfi-220.html</link><guid>https://srfi.schemers.org/srfi-220</guid><description>SRFI 220 is now in <em>draft</em> status.<blockquote>  <p>Many language-agnostic programming tools rely on specially
-  formatted source code comments to annotate the code with
-  metadata. Such "magic comments" are hard for both humans and
-  computers to parse reliably, as the purpose of a comment is to be
-  free-form text that is not interpreted by machine.</p>
-  <p>This SRFI extends the standard Scheme directive syntax
-  (<code>#!</code>) to support <em>line directives</em>. They look
-  like magic comments to language-agnostic tools but read as
-  S-expressions in Scheme, combining the portability of magic
-  comments with the well-defined syntax and easy parsing of
-  ordinary Scheme code.</p></blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Tue, 09 Feb 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 218: Unicode Numerals</title><link>https://srfi.schemers.org/srfi-218/srfi-218.html</link><guid>https://srfi.schemers.org/srfi-218</guid><description>SRFI 218 is now in <em>withdrawn</em> status.<blockquote><p>These procedures allow the creation and interpretation of numerals
+identifier to another, effectively aliasing the identifier.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 12 Feb 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 218: Unicode Numerals</title><link>https://srfi.schemers.org/srfi-218/srfi-218.html</link><guid>https://srfi.schemers.org/srfi-218</guid><description>SRFI 218 is now in <em>withdrawn</em> status.<blockquote><p>These procedures allow the creation and interpretation of numerals
 using any set of Unicode digits that support positional notation.</p></blockquote></description><dc:creator>John Cowan (text) and Arvydas Silanskas (implementation)</dc:creator><pubDate>Sat, 30 Jan 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 201: Syntactic Extensions to the Core Scheme Bindings</title><link>https://srfi.schemers.org/srfi-201/srfi-201.html</link><guid>https://srfi.schemers.org/srfi-201</guid><description>SRFI 201 is now in <em>final</em> status.<blockquote><p>This document describes a handful of syntactic extensions
   to the core bindings of the Scheme programming language.
   In particular, it proposes to extend the binding forms
