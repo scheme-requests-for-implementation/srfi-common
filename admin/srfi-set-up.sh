@@ -23,7 +23,6 @@ rsync \
   --exclude='*~' \
   --exclude='.gitignore' \
   --exclude='.git/' \
-  --exclude='srfi-common/' \
   --exclude='srfi-email/' \
   --recursive \
   --safe-links \
