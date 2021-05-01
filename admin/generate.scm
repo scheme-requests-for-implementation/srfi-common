@@ -293,7 +293,7 @@
 	 (srfi-auto-subscribe
 	  ,(write-srfi-subscribe-form
 	    "srfi-auto-subscribe"
-	    "Subscribe to this list if you'd like to receive messages from <a href=\"#srfi-announce\"><code>srfi-announce</code></a> and all <a href=\"#srfi-n\">srfi-<em>n</em></a> discussion mailing lists.  Note that this list does <em>not</em> deliver messages from <a href=\"#srfi-discuss\"><code>srfi-discuss</code></a>, <a href=\"#schemedoc\"><code>schemedoc</code></a>, <a href=\"#schemeorg\"><code>schemeorg</code></a>,<a href=\"#schemepersist\"><code>schemepersist</code></a>, or <a href=\"#schemeweb\"><code>schemeweb</code></a>.  You can subscribe to them independently."))
+	    "Subscribe to this list if you'd like to receive messages from <a href=\"#srfi-announce\"><code>srfi-announce</code></a> and all <a href=\"#srfi-n\">srfi-<em>n</em></a> discussion mailing lists.  Note that this list does <em>not</em> deliver messages from <a href=\"#srfi-discuss\"><code>srfi-discuss</code></a>, <a href=\"#schemedoc\"><code>schemedoc</code></a>, <a href=\"#schemeorg\"><code>schemeorg</code></a>, <a href=\"#schemepersist\"><code>schemepersist</code></a>, or <a href=\"#schemeweb\"><code>schemeweb</code></a>.  You can subscribe to them independently."))
 	 (schemecomm
 	  ,(write-srfi-subscribe-form
 	    "schemecomm"
