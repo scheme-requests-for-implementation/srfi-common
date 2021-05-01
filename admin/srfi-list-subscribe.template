@@ -56,7 +56,8 @@
       through the SRFI process.  As with all these mailing lists,
       anyone can subscribe.  None of these mailing lists is included
       in the <a href="#srfi-auto-subscribe"><code>srfi-auto-subscribe</code></a>
-      mailing list, which includes all the other SRFI mailing lists.</p>
+      mailing list, which includes <code>srfi-announce</code> and all
+      the numbered SRFI mailing lists, but not <code>srfi-discuss</code>.</p>
 
     <ul class="posts">
       <*<schemecomm>*>
