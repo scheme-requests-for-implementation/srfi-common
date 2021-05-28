@@ -1880,7 +1880,7 @@
  (draft-date "2020-11-04")
  (done-date "2020-01-21"))
 ((number 217)
- (status draft)
+ (status final)
  (title "Integer Sets")
  (author "John Cowan" "text")
  (author "Wolfgang Corcoran-Mathe" "implementation")
