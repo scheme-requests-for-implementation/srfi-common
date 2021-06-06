@@ -189,9 +189,6 @@ p a {
   top: -10px;
   width: 0;
 }
-.checkbox-label {
-  margin-bottom: 10px;
-}
 .checkbox-label input {
   position: relative;
   vertical-align: middle;

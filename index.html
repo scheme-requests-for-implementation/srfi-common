@@ -44,23 +44,7 @@
           <span>Search for</span>
           <input class="search" id="search" placeholder="numbers or words" tabindex="1" /></div>
         <div>
-          <span>Sort by</span>
-          <button class="controls sort" data-sort="authors" tabindex="2" >authors</button>
-          <button class="controls sort" data-sort="date" tabindex="3" >date</button>
-          <button class="controls sort" data-sort="name" tabindex="4" >name</button>
-          <button class="controls sort" data-sort="number" tabindex="5" >number</button>
-          <button class="controls sort" data-sort="status" tabindex="6" >status</button></div>
-        <div>
           <span>Filter by </span>
-          <div class="dropdown" id="statuses">
-            <button class="controls">status<span> ×</span></button>
-            <div class="options">
-              <select multiple size="4">
-                <option selected value="any">any</option>
-                <option value="draft">Draft</option>
-                <option value="final">Final</option>
-                <option value="withdrawn">Withdrawn</option></select></div>
-            <span class="chosen"></span></div>
           <div class="dropdown" id="keywords">
             <button class="controls">keywords<span> ×</span></button>
             <div class="options">
@@ -100,12 +84,28 @@
                 <option value="syntax">Syntax</option>
                 <option value="testing">Testing</option>
                 <option value="type-checking">Type Checking</option></select></div>
+            <span class="chosen"></span></div>
+          <div class="dropdown" id="statuses">
+            <button class="controls">status<span> ×</span></button>
+            <div class="options">
+              <select multiple size="4">
+                <option selected value="any">any</option>
+                <option value="draft">Draft</option>
+                <option value="final">Final</option>
+                <option value="withdrawn">Withdrawn</option></select></div>
             <span class="chosen"></span></div></div>
         <div>
           <span>Show</span>
           <label class="checkbox-label controls">
             <input class="controls" id="abstracts-control" tabindex="7" type="checkbox">
-            abstracts</label></div></div>
+            abstracts</label></div>
+        <div>
+          <span>Sort by</span>
+          <button class="controls sort" data-sort="authors" tabindex="2" >authors</button>
+          <button class="controls sort" data-sort="date" tabindex="3" >date</button>
+          <button class="controls sort" data-sort="name" tabindex="4" >name</button>
+          <button class="controls sort" data-sort="number" tabindex="5" >number</button>
+          <button class="controls sort" data-sort="status" tabindex="6" >status</button></div></div>
       <ul class="summary list">
 
       <li class="card draft"><a class="card-anchor" href="srfi-224/"></a><a href="srfi-224/"><span class="number">224</span></a>: <span class="name">Integer Mappings</span><span class="authors">, by Wolfgang Corcoran-Mathe</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2021-03-24</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-146/">SRFI 146: Mappings</a> and <a href="/srfi-189/">SRFI 189: Maybe and Either: optional container types</a>.</span><div class="abstract"><p>Integer maps, or <em>imappings</em>, are finite sets, where each element is

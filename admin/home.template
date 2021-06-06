@@ -44,14 +44,13 @@
           <span>Search for</span>
           <input class="search" id="search" placeholder="numbers or words" tabindex="1" /></div>
         <div>
-          <span>Sort by</span>
-          <button class="controls sort" data-sort="authors" tabindex="2" >authors</button>
-          <button class="controls sort" data-sort="date" tabindex="3" >date</button>
-          <button class="controls sort" data-sort="name" tabindex="4" >name</button>
-          <button class="controls sort" data-sort="number" tabindex="5" >number</button>
-          <button class="controls sort" data-sort="status" tabindex="6" >status</button></div>
-        <div>
           <span>Filter by </span>
+          <div class="dropdown" id="keywords">
+            <button class="controls">keywords<span> ×</span></button>
+            <div class="options">
+              <select multiple size="<*<keyword-count>*>">
+                <option selected value="any">any</option><*<keyword-options>*></select></div>
+            <span class="chosen"></span></div>
           <div class="dropdown" id="statuses">
             <button class="controls">status<span> ×</span></button>
             <div class="options">
@@ -60,18 +59,19 @@
                 <option value="draft">Draft</option>
                 <option value="final">Final</option>
                 <option value="withdrawn">Withdrawn</option></select></div>
-            <span class="chosen"></span></div>
-          <div class="dropdown" id="keywords">
-            <button class="controls">keywords<span> ×</span></button>
-            <div class="options">
-              <select multiple size="<*<keyword-count>*>">
-                <option selected value="any">any</option><*<keyword-options>*></select></div>
             <span class="chosen"></span></div></div>
         <div>
           <span>Show</span>
           <label class="checkbox-label controls">
             <input class="controls" id="abstracts-control" tabindex="7" type="checkbox">
-            abstracts</label></div></div>
+            abstracts</label></div>
+        <div>
+          <span>Sort by</span>
+          <button class="controls sort" data-sort="authors" tabindex="2" >authors</button>
+          <button class="controls sort" data-sort="date" tabindex="3" >date</button>
+          <button class="controls sort" data-sort="name" tabindex="4" >name</button>
+          <button class="controls sort" data-sort="number" tabindex="5" >number</button>
+          <button class="controls sort" data-sort="status" tabindex="6" >status</button></div></div>
       <ul class="summary list">
 <*<srfi-list>*></ul></div>
 
