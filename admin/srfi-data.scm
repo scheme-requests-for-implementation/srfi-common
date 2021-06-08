@@ -1259,7 +1259,7 @@
  (status final)
  (title "Assumptions")
  (author "Marc Nieper-Wißkirchen")
- (library-name assumptions)
+ (library-name assume)
  (see-also)
  (keywords optimization)
  (draft-date "2016-12-18")
