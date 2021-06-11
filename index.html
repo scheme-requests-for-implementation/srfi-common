@@ -108,17 +108,17 @@
           <button class="controls sort" data-sort="status" tabindex="6" >status</button></div></div>
       <ul class="summary list">
 
-      <li class="card draft"><a class="card-anchor" href="srfi-224/"></a><a href="srfi-224/"><span class="number">224</span></a>: <span class="name">Integer Mappings</span><span class="authors">, by Wolfgang Corcoran-Mathe</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2021-03-24</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-146/">SRFI 146: Mappings</a> and <a href="/srfi-189/">SRFI 189: Maybe and Either: optional container types</a>.</span><div class="abstract"><p>Integer maps, or <em>imappings</em>, are finite sets, where each element is
-an association between an exact-integer key and an arbitrary Scheme
+      <li class="card draft"><a class="card-anchor" href="srfi-224/"></a><a href="srfi-224/"><span class="number">224</span></a>: <span class="name">Integer Mappings</span><span class="authors">, by Wolfgang Corcoran-Mathe</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2021-03-24</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-146/">SRFI 146: Mappings</a> and <a href="/srfi-189/">SRFI 189: Maybe and Either: optional container types</a>.</span><div class="abstract"><p>Integer maps, or <em>fxmappings</em>, are finite sets, where each element is
+an association between a fixnum (exact integer) key and an arbitrary Scheme
 object.  They are similar to the general mappings of
 <a href="https://srfi.schemers.org/srfi-146/">SRFI
 146</a>, but the restricted key-type allows implementations of
-imappings to benefit from optimized structures and algorithms.  This
-library provides a rich set of operations on imappings, including
-analogues of most of the forms provided by SRFI 146.  Imappings have
+fxmappings to benefit from optimized structures and algorithms.  This
+library provides a rich set of operations on fxmappings, including
+analogues of most of the forms provided by SRFI 146.  Fxmappings have
 no intrinsic order, but may be treated as ordered sets, using the
 natural ordering on keys; a substantial sublibrary for working with
-imappings in this fashion is included.</p></div></li>
+fxmappings in this fashion is included.</p></div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-223/"></a><a href="srfi-223/"><span class="number">223</span></a>: <span class="name">Generalized binary search procedures</span><span class="authors">, by Daphne Preston-Kendal</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2021-03-14</span></span><span class="keywords" data-keywords="miscellaneous">Keywords: <a href="https://srfi.schemers.org/?keywords=miscellaneous">Miscellaneous</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-43/">SRFI 43: Vector library</a> and <a href="/srfi-133/">SRFI 133: Vector Library (R7RS-compatible)</a>.</span><div class="abstract"><p>Generalized procedures for binary search of vector-like data structures are provided which can be applied to any sequence type, including ones defined by the user, together with applications of these procedures for Scheme’s built-in vector and bytevector types.</div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-222/"></a><a href="srfi-222/"><span class="number">222</span></a>: <span class="name">Compound Objects</span><span class="authors">, by John Cowan (text) and Arvydas Silanskas (implementation)</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2021-03-05</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="draft"></span><div class="abstract"><p>Compound objects are a generalization of R6RS compound conditions,
 and are suitable for use in creating and handling conditions among other purposes.
