@@ -24,14 +24,6 @@
     <p class="hide">SRFIs extend the Scheme programming language.  You
       can help. <a href="about.html">Learn more</a>.</p>
 
-    <section class="announcement">
-    <h2>New mailing list: <a href="srfi-list-subscribe.html#schemeorg"><code>schemeorg</code></a></h2>
-    <p>As of <b>November, 2020</b>, there is another new Scheme Topics mailing
-      list: <a
-    href="srfi-list-subscribe.html#schemeorg"><code>Schemeorg</code></a>.
-    <code>Schemeorg</code> is for discussing the <code>scheme.org</code>
-    domain and its subdomains and how they will be organized.</p></section>
-
     <h2>The SRFIs</h2>
 
     <noscript><p>Javascript is not enabled in your browser, so
