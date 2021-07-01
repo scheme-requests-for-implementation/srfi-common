@@ -1,4 +1,14 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 221: Generator/accumulator sub-library</title><link>https://srfi.schemers.org/srfi-221/srfi-221.html</link><guid>https://srfi.schemers.org/srfi-221</guid><description>SRFI 221 is now in <em>final</em> status.<blockquote><p>This is a set of convenience routines for generators and accumulators
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 224: Integer Mappings</title><link>https://srfi.schemers.org/srfi-224/srfi-224.html</link><guid>https://srfi.schemers.org/srfi-224</guid><description>SRFI 224 is now in <em>final</em> status.<blockquote><p>Integer maps, or <em>fxmappings</em>, are finite sets, where each element is
+an association between a fixnum (exact integer) key and an arbitrary Scheme
+object.  They are similar to the general mappings of
+<a href="https://srfi.schemers.org/srfi-146/">SRFI
+146</a>, but the restricted key-type allows implementations of
+fxmappings to benefit from optimized structures and algorithms.  This
+library provides a rich set of operations on fxmappings, including
+analogues of most of the forms provided by SRFI 146.  Fxmappings have
+no intrinsic order, but may be treated as ordered sets, using the
+natural ordering on keys; a substantial sublibrary for working with
+fxmappings in this fashion is included.</p></blockquote></description><dc:creator>Wolfgang Corcoran-Mathe</dc:creator><pubDate>Wed, 30 Jun 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 221: Generator/accumulator sub-library</title><link>https://srfi.schemers.org/srfi-221/srfi-221.html</link><guid>https://srfi.schemers.org/srfi-221</guid><description>SRFI 221 is now in <em>final</em> status.<blockquote><p>This is a set of convenience routines for generators and accumulators
 intended to blend in with
 <a href="https://srfi.schemers.org/srfi-158/srfi-158.html">SRFI 158</a>.
 The authors recommend that they be added to the
@@ -18,17 +28,7 @@ they can also be added to <code>(r7rs generator)</code>.</p></blockquote></descr
   ordinary Scheme code.</p></blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Tue, 20 Apr 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 219: Define higher-order lambda</title><link>https://srfi.schemers.org/srfi-219/srfi-219.html</link><guid>https://srfi.schemers.org/srfi-219</guid><description>SRFI 219 is now in <em>final</em> status.<blockquote><p>This SRFI codifies the following shorthand syntax, which some
   Scheme implementations have had for a long time.</p>
   <pre>(define ((outer-name outer-args ...) inner-args ...)
-  inner-body ...)</pre></blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Sun, 04 Apr 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 224: Integer Mappings</title><link>https://srfi.schemers.org/srfi-224/srfi-224.html</link><guid>https://srfi.schemers.org/srfi-224</guid><description>SRFI 224 is now in <em>draft</em> status.<blockquote><p>Integer maps, or <em>imappings</em>, are finite sets, where each element is
-an association between an exact-integer key and an arbitrary Scheme
-object.  They are similar to the general mappings of
-<a href="https://srfi.schemers.org/srfi-146/">SRFI
-146</a>, but the restricted key-type allows implementations of
-imappings to benefit from optimized structures and algorithms.  This
-library provides a rich set of operations on imappings, including
-analogues of most of the forms provided by SRFI 146.  Imappings have
-no intrinsic order, but may be treated as ordered sets, using the
-natural ordering on keys; a substantial sublibrary for working with
-imappings in this fashion is included.</p></blockquote></description><dc:creator>Wolfgang Corcoran-Mathe</dc:creator><pubDate>Wed, 24 Mar 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 213: Identifier Properties</title><link>https://srfi.schemers.org/srfi-213/srfi-213.html</link><guid>https://srfi.schemers.org/srfi-213</guid><description>SRFI 213 is now in <em>final</em> status.<blockquote><p>Using the <code>define-property</code> definition described in
+  inner-body ...)</pre></blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Sun, 04 Apr 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 213: Identifier Properties</title><link>https://srfi.schemers.org/srfi-213/srfi-213.html</link><guid>https://srfi.schemers.org/srfi-213</guid><description>SRFI 213 is now in <em>final</em> status.<blockquote><p>Using the <code>define-property</code> definition described in
   this SRFI, expand-time properties can be associated with
   identifiers in a referentially transparent and lexically scoped way.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sun, 21 Mar 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 214: Flexvectors</title><link>https://srfi.schemers.org/srfi-214/srfi-214.html</link><guid>https://srfi.schemers.org/srfi-214</guid><description>SRFI 214 is now in <em>final</em> status.<blockquote><p>A <em>flexvector</em>, also known as a dynamic array or an arraylist, is a mutable vector-like data structure with an adjustable size. Flexvectors allow fast random access and fast insertion/removal at the end. This SRFI defines a suite of operations on flexvectors, modeled after <a href="https://srfi.schemers.org/srfi-133/srfi-133.html">SRFI 133</a>'s vector operations.</p></blockquote></description><dc:creator>Adam Nelson</dc:creator><pubDate>Thu, 18 Mar 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 223: Generalized binary search procedures</title><link>https://srfi.schemers.org/srfi-223/srfi-223.html</link><guid>https://srfi.schemers.org/srfi-223</guid><description>SRFI 223 is now in <em>draft</em> status.<blockquote><p>Generalized procedures for binary search of vector-like data structures are provided which can be applied to any sequence type, including ones defined by the user, together with applications of these procedures for Scheme’s built-in vector and bytevector types.</p></blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Sun, 14 Mar 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 222: Compound Objects</title><link>https://srfi.schemers.org/srfi-222/srfi-222.html</link><guid>https://srfi.schemers.org/srfi-222</guid><description>SRFI 222 is now in <em>draft</em> status.<blockquote><p>Compound objects are a generalization of R6RS compound conditions,
 and are suitable for use in creating and handling conditions among other purposes.
@@ -1648,7 +1648,7 @@ all as in <code>(let (((values) (for-each foo list))) body)</code>.<br></br>
       Scheme's lexical syntax that allows individual S-expressions to be made
       into comments, ignored by the reader. This contrasts with the standard
       Lisp semicolon comments, which make the reader ignore the remainder of
-      the line, and the slightly less common block comments, as <a href="">SRFI
+      the line, and the slightly less common block comments, as <a href="https://srfi.schemers.org/srfi-30/srfi-30.html">SRFI
       30</a> defines: both of these mechanisms comment out slices of text, not
       S-expressions.</p></blockquote></description><dc:creator>Taylor Campbell</dc:creator><pubDate>Thu, 21 Jul 2005 12:00:00 -0800</pubDate></item><item><title>SRFI 65: define-immutable: A Syntax to Define Identifiers With Immutable Values</title><link>https://srfi.schemers.org/srfi-65/srfi-65.html</link><guid>https://srfi.schemers.org/srfi-65</guid><description>SRFI 65 is now in <em>withdrawn</em> status.<blockquote>      <p>The <code>define-immutable</code> form defines an
       identifier whose value never changes.
