@@ -10,7 +10,8 @@ p.keywords,
 .status {
   color: grey;
 }
-p.keywords {
+p.keywords,
+p.library-name {
   font-weight: bold;
 }
 .card {
