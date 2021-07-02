@@ -64,6 +64,15 @@
 (define keyword-option-template
   (read-template "srfi-common/admin/keyword-option.template"))
 
+(define library-name-index-template
+  (read-template "srfi-common/admin/library-name-index.template"))
+
+(define library-name-readme-template
+  (read-template "srfi-common/admin/library-name-readme.template"))
+
+(define library-name-template
+  (read-template "srfi-common/admin/library-name.template"))
+
 (define see-also-html-template
   (read-template "srfi-common/admin/see-also-html.template"))
 
@@ -125,6 +134,13 @@
 	     (prefix ""))))
 	 (date (srfi-date-to-show srfi))
 	 (keywords (srfi/keywords srfi))
+	 (library-name-block
+	  (cond ((srfi/library-name srfi)
+		 => (lambda (name)
+		      (invoke-template/string
+		       library-name-index-template
+		       `((name ,name)))))
+		(else "")))
 	 (status (srfi/status srfi))
 	 (title (srfi/title srfi))
 	 (authors (srfi/authors srfi))
@@ -139,6 +155,7 @@
 			   (email-archives ,archives)
 			   (keyword-links
 			    ,(string-join ", " (map keyword->link keywords)))
+			   (library-name ,library-name-block)
 			   (number ,number)
 			   (see-also ,(see-also-html srfi))
 			   (status ,status)
@@ -167,6 +184,13 @@
 			  => (lambda (s) (string-append s "\n\n")))
 			 (else "")))
 	 (keywords (srfi/keywords srfi))
+	 (library-name-block
+	  (cond ((srfi/library-name srfi)
+		 => (lambda (name)
+		      (invoke-template/string
+		       library-name-readme-template
+		       `((name ,name)))))
+		(else "")))
 	 (number (srfi/number srfi))
 	 (status (srfi/status srfi))
 	 (title (srfi/title srfi))
@@ -180,6 +204,7 @@
 			   (keyword-names
 			    ,(string-join ", "
 					  (map keyword->org-link keywords)))
+			   (library-name ,library-name-block)
 			   (number ,number)
 			   (see-also ,(see-also-text srfi))
 			   (status ,status)
@@ -232,6 +257,13 @@
 (define (write-srfi-card srfi)
   (let ((n (srfi/number srfi))
 	(keywords (srfi/keywords srfi))
+	(library-name-block
+	 (cond ((srfi/library-name srfi)
+		=> (lambda (name)
+		     (invoke-template/string
+		      library-name-template
+		      `((name ,(symbol->string name))))))
+	       (else "")))
 	(status (srfi/status srfi)))
     (invoke-template
      srfi-card-template
@@ -242,6 +274,7 @@
        (date-type ,(status->name status))
        (keyword-links ,(string-join ", " (map keyword->link keywords)))
        (keyword-values ,(string-join "," (map symbol->string keywords)))
+       (library-name ,library-name-block)
        (name ,(srfi/title srfi))
        (number ,n)
        (see-also ,(see-also-html srfi))
@@ -271,11 +304,10 @@
 			   (srfi-list ,srfi-list)))))))
 
 (define (write-srfi-subscribe-form name description)
-  (with-output-to-string
-    (lambda ()
-      (invoke-template srfi-list-template
-		       `((description ,description)
-			 (name ,name))))))
+  (invoke-template/string
+   srfi-list-template
+   `((description ,description)
+     (name ,name))))
 
 (define (write-srfi-list-subscribe-page)
   (with-output-to-file "$ss/srfi-common/srfi-list-subscribe.html"

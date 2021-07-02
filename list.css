@@ -6,6 +6,7 @@
 .authors,
 .based-on,
 p.keywords,
+.library-name,
 .status {
   color: grey;
 }
@@ -33,7 +34,8 @@ p.keywords {
   z-index: 0;
 }
 .date-group,
-span.keywords {
+span.keywords,
+span.library-name {
   color: grey;
   display: block;
   font-size: 80%;

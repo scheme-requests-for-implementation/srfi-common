@@ -2,17 +2,18 @@
 
 (define-record-type srfi
     (make-srfi number status title authors based-on see-also keywords
-	       done-date draft-date)
+	       library-name done-date draft-date)
     srfi?
-  (number     srfi/number)
-  (status     srfi/status)
-  (title      srfi/title)
-  (authors    srfi/authors)
-  (based-on   srfi/based-on)
-  (see-also   srfi/see-also)
-  (keywords   srfi/keywords)
-  (done-date  srfi/done-date)
-  (draft-date srfi/draft-date))		; final or withdrawn
+  (number	srfi/number)
+  (status	srfi/status)
+  (title	srfi/title)
+  (authors	srfi/authors)
+  (based-on	srfi/based-on)
+  (see-also	srfi/see-also)
+  (keywords	srfi/keywords)
+  (library-name srfi/library-name)
+  (done-date	srfi/done-date)
+  (draft-date	srfi/draft-date))		; final or withdrawn
 
 (define srfi-attribute
   (case-lambda
@@ -46,6 +47,7 @@
              (srfi-attribute alist 'based-on #f 'optional)
 	     (srfi-attribute alist 'see-also 'multiple 'optional)
 	     (srfi-attribute alist 'keywords 'multiple)
+	     (srfi-attribute alist 'library-name #f 'optional)
 	     (srfi-attribute alist 'done-date #f 'optional)
 	     (srfi-attribute alist 'draft-date)))
 
