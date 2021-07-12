@@ -1,4 +1,9 @@
-<p>Compound objects are a generalization of R6RS compound conditions,
-and are suitable for use in creating and handling conditions among other purposes.
+<p>Compound objects are analogous to R6RS compound conditions,
+and are suitable for use in creating and handling conditions
+on non-R6RS systems, among other purposes.
 They encapsulate an immutable sequence of subobjects, which can be
-any object except another compound object.</p>
+any object except another compound object.
+It is possible to implement R6RS compound conditions on top of
+compound objects, but not vice versa.
+Note that this SRFI does not provide any analogue to R6RS
+<i>simple</i> conditions, which are just records.
