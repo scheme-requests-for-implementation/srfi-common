@@ -1947,7 +1947,7 @@
  (done-date "2021-06-30"))
 ((number 225)
  (status draft)
- (title "Integer Mappings")
+ (title "Dictionaries")
  (author "John Cowan" "spec")
  (author "Arvydas Silanskas" "implementation")
  (see-also 146 167)
