@@ -1,0 +1,19 @@
+    <p>This SRFI defines a rich set of control operators for the
+      Scheme programming language, including the
+      venerable <code>call/cc</code>
+      (<code>call-with-current-continuation</code>).  The set of
+      operators was highly influenced by the control operators provided
+      by <a href="https://racket-lang.org/"><cite>Racket</cite></a>.
+
+    <p>Continuations can be delimited by continuation prompts, and all
+      continuations become delimited continuations, at the latest by
+      the default prompt at the start of each thread.  Moreover,
+      continuations are divided into composable and non-composable
+      continuations, which can be captured and reinstated.</p>
+
+    <p>To investigate continuations, this SRFI supports continuation
+      marks and offers operators to set and retrieve them.</p>
+
+    <p>Moreover, this SRFI defines clear semantics of
+      exceptions, parameter objects, promises, and threads consistent
+      with the other concepts defined here.</p>
