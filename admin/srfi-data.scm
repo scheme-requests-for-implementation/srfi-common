@@ -1957,7 +1957,7 @@
  (draft-date "2021-06-26"))
 ((number 226)
  (status draft)
- (title "Control Operators")
+ (title "Control Features")
  (author "Marc Nieper-Wißkirchen")
  (see-also 18 34 39 45 97 154 155 157 158)
  (keywords continuations control-flow)
