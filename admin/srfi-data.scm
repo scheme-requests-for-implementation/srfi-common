@@ -136,6 +136,7 @@
  (status withdrawn)
  (title "Syntax for dynamic scoping")
  (author "Lars T Hansen")
+ (library-name fluid-let)
  (see-also)
  (keywords binding)
  (draft-date "1999-11-06")
