@@ -1,0 +1,10 @@
+    <p>This SRFI defines atomic operations for the Scheme programming language.
+      An <dfn>atomic operation</dfn> is an operation that, even in the presence
+      of multiple threads, is either executed completely or not at all.  Atomic
+      operations can be used to implement mutexes and other synchronization
+      primitives, and they can be used to make concurrent algorithms lock-free.
+      For this, this SRFI defines two data types, <dfn>atomic flags</dfn>
+      and <dfn>atomic (fixnum) boxes</dfn>, whose contents can be queried and
+      mutated atomically.  Moreover, each atomic operation comes with
+      a <dfn>memory order</dfn> that defines the level of synchronization with
+      other threads.</p>
