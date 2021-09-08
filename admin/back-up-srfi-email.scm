@@ -259,8 +259,8 @@
   (curl-http-get (list (cookie auth-token)) (url id) (mbox name)))
 
 ; Extract the <SL_WEBADMIN> cookie value by logging into the Simplelists site
-; and extracting the cookie from the browser.  Pass it to
-; `back-up-srfi-email'.
+; and extracting the cookie from the browser.  Pass it to `back-up-srfi-email'.
+; Make sure that you're in the destination directory before running this.
 (define (back-up-srfi-email auth-token)
   (for-each (lambda (l) (back-up-list (car l) (cadr l) auth-token))
 	    srfi-lists))
