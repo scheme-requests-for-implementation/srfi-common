@@ -245,9 +245,9 @@
     (13633 srfi-editors)
     (42845 stickers)))
 
-(define (back-up-list id name auth-token)
+(define (back-up-list id name session)
   (define (cookie token)
-    `("Cookie" . ,(format #f "SL_WEBADMIN=~A" auth-token)))
+    `("Cookie" . ,(format #f "simplelists.session=~A" session)))
   (define (mbox name)
     (format #f "~A.mbox" name))
   (define (url id)
@@ -256,11 +256,12 @@
 	    id))
   (newline)
   (display name)
-  (curl-http-get (list (cookie auth-token)) (url id) (mbox name)))
+  (curl-http-get (list (cookie session)) (url id) (mbox name)))
 
-; Extract the <SL_WEBADMIN> cookie value by logging into the Simplelists site
-; and extracting the cookie from the browser.  Pass it to `back-up-srfi-email'.
-; Make sure that you're in the destination directory before running this.
-(define (back-up-srfi-email auth-token)
-  (for-each (lambda (l) (back-up-list (car l) (cadr l) auth-token))
+; Extract the <simplelists.session> cookie value by logging into the Simplelists
+; site and extracting the cookie from the browser.  Pass it to
+; `back-up-srfi-email'.  Make sure that you're in the destination directory
+; before running this.
+(define (back-up-srfi-email session)
+  (for-each (lambda (l) (back-up-list (car l) (cadr l) session))
 	    srfi-lists))
