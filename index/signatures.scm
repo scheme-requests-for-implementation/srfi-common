@@ -9913,3 +9913,11 @@
 	      field-spec ...))
  (source (srfi 136))
  (kind syntax))
+((signature (make-type type-payload)
+	    (returns type-accessor
+		     constructor
+		     predicate
+		     accessor
+		     make-subtype))
+ (source (srfi 137))
+ (kind procedure))
