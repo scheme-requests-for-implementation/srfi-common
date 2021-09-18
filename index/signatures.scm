@@ -4571,7 +4571,10 @@
 ((signature (rtd-field-mutable? rtd field))
  (source (srfi 99))
  (kind procedure))
-((signature (define-record-type type-spec constructor-spec predicate-spec field-spec ...))
+((signature (define-record-type type-spec
+		constructor-spec
+		predicate-spec
+	      field-spec ...))
  (source (srfi 99))
  (kind syntax))
 ((signature (box value))
@@ -5626,7 +5629,10 @@
 ((signature (string-titlecase))
  (source (srfi 129))
  (kind procedure))
-((signature (define-record-type))
+((signature (define-record-type type-spec
+		constructor-spec
+		predicate-spec
+	      field-spec ...))
  (source (srfi 131))
  (kind syntax))
 ((signature (list-sorted? < lis))
@@ -7047,7 +7053,10 @@
 ((signature (cat object option ...))
  (source (srfi 54))
  (kind procedure))
-((signature (define-record-type type-clause constructor-clause predicate-clause field-clause ...))
+((signature (define-record-type type-clause
+		constructor-clause
+		predicate-clause
+	      field-clause ...))
  (signature (define-record-type type-clause constructor-clause))
  (signature (define-record-type type-clause))
  (source (srfi 57))
@@ -9894,3 +9903,13 @@
  (signature (vector-delete-neighbor-dups! v = start end) (returns integer))
  (source (srfi 32))
  (kind procedure))
+((signature (define-record-type type-name
+		constructor-spec
+		predicate-spec
+	      field-spec ...))
+ (signature (define-record-type (type-name parent)
+		constructor-spec
+		predicate-spec
+	      field-spec ...))
+ (source (srfi 136))
+ (kind syntax))
