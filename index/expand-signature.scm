@@ -51,13 +51,11 @@
 		    (list x)))
 	      e))
 
-;; for example:
-
-;; (with-input-from-file "/tmp/srfi-140.signatures.scm"
-;;   (lambda ()
-;;     (let next-signature ((accumulator '()))
-;;	 (let ((input (read)))
-;;	   (if (eof-object? input)
-;;	       (for-each pp (reverse accumulator))
-;;	       (next-signature
-;;		(cons (expand-index-entry input) accumulator)))))))
+(define (expand-index pathname)
+  (with-input-from-file pathname
+    (lambda ()
+      (let next-signature ()
+	(let ((input (read)))
+	  (unless (eof-object? input)
+	    (pp (expand-index-entry input))
+	    (next-signature)))))))
