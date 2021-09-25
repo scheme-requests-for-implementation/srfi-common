@@ -10315,3 +10315,9 @@
 			      eager-macro-rule ...))
   (source (srfi 148))
   (kind syntax))
+((signature (define-record-type type-spec
+		constructor-spec
+		predicate-spec
+	      field-spec ...))
+ (source (srfi 150))
+ (kind syntax))
