@@ -24,6 +24,11 @@
     <p class="hide">SRFIs extend the Scheme programming language.  You
       can help. <a href="about.html">Learn more</a>.</p>
 
+    <p>Thanks to Shiro Kawai for his <a href="https://practical-scheme.net/">Practical Scheme</a>,
+      which includes a <a href="https://practical-scheme.net/wiliki/schemexref.cgi?SRFI">cross-reference</a>
+      showing which Scheme implementations support which SRFIs.  It's
+      a wiki page, so please help keep it up to date.</p>
+
     <h2>The SRFIs</h2>
 
     <noscript><p>Javascript is not enabled in your browser, so
