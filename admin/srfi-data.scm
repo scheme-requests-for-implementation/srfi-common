@@ -1991,4 +1991,5 @@
  (author "Marc Nieper-Wißkirchen")
  (see-also 18 226)
  (keywords concurrency)
- (draft-date "2021-09-01"))
+ (draft-date "2021-09-01")
+ (done-date "2021-11-15"))
