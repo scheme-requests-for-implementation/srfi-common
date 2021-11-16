@@ -1,4 +1,17 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 229: Tagged Procedures</title><link>https://srfi.schemers.org/srfi-229/srfi-229.html</link><guid>https://srfi.schemers.org/srfi-229</guid><description>SRFI 229 is now in <em>final</em> status.<blockquote>    <p>This SRFI defines <dfn>tagged procedures</dfn>, which are procedures
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 227: Optional Arguments</title><link>https://srfi.schemers.org/srfi-227/srfi-227.html</link><guid>https://srfi.schemers.org/srfi-227</guid><description>SRFI 227 is now in <em>final</em> status.<blockquote>    <p>This SRFI specifies the <code>opt-lambda</code> syntax, which
+      generalizes <code>lambda</code>.  An <code>opt-lambda</code> expression
+      evaluates to a procedure that takes a number of required and a number of
+      optional (positional) arguments whose default values are determined by
+      evaluating corresponding expressions when the procedure is called.</p>
+
+    <p>This SRFI also specifies a variation <code>opt*-lambda</code>, which is
+      to <code>opt-lambda</code> as <code>let*</code> is to <code>let</code>
+      and the related binding constructs <code>let-optionals</code>
+      and <code>let-optionals*</code>.</p>
+
+    <p>Finally, for those who prefer less explicit procedure
+      definitions, a sublibrary provides <code>define-optionals</code>
+      and <code>define-optionals*</code>.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen (spec and R6RS implementation) and Daphne Preston-Kendal (R7RS implementation)</dc:creator><pubDate>Tue, 16 Nov 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 229: Tagged Procedures</title><link>https://srfi.schemers.org/srfi-229/srfi-229.html</link><guid>https://srfi.schemers.org/srfi-229</guid><description>SRFI 229 is now in <em>final</em> status.<blockquote>    <p>This SRFI defines <dfn>tagged procedures</dfn>, which are procedures
       that are tagged with a Scheme value when created through the
       syntax <code>lambda/tag</code> and <code>case-lambda/tag</code>.  The
       value of the tag of a procedure can be retrieved
@@ -15,20 +28,7 @@
       a <dfn>memory order</dfn> that defines the level of synchronization with
       other threads.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Mon, 15 Nov 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 228: A further comparator library</title><link>https://srfi.schemers.org/srfi-228/srfi-228.html</link><guid>https://srfi.schemers.org/srfi-228</guid><description>SRFI 228 is now in <em>draft</em> status.<blockquote><p>Further procedures and syntax forms for defining <a href="https://srfi.schemers.org/srfi-128/srfi-128.html">SRFI 128</a> comparators, and for extracting comparison procedures similar to those defined for Scheme’s built-in types using them.
 
-</p><p>Best enjoyed in combination with <a href="https://srfi.schemers.org/srfi-162/srfi-162.html">SRFI 162</a>.</p></blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Sat, 28 Aug 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 227: Optional Arguments</title><link>https://srfi.schemers.org/srfi-227/srfi-227.html</link><guid>https://srfi.schemers.org/srfi-227</guid><description>SRFI 227 is now in <em>draft</em> status.<blockquote>    <p>This SRFI specifies the <code>opt-lambda</code> syntax, which
-      generalizes <code>lambda</code>.  An <code>opt-lambda</code> expression
-      evaluates to a procedure that takes a number of required and a number of
-      optional (positional) arguments, whose default values are determined by
-      evaluating corresponding expressions when the procedure is called.</p>
-
-    <p>This SRFI also specifies a variation <code>opt*-lambda</code>, which is
-      to <code>opt-lambda</code> as <code>let*</code> is to <code>let</code>
-      and the related binding constructs <code>let-optionals</code>
-      and <code>let-optionals*</code>.</p>
-
-    <p>Finally, for those who prefer less explicit procedure
-      definitions, a sublibrary provides <code>define-optionals</code>
-      and <code>define-optionals*</code>.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen (spec and R6RS implementation) and Daphne Preston-Kendal (R7RS implementation)</dc:creator><pubDate>Wed, 25 Aug 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 226: Control Features</title><link>https://srfi.schemers.org/srfi-226/srfi-226.html</link><guid>https://srfi.schemers.org/srfi-226</guid><description>SRFI 226 is now in <em>draft</em> status.<blockquote>    <p>This SRFI defines a rich set of control operators for the
+</p><p>Best enjoyed in combination with <a href="https://srfi.schemers.org/srfi-162/srfi-162.html">SRFI 162</a>.</p></blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Sat, 28 Aug 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 226: Control Features</title><link>https://srfi.schemers.org/srfi-226/srfi-226.html</link><guid>https://srfi.schemers.org/srfi-226</guid><description>SRFI 226 is now in <em>draft</em> status.<blockquote>    <p>This SRFI defines a rich set of control operators for the
       Scheme programming language, including the
       venerable <code>call/cc</code>
       (<code>call-with-current-continuation</code>).  The set of
