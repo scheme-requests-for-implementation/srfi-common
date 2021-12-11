@@ -10,7 +10,7 @@
 
 The purpose of the Scheme Requests for Implementation (*SRFI*) process
 is to help Scheme users write portable, useful code.  We write
-concrete, detailed proposals and reference implementations for
+concrete, detailed proposals and sample implementations for
 libraries and other additions to the Scheme language, and we encourage
 Scheme implementors to adopt them.
 
