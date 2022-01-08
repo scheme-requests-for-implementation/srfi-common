@@ -2006,6 +2006,6 @@
  (status final)
  (title "An advanced currying form")
  (author "Wolfgang Corcoran-Mathe")
- (see-also 146 189)
+ (see-also)
  (keywords syntax)
  (draft-date "2022-01-07"))
