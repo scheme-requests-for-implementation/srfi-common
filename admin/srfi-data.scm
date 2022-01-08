@@ -2001,7 +2001,7 @@
  (author "Bradley J. Lucier")
  (see-also 164 122 179)
  (keywords data-structure numbers)
- (draft-date "2022-01-05"))
+ (draft-date "2022-01-07"))
 ((number 232)
  (status draft)
  (title "An advanced currying form")
