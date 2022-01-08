@@ -2003,7 +2003,7 @@
  (keywords data-structure numbers)
  (draft-date "2022-01-05"))
 ((number 232)
- (status final)
+ (status draft)
  (title "An advanced currying form")
  (author "Wolfgang Corcoran-Mathe")
  (see-also)
