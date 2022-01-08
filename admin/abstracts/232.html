@@ -1,0 +1,8 @@
+<p>Scheme lacks a flexible way to create and apply curried procedures.
+This SRFI describes <code>lambda*</code>, a variant of
+<code>lambda</code> that creates true curried procedures which also
+behave just like ordinary Scheme procedures.  They can be applied to
+their arguments one-by-one, all at once, or anywhere in between,
+without any novel syntax.  <code>lambda*</code> also supports nullary
+and variadic procedures, and procedures created with it have
+predictable behavior when applied to surplus arguments.</p>
