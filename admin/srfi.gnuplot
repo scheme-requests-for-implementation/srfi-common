@@ -8,7 +8,7 @@ set terminal svg font "Arial,14" linewidth 3
 set tics font "Arial,10"
 set timefmt "%Y-%m-%d"
 set xdata time
-set xtics "1998-01-01",31557600,"2021-12-31" nomirror rotate by -45
+set xtics "1998-01-01",31557600,"2022-12-31" nomirror rotate by -45
 unset border
 show grid
 plot "/tmp/srfi-all.dat" using 1:2 title "all" with lines ls 1, \
