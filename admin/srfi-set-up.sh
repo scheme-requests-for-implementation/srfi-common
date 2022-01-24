@@ -57,10 +57,11 @@ rsync \
 rsync \
   --checksum \
   --delete \
-  --progress \
+  --out-format='%n' \
   --recursive \
   --times \
   /var/www/srfi-no-email/ \
   /var/www/srfi-email/ \
-  $DESTINATION/
+  $DESTINATION/ \
+  | grep --line-buffered -v '/$'
 chmod -R 0755 $DESTINATION/
