@@ -240,6 +240,8 @@
     (67590 srfi-228)
     (67592 srfi-229)
     (67618 srfi-230)
+    (71128 srfi-231)
+    (71130 srfi-232)
     (13631 srfi-announce)
     (13133 srfi-discuss)
     (13633 srfi-editors)
