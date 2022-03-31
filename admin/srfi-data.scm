@@ -2006,7 +2006,7 @@
  (draft-date "2022-01-07"))
 ((number 232)
  (status draft)
- (title "An advanced currying form")
+ (title "Flexible curried procedures")
  (author "Wolfgang Corcoran-Mathe")
  (see-also)
  (keywords syntax)
