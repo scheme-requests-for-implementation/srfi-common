@@ -1058,7 +1058,7 @@
  (title "Nonempty Intervals and Generalized Arrays")
  (author "Bradley J. Lucier")
  (see-also 164 179)
- (keywords data-structure numbers)
+ (keywords data-structure numbers superseded)
  (draft-date "2015-07-27")
  (done-date "2016-12-24"))
 ((number 123)
