@@ -1999,7 +1999,7 @@
  (done-date "2021-11-15"))
 ((number 231)
  (status draft)
- (title "Nonempty Intervals and Generalized Arrays (Updated^2)")
+ (title "Intervals and Generalized Arrays (Updated^2)")
  (author "Bradley J. Lucier")
  (see-also 164 122 179)
  (keywords data-structure numbers)
