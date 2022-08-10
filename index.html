@@ -105,6 +105,13 @@
           <button class="controls sort" data-sort="status" tabindex="6" >status</button></div></div>
       <ul class="summary list">
 
+      <li class="card draft"><a class="card-anchor" href="srfi-234/"></a><a href="srfi-234/"><span class="number">234</span></a>: <span class="name">Topological Sorting</span><span class="authors">, by John Cowan (spec) and Arvydas Silanskas (implementation)</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2022-08-10</span></span><span class="keywords" data-keywords="algorithm">Keywords: <a href="https://srfi.schemers.org/?keywords=algorithm">Algorithm</a></span><span class="status" data-status="draft"></span><div class="abstract"><p>
+Topological sorting is an algorithm that takes a graph consisting of
+nodes and other nodes that depend on them, forming a partial order,
+and returns a list representing a total ordering of the graph.
+If the graph is cyclic, the topological sort will fail, and an
+error will be signaled.
+</p></div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-233/"></a><a href="srfi-233/"><span class="number">233</span></a>: <span class="name">INI files</span><span class="authors">, by John Cowan (spec) and Arvydas Silanskas (implementation)</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2022-08-10</span></span><span class="keywords" data-keywords="i/o">Keywords: <a href="https://srfi.schemers.org/?keywords=i/o">I/O</a></span><span class="status" data-status="draft"></span><div class="abstract"><p>An INI file is a configuration file that consists of key-value
 pairs for properties, and sections that group the properties. The
 name of these configuration files comes from the filename extension
