@@ -2020,5 +2020,5 @@
  (author "John Cowan" "spec")
  (author "Arvydas Silanskas" "implementation")
  (see-also)
- (keywords syntax)
+ (keywords i/o)
  (draft-date "2022-08-10"))
