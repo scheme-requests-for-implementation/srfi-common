@@ -168,25 +168,92 @@ predictable behavior when applied to surplus arguments.</p></div></li>
     <p>Finally, for those who prefer less explicit procedure
       definitions, a sublibrary provides <code>define-optionals</code>
       and <code>define-optionals*</code>.</p></div></li>
-      <li class="card draft"><a class="card-anchor" href="srfi-226/"></a><a href="srfi-226/"><span class="number">226</span></a>: <span class="name">Control Features</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2021-08-06</span></span><span class="keywords" data-keywords="continuations,control-flow">Keywords: <a href="https://srfi.schemers.org/?keywords=continuations">Continuations</a>, <a href="https://srfi.schemers.org/?keywords=control-flow">Control Flow</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-18/">SRFI 18: Multithreading support</a>, <a href="/srfi-34/">SRFI 34: Exception Handling for Programs</a>, <a href="/srfi-39/">SRFI 39: Parameter objects</a>, <a href="/srfi-45/">SRFI 45: Primitives for Expressing Iterative Lazy Algorithms</a>, <a href="/srfi-97/">SRFI 97: SRFI Libraries</a>, <a href="/srfi-154/">SRFI 154: First-class dynamic extents</a>, <a href="/srfi-155/">SRFI 155: Promises</a>, <a href="/srfi-157/">SRFI 157: Continuation marks</a>, and <a href="/srfi-158/">SRFI 158: Generators and Accumulators</a>.</span><div class="abstract">    <p>This SRFI defines a rich set of control operators for the
-      Scheme programming language, including the
-      venerable <code>call/cc</code>
-      (<code>call-with-current-continuation</code>).  The set of
-      operators was highly influenced by the control operators provided
-      by <a href="https://racket-lang.org/"><cite>Racket</cite></a>.
+      <li class="card draft"><a class="card-anchor" href="srfi-226/"></a><a href="srfi-226/"><span class="number">226</span></a>: <span class="name">Control Features</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2021-08-06</span></span><span class="keywords" data-keywords="continuations,control-flow">Keywords: <a href="https://srfi.schemers.org/?keywords=continuations">Continuations</a>, <a href="https://srfi.schemers.org/?keywords=control-flow">Control Flow</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-18/">SRFI 18: Multithreading support</a>, <a href="/srfi-34/">SRFI 34: Exception Handling for Programs</a>, <a href="/srfi-39/">SRFI 39: Parameter objects</a>, <a href="/srfi-45/">SRFI 45: Primitives for Expressing Iterative Lazy Algorithms</a>, <a href="/srfi-97/">SRFI 97: SRFI Libraries</a>, <a href="/srfi-154/">SRFI 154: First-class dynamic extents</a>, <a href="/srfi-155/">SRFI 155: Promises</a>, <a href="/srfi-157/">SRFI 157: Continuation marks</a>, and <a href="/srfi-158/">SRFI 158: Generators and Accumulators</a>.</span><div class="abstract">    <p>Whenever an expression is evaluated during the run of a Scheme program,
+    there is a continuation awaiting the values of the expression. It is a
+    distinguishing property of the Scheme programming language to offer a
+    procedure (named <code>call/cc</code>) that captures the current
+    continuation as a procedure, which, when called, aborts the then current
+    continuation and reinstates the captured one.</p>
 
-    <p>Continuations can be delimited by continuation prompts, and all
-      continuations become delimited continuations, at the latest by
-      the default prompt at the start of each thread.  Moreover,
-      continuations are divided into composable and non-composable
-      continuations, which can be captured and reinstated.</p>
+    <p>One can visualize a continuation as a list of (continuation) frames
+      where a non-tail call adds a frame to the top of the list and where the return
+      from a non-tail call removes the appropriate frame.</p>
 
-    <p>To investigate continuations, this SRFI supports continuation
-      marks and offers operators to set and retrieve them.</p>
+    <p>Moreover, each expression is evaluated in a dynamic environment that
+      conceptually holds the values of parameters like the current output port
+      and the dynamic-wind stack at the point of evaluation.  As the dynamic
+      environment is captured and reinstated along the continuation when the
+      <code>call/cc</code> machinery is used, we can view it conceptually as
+      part of the continuation.</p>
 
-    <p>Moreover, this SRFI defines clear semantics of
-      exceptions, parameter objects, promises, and threads consistent
-      with the other concepts defined here.</p></div></li>
+    <p>The libraries defined in this SRFI are all concerned with continuations
+      in a wider sense. More specifically, the topics are as follows:</p>
+
+    <p><i>Continuation Prompts:</i> A continuation prompt is a special
+    continuation frame, which is tagged with a so-called prompt tag. Procedures
+    to install continuation prompts and to abort the current continuation and
+    to escape back to a previously installed continuation prompt are
+    provided. Moreover, continuation prompts are equipped with handlers that
+    are invoked when a continuation is aborted to them.</p>
+
+    <p><i>Continuations:</i> When continuations are captured, the list of
+    captured continuation frames are always delimited by some continuation
+    prompt. This extends the semantics of Scheme’s
+    <code>call-with-current-continuation</code>.  Moreover, a
+    procedure to capture so-called composable continuations is
+    provided. As opposed to continuations captured
+    by <code>call-with-current-continuation</code>, invoking a
+    composable continuation does not abort the then current
+    continuation, so composable continuations behave like ordinary
+    procedures.  Together with continuation prompts, composable
+    continuations allow one to implement the various proposed sets of
+    control operators for delimited continuations. Finally, a
+    primitive (<code>call-in-continuation</code>) is provided that
+    allows calling a thunk in a given continuation instead of just
+    delivering values to it.</p>
+
+    <p><i>Continuation Marks:</i> Continuation marks are a provided feature
+      that allows one to attach arbitrary information to continuation frames,
+      which are captured and reinstated along the rest of the
+      continuation. Conceptually, exception handlers and parameters are
+      implemented in terms of continuation marks, but the syntax and procedures
+      defined in this SRFI allow the user to use them in more general
+      ways. Moreover, they reify the notion of a tail call, allowing, for
+      example, to test for tail context.</p>
+
+    <p><i>Exceptions:</i> The exception mechanism
+    of <a href="https://doi.org/10.1017/S0956796809990074">R6RS</a>
+    and <a href="https://small.r7rs.org/attachment/r7rs.pdf">R7RS</a> is reinterpreted with
+    respect to the concepts introduced in this SRFI.  Moreover, the
+    <code>with-exception-handler</code> procedure and the <code>guard</code>
+    syntax gain additional tail context guarantees.</p>
+
+    <p><i>Parameters:</i> The parameter object mechanism
+    of <a href="https://srfi.schemers.org/srfi-39/srfi-39.html">SRFI 39</a>
+    and R7RS is reinterpreted with respect to the
+    concepts introduced in this SRFI.  Procedures to retrieve the
+    current parameterization and to reinstall it later are
+    provided. Moreover, the parameterize syntax gains an additional
+    tail context guarantee.</p>
+
+    <p><i>Delayed evaluation:</i> The syntax and procedures on delayed
+      evaluation of R7RS are revisited and redefined to handle the
+      following satisfactorily: the parameterization of the delayed expression
+      being forced, the treatment of exceptions raised during forcing of
+      delayed expressions, and iterative lazy algorithms. Moreover, their
+      semantics are detailed with respect to the concepts introduced in this
+      SRFI, and promises can naturally deliver an arbitrary number of values
+      when being forced. Finally, the initial continuation of a delayed
+      expression being forced is defined in a way that makes it interchangeably
+      with the initial continuation of a thread.</p>
+
+    <p><i>Threads:</i> The thread mechanism of <a href="https://srfi.schemers.org/srfi-18/srfi-18.html">SRFI
+      18</a> is detailed with respect to the concepts introduced in this
+      SRFI.  In particular, mutation of parameter objects in multithreaded
+      applications is specified.</code>.</p>
+
+    <p>Large parts of this SRFI have been inspired by the control operators
+      provided by <a href="https://racket-lang.org/">Racket</a>.</div></li>
       <li class="card draft"><a class="card-anchor" href="srfi-225/"></a><a href="srfi-225/"><span class="number">225</span></a>: <span class="name">Dictionaries</span><span class="authors">, by John Cowan (spec) and Arvydas Silanskas (implementation)</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2021-06-26</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-146/">SRFI 146: Mappings</a> and <a href="/srfi-167/">SRFI 167: Ordered Key Value Store</a>.</span><div class="abstract"><p>The procedures of this SRFI allow callers to manipulate an object that maps keys to values
   without the caller needing to know exactly what the type of the object is.
   However, what procedures can be called on the object is partly determined by whether it is pure.
