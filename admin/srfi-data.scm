@@ -1167,6 +1167,7 @@
  (title "Immutable Deques")
  (author "Kevin Wortman")
  (author "John Cowan")
+ (author "Wolfgang Corcoran-Mathe")
  (see-also)
  (keywords data-structure r7rs-large r7rs-large-red)
  (draft-date "2015-12-16")
