@@ -1,4 +1,6 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 235: Combinators</title><link>https://srfi.schemers.org/srfi-235/srfi-235.html</link><guid>https://srfi.schemers.org/srfi-235</guid><description>SRFI 235 is now in <em>draft</em> status.<blockquote><p>This SRFI contains various procedures that accept and return procedures,
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 225: Dictionaries</title><link>https://srfi.schemers.org/srfi-225/srfi-225.html</link><guid>https://srfi.schemers.org/srfi-225</guid><description>SRFI 225 is now in <em>final</em> status.<blockquote><p>The procedures of this SRFI allow callers to manipulate an object that maps keys to values
+  without the caller needing to know exactly what the type of the object is.
+  Such an object is called a <em>dictionary</em> or <em>dict</em> in this SRFI.</p></blockquote></description><dc:creator>John Cowan (spec) and Arvydas Silanskas (implementation)</dc:creator><pubDate>Mon, 19 Sep 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 235: Combinators</title><link>https://srfi.schemers.org/srfi-235/srfi-235.html</link><guid>https://srfi.schemers.org/srfi-235</guid><description>SRFI 235 is now in <em>draft</em> status.<blockquote><p>This SRFI contains various procedures that accept and return procedures,
 as well as a few others, drawn from
 <a href="https://wiki.call-cc.org/eggref/4/combinators">an earlier version of Chicken</a>.
 Common Lisp has a few of them too, and more come from
@@ -55,7 +57,7 @@ procedure, and simple abstractions on top of it.
 into parts and assigns those parts to variables. This
 SRFI describes a pattern-matching library already in use by
 several scheme implementations which can match many common
-compound data structures.</p></blockquote></description><dc:creator>Felix Thibault</dc:creator><pubDate>Wed, 02 Feb 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 231: Intervals and Generalized Arrays (Updated^2)</title><link>https://srfi.schemers.org/srfi-231/srfi-231.html</link><guid>https://srfi.schemers.org/srfi-231</guid><description>SRFI 231 is now in <em>draft</em> status.<blockquote>    <p>This SRFI specifies an array mechanism for Scheme. Arrays as defined here are quite general; at their most basic, an array is simply a mapping, or function, from multi-indices of exact integers $i_0,\ldots,i_{d-1}$ to Scheme values.  The set of multi-indices $i_0,\ldots,i_{d-1}$ that are valid for a given array form the <i>domain</i> of the array.  In this SRFI, each array's domain consists  of the cross product of nonempty intervals of exact integers $[l_0,u_0)\times[l_1,u_1)\times\cdots\times[l_{d-1},u_{d-1})$ of $\mathbb Z^d$, $d$-tuples of integers.  Thus, we introduce a data type called $d$-<i>intervals</i>, or more briefly <i>intervals</i>, that encapsulates this notion. (We borrow this terminology from, e.g.,  Elias Zakon's <a href="http://www.trillia.com/zakon1.html">Basic Concepts of Mathematics</a>.) Specialized variants of arrays provide portable programs with efficient representations for common use cases.</p>
+compound data structures.</p></blockquote></description><dc:creator>Felix Thibault</dc:creator><pubDate>Wed, 02 Feb 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 231: Intervals and Generalized Arrays</title><link>https://srfi.schemers.org/srfi-231/srfi-231.html</link><guid>https://srfi.schemers.org/srfi-231</guid><description>SRFI 231 is now in <em>draft</em> status.<blockquote>    <p>This SRFI specifies an array mechanism for Scheme. Arrays as defined here are quite general; at their most basic, an array is simply a mapping, or function, from multi-indices of exact integers $i_0,\ldots,i_{d-1}$ to Scheme values.  The set of multi-indices $i_0,\ldots,i_{d-1}$ that are valid for a given array form the <i>domain</i> of the array.  In this SRFI, each array's domain consists  of the cross product of intervals of exact integers $[l_0,u_0)\times[l_1,u_1)\times\cdots\times[l_{d-1},u_{d-1})$ of $\mathbb Z^d$, $d$-tuples of integers.  Thus, we introduce a data type called $d$-<i>intervals</i>, or more briefly <a href="https://en.wikipedia.org/w/index.php?title=Interval_(mathematics)&amp;oldid=1091935326"><i>intervals</i></a>, that encapsulates this notion. (We borrow this terminology from, e.g.,  Elias Zakon's <a href="http://www.trillia.com/zakon1.html">Basic Concepts of Mathematics</a>.) Specialized variants of arrays provide portable programs with efficient representations for common use cases.</p>
     <p>This is a revised version of <a href="https://srfi.schemers.org/srfi-179/">SRFI 179</a>.</p></blockquote></description><dc:creator>Bradley J. Lucier</dc:creator><pubDate>Fri, 07 Jan 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 227: Optional Arguments</title><link>https://srfi.schemers.org/srfi-227/srfi-227.html</link><guid>https://srfi.schemers.org/srfi-227</guid><description>SRFI 227 is now in <em>final</em> status.<blockquote>    <p>This SRFI specifies the <code>opt-lambda</code> syntax, which
       generalizes <code>lambda</code>.  An <code>opt-lambda</code> expression
       evaluates to a procedure that takes a number of required and a number of
@@ -86,25 +88,92 @@ compound data structures.</p></blockquote></description><dc:creator>Felix Thibau
       a <dfn>memory order</dfn> that defines the level of synchronization with
       other threads.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Mon, 15 Nov 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 228: A further comparator library</title><link>https://srfi.schemers.org/srfi-228/srfi-228.html</link><guid>https://srfi.schemers.org/srfi-228</guid><description>SRFI 228 is now in <em>draft</em> status.<blockquote><p>Further procedures and syntax forms for defining <a href="https://srfi.schemers.org/srfi-128/srfi-128.html">SRFI 128</a> comparators, and for extracting comparison procedures similar to those defined for Scheme’s built-in types using them.
 
-</p><p>Best enjoyed in combination with <a href="https://srfi.schemers.org/srfi-162/srfi-162.html">SRFI 162</a>.</p></blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Sat, 28 Aug 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 226: Control Features</title><link>https://srfi.schemers.org/srfi-226/srfi-226.html</link><guid>https://srfi.schemers.org/srfi-226</guid><description>SRFI 226 is now in <em>draft</em> status.<blockquote>    <p>This SRFI defines a rich set of control operators for the
-      Scheme programming language, including the
-      venerable <code>call/cc</code>
-      (<code>call-with-current-continuation</code>).  The set of
-      operators was highly influenced by the control operators provided
-      by <a href="https://racket-lang.org/"><cite>Racket</cite></a>.
+</p><p>Best enjoyed in combination with <a href="https://srfi.schemers.org/srfi-162/srfi-162.html">SRFI 162</a>.</p></blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Sat, 28 Aug 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 226: Control Features</title><link>https://srfi.schemers.org/srfi-226/srfi-226.html</link><guid>https://srfi.schemers.org/srfi-226</guid><description>SRFI 226 is now in <em>draft</em> status.<blockquote>    <p>Whenever an expression is evaluated during the run of a Scheme program,
+    there is a continuation awaiting the values of the expression. It is a
+    distinguishing property of the Scheme programming language to offer a
+    procedure (named <code>call/cc</code>) that captures the current
+    continuation as a procedure, which, when called, aborts the then current
+    continuation and reinstates the captured one.</p>
 
-    </p><p>Continuations can be delimited by continuation prompts, and all
-      continuations become delimited continuations, at the latest by
-      the default prompt at the start of each thread.  Moreover,
-      continuations are divided into composable and non-composable
-      continuations, which can be captured and reinstated.</p>
+    <p>One can visualize a continuation as a list of (continuation) frames
+      where a non-tail call adds a frame to the top of the list and where the return
+      from a non-tail call removes the appropriate frame.</p>
 
-    <p>To investigate continuations, this SRFI supports continuation
-      marks and offers operators to set and retrieve them.</p>
+    <p>Moreover, each expression is evaluated in a dynamic environment that
+      conceptually holds the values of parameters like the current output port
+      and the dynamic-wind stack at the point of evaluation.  As the dynamic
+      environment is captured and reinstated along the continuation when the
+      <code>call/cc</code> machinery is used, we can view it conceptually as
+      part of the continuation.</p>
 
-    <p>Moreover, this SRFI defines clear semantics of
-      exceptions, parameter objects, promises, and threads consistent
-      with the other concepts defined here.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 06 Aug 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 223: Generalized binary search procedures</title><link>https://srfi.schemers.org/srfi-223/srfi-223.html</link><guid>https://srfi.schemers.org/srfi-223</guid><description>SRFI 223 is now in <em>final</em> status.<blockquote><p>Generalized procedures for binary search of vector-like data structures are provided which can be applied to any sequence type, including ones defined by the user, together with applications of these procedures for Scheme’s built-in vectors.</p></blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Tue, 27 Jul 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 222: Compound Objects</title><link>https://srfi.schemers.org/srfi-222/srfi-222.html</link><guid>https://srfi.schemers.org/srfi-222</guid><description>SRFI 222 is now in <em>final</em> status.<blockquote><p>Compound objects are analogous to R6RS compound conditions,
+    <p>The libraries defined in this SRFI are all concerned with continuations
+      in a wider sense. More specifically, the topics are as follows:</p>
+
+    <p><i>Continuation Prompts:</i> A continuation prompt is a special
+    continuation frame, which is tagged with a so-called prompt tag. Procedures
+    to install continuation prompts and to abort the current continuation and
+    to escape back to a previously installed continuation prompt are
+    provided. Moreover, continuation prompts are equipped with handlers that
+    are invoked when a continuation is aborted to them.</p>
+
+    <p><i>Continuations:</i> When continuations are captured, the list of
+    captured continuation frames are always delimited by some continuation
+    prompt. This extends the semantics of Scheme’s
+    <code>call-with-current-continuation</code>.  Moreover, a
+    procedure to capture so-called composable continuations is
+    provided. As opposed to continuations captured
+    by <code>call-with-current-continuation</code>, invoking a
+    composable continuation does not abort the then current
+    continuation, so composable continuations behave like ordinary
+    procedures.  Together with continuation prompts, composable
+    continuations allow one to implement the various proposed sets of
+    control operators for delimited continuations. Finally, a
+    primitive (<code>call-in-continuation</code>) is provided that
+    allows calling a thunk in a given continuation instead of just
+    delivering values to it.</p>
+
+    <p><i>Continuation Marks:</i> Continuation marks are a provided feature
+      that allows one to attach arbitrary information to continuation frames,
+      which are captured and reinstated along the rest of the
+      continuation. Conceptually, exception handlers and parameters are
+      implemented in terms of continuation marks, but the syntax and procedures
+      defined in this SRFI allow the user to use them in more general
+      ways. Moreover, they reify the notion of a tail call, allowing, for
+      example, to test for tail context.</p>
+
+    <p><i>Exceptions:</i> The exception mechanism
+    of <a href="https://doi.org/10.1017/S0956796809990074">R6RS</a>
+    and <a href="https://small.r7rs.org/attachment/r7rs.pdf">R7RS</a> is reinterpreted with
+    respect to the concepts introduced in this SRFI.  Moreover, the
+    <code>with-exception-handler</code> procedure and the <code>guard</code>
+    syntax gain additional tail context guarantees.</p>
+
+    <p><i>Parameters:</i> The parameter object mechanism
+    of <a href="https://srfi.schemers.org/srfi-39/srfi-39.html">SRFI 39</a>
+    and R7RS is reinterpreted with respect to the
+    concepts introduced in this SRFI.  Procedures to retrieve the
+    current parameterization and to reinstall it later are
+    provided. Moreover, the parameterize syntax gains an additional
+    tail context guarantee.</p>
+
+    <p><i>Delayed evaluation:</i> The syntax and procedures on delayed
+      evaluation of R7RS are revisited and redefined to handle the
+      following satisfactorily: the parameterization of the delayed expression
+      being forced, the treatment of exceptions raised during forcing of
+      delayed expressions, and iterative lazy algorithms. Moreover, their
+      semantics are detailed with respect to the concepts introduced in this
+      SRFI, and promises can naturally deliver an arbitrary number of values
+      when being forced. Finally, the initial continuation of a delayed
+      expression being forced is defined in a way that makes it interchangeably
+      with the initial continuation of a thread.</p>
+
+    <p><i>Threads:</i> The thread mechanism of <a href="https://srfi.schemers.org/srfi-18/srfi-18.html">SRFI
+      18</a> is detailed with respect to the concepts introduced in this
+      SRFI.  In particular, mutation of parameter objects in multithreaded
+      applications is specified.<code></code>.</p>
+
+    <p>Large parts of this SRFI have been inspired by the control operators
+      provided by <a href="https://racket-lang.org/">Racket</a>.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 06 Aug 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 223: Generalized binary search procedures</title><link>https://srfi.schemers.org/srfi-223/srfi-223.html</link><guid>https://srfi.schemers.org/srfi-223</guid><description>SRFI 223 is now in <em>final</em> status.<blockquote><p>Generalized procedures for binary search of vector-like data structures are provided which can be applied to any sequence type, including ones defined by the user, together with applications of these procedures for Scheme’s built-in vectors.</p></blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Tue, 27 Jul 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 222: Compound Objects</title><link>https://srfi.schemers.org/srfi-222/srfi-222.html</link><guid>https://srfi.schemers.org/srfi-222</guid><description>SRFI 222 is now in <em>final</em> status.<blockquote><p>Compound objects are analogous to R6RS compound conditions,
 and are suitable for use in creating and handling conditions
 on non-R6RS systems, among other purposes.
 They encapsulate an immutable sequence of subobjects, which can be
@@ -122,10 +191,7 @@ library provides a rich set of operations on fxmappings, including
 analogues of most of the forms provided by SRFI 146.  Fxmappings have
 no intrinsic order, but may be treated as ordered sets, using the
 natural ordering on keys; a substantial sublibrary for working with
-fxmappings in this fashion is included.</p></blockquote></description><dc:creator>Wolfgang Corcoran-Mathe</dc:creator><pubDate>Wed, 30 Jun 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 225: Dictionaries</title><link>https://srfi.schemers.org/srfi-225/srfi-225.html</link><guid>https://srfi.schemers.org/srfi-225</guid><description>SRFI 225 is now in <em>draft</em> status.<blockquote><p>The procedures of this SRFI allow callers to manipulate an object that maps keys to values
-  without the caller needing to know exactly what the type of the object is.
-  However, what procedures can be called on the object is partly determined by whether it is pure.
-  Such an object is called a <em>dict(ionary)</em> in this SRFI.</p></blockquote></description><dc:creator>John Cowan (spec) and Arvydas Silanskas (implementation)</dc:creator><pubDate>Sat, 26 Jun 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 221: Generator/accumulator sub-library</title><link>https://srfi.schemers.org/srfi-221/srfi-221.html</link><guid>https://srfi.schemers.org/srfi-221</guid><description>SRFI 221 is now in <em>final</em> status.<blockquote><p>This is a set of convenience routines for generators and accumulators
+fxmappings in this fashion is included.</p></blockquote></description><dc:creator>Wolfgang Corcoran-Mathe</dc:creator><pubDate>Wed, 30 Jun 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 221: Generator/accumulator sub-library</title><link>https://srfi.schemers.org/srfi-221/srfi-221.html</link><guid>https://srfi.schemers.org/srfi-221</guid><description>SRFI 221 is now in <em>final</em> status.<blockquote><p>This is a set of convenience routines for generators and accumulators
 intended to blend in with
 <a href="https://srfi.schemers.org/srfi-158/srfi-158.html">SRFI 158</a>.
 The authors recommend that they be added to the
