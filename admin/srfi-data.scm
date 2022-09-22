@@ -2045,5 +2045,5 @@
  (title "Evaluating Scheme expressions in an unspecified order")
  (author "Marc Nieper-Wißkirchen")
  (see-also)
- (keywords syntax)
+ (keywords control-flow syntax)
  (draft-date "2022-09-22"))
