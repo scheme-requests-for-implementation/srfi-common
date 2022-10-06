@@ -1,0 +1,27 @@
+#+Title: SRFI tools
+
+This directory contains tools to help people read and write SRFIs.
+
+The tools can be accessed in two ways:
+
+1. By importing the libraries into a Scheme implementation.
+
+2. By using the ~srfi~ command line tool from an OS shell.
+
+The tools are written in portable R7RS Scheme, except for a few
+implementation-dependent procedures which are gathered in the ~sysdep~
+library.
+
+The ~private~ directory contains utility code which does not deal with
+SRFI specifically.
+
+Like SRFIs themselves, the tools are released under the MIT License.
+
+* Command line
+
+The command line ~srfi~ command. Each tool is a subcommand.
+
+When no subcommand is given, the default command is run.
+
+When a SRFI number is given in lieu of a subcommand, the default SRFI
+command is run.
