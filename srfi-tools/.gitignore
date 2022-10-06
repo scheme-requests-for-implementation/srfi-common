@@ -1,0 +1,7 @@
+*.build.sh
+*.import.scm
+*.install.sh
+*.link
+*.o
+*.so
+.akku

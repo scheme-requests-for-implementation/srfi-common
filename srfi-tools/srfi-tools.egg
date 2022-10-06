@@ -1,0 +1,234 @@
+;;; -*- Scheme -*-
+
+;;; This file is used by `chicken-install`.
+
+((synopsis "Tools for people who read and write SRFI documents")
+ (category tools)
+ (license "MIT")
+ (author "The SRFI community")
+ (dependencies http-client r7rs scsh-process srfi-1 srfi-13 srfi-19)
+ (test-dependencies)
+ (distribution-files
+  "private/chibi-html-parser.scm" "private/chibi-sxml.scm" "core.sld"
+  "count.sld" "data.sld" "git.sld" "github.sld" "help.sld" "html.sld"
+  "info.sld" "interactive.sld" "mail.sld" "main.sld"
+  "missing.sld" "path.sld" "pre.sld" "private/command.sld" "private/error.sld"
+  "private/external.sld" "private/file.sld" "private/format.sld"
+  "private/hash-table.sld" "private/html-parser.sld" "private/html-writer.sld"
+  "private/list.sld" "private/os.sld" "private/path.sld" "private/port.sld"
+  "private/pretty-print.sld" "private/string.sld" "private/sxml.sld"
+  "private/sysdep.sld" "private/tar.sld" "private/time.sld"
+  "private/sysdep.chicken.scm" "rss.scm"
+  "rss.sld" "srfi-db.scm" "tar.sld" "toc.sld" "url.sld")
+ (components
+  (program
+   srfi
+   (source "main.sld")
+   (component-dependencies
+    srfi-tools.count srfi-tools.data srfi-tools.git
+    srfi-tools.github srfi-tools.help srfi-tools.html srfi-tools.info
+    srfi-tools.interactive srfi-tools.mail srfi-tools.missing srfi-tools.path
+    srfi-tools.pre srfi-tools.private.command srfi-tools.private.error
+    srfi-tools.private.list srfi-tools.private.port srfi-tools.private.string
+    srfi-tools.rss srfi-tools.tar srfi-tools.toc)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.core (source "core.sld")
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.count
+   (source "count.sld")
+   (component-dependencies
+    srfi-tools.data srfi-tools.private.command
+    srfi-tools.private.hash-table srfi-tools.private.list
+    srfi-tools.private.port srfi-tools.private.time)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.data
+   (source "data.sld")
+   (source-dependencies "srfi-db.scm")
+   (component-dependencies
+    srfi-tools.core srfi-tools.path
+    srfi-tools.private.command srfi-tools.private.file srfi-tools.private.list
+    srfi-tools.private.port srfi-tools.private.string)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.git
+   (source "git.sld")
+   (component-dependencies
+    srfi-tools.data srfi-tools.github srfi-tools.path
+    srfi-tools.private.command srfi-tools.private.format srfi-tools.private.os
+    srfi-tools.private.port srfi-tools.url)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.github
+   (source "github.sld")
+   (component-dependencies
+    srfi-tools.data srfi-tools.path
+    srfi-tools.private.command srfi-tools.private.format srfi-tools.private.os
+    srfi-tools.url)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.help
+   (source "help.sld")
+   (component-dependencies
+    srfi-tools.private.command srfi-tools.private.list
+    srfi-tools.private.port srfi-tools.private.string)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.html
+   (source "html.sld")
+   (component-dependencies
+    srfi-tools.data srfi-tools.path
+    srfi-tools.private.command srfi-tools.private.external
+    srfi-tools.private.file srfi-tools.private.format
+    srfi-tools.private.html-parser srfi-tools.private.html-writer
+    srfi-tools.private.port srfi-tools.url)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.info
+   (source "info.sld")
+   (component-dependencies
+    srfi-tools.data srfi-tools.html
+    srfi-tools.private.command srfi-tools.private.format
+    srfi-tools.private.path srfi-tools.private.port srfi-tools.private.string)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.interactive
+   (source "interactive.sld")
+   (component-dependencies
+    srfi-tools.data srfi-tools.html srfi-tools.mail
+    srfi-tools.path srfi-tools.private.command srfi-tools.private.external
+    srfi-tools.private.os srfi-tools.url)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.mail
+   (source "mail.sld")
+   (component-dependencies
+    srfi-tools.data srfi-tools.path
+    srfi-tools.private.command srfi-tools.private.path
+    srfi-tools.private.port)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.missing
+   (source "missing.sld")
+   (component-dependencies
+    srfi-tools.data srfi-tools.path
+    srfi-tools.private.command srfi-tools.private.hash-table
+    srfi-tools.private.html-parser srfi-tools.private.list
+    srfi-tools.private.port srfi-tools.private.string srfi-tools.private.sxml)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.path
+   (source "path.sld")
+   (component-dependencies
+    srfi-tools.core srfi-tools.private.command
+    srfi-tools.private.format srfi-tools.private.os srfi-tools.private.path
+    srfi-tools.private.port)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.pre
+   (source "pre.sld")
+   (component-dependencies
+    srfi-tools.data srfi-tools.path
+    srfi-tools.private.command srfi-tools.private.format srfi-tools.private.os
+    srfi-tools.private.path srfi-tools.private.port)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.rss
+   (source "rss.sld")
+   (source-dependencies "rss.scm")
+   (component-dependencies
+    srfi-tools.data srfi-tools.html srfi-tools.path
+    srfi-tools.private.command srfi-tools.private.format
+    srfi-tools.private.html-parser srfi-tools.private.html-writer
+    srfi-tools.private.list srfi-tools.private.port srfi-tools.private.sxml
+    srfi-tools.private.time srfi-tools.url)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.tar
+   (source "tar.sld")
+   (component-dependencies
+    srfi-tools.data srfi-tools.path
+    srfi-tools.private.command srfi-tools.private.external
+    srfi-tools.private.file srfi-tools.private.list srfi-tools.private.os
+    srfi-tools.private.path srfi-tools.private.port srfi-tools.private.string
+    srfi-tools.private.tar srfi-tools.url)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.toc
+   (source "toc.sld")
+   (component-dependencies
+    srfi-tools.data srfi-tools.path
+    srfi-tools.private.command srfi-tools.private.html-parser
+    srfi-tools.private.list srfi-tools.private.port srfi-tools.private.string
+    srfi-tools.private.sxml)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.url
+   (source "url.sld")
+   (component-dependencies
+    srfi-tools.data srfi-tools.path
+    srfi-tools.private.command srfi-tools.private.path
+    srfi-tools.private.port)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.command (source "private/command.sld")
+             (component-dependencies
+              srfi-tools.private.list srfi-tools.private.string)
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.error (source "private/error.sld")
+             (component-dependencies
+              srfi-tools.private.port srfi-tools.private.string)
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.private.external
+   (source "private/external.sld")
+   (component-dependencies
+    srfi-tools.private.error srfi-tools.private.os
+    srfi-tools.private.port srfi-tools.private.string)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.file (source "private/file.sld")
+             (component-dependencies srfi-tools.private.os
+                                     srfi-tools.private.port)
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.format (source "private/format.sld")
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.hash-table (source "private/hash-table.sld")
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.html-parser (source "private/html-parser.sld")
+             (source-dependencies "chibi-html-parser.scm")
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.html-writer (source "private/html-writer.sld")
+             (source-dependencies "chibi-sxml.scm")
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.list (source "private/list.sld")
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.private.os
+   (source "private/os.sld")
+   (component-dependencies
+    srfi-tools.private.list srfi-tools.private.path
+    srfi-tools.private.port srfi-tools.private.string
+    srfi-tools.private.sysdep)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.path (source "private/path.sld")
+             (component-dependencies srfi-tools.private.list
+                                     srfi-tools.private.string)
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.port (source "private/port.sld")
+             (component-dependencies srfi-tools.private.string)
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.pretty-print
+             (source "private/pretty-print.sld")
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.string (source "private/string.sld")
+             (component-dependencies srfi-tools.private.list)
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.sxml (source "private/sxml.sld")
+             (component-dependencies srfi-tools.private.list)
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.sysdep (source "private/sysdep.sld")
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.tar (source "private/tar.sld")
+             (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension srfi-tools.private.time (source "private/time.sld")
+             (csc-options "-R" "r7rs" "-X" "r7rs"))))

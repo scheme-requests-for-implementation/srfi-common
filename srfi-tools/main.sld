@@ -1,0 +1,61 @@
+(define-library (srfi-tools main)
+  (export)
+  (import (scheme base)
+          (only (srfi 193) command-args))
+  (import (srfi-tools private list)
+          (srfi-tools private string)
+          (srfi-tools private port)
+          (srfi-tools private error)
+          (srfi-tools private command))
+  (import (srfi-tools data)
+          (srfi-tools count)
+          (srfi-tools git)
+          (srfi-tools github)
+          (srfi-tools help)
+          (srfi-tools html)
+          (srfi-tools info)
+          (srfi-tools interactive)
+          (srfi-tools mail)
+          (srfi-tools missing)
+          (srfi-tools path)
+          (srfi-tools pre)
+          (srfi-tools rss)
+          (srfi-tools tar)
+          (srfi-tools toc))
+  (cond-expand
+   ((library (srfi-tools local))
+    (import (srfi-tools local)))
+   (else))
+  (begin
+    (define (main* args)
+      (if (null? args)
+          (command-apply
+           (command-by-name (srfi-default-command))
+           '())
+          (let ((num (and (try-parse-srfi-number (first args))
+                          (first args))))
+            (cond ((and num (not (null? (rest args))))
+                   (usage "Too many args"))
+                  (num
+                   (command-apply
+                    (command-by-name (srfi-default-number-command))
+                    (list num)))
+                  (else
+                   (let* ((name (first args))
+                          (args (rest args))
+                          (command (command-by-name name)))
+                     (cond ((< (length args) (command-min-args command))
+                            (usage "Not enough args"))
+                           ((and (command-max-args command)
+                                 (> (length args) (command-max-args command)))
+                            (usage "Too many args"))
+                           (else
+                            (command-apply command args))))))))))
+  (cond-expand
+   (chibi
+    (begin
+      (define (main command-line)
+        (main* (rest command-line)))))
+   ((or chicken gauche)
+    (begin
+      (main* (command-args))))))

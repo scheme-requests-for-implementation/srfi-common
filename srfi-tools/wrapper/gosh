@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+d="$(dirname "$(readlink "$0" || printf '%s' "$0")")"
+d="$(cd "$(dirname "$0")" && cd "$d" && cd ../.. && pwd)"
+exec gosh -I "$d" -- "$d/srfi-tools/main.sld" "$@"
