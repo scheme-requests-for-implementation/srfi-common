@@ -8,7 +8,8 @@
                       make-keyword)
                 gauche:)
         (prefix (gauche process)
-                gauche:))
+                gauche:)
+        (srfi-tools private port))
 
 (begin
 
