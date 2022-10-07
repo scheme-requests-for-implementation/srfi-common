@@ -34,7 +34,7 @@
                 (list (cons level (sxml-body-as-string elem)))
                 (append-map headings (sxml-body elem))))))
 
-    (define (headings->tree hs)
+    (define (headings->tree/values hs)
       (let deeper ((level #f) (hs hs))
         (let same-level ((acc '()) (hs hs))
           (if (null? hs) (values acc '())
@@ -48,6 +48,10 @@
                                                   (list (cons (cdr h)
                                                               subtree)))
                                           hs)))))))))
+
+    (define (headings->tree hs)
+      (let-values (((subtree hs) (headings->tree/values hs)))
+        subtree))
 
     (define (string->slug string)
       (let ((chars
