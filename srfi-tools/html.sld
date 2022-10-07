@@ -54,8 +54,7 @@
       (file-contents-as-string (srfi-abstract-html-file num)))
 
     (define-command (abstract-html num)
-      (sxml-display-as-html
-       (srfi-abstract-sxml (parse-srfi-number num))))
+      (write-string (srfi-abstract-html (parse-srfi-number num))))
 
     (define (srfi-abstract-text num)
       (render-web-page-as-plain-text (srfi-abstract-html-file num)))
