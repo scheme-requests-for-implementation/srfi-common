@@ -25,3 +25,6 @@ When no subcommand is given, the default command is run.
 
 When a SRFI number is given in lieu of a subcommand, the default SRFI
 command is run.
+
+If you're using ~bash~ (or maybe ~zsh~), execute ~eval "$(srfi
+complete bash)"~ to enable tab completion for the subcommands.
