@@ -52,7 +52,7 @@
                 " is now in "
                 (em ,(srfi-status srfi))
                 " status."
-                (blockquote ,(srfi-abstract-sxml n))))))
+                (blockquote ,@(srfi-abstract-sxml n))))))
 
 (define (srfi-rss-sxml)
   (define (srfi-time srfi)

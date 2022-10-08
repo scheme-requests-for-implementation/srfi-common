@@ -48,7 +48,9 @@
       (write-string-about-srfi srfi-text num))
 
     (define (srfi-abstract-sxml num)
-      (call-with-input-file (srfi-abstract-html-file num) html->sxml))
+      (define skip-top cdr)
+      (skip-top
+       (call-with-input-file (srfi-abstract-html-file num) html->sxml)))
 
     (define (srfi-abstract-html num)
       (file-contents-as-string (srfi-abstract-html-file num)))
