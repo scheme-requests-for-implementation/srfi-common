@@ -1,0 +1,4 @@
+Note that many of the files in this directories are snapshots of code
+from Chibi Scheme.
+
+https://github.com/ashinn/chibi-scheme
