@@ -22,11 +22,7 @@
                  (count year)))))))))
 
     (define-command (count-by-year)
-      (for-each (lambda (pair)
-                  (let ((year (car pair))
-                        (count (cdr pair)))
-                    (disp year "  " count)))
-                (srfi-count-by-year)))
+      (display-two-column-table (srfi-count-by-year)))
 
     (define (srfi-count-by-author)
       (list-sort
@@ -39,8 +35,4 @@
                        (srfi-authors srfi))))))))
 
     (define-command (count-by-author)
-      (for-each (lambda (pair)
-                  (let ((name (car pair))
-                        (count (cdr pair)))
-                    (disp count "  " name)))
-                (srfi-count-by-author)))))
+      (display-two-column-table (srfi-count-by-author)))))

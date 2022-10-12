@@ -7,11 +7,13 @@
           displayed
           disp
           edisp
+          display-two-column-table
           copy-binary-port)
   (import (scheme base)
           (scheme file)
           (scheme read)
           (scheme write)
+          (srfi-tools private list)
           (srfi-tools private string))
   (begin
 
@@ -57,6 +59,19 @@
         (parameterize ((current-output-port (current-error-port)))
           (apply disp args))
         (flush-output-port (current-error-port))))
+
+    (define (display-two-column-table alist)
+      (let* ((cars (map displayed (map car alist)))
+             (cdrs (map displayed (map cdr alist)))
+             (width (fold max 0 (map string-length cars))))
+        (for-each (lambda (car cdr)
+                    (let ((padding (- width (string-length car))))
+                      (write-string car)
+                      (write-string (make-string (+ padding 2) #\space))
+                      (write-string cdr)
+                      (newline)))
+                  cars
+                  cdrs)))
 
     (define (copy-binary-port input-port output-port)
       (let ((buffer (make-bytevector (* 100 1024))))
