@@ -16,9 +16,8 @@
     (define (srfi-github-org)
       "scheme-requests-for-implementation")
 
-    ;; TODO: Get this from an environment variable.
     (define srfi-github-authorization-token
-      (make-parameter ""))
+      (get-environment-variable "GITHUB_TOKEN"))
 
     (define (github-api-repos)
       (string-append "https://api.github.com/orgs/"
