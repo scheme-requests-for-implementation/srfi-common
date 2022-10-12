@@ -71,7 +71,9 @@
 				       (span " ×"))
 			       (div (@ (class "options"))
 				    (select (@ (multiple)
-					       (size ,(length keyword-options)))
+					       (size
+						,(+ 1
+						    (length keyword-options))))
 					    (option (@ (selected) (value "any"))
 						    "any")
 					    ,keyword-options))
