@@ -9,6 +9,7 @@
           (srfi-tools private command))
   (import (srfi-tools data)
           (srfi-tools count)
+          (srfi-tools generate)
           (srfi-tools git)
           (srfi-tools github)
           (srfi-tools help)

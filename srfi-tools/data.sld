@@ -1,6 +1,7 @@
 (define-library (srfi-tools data)
   (export srfi-format-keyword
           srfi-available-keywords
+	  srfi-keyword-alist
 
           srfi-by-number
 
@@ -41,14 +42,17 @@
           write-line-about-srfi
 
           srfi-default-command
-          srfi-default-number-command)
+          srfi-default-number-command
+
+	  keyword->name)
   (import (scheme base)
           (scheme case-lambda)
           (scheme char)
           (scheme cxr)
           (scheme file)
           (scheme read)
-          (srfi-tools private list)
+          (srfi-tools assert)
+	  (srfi-tools private list)
           (srfi-tools private string)
           (srfi-tools private port)
           (srfi-tools private file)

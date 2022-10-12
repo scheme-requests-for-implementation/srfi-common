@@ -3,5 +3,6 @@
           sxml-display-as-text
           html-escape)
   (import (scheme base)
-          (scheme write))
+          (scheme write)
+	  (srfi 227))
   (include "chibi-sxml.scm"))

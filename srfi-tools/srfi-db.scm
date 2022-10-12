@@ -1,7 +1,7 @@
 ;; Update "admin/srfi-data-convert.el" at
 ;; <git@github.com:srfi-explorations/emacs-srfi> whenever this
 ;; changes.
-(define keyword-entries
+(define srfi-keyword-alist
   '((algorithm "Algorithm")
     (assignment "Assignment")
     (binding "Binding")
@@ -42,17 +42,22 @@
 
 (define (srfi-format-keyword keyword)
   (keyword-entry/title
-   (or (assoc keyword keyword-entries)
+   (or (assoc keyword srfi-keyword-alist)
        (error "No such SRFI keyword" keyword))))
 
 (define (srfi-available-keywords)
-  (map keyword-entry/symbol keyword-entries))
+  (map keyword-entry/symbol srfi-keyword-alist))
+
+(define (keyword->name keyword)
+  (let ((a (assq keyword srfi-keyword-alist)))
+    (assert a "No such keyword.")
+    (keyword-entry/title a)))
 
 (define-command (keyword-symbols)
   (for-each disp (srfi-available-keywords)))
 
 (define-command (keywords)
-  (for-each disp (map keyword-entry/title keyword-entries)))
+  (for-each disp (map keyword-entry/title srfi-keyword-alist)))
 
 ;;
 
@@ -138,8 +143,7 @@
          srfi)
         ((number? srfi)
          (srfi-by-number srfi))
-        (else
-         (error "Not a SRFI" srfi))))
+        (else (error "Not a SRFI" srfi))))
 
 (define (resolved getter)
   (lambda (srfi)
