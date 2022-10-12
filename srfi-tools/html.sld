@@ -4,6 +4,7 @@
           srfi-sxml
           srfi-html
           srfi-text
+          srfi-abstract-raw
           srfi-abstract-sxml
           srfi-abstract-html
           srfi-abstract-text
@@ -50,6 +51,9 @@
 
     (define-command (text num)
       (write-string-about-srfi srfi-text num))
+
+    (define (srfi-abstract-raw num)
+      `(@raw ,(read-entire-file (srfi-abstract-html-file num))))
 
     (define (srfi-abstract-sxml num)
       (define skip-top cdr)

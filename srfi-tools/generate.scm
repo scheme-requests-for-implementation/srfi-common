@@ -516,7 +516,7 @@ by \" and\" if there are only two elements and \", and\" otherwise."
 ;; individual SRFI.
 (define (write-single-srfi-landing-page srfi)
   (let* ((number (srfi-number srfi))
-	 (abstract (srfi-abstract-sxml number))
+	 (abstract (srfi-abstract-raw number))
 	 (archives
 	  `(li (a (@ (href ,(concat "https://srfi-email.schemers.org/srfi-"
 				    number
@@ -604,7 +604,7 @@ by \" and\" if there are only two elements and \", and\" otherwise."
 
 (define (srfi-card-template srfi)
   (let* ((number (srfi-number srfi))
-	 (abstract (srfi-abstract-sxml number))
+	 (abstract (srfi-abstract-raw number))
 	 (authors (format-srfi-authors (srfi-authors srfi)))
 	 (based-on (or (srfi-based-on srfi) ""))
 	 (date (srfi-date-to-show srfi))
