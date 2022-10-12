@@ -67,10 +67,7 @@
       (write-string (srfi-abstract-html (parse-srfi-number num))))
 
     (define (srfi-abstract-text num)
-      (with-output-to-string
-	(lambda ()
-	  (sxml-display-as-text
-	   (call-with-input-file (srfi-abstract-html-file num) html->sxml)))))
+      (render-web-page-as-plain-text (srfi-abstract-html-file num)))
 
     (define-command (abstract-text num)
       (write-string-about-srfi srfi-abstract-text num))
