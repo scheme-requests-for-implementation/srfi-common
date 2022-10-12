@@ -416,7 +416,9 @@
 	     (p ,description)
 	     (div (@ (class "subunsub"))
 		  (button (@ (class "invisible sub")) "Subscribe")
+		  " "
 		  (button (@ (class "invisible unsub")) "Unsubscribe")
+		  " "
 		  (button (@ (class "close invisible")) "X")
 		  (form
 		   (@ (class "sub")
