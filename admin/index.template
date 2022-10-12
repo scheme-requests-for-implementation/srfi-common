@@ -56,7 +56,7 @@
                    type="submit"
                    value="Subscribe to srfi-<*<number>*>" >
             <input type="hidden" name="action" value="subscribe">
-            <input type="hidden" name="list" value="srfi-<*<number>*>@srfi.schemers.org"></form></a></li>
+            <input type="hidden" name="list" value="srfi-<*<number>*>@srfi.schemers.org"></form></li>
       <li>
         <span class="firefox-column-workaround">
           <form method="POST" action="https://www.simplelists.com/subscribe.php">
