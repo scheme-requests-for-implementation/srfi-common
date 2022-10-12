@@ -8,6 +8,7 @@
           take-right
           first second third
           filter
+          filter-map
           find
           fold
           remove
@@ -25,7 +26,7 @@
                 any append-map append-reverse drop drop-right
                 take take-right
                 first second third
-                filter find fold remove last))
+                filter filter-map find fold remove last))
 
   (cond-expand
    ((or chibi cyclone gauche sagittarius)

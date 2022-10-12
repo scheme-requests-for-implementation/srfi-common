@@ -11,7 +11,7 @@
  (distribution-files
   "private/chibi-html-parser.scm" "private/chibi-sxml.scm" "core.sld"
   "count.sld" "data.sld" "git.sld" "github.sld" "help.sld" "html.sld"
-  "info.sld" "interactive.sld" "mail.sld" "main.sld"
+  "info.sld" "interactive.sld" "library.sld" "mail.sld" "main.sld"
   "missing.sld" "path.sld" "pre.sld" "private/command.sld" "private/error.sld"
   "private/external.sld" "private/file.sld" "private/format.sld"
   "private/hash-table.sld" "private/html-parser.sld" "private/html-writer.sld"
@@ -99,6 +99,15 @@
     srfi-tools.data srfi-tools.html srfi-tools.mail
     srfi-tools.path srfi-tools.private.command srfi-tools.private.external
     srfi-tools.private.os srfi-tools.url)
+   (csc-options "-R" "r7rs" "-X" "r7rs"))
+  (extension
+   srfi-tools.library
+   (source "library.sld")
+   (component-dependencies
+    srfi-tools.data srfi-tools.path
+    srfi-tools.private.command srfi-tools.private.html-writer
+    srfi-tools.private.list srfi-tools.private.path srfi-tools.private.port
+    srfi-tools.url)
    (csc-options "-R" "r7rs" "-X" "r7rs"))
   (extension
    srfi-tools.mail
