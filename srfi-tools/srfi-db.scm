@@ -229,6 +229,12 @@
 (define-command (list)
   (write-srfi-list (srfi-list)))
 
+(define (srfi-tail)
+  (take-right (all-srfis) 10))
+
+(define-command (tail)
+  (write-srfi-list (srfi-tail)))
+
 (define (srfi-drafts)
   (filter srfi-draft? (all-srfis)))
 
