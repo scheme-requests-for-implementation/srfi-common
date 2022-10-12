@@ -11,11 +11,15 @@
           srfi-link-md)
   (import (scheme base)
           (scheme file)
+          (srfi-tools private list)
+          (srfi-tools private string)
+          (srfi-tools private hash-table)
           (srfi-tools private file)
           (srfi-tools private format)
           (srfi-tools private port)
           (srfi-tools private external)
           (srfi-tools private command)
+          (srfi-tools private sxml)
           (srfi-tools private html-parser)
           (srfi-tools private html-writer)
           (srfi-tools data)
@@ -81,4 +85,35 @@
               (srfi-html-url num)))
 
     (define-command (link-md num)
-      (disp (srfi-link-md (parse-srfi-number num))))))
+      (disp (srfi-link-md (parse-srfi-number num))))
+
+    (define (tag-names-fold elem merge state)
+      (let do-elem ((elem elem) (state state))
+        (if (not (pair? elem))
+            state
+            (let do-list ((elems (sxml-body elem))
+                          (state (merge (car elem) state)))
+              (if (null? elems)
+                  state
+                  (do-list (cdr elems)
+                           (do-elem (car elems) state)))))))
+
+    (define (srfi-count-html-tags nums)
+      (list-sort
+       (reverse-pair<? string<? >)
+       (tally
+        (lambda (count)
+          (for-each
+           (lambda (num)
+             (tag-names-fold
+              (srfi-sxml num)
+              (lambda (tag _)
+                (let ((tag (symbol->string tag)))
+                  (unless (string-prefix? "*" tag)
+                    (count tag))))
+              #f))
+           nums)))))
+
+    (define-command (count-html-tags num)
+      (display-two-column-table
+       (srfi-count-html-tags (list (parse-srfi-number num)))))))
