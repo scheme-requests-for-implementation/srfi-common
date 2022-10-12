@@ -198,9 +198,12 @@
                  (srfi/authors
                   (srfi-by-number (parse-srfi-number num))))))
 
-(define (srfi-one-line-summary srfi)
+(define (srfi-format-number-and-title srfi)
   (string-append "SRFI " (number->string (srfi-number srfi)) ": "
-                 (srfi-title srfi)
+                 (srfi-title srfi)))
+
+(define (srfi-one-line-summary srfi)
+  (string-append (srfi-format-number-and-title srfi)
                  " ("
                  (case (srfi-status srfi)
                    ((final)
@@ -239,7 +242,7 @@
   (filter srfi-draft? (all-srfis)))
 
 (define-command (drafts)
-  (write-srfi-list (srfi-drafts)))
+  (for-each write-line (map srfi-format-number-and-title (srfi-drafts))))
 
 (define (srfi-by-author name)
   (filter (lambda (srfi)
