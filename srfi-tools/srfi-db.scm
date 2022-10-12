@@ -209,12 +209,12 @@
 (define (srfi-one-line-summary srfi)
   (string-append (srfi-format-number-and-title srfi)
                  " ("
-                 (case (srfi-status srfi)
-                   ((final)
-                    (string-copy (srfi-done-date srfi) 0 4))
-                   (else
-                    (symbol->string (srfi-status srfi))))
-                 ")"))
+                 (string-append
+		  (symbol->string (srfi-status srfi))
+		  " "
+		  (or (srfi-done-date srfi)
+		      (srfi-draft-date srfi))
+		  ")")))
 
 ;;
 
