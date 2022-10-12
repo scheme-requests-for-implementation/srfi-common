@@ -594,13 +594,13 @@ by \" and\" if there are only two elements and \", and\" otherwise."
   (let ((others (srfi-see-also srfi)))
     (if (null? others)
 	""
-	`(p (span (@ (class "see-also"))
-		  "See also "
-		  ,(english-list
-		    (map (lambda (n)
-			   (srfi-anchor-template (srfi-by-number n)))
-			 (sort others <)))
-		  ".")))))
+	`(span (@ (class "see-also"))
+	       "See also "
+	       ,(english-list
+		 (map (lambda (n)
+			(srfi-anchor-template (srfi-by-number n)))
+		      (sort others <)))
+	       "."))))
 
 (define (srfi-card-template srfi)
   (let* ((number (srfi-number srfi))
