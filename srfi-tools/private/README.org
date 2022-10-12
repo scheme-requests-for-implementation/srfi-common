@@ -5,3 +5,6 @@ file lib/chibi/sxml.scm
 The file chibi-html-parser.scm is copied from
 https://snow-fort.org/pkg library (chibi html-parser)
 file html-parser.scm.
+
+The file format.sld is adapted from the sample implementation of
+SRFI 28.
