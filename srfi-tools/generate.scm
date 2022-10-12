@@ -54,7 +54,7 @@
 	      ", which includes a "
 	      (a (@ (href "https://practical-scheme.net/wiliki/schemexref.cgi?SRFI"))
 		 "cross-reference")
-	      "showing which Scheme implementations support which SRFIs.  It's a wiki page, so please help keep it up to date.")
+	      " showing which Scheme implementations support which SRFIs.  It's a wiki page, so please help keep it up to date.")
 	   (h2 "The SRFIs")
 	   (noscript (p "Javascript is not enabled in your browser, so filtering, searching, and sorting the list of SRFIs is turned off."))
 	   (div (@ (id "srfis"))
