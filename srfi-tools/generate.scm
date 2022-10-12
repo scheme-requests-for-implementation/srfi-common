@@ -6,7 +6,7 @@
 
 (define (write-org file sxml)
   (call-with-output-file file
-    (lambda (port) (sxml-display-as-org sxml port #true))))
+    (lambda (port) (sxml-display-as-org sxml port))))
 
 (define (write-html file sxml)
   (call-with-output-file file
