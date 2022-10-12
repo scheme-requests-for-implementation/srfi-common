@@ -5,7 +5,8 @@
           srfi-github-ssh-url
           srfi-create-github-repository)
   (import (scheme base)
-          (srfi-tools private command)
+          (srfi 98)
+	  (srfi-tools private command)
           (srfi-tools private format)
           (srfi-tools private os)
           (srfi-tools data)
