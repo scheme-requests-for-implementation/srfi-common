@@ -1,4 +1,7 @@
-Note that many of the files in this directories are snapshots of code
-from Chibi Scheme.
-
+The file chibi-sxml.scm is copied from
 https://github.com/ashinn/chibi-scheme
+file lib/chibi/sxml.scm
+
+The file chibi-html-parser.scm is copied from
+https://snow-fort.org/pkg library (chibi html-parser)
+file html-parser.scm.
