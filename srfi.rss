@@ -1,4 +1,10 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 237: Reconciled Records</title><link>https://srfi.schemers.org/srfi-237/srfi-237.html</link><guid>https://srfi.schemers.org/srfi-237</guid><description>SRFI 237 is now in <em>draft</em> status.<blockquote>    <p>This SRFI defines a version of
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 233: INI files</title><link>https://srfi.schemers.org/srfi-233/srfi-233.html</link><guid>https://srfi.schemers.org/srfi-233</guid><description>SRFI 233 is now in <em>final</em> status.<blockquote><p>An INI file is a configuration file that consists of key-value
+pairs for properties, and sections that group the properties. The
+name of these configuration files comes from the filename extension
+<code>INI</code>, short for initialization.
+The format has become an informal standard in many contexts of configuration.
+This SRFI provides access to the contents of an INI file.
+</p></blockquote></description><dc:creator>John Cowan (spec) and Arvydas Silanskas (implementation)</dc:creator><pubDate>Thu, 13 Oct 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 237: Reconciled Records</title><link>https://srfi.schemers.org/srfi-237/srfi-237.html</link><guid>https://srfi.schemers.org/srfi-237</guid><description>SRFI 237 is now in <em>draft</em> status.<blockquote>    <p>This SRFI defines a version of
       the <code>define-record-type</code> definition
       of <code>R<sup>6</sup>RS</code> that extends
       the <code>define-record-type</code> syntax
@@ -28,13 +34,7 @@
 as well as a few others, drawn from
 <a href="https://wiki.call-cc.org/eggref/4/combinators">an earlier version of Chicken</a>.
 Common Lisp has a few of them too, and more come from
-<a href="https://programmingpraxis.com/contents/standard-prelude/">the Standard Prelude from <em>Programming Praxis</em></a>.</p></blockquote></description><dc:creator>John Cowan (spec) and Arvydas Silanskas (implementation)</dc:creator><pubDate>Fri, 12 Aug 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 233: INI files</title><link>https://srfi.schemers.org/srfi-233/srfi-233.html</link><guid>https://srfi.schemers.org/srfi-233</guid><description>SRFI 233 is now in <em>draft</em> status.<blockquote><p>An INI file is a configuration file that consists of key-value
-pairs for properties, and sections that group the properties. The
-name of these configuration files comes from the filename extension
-<code>INI</code>, short for initialization.
-The format has become an informal standard in many contexts of configuration.
-This SRFI provides access to the contents of an INI file.
-</p></blockquote></description><dc:creator>John Cowan (spec) and Arvydas Silanskas (implementation)</dc:creator><pubDate>Wed, 10 Aug 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 234: Topological Sorting</title><link>https://srfi.schemers.org/srfi-234/srfi-234.html</link><guid>https://srfi.schemers.org/srfi-234</guid><description>SRFI 234 is now in <em>draft</em> status.<blockquote><p>
+<a href="https://programmingpraxis.com/contents/standard-prelude/">the Standard Prelude from <em>Programming Praxis</em></a>.</p></blockquote></description><dc:creator>John Cowan (spec) and Arvydas Silanskas (implementation)</dc:creator><pubDate>Fri, 12 Aug 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 234: Topological Sorting</title><link>https://srfi.schemers.org/srfi-234/srfi-234.html</link><guid>https://srfi.schemers.org/srfi-234</guid><description>SRFI 234 is now in <em>draft</em> status.<blockquote><p>
 Topological sorting is an algorithm that takes a graph consisting of
 nodes and other nodes that depend on them, forming a partial order,
 and returns a list representing a total ordering of the graph.
