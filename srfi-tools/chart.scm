@@ -11,7 +11,7 @@
 
 (define (write-srfi-counts dates pathname today)
   (let* ((start (date->julian (iso-date->date "1998-01-01"))) ; year SRFI started
-	 (counts (make-vector (- today start) 0)))
+	 (counts (make-vector (+ 1 (- today start)) 0)))
     (for-each (lambda (d)
 		(let ((i (- (date->julian d) start)))
 		  (vector-set! counts
