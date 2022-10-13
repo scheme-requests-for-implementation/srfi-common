@@ -1,6 +1,7 @@
 (define-library (srfi-tools github)
   (export srfi-github-org
           srfi-github-authorization-token
+          srfi-github-url
           srfi-github-https-url
           srfi-github-ssh-url
           srfi-create-github-repository)
@@ -32,6 +33,15 @@
     (define (srfi-github-relative-git num)
       (string-append (srfi-github-relative num) ".git"))
 
+    (define (srfi-github-url num)
+      (string-append "https://github.com/"
+                     (srfi-github-relative num)))
+
+    (define-command (github-url num)
+      (write-line-about-srfi srfi-github-url num))
+
+    ;; Is this superfluous? `srfi-github-url` can fetch both the repo
+    ;; and the web page.
     (define (srfi-github-https-url num)
       (string-append "https://github.com/"
                      (srfi-github-relative-git num)))
