@@ -9,6 +9,7 @@
           (srfi-tools private command))
   (import (srfi-tools asciidoc)
           (srfi-tools chart)
+          (srfi-tools checklink)
           (srfi-tools count)
           (srfi-tools data)
           (srfi-tools generate)
