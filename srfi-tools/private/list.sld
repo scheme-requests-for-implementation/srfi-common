@@ -2,6 +2,7 @@
   (export any
           append-map
           append-reverse
+          cons*
           drop
           drop-right
           take
@@ -23,7 +24,7 @@
 
   (import (scheme base)
           (only (srfi 1)
-                any append-map append-reverse drop drop-right
+                any append-map append-reverse cons* drop drop-right
                 take take-right
                 first second third
                 filter filter-map find fold remove last))
