@@ -11,6 +11,6 @@ set xdata time
 set xtics "1998-01-01",31557600,"2022-12-31" nomirror rotate by -45
 unset border
 show grid
-plot "/tmp/srfi-all.dat" using 1:2 title "all" with lines ls 1, \
-     "/tmp/srfi-final.dat" using 1:2 title "final" with lines ls 2, \
-     "/tmp/srfi-withdrawn.dat" using 1:2 title "withdrawn" with lines ls 3
+plot "/tmp/srfi-all-counts.txt" using 1:2 smooth cumulative title "all" with lines ls 1, \
+     "/tmp/srfi-final-counts.txt" using 1:2 smooth cumulative title "final" with lines ls 2, \
+     "/tmp/srfi-withdrawn-counts.txt" using 1:2 smooth cumulative title "withdrawn" with lines ls 3

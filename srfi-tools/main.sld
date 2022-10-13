@@ -8,6 +8,7 @@
           (srfi-tools private error)
           (srfi-tools private command))
   (import (srfi-tools asciidoc)
+          (srfi-tools chart)
           (srfi-tools data)
           (srfi-tools count)
           (srfi-tools generate)

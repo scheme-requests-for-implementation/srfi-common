@@ -1,21 +1,39 @@
 (define-library (srfi-tools private time)
   (export make-date
-          date->string
+	  add-duration
+	  current-date
+	  julian-day->date
+	  date->string
           date->time-utc
           time<?
           ;;
+	  date->iso-date
+          date->julian
           iso-date-year
           iso-date-month
           iso-date-day
-          parse-iso-date
+	  parse-iso-date
           iso-date->date)
   (import (scheme base)
           (only (srfi 19)
-                make-date
+                add-duration
+		current-date
+		date->julian-day
+		julian-day->date
+		make-date
                 date->string
                 date->time-utc
                 time<?))
   (begin
+
+    (define (date->iso-date date)
+      (date->string date "~1"))
+
+    (define (date->julian date)
+      (ceiling (date->julian-day date))) ; Compensate for a bug in Chibi Scheme's
+					 ; SRFI 19 implementation that breaks
+					 ; julian-date->date on non-integer
+					 ; values.
 
     (define (iso-date-year string)
       (string->number (string-copy string 0 4)))
