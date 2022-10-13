@@ -5,13 +5,11 @@
         (prefix (chibi filesystem) chibi:)
         (prefix (chibi io) chibi:)
         (prefix (chibi process) chibi:)
-        (only (chibi io) port-fileno)  ; TODO: Bug workaround.
+        (prefix (only (chibi) port-fileno) chibi:)
         (srfi-tools private list)
         (srfi-tools private port))
 
 (begin
-
-  (define chibi:port-fileno port-fileno)  ; TODO: Bug workaround.
 
   (define (rename-file oldpath newpath)
     (chibi:rename-file oldpath newpath))
