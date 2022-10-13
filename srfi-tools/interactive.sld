@@ -6,6 +6,7 @@
           srfi-browse-url
           srfi-browse-landing
           srfi-browse-landing-url
+          srfi-browse-github-url
           srfi-pager
           srfi-edit
           srfi-browse-mail-archive-url)
@@ -17,7 +18,8 @@
           (srfi-tools path)
           (srfi-tools html)
           (srfi-tools mail)
-          (srfi-tools url))
+          (srfi-tools url)
+          (srfi-tools github))
   (begin
 
     (define (srfi-open-dir num)
@@ -71,6 +73,12 @@
 
     (define-command (browse-landing-url num)
       (srfi-browse-landing-url (parse-srfi-number num)))
+
+    (define (srfi-browse-github-url num)
+      (browse-url (srfi-github-url num)))
+
+    (define-command (browse-github-url num)
+      (srfi-browse-github-url (parse-srfi-number num)))
 
     ;;
 
