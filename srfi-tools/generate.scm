@@ -49,6 +49,9 @@
 	      "SRFIs extend the Scheme programming language.  You can help.  "
 	      (a (@ (href "about.html")) "Learn more")
 	      ".")
+	   (p "Thanks to Arvydas Silanskas for his "
+	      (a (@ (href "https://index.scheme.org/")) "index.scheme.org")
+	      ", which is an increasingly comprehensive index of Scheme implementations and standards.")
 	   (p "Thanks to Shiro Kawai for his "
 	      (a (@ (href "https://practical-scheme.net/")) "Practical Scheme")
 	      ", which includes a "
