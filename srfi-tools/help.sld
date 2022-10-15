@@ -8,12 +8,16 @@
   (begin
 
     (define-command (commands)
+      "Display a list of subommands, with help."
       (for-each (lambda (command)
                   (display (command-name command))
 		  (for-each (lambda (a)
 			      (display " ")
 			      (display a))
 			    (command-arg-names command))
+		  (newline)
+		  (display "  ")
+		  (display (command-help command))
 		  (newline))
                 (command-list)))
 
@@ -42,7 +46,7 @@
         (and entry (string-join (rest entry) ""))))
 
     (add-command!
-     "complete" '(name) 1 #f
+     "complete" '(name) "Display completions of a srfi subcommand." 1 #f
      (lambda (what . args)
        (cond ((string->number what)
               => (lambda (index)
@@ -74,15 +78,19 @@
       (for-each write-line help-lines))
 
     (define-command (help)
+      "Display help."
       (help))
 
     ;; Emulate all the common help flags to be user friendly.
 
     (define-command (|--help|)
+      "Display help."
       (help))
 
     (define-command (|-help|)
+      "Display help."
       (help))
 
     (define-command (|-h|)
+      "Display help."
       (help))))

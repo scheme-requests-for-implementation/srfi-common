@@ -24,6 +24,7 @@
         (download-url-into-file (srfi-tar-gz-url) filename)))
 
     (define-command (download-tar)
+      "Download the srfi.tgz file."
       (srfi-download-tar))
 
     (define (srfi-unpack-matching-files match?)
@@ -65,6 +66,7 @@
                     stems))))))
 
     (define-command (unpack-tar num)
+      "Unpack the srfi.tgz file."
       (srfi-unpack-tar (parse-srfi-number num)))
 
     (define (srfi-unpack-tar-html)
@@ -73,4 +75,5 @@
          (string-suffix? ".html" (last path-parts)))))
 
     (define-command (unpack-tar-html)
+      "Unpack the .html files from the srfi.tgz file."
       (srfi-unpack-tar-html))))

@@ -14,6 +14,7 @@
                      (srfi-num-stem num) "/"))
 
     (define-command (mail-archive-url num)
+      "Display mail archive URL for SRFI <num>."
       (write-line-about-srfi srfi-mail-archive-url num))
 
     (define (srfi-mail-address num)
@@ -21,4 +22,5 @@
                      "@srfi.schemers.org"))
 
     (define-command (mail-address num)
+      "Display email address URL for SRFI <num>."
       (write-line-about-srfi srfi-mail-address num))))

@@ -37,4 +37,5 @@
        (srfi-abstract-text srfi)))
 
     (define-command (info num)
+      "Display a summary of SRFI <num>."
       (write-string (srfi-info (parse-srfi-number num))))))

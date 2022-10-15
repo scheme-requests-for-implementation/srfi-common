@@ -118,4 +118,5 @@
         (write-html-toc "  " (headings->tree hdgs))))
 
     (define-command (toc num)
+      "Display an HTML table of contents for SRFI <num>."
       (srfi-toc (srfi-html-file (parse-srfi-number num))))))

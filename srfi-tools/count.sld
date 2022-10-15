@@ -22,6 +22,7 @@
                  (count year)))))))))
 
     (define-command (count-by-year)
+      "Display counts of SRFIs by year."
       (display-two-column-table (srfi-count-by-year)))
 
     (define (srfi-count-by-author)
@@ -35,4 +36,5 @@
                        (srfi-authors srfi))))))))
 
     (define-command (count-by-author)
+      "Display counts of SRFIs by year."
       (display-two-column-table (srfi-count-by-author)))))

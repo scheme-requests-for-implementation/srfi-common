@@ -5,6 +5,7 @@
    command-name
    command-apply
    command-arg-names
+   command-help
    command-min-args
    command-max-args
    command-by-name
@@ -15,10 +16,11 @@
   (begin
 
     (define-record-type <command>
-      (make-command name arg-names min-args max-args proc)
+      (make-command name arg-names help min-args max-args proc)
       command?
       (name command-name)
       (arg-names command-arg-names)
+      (help command-help)
       (min-args command-min-args)
       (max-args command-max-args)  ; #f means unlimited.
       (proc command-proc))
@@ -44,8 +46,8 @@
       (or (try-command-by-name name)
           (error "No such command" name)))
 
-    (define (add-command! name arg-names min-args max-args proc)
-      (let ((command (make-command name arg-names min-args max-args proc)))
+    (define (add-command! name arg-names help min-args max-args proc)
+      (let ((command (make-command name arg-names help min-args max-args proc)))
         (set! commands
               (list-sort command<?
                          (cons command
@@ -54,13 +56,14 @@
 
     (define-syntax define-command
       (syntax-rules ()
-        ((define-command (name args ...) body ...)
+        ((define-command (name args ...) help body ...)
          (let ((n-args (length '(args ...))))
            (add-command! (symbol->string 'name)
                          '(args ...)
+                         help
 			 n-args
                          n-args
-                         (lambda (args ...)
+			 (lambda (args ...)
                            body ...))))))
 
     (define (command-list)

@@ -15,6 +15,7 @@
       "https://srfi.schemers.org/")
 
     (define-command (home-url)
+      "Display the URL of the SRFI home page."
       (write-line (srfi-home-url)))
 
     (define (srfi-tar-gz-url)
@@ -24,6 +25,7 @@
       (path-append (srfi-home-url) (srfi-num-stem num) ""))
 
     (define-command (landing-url num)
+      "Display the URL of the landing page for SRFI <num>."
       (write-line-about-srfi srfi-landing-url num))
 
     (define (srfi-html-url num)
@@ -32,4 +34,5 @@
                    (srfi-num-ext num ".html")))
 
     (define-command (html-url num)
+      "Display the URL of the document for SRFI <num>."
       (write-line-about-srfi srfi-html-url num))))

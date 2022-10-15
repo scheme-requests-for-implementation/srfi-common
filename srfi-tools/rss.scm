@@ -75,6 +75,7 @@
     (lambda () (sxml-display-as-html (srfi-rss-sxml)))))
 
 (define-command (rss)
+  "Generate the RSS file of SRFI updates."
   (let ((sxml (srfi-rss-sxml)))
     (disp "Writing " (srfi-rss-file))
     (with-output-to-file (srfi-rss-file)

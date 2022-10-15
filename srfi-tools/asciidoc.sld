@@ -71,4 +71,5 @@
     ;; concerned to edit the HTML and throw away the original AsciiDoc
     ;; sources.
     (define-command (from-asciidoc asciidoc-file)
+      "Convert SRFI written in AsciiDoc into HTML."
       (srfi-from-asciidoc asciidoc-file))))

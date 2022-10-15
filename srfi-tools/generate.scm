@@ -759,10 +759,12 @@ by \" and\" if there are only two elements and \", and\" otherwise."
      srfi-discuss)))
 
 (define-command (generate-common)
+  "Generate the home page and subscription page."
   (write-srfi-home-page)
   (write-srfi-list-subscribe-page))
 
 (define-command (generate-srfi num)
+  "Generate the \"index.html\" and \"README.org\" file for SRFI <num>."
   (let ((number (string->number num)))
     (write-single-srfi-landing-page number)
     (write-single-srfi-readme number)))

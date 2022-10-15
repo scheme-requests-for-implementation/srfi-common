@@ -53,4 +53,5 @@
           (lambda () (sxml-display-as-html sxml)))))
 
     (define-command (write-library-names)
+      "Display the SRFI 97 library names."
       (srfi-write-library-names))))

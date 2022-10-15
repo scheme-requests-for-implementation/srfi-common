@@ -21,10 +21,12 @@
       (path-append (srfi-home-dir) "pre-srfi"))
 
     (define-command (pre-home-dir)
+      "Display the directory of unofficial \"pre-SRFI\" documents."
       (write-line (pre-srfi-home-dir)))
 
     (define (pre-srfi-list)
       (directory-files (pre-srfi-home-dir)))
 
     (define-command (pre-list)
+      "Display the list of unofficial \"pre-SRFI\" documents."
       (for-each disp (pre-srfi-list)))))

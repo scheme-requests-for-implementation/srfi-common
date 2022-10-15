@@ -35,6 +35,7 @@
       (file-contents-as-string (srfi-landing-html-file num)))
 
     (define-command (landing-html num)
+      "Display SRFI landing page for SRFI <num>."
       (write-string-about-srfi srfi-landing-html num))
 
     (define (srfi-sxml num)
@@ -44,12 +45,14 @@
       (file-contents-as-string (srfi-html-file num)))
 
     (define-command (html num)
+      "Display HTML of SRFI document for SRFI <num>."
       (write-string-about-srfi srfi-html num))
 
     (define (srfi-text num)
       (render-web-page-as-plain-text (srfi-html-file num)))
 
     (define-command (text num)
+      "Display text of SRFI document for SRFI <num>."
       (write-string-about-srfi srfi-text num))
 
     (define (srfi-abstract-raw num)
@@ -64,12 +67,14 @@
       (file-contents-as-string (srfi-abstract-html-file num)))
 
     (define-command (abstract-html num)
+      "Display abstract for SRFI <num> as HTML."
       (write-string (srfi-abstract-html (parse-srfi-number num))))
 
     (define (srfi-abstract-text num)
       (render-web-page-as-plain-text (srfi-abstract-html-file num)))
 
     (define-command (abstract-text num)
+      "Display abstract for SRFI <num> as text."
       (write-string-about-srfi srfi-abstract-text num))
 
     (define (srfi-link-html num)
@@ -79,6 +84,7 @@
               (srfi-title (srfi-by-number num))))
 
     (define-command (link-html num)
+      "Display an HTML link to SRFI <num>."
       (disp (srfi-link-html (parse-srfi-number num))))
 
     (define (srfi-link-md num)
@@ -89,6 +95,7 @@
               (srfi-html-url num)))
 
     (define-command (link-md num)
+      "Display a Markdown link to SRFI <num>."
       (disp (srfi-link-md (parse-srfi-number num))))
 
     (define (tag-names-fold elem merge state)
@@ -119,5 +126,6 @@
            nums)))))
 
     (define-command (count-html-tags num)
+      "Count the HTML tags in SRFI <num>."
       (display-two-column-table
        (srfi-count-html-tags (list (parse-srfi-number num)))))))

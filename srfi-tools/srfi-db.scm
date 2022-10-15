@@ -54,9 +54,11 @@
     (keyword-entry/title a)))
 
 (define-command (keyword-symbols)
+  "Display the symbolic version of all the keywords that can be assigned to SRFIs."
   (for-each disp (srfi-available-keywords)))
 
 (define-command (keywords)
+  "Display the English version of all the keywords that can be assigned to SRFIs."
   (for-each disp (map keyword-entry/title srfi-keyword-alist)))
 
 ;;
@@ -197,6 +199,7 @@
   (string-join-english (map srfi-format-author authors)))
 
 (define-command (authors num)
+  "Display the authors of SRFI <num>."
   (for-each disp
             (map srfi-format-author
                  (srfi/authors
@@ -222,6 +225,7 @@
   (with-input-from-file (srfi-data-file) read-all))
 
 (define-command (data)
+  "Display the SRFI database, which is an S-expression."
   (dump-file (srfi-data-file))
   (newline))
 
@@ -234,18 +238,21 @@
   (all-srfis))
 
 (define-command (list)
+  "Display a list of all the SRFIs."
   (write-srfi-list (srfi-list)))
 
 (define (srfi-tail)
   (take-right (all-srfis) 10))
 
 (define-command (tail)
+  "Display a list of the most recent ten SRFIs."
   (write-srfi-list (srfi-tail)))
 
 (define (srfi-drafts)
   (filter srfi-draft? (all-srfis)))
 
 (define-command (drafts)
+  "Display a list of all the draft SRFIs."
   (for-each write-line (map srfi-format-number-and-title (srfi-drafts))))
 
 (define (srfi-by-author name)
@@ -256,6 +263,7 @@
           (all-srfis)))
 
 (define-command (by-author name)
+  "Display a list of all the SRFIs by authors with <name> in their names."
   (write-srfi-list (srfi-by-author name)))
 
 (define (srfi-search query)
@@ -266,4 +274,5 @@
                         query)))))
 
 (define-command (search query)
+  "Display a list of all the SRFIs whose titles contain <query>."
   (write-srfi-list (srfi-search query)))

@@ -56,4 +56,5 @@
   (run-program `("cp" "-p" "/tmp/srfi.svg" ,(srfi-common-dir))))
 
 (define-command (chart)
+  "Generate the SRFI progress chart as an SVG file."
   (chart-srfis (current-date)))
