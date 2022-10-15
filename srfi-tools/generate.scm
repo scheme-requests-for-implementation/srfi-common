@@ -762,7 +762,7 @@ by \" and\" if there are only two elements and \", and\" otherwise."
   (write-srfi-home-page)
   (write-srfi-list-subscribe-page))
 
-(define-command (generate-srfi string)
-  (let ((number (string->number string)))
+(define-command (generate-srfi num)
+  (let ((number (string->number num)))
     (write-single-srfi-landing-page number)
     (write-single-srfi-readme number)))
