@@ -1,6 +1,7 @@
 (define-library (srfi-tools help)
   (import (scheme base)
-          (srfi-tools private command)
+          (scheme write)
+	  (srfi-tools private command)
           (srfi-tools private list)
           (srfi-tools private string)
           (srfi-tools private port))
@@ -8,7 +9,12 @@
 
     (define-command (commands)
       (for-each (lambda (command)
-                  (disp (command-name command)))
+                  (display (command-name command))
+		  (for-each (lambda (a)
+			      (display " ")
+			      (display a))
+			    (command-arg-names command))
+		  (newline))
                 (command-list)))
 
     (define (complete index args)
@@ -36,7 +42,7 @@
         (and entry (string-join (rest entry) ""))))
 
     (add-command!
-     "complete" 1 #f
+     "complete" '(name) 1 #f
      (lambda (what . args)
        (cond ((string->number what)
               => (lambda (index)
