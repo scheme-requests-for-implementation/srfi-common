@@ -51,7 +51,7 @@
           (scheme cxr)
           (scheme file)
           (scheme read)
-          (srfi-tools assert)
+          (srfi-tools private error)
 	  (srfi-tools private list)
           (srfi-tools private string)
           (srfi-tools private port)
