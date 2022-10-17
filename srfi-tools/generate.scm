@@ -604,7 +604,7 @@ by \" and\" if there are only two elements and \", and\" otherwise."
 	       ,(english-list
 		 (map (lambda (n)
 			(srfi-anchor-template (srfi-by-number n)))
-		      (sort others <)))
+		      (list-sort < others)))
 	       "."))))
 
 (define (srfi-card-template srfi)
