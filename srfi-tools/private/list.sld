@@ -20,7 +20,8 @@
           rest
           pair<?
           reverse-pair<?
-          sorted-insert-unique)
+          sorted-insert-unique
+          interpose)
 
   (import (scheme base)
           (only (srfi 1)
@@ -71,4 +72,14 @@
                (loop (cons (first tail) before)
                      (rest tail)))
               (else
-               list))))))
+               list))))
+
+    ;; From Clojure.
+    (define (interpose delimiter list)
+      (if (null? list)
+          '()
+          (let loop ((new '()) (list list))
+            (if (null? (rest list))
+                (reverse (cons (first list) new))
+                (loop (cons* delimiter (first list) new)
+                      (rest list))))))))
