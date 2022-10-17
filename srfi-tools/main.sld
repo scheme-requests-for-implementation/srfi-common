@@ -19,6 +19,7 @@
           (srfi-tools html)
           (srfi-tools info)
           (srfi-tools interactive)
+          (srfi-tools legal)
           (srfi-tools library)
           (srfi-tools mail)
           (srfi-tools missing)
