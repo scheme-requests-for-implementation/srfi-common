@@ -12,14 +12,14 @@
           (srfi-tools private command)
           (srfi-tools data)
           (srfi-tools path))
-  (export srfi-missing)
+  (export srfi-missing-ids)
   (begin
 
     (define (assoc-get get key alist)
       (let ((pair (assoc key alist)))
         (and pair (get pair))))
 
-    (define (missing-a-names html-file)
+    (define (missing-ids html-file)
       (let ((names (make-hash-table))
             (hrefs (make-hash-table)))
         (sxml-for-each
@@ -45,15 +45,13 @@
                         missing-names
                         (cons (car hrefs) missing-names)))))))
 
-    (define (missing-in-html-file html-file)
-      (disp "Missing id=\"...\" attributes in " html-file ":")
-      (let ((names (missing-a-names html-file)))
-        (for-each (lambda (name) (disp "  " name))
-                  (if (null? names) '("(none)") names))))
+    (define (srfi-missing-ids srfi)
+      (missing-ids (srfi-html-file srfi)))
 
-    (define (srfi-missing num)
-      (missing-in-html-file (srfi-html-file num)))
-
-    (define-command (missing num)
+    (define-command (check-ids num)
       "List missing 'id' attributes in HTML."
-      (srfi-missing (parse-srfi-number num)))))
+      (let* ((num (parse-srfi-number num))
+             (ids (srfi-missing-ids num)))
+        (disp "Missing id=\"...\" attributes in " (srfi-html-file num) ":")
+        (for-each (lambda (id) (disp "  " id))
+                  (if (null? ids) '("(none)") ids))))))
