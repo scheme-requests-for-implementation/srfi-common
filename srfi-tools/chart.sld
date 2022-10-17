@@ -1,5 +1,5 @@
 (define-library (srfi-tools chart)
-  (export chart-srfis)
+  (export srfi-generate-chart)
   (import (scheme base)
 	  (scheme file)
 	  (scheme write)
