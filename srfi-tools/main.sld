@@ -49,13 +49,16 @@
                    (let* ((name (first args))
                           (args (rest args))
                           (command (command-by-name name)))
-                     (cond ((< (length args) (command-min-args command))
-                            (usage "Not enough args"))
-                           ((and (command-max-args command)
-                                 (> (length args) (command-max-args command)))
-                            (usage "Too many args"))
-                           (else
-                            (command-apply command args))))))))))
+                     (if (or (< (length args)
+                                (command-min-args command))
+                             (and (command-max-args command)
+                                  (> (length args)
+                                     (command-max-args command))))
+                         (apply usage
+                                "usage: srfi"
+                                name
+                                (command-arg-names command))
+                         (command-apply command args)))))))))
   (cond-expand
    (chibi
     (begin
