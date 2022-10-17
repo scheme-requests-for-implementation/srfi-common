@@ -1,5 +1,5 @@
 (define-library (srfi-tools toc)
-  (export srfi-toc)
+  (export srfi-generate-toc)
   (import (scheme base)
           (scheme char)
           (scheme cxr)
@@ -111,12 +111,12 @@
                         '("title" "author" "status" "abstract"
                           "table of contents" "copyright")))))
 
-    (define (srfi-toc html-file)
+    (define (srfi-generate-toc html-file)
       (let* ((html (with-input-from-file html-file read-all-chars))
              (sxml (call-with-port (open-input-string html) html->sxml))
              (hdgs (filter wanted-heading? (headings sxml))))
         (write-html-toc "  " (headings->tree hdgs))))
 
-    (define-command (toc num)
+    (define-command (generate-toc num)
       "Display an HTML table of contents for SRFI <num>."
-      (srfi-toc (srfi-html-file (parse-srfi-number num))))))
+      (srfi-generate-toc (srfi-html-file (parse-srfi-number num))))))
