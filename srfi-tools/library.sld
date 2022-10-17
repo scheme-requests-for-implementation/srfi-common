@@ -1,6 +1,6 @@
 (define-library (srfi-tools library)
   (export srfi-library-names-sxml
-          srfi-write-library-names)
+          srfi-generate-library-names)
   (import (scheme base)
           (scheme file)
           (srfi-tools private list)
@@ -45,13 +45,13 @@
                                                 num)))))))
                (srfi-list)))))))
 
-    (define (srfi-write-library-names)
+    (define (srfi-generate-library-names)
       (let ((file (path-append (srfi-common-dir) "library-names.html"))
             (sxml (srfi-library-names-sxml)))
         (disp "Writing " file)
         (with-output-to-file file
           (lambda () (sxml-display-as-html sxml)))))
 
-    (define-command (write-library-names)
+    (define-command (generate-library-names)
       "Display the SRFI 97 library names."
-      (srfi-write-library-names))))
+      (srfi-generate-library-names))))

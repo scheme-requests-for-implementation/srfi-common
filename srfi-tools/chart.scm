@@ -48,13 +48,13 @@
 		   (number->string (date-year today))
 		   (string-copy/cursors original end))))
 
-(define (chart-srfis today)
+(define (srfi-generate-chart today)
   (with-output-to-file "/tmp/srfi.gnuplot"
     (lambda () (write-string (gnuplot-commands today))))
   (write-srfi-data today)
   (run-program '("gnuplot" "/tmp/srfi.gnuplot"))
   (run-program `("cp" "-p" "/tmp/srfi.svg" ,(srfi-common-dir))))
 
-(define-command (chart)
+(define-command (generate-chart)
   "Generate the SRFI progress chart as an SVG file."
-  (chart-srfis (current-date)))
+  (srfi-generate-chart (current-date)))
