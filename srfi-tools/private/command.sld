@@ -11,6 +11,7 @@
    command-by-name
    command-list)
   (import (scheme base)
+          (srfi-tools private error)
           (srfi-tools private list)
           (srfi-tools private string))
   (begin
@@ -47,6 +48,7 @@
           (error "No such command" name)))
 
     (define (add-command! name arg-names help min-args max-args proc)
+      (assert (string? help) "Command help is not a string.")
       (let ((command (make-command name arg-names help min-args max-args proc)))
         (set! commands
               (list-sort command<?
@@ -60,7 +62,7 @@
          (let ((n-args (length '(args ...))))
            (add-command! (symbol->string 'name)
                          '(args ...)
-                         help
+                         'help
 			 n-args
                          n-args
 			 (lambda (args ...)
