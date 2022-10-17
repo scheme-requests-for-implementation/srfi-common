@@ -59,7 +59,7 @@
           (srfi-tools private command)
           (srfi-tools core)
           (srfi-tools path))
-  (include "srfi-db.scm")
+  (include "data.scm")
   (cond-expand
    (mit
     (begin
