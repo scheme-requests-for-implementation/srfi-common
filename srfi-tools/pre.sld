@@ -79,8 +79,8 @@
         (ensure-directory dir)
         (prepare-file (path-append dir "Makefile") makefile-lines)
         (prepare-file (path-append dir "README.md") readme-lines)
-        (disp dir)))
+        dir))
 
     (define-command (pre-new name)
       "Create new unofficial \"pre-SRFI\" document NAME."
-      (pre-srfi-new name))))
+      (write-line (pre-srfi-new name)))))
