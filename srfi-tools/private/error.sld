@@ -1,18 +1,20 @@
 (define-library (srfi-tools private error)
-  (export user-error
+  (export display-error
+          user-error
           assert
           usage)
   (import (scheme base)
-          (scheme process-context)
+          (scheme write)
           (srfi-tools private string)
           (srfi-tools private port))
   (begin
 
-    (define user-error
-      (lambda args
-        (parameterize ((current-output-port (current-error-port)))
-          (write-line (string-join (map displayed args) " ")))
-        (exit #f)))
+    (define (display-error err)
+      (parameterize ((current-output-port (current-error-port)))
+        (display (error-object-message err))
+        (newline)))
+
+    (define user-error error)
 
     (define (assert test . arguments)
       (unless test (apply error arguments)))
