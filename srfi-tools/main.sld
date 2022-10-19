@@ -1,12 +1,14 @@
 (define-library (srfi-tools main)
   (export)
   (import (scheme base)
+          (scheme process-context)
           (only (srfi 193) command-args))
   (import (srfi-tools private list)
           (srfi-tools private string)
           (srfi-tools private port)
           (srfi-tools private error)
-          (srfi-tools private command))
+          (srfi-tools private command)
+          (srfi-tools private os))
   (import (srfi-tools asciidoc)
           (srfi-tools chart)
           (srfi-tools checklink)
@@ -33,7 +35,8 @@
     (import (srfi-tools local)))
    (else))
   (begin
-    (define (main* args)
+
+    (define (main** args)
       (if (null? args)
           (command-apply
            (command-by-name (srfi-default-command))
@@ -59,7 +62,16 @@
                                 "usage: srfi"
                                 name
                                 (command-arg-names command))
-                         (command-apply command args)))))))))
+                         (command-apply command args))))))))
+
+    (define (main* args)
+      (let ((debug? (boolean-from-envar "SRFI_DEBUG")))
+        (if debug?
+            (main** args)
+            (guard (err (else
+                         (display-error err)
+                         (exit #f)))
+                   (main** args))))))
   (cond-expand
    (chibi
     (begin
