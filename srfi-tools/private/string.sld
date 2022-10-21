@@ -1,7 +1,7 @@
 (define-library (srfi-tools private string)
   (export ascii-alphabetic?
           ascii-numeric?
-          string-fold
+	  string-fold
           string-index
           string-contains
           string-prefix?
@@ -10,6 +10,7 @@
           string-join
           string-join-english
           url-hexify-string)
+  (import (only (scheme char) string-downcase))
   (import (scheme base)
           (srfi-tools private list))
   (cond-expand
