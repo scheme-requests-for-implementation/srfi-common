@@ -1,9 +1,11 @@
 (define-library (srfi-tools mail)
   (export srfi-mail-archive-url
-          srfi-mail-address)
+          srfi-mail-address
+          srfi-mailto-url)
   (import (scheme base)
           (srfi-tools private path)
           (srfi-tools private port)
+          (srfi-tools private string)
           (srfi-tools private command)
           (srfi-tools data)
           (srfi-tools path))
@@ -23,4 +25,9 @@
 
     (define-command (mail-address num)
       "Display email address URL for SRFI <num>."
-      (write-line-about-srfi srfi-mail-address num))))
+      (write-line-about-srfi srfi-mail-address num))
+
+    (define (srfi-mailto-url num)
+      (string-append "mailto:"
+                     (srfi-mail-address num)
+                     "?subject=" (url-hexify-string (srfi-title num))))))

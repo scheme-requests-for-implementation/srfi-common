@@ -9,7 +9,8 @@
           srfi-browse-github-url
           srfi-pager
           srfi-edit
-          srfi-browse-mail-archive-url)
+          srfi-browse-mail-archive-url
+          srfi-send-mail)
   (import (scheme base)
           (srfi-tools private external)
           (srfi-tools private os)
@@ -115,4 +116,11 @@
 
     (define-command (browse-mail-archive-url num)
       "Browse the email archive for SRFI <num>."
-      (srfi-browse-mail-archive-url (parse-srfi-number num)))))
+      (srfi-browse-mail-archive-url (parse-srfi-number num)))
+
+    (define (srfi-send-mail num)
+      (desktop-open (srfi-mailto-url num)))
+
+    (define-command (send-mail num)
+      "Open email app with a new email to SRFI <num> mailing list."
+      (srfi-send-mail (parse-srfi-number num)))))
