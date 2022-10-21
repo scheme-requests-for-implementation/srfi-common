@@ -76,10 +76,8 @@ and \", and\" otherwise."
         (cond ((safe-byte? byte)
                (write-char (integer->char byte)))
               (else
-               (write-string "%")
-               (write-string
-                (string-downcase
-                 (number->string byte 16))))))
+               (write-string (if (< byte 16) "%0" "%"))
+               (write-string (string-downcase (number->string byte 16))))))
       (let ((bytes (string->utf8 str)))
         (call-with-port (open-output-string)
           (lambda (out)
