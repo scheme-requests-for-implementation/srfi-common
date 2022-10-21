@@ -1,6 +1,8 @@
 (define-library (srfi-tools private string)
   (export ascii-alphabetic?
           ascii-numeric?
+          ascii-alphanumeric?
+          with-output-to-string
 	  string-fold
           string-index
           string-contains
@@ -9,6 +11,8 @@
           string-split
           string-join
           string-join-english
+          string->slug
+          unique-string-accumulator
           url-hexify-string)
   (import (only (scheme char) string-downcase))
   (import (scheme base)
@@ -29,6 +33,10 @@
     (define (ascii-numeric? char)
       (char<=? #\0 char #\9))
 
+    (define (ascii-alphanumeric? char)
+      (or (ascii-alphabetic? char)
+          (ascii-numeric? char)))
+
     ;; Subset of SRFI 140.
     (define (string-split char str)
       (define (maybe-add a b parts)
@@ -41,27 +49,61 @@
                   (loop (+ b 1) (+ b 1) (maybe-add a b parts)))
               (reverse (maybe-add a b parts))))))
 
+    (define (with-output-to-string thunk)
+      (call-with-port (open-output-string)
+        (lambda (port)
+          (parameterize ((current-output-port port))
+            (thunk))
+          (get-output-string port))))
+
     (define (string-join-english string-list)
       "Return a string constructed by appending the elements of
 `string-list', separating them with \", \" except for the last pair,
 which should be separated by \" and\" if there are only two elements
 and \", and\" otherwise."
-      (cond ((null? string-list) "")
-            ((null? (cdr string-list)) (car string-list))
-            ((null? (cddr string-list))
-             (string-append (car string-list)
-                            " and "
-                            (cadr string-list)))
-            (else
-             (let ((output (open-output-string)))
-               (let next ((remaining string-list))
-                 (write-string (car remaining) output)
-                 (cond ((null? (cddr remaining))
-                        (write-string ", and " output)
-                        (write-string (cadr remaining) output))
-                       (else (write-string ", " output)
-                             (next (cdr remaining)))))
-               (get-output-string output)))))
+      (case (length string-list)
+        ((0) "")
+        ((1) (first string-list))
+        ((2) (string-append (first string-list) " and " (second string-list)))
+        (else (with-output-to-string
+                (lambda ()
+                  (let next ((remaining string-list))
+                    (write-string (first remaining))
+                    (cond ((not (null? (cddr remaining)))
+                           (write-string ", ")
+                           (next (cdr remaining)))
+                          (else
+                           (write-string ", and ")
+                           (write-string (second remaining))))))))))
+
+    ;; "Foo bar/baz!" -> "foo-bar-baz"
+    (define (string->slug str)
+      (let ((str (string-downcase str)))
+        (with-output-to-string
+          (lambda ()
+            (let loop ((empty? #t) (want-dash? #f) (i 0))
+              (when (< i (string-length str))
+                (let ((char (string-ref str i)))
+                  (cond ((ascii-alphanumeric? char)
+                         (when (and want-dash? (not empty?))
+                           (write-string "-"))
+                         (write-char char)
+                         (loop #f #f (+ i 1)))
+                        (else
+                         (loop empty? #t (+ i 1)))))))))))
+
+    (define (unique-string-accumulator)
+      (let ((used '()))
+        (lambda (str)
+          (if (eof-object? str)
+              (reverse used)
+              (let loop ((candidate str) (next 2))
+                (cond ((member candidate used)
+                       (loop (string-append str "-" (number->string next))
+                             (+ next 1)))
+                      (else
+                       (set! used (cons candidate used))
+                       candidate)))))))
 
     ;; From Emacs Lisp.
     (define (url-hexify-string str)
@@ -69,8 +111,7 @@ and \", and\" otherwise."
       (define (safe-byte? byte)
         (and (< byte #x80)
              (let ((char (integer->char byte)))
-               (or (ascii-alphabetic? char)
-                   (ascii-numeric? char)
+               (or (ascii-alphanumeric? char)
                    (member char safe)))))
       (define (write-byte-safely byte)
         (cond ((safe-byte? byte)
@@ -79,12 +120,10 @@ and \", and\" otherwise."
                (write-string (if (< byte 16) "%0" "%"))
                (write-string (string-downcase (number->string byte 16))))))
       (let ((bytes (string->utf8 str)))
-        (call-with-port (open-output-string)
-          (lambda (out)
-            (parameterize ((current-output-port out))
-              (let loop ((i 0))
-                (if (= i (bytevector-length bytes))
-                    (get-output-string out)
-                    (let ((byte (bytevector-u8-ref bytes i)))
-                      (write-byte-safely byte)
-                      (loop (+ i 1))))))))))))
+        (with-output-to-string
+          (lambda ()
+            (let loop ((i 0))
+              (when (< i (bytevector-length bytes))
+                (let ((byte (bytevector-u8-ref bytes i)))
+                  (write-byte-safely byte)
+                  (loop (+ i 1)))))))))))
