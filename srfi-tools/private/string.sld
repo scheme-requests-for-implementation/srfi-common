@@ -8,7 +8,8 @@
           string-suffix?
           string-split
           string-join
-          string-join-english)
+          string-join-english
+          url-hexify-string)
   (import (scheme base)
           (srfi-tools private list))
   (cond-expand
@@ -59,4 +60,32 @@ and \", and\" otherwise."
                         (write-string (cadr remaining) output))
                        (else (write-string ", " output)
                              (next (cdr remaining)))))
-               (get-output-string output)))))))
+               (get-output-string output)))))
+
+    ;; From Emacs Lisp.
+    (define (url-hexify-string str)
+      (define safe (map char->integer (string->list "-./_")))
+      (define (safe-byte? byte)
+        (and (< byte #x80)
+             (let ((char (integer->char byte)))
+               (or (ascii-alphabetic? char)
+                   (ascii-numeric? char)
+                   (member char safe)))))
+      (define (write-byte-safely byte)
+        (cond ((safe-byte? byte)
+               (write-char (integer->char byte)))
+              (else
+               (write-string "%")
+               (write-string
+                (string-downcase
+                 (number->string byte 16))))))
+      (let ((bytes (string->utf8 str)))
+        (call-with-port (open-output-string)
+          (lambda (out)
+            (parameterize ((current-output-port out))
+              (let loop ((i 0))
+                (if (= i (bytevector-length bytes))
+                    (get-output-string out)
+                    (let ((byte (bytevector-u8-ref bytes i)))
+                      (write-byte-safely byte)
+                      (loop (+ i 1))))))))))))
