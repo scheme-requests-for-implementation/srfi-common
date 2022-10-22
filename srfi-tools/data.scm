@@ -128,7 +128,7 @@
            (car srfis))
           (else (find (cdr srfis))))))
 
-(define all-srfis
+(define srfi-list
   (let ((srfis #f))
     (lambda ()
       (or srfis
@@ -137,7 +137,7 @@
 
 (define (srfi-by-number num)
   (or (find (lambda (srfi) (= num (srfi/number srfi)))
-            (all-srfis))
+            (srfi-list))
       (error "No such SRFI" num)))
 
 (define (resolve srfi)
@@ -176,14 +176,6 @@
 (define (srfi-date-of-last-update srfi)
   (or (srfi-done-date srfi)
       (srfi-draft-date srfi)))
-
-;;
-
-(define (srfi-for-each proc)
-  (for-each proc (all-srfis)))
-
-(define (srfi-filter predicate)
-  (filter predicate (all-srfis)))
 
 ;;
 
@@ -245,22 +237,19 @@
   (dump-file (srfi-data-file))
   (newline))
 
-(define (srfi-list)
-  (all-srfis))
-
 (define-command (list)
   "Display a list of all the SRFIs."
   (write-srfi-list (srfi-list)))
 
 (define (srfi-tail)
-  (take-right (all-srfis) 10))
+  (take-right (srfi-list) 10))
 
 (define-command (tail)
   "Display a list of the most recent ten SRFIs."
   (write-srfi-list (srfi-tail)))
 
 (define (srfi-drafts)
-  (filter srfi-draft? (all-srfis)))
+  (filter srfi-draft? (srfi-list)))
 
 (define-command (drafts)
   "Display a list of all the draft SRFIs."
@@ -271,7 +260,7 @@
             (any (lambda (author)
                    (string-ci=? name (srfi-author-name author)))
                  (srfi/authors srfi)))
-          (all-srfis)))
+          (srfi-list)))
 
 (define-command (by-author name)
   "Display a list of all the SRFIs by authors with <name> in their names."
@@ -279,10 +268,10 @@
 
 (define (srfi-search query)
   (let ((query (string-downcase query)))
-    (srfi-filter
-     (lambda (srfi)
-       (string-contains (string-downcase (srfi-title srfi))
-                        query)))))
+    (filter (lambda (srfi)
+              (string-contains (string-downcase (srfi-title srfi))
+                               query))
+            (srfi-list))))
 
 (define-command (search query)
   "Display a list of all the SRFIs whose titles contain <query>."

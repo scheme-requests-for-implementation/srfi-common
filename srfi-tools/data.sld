@@ -27,9 +27,6 @@
           srfi-format-authors
           srfi-format
 
-          srfi-for-each
-          srfi-filter
-
           srfi-data
           srfi-list
           srfi-drafts
