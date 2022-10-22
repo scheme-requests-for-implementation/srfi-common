@@ -2,7 +2,6 @@
   (export ascii-alphabetic?
           ascii-numeric?
           ascii-alphanumeric?
-          with-output-to-string
 	  string-fold
           string-index
           string-contains
