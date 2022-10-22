@@ -4,6 +4,7 @@
           assert
           usage)
   (import (scheme base)
+          (scheme process-context)
           (scheme write)
           (srfi-tools private string)
           (srfi-tools private port))
@@ -19,4 +20,9 @@
     (define (assert test . arguments)
       (unless test (apply error arguments)))
 
-    (define usage user-error)))
+    (define (usage arg . arguments)
+      (display arg)
+      (for-each (lambda (arg) (write-string " ") (display arg))
+                arguments)
+      (newline)
+      (exit #f))))
