@@ -15,9 +15,9 @@
 	  (srfi-tools private path)
 	  (srfi-tools private port)
 	  (srfi-tools private string)
+	  (srfi-tools private sxml-org)
 
 	  (srfi-tools data)
 	  (srfi-tools html)
-	  (srfi-tools path)
-	  (srfi-tools sxml-org))
+	  (srfi-tools path))
   (include "generate.scm"))

@@ -1,4 +1,4 @@
-(define-library (srfi-tools sxml-org)
+(define-library (srfi-tools private sxml-org)
   (export sxml-display-as-org)
   (import (scheme base)
 	  (scheme write)

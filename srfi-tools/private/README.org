@@ -1,3 +1,6 @@
+This directory is for those internal utility libraries that we don't
+intend for other packages to import.
+
 The file chibi-sxml.scm is copied from
 https://github.com/ashinn/chibi-scheme
 file lib/chibi/sxml.scm
