@@ -164,6 +164,9 @@
 
 ;;
 
+(define (srfi-status-string srfi)
+  (symbol->string (srfi-status srfi)))
+
 (define (srfi-draft? srfi)
   (eqv? (srfi-status srfi) 'draft))
 
@@ -205,19 +208,32 @@
                  (srfi/authors
                   (srfi-by-number (parse-srfi-number num))))))
 
-(define (srfi-format-number-and-title srfi)
-  (string-append "SRFI " (number->string (srfi-number srfi)) ": "
-                 (srfi-title srfi)))
+(define (srfi-format srfi . parentheses)
+  (let ((number-title
+         (string-append "SRFI " (number->string (srfi-number srfi))
+                        ": " (srfi-title srfi))))
+    (if (null? parentheses)
+        number-title
+        (string-append
+         number-title
+         " ("
+         (string-join (map (lambda (fact)
+                             (if (string? fact)
+                                 fact
+                                 (fact srfi)))
+                           parentheses)
+                      " ")
+         ")"))))
 
-(define (srfi-one-line-summary srfi)
-  (string-append (srfi-format-number-and-title srfi)
-                 " ("
-                 (string-append
-		  (symbol->string (srfi-status srfi))
-		  " "
-		  (or (srfi-done-date srfi)
-		      (srfi-draft-date srfi))
-		  ")")))
+(define (write-custom-srfi-list srfis . parentheses)
+  (for-each (lambda (srfi)
+              (write-line (apply srfi-format srfi parentheses)))
+            srfis))
+
+(define (write-srfi-list srfis)
+  (write-custom-srfi-list srfis
+                          srfi-status-string
+                          srfi-date-of-last-update))
 
 ;;
 
@@ -228,11 +244,6 @@
   "Display the SRFI database, which is an S-expression."
   (dump-file (srfi-data-file))
   (newline))
-
-(define (write-srfi-list srfis)
-  (for-each (lambda (srfi)
-              (disp (srfi-one-line-summary srfi)))
-            srfis))
 
 (define (srfi-list)
   (all-srfis))
@@ -253,7 +264,7 @@
 
 (define-command (drafts)
   "Display a list of all the draft SRFIs."
-  (for-each write-line (map srfi-format-number-and-title (srfi-drafts))))
+  (write-custom-srfi-list (srfi-drafts) "since" srfi-draft-date))
 
 (define (srfi-by-author name)
   (filter (lambda (srfi)
