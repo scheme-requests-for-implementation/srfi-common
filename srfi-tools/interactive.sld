@@ -98,20 +98,25 @@
       "Browse Github page for SRFI <num>."
       (srfi-browse-github-url (parse-srfi-number num)))
 
-    (define (srfi-lucky query)
-      (let ((matches (srfi-search query)))
+    (define (srfi-lucky words)
+      (let ((matches (srfi-search words)))
         (cond ((null? matches)
                (error "No luck. Try another query?"))
               (else
-	       (write-srfi-list matches)
-               (newline)
+	       (unless (null? (cdr matches))
+		 (write-srfi-list matches)
+		 (newline))
 	       (let ((srfi (car matches)))
 		 (write-line (format "Opening ~a." (srfi-format srfi)))
 		 (srfi-browse (srfi-number srfi)))))))
 
-    (define-command (lucky query)
-      "Browse the first SRFI whose title matches <query>."
-      (srfi-lucky query))
+    (add-command!
+     "lucky"
+     '(word ...)
+     "Browse the first SRFI whose title matches all <word>s."
+     1
+     #f
+     (lambda words (srfi-lucky words)))
 
     ;;
 

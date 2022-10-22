@@ -266,13 +266,19 @@
   "Display a list of all the SRFIs by authors with <name> in their names."
   (write-srfi-list (srfi-by-author name)))
 
-(define (srfi-search query)
-  (let ((query (string-downcase query)))
+(define (srfi-search words)
+  (let ((words (map string-downcase words)))
     (filter (lambda (srfi)
-              (string-contains (string-downcase (srfi-title srfi))
-                               query))
-            (srfi-list))))
+	      (every (lambda (w)
+		       (string-contains (string-downcase (srfi-title srfi))
+					w))
+		     words))
+	    (srfi-list))))
 
-(define-command (search query)
-  "Display a list of all the SRFIs whose titles contain <query>."
-  (write-srfi-list (srfi-search query)))
+(add-command!
+ "search"
+ '(word ...)
+ "Display a list of all the SRFIs whose titles contain all <word>s."
+ 1
+ #f
+ (lambda words (write-srfi-list (srfi-search words))))
