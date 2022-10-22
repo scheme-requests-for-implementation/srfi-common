@@ -12,9 +12,14 @@
           srfi-browse-mail-archive-url
           srfi-send-mail)
   (import (scheme base)
+          (scheme char)
+
           (srfi-tools private external)
+          (srfi-tools private list)
+          (srfi-tools private string)
           (srfi-tools private os)
           (srfi-tools private command)
+
           (srfi-tools data)
           (srfi-tools path)
           (srfi-tools html)
@@ -90,6 +95,21 @@
     (define-command (browse-github-url num)
       "Browse Github page for SRFI <num>."
       (srfi-browse-github-url (parse-srfi-number num)))
+
+    (define (srfi-lucky query)
+      (let* ((query (string-downcase query))
+             (match (find (lambda (srfi)
+                            (string-contains
+                             (string-downcase (srfi-title srfi))
+                             query))
+                          (srfi-list))))
+        (if match
+            (srfi-browse (srfi-number match))
+            (error "No luck. Try another query?"))))
+
+    (define-command (lucky query)
+      "Browse the first SRFI whose title matches <query>."
+      (srfi-lucky query))
 
     ;;
 
