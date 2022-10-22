@@ -20,6 +20,7 @@
           (srfi-tools private string)
           (srfi-tools private os)
           (srfi-tools private command)
+          (srfi-tools private port)
 
           (srfi-tools data)
           (srfi-tools path)
