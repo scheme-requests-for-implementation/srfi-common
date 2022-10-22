@@ -7,6 +7,7 @@
 
           srfi-number
           srfi-status
+          srfi-status-string
           srfi-title
           srfi-authors
           srfi-based-on
@@ -24,7 +25,7 @@
           srfi-author-role
           srfi-format-author
           srfi-format-authors
-          srfi-one-line-summary
+          srfi-format
 
           srfi-for-each
           srfi-filter
@@ -46,7 +47,8 @@
 
 	  keyword->name
 
-	  write-srfi-list)
+	  write-custom-srfi-list
+          write-srfi-list)
   (import (scheme base)
           (scheme case-lambda)
           (scheme char)

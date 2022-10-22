@@ -15,6 +15,7 @@
           (scheme char)
 
           (srfi-tools private external)
+          (srfi-tools private format)
           (srfi-tools private list)
           (srfi-tools private string)
           (srfi-tools private os)
@@ -102,10 +103,9 @@
                (error "No luck. Try another query?"))
               (else
 	       (write-srfi-list matches)
+               (newline)
 	       (let ((srfi (car matches)))
-		 (write-string "Opening ")
-		 (write-string (srfi-one-line-summary srfi))
-		 (write-string ".\n")
+		 (write-line (format "Opening ~a." (srfi-format srfi)))
 		 (srfi-browse (srfi-number srfi)))))))
 
     (define-command (lucky query)
