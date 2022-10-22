@@ -97,15 +97,10 @@
       (srfi-browse-github-url (parse-srfi-number num)))
 
     (define (srfi-lucky query)
-      (let* ((query (string-downcase query))
-             (match (find (lambda (srfi)
-                            (string-contains
-                             (string-downcase (srfi-title srfi))
-                             query))
-                          (srfi-list))))
-        (if match
-            (srfi-browse (srfi-number match))
-            (error "No luck. Try another query?"))))
+      (let ((matches (srfi-search query)))
+        (if (null? matches)
+            (error "No luck. Try another query?")
+            (srfi-browse (srfi-number (car matches))))))
 
     (define-command (lucky query)
       "Browse the first SRFI whose title matches <query>."
