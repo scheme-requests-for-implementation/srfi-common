@@ -98,9 +98,15 @@
 
     (define (srfi-lucky query)
       (let ((matches (srfi-search query)))
-        (if (null? matches)
-            (error "No luck. Try another query?")
-            (srfi-browse (srfi-number (car matches))))))
+        (cond ((null? matches)
+               (error "No luck. Try another query?"))
+              (else
+	       (write-srfi-list matches)
+	       (let ((srfi (car matches)))
+		 (write-string "Opening ")
+		 (write-string (srfi-one-line-summary srfi))
+		 (write-string ".\n")
+		 (srfi-browse (srfi-number srfi)))))))
 
     (define-command (lucky query)
       "Browse the first SRFI whose title matches <query>."

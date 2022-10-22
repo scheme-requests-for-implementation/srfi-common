@@ -44,7 +44,9 @@
           srfi-default-command
           srfi-default-number-command
 
-	  keyword->name)
+	  keyword->name
+
+	  write-srfi-list)
   (import (scheme base)
           (scheme case-lambda)
           (scheme char)
