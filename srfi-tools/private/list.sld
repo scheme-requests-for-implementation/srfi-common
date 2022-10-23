@@ -1,5 +1,6 @@
 (define-library (srfi-tools private list)
   (export any
+          every
           append-map
           append-reverse
           cons*
@@ -26,7 +27,7 @@
 
   (import (scheme base)
           (only (srfi 1)
-                any append-map append-reverse cons* drop drop-right
+                any every append-map append-reverse cons* drop drop-right
                 take take-right
                 first second third
                 filter filter-map find fold remove last split-at))

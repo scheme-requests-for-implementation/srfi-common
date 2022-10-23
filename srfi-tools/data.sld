@@ -52,7 +52,6 @@
           (scheme cxr)
           (scheme file)
           (scheme read)
-          (only (srfi 1) every)
 	  (srfi-tools private error)
 	  (srfi-tools private list)
           (srfi-tools private string)
