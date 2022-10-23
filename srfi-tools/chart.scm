@@ -25,7 +25,7 @@
 	    ((= julian today))
 	  (write-string (date->iso-date (julian-day->date julian)))
 	  (write-string " ")
-	  (write-string (vector-ref counts i))
+	  (write-string (number->string (vector-ref counts i)))
 	  (newline))))))
 
 (define (write-srfi-data today)
