@@ -1,13 +1,13 @@
 (define-library (srfi-tools private time)
-  (export make-date
-	  add-duration
-	  current-date
-	  julian-day->date
-	  date->string
+  (export add-duration
+          current-date
+          date->string
           date->time-utc
-          time<?
-          ;;
-	  date->iso-date
+          date-year
+          julian-day->date
+          make-date
+          time<?)
+  (export date->iso-date
           date->julian
           iso-date-year
           iso-date-month
@@ -16,13 +16,14 @@
           iso-date->date)
   (import (scheme base)
           (only (srfi 19)
-                add-duration
 		current-date
 		date->julian-day
 		julian-day->date
 		make-date
+                add-duration
                 date->string
                 date->time-utc
+                date-year
                 time<?))
   (begin
 

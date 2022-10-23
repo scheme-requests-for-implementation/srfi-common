@@ -43,10 +43,10 @@
   (let* ((original (read-entire-file
 		    (path-append (srfi-common-dir) "admin" "srfi.gnuplot")))
 	 (end (string-contains original "-12-31"))
-	 (start (string-cursor-back original end 4)))
-    (string-append (string-copy/cursors original 0 start)
+	 (start (- end (string-length "YYYY"))))
+    (string-append (string-copy original 0 start)
 		   (number->string (date-year today))
-		   (string-copy/cursors original end))))
+		   (string-copy original end))))
 
 (define (srfi-generate-chart today)
   (with-output-to-file "/tmp/srfi.gnuplot"
