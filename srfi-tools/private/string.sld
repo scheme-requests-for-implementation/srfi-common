@@ -1,26 +1,42 @@
 (define-library (srfi-tools private string)
   (export ascii-alphabetic?
           ascii-numeric?
-          ascii-alphanumeric?
-	  string-fold
-          string-index
-          string-contains
+          ascii-alphanumeric?)
+  (export string-every
+          string-any
+          string-join
+          string-tabulate
+          string-take
+          string-take-right
+          string-drop
+          string-drop-right
+          string-pad
+          string-pad-right
+          string-trim
+          string-trim-right
+          string-trim-both
+          string-prefix-length
+          string-suffix-length
           string-prefix?
           string-suffix?
-          string-split
-          string-join
+          string-index
+          string-index-right
+          string-skip
+          string-skip-right
+          string-contains
+          string-concatenate
+          string-fold
+          string-fold-right
+          string-filter)
+  (export string-split
           string-join-english
           string->slug
           unique-string-accumulator
           url-hexify-string)
-  (import (only (scheme char) string-downcase))
   (import (scheme base)
-          (srfi-tools private list))
-  (cond-expand
-   ((library (srfi 130))
-    (import (srfi 130)))
-   (else
-    (import (srfi 13))))
+          (scheme char)
+          (srfi-tools private list)
+          (srfi-tools private string-shim))
   (begin
 
     ;; Subst of SRFI 175.
