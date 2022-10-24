@@ -282,3 +282,17 @@
  1
  #f
  (lambda words (write-srfi-list (srfi-search words))))
+
+(define (srfi-what . numbers)
+  (filter (lambda (srfi) (member (srfi-number srfi) numbers))
+          (srfi-list)))
+
+(add-command!
+ "what"
+ '(number ...)
+ "Display a one-line summmary of the given SRFI <number>s."
+ 1
+ #f
+ (lambda numbers
+   (write-srfi-list
+    (apply srfi-what (map parse-srfi-number numbers)))))
