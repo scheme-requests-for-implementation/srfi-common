@@ -2044,7 +2044,7 @@
  (draft-date "2022-08-12"))
 ((number 236)
  (status draft)
- (title "Evaluating Scheme expressions in an unspecified order")
+ (title "Evaluating expressions in an unspecified order")
  (author "Marc Nieper-Wißkirchen")
  (see-also)
  (keywords control-flow syntax)
