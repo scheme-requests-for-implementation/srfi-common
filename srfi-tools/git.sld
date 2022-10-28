@@ -1,7 +1,8 @@
 (define-library (srfi-tools git)
   (export srfi-git-https-url
           srfi-git-ssh-url
-          srfi-clone)
+          srfi-clone
+          srfi-pull)
   (import (scheme base)
           (scheme file)
           (srfi-tools private command)
@@ -49,4 +50,27 @@
 
     (define-command (clone num)
       "Pull SRFI <num> from its git version control repository."
-      (srfi-clone (parse-srfi-number num)))))
+      (srfi-clone (parse-srfi-number num)))
+
+    (define (srfi-pull . numbers)
+      (for-each
+       (lambda (num)
+         (let ((dir (srfi-dir num)))
+           (disp dir)
+           (with-current-directory
+            dir
+            (lambda ()
+              (unless (in-git-dir?)
+                (error "SRFI is not under git version control." num))
+              (run-program '("git" "pull"))))
+           (disp)))
+       numbers))
+
+    (add-command!
+     "pull"
+     '(number ...)
+     "Run `git pull` for the given SRFI <number>s."
+     1
+     #f
+     (lambda numbers
+       (apply srfi-pull (map parse-srfi-number numbers))))))
