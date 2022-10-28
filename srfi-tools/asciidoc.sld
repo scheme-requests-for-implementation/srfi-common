@@ -65,11 +65,13 @@
               (call-with-output-file html-file
                 (lambda (out) (write-string html out))))))))
 
-    ;; This converts a SRFI written in AsciiDoc into HTML. (Note that
-    ;; HTML is the required submittion format.) This command is useful
-    ;; for the initial conversion, but afterwards it's easier for all
-    ;; concerned to edit the HTML and throw away the original AsciiDoc
-    ;; sources.
+    ;; This converts a SRFI written in AsciiDoc into HTML.
+    ;;
+    ;; Note that HTML is the required submission format. This command
+    ;; is useful for the initial conversion, but afterwards it's
+    ;; easier for all concerned to edit the HTML and throw away the
+    ;; original AsciiDoc sources.
+    ;;
     (define-command (from-asciidoc asciidoc-file)
       "Convert SRFI written in AsciiDoc into HTML."
       (srfi-from-asciidoc asciidoc-file))))
