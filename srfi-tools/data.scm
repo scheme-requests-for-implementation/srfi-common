@@ -276,6 +276,14 @@
   "List all SRFIs with <name> as an author."
   (write-srfi-list (srfi-by-author name)))
 
+(define (srfi-by-keyword keyword)
+  (srfi-by (lambda (srfi) (map srfi-format-keyword (srfi-keywords srfi)))
+           keyword))
+
+(define-command (by-keyword keyword)
+  "List all SRFIs filed under <keyword>."
+  (write-srfi-list (srfi-by-keyword keyword)))
+
 (define (srfi-search words)
   (let ((words (map string-downcase words)))
     (filter (lambda (srfi)
