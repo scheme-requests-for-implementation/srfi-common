@@ -35,7 +35,7 @@
           (lambda () (gauche:sys-chdir old)))))
 
   (define (run-program command+args)
-    (gauche:do-process command+args)
+    (gauche:do-process! command+args)
     (values))
 
   (define (run-program/file-to-file command+args
