@@ -1982,7 +1982,7 @@
  (status draft)
  (title "A further comparator library")
  (author "Daphne Preston-Kendal")
- (see-also)
+ (see-also 128 162)
  (keywords comparison)
  (draft-date "2021-08-28"))
 ((number 229)
