@@ -1,6 +1,7 @@
 (define-library (srfi-tools git)
   (export srfi-git-https-url
-          srfi-git-ssh-url)
+          srfi-git-ssh-url
+          srfi-clone)
   (import (scheme base)
           (scheme file)
           (srfi-tools private command)
@@ -23,4 +24,26 @@
 
     (define-command (git-ssh-url num)
       "Display the Git SSH URL for SRFI <num>."
-      (write-line-about-srfi srfi-git-ssh-url num))))
+      (write-line-about-srfi srfi-git-ssh-url num))
+
+    (define (srfi-clone num)
+      (let ((dir (srfi-dir num)))
+        (ensure-directory dir)
+        (with-current-directory
+         dir
+         (lambda ()
+           (when (run-program/get-boolean '("git" "rev-parse" "--git-dir"))
+             (error "That SRFI is already under git version control."))
+           (run-program '("git" "init"))
+           (run-program `("git" "remote" "add" "origin"
+                          ,(srfi-git-https-url num)))
+           (run-program '("git" "add" "."))
+           (run-program '("git" "pull"
+                          "--autostash"
+                          "--set-upstream"
+                          "origin" "master"))
+           (write-line dir)))))
+
+    (define-command (clone num)
+      "Pull SRFI <num> from its git version control repository."
+      (srfi-clone (parse-srfi-number num)))))
