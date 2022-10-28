@@ -3,6 +3,7 @@
           create-directory
           ensure-directory
           directory-files
+          with-current-directory
           run-program
           run-program/get-output-string
           run-program/file-to-file

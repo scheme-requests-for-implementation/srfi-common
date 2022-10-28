@@ -25,6 +25,9 @@
     (remove (lambda (name) (member name '("." "..")))
             (chibi:directory-files path)))
 
+  (define (with-current-directory path thunk)
+    (chibi:with-directory path thunk))
+
   ;; TODO: Copied from Chibi's <lib/chibi/process.scm>.
   (define (execute-returned cmd)
     ;; we only arrive here if execute fails

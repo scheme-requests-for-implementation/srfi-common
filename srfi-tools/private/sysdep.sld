@@ -3,6 +3,7 @@
           create-directory
           ensure-directory
           directory-files
+          with-current-directory
           run-program
           run-program/get-output-string
           run-program/file-to-file)
@@ -15,6 +16,10 @@
                           create-directory
                           directory
                           rename-file)
+                    chicken:)
+            (prefix (only (chicken process-context)
+                          change-directory
+                          current-directory)
                     chicken:)
             (prefix (only (scsh-process)
                           run

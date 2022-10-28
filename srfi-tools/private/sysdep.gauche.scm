@@ -1,11 +1,11 @@
 (import (scheme base)
         (scheme file)
-        (prefix (only (srfi 170)
-                      create-directory
-                      rename-file)
+        (prefix (srfi 170)
                 srfi-170:)
         (prefix (only (gauche base)
-                      make-keyword)
+                      make-keyword
+                      sys-chdir
+                      sys-getcwd)
                 gauche:)
         (prefix (gauche process)
                 gauche:)
@@ -25,6 +25,14 @@
 
   (define (directory-files path)
     (srfi-170:directory-files path #t))
+
+  (define (with-current-directory path thunk)
+    (let ((old (gauche:sys-getcwd)))
+      (gauche:sys-chdir path)
+      (dynamic-wind
+          (lambda () (values))
+          thunk
+          (lambda () (gauche:sys-chdir old)))))
 
   (define (run-program command+args)
     (gauche:do-process command+args)
