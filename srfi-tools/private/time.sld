@@ -9,6 +9,7 @@
           time<?)
   (export date->iso-date
           date->julian
+          days-between
           iso-date-year
           iso-date-month
           iso-date-day
@@ -35,6 +36,10 @@
 					 ; SRFI 19 implementation that breaks
 					 ; julian-date->date on non-integer
 					 ; values.
+
+    (define (days-between start-date end-date)
+      (- (truncate (date->julian-day end-date))
+         (truncate (date->julian-day start-date))))
 
     (define (iso-date-year string)
       (string->number (string-copy string 0 4)))
