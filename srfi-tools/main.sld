@@ -12,6 +12,7 @@
   (import (srfi-tools asciidoc)
           (srfi-tools chart)
           (srfi-tools checklink)
+          (srfi-tools core)
           (srfi-tools count)
           (srfi-tools data)
           (srfi-tools generate)
