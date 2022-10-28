@@ -31,6 +31,7 @@
           srfi-list
           srfi-drafts
           srfi-by-author
+          srfi-by-keyword
           srfi-search
 
           try-parse-srfi-number
