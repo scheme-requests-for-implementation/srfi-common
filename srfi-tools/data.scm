@@ -261,14 +261,17 @@
   (write-custom-srfi-list (srfi-drafts) srfi-age-string))
 
 (define (srfi-by-author name)
-  (filter (lambda (srfi)
-            (any (lambda (author)
-                   (string-ci=? name (srfi-author-name author)))
-                 (srfi/authors srfi)))
-          (srfi-list)))
+  (let ((name (string-downcase name)))
+    (filter (lambda (srfi)
+              (any (lambda (author)
+                     (string-contains
+                      (string-downcase (srfi-author-name author))
+                      name))
+                   (srfi/authors srfi)))
+            (srfi-list))))
 
 (define-command (by-author name)
-  "Display a list of all the SRFIs by authors with <name> in their names."
+  "List all SRFIs with <name> as an author."
   (write-srfi-list (srfi-by-author name)))
 
 (define (srfi-search words)
