@@ -58,7 +58,7 @@
 
     (define-syntax define-command
       (syntax-rules ()
-        ((define-command (name args ...) help body ...)
+        ((define-command (name args ...) help body0 body ...)
          (let ((n-args (length '(args ...))))
            (add-command! (symbol->string 'name)
                          '(args ...)
@@ -66,6 +66,7 @@
 			 n-args
                          n-args
 			 (lambda (args ...)
+                           body0
                            body ...))))))
 
     (define (command-list)
