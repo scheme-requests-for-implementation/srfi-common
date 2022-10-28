@@ -26,13 +26,16 @@
       "Display the Git SSH URL for SRFI <num>."
       (write-line-about-srfi srfi-git-ssh-url num))
 
+    (define (in-git-dir?)
+      (run-program/get-boolean '("git" "rev-parse" "--git-dir")))
+
     (define (srfi-clone num)
       (let ((dir (srfi-dir num)))
         (ensure-directory dir)
         (with-current-directory
          dir
          (lambda ()
-           (when (run-program/get-boolean '("git" "rev-parse" "--git-dir"))
+           (when (in-git-dir?)
              (error "That SRFI is already under git version control."))
            (run-program '("git" "init"))
            (run-program `("git" "remote" "add" "origin"
