@@ -10,6 +10,14 @@
 (define (directory-files path)
   (chicken:directory path))
 
+(define (with-current-directory path thunk)
+  (let ((old (chicken:current-directory)))
+    (chicken:change-directory path)
+    (dynamic-wind
+        (lambda () (values))
+        thunk
+        (lambda () (chicken:change-directory old)))))
+
 (define (handle-exit command+args thunk)
   (let-values (((number normal-exit? pid) (thunk)))
     (unless normal-exit?
