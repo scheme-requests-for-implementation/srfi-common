@@ -2,6 +2,7 @@
   (import (scheme base)
           (srfi-tools private command)
           (srfi-tools private external)
+          (srfi-tools core)
           (srfi-tools data)
           (srfi-tools path)
           (srfi-tools interactive))

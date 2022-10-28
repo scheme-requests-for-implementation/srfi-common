@@ -39,9 +39,6 @@
           write-string-about-srfi
           write-line-about-srfi
 
-          srfi-default-command
-          srfi-default-number-command
-
 	  keyword->name
 
 	  write-custom-srfi-list
