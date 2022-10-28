@@ -47,5 +47,14 @@
                        (gauche:make-keyword "output")
                        output-filename))
 
+  (define (run-program/get-boolean command+args)
+    (gauche:do-process command+args
+                       (gauche:make-keyword "input")
+                       (gauche:make-keyword "null")
+                       (gauche:make-keyword "output")
+                       (gauche:make-keyword "null")
+                       (gauche:make-keyword "error")
+                       (gauche:make-keyword "null")))
+
   (define (run-program/get-output-string command+args)
     (gauche:with-input-from-process command+args read-all-chars)))

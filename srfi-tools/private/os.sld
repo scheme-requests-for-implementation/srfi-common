@@ -5,6 +5,7 @@
           directory-files
           with-current-directory
           run-program
+          run-program/get-boolean
           run-program/get-output-string
           run-program/file-to-file
 

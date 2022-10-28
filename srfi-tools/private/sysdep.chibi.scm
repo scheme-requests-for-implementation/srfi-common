@@ -70,5 +70,11 @@
                   (unless (eqv? status 0)
                     (error "Command failed")))))))))))
 
+  (define (run-program/get-boolean command+args)
+    (let* ((output+error+status
+            (chibi:process->output+error+status command+args))
+           (status (list-ref output+error+status 2)))
+      (eqv? status 0)))
+
   (define (run-program/get-output-string command+args)
     (chibi:process->string command+args)))
