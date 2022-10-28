@@ -260,15 +260,17 @@
   "Display a list of all the draft SRFIs."
   (write-custom-srfi-list (srfi-drafts) srfi-age-string))
 
-(define (srfi-by-author name)
-  (let ((name (string-downcase name)))
+(define (srfi-by get-strings query)
+  (let ((query (string-downcase query)))
     (filter (lambda (srfi)
-              (any (lambda (author)
-                     (string-contains
-                      (string-downcase (srfi-author-name author))
-                      name))
-                   (srfi/authors srfi)))
+              (any (lambda (string)
+                     (string-contains (string-downcase string) query))
+                   (get-strings srfi)))
             (srfi-list))))
+
+(define (srfi-by-author name)
+  (srfi-by (lambda (srfi) (map srfi-author-name (srfi-authors srfi)))
+           name))
 
 (define-command (by-author name)
   "List all SRFIs with <name> as an author."
