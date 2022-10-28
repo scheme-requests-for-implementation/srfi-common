@@ -251,9 +251,14 @@
 (define (srfi-drafts)
   (filter srfi-draft? (srfi-list)))
 
+(define (srfi-age-string srfi)
+  (format "~a days"
+          (days-between (iso-date->date (srfi-draft-date srfi))
+                        (current-date))))
+
 (define-command (drafts)
   "Display a list of all the draft SRFIs."
-  (write-custom-srfi-list (srfi-drafts) "since" srfi-draft-date))
+  (write-custom-srfi-list (srfi-drafts) srfi-age-string))
 
 (define (srfi-by-author name)
   (filter (lambda (srfi)
