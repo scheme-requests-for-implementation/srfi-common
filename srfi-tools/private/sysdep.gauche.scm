@@ -41,11 +41,12 @@
   (define (run-program/file-to-file command+args
                                     input-filename
                                     output-filename)
-    (gauche:do-process command+args
-                       (gauche:make-keyword "input")
-                       input-filename
-                       (gauche:make-keyword "output")
-                       output-filename))
+    (gauche:do-process! command+args
+                        (gauche:make-keyword "input")
+                        input-filename
+                        (gauche:make-keyword "output")
+                        output-filename)
+    (values))
 
   (define (run-program/get-boolean command+args)
     (gauche:do-process command+args
