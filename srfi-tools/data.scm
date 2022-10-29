@@ -258,7 +258,11 @@
 
 (define-command (drafts)
   "Display a list of all the draft SRFIs."
-  (write-custom-srfi-list (srfi-drafts) srfi-age-string))
+  (display-two-column-table
+   (map (lambda (srfi)
+          (cons (srfi-format srfi)
+                (srfi-age-string srfi)))
+        (srfi-drafts))))
 
 (define (srfi-by get-strings query)
   (let ((query (string-downcase query)))
