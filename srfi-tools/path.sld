@@ -4,6 +4,7 @@
           srfi-home-dir
           srfi-common-dir
           srfi-data-file
+          srfi-signatures-file
           srfi-rss-file
           srfi-dir
           srfi-html-file
@@ -39,6 +40,9 @@
     (define-command (data-file)
       "Display the pathname of the SRFI database file."
       (write-line (srfi-data-file)))
+
+    (define (srfi-signatures-file)
+      (path-append (srfi-common-dir) "index" "signatures.scm"))
 
     (define (srfi-rss-file)
       (path-append (srfi-home-dir) "srfi-common" "srfi.rss"))
