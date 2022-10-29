@@ -23,6 +23,7 @@
           pair<?
           reverse-pair<?
           sorted-insert-unique
+          for-each-between
           interpose)
 
   (import (scheme base)
@@ -75,6 +76,12 @@
                      (rest tail)))
               (else
                list))))
+
+    (define (for-each-between visit between list)
+      (unless (null? list)
+        (visit (first list))
+        (for-each (lambda (item) (between) (visit item))
+                  (rest list))))
 
     ;; From Clojure.
     (define (interpose delimiter list)

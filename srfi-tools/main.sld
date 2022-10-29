@@ -29,6 +29,7 @@
           (srfi-tools path)
           (srfi-tools pre)
           (srfi-tools rss)
+          (srfi-tools signature)
           (srfi-tools tar)
           (srfi-tools toc))
   (cond-expand

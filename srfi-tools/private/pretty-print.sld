@@ -1,6 +1,8 @@
 (define-library (srfi-tools private pretty-print)
-  (export pretty-print)
-  (import (scheme base))
+  (export pretty-print
+          pretty-print-all)
+  (import (scheme base)
+          (srfi-tools private list))
 
   (cond-expand
    (chibi
@@ -24,4 +26,9 @@
     (begin
       (define (pretty-print obj)
         (write obj)
-        (newline))))))
+        (newline)))))
+
+  (begin
+
+    (define (pretty-print-all list)
+      (for-each-between pretty-print newline list))))
