@@ -7,6 +7,7 @@
           srfi-browse-landing
           srfi-browse-landing-url
           srfi-browse-github-url
+          srfi-browse-home-url
           srfi-pager
           srfi-edit
           srfi-browse-mail-archive-url
@@ -97,6 +98,13 @@
     (define-command (browse-github-url num)
       "Browse GitHub page for SRFI <num>."
       (srfi-browse-github-url (parse-srfi-number num)))
+
+    (define (srfi-browse-home-url)
+      (browse-url (srfi-home-url)))
+
+    (define-command (browse-home-url)
+      "Browse the home page of the SRFI project."
+      (srfi-browse-home-url))
 
     (define (srfi-lucky words)
       (let ((matches (srfi-search words)))
