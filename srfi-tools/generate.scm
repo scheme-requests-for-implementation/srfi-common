@@ -183,7 +183,7 @@
 	       ,email-archives
 	       (li (a (@ (href ,(concat "https://github.com/scheme-requests-for-implementation/srfi-"
 					number)))
-		      "Git repo (on Github)"))
+		      "Git repo (on GitHub)"))
 	       (li (a (@ (href ,(concat "mailto:srfi-"
 					number
 					"@srfi.schemers.org")))

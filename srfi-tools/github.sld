@@ -38,7 +38,7 @@
                      (srfi-github-relative num)))
 
     (define-command (github-url num)
-      "Display the Github URL for SRFI <num>."
+      "Display the GitHub URL for SRFI <num>."
       (write-line-about-srfi srfi-github-url num))
 
     ;; Is this superfluous? `srfi-github-url` can fetch both the repo
@@ -70,5 +70,5 @@
           (github-api-repos)))))
 
     (define-command (create-github-repository num)
-      "Create a Github repository for SRFI num."
+      "Create a GitHub repository for SRFI num."
       (srfi-create-github-repository (parse-srfi-number num)))))
