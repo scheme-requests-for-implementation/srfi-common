@@ -95,7 +95,7 @@
       (browse-url (srfi-github-url num)))
 
     (define-command (browse-github-url num)
-      "Browse Github page for SRFI <num>."
+      "Browse GitHub page for SRFI <num>."
       (srfi-browse-github-url (parse-srfi-number num)))
 
     (define (srfi-lucky words)
