@@ -49,6 +49,13 @@
 	      "SRFIs extend the Scheme programming language.  You can help.  "
 	      (a (@ (href "about.html")) "Learn more")
 	      ".")
+	   (p "Thanks to Lassi Kortela for his "
+	      (code "srfi")
+	      " command, which currently has eighty subcommands for carrying out various SRFI operations, e.g. show the abstract of a SRFI, search for a SRFI, open a SRFI in a browser, or clone the Git repo for a SRFI.  It can be found in the "
+	      (a (@ (href "https://github.com/scheme-requests-for-implementation/srfi-common/tree/master/srfi-tools")) "SRFI tools")
+	      " directory of the "
+	      (a (@ (href "https://github.com/scheme-requests-for-implementation/srfi-common/")) "srfi-common")
+	      " repo.")
 	   (p "Thanks to Arvydas Silanskas for his "
 	      (a (@ (href "https://index.scheme.org/")) "index.scheme.org")
 	      ", which is an increasingly comprehensive index of Scheme implementations and standards.")
