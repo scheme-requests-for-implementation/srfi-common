@@ -140,6 +140,9 @@
             (srfi-list))
       (error "No such SRFI" num)))
 
+(define (srfi-last-number)
+  (srfi/number (last (srfi-list))))
+
 (define (resolve srfi)
   (cond ((srfi? srfi)
          srfi)
@@ -248,10 +251,26 @@
   "Display a list of the most recent ten SRFIs."
   (write-srfi-list (srfi-tail)))
 
+(define (srfi-range min max)
+  (filter (lambda (srfi) (<= min (srfi-number srfi) max))
+          (srfi-list)))
+
+(define-command (range min max)
+  "List SRFIs with numbers <min>..<max>."
+  (write-srfi-list (srfi-range (parse-srfi-number min)
+                               (parse-srfi-number max))))
+
+(define (srfi-near num)
+  (srfi-range (- num 5) (+ num 5)))
+
+(define-command (near num)
+  "List a few SRFIs with numbers around <num>."
+  (write-srfi-list (srfi-near (parse-srfi-number num))))
+
 (define (srfi-drafts)
   (filter srfi-draft? (srfi-list)))
 
-(define (srfi-age-string srfi)
+(define (srfi-format-age srfi)
   (format "~a days"
           (days-between (iso-date->date (srfi-draft-date srfi))
                         (current-date))))
@@ -261,7 +280,7 @@
   (display-two-column-table
    (map (lambda (srfi)
           (cons (srfi-format srfi)
-                (srfi-age-string srfi)))
+                (srfi-format-age srfi)))
         (srfi-drafts))))
 
 (define (srfi-by get-strings query)

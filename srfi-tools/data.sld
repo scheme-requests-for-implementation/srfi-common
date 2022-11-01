@@ -4,6 +4,7 @@
 	  srfi-keyword-alist
 
           srfi-by-number
+          srfi-last-number
 
           srfi-number
           srfi-status
@@ -29,6 +30,8 @@
 
           srfi-data
           srfi-list
+          srfi-range
+          srfi-near
           srfi-drafts
           srfi-by-author
           srfi-by-keyword
