@@ -1,5 +1,6 @@
 (define-library (srfi-tools help)
   (import (scheme base)
+          (scheme case-lambda)
           (scheme write)
 	  (srfi-tools private command)
           (srfi-tools private list)
@@ -74,12 +75,18 @@
         ""
         "The SRFI website is at <https://srfi.schemers.org/>."))
 
-    (define (help)
-      (for-each write-line help-lines))
+    (define help
+      (case-lambda
+       (()
+        (for-each write-line help-lines))
+       ((command)
+        (write-line (command-help (command-by-name command))))))
 
-    (define-command (help)
-      "Display help."
-      (help))
+    (add-command!
+     "help"
+     '(command)
+     "Display general help, or help for <command>."
+     0 1 help)
 
     ;; Emulate all the common help flags to be user friendly.
 
