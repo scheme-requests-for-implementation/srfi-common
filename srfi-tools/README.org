@@ -28,3 +28,17 @@ command is run.
 
 If you're using ~bash~ (or maybe ~zsh~), execute ~eval "$(srfi
 complete bash)"~ to enable tab completion for the subcommands.
+
+* Installation
+
+The ~srfi~ command works with Chibi Scheme, Chicken Scheme, and
+Gauche.
+
+For Chibi or Gauche, just make a symbolic link from the corresponding
+script in ~srfi-tools/wrapper/~ to ~srfi~ somewhere on your ~$PATH~.
+
+For Chicken, there is a ~srfi-tools.egg~ file.
+
+If you don't keep your SRFI repo clones under ~~/srfi/~, you can set
+~SRFI_HOME~ to the root of those clones.  You should at least have a
+clone of ~srfi-common/~ there.
