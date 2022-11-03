@@ -8,26 +8,26 @@ The tools can be accessed in two ways:
 
 2. By using the ~srfi~ command line tool from an OS shell.
 
+The ~private~ directory contains utility code which does not deal with
+SRFI specifically.
+
 The tools are written in portable R7RS Scheme, except for a few
 implementation-dependent procedures which are gathered in the ~sysdep~
 library.
-
-The ~private~ directory contains utility code which does not deal with
-SRFI specifically.
 
 Like SRFIs themselves, the tools are released under the MIT License.
 
 * Command line
 
-The command line ~srfi~ command. Each tool is a subcommand.
+The command line ~srfi~ command exposes each tool as a subcommand.
+Much like the ~git~ command it has lots of them, some generally
+useful, others catering to specific niches.
 
-When no subcommand is given, the default command is run.
-
-When a SRFI number is given in lieu of a subcommand, the default SRFI
-command is run.
+When no subcommand is given or a SRFI number is given in lieu of a
+subcommand, a user-configurable default command is assumed.
 
 If you're using ~bash~ (or maybe ~zsh~), execute ~eval "$(srfi
-complete bash)"~ to enable tab completion for the subcommands.
+complete bash)"~ to enable tab completion for the subcommand name.
 
 * Installation
 
@@ -39,6 +39,19 @@ script in ~srfi-tools/wrapper/~ to ~srfi~ somewhere on your ~$PATH~.
 
 For Chicken, there is a ~srfi-tools.egg~ file.
 
-If you don't keep your SRFI repo clones under ~~/srfi/~, you can set
-~SRFI_HOME~ to the root of those clones.  You should at least have a
-clone of ~srfi-common/~ there.
+* Getting started
+
+By default, the tool assumes that you keep your SRFI repo clones under
+~~/srfi/~. If you prefer to keep them elsewhere you can either make a
+symbolic link from that directory to ~~/srfi/~ or set the environment
+variable ~SRFI_HOME~ to point to the directory.
+
+You should at least have a clone of ~srfi-common/~ under the root. The
+easiest way to get the rest of the stuff is ~srfi download-tar~
+followed by ~srfi unpack-tar~. These commands can be run as many times
+as you like to stay up to date with the latest changes.
+
+You can also make git clones of individual SRFIs using ~srfi clone
+123~. This works even for SRFIs that have been seeded from the tar
+archive, though git may encounter conflicting changes to files in some
+cases.
