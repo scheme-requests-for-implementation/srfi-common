@@ -19,7 +19,7 @@
     (define (srfi-github-org)
       "scheme-requests-for-implementation")
 
-    (define srfi-github-authorization-token
+    (define (srfi-github-authorization-token)
       (get-environment-variable "GITHUB_TOKEN"))
 
     (define (github-api-repos)
