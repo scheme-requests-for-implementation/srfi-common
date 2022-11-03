@@ -160,7 +160,7 @@ predictable behavior when applied to surplus arguments.</p></div></li>
     continuations allow one to implement the various proposed sets of
     control operators for delimited continuations. Finally, a
     primitive (<code>call-in-continuation</code>) is provided that
-    allows calling a thunk in a given continuation instead of just
+    allows calling a procedure in a given continuation instead of just
     delivering values to it.</p>
 
     <p><i>Continuation Marks:</i> Continuation marks are a provided feature
@@ -174,21 +174,21 @@ predictable behavior when applied to surplus arguments.</p></div></li>
 
     <p><i>Exceptions:</i> The exception mechanism
     of <a href="https://doi.org/10.1017/S0956796809990074">R6RS</a>
-    and <a href="https://small.r7rs.org/attachment/r7rs.pdf">R7RS</a> is reinterpreted with
+    and <a href="https://small.r7rs.org/attachment/r7rs.pdf"><cite>R7RS</cite></a> is reinterpreted with
     respect to the concepts introduced in this SRFI.  Moreover, the
     <code>with-exception-handler</code> procedure and the <code>guard</code>
     syntax gain additional tail context guarantees.</p>
 
     <p><i>Parameters:</i> The parameter object mechanism
-    of <a href="https://srfi.schemers.org/srfi-39/srfi-39.html">SRFI 39</a>
-    and R7RS is reinterpreted with respect to the
+    of <a href="#feeley2"><cite>SRFI 39</cite></a>
+    and <cite>R7RS</cite> is reinterpreted with respect to the
     concepts introduced in this SRFI.  Procedures to retrieve the
     current parameterization and to reinstall it later are
-    provided. Moreover, the parameterize syntax gains an additional
-    tail context guarantee.</p>
+      provided. Moreover, the <code>parameterize</code> syntax gains an additional
+      tail context guarantee.</p>
 
     <p><i>Delayed evaluation:</i> The syntax and procedures on delayed
-      evaluation of R7RS are revisited and redefined to handle the
+      evaluation of <cite>R7RS</cite> are revisited and redefined to handle the
       following satisfactorily: the parameterization of the delayed expression
       being forced, the treatment of exceptions raised during forcing of
       delayed expressions, and iterative lazy algorithms. Moreover, their
@@ -198,13 +198,15 @@ predictable behavior when applied to surplus arguments.</p></div></li>
       expression being forced is defined in a way that makes it interchangeably
       with the initial continuation of a thread.</p>
 
-    <p><i>Threads:</i> The thread mechanism of <a href="https://srfi.schemers.org/srfi-18/srfi-18.html">SRFI
-      18</a> is detailed with respect to the concepts introduced in this
-      SRFI.  In particular, mutation of parameter objects in multithreaded
-      applications is specified.</code>.</p>
+    <p><i>Threads:</i> The thread mechanism
+      of <a href="https://srfi.schemers.org/srfi-18/srfi-18.html"><cite>SRFI 18</cite></a> is detailed with
+      respect to the concepts introduced in this SRFI.  In particular,
+      mutation of parameter objects in multi-threaded applications is
+      specified.  In order to support timeout arguments in a type-safe
+      way, a minimal API on time objects is included as well.</p>
 
     <p>Large parts of this SRFI have been inspired by the control operators
-      provided by <a href="https://racket-lang.org/">Racket</a>.</div></li>
+      provided by <a href="https://racket-lang.org/"><cite>Racket</cite></a>.</div></li>
             <li class="card final"><a class="card-anchor" href="srfi-225/"></a><a href="srfi-225/"><span class="number">225</span></a>: <span class="name">Dictionaries</span><span class="authors">, by John Cowan (spec) and Arvydas Silanskas (implementation)</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2022-09-27</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-146/">SRFI 146: Mappings</a> and <a href="/srfi-167/">SRFI 167: Ordered Key Value Store</a>.</span>
               <div class="abstract"><p>The procedures of this SRFI allow callers to manipulate an object that maps keys to values
   without the caller needing to know exactly what the type of the object is.
