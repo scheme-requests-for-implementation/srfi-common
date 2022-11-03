@@ -1,4 +1,9 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 233: INI files</title><link>https://srfi.schemers.org/srfi-233/srfi-233.html</link><guid>https://srfi.schemers.org/srfi-233</guid><description>SRFI 233 is now in <em>final</em> status.<blockquote><p>An INI file is a configuration file that consists of key-value
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 238: Codesets</title><link>https://srfi.schemers.org/srfi-238/srfi-238.html</link><guid>https://srfi.schemers.org/srfi-238</guid><description>SRFI 238 is now in <em>draft</em> status.<blockquote>  <p>Many programming interfaces rely on a set of condition codes
+  where each code has a numeric ID, a mnemonic symbol, and a
+  human-readable message. This SRFI defines a facility to translate
+  between numbers and symbols in a codeset and fetch messages by
+  code. Examples are given using the Unix <em>errno</em> and
+  <em>signal</em> codesets.</p></blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Thu, 03 Nov 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 233: INI files</title><link>https://srfi.schemers.org/srfi-233/srfi-233.html</link><guid>https://srfi.schemers.org/srfi-233</guid><description>SRFI 233 is now in <em>final</em> status.<blockquote><p>An INI file is a configuration file that consists of key-value
 pairs for properties, and sections that group the properties. The
 name of these configuration files comes from the filename extension
 <code>INI</code>, short for initialization.
@@ -28,7 +33,7 @@ This SRFI provides access to the contents of an INI file.
       intervals of exact integers. Specialized variants of arrays are specified
       to provide portable programs with efficient representations for common
       use cases.</p></blockquote></description><dc:creator>Bradley J. Lucier</dc:creator><pubDate>Sun, 25 Sep 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 231: Intervals and Generalized Arrays</title><link>https://srfi.schemers.org/srfi-231/srfi-231.html</link><guid>https://srfi.schemers.org/srfi-231</guid><description>SRFI 231 is now in <em>final</em> status.<blockquote>    <p>This SRFI specifies an array mechanism for Scheme. Arrays as defined here are quite general; at their most basic, an array is simply a mapping, or function, from multi-indices of exact integers $i_0,\ldots,i_{d-1}$ to Scheme values.  The set of multi-indices $i_0,\ldots,i_{d-1}$ that are valid for a given array form the <i>domain</i> of the array.  In this SRFI, each array's domain consists  of the cross product of intervals of exact integers $[l_0,u_0)\times[l_1,u_1)\times\cdots\times[l_{d-1},u_{d-1})$ of $\mathbb Z^d$, $d$-tuples of integers.  Thus, we introduce a data type called $d$-<i>intervals</i>, or more briefly <a href="https://en.wikipedia.org/w/index.php?title=Interval_(mathematics)&amp;oldid=1091935326"><i>intervals</i></a>, that encapsulates this notion. (We borrow this terminology from, e.g.,  Elias Zakon's <a href="http://www.trillia.com/zakon1.html">Basic Concepts of Mathematics</a>.) Specialized variants of arrays provide portable programs with efficient representations for common use cases.</p>
-    <p>This is a revised and improved version of <a href="https://srfi.schemers.org/srfi-179/">SRFI 179</a>.</p></blockquote></description><dc:creator>Bradley J. Lucier</dc:creator><pubDate>Sun, 25 Sep 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 236: Evaluating Scheme expressions in an unspecified order</title><link>https://srfi.schemers.org/srfi-236/srfi-236.html</link><guid>https://srfi.schemers.org/srfi-236</guid><description>SRFI 236 is now in <em>draft</em> status.<blockquote>    <p>This SRFI defines the <code>perform</code> syntax, which can be
+    <p>This is a revised and improved version of <a href="https://srfi.schemers.org/srfi-179/">SRFI 179</a>.</p></blockquote></description><dc:creator>Bradley J. Lucier</dc:creator><pubDate>Sun, 25 Sep 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 236: Evaluating expressions in an unspecified order</title><link>https://srfi.schemers.org/srfi-236/srfi-236.html</link><guid>https://srfi.schemers.org/srfi-236</guid><description>SRFI 236 is now in <em>draft</em> status.<blockquote>    <p>This SRFI defines the <code>perform</code> syntax, which can be
     used to combine side effects into one expression without
     specifying their relative order.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Thu, 22 Sep 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 235: Combinators</title><link>https://srfi.schemers.org/srfi-235/srfi-235.html</link><guid>https://srfi.schemers.org/srfi-235</guid><description>SRFI 235 is now in <em>draft</em> status.<blockquote><p>This SRFI contains various procedures that accept and return procedures,
 as well as a few others, drawn from
@@ -152,7 +157,7 @@ compound data structures.</p></blockquote></description><dc:creator>Felix Thibau
     continuations allow one to implement the various proposed sets of
     control operators for delimited continuations. Finally, a
     primitive (<code>call-in-continuation</code>) is provided that
-    allows calling a thunk in a given continuation instead of just
+    allows calling a procedure in a given continuation instead of just
     delivering values to it.</p>
 
     <p><i>Continuation Marks:</i> Continuation marks are a provided feature
@@ -166,21 +171,21 @@ compound data structures.</p></blockquote></description><dc:creator>Felix Thibau
 
     <p><i>Exceptions:</i> The exception mechanism
     of <a href="https://doi.org/10.1017/S0956796809990074">R6RS</a>
-    and <a href="https://small.r7rs.org/attachment/r7rs.pdf">R7RS</a> is reinterpreted with
+    and <a href="https://small.r7rs.org/attachment/r7rs.pdf"><cite>R7RS</cite></a> is reinterpreted with
     respect to the concepts introduced in this SRFI.  Moreover, the
     <code>with-exception-handler</code> procedure and the <code>guard</code>
     syntax gain additional tail context guarantees.</p>
 
     <p><i>Parameters:</i> The parameter object mechanism
-    of <a href="https://srfi.schemers.org/srfi-39/srfi-39.html">SRFI 39</a>
-    and R7RS is reinterpreted with respect to the
+    of <a href="#feeley2"><cite>SRFI 39</cite></a>
+    and <cite>R7RS</cite> is reinterpreted with respect to the
     concepts introduced in this SRFI.  Procedures to retrieve the
     current parameterization and to reinstall it later are
-    provided. Moreover, the parameterize syntax gains an additional
-    tail context guarantee.</p>
+      provided. Moreover, the <code>parameterize</code> syntax gains an additional
+      tail context guarantee.</p>
 
     <p><i>Delayed evaluation:</i> The syntax and procedures on delayed
-      evaluation of R7RS are revisited and redefined to handle the
+      evaluation of <cite>R7RS</cite> are revisited and redefined to handle the
       following satisfactorily: the parameterization of the delayed expression
       being forced, the treatment of exceptions raised during forcing of
       delayed expressions, and iterative lazy algorithms. Moreover, their
@@ -190,13 +195,15 @@ compound data structures.</p></blockquote></description><dc:creator>Felix Thibau
       expression being forced is defined in a way that makes it interchangeably
       with the initial continuation of a thread.</p>
 
-    <p><i>Threads:</i> The thread mechanism of <a href="https://srfi.schemers.org/srfi-18/srfi-18.html">SRFI
-      18</a> is detailed with respect to the concepts introduced in this
-      SRFI.  In particular, mutation of parameter objects in multithreaded
-      applications is specified.<code></code>.</p>
+    <p><i>Threads:</i> The thread mechanism
+      of <a href="https://srfi.schemers.org/srfi-18/srfi-18.html"><cite>SRFI 18</cite></a> is detailed with
+      respect to the concepts introduced in this SRFI.  In particular,
+      mutation of parameter objects in multi-threaded applications is
+      specified.  In order to support timeout arguments in a type-safe
+      way, a minimal API on time objects is included as well.</p>
 
     <p>Large parts of this SRFI have been inspired by the control operators
-      provided by <a href="https://racket-lang.org/">Racket</a>.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 06 Aug 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 223: Generalized binary search procedures</title><link>https://srfi.schemers.org/srfi-223/srfi-223.html</link><guid>https://srfi.schemers.org/srfi-223</guid><description>SRFI 223 is now in <em>final</em> status.<blockquote><p>Generalized procedures for binary search of vector-like data structures are provided which can be applied to any sequence type, including ones defined by the user, together with applications of these procedures for Scheme’s built-in vectors.</p></blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Tue, 27 Jul 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 222: Compound Objects</title><link>https://srfi.schemers.org/srfi-222/srfi-222.html</link><guid>https://srfi.schemers.org/srfi-222</guid><description>SRFI 222 is now in <em>final</em> status.<blockquote><p>Compound objects are analogous to R6RS compound conditions,
+      provided by <a href="https://racket-lang.org/"><cite>Racket</cite></a>.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 06 Aug 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 223: Generalized binary search procedures</title><link>https://srfi.schemers.org/srfi-223/srfi-223.html</link><guid>https://srfi.schemers.org/srfi-223</guid><description>SRFI 223 is now in <em>final</em> status.<blockquote><p>Generalized procedures for binary search of vector-like data structures are provided which can be applied to any sequence type, including ones defined by the user, together with applications of these procedures for Scheme’s built-in vectors.</p></blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Tue, 27 Jul 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 222: Compound Objects</title><link>https://srfi.schemers.org/srfi-222/srfi-222.html</link><guid>https://srfi.schemers.org/srfi-222</guid><description>SRFI 222 is now in <em>final</em> status.<blockquote><p>Compound objects are analogous to R6RS compound conditions,
 and are suitable for use in creating and handling conditions
 on non-R6RS systems, among other purposes.
 They encapsulate an immutable sequence of subobjects, which can be
