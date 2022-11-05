@@ -1,10 +1,6 @@
-    <p>This SRFI defines a version of
-      the <code>define-record-type</code> definition
-      of <code>R<sup>6</sup>RS</code> that extends
-      the <code>define-record-type</code> syntax
-      of <code>R<sup>7</sup>RS</code>, reconciling both systems.</p>
-
-    <p>This is a proposal for a future SRFI to be adopted by
-      R<sup>7</sup>RS-large to integrate the R<sup>6</sup>RS record
-      system compatibly with the existing R<sup>7</sup>RS-small record
-      system.</p>
+    <p>The record mechanism of R<sup>6</sup>RS is refined.  In
+      particular, the triad of record names, record-type descriptors
+      and record constructor descriptors can be effectively ignored
+      and replaced with the single notion of a record descriptor.  It
+      also removes the restriction that the syntactic layer can only
+      define one constructor per record type defined.</p>

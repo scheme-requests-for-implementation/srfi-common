@@ -31,6 +31,18 @@
           <div><span>Show</span><label class="checkbox-label controls"><input class="controls" id="abstracts-control" tabindex="7" type="checkbox">abstracts</label></div>
           <div><span>Sort by</span><button class="controls sort" data-sort="authors" tabindex="2">authors</button><button class="controls sort" data-sort="date" tabindex="3">date</button><button class="controls sort" data-sort="name" tabindex="4">name</button><button class="controls sort" data-sort="number" tabindex="5">number</button><button class="controls sort" data-sort="status" tabindex="6">status</button></div></div>
         <ul class="summary list">
+            <li class="card draft"><a class="card-anchor" href="srfi-240/"></a><a href="srfi-240/"><span class="number">240</span></a>: <span class="name">Reconciled Records</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2022-11-05</span></span><span class="keywords" data-keywords="syntax">Keywords: <a href="https://srfi.schemers.org/?keywords=syntax">Syntax</a></span><span class="library-name">Library name: data-structure</span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-9/">SRFI 9: Defining Record Types</a>, <a href="/srfi-57/">SRFI 57: Records</a>, <a href="/srfi-76/">SRFI 76: R6RS Records</a>, <a href="/srfi-99/">SRFI 99: ERR5RS Records</a>, <a href="/srfi-131/">SRFI 131: ERR5RS Record Syntax (reduced)</a>, <a href="/srfi-136/">SRFI 136: Extensible record types</a>, <a href="/srfi-150/">SRFI 150: Hygienic ERR5RS Record Syntax (reduced)</a>, and <a href="/srfi-237/">SRFI 237: R6RS Records (refined)</a>.</span>
+              <div class="abstract">    <p>This SRFI defines a version of
+      the <code>define-record-type</code> definition
+      of <code>R<sup>6</sup>RS</code>
+      and <a href="https://srfi.schemers.org/srfi-237/srfi-237.html">SRFI
+      237</a> that extends the <code>define-record-type</code> syntax
+      of <code>R<sup>7</sup>RS</code>, reconciling both systems.</p>
+
+    <p>This SRFI is meant to be adopted by R<sup>7</sup>RS-large to
+      integrate essentially the R<sup>6</sup>RS record system
+      compatibly with the existing R<sup>7</sup>RS-small record
+      system.</p></div></li>
             <li class="card draft"><a class="card-anchor" href="srfi-239/"></a><a href="srfi-239/"><span class="number">239</span></a>: <span class="name">Destructuring Lists</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2022-11-04</span></span><span class="keywords" data-keywords="syntax">Keywords: <a href="https://srfi.schemers.org/?keywords=syntax">Syntax</a></span><span class="library-name">Library name: list-case</span><span class="status" data-status="draft"></span>
               <div class="abstract">    <p>This SRFI provides the <code>list-case</code>, the
       syntactic fundamental list destructor.</p></div></li>
@@ -41,17 +53,13 @@
   between numbers and symbols in a codeset and fetch messages by
   code. Examples are given using the Unix <em>errno</em> and
   <em>signal</em> codesets.</p></div></li>
-            <li class="card draft"><a class="card-anchor" href="srfi-237/"></a><a href="srfi-237/"><span class="number">237</span></a>: <span class="name">Reconciled Records</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2022-10-04</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-9/">SRFI 9: Defining Record Types</a>, <a href="/srfi-57/">SRFI 57: Records</a>, <a href="/srfi-76/">SRFI 76: R6RS Records</a>, <a href="/srfi-99/">SRFI 99: ERR5RS Records</a>, <a href="/srfi-131/">SRFI 131: ERR5RS Record Syntax (reduced)</a>, <a href="/srfi-136/">SRFI 136: Extensible record types</a>, and <a href="/srfi-150/">SRFI 150: Hygienic ERR5RS Record Syntax (reduced)</a>.</span>
-              <div class="abstract">    <p>This SRFI defines a version of
-      the <code>define-record-type</code> definition
-      of <code>R<sup>6</sup>RS</code> that extends
-      the <code>define-record-type</code> syntax
-      of <code>R<sup>7</sup>RS</code>, reconciling both systems.</p>
-
-    <p>This is a proposal for a future SRFI to be adopted by
-      R<sup>7</sup>RS-large to integrate the R<sup>6</sup>RS record
-      system compatibly with the existing R<sup>7</sup>RS-small record
-      system.</p></div></li>
+            <li class="card draft"><a class="card-anchor" href="srfi-237/"></a><a href="srfi-237/"><span class="number">237</span></a>: <span class="name">R6RS Records (refined)</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2022-10-04</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="draft"></span><span class="see-also">See also <a href="/srfi-9/">SRFI 9: Defining Record Types</a>, <a href="/srfi-57/">SRFI 57: Records</a>, <a href="/srfi-76/">SRFI 76: R6RS Records</a>, <a href="/srfi-99/">SRFI 99: ERR5RS Records</a>, <a href="/srfi-131/">SRFI 131: ERR5RS Record Syntax (reduced)</a>, <a href="/srfi-136/">SRFI 136: Extensible record types</a>, <a href="/srfi-150/">SRFI 150: Hygienic ERR5RS Record Syntax (reduced)</a>, and <a href="/srfi-240/">SRFI 240: Reconciled Records</a>.</span>
+              <div class="abstract">    <p>The record mechanism of R<sup>6</sup>RS is refined.  In
+      particular, the triad of record names, record-type descriptors
+      and record constructor descriptors can be effectively ignored
+      and replaced with the single notion of a record descriptor.  It
+      also removes the restriction that the syntactic layer can only
+      define one constructor per record type defined.</p></div></li>
             <li class="card draft"><a class="card-anchor" href="srfi-236/"></a><a href="srfi-236/"><span class="number">236</span></a>: <span class="name">Evaluating expressions in an unspecified order</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="based-on"></span><span class="date-group">Draft: <span class="date">2022-09-22</span></span><span class="keywords" data-keywords="control-flow,syntax">Keywords: <a href="https://srfi.schemers.org/?keywords=control-flow">Control Flow</a>, <a href="https://srfi.schemers.org/?keywords=syntax">Syntax</a></span><span class="library-name">Library name: independently</span><span class="status" data-status="draft"></span>
               <div class="abstract">    <p>This SRFI defines the <code>perform</code> syntax, which can be
     used to combine side effects into one expression without
@@ -952,7 +960,7 @@ vectors.</p></div></li>
           clarified and some of the procedures' names have been changed. See
           "Bit processing order" for details.
       </ol></div></li>
-            <li class="card final"><a class="card-anchor" href="srfi-150/"></a><a href="srfi-150/"><span class="number">150</span></a>: <span class="name">Hygienic ERR5RS Record Syntax (reduced)</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2018-01-16</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-9/">SRFI 9: Defining Record Types</a>, <a href="/srfi-99/">SRFI 99: ERR5RS Records</a>, <a href="/srfi-131/">SRFI 131: ERR5RS Record Syntax (reduced)</a>, <a href="/srfi-136/">SRFI 136: Extensible record types</a>, and <a href="/srfi-237/">SRFI 237: Reconciled Records</a>.</span>
+            <li class="card final"><a class="card-anchor" href="srfi-150/"></a><a href="srfi-150/"><span class="number">150</span></a>: <span class="name">Hygienic ERR5RS Record Syntax (reduced)</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2018-01-16</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-9/">SRFI 9: Defining Record Types</a>, <a href="/srfi-99/">SRFI 99: ERR5RS Records</a>, <a href="/srfi-131/">SRFI 131: ERR5RS Record Syntax (reduced)</a>, <a href="/srfi-136/">SRFI 136: Extensible record types</a>, and <a href="/srfi-237/">SRFI 237: R6RS Records (refined)</a>.</span>
               <div class="abstract">	<p>
 	  This SRFI provides a specification and portable implementation of an
 	  extension of the ERR5RS record syntax
@@ -1095,7 +1103,7 @@ vectors.</p></div></li>
             <li class="card final"><a class="card-anchor" href="srfi-137/"></a><a href="srfi-137/"><span class="number">137</span></a>: <span class="name">Minimal Unique Types</span><span class="authors">, by John Cowan and Marc Nieper-Wißkirchen</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2016-10-04</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="final"></span>
               <div class="abstract">      <p>This SRFI is intended to standardize a
       primitive run-time mechanism to create disjoint types.</div></li>
-            <li class="card final"><a class="card-anchor" href="srfi-136/"></a><a href="srfi-136/"><span class="number">136</span></a>: <span class="name">Extensible record types</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2016-12-25</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-237/">SRFI 237: Reconciled Records</a>.</span>
+            <li class="card final"><a class="card-anchor" href="srfi-136/"></a><a href="srfi-136/"><span class="number">136</span></a>: <span class="name">Extensible record types</span><span class="authors">, by Marc Nieper-Wißkirchen</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2016-12-25</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-237/">SRFI 237: R6RS Records (refined)</a>.</span>
               <div class="abstract">      <p>SRFI 9 and the compatible R7RS-small provide
       Scheme with record types. The basic problem that is solved by these
       record types is that they allow the user to introduce new types, disjoint
@@ -1509,7 +1517,7 @@ define fibfast(n)   ; Typical function notation
       groups, required fields, optional fields, automatic fields, read-write
       fields, read-only fields, inaccessible hidden fields, immutable virtual
       fields, and common sharing fields.</div></li>
-            <li class="card final"><a class="card-anchor" href="srfi-99/"></a><a href="srfi-99/"><span class="number">99</span></a>: <span class="name">ERR5RS Records</span><span class="authors">, by William D Clinger</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2009-10-07</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="library-name">Library name: records</span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-237/">SRFI 237: Reconciled Records</a>.</span>
+            <li class="card final"><a class="card-anchor" href="srfi-99/"></a><a href="srfi-99/"><span class="number">99</span></a>: <span class="name">ERR5RS Records</span><span class="authors">, by William D Clinger</span><span class="based-on"></span><span class="date-group">Final: <span class="date">2009-10-07</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="library-name">Library name: records</span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-237/">SRFI 237: R6RS Records (refined)</a>.</span>
               <div class="abstract">      <p>Many Scheme programmers have considered records
       to be one of the most important features missing from the R5RS. The R6RS
       proposed a record system, but its design has been widely criticized and
@@ -2838,7 +2846,7 @@ construction of eager promises in cases where efficiency is a concern.<br>
       implementation for the <code>#,()</code> convention, this SRFI describes
       an interpretation of the <code>#,()</code> external form as a read-time
       application.</div></li>
-            <li class="card final"><a class="card-anchor" href="srfi-9/"></a><a href="srfi-9/"><span class="number">9</span></a>: <span class="name">Defining Record Types</span><span class="authors">, by Richard Kelsey</span><span class="based-on"></span><span class="date-group">Final: <span class="date">1999-09-09</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="library-name">Library name: records</span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-99/">SRFI 99: ERR5RS Records</a> and <a href="/srfi-237/">SRFI 237: Reconciled Records</a>.</span>
+            <li class="card final"><a class="card-anchor" href="srfi-9/"></a><a href="srfi-9/"><span class="number">9</span></a>: <span class="name">Defining Record Types</span><span class="authors">, by Richard Kelsey</span><span class="based-on"></span><span class="date-group">Final: <span class="date">1999-09-09</span></span><span class="keywords" data-keywords="data-structure">Keywords: <a href="https://srfi.schemers.org/?keywords=data-structure">Data Structure</a></span><span class="library-name">Library name: records</span><span class="status" data-status="final"></span><span class="see-also">See also <a href="/srfi-99/">SRFI 99: ERR5RS Records</a> and <a href="/srfi-237/">SRFI 237: R6RS Records (refined)</a>.</span>
               <div class="abstract">      <p>This SRFI describes syntax for creating new
       data types, called record types. A predicate, constructor, and field
       accessors and modifiers are defined for each record type. Each new record

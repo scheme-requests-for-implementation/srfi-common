@@ -1,4 +1,14 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 239: Destructuring Lists</title><link>https://srfi.schemers.org/srfi-239/srfi-239.html</link><guid>https://srfi.schemers.org/srfi-239</guid><description>SRFI 239 is now in <em>draft</em> status.<blockquote>    <p>This SRFI provides the <code>list-case</code>, the
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 240: Reconciled Records</title><link>https://srfi.schemers.org/srfi-240/srfi-240.html</link><guid>https://srfi.schemers.org/srfi-240</guid><description>SRFI 240 is now in <em>draft</em> status.<blockquote>    <p>This SRFI defines a version of
+      the <code>define-record-type</code> definition
+      of <code>R<sup>6</sup>RS</code>
+      and <a href="https://srfi.schemers.org/srfi-237/srfi-237.html">SRFI
+      237</a> that extends the <code>define-record-type</code> syntax
+      of <code>R<sup>7</sup>RS</code>, reconciling both systems.</p>
+
+    <p>This SRFI is meant to be adopted by R<sup>7</sup>RS-large to
+      integrate essentially the R<sup>6</sup>RS record system
+      compatibly with the existing R<sup>7</sup>RS-small record
+      system.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sat, 05 Nov 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 239: Destructuring Lists</title><link>https://srfi.schemers.org/srfi-239/srfi-239.html</link><guid>https://srfi.schemers.org/srfi-239</guid><description>SRFI 239 is now in <em>draft</em> status.<blockquote>    <p>This SRFI provides the <code>list-case</code>, the
       syntactic fundamental list destructor.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 04 Nov 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 238: Codesets</title><link>https://srfi.schemers.org/srfi-238/srfi-238.html</link><guid>https://srfi.schemers.org/srfi-238</guid><description>SRFI 238 is now in <em>draft</em> status.<blockquote>  <p>Many programming interfaces rely on a set of condition codes
   where each code has a numeric ID, a mnemonic symbol, and a
   human-readable message. This SRFI defines a facility to translate
@@ -10,16 +20,12 @@ name of these configuration files comes from the filename extension
 <code>INI</code>, short for initialization.
 The format has become an informal standard in many contexts of configuration.
 This SRFI provides access to the contents of an INI file.
-</p></blockquote></description><dc:creator>John Cowan (spec) and Arvydas Silanskas (implementation)</dc:creator><pubDate>Thu, 13 Oct 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 237: Reconciled Records</title><link>https://srfi.schemers.org/srfi-237/srfi-237.html</link><guid>https://srfi.schemers.org/srfi-237</guid><description>SRFI 237 is now in <em>draft</em> status.<blockquote>    <p>This SRFI defines a version of
-      the <code>define-record-type</code> definition
-      of <code>R<sup>6</sup>RS</code> that extends
-      the <code>define-record-type</code> syntax
-      of <code>R<sup>7</sup>RS</code>, reconciling both systems.</p>
-
-    <p>This is a proposal for a future SRFI to be adopted by
-      R<sup>7</sup>RS-large to integrate the R<sup>6</sup>RS record
-      system compatibly with the existing R<sup>7</sup>RS-small record
-      system.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Tue, 04 Oct 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 225: Dictionaries</title><link>https://srfi.schemers.org/srfi-225/srfi-225.html</link><guid>https://srfi.schemers.org/srfi-225</guid><description>SRFI 225 is now in <em>final</em> status.<blockquote><p>The procedures of this SRFI allow callers to manipulate an object that maps keys to values
+</p></blockquote></description><dc:creator>John Cowan (spec) and Arvydas Silanskas (implementation)</dc:creator><pubDate>Thu, 13 Oct 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 237: R6RS Records (refined)</title><link>https://srfi.schemers.org/srfi-237/srfi-237.html</link><guid>https://srfi.schemers.org/srfi-237</guid><description>SRFI 237 is now in <em>draft</em> status.<blockquote>    <p>The record mechanism of R<sup>6</sup>RS is refined.  In
+      particular, the triad of record names, record-type descriptors
+      and record constructor descriptors can be effectively ignored
+      and replaced with the single notion of a record descriptor.  It
+      also removes the restriction that the syntactic layer can only
+      define one constructor per record type defined.</p></blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Tue, 04 Oct 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 225: Dictionaries</title><link>https://srfi.schemers.org/srfi-225/srfi-225.html</link><guid>https://srfi.schemers.org/srfi-225</guid><description>SRFI 225 is now in <em>final</em> status.<blockquote><p>The procedures of this SRFI allow callers to manipulate an object that maps keys to values
   without the caller needing to know exactly what the type of the object is.
   Such an object is called a <em>dictionary</em> or <em>dict</em> in this SRFI.</p></blockquote></description><dc:creator>John Cowan (spec) and Arvydas Silanskas (implementation)</dc:creator><pubDate>Tue, 27 Sep 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 122: Nonempty Intervals and Generalized Arrays</title><link>https://srfi.schemers.org/srfi-122/srfi-122.html</link><guid>https://srfi.schemers.org/srfi-122</guid><description>SRFI 122 is now in <em>withdrawn</em> status.<blockquote>      <p>This SRFI specifies an array mechanism for
       Scheme. Arrays as defined here are quite general; at their most basic, an
