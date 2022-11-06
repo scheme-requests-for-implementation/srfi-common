@@ -563,7 +563,7 @@ by \" and\" if there are only two elements and \", and\" otherwise."
 	 (keywords (srfi-keywords srfi))
 	 (library-name-block
 	  (cond ((srfi-library-name srfi)
-		 => (lambda (name) (concat "library-name: " name)))
+		 => (lambda (name) (concat "library-name: " name "\n\n")))
 		(else "")))
 	 (number (srfi-number srfi))
 	 (status (srfi-status srfi))
