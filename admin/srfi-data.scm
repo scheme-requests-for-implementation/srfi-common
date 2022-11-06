@@ -2077,7 +2077,6 @@
  (status draft)
  (title "Reconciled Records")
  (author "Marc Nieper-Wißkirchen")
- (library-name data-structure)
  (see-also 9 57 76 99 131 136 150 237)
- (keywords syntax)
+ (keywords data-structure)
  (draft-date "2022-11-05"))
