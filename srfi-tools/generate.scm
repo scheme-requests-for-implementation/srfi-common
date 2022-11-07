@@ -1,17 +1,5 @@
 ;;;; Generate "index.html" pages, etc. for SRFIs.
 
-(define (concat . elements)
-  (with-output-to-string
-    (lambda () (for-each display elements))))
-
-(define (write-org file sxml)
-  (call-with-output-file file
-    (lambda (port) (sxml-display-as-org sxml port))))
-
-(define (write-html file sxml)
-  (call-with-output-file file
-    (lambda (port) (sxml-display-as-html sxml port #true))))
-
 (define (faq-anchor-template description name)
   `(a (@ (href ,(concat "/srfi-faq.html#" name))) ,description))
 
@@ -475,54 +463,9 @@
 				  (value
 				   ,(concat name "@srfi.schemers.org")))))))))
 
-(define (srfi-date-to-show srfi)
-  (case (srfi-status srfi)
-    ((draft) (srfi-draft-date srfi))
-    ((final) (srfi-done-date srfi))
-    ((withdrawn) (srfi-done-date srfi))
-    (else (error "Unknown status."))))
-
 (define (keyword->link keyword)
   `(a (@ (href ,(concat "https://srfi.schemers.org/?keywords=" keyword)))
       ,(keyword->name keyword)))
-
-(define (comma-list elements)
-  (cond ((null? elements) '())
-	((null? (cdr elements)) elements)
-	(else
-	 (let next ((accumulator '())
-		    (rest (reverse (cdr elements))))
-	   (if (null? rest)
-	       (cons (car elements) accumulator)
-	       (next (cons* ", " (car rest) accumulator)
-		     (cdr rest)))))))
-
-(define (english-list elements)
-  "Return a list constructed by appending the elements of `elements',
-separating them with \", \" except for the last pair, which should be separated
-by \" and\" if there are only two elements and \", and\" otherwise."
-  (cond ((null? elements) '())
-	((null? (cdr elements)) elements)
-	((null? (cddr elements)) `(,(car elements) " and " ,(cadr elements)))
-	(else
-	 (let-values (((body tail)
-		       (split-at elements (- (length elements) 2))))
-	   (let next ((accumulator '())
-		      (rest body))
-	     (if (null? rest)
-		 (reverse (cons* (cadr tail) ", and " (car tail) accumulator))
-		 (next (cons* ", " (car rest) accumulator)
-		       (cdr rest))))))))
-
-(define (format-srfi-authors authors)
-  (english-list
-   (map (lambda (author)
-          (let ((author-name (car author)))
-            (if (null? (cdr author))
-                author-name
-                (let ((author-role (cadr author)))
-                  (concat author-name " (" author-role ")")))))
-        authors)))
 
 ;; This generates the "index.html" that is used as a landing page for an
 ;; individual SRFI.
@@ -547,7 +490,7 @@ by \" and\" if there are only two elements and \", and\" otherwise."
     (write-html (path-append (srfi-dir number) "index.html")
       (index-template
        abstract
-       (format-srfi-authors authors)
+       (srfi-format-authors authors)
        (or (srfi-based-on srfi) "")
        date
        archives
@@ -571,7 +514,7 @@ by \" and\" if there are only two elements and \", and\" otherwise."
 	 (authors (srfi-authors srfi)))
     (write-org (path-append (srfi-dir number) "README.org")
       (readme-template
-       (format-srfi-authors authors)
+       (srfi-format-authors authors)
        based-on
        (comma-list (map keyword->link keywords))
        library-name-block
@@ -585,13 +528,6 @@ by \" and\" if there are only two elements and \", and\" otherwise."
 
 (define (write-srfi-readmes)
   (for-each write-single-srfi-readme (srfi-list)))
-
-(define (status->name status)
-  (case status
-    ((draft) "Draft")
-    ((final) "Final")
-    ((withdrawn) "Withdrawn")
-    (else (error "Unknown status."))))
 
 (define (srfi-anchor-template srfi)
   (let ((number (srfi-number srfi))
@@ -617,11 +553,11 @@ by \" and\" if there are only two elements and \", and\" otherwise."
 (define (srfi-card-template srfi)
   (let* ((number (srfi-number srfi))
 	 (abstract (srfi-abstract-raw number))
-	 (authors (format-srfi-authors (srfi-authors srfi)))
+	 (authors (srfi-format-authors (srfi-authors srfi)))
 	 (based-on (or (srfi-based-on srfi) ""))
 	 (date (srfi-date-to-show srfi))
 	 (status (srfi-status srfi))
-	 (date-type (status->name status))
+	 (date-type (srfi-status->name status))
 	 (keywords (srfi-keywords srfi))
 	 (keyword-links (comma-list (map keyword->link keywords)))
 	 (keyword-values (string-join (map symbol->string keywords) ","))

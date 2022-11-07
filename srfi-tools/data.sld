@@ -9,7 +9,8 @@
           srfi-number
           srfi-status
           srfi-status-string
-          srfi-title
+          srfi-status->name
+	  srfi-title
           srfi-authors
           srfi-based-on
           srfi-see-also
@@ -21,6 +22,7 @@
           srfi-draft?
           srfi-final?
           srfi-date-of-last-update
+	  srfi-date-to-show
 
           srfi-author-name
           srfi-author-role

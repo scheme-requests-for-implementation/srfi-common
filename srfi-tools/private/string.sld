@@ -28,13 +28,17 @@
           string-fold
           string-fold-right
           string-filter)
-  (export string-split
+  (export comma-list
+	  concat
+	  english-list
+	  string-split
           string-join-english
           string->slug
           unique-string-accumulator
           url-hexify-string)
   (import (scheme base)
           (scheme char)
+	  (scheme write)
           (srfi-tools private list)
           (srfi-tools private string-shim))
   (begin
@@ -71,25 +75,29 @@
             (thunk))
           (get-output-string port))))
 
+    (define (english-list elements)
+      "Return a list constructed by appending the elements of `elements',
+separating them with \", \" except for the last pair, which should be separated
+by \" and\" if there are only two elements and \", and\" otherwise."
+      (cond ((null? elements) '())
+	    ((null? (cdr elements)) elements)
+	    ((null? (cddr elements)) `(,(car elements) " and " ,(cadr elements)))
+	    (else
+	     (let-values (((body tail)
+			   (split-at elements (- (length elements) 2))))
+	       (let next ((accumulator '())
+			  (rest body))
+		 (if (null? rest)
+		     (reverse (cons* (cadr tail) ", and " (car tail) accumulator))
+		     (next (cons* ", " (car rest) accumulator)
+			   (cdr rest))))))))
+
     (define (string-join-english string-list)
       "Return a string constructed by appending the elements of
 `string-list', separating them with \", \" except for the last pair,
 which should be separated by \" and\" if there are only two elements
 and \", and\" otherwise."
-      (case (length string-list)
-        ((0) "")
-        ((1) (first string-list))
-        ((2) (string-append (first string-list) " and " (second string-list)))
-        (else (with-output-to-string
-                (lambda ()
-                  (let next ((remaining string-list))
-                    (write-string (first remaining))
-                    (cond ((not (null? (cddr remaining)))
-                           (write-string ", ")
-                           (next (cdr remaining)))
-                          (else
-                           (write-string ", and ")
-                           (write-string (second remaining))))))))))
+      (apply string-append (english-list string-list)))
 
     ;; "Foo bar/baz!" -> "foo-bar-baz"
     (define (string->slug str)
@@ -141,4 +149,19 @@ and \", and\" otherwise."
               (when (< i (bytevector-length bytes))
                 (let ((byte (bytevector-u8-ref bytes i)))
                   (write-byte-safely byte)
-                  (loop (+ i 1)))))))))))
+                  (loop (+ i 1)))))))))
+
+    (define (concat . elements)
+      (with-output-to-string
+	(lambda () (for-each display elements))))
+
+    (define (comma-list elements)
+      (cond ((null? elements) '())
+	    ((null? (cdr elements)) elements)
+	    (else
+	     (let next ((accumulator '())
+			(rest (reverse (cdr elements))))
+	       (if (null? rest)
+		   (cons (car elements) accumulator)
+		   (next (cons* ", " (car rest) accumulator)
+			 (cdr rest)))))))))

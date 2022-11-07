@@ -170,6 +170,13 @@
 (define (srfi-status-string srfi)
   (symbol->string (srfi-status srfi)))
 
+(define (srfi-status->name status)
+  (case status
+    ((draft) "Draft")
+    ((final) "Final")
+    ((withdrawn) "Withdrawn")
+    (else (error "Unknown status."))))
+
 (define (srfi-draft? srfi)
   (eqv? (srfi-status srfi) 'draft))
 
@@ -179,6 +186,13 @@
 (define (srfi-date-of-last-update srfi)
   (or (srfi-done-date srfi)
       (srfi-draft-date srfi)))
+
+(define (srfi-date-to-show srfi)
+  (case (srfi-status srfi)
+    ((draft) (srfi-draft-date srfi))
+    ((final) (srfi-done-date srfi))
+    ((withdrawn) (srfi-done-date srfi))
+    (else (error "Unknown status."))))
 
 ;;
 

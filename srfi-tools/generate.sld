@@ -7,7 +7,6 @@
 	  write-srfi-readmes)
   (import (scheme base)
 	  (scheme file)
-	  (scheme write)
 
 	  (srfi-tools private command)
 	  (srfi-tools private html-writer)

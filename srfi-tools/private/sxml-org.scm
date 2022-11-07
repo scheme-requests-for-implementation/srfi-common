@@ -50,3 +50,7 @@
 		(else (for-each lp sxml)))))
        ((null? sxml))
        (else (display sxml out))))))
+
+(define (write-org file sxml)
+  (call-with-output-file file
+    (lambda (port) (sxml-display-as-org sxml port))))
