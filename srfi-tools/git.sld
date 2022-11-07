@@ -7,6 +7,7 @@
           (scheme file)
           (srfi-tools private command)
           (srfi-tools private format)
+          (srfi-tools private list)
           (srfi-tools private port)
           (srfi-tools private os)
           (srfi-tools data)
@@ -30,6 +31,15 @@
     (define (in-git-dir?)
       (run-program/get-boolean '("git" "rev-parse" "--git-dir")))
 
+    (define (git-remote-default-branch)
+      (let ((head (run-program/get-output-string
+                   '("git" "symbolic-ref" "--short"
+                     "refs/remotes/origin/HEAD"))))
+        (or (find (lambda (branch)
+                    (string=? head (string-append "origin/" branch "\n")))
+                  '("master" "main"))
+            (error "Default branch is neither 'master' nor 'main'."))))
+
     (define (srfi-clone num)
       (let ((dir (srfi-dir num)))
         (ensure-directory dir)
@@ -41,11 +51,16 @@
            (run-program '("git" "init"))
            (run-program `("git" "remote" "add" "origin"
                           ,(srfi-git-https-url num)))
-           (run-program '("git" "add" "."))
-           (run-program '("git" "pull"
-                          "--autostash"
-                          "--set-upstream"
-                          "origin" "master"))
+           (run-program '("git" "fetch" "origin"))
+           (run-program '("git" "remote" "set-head" "origin" "--auto"))
+           (let ((branch (git-remote-default-branch)))
+             (run-program `("git" "symbolic-ref" "HEAD"
+                            ,(string-append "refs/heads/" branch)))
+             (run-program '("git" "add" "."))
+             (run-program `("git" "pull"
+                            "--autostash"
+                            "--set-upstream"
+                            "--" "origin" ,branch)))
            (write-line dir)))))
 
     (define-command (clone num)
