@@ -47,12 +47,12 @@
               (srfi-url srfi)
               (srfi-format-authors (srfi-authors srfi))
               (iso-date->rss-time (srfi-date-of-last-update srfi))
-              `("SRFI "
-                ,n
-                " is now in "
-                (em ,(srfi-status srfi))
-                " status."
-                (blockquote ,@(srfi-abstract-sxml n))))))
+              (sxml->xml `("SRFI "
+			  ,n
+			  " is now in "
+			  (em ,(srfi-status srfi))
+			  " status."
+			  (blockquote ,@(srfi-abstract-sxml n)))))))
 
 (define (srfi-rss-sxml)
   (define (srfi-time srfi)

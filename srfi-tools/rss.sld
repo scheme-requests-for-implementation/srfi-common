@@ -4,6 +4,7 @@
   (import (scheme base)
           (scheme file)
           (srfi 19)
+	  (srfi-tools private html-writer)
           (srfi-tools private list)
           (srfi-tools private format)
           (srfi-tools private time)

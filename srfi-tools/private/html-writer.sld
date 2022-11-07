@@ -2,6 +2,7 @@
   (export sxml-display-as-html
           sxml-display-as-text
           html-escape
+	  sxml->xml
 	  write-html)
   (import (scheme base)
 	  (scheme file)
