@@ -97,7 +97,7 @@ by \" and\" if there are only two elements and \", and\" otherwise."
 `string-list', separating them with \", \" except for the last pair,
 which should be separated by \" and\" if there are only two elements
 and \", and\" otherwise."
-      (apply string-append (english-list string-list)))
+      (string-concatenate (english-list string-list)))
 
     ;; "Foo bar/baz!" -> "foo-bar-baz"
     (define (string->slug str)
