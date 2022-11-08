@@ -9,7 +9,8 @@
           (scheme file)
 
           (srfi-tools private command)
-          (srfi-tools private list)
+          (srfi-tools private file)
+	  (srfi-tools private list)
           (srfi-tools private port)
           (srfi-tools private pretty-print)
           (srfi-tools private string)
