@@ -66,7 +66,7 @@
      (rss-channel "Scheme Requests for Implementation"
                   "https://srfi.schemers.org/"
                   "Updates to SRFI documents"
-                  "https://srfi.schemers.org/rss"
+                  "https://srfi.schemers.org/srfi.rss"
                   "en-US"
                   (map srfi-item srfis)))))
 
