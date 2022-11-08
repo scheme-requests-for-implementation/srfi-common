@@ -29,12 +29,11 @@
         "WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."))
 
     (define (srfi-license-lines who)
-      (append (list (string-append "Copyright (C) " who "."))
-              mit-license-boilerplate))
+      (cons (string-append "Copyright (C) " who ".")
+            mit-license-boilerplate))
 
     (define (srfi-license-string who)
-      (string-join (append (srfi-license-lines who) (list ""))
-                   "\n"))
+      (string-join-lines (srfi-license-lines who)))
 
     (define-command (generate-license who)
       "Generate the standard MIT License and copyright message."

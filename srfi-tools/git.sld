@@ -4,7 +4,6 @@
           srfi-clone
           srfi-pull)
   (import (scheme base)
-          (scheme file)
           (srfi-tools private command)
           (srfi-tools private format)
           (srfi-tools private list)

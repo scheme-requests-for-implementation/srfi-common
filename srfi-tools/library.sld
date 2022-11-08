@@ -2,7 +2,7 @@
   (export srfi-library-names-sxml
           srfi-generate-library-names)
   (import (scheme base)
-          (scheme file)
+
           (srfi-tools private list)
           (srfi-tools private format)
           (srfi-tools private path)

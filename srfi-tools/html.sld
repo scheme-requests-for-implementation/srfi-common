@@ -11,7 +11,7 @@
           srfi-link-html
           srfi-link-md)
   (import (scheme base)
-          (scheme file)
+
           (srfi-tools private list)
           (srfi-tools private string)
           (srfi-tools private hash-table)

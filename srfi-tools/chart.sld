@@ -1,7 +1,6 @@
 (define-library (srfi-tools chart)
   (export srfi-generate-chart)
   (import (scheme base)
-	  (scheme file)
 	  (scheme write)
 	  (srfi-tools data)
 	  (srfi-tools path)

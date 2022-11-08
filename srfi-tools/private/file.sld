@@ -1,6 +1,9 @@
 (define-library (srfi-tools private file)
-  (export with-input-from-binary-file
+  (export file-exists?
+          with-input-from-binary-file
+          with-input-from-text-file
           with-output-to-binary-file
+          with-output-to-text-file
           read-text-file
           write-text-file
           dump-file)
@@ -16,20 +19,27 @@
           (parameterize ((current-input-port port))
             (thunk)))))
 
-    (define (with-output-to-binary-file filename thunk)
-      (let ((newfilename (string-append filename ".new")))
-        (call-with-port (open-binary-output-file newfilename)
+    (define with-input-from-text-file with-input-from-file)
+
+    (define (with-output-to-*-file open file thunk)
+      (let ((new-file (string-append file ".new")))
+        (call-with-port (open new-file)
           (lambda (port)
             (parameterize ((current-output-port port))
               (thunk))))
-        (rename-file newfilename filename)))
+        (rename-file new-file file)))
+
+    (define (with-output-to-binary-file file thunk)
+      (with-output-to-*-file open-binary-output-file file thunk))
+
+    (define (with-output-to-text-file file thunk)
+      (with-output-to-*-file open-output-file file thunk))
 
     (define (read-text-file filename)
       (with-input-from-file filename read-all-chars))
 
-    (define (write-text-file filename string)
-      (with-output-to-file filename
-        (lambda () (write-string string))))
+    (define (write-text-file file string)
+      (with-output-to-text-file file (lambda () (write-string string))))
 
     (define (dump-file filename)
       (call-with-port (open-binary-input-file filename)

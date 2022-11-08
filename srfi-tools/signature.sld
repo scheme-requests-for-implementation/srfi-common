@@ -19,7 +19,7 @@
   (begin
 
     (define (srfi-signatures-data)
-      (with-input-from-file (srfi-signatures-file)
+      (with-input-from-text-file (srfi-signatures-file)
         read-all))
 
     (define (signature-source sig)

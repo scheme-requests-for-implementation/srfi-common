@@ -18,7 +18,7 @@
 			       i
 			       (+ 1 (vector-ref counts i)))))
 	      dates)
-    (with-output-to-file pathname
+    (with-output-to-text-file pathname
       (lambda ()
 	(do ((julian start (+ 1 julian))
 	     (i 0 (+ 1 i)))
@@ -49,8 +49,7 @@
 		   (string-copy original end))))
 
 (define (srfi-generate-chart today)
-  (with-output-to-file "/tmp/srfi.gnuplot"
-    (lambda () (write-string (gnuplot-commands today))))
+  (write-text-file "/tmp/srfi.gnuplot" (gnuplot-commands today))
   (write-srfi-data today)
   (run-program '("gnuplot" "/tmp/srfi.gnuplot"))
   (run-program `("cp" "-p" "/tmp/srfi.svg" ,(srfi-common-dir))))

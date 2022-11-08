@@ -1,8 +1,6 @@
 (define-library (srfi-tools checklink)
   (import (scheme base)
-	  (scheme file)
 	  (scheme write)
-	  (srfi-tools path)
 	  (srfi-tools private command)
 	  (srfi-tools private os))
   (include "checklink.scm"))

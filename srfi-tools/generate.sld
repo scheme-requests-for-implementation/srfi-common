@@ -6,7 +6,6 @@
 	  write-srfi-list-subscribe-page
 	  write-srfi-readmes)
   (import (scheme base)
-	  (scheme file)
 
 	  (srfi-tools private command)
 	  (srfi-tools private html-writer)
