@@ -32,6 +32,7 @@
 	  concat
 	  english-list
 	  string-split
+          string-join-lines
           string-join-english
           string->slug
           unique-string-accumulator
@@ -74,6 +75,12 @@
           (parameterize ((current-output-port port))
             (thunk))
           (get-output-string port))))
+
+    (define (string-join-lines lines)
+      (with-output-to-string
+        (lambda ()
+          (for-each (lambda (line) (write-string line) (newline))
+                    lines))))
 
     (define (english-list elements)
       "Return a list constructed by appending the elements of `elements',

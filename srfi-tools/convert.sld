@@ -4,8 +4,8 @@
   (import (scheme base)
           (scheme char)
           (scheme cxr)
-          (scheme file)
           (scheme write)
+
           (srfi-tools private list)
           (srfi-tools private string)
           (srfi-tools private command)

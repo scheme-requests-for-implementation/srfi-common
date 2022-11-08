@@ -4,11 +4,12 @@
           pre-srfi-list
           pre-srfi-new)
   (import (scheme base)
-          (scheme file)
+          (srfi-tools private file)
           (srfi-tools private list)
           (srfi-tools private path)
           (srfi-tools private port)
           (srfi-tools private format)
+          (srfi-tools private string)
           (srfi-tools private os)
           (srfi-tools private command)
           (srfi-tools data)
@@ -71,8 +72,7 @@
 
     (define (prepare-file filename lines)
       (unless (file-exists? filename)
-        (with-output-to-file filename
-          (lambda () (for-each write-line lines)))))
+        (write-text-file filename (string-join-lines lines))))
 
     (define (pre-srfi-new name)
       (let ((dir (pre-srfi-dir name)))

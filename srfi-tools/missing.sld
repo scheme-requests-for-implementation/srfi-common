@@ -1,8 +1,8 @@
 (define-library (srfi-tools missing)
   (import (scheme base)
           (scheme char)
-          (scheme file)
           (scheme write)
+
           (srfi-tools private list)
           (srfi-tools private string)
           (srfi-tools private hash-table)

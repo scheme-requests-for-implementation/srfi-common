@@ -11,6 +11,7 @@
           (scheme file)
           (scheme process-context)
           (srfi-tools private string)
+          (srfi-tools private file)
           (srfi-tools private port)
           (srfi-tools private error)
           (srfi-tools private os))
@@ -63,9 +64,7 @@
           (user-error "PAGER environment variable not set."))
         (let ((rendered (render-web-page-as-plain-text url))
               (temp-file (make-temp-file-name)))
-          (with-output-to-file temp-file
-            (lambda ()
-              (write-string rendered)))
+          (write-text-file temp-file rendered)
           (run-program (list pager temp-file)))))
 
     (define (download-url-into-file url filename)

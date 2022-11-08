@@ -1,6 +1,5 @@
 (define-library (srfi-tools tar)
   (import (scheme base)
-          (scheme file)
           (srfi-tools private list)
           (srfi-tools private string)
           (srfi-tools private port)

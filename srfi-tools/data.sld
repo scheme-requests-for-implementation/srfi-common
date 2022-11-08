@@ -53,7 +53,6 @@
           (scheme case-lambda)
           (scheme char)
           (scheme cxr)
-          (scheme file)
           (scheme read)
 	  (srfi-tools private error)
 	  (srfi-tools private list)

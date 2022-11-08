@@ -10,7 +10,6 @@
           display-two-column-table
           copy-binary-port)
   (import (scheme base)
-          (scheme file)
           (scheme read)
           (scheme write)
           (srfi-tools private list)

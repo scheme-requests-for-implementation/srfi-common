@@ -115,8 +115,13 @@
    (srfi-attribute alist 'done-date #f 'optional)
    (srfi-attribute alist 'draft-date)))
 
-(define (read-srfi-data pathname)
-  (map alist->srfi (with-input-from-file pathname read-all)))
+(define (srfi-data)
+  (with-input-from-text-file (srfi-data-file) read-all))
+
+(define-command (data)
+  "Display the SRFI database, which is an S-expression."
+  (dump-file (srfi-data-file))
+  (newline))
 
 ;; (define srfi-assoc
 ;;   (association-procedure = srfi/number))
@@ -132,7 +137,7 @@
   (let ((srfis #f))
     (lambda ()
       (or srfis
-          (begin (set! srfis (read-srfi-data (srfi-data-file)))
+          (begin (set! srfis (map alist->srfi (srfi-data)))
                  srfis)))))
 
 (define (srfi-by-number num)
@@ -245,14 +250,6 @@
                           srfi-date-of-last-update))
 
 ;;
-
-(define (srfi-data)
-  (with-input-from-file (srfi-data-file) read-all))
-
-(define-command (data)
-  "Display the SRFI database, which is an S-expression."
-  (dump-file (srfi-data-file))
-  (newline))
 
 (define-command (list)
   "Display a list of all the SRFIs."
