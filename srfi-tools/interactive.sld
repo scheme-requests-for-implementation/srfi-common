@@ -1,16 +1,18 @@
 (define-library (srfi-tools interactive)
   (export srfi-open-dir
-          srfi-open
-          srfi-open-landing
+          srfi-open-home-dir
+          srfi-open-file
+          srfi-open-landing-file
           srfi-browse
-          srfi-browse-url
+          srfi-browse-file
           srfi-browse-landing
-          srfi-browse-landing-url
-          srfi-browse-github-url
-          srfi-browse-home-url
+          srfi-browse-landing-file
+          srfi-browse-github
+          srfi-browse-home
+          srfi-lucky
           srfi-pager
           srfi-edit
-          srfi-browse-mail-archive-url
+          srfi-browse-mail
           srfi-send-mail)
   (import (scheme base)
           (scheme char)
@@ -35,76 +37,75 @@
       (desktop-open (srfi-dir num)))
 
     (define-command (open-dir num)
-      "Open the home directory for SRFI <num>."
+      "Open home directory for SRFI <num>."
       (srfi-open-dir (parse-srfi-number num)))
 
     (define (srfi-open-home-dir)
-      "Open the home directory for all SRFIs."
       (desktop-open (srfi-home-dir)))
 
     (define-command (open-home-dir)
-      "Open the home directory for all SRFIs."
+      "Open home directory for all SRFIs."
       (srfi-open-home-dir))
 
     ;;
 
-    (define (srfi-open num)
+    (define (srfi-open-file num)
       (desktop-open (srfi-html-file num)))
 
-    (define-command (open num)
-      "Open document for SRFI <num>."
-      (srfi-open (parse-srfi-number num)))
+    (define-command (open-file num)
+      "Open local copy of SRFI document <num>."
+      (srfi-open-file (parse-srfi-number num)))
 
-    (define (srfi-open-landing num)
+    (define (srfi-open-landing-file num)
       (desktop-open (srfi-landing-html-file num)))
 
-    (define-command (open-landing num)
-      "Open landing page for SRFI <num>."
-      (srfi-open-landing (parse-srfi-number num)))
+    (define-command (open-landing-file num)
+      "Open local copy of SRFI landing page <num>."
+      (srfi-open-landing-file (parse-srfi-number num)))
 
     ;;
 
     (define (srfi-browse num)
-      (browse-url (srfi-html-file num)))
-
-    (define-command (browse num)
-      "Browse local document for SRFI <num>."
-      (srfi-browse (parse-srfi-number num)))
-
-    (define (srfi-browse-url num)
       (browse-url (srfi-html-url num)))
 
-    (define-command (browse-url num)
-      "Browse SRFI <num> on SRFI site."
-      (srfi-browse-url (parse-srfi-number num)))
+    (define-command (browse num)
+      "Browse SRFI document <num> on SRFI site."
+      (srfi-browse (parse-srfi-number num)))
+
+    (define (srfi-browse-file num)
+      (browse-url (srfi-html-file num)))
+
+    (define-command (browse-file num)
+      "Browse local copy of SRFI document <num>."
+      (srfi-browse-file (parse-srfi-number num)))
 
     (define (srfi-browse-landing num)
-      (browse-url (srfi-landing-html-file num)))
-
-    (define-command (browse-landing num)
-      "Browse locaol landing page for SRFI <num>."
-      (srfi-browse-landing (parse-srfi-number num)))
-
-    (define (srfi-browse-landing-url num)
       (browse-url (srfi-landing-url num)))
 
-    (define-command (browse-landing-url num)
-      "Browse landing page for SRFI <num> on SRFI site."
-      (srfi-browse-landing-url (parse-srfi-number num)))
+    (define-command (browse-landing num)
+      "Browse SRFI landing page <num> on SRFI site."
+      (srfi-browse-landing (parse-srfi-number num)))
 
-    (define (srfi-browse-github-url num)
+    (define (srfi-browse-landing-file num)
+      (browse-url (srfi-landing-html-file num)))
+
+    (define-command (browse-landing-file num)
+      "Browse local copy of SRFI landing page <num>."
+      (srfi-browse-landing-file (parse-srfi-number num)))
+
+    (define (srfi-browse-github num)
       (browse-url (srfi-github-url num)))
 
-    (define-command (browse-github-url num)
+    (define-command (browse-github num)
       "Browse GitHub page for SRFI <num>."
-      (srfi-browse-github-url (parse-srfi-number num)))
+      (srfi-browse-github (parse-srfi-number num)))
 
-    (define (srfi-browse-home-url)
+    (define (srfi-browse-home)
       (browse-url (srfi-home-url)))
 
-    (define-command (browse-home-url)
-      "Browse the home page of the SRFI project."
-      (srfi-browse-home-url))
+    (define-command (browse-home)
+      "Browse home page of the SRFI project."
+      (srfi-browse-home))
 
     (define (srfi-lucky words)
       (let ((matches (srfi-search words)))
@@ -121,7 +122,7 @@
     (add-command!
      "lucky"
      '(word ...)
-     "Browse the first SRFI whose title matches all <word>s."
+     "Browse first SRFI whose title matches all <word>s."
      1
      #f
      (lambda words (srfi-lucky words)))
@@ -132,7 +133,7 @@
       (run-pager-on-url (srfi-html-file num)))
 
     (define-command (pager num)
-      "Run pager on local file for SRFI <num>."
+      "Run pager on local copy of SRFI document <num>."
       (srfi-pager (parse-srfi-number num)))
 
     ;;
@@ -141,17 +142,17 @@
       (edit-text-file (srfi-html-file num)))
 
     (define-command (edit num)
-      "Edit SRFI <num>."
+      "Edit local copy of SRFI document <num>."
       (srfi-edit (parse-srfi-number num)))
 
     ;;
 
-    (define (srfi-browse-mail-archive-url num)
+    (define (srfi-browse-mail num)
       (browse-url (srfi-mail-archive-url num)))
 
-    (define-command (browse-mail-archive-url num)
-      "Browse the email archive for SRFI <num>."
-      (srfi-browse-mail-archive-url (parse-srfi-number num)))
+    (define-command (browse-mail num)
+      "Browse mailing list archive for SRFI <num>."
+      (srfi-browse-mail (parse-srfi-number num)))
 
     (define (srfi-send-mail num)
       (desktop-open (srfi-mailto-url num)))
