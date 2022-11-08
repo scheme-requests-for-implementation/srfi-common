@@ -36,15 +36,11 @@
   (let ((n (srfi-number srfi)))
     (format "https://srfi.schemers.org/srfi-~a" n)))
 
-(define (srfi-url srfi)
-  (let ((n (srfi-number srfi)))
-    (srfi-html-url n)))
-
 (define (srfi-item srfi)
   (let ((n (srfi-number srfi)))
     (rss-item (srfi-guid srfi)
               (format "SRFI ~a: ~a" n (srfi-title srfi))
-              (srfi-url srfi)
+              (srfi-landing-url (srfi-number srfi))
               (srfi-format-authors (srfi-authors srfi))
               (iso-date->rss-time (srfi-date-of-last-update srfi))
               (sxml->xml `("SRFI "
