@@ -58,21 +58,19 @@
         html-file))
 
     (define (emit html-file sxml)
-      (let ((html (with-output-to-string
-                    (lambda ()
-                      (write-string "<!doctype html>")
-                      (sxml-display-as-html sxml)))))
-        (call-with-output-file html-file
-          (lambda (out) (write-string html out)))
-        (edisp "Running HTML Tidy on " html-file)
-        (run-program/get-boolean
-         (list "tidy"
-               "-q"
-               "-indent"
-               "-modify"
-               "--tidy-mark" "no"
-               "--" html-file))
-        (values)))
+      (write-html-file html-file sxml)
+      (edisp "Running HTML Tidy on " html-file)
+      ;; `run-program/get-boolean` avoids raising an exception when
+      ;; the exit code is 1. HTML Tidy uses that exit code when there
+      ;; are warnings. The warnings are harmless in this case.
+      (run-program/get-boolean
+       (list "tidy"
+             "-q"
+             "-indent"
+             "-modify"
+             "--tidy-mark" "no"
+             "--" html-file))
+      (values))
 
     (define (srfi-from-asciidoc source-file)
       (let* ((html-file (source-file->html-file source-file ".adoc"))
@@ -81,7 +79,7 @@
                           "-b" "xhtml5"
                           "-o" "-"
                           "--" source-file)))
-             (sxml (html->sxml (open-input-string html)))
+             (sxml (call-with-port (open-input-string html) html->sxml))
              (sxml (sxml-cleanup (find-html-tag sxml))))
         (emit html-file sxml)))
 
@@ -91,7 +89,7 @@
                     (list "pandoc"
                           "-t" "html5"
                           "--" source-file)))
-             (sxml (html->sxml (open-input-string html))))
+             (sxml (call-with-port (open-input-string html) html->sxml)))
         (emit html-file sxml)))
 
     (define (srfi-from-markdown source-file)

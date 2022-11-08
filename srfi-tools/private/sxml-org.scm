@@ -51,6 +51,6 @@
        ((null? sxml))
        (else (display sxml out))))))
 
-(define (write-org file sxml)
+(define (write-org-file file sxml)
   (call-with-output-file file
     (lambda (port) (sxml-display-as-org sxml port))))

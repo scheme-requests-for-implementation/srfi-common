@@ -34,7 +34,7 @@
                  (when (and href (string-prefix? "#" href))
                    (let ((anchor (substring href 1 (string-length href))))
                      (hash-table-set! hrefs anchor #t)))))))
-         (call-with-input-file html-file html->sxml))
+         (read-html-file html-file))
         (let loop ((hrefs (hash-table-keys hrefs)) (missing-names '()))
           (if (null? hrefs)
               (list-sort (lambda (a b) (string<? (string-downcase a)

@@ -1,7 +1,8 @@
 (define-library (srfi-tools private file)
   (export with-input-from-binary-file
           with-output-to-binary-file
-          file-contents-as-string
+          read-text-file
+          write-text-file
           dump-file)
   (import (scheme base)
           (scheme file)
@@ -23,8 +24,12 @@
               (thunk))))
         (rename-file newfilename filename)))
 
-    (define (file-contents-as-string filename)
+    (define (read-text-file filename)
       (with-input-from-file filename read-all-chars))
+
+    (define (write-text-file filename string)
+      (with-output-to-file filename
+        (lambda () (write-string string))))
 
     (define (dump-file filename)
       (call-with-port (open-binary-input-file filename)

@@ -86,8 +86,7 @@
                           "table of contents" "copyright")))))
 
     (define (srfi-generate-toc html-file)
-      (let* ((html (with-input-from-file html-file read-all-chars))
-             (sxml (call-with-port (open-input-string html) html->sxml))
+      (let* ((sxml (read-html-file html-file))
              (hdgs (filter wanted-heading? (headings sxml))))
         (write-html-toc "  " (headings->tree hdgs))))
 

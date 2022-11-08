@@ -40,7 +40,7 @@
     (write-srfi-counts withdrawn-dates "/tmp/srfi-withdrawn-counts.txt" now)))
 
 (define (gnuplot-commands today)
-  (let* ((original (read-entire-file
+  (let* ((original (read-text-file
 		    (path-append (srfi-common-dir) "admin" "srfi.gnuplot")))
 	 (end (string-contains original "-12-31"))
 	 (start (- end (string-length "YYYY"))))

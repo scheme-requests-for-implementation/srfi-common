@@ -49,8 +49,7 @@
       (let ((file (path-append (srfi-common-dir) "library-names.html"))
             (sxml (srfi-library-names-sxml)))
         (disp "Writing " file)
-        (with-output-to-file file
-          (lambda () (sxml-display-as-html sxml)))))
+        (write-html-file file sxml)))
 
     (define-command (generate-library-names)
       "Display the SRFI 97 library names."
