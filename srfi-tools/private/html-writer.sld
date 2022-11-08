@@ -3,13 +3,13 @@
           sxml-display-as-text
           html-escape
 	  sxml->xml
-	  write-html)
+          write-html-file)
   (import (scheme base)
 	  (scheme file)
           (scheme write)
 	  (srfi 227))
   (include "chibi-sxml.scm")
   (begin
-    (define (write-html file sxml)
+    (define (write-html-file file sxml)
       (call-with-output-file file
 	(lambda (port) (sxml-display-as-html sxml port #true))))))

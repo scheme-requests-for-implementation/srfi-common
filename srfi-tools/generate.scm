@@ -490,7 +490,7 @@
 	 (status (srfi-status srfi))
 	 (title (srfi-title srfi))
 	 (authors (srfi-authors srfi)))
-    (write-html (path-append (srfi-dir number) "index.html")
+    (write-html-file (path-append (srfi-dir number) "index.html")
       (index-template
        abstract
        (srfi-format-authors authors)
@@ -515,7 +515,7 @@
 	 (status (srfi-status srfi))
 	 (title (srfi-title srfi))
 	 (authors (srfi-authors srfi)))
-    (write-org (path-append (srfi-dir number) "README.org")
+    (write-org-file (path-append (srfi-dir number) "README.org")
       (readme-template
        (srfi-format-authors authors)
        based-on
@@ -599,7 +599,7 @@
 
 ;; This generates the "index.html" that is used as the SRFI home page.
 (define (write-srfi-home-page)
-  (write-html (path-append (srfi-common-dir) "index.html")
+  (write-html-file (path-append (srfi-common-dir) "index.html")
     (home-template (keyword-options)
 		   (map srfi-card-template (reverse (srfi-list))))))
 
@@ -691,7 +691,7 @@
      ".")))
 
 (define (write-srfi-list-subscribe-page)
-  (write-html (path-append (srfi-common-dir) "srfi-list-subscribe.html")
+  (write-html-file (path-append (srfi-common-dir) "srfi-list-subscribe.html")
     (srfi-list-subscribe-template
      schemecomm
      schemedoc

@@ -1,7 +1,6 @@
 (define-library (srfi-tools private port)
   (export read-all
           read-all-chars
-	  read-entire-file
           with-output-to-string
           write-line
           written
@@ -32,9 +31,6 @@
               whole
               (loop (string-append whole part)
                     (* attempt 2))))))
-
-    (define (read-entire-file pathname)
-      (with-input-from-file pathname read-all-chars))
 
     (define (with-output-to-string thunk)
       (call-with-port (open-output-string)

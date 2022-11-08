@@ -6,6 +6,7 @@
 	  (srfi-tools data)
 	  (srfi-tools path)
 	  (srfi-tools private command)
+	  (srfi-tools private file)
 	  (srfi-tools private list)
 	  (srfi-tools private os)
 	  (srfi-tools private path)

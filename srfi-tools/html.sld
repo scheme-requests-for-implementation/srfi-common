@@ -29,20 +29,20 @@
   (begin
 
     (define (srfi-landing-sxml num)
-      (call-with-input-file (srfi-landing-html-file num) html->sxml))
+      (read-html-file (srfi-landing-html-file num)))
 
     (define (srfi-landing-html num)
-      (file-contents-as-string (srfi-landing-html-file num)))
+      (read-text-file (srfi-landing-html-file num)))
 
     (define-command (landing-html num)
       "Display SRFI landing page for SRFI <num>."
       (write-string-about-srfi srfi-landing-html num))
 
     (define (srfi-sxml num)
-      (call-with-input-file (srfi-html-file num) html->sxml))
+      (read-html-file (srfi-html-file num)))
 
     (define (srfi-html num)
-      (file-contents-as-string (srfi-html-file num)))
+      (read-text-file (srfi-html-file num)))
 
     (define-command (html num)
       "Display HTML of SRFI document for SRFI <num>."
@@ -56,15 +56,14 @@
       (write-string-about-srfi srfi-text num))
 
     (define (srfi-abstract-raw num)
-      `(@raw ,(read-entire-file (srfi-abstract-html-file num))))
+      `(@raw ,(read-text-file (srfi-abstract-html-file num))))
 
     (define (srfi-abstract-sxml num)
       (define skip-top cdr)
-      (skip-top
-       (call-with-input-file (srfi-abstract-html-file num) html->sxml)))
+      (skip-top (read-html-file (srfi-abstract-html-file num))))
 
     (define (srfi-abstract-html num)
-      (file-contents-as-string (srfi-abstract-html-file num)))
+      (read-text-file (srfi-abstract-html-file num)))
 
     (define-command (abstract-html num)
       "Display abstract for SRFI <num> as HTML."
