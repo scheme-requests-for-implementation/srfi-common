@@ -32,7 +32,10 @@
 	   (h1 (img (@ (class "srfi-logo")
 		       (src "srfi-logo.svg")
 		       (alt "SRFI surfboard logo")))
-	       "Scheme Requests for Implementation")
+	       "Scheme Requests for Implementation"
+	       (span (@ (class "rss-logo"))
+		     (a (@ (href "https://srfi.schemers.org/srfi.rss"))
+			(img (@ (alt "RSS") (src "https://srfi.schemers.org/rss.svg"))))))
 	   (p (@ (class "hide"))
 	      "SRFIs extend the Scheme programming language.  You can help.  "
 	      (a (@ (href "about.html")) "Learn more")

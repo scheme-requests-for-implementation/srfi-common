@@ -24,6 +24,11 @@ option {
 .posts h2 {
   margin-top: 0;
 }
+.rss-logo img {
+  float: right;
+  margin-left: 2em;
+  width: 1em;
+}
 select {
   border: none;
 }
