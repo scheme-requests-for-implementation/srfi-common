@@ -2088,7 +2088,7 @@
  (see-also 200 204)
  (keywords pattern-matching syntax)
  (draft-date "2022-11-10"))
-((number 242)
+#;((number 242)
  (status draft)
  (title "The CFG Language")
  (author "Marc Nieper-Wißkirchen")
