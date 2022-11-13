@@ -20,6 +20,7 @@ let options = {
   valueNames: [ "abstract",
                 "authors",
                 "date",
+                "library-name",
                 "name",
                 "number",
                 { name: "status", attr: "data-status" }
