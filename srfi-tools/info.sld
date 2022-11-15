@@ -1,13 +1,17 @@
 (define-library (srfi-tools info)
-  (export srfi-info)
+  (export srfi-info
+          srfi-paste)
   (import (scheme base)
+
           (srfi-tools private path)
           (srfi-tools private port)
           (srfi-tools private string)
           (srfi-tools private format)
           (srfi-tools private command)
+
           (srfi-tools data)
-          (srfi-tools html))
+          (srfi-tools html)
+          (srfi-tools url))
   (begin
 
     (define (srfi-info srfi)
@@ -38,4 +42,27 @@
 
     (define-command (info num)
       "Display a summary of SRFI <num>."
-      (write-string (srfi-info (parse-srfi-number num))))))
+      (write-string (srfi-info (parse-srfi-number num))))
+
+    (define (srfi-paste num)
+      (let ((title (srfi-title num))
+            (url (srfi-landing-url num)))
+        (with-output-to-string
+          (lambda ()
+            (disp)
+            (disp (format "SRFI ~a: ~a" num title))
+            (disp)
+            (disp (format "SRFI ~a (~a)" num title))
+            (disp)
+            (disp (format "<a href=\"~a\">SRFI ~a (~a)</a>" url num title))
+            (disp)
+            (disp "AsciiDoc:")
+            (disp (format "~a[SRFI ~a (~a)]" url num title))
+            (disp)
+            (disp "Markdown:")
+            (disp (format "[SRFI ~a (~a)](~a)" num title url))
+            (disp)))))
+
+    (define-command (paste num)
+      "Display things about SRFI <num> handy to copy and paste."
+      (write-string (srfi-paste (parse-srfi-number num))))))
