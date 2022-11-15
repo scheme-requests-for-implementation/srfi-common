@@ -61,6 +61,9 @@
             (disp)
             (disp "Markdown:")
             (disp (format "[SRFI ~a (~a)](~a)" num title url))
+            (disp)
+            (disp "Org:")
+            (disp (format "[[~a][~a (~a)]]" url num title))
             (disp)))))
 
     (define-command (paste num)
