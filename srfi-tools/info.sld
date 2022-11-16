@@ -11,6 +11,7 @@
 
           (srfi-tools data)
           (srfi-tools html)
+          (srfi-tools library)
           (srfi-tools url))
   (begin
 
@@ -51,8 +52,10 @@
           (lambda ()
             (disp)
             (disp (format "SRFI ~a: ~a" num title))
-            (disp)
             (disp (format "SRFI ~a (~a)" num title))
+            (disp)
+            (disp (srfi-r6rs-import num))
+            (disp (srfi-r7rs-import num))
             (disp)
             (disp (format "<a href=\"~a\">SRFI ~a (~a)</a>" url num title))
             (disp)

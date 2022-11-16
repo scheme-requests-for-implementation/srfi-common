@@ -2,6 +2,8 @@
   (export srfi-map-library-names
           srfi-library-names
           srfi-r6rs-imports
+          srfi-r6rs-import
+          srfi-r7rs-import
           srfi-library-names-sxml
           srfi-generate-library-names)
   (import (scheme base)
@@ -44,6 +46,12 @@
 
     (define (srfi-r6rs-imports)
       (srfi-map-library-names r6rs-import))
+
+    (define (srfi-r6rs-import srfi)
+      (r6rs-import (srfi-number srfi) (srfi-library-name srfi)))
+
+    (define (srfi-r7rs-import srfi)
+      (r7rs-import (srfi-number srfi) (srfi-library-name srfi)))
 
     (define-command (r6rs-imports)
       "List R6RS (import ...) for each SRFI (SRFI 97 and beyond)."
