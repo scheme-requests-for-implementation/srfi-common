@@ -33,27 +33,32 @@
         (with-input-from-binary-file
          tar
          (lambda ()
-           (let loop ()
+           (let loop ((match-count 0))
              (let ((entry (tar-read-entry)))
-               (unless (eof-object? entry)
-                 (let* ((raw-path (tar-entry-path entry))
-                        (path-parts (drop (string-split #\/ raw-path) 1))
-                        (path (apply path-append path-parts)))
-                   (cond ((and (tar-entry-file? entry)
-                               (not (null? path-parts))
-                               (match? path-parts))
-                          (disp "Unpacking " path)
-                          (ensure-directories-exist
-                           (apply path-append
-                                  (srfi-home-dir)
-                                  (drop-right path-parts 1)))
-                          (with-output-to-binary-file
-                           (path-append (srfi-home-dir) path)
-                           (lambda ()
-                             (write-bytevector (tar-read-data entry)))))
-                         (else
-                          (tar-skip-data entry))))
-                 (loop))))))))
+               (cond ((eof-object? entry)
+                      (when (zero? match-count)
+                        (disp "No files matched."))
+                      match-count)
+                     (else
+                      (let* ((raw-path (tar-entry-path entry))
+                             (path-parts (drop (string-split #\/ raw-path) 1))
+                             (path (apply path-append path-parts)))
+                        (cond ((and (tar-entry-file? entry)
+                                    (not (null? path-parts))
+                                    (match? path-parts))
+                               (disp "Unpacking " path)
+                               (ensure-directories-exist
+                                (apply path-append
+                                       (srfi-home-dir)
+                                       (drop-right path-parts 1)))
+                               (with-output-to-binary-file
+                                (path-append (srfi-home-dir) path)
+                                (lambda ()
+                                  (write-bytevector (tar-read-data entry))))
+                               (loop (+ match-count 1)))
+                              (else
+                               (tar-skip-data entry)
+                               (loop match-count))))))))))))
 
     (define (srfi-unpack-tar . numbers)
       (let ((stems (map srfi-num-stem numbers)))
