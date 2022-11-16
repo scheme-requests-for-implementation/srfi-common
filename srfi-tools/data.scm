@@ -278,21 +278,27 @@
   "List a few SRFIs with numbers around <num>."
   (write-srfi-list (srfi-near (parse-srfi-number num))))
 
+(define (srfi-age-in-days srfi)
+  (days-between (iso-date->date (srfi-draft-date srfi))
+                (current-date)))
+
+(define (srfi-format-age srfi)
+  (format "~a days" (srfi-age-in-days srfi)))
+
 (define (srfi-drafts)
   (filter srfi-draft? (srfi-list)))
 
-(define (srfi-format-age srfi)
-  (format "~a days"
-          (days-between (iso-date->date (srfi-draft-date srfi))
-                        (current-date))))
-
 (define-command (drafts)
   "Display a list of all the draft SRFIs."
-  (display-two-column-table
-   (map (lambda (srfi)
-          (cons (srfi-format srfi)
-                (srfi-format-age srfi)))
-        (srfi-drafts))))
+  (let-values (((older newer)
+                (partition (lambda (srfi) (>= (srfi-age-in-days srfi) 60))
+                           (srfi-drafts))))
+    (define (entry srfi)
+      (cons (srfi-format srfi) (srfi-format-age srfi)))
+    (define gap-entry
+      (cons "----" "--"))
+    (display-two-column-table
+     (append (map entry older) (list gap-entry) (map entry newer)))))
 
 (define (srfi-by get-strings query)
   (let ((query (string-downcase query)))

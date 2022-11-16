@@ -15,6 +15,7 @@
           fold
           remove
           last
+          partition
           split-at
 
           list-sort
@@ -31,7 +32,7 @@
                 any every append-map append-reverse cons* drop drop-right
                 take take-right
                 first second third
-                filter filter-map find fold remove last split-at))
+                filter filter-map find fold remove last partition split-at))
 
   (cond-expand
    ((or chibi cyclone gauche sagittarius)
