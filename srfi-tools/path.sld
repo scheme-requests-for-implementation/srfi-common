@@ -9,7 +9,9 @@
           srfi-dir
           srfi-html-file
           srfi-landing-html-file
-          srfi-abstract-html-file)
+          srfi-abstract-html-file
+          srfi-do
+          srfi-common-do)
   (import (scheme base)
           (srfi-tools private path)
           (srfi-tools private port)
@@ -81,4 +83,29 @@
 
     (define-command (abstract-html-file num)
       "Display the pathname of the landing page for SRFI <num>."
-      (write-line-about-srfi srfi-abstract-html-file num))))
+      (write-line-about-srfi srfi-abstract-html-file num))
+
+    (define (srfi-do num thunk)
+      (with-current-directory (srfi-dir num) thunk))
+
+    (add-command!
+     "do"
+     '(num program arg ...)
+     "Run <program> with <arg>s in the SRFI <num> directory."
+     2
+     #f
+     (lambda (num program . args)
+       (srfi-do (parse-srfi-number num)
+                (lambda () (run-program (cons program args))))))
+
+    (define (srfi-common-do thunk)
+      (with-current-directory (srfi-common-dir) thunk))
+
+    (add-command!
+     "common-do"
+     '(program arg ...)
+     "Run <program> with <arg>s in the srfi-common directory."
+     1
+     #f
+     (lambda (program . args)
+       (srfi-common-do (lambda () (run-program (cons program args))))))))
