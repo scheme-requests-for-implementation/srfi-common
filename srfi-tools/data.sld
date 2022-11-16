@@ -34,6 +34,7 @@
           srfi-list
           srfi-range
           srfi-near
+          srfi-age-in-days
           srfi-drafts
           srfi-by-author
           srfi-by-keyword
