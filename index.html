@@ -215,8 +215,14 @@ predictable behavior when applied to surplus arguments.</p></div></li>
     and <cite>R7RS</cite> is reinterpreted with respect to the
     concepts introduced in this SRFI.  Procedures to retrieve the
     current parameterization and to reinstall it later are
-      provided. Moreover, the <code>parameterize</code> syntax gains an additional
-      tail context guarantee.</p>
+    provided. Moreover, the <code>parameterize</code> syntax gains an
+    additional tail context guarantee.  To support an alternative
+    model of parameters that is linked to the dynamic extent and not
+    to the current parameterization, the notion of a parameter-like
+    object and the <code>with</code> syntax are introduced.</p>
+
+    <p><i>Fluids:</i> Fluids are a syntactic reinterpretation of parameter
+      objects.</p>
 
     <p><i>Delayed evaluation:</i> The syntax and procedures on delayed
       evaluation of <cite>R7RS</cite> are revisited and redefined to handle the
