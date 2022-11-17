@@ -102,6 +102,6 @@
             ("SRFI Editor"))))))
 
     (define-command (last-call num author-name-part)
-      "Display email address URL for SRFI <num>."
+      "Display HTML of last-call message for SRFI <num> with author <autho-name-part>."
       (write-string (srfi-last-call (parse-srfi-number num)
                                     author-name-part)))))
