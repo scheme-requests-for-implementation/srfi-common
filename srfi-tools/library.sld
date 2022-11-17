@@ -38,7 +38,9 @@
       ;; implementations. Some of them escape such symbols to avoid
       ;; confusing them with keywords. R6RS standard syntax does not
       ;; support those escapes.
-      (format "(import (srfi :~a ~a))" num name))
+      (if (not name)
+          (format "(import (srfi :~a))" num)
+          (format "(import (srfi :~a ~a))" num name)))
 
     (define (r7rs-import num name)
       ;; R7RS may add the names at some point.
