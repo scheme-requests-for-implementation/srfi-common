@@ -5,6 +5,7 @@
           date->time-utc
           date-year
           julian-day->date
+          date->julian-day
           make-date
           time<?)
   (export date->iso-date
