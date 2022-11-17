@@ -64,7 +64,9 @@
              (pronoun "he")
              (date (date->iso-date
                     (julian-day->date
-                     (+ 7 (date->julian-day (current-date)))))))
+                     (+ 7
+                        (truncate  ; Work around bug in Chibi's SRFI 19.
+                         (date->julian-day (current-date))))))))
         (string-join-lines
          (map
           string-concatenate
