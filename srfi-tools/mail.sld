@@ -33,10 +33,14 @@
       "Display email address URL for SRFI <num>."
       (write-line-about-srfi srfi-mail-address num))
 
-    (define (srfi-mailto-url num)
+    (define (mailto-address-subject address subject)
       (string-append "mailto:"
-                     (srfi-mail-address num)
-                     "?subject=" (url-hexify-string (srfi-title num))))
+                     address
+                     "?subject=" (url-hexify-string subject)))
+
+    (define (srfi-mailto-url num)
+      (mailto-address-subject (srfi-mail-address num)
+                              (srfi-title num)))
 
     (define (cap-first string)
       (if (zero? (string-length string)) ""
