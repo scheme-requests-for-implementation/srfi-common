@@ -49,6 +49,7 @@
 
     (define (srfi-last-call num author-name-part)
       (let* ((srfi (srfi-by-number num))
+             (email (srfi-mail-address num))
              (url (srfi-landing-url num))
              (num (number->string num))
              (title (srfi-title srfi))
@@ -70,11 +71,16 @@
                     (julian-day->date
                      (+ 7
                         (truncate  ; Work around bug in Chibi's SRFI 19.
-                         (date->julian-day (current-date))))))))
+                         (date->julian-day (current-date)))))))
+             (subject
+              (string-append
+               "Last call for comments on SRFI " num ": " title)))
         (string-join-lines
          (map
           string-concatenate
-          `(("Subject: Last call for comments on SRFI " ,num ": " ,title)
+          `((,(mailto-address-subject email subject))
+            ("")
+            ("Subject: " ,subject)
             ("")
             (,author ", " ,author/co-author " of [[" ,url "][SRFI")
             (,num "]]: " ,title ", has asked me to announce *last call*"
