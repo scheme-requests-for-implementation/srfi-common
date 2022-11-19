@@ -6,6 +6,7 @@
           (scheme char)
 
           (srfi-tools private command)
+	  (srfi-tools private html-writer)
           (srfi-tools private list)
           (srfi-tools private path)
           (srfi-tools private port)

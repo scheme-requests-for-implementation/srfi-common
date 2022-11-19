@@ -56,45 +56,44 @@
          (subject
           (string-append
            "Last call for comments on SRFI " num ": " title)))
-    (string-join-lines
-     (map
-      string-concatenate
-      `((,(mailto-address-subject email subject))
-        ("")
-        ("Subject: " ,subject)
-        ("")
-        (,author ", " ,author/co-author " of [[" ,url "][SRFI")
-        (,num "]]: " ,title ", has asked me to announce *last call*"
-              " for this SRFI.  " ,(cap-first pronoun))
-        ("believes that it is ready for finalization,"
-         " but would like to give")
-        ("reviewers one last chance to submit corrections and"
-         " feedback before we")
-        ("finalize it.")
-        ("")
-        ("In particular, I appeal to anyone reading this to try"
-         " the sample")
-        ("implementation, run the tests, and send feedback about"
-         " your results.")
-        ("")
-        ("If you're interested in this SRFI, please give your"
-         " feedback via the")
-        ("SRFI " ,num " mailing list before *" ,date "*.  After that,"
-         " assuming that no")
-        ("major revisions are required, we will declare it"
-         " final.  It is")
-        ("important that we get your feedback before " ,date
-         ".  *If that deadline")
-        ("is too soon for you, but you would like"
-         " to contribute, please let me know")
-        ("so that I can extend the last-call period.*")
-        ("")
-        ("Regards,")
-        ("")
-        ("")
-        ("SRFI Editor"))))))
+    `((p ,(mailto-address-subject email subject))
+      (p "Subject: " ,subject)
+      (p ,author
+	 ", "
+	 ,author/co-author
+	 " of "
+	 (a (@ (href ,url)) "SRFI " ,num)
+	 ": "
+	 ,title
+	 ", has asked me to announce "
+	 (b "last call")
+	 " for this SRFI.  "
+	 ,(cap-first pronoun)
+         " believes that it is ready for finalization, but would like "
+	 "to give reviewers one last chance to submit corrections and "
+	 "feedback before we finalize it.")
+      (p
+       "In particular, I appeal to anyone reading this to try the "
+       "sample implementation, run the tests, and send feedback "
+       "about your results.")
+      (p "If you're interested in this SRFI, please give your "
+	 "feedback via the SRFI "
+	 ,num
+	 " mailing list before "
+	 (b ,date)
+	 ".  After that, assuming that no major revisions are required, we "
+	 "will declare it final.  It is important that we get your feedback "
+	 "before "
+	 ,date
+         ".  "
+	 (b "If that deadline is too soon for you, but you would like to "
+	    "contribute, please let me know so that I can extend the last-"
+	    "call period."))
+      (p "Regards,")
+      (p (@ (style "margin-top: 3em;")) "SRFI Editor"))))
 
 (define-command (last-call num author-name-part)
-  "Display HTML of last-call message for SRFI <num> with author <autho-name-part>."
-  (write-string (srfi-last-call (parse-srfi-number num)
-                                author-name-part)))
+  "Display HTML of last-call message for SRFI <num> with author
+<author-name-part>."
+  (write-string (sxml->xml (srfi-last-call (parse-srfi-number num)
+					   author-name-part))))
