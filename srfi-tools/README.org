@@ -55,3 +55,18 @@ You can also make git clones of individual SRFIs using ~srfi clone
 123~. This works even for SRFIs that have been seeded from the tar
 archive, though git may encounter conflicting changes to files in some
 cases.
+
+* Environment variables
+
+~SRFI_HOME~ - Directory in which SRFIs are cloned. Default ~~/srfi~.
+
+~SRFI_DEBUG~ - If true, show backtrace on error.
+
+~SRFI_GITHUB_TOKEN~ - The SRFI Editor's GitHub authorization token.
+
+~BROWSER~ - Web browser to use to open ~http:~ and ~https:~ URLs.
+
+~EDITOR~ - Text editor to use.
+
+Boolean variables accept ~t~, ~true~, ~f~, ~false~, ~y~, ~yes~, ~n~,
+~no~. If the variable is blank or unset, the default is no.
