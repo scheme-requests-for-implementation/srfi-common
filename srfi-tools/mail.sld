@@ -1,13 +1,16 @@
 (define-library (srfi-tools mail)
   (export srfi-mail-archive-url
           srfi-mail-address
-          srfi-mailto-url)
+          srfi-mailto-url
+          srfi-last-call-sxml)
   (import (scheme base)
           (scheme char)
 	  (scheme file)
 
+          (srfi-tools private clipboard)
 	  (srfi-tools private command)
 	  (srfi-tools private external)
+          (srfi-tools private format)
 	  (srfi-tools private html-writer)
           (srfi-tools private list)
           (srfi-tools private os)
