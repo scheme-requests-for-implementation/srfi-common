@@ -52,13 +52,8 @@
                 (julian-day->date
                  (+ 7
                     (truncate  ; Work around bug in Chibi's SRFI 19.
-                     (date->julian-day (current-date)))))))
-         (subject
-          (string-append
-           "Last call for comments on SRFI " num ": " title)))
-    `((p ,(mailto-address-subject email subject))
-      (p "Subject: " ,subject)
-      (p ,author
+                     (date->julian-day (current-date))))))))
+    `((p ,author
 	 ", "
 	 ,author/co-author
 	 " of "
@@ -92,8 +87,32 @@
       (p "Regards,")
       (p (@ (style "margin-top: 3em;")) "SRFI Editor"))))
 
+;; TODO: `xclip-sxml' only works with X11.  On MacOS, make it run the equivalent
+;; of the following two lines instead of running xclip, which isn't appropriate
+;; there.
+;;
+;; HEX=`hexdump -ve '1/1 "%.2x"'`
+;; osascript -e "set the clipboard to «data HTML${HEX}»"
+(define (xclip-sxml sxml)
+  (let ((temp-file (make-temp-file-name)))
+    (call-with-output-file temp-file
+      (lambda (port) (sxml-display-as-html sxml port #true)))
+    (run-program
+     `("xclip"
+       "-selection" "clipboard"
+       "-target" "text/html"
+       ,temp-file))))
+
 (define-command (last-call num author-name-part)
-  "Display HTML of last-call message for SRFI <num> with author
-<author-name-part>."
-  (write-string (sxml->xml (srfi-last-call (parse-srfi-number num)
-					   author-name-part))))
+  "Put HTML of last-call message for SRFI <num> with author <author-name-part>
+into clipboard, then open email client with new message addressed to mailing
+list for SRFI <num>, ready for pasting the body."
+  (let* ((n (parse-srfi-number num))
+	 (subject
+          (string-append
+           "Last call for comments on SRFI "
+	   num
+	   ": "
+	   (srfi-title n))))
+    (browse-url (mailto-address-subject (srfi-mail-address n) subject))
+    (xclip-sxml (srfi-last-call n author-name-part))))
