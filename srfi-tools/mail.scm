@@ -86,8 +86,8 @@
 
 (define-command (last-call num author-name-part)
   "Put HTML of last-call message for SRFI <num> with author <author-name-part>
-into clipboard, then open email client with new message addressed to mailing
-list for SRFI <num>, ready for pasting the body."
+  into clipboard, then open email client with new message addressed to mailing
+  list for SRFI <num>, ready for pasting the body."
   (let* ((num (parse-srfi-number num))
          (sxml (srfi-last-call-sxml num author-name-part))
          (html (with-output-to-string
