@@ -37,6 +37,7 @@
    comma-list
    concat
    english-list
+   string-capitalize-first
    string-split
    string-join-lines
    string-join-english
@@ -62,6 +63,11 @@
     (define (ascii-alphanumeric? char)
       (or (ascii-alphabetic? char)
           (ascii-numeric? char)))
+
+    (define (string-capitalize-first string)
+      (if (zero? (string-length string)) ""
+          (string-append (string-upcase (string-copy string 0 1))
+                         (string-copy string 1 (string-length string)))))
 
     ;; Subset of SRFI 140.
     (define (string-split char str)
