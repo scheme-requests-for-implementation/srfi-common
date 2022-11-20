@@ -23,11 +23,6 @@
   (mailto-address-subject (srfi-mail-address num)
                           (srfi-title num)))
 
-(define (cap-first string)
-  (if (zero? (string-length string)) ""
-      (string-append (string-upcase (string-copy string 0 1))
-                     (string-copy string 1 (string-length string)))))
-
 (define (srfi-last-call num author-name-part)
   (let* ((srfi (srfi-by-number num))
          (email (srfi-mail-address num))
@@ -63,7 +58,7 @@
 	 ", has asked me to announce "
 	 (b "last call")
 	 " for this SRFI.  "
-	 ,(cap-first pronoun)
+	 ,(string-capitalize-first pronoun)
          " believes that it is ready for finalization, but would like "
 	 "to give reviewers one last chance to submit corrections and "
 	 "feedback before we finalize it.")
