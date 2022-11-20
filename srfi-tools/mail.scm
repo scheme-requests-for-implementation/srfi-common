@@ -23,9 +23,11 @@
   (mailto-address-subject (srfi-mail-address num)
                           (srfi-title num)))
 
-(define (srfi-last-call num author-name-part)
+(define (srfi-last-call-subject num)
+  (format "Last call for comments on SRFI ~a: ~a" num (srfi-title num)))
+
+(define (srfi-last-call-sxml num author-name-part)
   (let* ((srfi (srfi-by-number num))
-         (email (srfi-mail-address num))
          (url (srfi-landing-url num))
          (num (number->string num))
          (title (srfi-title srfi))
@@ -82,32 +84,15 @@
       (p "Regards,")
       (p (@ (style "margin-top: 3em;")) "SRFI Editor"))))
 
-;; TODO: `xclip-sxml' only works with X11.  On MacOS, make it run the equivalent
-;; of the following two lines instead of running xclip, which isn't appropriate
-;; there.
-;;
-;; HEX=`hexdump -ve '1/1 "%.2x"'`
-;; osascript -e "set the clipboard to «data HTML${HEX}»"
-(define (xclip-sxml sxml)
-  (let ((temp-file (make-temp-file-name)))
-    (call-with-output-file temp-file
-      (lambda (port) (sxml-display-as-html sxml port #true)))
-    (run-program
-     `("xclip"
-       "-selection" "clipboard"
-       "-target" "text/html"
-       ,temp-file))))
-
 (define-command (last-call num author-name-part)
   "Put HTML of last-call message for SRFI <num> with author <author-name-part>
 into clipboard, then open email client with new message addressed to mailing
 list for SRFI <num>, ready for pasting the body."
-  (let* ((n (parse-srfi-number num))
-	 (subject
-          (string-append
-           "Last call for comments on SRFI "
-	   num
-	   ": "
-	   (srfi-title n))))
-    (browse-url (mailto-address-subject (srfi-mail-address n) subject))
-    (xclip-sxml (srfi-last-call n author-name-part))))
+  (let* ((num (parse-srfi-number num))
+         (sxml (srfi-last-call-sxml num author-name-part))
+         (html (with-output-to-string
+		 (lambda () (sxml-display-as-html sxml))))
+         (mailto (mailto-address-subject (srfi-mail-address num)
+                                         (srfi-last-call-subject num))))
+    (copy-html-to-clipboard html)
+    (browse-url mailto)))
