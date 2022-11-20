@@ -2,6 +2,7 @@
   (export read-all
           read-all-chars
           with-output-to-string
+          write-bytevector-as-hex
           write-line
           written
           displayed
@@ -37,6 +38,13 @@
           (parameterize ((current-output-port port))
             (thunk))
           (get-output-string port))))
+
+    (define (write-bytevector-as-hex bytes)
+      (do ((i 0 (+ 1 i)))
+	  ((= i (bytevector-length bytes)))
+        (let ((byte (bytevector-u8-ref bytes i)))
+	  (when (< byte 10) (write-char #\0))
+	  (write-string (number->string byte 16)))))
 
     (define (written obj)
       (with-output-to-string (lambda () (write obj))))
