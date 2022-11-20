@@ -1,42 +1,48 @@
 (define-library (srfi-tools private string)
-  (export ascii-alphabetic?
-          ascii-numeric?
-          ascii-alphanumeric?)
-  (export string-every
-          string-any
-          string-join
-          string-tabulate
-          string-take
-          string-take-right
-          string-drop
-          string-drop-right
-          string-pad
-          string-pad-right
-          string-trim
-          string-trim-right
-          string-trim-both
-          string-prefix-length
-          string-suffix-length
-          string-prefix?
-          string-suffix?
-          string-index
-          string-index-right
-          string-skip
-          string-skip-right
-          string-contains
-          string-concatenate
-          string-fold
-          string-fold-right
-          string-filter)
-  (export comma-list
-	  concat
-	  english-list
-	  string-split
-          string-join-lines
-          string-join-english
-          string->slug
-          unique-string-accumulator
-          url-hexify-string)
+  (export
+   ;; From SRI 175:
+   ascii-alphabetic?
+   ascii-numeric?
+   ascii-alphanumeric?)
+  (export
+   ;; From SRFI 13/130:
+   string-every
+   string-any
+   string-join
+   string-tabulate
+   string-take
+   string-take-right
+   string-drop
+   string-drop-right
+   string-pad
+   string-pad-right
+   string-trim
+   string-trim-right
+   string-trim-both
+   string-prefix-length
+   string-suffix-length
+   string-prefix?
+   string-suffix?
+   string-index
+   string-index-right
+   string-skip
+   string-skip-right
+   string-contains
+   string-concatenate
+   string-fold
+   string-fold-right
+   string-filter)
+  (export
+   ;; Extra procedures not in SRFIs:
+   comma-list
+   concat
+   english-list
+   string-split
+   string-join-lines
+   string-join-english
+   string->slug
+   unique-string-accumulator
+   url-hexify-string)
   (import (scheme base)
           (scheme char)
 	  (scheme write)
