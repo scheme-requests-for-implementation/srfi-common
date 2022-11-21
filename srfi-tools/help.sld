@@ -9,7 +9,7 @@
   (begin
 
     (define (indent-lines string)
-      (let ((lines (string-split #\newline string)))
+      (let ((lines (split-lines string)))
 	(with-output-to-string
 	  (lambda ()
 	    (for-each (lambda (l)

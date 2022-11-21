@@ -37,6 +37,7 @@
    comma-list
    concat
    english-list
+   split-lines
    string-capitalize-first
    string-split
    string-join-lines
@@ -63,6 +64,22 @@
     (define (ascii-alphanumeric? char)
       (or (ascii-alphabetic? char)
           (ascii-numeric? char)))
+
+    ;; This is different than `string-split' because it doesn't preserve
+    ;; adjacent breaks.
+    (define (split-lines string)
+      (define (newline? character)
+	(char=? character #\newline))
+      (let ((size (string-length string)))
+	(let next-line ((accumulator '())
+			(i size))
+	  (let ((space (string-index-right string newline? 0 i)))
+	    (if space
+		(next-line (cons (substring string (+ 1 space) i)
+				 accumulator)
+			   space)
+		(cons (substring string 0 i)
+		      accumulator))))))
 
     (define (string-capitalize-first string)
       (if (zero? (string-length string)) ""
