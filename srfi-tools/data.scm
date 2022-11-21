@@ -215,6 +215,13 @@
 (define (srfi-format-authors authors)
   (string-join-english (map srfi-format-author authors)))
 
+(define (srfi-author-first-name author)
+  (let* ((full-name (srfi-author-name author))
+	 (i (string-index full-name (lambda (c) (char=? c #\space)))))
+    (if i
+	(substring full-name 0 i)
+	full-name)))
+
 (define-command (authors num)
   "Display the authors of SRFI <num>."
   (for-each disp

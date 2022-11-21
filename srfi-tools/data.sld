@@ -24,7 +24,8 @@
           srfi-date-of-last-update
 	  srfi-date-to-show
 
-          srfi-author-name
+          srfi-author-first-name
+	  srfi-author-name
           srfi-author-role
           srfi-format-author
           srfi-format-authors
