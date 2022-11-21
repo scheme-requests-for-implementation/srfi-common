@@ -84,7 +84,9 @@
 (define-command (compose-draft num draft-no submitter-name-part)
   "Put HTML of a new-draft message for draft <draft-no> of SRFI <num> and author
 <submitter-name-part> into clipboard, then open email client with new message
-addressed to mailing list for SRFI <num>, ready for pasting the body."
+addressed to mailing list for SRFI <num>, ready for pasting the body.
+
+This command is mostly useful to the SRFI editor."
   (let ((num (parse-srfi-number num)))
     (compose-message num
 		     (srfi-draft-subject num draft-no)
@@ -145,7 +147,9 @@ addressed to mailing list for SRFI <num>, ready for pasting the body."
 (define-command (compose-last-call num author-name-part pronoun)
   "Put HTML of last-call message for SRFI <num> with author <author-name-part>
 into clipboard, then open email client with new message addressed to mailing
-list for SRFI <num>, ready for pasting the body.  Use first-person <pronoun>."
+list for SRFI <num>, ready for pasting the body.  Use first-person <pronoun>.
+
+This command is mostly useful to the SRFI editor."
   (let ((num (parse-srfi-number num)))
     (compose-message num
 		     (srfi-last-call-subject num)
@@ -185,7 +189,9 @@ list for SRFI <num>, ready for pasting the body.  Use first-person <pronoun>."
   "Put HTML of a combined new-draft and last-call message for draft <draft-no>
 of SRFI <num> and author <author-name-part> into clipboard, then open email
 client with new message addressed to mailing list for SRFI <num>, ready for
-pasting the body.  Use first-person <pronoun>."
+pasting the body.  Use first-person <pronoun>.
+
+This command is mostly useful to the SRFI editor."
   (let ((num (parse-srfi-number num)))
     (compose-message num
 		     (srfi-draft-and-last-call-subject num draft-no)
@@ -233,7 +239,9 @@ subscription form on that page.")
 (define-command (compose-new num)
   "Put HTML of new-SRFI announcement message for SRFI <num> into clipboard, then
 open email client with new message addressed to mailing list for SRFI <num>,
-ready for pasting the body."
+ready for pasting the body.
+
+This command is mostly useful to the SRFI editor."
   (let ((num (parse-srfi-number num)))
     (compose-message num
 		     (srfi-new-subject num)
