@@ -1543,6 +1543,7 @@
  (status final)
  (title "Version flag")
  (author "Lassi Kortela")
+ (library-name version)
  (see-also)
  (keywords operating-system)
  (draft-date "2019-10-06")
