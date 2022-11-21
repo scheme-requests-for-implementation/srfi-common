@@ -24,9 +24,6 @@
                           (srfi-title num)))
 
 (define (compose-message num subject sxml)
-  "Put HTML specified by <sxml> into clipboard, then open email client with new
-  message addressed to mailing list for SRFI <num> ready for pasting the body,
-  with subject <subject>."
   (let* ((html (with-output-to-string (lambda () (sxml-display-as-html sxml))))
          (mailto (mailto-address-subject (srfi-mail-address num) subject)))
     (copy-html-to-clipboard html)
@@ -94,8 +91,8 @@
 
 (define-command (compose-last-call num author-name-part)
   "Put HTML of last-call message for SRFI <num> with author <author-name-part>
-  into clipboard, then open email client with new message addressed to mailing
-  list for SRFI <num>, ready for pasting the body."
+into clipboard, then open email client with new message addressed to mailing
+list for SRFI <num>, ready for pasting the body."
   (let ((num (parse-srfi-number num)))
     (compose-message num
 		     (srfi-last-call-subject num)
@@ -140,8 +137,8 @@ subscription form on that page.")
 
 (define-command (compose-new num)
   "Put HTML of new-SRFI announcement message for SRFI <num> into clipboard, then
-  open email client with new message addressed to mailing list for SRFI <num>,
-  ready for pasting the body."
+open email client with new message addressed to mailing list for SRFI <num>,
+ready for pasting the body."
   (let ((num (parse-srfi-number num)))
     (compose-message num
 		     (srfi-new-subject num)

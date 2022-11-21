@@ -8,6 +8,16 @@
           (srfi-tools private port))
   (begin
 
+    (define (indent-lines string)
+      (let ((lines (string-split #\newline string)))
+	(with-output-to-string
+	  (lambda ()
+	    (for-each (lambda (l)
+			(write-string "  ")
+			(write-string l)
+			(newline))
+		      lines)))))
+
     (define-command (commands)
       "Display a list of subommands, with help."
       (for-each (lambda (command)
@@ -17,9 +27,7 @@
 			      (display a))
 			    (command-arg-names command))
 		  (newline)
-		  (display "  ")
-		  (display (command-help command))
-		  (newline))
+		  (display (indent-lines (command-help command))))
                 (command-list)))
 
     (define (complete index args)
