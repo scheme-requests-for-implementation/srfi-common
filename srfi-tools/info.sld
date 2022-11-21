@@ -29,6 +29,10 @@
        (string-join (map srfi-format-keyword (srfi-keywords srfi))
                     ", ")
        "\n"
+       "Library name: "
+       (let ((name (srfi-library-name srfi)))
+         (if name (symbol->string name) "N/A"))
+       "\n"
        (let ((numbers (srfi-see-also srfi)))
          (if (null? numbers)
              ""
