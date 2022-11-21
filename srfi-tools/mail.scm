@@ -36,6 +36,60 @@
     (copy-html-to-clipboard html)
     (browse-url mailto)))
 
+(define editor-regards
+  `((p "Regards,")
+    (p (@ (style "margin-top: 3em;")) "SRFI Editor")))
+
+(define (srfi-draft-subject num draft-no)
+  (format "New draft (#~a) of SRFI ~a: ~a"
+	  draft-no
+	  num
+	  (srfi-title num)))
+
+(define (srfi-just-published srfi draft-no submitter)
+  (let* ((num (srfi-number srfi))
+	 (single-author? (null? (cdr (srfi-authors srfi))))
+	 (url (srfi-landing-url num)))
+    `((p "I've just published draft #"
+	 ,draft-no
+	 " of "
+	 (a (@ (href ,url)) "SRFI " ,num)
+	 ".  It was submitted by "
+	 ,(srfi-author-name submitter)
+	 ", "
+	 ,(if single-author? "author" "co-author")
+	 " of the SRFI."))))
+
+;; TODO: Change this retrieve the latest draft number from git.
+(define (srfi-draft-sxml num draft-no submitter-name-part)
+  (let* ((draft-no (string->number draft-no))
+	 (srfi (srfi-by-number num))
+         (title (srfi-title srfi))
+	 (submitter (find-matching-author submitter-name-part srfi))
+	 (first-name (srfi-author-first-name submitter))
+	 (url (format
+	       "https://github.com/scheme-requests-for-implementation/srfi-~a/compare/draft-~a..draft-~a"
+	       num
+	       (- draft-no 1)
+	       draft-no)))
+    `(,@(srfi-just-published srfi draft-no submitter)
+      (p "Here are " ,first-name "'s comments on the draft:")
+      (blockquote (b "ADD COMMENTS HERE."))
+      (p "Here is the commit summary:")
+      (blockquote (b "ADD COMMIT SUMMARY HERE."))
+      (p "Here's the diff:")
+      (blockquote (a (@ (href ,url)) ,url))
+      ,@editor-regards)))
+
+(define-command (compose-draft num draft-no submitter-name-part)
+  "Put HTML of a new-draft message for draft <draft-no> of SRFI <num> and author
+<submitter-name-part> into clipboard, then open email client with new message
+addressed to mailing list for SRFI <num>, ready for pasting the body."
+  (let ((num (parse-srfi-number num)))
+    (compose-message num
+		     (srfi-draft-subject num draft-no)
+		     (srfi-draft-sxml num draft-no submitter-name-part))))
+
 (define (srfi-last-call-subject num)
   (format "Last call for comments on SRFI ~a: ~a" num (srfi-title num)))
 
@@ -61,8 +115,7 @@
 	 (b "If that deadline is too soon for you, but you would like to "
 	    "contribute, please let me know so that I can extend the last-"
 	    "call period."))
-      (p "Regards,")
-      (p (@ (style "margin-top: 3em;")) "SRFI Editor"))))
+      ,@editor-regards)))
 
 (define (srfi-last-call-sxml num author-name-part pronoun)
   (let* ((srfi (srfi-by-number num))
@@ -112,15 +165,7 @@ list for SRFI <num>, ready for pasting the body.  Use first-person <pronoun>."
 	 (single-author? (null? (cdr (srfi-authors srfi))))
 	 (submitter (find-matching-author submitter-name-part srfi))
 	 (first-name (srfi-author-first-name submitter)))
-    `((p "I've just published draft #"
-	 ,draft-no
-	 " of "
-	 (a (@ (href ,url)) "SRFI " ,num)
-	 ".  It was submitted by "
-	 ,(srfi-author-name submitter)
-	 ", "
-	 ,(if single-author? "author" "co-author")
-	 " of the SRFI.")
+    `(,@(srfi-just-published srfi draft-no submitter)
       (p ,first-name
 	 " has asked me to announce "
 	 (b "last call")
@@ -183,8 +228,7 @@ subscription form on that page.")
 	 ".")
       (p "Here's the abstract:")
       (blockquote (@raw ,abstract))
-      (p "Regards,")
-      (p (@ (style "margin-top: 3em;")) "SRFI Editor"))))
+      ,@editor-regards)))
 
 (define-command (compose-new num)
   "Put HTML of new-SRFI announcement message for SRFI <num> into clipboard, then
