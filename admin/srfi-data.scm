@@ -1874,6 +1874,7 @@
  (status final)
  (title "Central Log Exchange")
  (author "Göran Weinholt")
+ (library-name logging)
  (see-also)
  (keywords operating-system)
  (draft-date "2020-11-03")
