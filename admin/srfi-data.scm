@@ -1909,6 +1909,7 @@
  (status final)
  (title "Define higher-order lambda")
  (author "Lassi Kortela")
+ (library-name define)
  (see-also 201 232)
  (keywords binding syntax)
  (draft-date "2021-02-03")
