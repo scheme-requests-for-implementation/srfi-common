@@ -18,14 +18,17 @@
 			(newline))
 		      lines)))))
 
+    (define (display-command-signature command)
+      (display (command-name command))
+      (for-each (lambda (a)
+		  (display " ")
+		  (display a))
+		(command-arg-names command)))
+
     (define-command (commands)
       "Display a list of subommands, with help."
       (for-each (lambda (command)
-                  (display (command-name command))
-		  (for-each (lambda (a)
-			      (display " ")
-			      (display a))
-			    (command-arg-names command))
+		  (display-command-signature command)
 		  (newline)
 		  (display (indent-lines (command-help command))))
                 (command-list)))
@@ -88,7 +91,10 @@
        (()
         (for-each write-line help-lines))
        ((command)
-        (write-line (command-help (command-by-name command))))))
+	(let ((c (command-by-name command)))
+	  (display-command-signature c)
+	  (newline)
+          (display (indent-lines (command-help c)))))))
 
     (add-command!
      "help"
