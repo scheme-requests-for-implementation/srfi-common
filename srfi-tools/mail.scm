@@ -236,7 +236,7 @@ subscription form on that page.")
       (blockquote (@raw ,abstract))
       ,@editor-regards)))
 
-(define-command (compose-new num)
+(define-command (compose-new-srfi num)
   "Put HTML of new-SRFI announcement message for SRFI <num> into clipboard, then
 open email client with new message addressed to mailing list for SRFI <num>,
 ready for pasting the body.
