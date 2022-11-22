@@ -13,7 +13,7 @@
           srfi-pager
           srfi-edit
           srfi-browse-mail
-          srfi-send-mail)
+          srfi-compose-mail)
   (import (scheme base)
           (scheme char)
 
@@ -154,9 +154,9 @@
       "Browse mailing list archive for SRFI <num>."
       (srfi-browse-mail (parse-srfi-number num)))
 
-    (define (srfi-send-mail num)
+    (define (srfi-compose-mail num)
       (desktop-open (srfi-mailto-url num)))
 
-    (define-command (send-mail num)
+    (define-command (compose-mail num)
       "Open email app with a new email to SRFI <num> mailing list."
-      (srfi-send-mail (parse-srfi-number num)))))
+      (srfi-compose-mail (parse-srfi-number num)))))
