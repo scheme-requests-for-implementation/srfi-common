@@ -199,6 +199,61 @@ This command is mostly useful to the SRFI editor."
 						    draft-no
 						    author-name-part
 						    pronoun))))
+(define (srfi-final-subject num)
+  (format "Final SRFI ~a: ~a" num (srfi-title num)))
+
+(define (github-diffs-url num previous-draft-no)
+  (format "https://github.com/scheme-requests-for-implementation/srfi-~a/compare/draft-~a..final"
+	  num
+	  previous-draft-no))
+
+;; TODO: Change this retrieve the previous draft number from git.
+(define (srfi-final-sxml num previous-draft-no)
+  (let* ((srfi (srfi-by-number num))
+	 (diffs-url (github-diffs-url num previous-draft-no))
+         (email-url (srfi-mail-archive-url num))
+         (landing-url (srfi-landing-url num))
+	 (num (number->string num))
+         (authors (srfi-authors srfi)))
+    `((p "Scheme Request for Implementation "
+	 ,num
+	 ","
+	 (br)
+	 "\""
+	 ,(srfi-title srfi)
+	 "\","
+	 (br)
+	 "by "
+	 ,(srfi-format-authors authors)
+	 ","
+	 (br)
+	 "has gone into "
+	 (b "final")
+	 " status.")
+      (p "The document and an archive of the discussion are available at "
+	 (a (@ (href ,landing-url)) ,landing-url)
+	 ".")
+      (p "Here's the abstract:")
+      (blockquote (@raw ,(srfi-abstract-html num)))
+      (p "Here is the commit summary since the most recent draft:")
+      (blockquote (b "ADD COMMIT SUMMARY HERE."))
+      (p "Here are the diffs since the most recent draft:")
+      (blockquote (a (@ (href ,diffs-url)) ,diffs-url))
+      (p "Many thanks to "
+	 ,(srfi-format-authors/first-names authors)
+	 " and to everyone who contributed to the discussion of this SRFI.")
+      ,@editor-regards)))
+
+(define-command (compose-final num previous-draft-no)
+  "Put HTML of SRFI finalization announcement message for SRFI <num> into
+clipboard, then open email client with new message addressed to mailing list for
+SRFI <num>, ready for pasting the body.
+
+This command is mostly useful to the SRFI editor."
+  (let ((num (parse-srfi-number num)))
+    (compose-message num
+		     (srfi-final-subject num)
+		     (srfi-final-sxml num previous-draft-no))))
 
 (define (srfi-new-subject num)
   (format "SRFI ~a: ~a" num (srfi-title num)))

@@ -222,6 +222,9 @@
 	(substring full-name 0 i)
 	full-name)))
 
+(define (srfi-format-authors/first-names authors)
+  (string-join-english (map srfi-author-first-name authors)))
+
 (define-command (authors num)
   "Display the authors of SRFI <num>."
   (for-each disp

@@ -28,6 +28,7 @@
 	  srfi-author-name
           srfi-author-role
           srfi-format-author
+          srfi-format-authors/first-names
           srfi-format-authors
           srfi-format
 
