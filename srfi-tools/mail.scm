@@ -72,16 +72,14 @@
 
 ;; TODO: Change this retrieve the latest draft number from git.
 (define (srfi-draft-sxml num draft-no submitter-name-part)
-  (let* ((draft-no (string->number draft-no))
-	 (srfi (srfi-by-number num))
+  (let* ((srfi (srfi-by-number num))
          (title (srfi-title srfi))
 	 (submitter (find-matching-author submitter-name-part srfi))
 	 (first-name (srfi-author-first-name submitter))
-	 (url (format
-	       "https://github.com/scheme-requests-for-implementation/srfi-~a/compare/draft-~a..draft-~a"
+	 (url (srfi-github-compare-url
 	       num
-	       (- draft-no 1)
-	       draft-no)))
+	       (draft- (- draft-no 1))
+	       (draft- draft-no))))
     `(,@(srfi-just-published srfi draft-no submitter)
       (p "Here are " ,first-name "'s comments on the draft:")
       (blockquote (b "ADD COMMENTS HERE."))
@@ -97,20 +95,23 @@
 addressed to mailing list for SRFI <num>, ready for pasting the body.
 
 This command is mostly useful to the SRFI editor."
-  (let ((num (parse-srfi-number num)))
+  (let ((num (parse-srfi-number num))
+        (draft-no (parse-draft-number draft-no)))
     (compose-message num
 		     (srfi-draft-subject num draft-no)
 		     (srfi-draft-sxml num draft-no submitter-name-part))))
+
+(define (last-call-date)
+  ;; `truncate` works around a bug in Chibi's SRFI 19 implementation.
+  (date->iso-date
+   (julian-day->date
+    (+ 7 (truncate (date->julian-day (current-date)))))))
 
 (define (srfi-last-call-subject num)
   (format "Last call for comments on SRFI ~a: ~a" num (srfi-title num)))
 
 (define (srfi-last-call-tail-sxml num)
-  (let ((date (date->iso-date
-               (julian-day->date
-                (+ 7
-                   (truncate		; Work around bug in Chibi's SRFI 19.
-                    (date->julian-day (current-date))))))))
+  (let ((date (last-call-date)))
     `((p "In particular, I appeal to anyone reading this to try the "
 	 "sample implementation, run the tests, and send feedback "
 	 "about your results.")
@@ -202,7 +203,8 @@ client with new message addressed to mailing list for SRFI <num>, ready for
 pasting the body.  Use first-person <pronoun>.
 
 This command is mostly useful to the SRFI editor."
-  (let ((num (parse-srfi-number num)))
+  (let ((num (parse-srfi-number num))
+        (draft-no (parse-draft-number draft-no)))
     (compose-message num
 		     (srfi-draft-and-last-call-subject num draft-no)
 		     (srfi-draft-and-last-call-sxml num
@@ -212,19 +214,17 @@ This command is mostly useful to the SRFI editor."
 (define (srfi-final-subject num)
   (format "Final SRFI ~a: ~a" num (srfi-title num)))
 
-(define (github-diffs-url num previous-draft-no)
-  (format "https://github.com/scheme-requests-for-implementation/srfi-~a/compare/draft-~a..final"
-	  num
-	  previous-draft-no))
-
 ;; TODO: Change this retrieve the previous draft number from git.
 (define (srfi-final-sxml num previous-draft-no)
   (let* ((srfi (srfi-by-number num))
-	 (diffs-url (github-diffs-url num previous-draft-no))
+	 (diffs-url (srfi-github-compare-url
+                     num
+                     (draft- previous-draft-no)
+                     "final"))
          (mail-url (srfi-mail-archive-url num))
          (landing-url (srfi-landing-url num))
-	 (num (number->string num))
-         (authors (srfi-authors srfi)))
+	 (authors (srfi-authors srfi))
+         (num (number->string num)))
     `((p "Scheme Request for Implementation "
 	 ,num
 	 ","
@@ -260,7 +260,8 @@ clipboard, then open email client with new message addressed to mailing list for
 SRFI <num>, ready for pasting the body.
 
 This command is mostly useful to the SRFI editor."
-  (let ((num (parse-srfi-number num)))
+  (let ((num (parse-srfi-number num))
+        (previous-draft-no (parse-draft-number previous-draft-no)))
     (compose-message num
 		     (srfi-final-subject num)
 		     (srfi-final-sxml num previous-draft-no))))
