@@ -1,8 +1,7 @@
 (define (srfi-mail-archive-url num)
-  (string-append "https://srfi-email.schemers.org/"
-                 (srfi-num-stem num) "/"))
+  (string-append "https://srfi-email.schemers.org/" (srfi-num-stem num) "/"))
 
-(define-command (email-url num)
+(define-command (mail-url num)
   "Display mail archive URL for SRFI <num>."
   (write-line-about-srfi srfi-mail-archive-url num))
 
@@ -211,7 +210,7 @@ This command is mostly useful to the SRFI editor."
 (define (srfi-final-sxml num previous-draft-no)
   (let* ((srfi (srfi-by-number num))
 	 (diffs-url (github-diffs-url num previous-draft-no))
-         (email-url (srfi-mail-archive-url num))
+         (mail-url (srfi-mail-archive-url num))
          (landing-url (srfi-landing-url num))
 	 (num (number->string num))
          (authors (srfi-authors srfi)))
@@ -260,7 +259,7 @@ This command is mostly useful to the SRFI editor."
 
 (define (srfi-new-sxml num)
   (let* ((srfi (srfi-by-number num))
-         (email-url (srfi-mail-archive-url num))
+         (mail-url (srfi-mail-archive-url num))
          (landing-url (srfi-landing-url num))
 	 (num (number->string num))
          (title (srfi-title srfi))
@@ -285,7 +284,7 @@ This command is mostly useful to the SRFI editor."
       (p "You can join the discussion of the draft by filling out the
 subscription form on that page.")
       (p "You can contribute a message to the discussion by sending it to "
-	 (a (@ (href ,email-url)) ,email-url)
+	 (a (@ (href ,mail-url)) ,mail-url)
 	 ".")
       (p "Here's the abstract:")
       (blockquote (@raw ,abstract))
