@@ -20,6 +20,7 @@
           (srfi-tools private time)
 
           (srfi-tools data)
+          (srfi-tools github)
 	  (srfi-tools html)
           (srfi-tools path)
           (srfi-tools url))
