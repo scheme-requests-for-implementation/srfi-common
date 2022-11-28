@@ -4,6 +4,7 @@
           srfi-github-url
           srfi-github-https-url
           srfi-github-ssh-url
+          srfi-github-compare-url
           srfi-create-github-repository)
   (import (scheme base)
           (scheme process-context)
@@ -50,6 +51,12 @@
     (define (srfi-github-ssh-url num)
       (string-append "git@github.com:"
                      (srfi-github-relative-git num)))
+
+    (define (srfi-github-compare-url num old-git-ref new-git-ref)
+      (format "~a/compare/~a..~a"
+              (srfi-github-url num)
+              old-git-ref
+              new-git-ref))
 
     (define (srfi-create-github-repository num)
       (run-program
