@@ -11,7 +11,7 @@
           srfi-landing-html-file
           srfi-abstract-html-file
           srfi-do
-          srfi-common-do)
+          srfi-do-common)
   (import (scheme base)
           (srfi-tools private path)
           (srfi-tools private port)
@@ -98,14 +98,14 @@
        (srfi-do (parse-srfi-number num)
                 (lambda () (run-program (cons program args))))))
 
-    (define (srfi-common-do thunk)
+    (define (srfi-do-common thunk)
       (with-current-directory (srfi-common-dir) thunk))
 
     (add-command!
-     "common-do"
+     "do-common"
      '(program arg ...)
      "Run <program> with <arg>s in the srfi-common directory."
      1
      #f
      (lambda (program . args)
-       (srfi-common-do (lambda () (run-program (cons program args))))))))
+       (srfi-do-common (lambda () (run-program (cons program args))))))))
