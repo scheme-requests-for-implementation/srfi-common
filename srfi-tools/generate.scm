@@ -140,7 +140,7 @@
 			authors
 			based-on
 			date
-			email-archives
+			mail-archive
 			keyword-links
 			library-name
 			number
@@ -178,7 +178,7 @@
 	   (ul (@ (class "info"))
 	       (li (a (@ (href ,(concat "srfi-" number ".html")))
 		      "The SRFI Document"))
-	       ,email-archives
+	       ,mail-archive
 	       (li (a (@ (href ,(concat "https://github.com/scheme-requests-for-implementation/srfi-"
 					number)))
 		      "Git repo (on GitHub)"))
@@ -475,7 +475,7 @@
 (define (write-single-srfi-landing-page srfi)
   (let* ((number (srfi-number srfi))
 	 (abstract (srfi-abstract-raw number))
-	 (archives
+	 (archive
 	  `(li (a (@ (href ,(concat "https://srfi-email.schemers.org/srfi-"
 				    number
 				    "/")))
@@ -496,7 +496,7 @@
        (srfi-format-authors authors)
        (or (srfi-based-on srfi) "")
        date
-       archives
+       archive
        (comma-list (map keyword->link keywords))
        library-name-block
        number
