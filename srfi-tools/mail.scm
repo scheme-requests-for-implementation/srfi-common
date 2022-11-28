@@ -39,6 +39,17 @@
   `((p "Regards,")
     (p (@ (style "margin-top: 3em;")) "SRFI Editor")))
 
+(define (try-parse-draft-number string)
+  (let ((num (string->number string)))
+    (and (integer? num) (positive? num) num)))
+
+(define (parse-draft-number string)
+  (or (try-parse-draft-number string)
+      (error "Not a valid draft number" string)))
+
+(define (draft- draft-no)
+  (string-append "draft-" (number->string draft-no)))
+
 (define (srfi-draft-subject num draft-no)
   (format "New draft (#~a) of SRFI ~a: ~a"
 	  draft-no
