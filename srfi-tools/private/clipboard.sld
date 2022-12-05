@@ -2,13 +2,17 @@
   (export copy-html-to-clipboard)
   (import (scheme base)
 
+	  (srfi-tools private error)
+	  (srfi-tools private file)
 	  (srfi-tools private html-writer)
-          (srfi-tools private file)
           (srfi-tools private os)
-          (srfi-tools private port))
+          (srfi-tools private port)
+          (srfi-tools private string))
   (begin
 
     (define (copy-html-to-clipboard/mac html)
+      (assert (not (string-contains html "\n"))
+              "Newline in HTML.")
       (let ((temp-file (make-temp-file-name)))
         (with-output-to-text-file temp-file
           (lambda ()
