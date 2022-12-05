@@ -244,7 +244,7 @@ This command is mostly useful to the SRFI editor."
 	 (a (@ (href ,landing-url)) ,landing-url)
 	 ".")
       (p "Here's the abstract:")
-      (blockquote (@raw ,(srfi-abstract-html num)))
+      (blockquote ,(srfi-abstract-raw num))
       (p "Here is the commit summary since the most recent draft:")
       (blockquote (b "ADD COMMIT SUMMARY HERE."))
       (p "Here are the diffs since the most recent draft:")
@@ -275,7 +275,7 @@ This command is mostly useful to the SRFI editor."
          (landing-url (srfi-landing-url num))
 	 (num (number->string num))
          (title (srfi-title srfi))
-	 (abstract (srfi-abstract-html num))
+	 (abstract (srfi-abstract-raw num))
          (authors (srfi-format-authors (srfi-authors srfi))))
     `((p "Scheme Request for Implementation "
 	 ,num
@@ -299,7 +299,7 @@ This command is mostly useful to the SRFI editor."
 	 (a (@ (href ,mail-url)) ,mail-url)
 	 ".")
       (p "Here's the abstract:")
-      (blockquote (@raw ,abstract))
+      (blockquote ,abstract)
       ,@editor-regards)))
 
 (define-command (compose-new-srfi num)

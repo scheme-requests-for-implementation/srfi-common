@@ -2,7 +2,8 @@
   (export srfi-mail-archive-url
           srfi-mail-address
           srfi-mailto-url
-          srfi-last-call-sxml)
+          srfi-last-call-sxml
+          srfi-new-sxml)
   (import (scheme base)
           (scheme char)
 	  (scheme file)
