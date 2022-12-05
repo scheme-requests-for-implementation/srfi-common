@@ -293,8 +293,8 @@ This command is mostly useful to the SRFI editor."
       (p "Its draft and an archive of the ongoing discussion are available at "
 	 (a (@ (href ,landing-url)) ,landing-url)
 	 ".")
-      (p "You can join the discussion of the draft by filling out the
-subscription form on that page.")
+      (p "You can join the discussion of the draft by filling out the "
+         "subscription form on that page.")
       (p "You can contribute a message to the discussion by sending it to "
 	 (a (@ (href ,mail-url)) ,mail-url)
 	 ".")

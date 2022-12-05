@@ -55,15 +55,19 @@
       "Display text of SRFI document for SRFI <num>."
       (write-string-about-srfi srfi-text num))
 
+    (define (remove-newlines str)
+      (string-map (lambda (char) (if (char=? char #\newline) #\space char))
+                  str))
+
+    (define (srfi-abstract-html num)
+      (remove-newlines (read-text-file (srfi-abstract-html-file num))))
+
     (define (srfi-abstract-raw num)
-      `(@raw ,(read-text-file (srfi-abstract-html-file num))))
+      `(@raw ,(srfi-abstract-html num)))
 
     (define (srfi-abstract-sxml num)
       (define skip-top cdr)
       (skip-top (read-html-file (srfi-abstract-html-file num))))
-
-    (define (srfi-abstract-html num)
-      (read-text-file (srfi-abstract-html-file num)))
 
     (define-command (abstract-html num)
       "Display abstract for SRFI <num> as HTML."
