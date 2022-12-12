@@ -2089,7 +2089,7 @@
  (status draft)
  (title "Match — Simple Pattern-Matching Syntax to Express Catamorphisms on Scheme Data")
  (author "Marc Nieper-Wißkirchen")
- (library-name match-dfh)
+ (library-name match)
  (see-also 200 204)
  (keywords pattern-matching syntax)
  (draft-date "2022-11-10"))
