@@ -54,6 +54,7 @@
         subtree))
 
     (define (write-html-toc indent items)
+      (disp indent "<h2>Table of contents</h2>")
       (let ((uniq (unique-string-accumulator)))
         (define (link-html title)
           (string-append "<a href=\"#" (uniq (string->slug title)) "\">"
