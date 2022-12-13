@@ -1482,7 +1482,7 @@
  (title "Underscores in numbers")
  (author "Lassi Kortela")
  (see-also)
- (keywords numbers syntax)
+ (keywords numbers reader-syntax)
  (done-date "2019-07-26")
  (draft-date "2019-04-18"))
 ((number 170)
