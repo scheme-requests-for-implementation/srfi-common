@@ -2068,7 +2068,7 @@
  (author "Lassi Kortela")
  (library-name codesets)
  (see-also 170 198 199)
- (keywords operating-system)
+ (keywords operating-system error-handling introspection)
  (draft-date "2022-11-03"))
 ((number 239)
  (status draft)
