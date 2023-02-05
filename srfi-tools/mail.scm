@@ -33,7 +33,8 @@
   (let* ((html (with-output-to-string (lambda () (sxml-display-as-html sxml))))
          (mailto (mailto-address-subject (srfi-mail-address num) subject)))
     (copy-html-to-clipboard html)
-    (browse-url mailto)))
+    (browse-url mailto)
+    (write-string "Make sure to use correct sender, and to BCC srfi-announce if appropriate.\n")))
 
 (define editor-regards
   `((p "Regards,")
