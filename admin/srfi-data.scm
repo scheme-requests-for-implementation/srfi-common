@@ -2034,7 +2034,6 @@
  (status draft)
  (title "Topological Sorting")
  (author "John Cowan" "spec")
- (author "Arvydas Silanskas" "implementation")
  (see-also)
  (keywords algorithm)
  (draft-date "2022-08-10"))
