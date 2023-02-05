@@ -96,11 +96,6 @@ img.srfi-logo {
 .subunsub {
   position: relative;
 }
-.todo {
-  color: red;
-  font-family: monospace;
-  font-weight: bold;
-}
 figcaption {
   text-align: center;
 }

@@ -27,3 +27,8 @@ img.srfi-logo {
 span.antispam {
   display: none;
 }
+.todo {
+  color: red;
+  font-family: monospace;
+  font-weight: bold;
+}
