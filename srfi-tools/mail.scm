@@ -60,34 +60,38 @@
 (define (srfi-just-published srfi draft-no submitter)
   (let* ((num (srfi-number srfi))
 	 (single-author? (null? (cdr (srfi-authors srfi))))
-	 (url (srfi-landing-url num)))
+	 (first-name (srfi-author-first-name submitter))
+	 (diff-url (srfi-github-compare-url
+		    num
+		    (draft- (- draft-no 1))
+		    (draft- draft-no)))
+	 (landing-url (srfi-landing-url num)))
     `((p "I've just published draft #"
 	 ,draft-no
 	 " of "
-	 (a (@ (href ,url)) "SRFI " ,num)
+	 (a (@ (href ,landing-url)) "SRFI " ,num)
 	 ".  It was submitted by "
 	 ,(srfi-author-name submitter)
 	 ", "
 	 ,(if single-author? "author" "co-author")
-	 " of the SRFI."))))
+	 " of the SRFI.")
+      (p "Here are " ,first-name "'s comments on the draft:")
+      (blockquote (b "ADD COMMENTS HERE."))
+      (p "Here is the commit summary:")
+      (blockquote (b "ADD COMMIT SUMMARY HERE."))
+      (p "Here's the diff:")
+      (blockquote (a (@ (href ,landing-url)) ,diff-url)))))
 
 ;; TODO: Change this retrieve the latest draft number from git.
 (define (srfi-draft-sxml num draft-no submitter-name-part)
   (let* ((srfi (srfi-by-number num))
          (title (srfi-title srfi))
 	 (submitter (find-matching-author submitter-name-part srfi))
-	 (first-name (srfi-author-first-name submitter))
 	 (url (srfi-github-compare-url
 	       num
 	       (draft- (- draft-no 1))
 	       (draft- draft-no))))
     `(,@(srfi-just-published srfi draft-no submitter)
-      (p "Here are " ,first-name "'s comments on the draft:")
-      (blockquote (b "ADD COMMENTS HERE."))
-      (p "Here is the commit summary:")
-      (blockquote (b "ADD COMMIT SUMMARY HERE."))
-      (p "Here's the diff:")
-      (blockquote (a (@ (href ,url)) ,url))
       ,@editor-regards)))
 
 (define-command (compose-draft num draft-no submitter-name-part)
