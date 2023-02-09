@@ -80,7 +80,7 @@
       (p "Here is the commit summary:")
       (blockquote (b "ADD COMMIT SUMMARY HERE."))
       (p "Here's the diff:")
-      (blockquote (a (@ (href ,landing-url)) ,diff-url)))))
+      (blockquote (a (@ (href ,diff-url)) ,diff-url)))))
 
 ;; TODO: Change this retrieve the latest draft number from git.
 (define (srfi-draft-sxml num draft-no submitter-name-part)
