@@ -37,7 +37,9 @@
 		     (a (@ (href "https://srfi.schemers.org/srfi.rss"))
 			(img (@ (alt "RSS") (src "https://srfi.schemers.org/rss.svg"))))))
 	   (p (@ (class "hide"))
-	      "SRFIs extend the Scheme programming language.  You can help.  "
+	      "SRFIs extend the Scheme programming language.  You can help.  Start by "
+	      (a (@ (href "srfi-list-subscribe.html")) "joining the discussion")
+	      " on one of our mailing lists.  "
 	      (a (@ (href "about.html")) "Learn more")
 	      ".")
 	   (p "Thanks to Lassi Kortela for his "
