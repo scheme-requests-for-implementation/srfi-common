@@ -1,4 +1,9 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 235: Combinators</title><link>https://srfi.schemers.org/srfi-235/</link><guid>https://srfi.schemers.org/srfi-235</guid><description>SRFI 235 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI contains various procedures that accept and return procedures,
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 241: Match — Simple Pattern-Matching Syntax to Express Catamorphisms on Scheme Data</title><link>https://srfi.schemers.org/srfi-241/</link><guid>https://srfi.schemers.org/srfi-241</guid><description>SRFI 241 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>
+      This SRFI describes a simple pattern matcher based on one
+      originally devised by Kent Dybvig, Dan Friedman, and Eric
+      Hilsdale, which has a catamorphism feature to perform recursion
+      automatically.
+    &lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Thu, 23 Mar 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 235: Combinators</title><link>https://srfi.schemers.org/srfi-235/</link><guid>https://srfi.schemers.org/srfi-235</guid><description>SRFI 235 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI contains various procedures that accept and return procedures,
 as well as a few others, drawn from
 &lt;a href="https://wiki.call-cc.org/eggref/4/combinators">an earlier version of Chicken&lt;/a>.
 Common Lisp has a few of them too, and more come from
@@ -21,12 +26,7 @@ and reduce the need for ad hoc lambdas.&lt;/p>&lt;/blockquote></description><dc:
       (CFGs) suitable for formulating iterative and recursive
       algorithms.  Using the notion of a CFG term, this language can
       be seamlessly embedded in the Scheme language.  Complex CFG
-      terms can be composed from simple CFG terms.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 11 Nov 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 241: Match — Simple Pattern-Matching Syntax to Express Catamorphisms on Scheme Data</title><link>https://srfi.schemers.org/srfi-241/</link><guid>https://srfi.schemers.org/srfi-241</guid><description>SRFI 241 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>
-      This SRFI describes a simple pattern matcher based on one
-      originally devised by Kent Dybvig, Dan Friedman, and Eric
-      Hilsdale, which has a catamorphism feature to perform recursion
-      automatically.
-    &lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Thu, 10 Nov 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 240: Reconciled Records</title><link>https://srfi.schemers.org/srfi-240/</link><guid>https://srfi.schemers.org/srfi-240</guid><description>SRFI 240 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a version of
+      terms can be composed from simple CFG terms.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 11 Nov 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 240: Reconciled Records</title><link>https://srfi.schemers.org/srfi-240/</link><guid>https://srfi.schemers.org/srfi-240</guid><description>SRFI 240 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a version of
       the &lt;code>define-record-type&lt;/code> definition
       of &lt;code>R&lt;sup>6&lt;/sup>RS&lt;/code>
       and &lt;a href="https://srfi.schemers.org/srfi-237/srfi-237.html">SRFI
@@ -206,7 +206,7 @@ compound data structures.&lt;/p>&lt;/blockquote></description><dc:creator>Felix 
     additional tail context guarantee.  To support an alternative
     model of parameters that is linked to the dynamic extent and not
     to the current parameterization, the notion of a parameter-like
-    object and the &lt;code>with&lt;/code> syntax are introduced.&lt;/p>
+    object and the &lt;code>temporarily&lt;/code> syntax are introduced.&lt;/p>
 
     &lt;p>&lt;i>Fluids:&lt;/i> Fluids are a syntactic reinterpretation of parameter
       objects.&lt;/p>
@@ -690,11 +690,7 @@ and a suggested &lt;code>format-array&lt;/code> procedure.&lt;/p>&lt;/blockquote
 	  express iterative lazy algorithms.  It is shown that
 	  the &lt;code>delay-force&lt;/code> special form is unneeded and that the
 	  implementation can (and should) handle iterative lazy algorithms
-	  without space leaks.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sat, 15 Sep 2018 12:00:00 -0800</pubDate></item><item><title>SRFI 153: Ordered Sets</title><link>https://srfi.schemers.org/srfi-153/</link><guid>https://srfi.schemers.org/srfi-153</guid><description>SRFI 153 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>&lt;em>Osets&lt;/em> are immutable collections that can contain any Scheme
-  object. Osets enforce the constraint that no two elements can be the same
-  in the sense of the oset's associated &lt;em>equality predicate&lt;/em>
-  The elements in an oset appear in a fixed order determined by the
-  comparator used to create it.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Sun, 08 Jul 2018 12:00:00 -0800</pubDate></item><item><title>SRFI 146: Mappings</title><link>https://srfi.schemers.org/srfi-146/</link><guid>https://srfi.schemers.org/srfi-146</guid><description>SRFI 146 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>&lt;em>Mappings&lt;/em> are finite sets of
+	  without space leaks.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sat, 15 Sep 2018 12:00:00 -0800</pubDate></item><item><title>SRFI 146: Mappings</title><link>https://srfi.schemers.org/srfi-146/</link><guid>https://srfi.schemers.org/srfi-146</guid><description>SRFI 146 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>&lt;em>Mappings&lt;/em> are finite sets of
       associations, where each association is a pair consisting of a key and an
       arbitrary Scheme value. The keys are elements of a suitable domain. Each
       mapping holds no more than one association with the same key. The
@@ -871,7 +867,7 @@ and a suggested &lt;code>format-array&lt;/code> procedure.&lt;/p>&lt;/blockquote
       &lt;code>&amp;lt;ellipsis>&lt;/code> in subtemplates, and to allow pattern
       variables in subtemplates to be followed by more instances of the
       identifier &lt;code>&amp;lt;ellipsis>&lt;/code> than they are followed in the
-      subpattern in which they occur.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sat, 08 Jul 2017 12:00:00 -0800</pubDate></item><item><title>SRFI 143: Fixnums</title><link>https://srfi.schemers.org/srfi-143/</link><guid>https://srfi.schemers.org/srfi-143</guid><description>SRFI 143 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>This SRFI describes arithmetic procedures
+      subpattern in which they occur.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sat, 08 Jul 2017 12:00:00 -0800</pubDate></item><item><title>SRFI 153: Ordered Sets</title><link>https://srfi.schemers.org/srfi-153/</link><guid>https://srfi.schemers.org/srfi-153</guid><description>SRFI 153 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>&lt;em>Osets&lt;/em> are immutable collections that can contain any Scheme objects as long as a total order exists among the objects.  Osets enforce the constraint that no two elements can be the same in the sense of the oset's associated &lt;em>equality predicate&lt;/em>. The elements in an oset appear in a fixed order determined by the comparator used to create it.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Wed, 28 Jun 2017 12:00:00 -0800</pubDate></item><item><title>SRFI 143: Fixnums</title><link>https://srfi.schemers.org/srfi-143/</link><guid>https://srfi.schemers.org/srfi-143</guid><description>SRFI 143 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>This SRFI describes arithmetic procedures
       applicable to a limited range of exact integers only. These procedures
       are semantically similar to the corresponding generic-arithmetic
       procedures, but allow more efficient implementations.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Sat, 27 May 2017 12:00:00 -0800</pubDate></item><item><title>SRFI 140: Immutable Strings</title><link>https://srfi.schemers.org/srfi-140/</link><guid>https://srfi.schemers.org/srfi-140</guid><description>SRFI 140 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>This attempts to solve the same issues with
