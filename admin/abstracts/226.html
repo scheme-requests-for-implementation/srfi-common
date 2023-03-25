@@ -2,7 +2,7 @@
     there is a continuation awaiting the values of the expression. It is a
     distinguishing property of the Scheme programming language to offer a
     procedure (named <code>call/cc</code>) that captures the current
-    continuation as a procedure, which, when called, aborts the then current
+    continuation as a procedure, which, when called, aborts the then-current
     continuation and reinstates the captured one.</p>
 
     <p>One can visualize a continuation as a list of (continuation) frames
@@ -19,60 +19,62 @@
     <p>The libraries defined in this SRFI are all concerned with continuations
       in a wider sense. More specifically, the topics are as follows:</p>
 
-    <p><i>Continuation Prompts:</i> A continuation prompt is a special
-    continuation frame, which is tagged with a so-called prompt tag. Procedures
-    to install continuation prompts and to abort the current continuation and
-    to escape back to a previously installed continuation prompt are
-    provided. Moreover, continuation prompts are equipped with handlers that
-    are invoked when a continuation is aborted to them.</p>
+    <dl>
 
-    <p><i>Continuations:</i> When continuations are captured, the list of
-    captured continuation frames are always delimited by some continuation
+    <dt>Continuation Prompts</dt><dd> A continuation prompt is a special
+    continuation frame that is tagged with a so-called prompt tag. Procedures
+    to install continuation prompts and to abort the current continuation and
+    escape back to a previously installed continuation prompt are
+    provided. Moreover, continuation prompts are equipped with handlers that
+    are invoked when a continuation is aborted to them.</dd>
+
+    <dt>Continuations</dt><dd> When continuations are captured, the list of
+    captured continuation frames is always delimited by some continuation
     prompt. This extends the semantics of Scheme’s
     <code>call-with-current-continuation</code>.  Moreover, a
     procedure to capture so-called composable continuations is
     provided. As opposed to continuations captured
     by <code>call-with-current-continuation</code>, invoking a
-    composable continuation does not abort the then current
+    composable continuation does not abort the then-current
     continuation, so composable continuations behave like ordinary
     procedures.  Together with continuation prompts, composable
     continuations allow one to implement the various proposed sets of
     control operators for delimited continuations. Finally, a
     primitive (<code>call-in-continuation</code>) is provided that
     allows calling a procedure in a given continuation instead of just
-    delivering values to it.</p>
+    delivering values to it.</dd>
 
-    <p><i>Continuation Marks:</i> Continuation marks are a provided feature
-      that allows one to attach arbitrary information to continuation frames,
-      which are captured and reinstated along the rest of the
+    <dt>Continuation Marks</dt><dd> Continuation marks are a provided feature
+      that allows one to attach arbitrary information to continuation frames
+      that is captured and reinstated along with the rest of the
       continuation. Conceptually, exception handlers and parameters are
       implemented in terms of continuation marks, but the syntax and procedures
       defined in this SRFI allow the user to use them in more general
-      ways. Moreover, they reify the notion of a tail call, allowing, for
-      example, to test for tail context.</p>
+      ways. Moreover, they reify the notion of a tail call, allowing one, for
+      example, to test for tail context.</dd>
 
-    <p><i>Exceptions:</i> The exception mechanism
-    of <a href="https://doi.org/10.1017/S0956796809990074">R6RS</a>
-    and <a href="https://small.r7rs.org/attachment/r7rs.pdf"><cite>R7RS</cite></a> is reinterpreted with
+    <dt>Exceptions</dt><dd> The exception mechanism
+    of <a href="#sperber"><cite>R6RS</cite></a>
+    and <a href="#shinn"><cite>R7RS</cite></a> is reinterpreted with
     respect to the concepts introduced in this SRFI.  Moreover, the
     <code>with-exception-handler</code> procedure and the <code>guard</code>
-    syntax gain additional tail context guarantees.</p>
+    syntax gain additional tail-context guarantees.</dd>
 
-    <p><i>Parameters:</i> The parameter object mechanism
+    <dt>Parameters</dt><dd> The parameter object mechanism
     of <a href="#feeley2"><cite>SRFI 39</cite></a>
     and <cite>R7RS</cite> is reinterpreted with respect to the
     concepts introduced in this SRFI.  Procedures to retrieve the
     current parameterization and to reinstall it later are
     provided. Moreover, the <code>parameterize</code> syntax gains an
-    additional tail context guarantee.  To support an alternative
+    additional tail-context guarantee.  To support an alternative
     model of parameters that is linked to the dynamic extent and not
     to the current parameterization, the notion of a parameter-like
-    object and the <code>temporarily</code> syntax are introduced.</p>
+    object and the <code>temporarily</code> syntax are introduced.</dd>
 
-    <p><i>Fluids:</i> Fluids are a syntactic reinterpretation of parameter
-      objects.</p>
+    <dt>Fluids</dt><dd> Fluids are a syntactic reinterpretation of parameter
+      objects.</dd>
 
-    <p><i>Delayed evaluation:</i> The syntax and procedures on delayed
+    <dt>Delayed evaluation</dt><dd> The syntax and procedures on delayed
       evaluation of <cite>R7RS</cite> are revisited and redefined to handle the
       following satisfactorily: the parameterization of the delayed expression
       being forced, the treatment of exceptions raised during forcing of
@@ -80,15 +82,15 @@
       semantics are detailed with respect to the concepts introduced in this
       SRFI, and promises can naturally deliver an arbitrary number of values
       when being forced. Finally, the initial continuation of a delayed
-      expression being forced is defined in a way that makes it interchangeably
-      with the initial continuation of a thread.</p>
+      expression being forced is defined in a way that makes it interchangeable
+      with the initial continuation of a thread.</dd>
 
-    <p><i>Threads:</i> The thread mechanism
-      of <a href="https://srfi.schemers.org/srfi-18/srfi-18.html"><cite>SRFI 18</cite></a> is detailed with
+    <dt>Threads</dt><dd> The thread mechanism
+      of <a href="#feeley1"><cite>SRFI 18</cite></a> is detailed with
       respect to the concepts introduced in this SRFI.  In particular,
       mutation of parameter objects in multi-threaded applications is
       specified.  In order to support timeout arguments in a type-safe
-      way, a minimal API on time objects is included as well.</p>
+      way, a minimal API on time objects is included as well.</dd></dl>
 
     <p>Large parts of this SRFI have been inspired by the control operators
-      provided by <a href="https://racket-lang.org/"><cite>Racket</cite></a>.
+      provided by <a href="#racket"><cite>Racket</cite></a>.
