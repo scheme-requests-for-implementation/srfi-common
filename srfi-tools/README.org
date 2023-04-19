@@ -37,7 +37,8 @@ Gauche.
 For Chibi or Gauche, just make a symbolic link from the corresponding
 script in ~srfi-tools/wrapper/~ to ~srfi~ somewhere on your ~$PATH~.
 
-For Chicken, there is a ~srfi-tools.egg~ file.
+For Chicken, there is a ~srfi-tools.egg~ file. Running ~chicken-install -s~
+in the ~srfi-tools~ directory will compile and install ~srfi~.
 
 * Getting started
 
