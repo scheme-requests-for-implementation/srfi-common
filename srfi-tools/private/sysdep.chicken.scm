@@ -40,6 +40,12 @@
         result
         (error "Subprocess exited abnormally" command+args))))
 
+(define (run-program/get-boolean command+args)
+  (let-values (((exit-status normal-exit? pid)
+                (scsh-process:run (,(car command+args)
+                                   ,@(cdr command+args)))))
+    (and normal-exit? (eqv? exit-status 0))))
+
 (define (run-program/file-to-file command+args
                                   input-filename
                                   output-filename)
