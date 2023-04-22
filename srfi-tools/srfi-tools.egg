@@ -6,8 +6,7 @@
  (category tools)
  (license "MIT")
  (author "The SRFI community")
- (dependencies http-client r7rs scsh-process srfi-1 srfi-13 srfi-19 srfi-193
-               srfi-227)
+ (dependencies http-client r7rs scsh-process srfi-1 srfi-13 srfi-19 srfi-193)
  (test-dependencies)
  (distribution-files
   "private/chibi-html-parser.scm" "private/chibi-sxml.scm" "chart.scm"

@@ -6,8 +6,7 @@
           write-html-file)
   (import (scheme base)
 	  (scheme file)
-          (scheme write)
-	  (srfi 227))
+          (scheme write))
   (include "chibi-sxml.scm")
   (begin
     (define (write-html-file file sxml)
