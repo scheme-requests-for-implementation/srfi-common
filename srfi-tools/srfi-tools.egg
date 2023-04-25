@@ -22,7 +22,7 @@
   "private/sxml.sld" "private/sxml-org.scm" "private/sxml-org.sld"
   "private/sysdep.sld" "private/tar.sld" "private/time.sld"
   "private/sysdep.chicken.scm" "rss.scm" "rss.sld" "signature.sld"
-  "srfi-db.scm" "tar.sld" "toc.sld" "url.sld")
+  "tar.sld" "toc.sld" "url.sld")
  (components
   (program
    srfi
@@ -73,7 +73,7 @@
   (extension
    srfi-tools.data
    (source "data.sld")
-   (source-dependencies "srfi-db.scm")
+   (source-dependencies "data.scm")
    (component-dependencies
     srfi-tools.core srfi-tools.path
     srfi-tools.private.command srfi-tools.private.file srfi-tools.private.list
