@@ -1,4 +1,101 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 241: Match — Simple Pattern-Matching Syntax to Express Catamorphisms on Scheme Data</title><link>https://srfi.schemers.org/srfi-241/</link><guid>https://srfi.schemers.org/srfi-241</guid><description>SRFI 241 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 226: Control Features</title><link>https://srfi.schemers.org/srfi-226/</link><guid>https://srfi.schemers.org/srfi-226</guid><description>SRFI 226 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>Whenever an expression is evaluated during the run of a Scheme program,
+    there is a continuation awaiting the values of the expression. It is a
+    distinguishing property of the Scheme programming language to offer a
+    procedure (named &lt;code>call/cc&lt;/code>) that captures the current
+    continuation as a procedure, which, when called, aborts the then-current
+    continuation and reinstates the captured one.&lt;/p>
+
+    &lt;p>One can visualize a continuation as a list of (continuation) frames
+      where a non-tail call adds a frame to the top of the list and where the return
+      from a non-tail call removes the appropriate frame.&lt;/p>
+
+    &lt;p>Moreover, each expression is evaluated in a dynamic environment that
+      conceptually holds the values of parameters like the current output port
+      and the dynamic-wind stack at the point of evaluation.  As the dynamic
+      environment is captured and reinstated along the continuation when the
+      &lt;code>call/cc&lt;/code> machinery is used, we can view it conceptually as
+      part of the continuation.&lt;/p>
+
+    &lt;p>The libraries defined in this SRFI are all concerned with continuations
+      in a wider sense. More specifically, the topics are as follows:&lt;/p>
+
+    &lt;dl>
+
+    &lt;dt>Continuation Prompts&lt;/dt>&lt;dd> A continuation prompt is a special
+    continuation frame that is tagged with a so-called prompt tag. Procedures
+    to install continuation prompts and to abort the current continuation and
+    escape back to a previously installed continuation prompt are
+    provided. Moreover, continuation prompts are equipped with handlers that
+    are invoked when a continuation is aborted to them.&lt;/dd>
+
+    &lt;dt>Continuations&lt;/dt>&lt;dd> When continuations are captured, the list of
+    captured continuation frames is always delimited by some continuation
+    prompt. This extends the semantics of Scheme’s
+    &lt;code>call-with-current-continuation&lt;/code>.  Moreover, a
+    procedure to capture so-called composable continuations is
+    provided. As opposed to continuations captured
+    by &lt;code>call-with-current-continuation&lt;/code>, invoking a
+    composable continuation does not abort the then-current
+    continuation, so composable continuations behave like ordinary
+    procedures.  Together with continuation prompts, composable
+    continuations allow one to implement the various proposed sets of
+    control operators for delimited continuations. Finally, a
+    primitive (&lt;code>call-in-continuation&lt;/code>) is provided that
+    allows calling a procedure in a given continuation instead of just
+    delivering values to it.&lt;/dd>
+
+    &lt;dt>Continuation Marks&lt;/dt>&lt;dd> Continuation marks are a provided feature
+      that allows one to attach arbitrary information to continuation frames
+      that is captured and reinstated along with the rest of the
+      continuation. Conceptually, exception handlers and parameters are
+      implemented in terms of continuation marks, but the syntax and procedures
+      defined in this SRFI allow the user to use them in more general
+      ways. Moreover, they reify the notion of a tail call, allowing one, for
+      example, to test for tail context.&lt;/dd>
+
+    &lt;dt>Exceptions&lt;/dt>&lt;dd> The exception mechanism
+    of &lt;a href="#sperber">&lt;cite>R6RS&lt;/cite>&lt;/a>
+    and &lt;a href="#shinn">&lt;cite>R7RS&lt;/cite>&lt;/a> is reinterpreted with
+    respect to the concepts introduced in this SRFI.  (Here, and in what follows
+    we mean the so-called small language when we speak about &lt;cite>R7RS&lt;/cite>.)
+    Moreover, the
+    &lt;code>with-exception-handler&lt;/code> procedure and the &lt;code>guard&lt;/code>
+    syntax gain additional tail-context guarantees.&lt;/dd>
+
+    &lt;dt>Parameters&lt;/dt>&lt;dd> The parameter object mechanism
+    of &lt;a href="#feeley2">&lt;cite>SRFI 39&lt;/cite>&lt;/a>
+    and &lt;cite>R7RS&lt;/cite> is reinterpreted with respect to the
+    concepts introduced in this SRFI.  Procedures to retrieve the
+    current parameterization and to reinstall it later are
+    provided. Moreover, the &lt;code>parameterize&lt;/code> syntax gains an
+    additional tail-context guarantee.  To support an alternative
+    model of parameters that is linked to the dynamic extent and not
+    to the current parameterization, the notion of a parameter-like
+    object and the &lt;code>temporarily&lt;/code> syntax are introduced.&lt;/dd>
+
+    &lt;dt>Fluids&lt;/dt>&lt;dd> Fluids are a syntactic reinterpretation of parameter
+      objects.&lt;/dd>
+
+    &lt;dt>Delayed evaluation&lt;/dt>&lt;dd> The syntax and procedures on delayed
+      evaluation of &lt;cite>R7RS&lt;/cite> are revisited and redefined to handle the
+      following satisfactorily: the parameterization of the delayed expression
+      being forced, the treatment of exceptions raised during forcing of
+      delayed expressions, and iterative lazy algorithms. Moreover, their
+      semantics are detailed with respect to the concepts introduced in this
+      SRFI, and promises can naturally deliver an arbitrary number of values
+      when being forced. Finally, the initial continuation of a delayed
+      expression being forced is defined in a way that makes it interchangeable
+      with the initial continuation of a thread.&lt;/dd>
+
+    &lt;dt>Threads&lt;/dt>&lt;dd> The thread mechanism
+      of &lt;a href="#feeley1">&lt;cite>SRFI 18&lt;/cite>&lt;/a> is detailed with
+      respect to the concepts introduced in this SRFI.  In particular,
+      mutation of parameter objects in multi-threaded applications is
+      specified.  In order to support timeout arguments in a type-safe
+      way, a minimal API on time objects is included as well.&lt;/dd>&lt;/dl>
+
+    &lt;p>Large parts of this SRFI have been inspired by the control operators
+      provided by &lt;a href="#racket">&lt;cite>Racket&lt;/cite>&lt;/a>.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Tue, 25 Apr 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 241: Match — Simple Pattern-Matching Syntax to Express Catamorphisms on Scheme Data</title><link>https://srfi.schemers.org/srfi-241/</link><guid>https://srfi.schemers.org/srfi-241</guid><description>SRFI 241 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>
       This SRFI describes a simple pattern matcher based on one
       originally devised by Kent Dybvig, Dan Friedman, and Eric
       Hilsdale, which has a catamorphism feature to perform recursion
@@ -137,100 +234,7 @@ compound data structures.&lt;/p>&lt;/blockquote></description><dc:creator>Felix 
       and &lt;dfn>atomic (fixnum) boxes&lt;/dfn>, whose contents can be queried and
       mutated atomically.  Moreover, each atomic operation comes with
       a &lt;dfn>memory order&lt;/dfn> that defines the level of synchronization with
-      other threads.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Mon, 15 Nov 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 226: Control Features</title><link>https://srfi.schemers.org/srfi-226/</link><guid>https://srfi.schemers.org/srfi-226</guid><description>SRFI 226 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>Whenever an expression is evaluated during the run of a Scheme program,
-    there is a continuation awaiting the values of the expression. It is a
-    distinguishing property of the Scheme programming language to offer a
-    procedure (named &lt;code>call/cc&lt;/code>) that captures the current
-    continuation as a procedure, which, when called, aborts the then current
-    continuation and reinstates the captured one.&lt;/p>
-
-    &lt;p>One can visualize a continuation as a list of (continuation) frames
-      where a non-tail call adds a frame to the top of the list and where the return
-      from a non-tail call removes the appropriate frame.&lt;/p>
-
-    &lt;p>Moreover, each expression is evaluated in a dynamic environment that
-      conceptually holds the values of parameters like the current output port
-      and the dynamic-wind stack at the point of evaluation.  As the dynamic
-      environment is captured and reinstated along the continuation when the
-      &lt;code>call/cc&lt;/code> machinery is used, we can view it conceptually as
-      part of the continuation.&lt;/p>
-
-    &lt;p>The libraries defined in this SRFI are all concerned with continuations
-      in a wider sense. More specifically, the topics are as follows:&lt;/p>
-
-    &lt;p>&lt;i>Continuation Prompts:&lt;/i> A continuation prompt is a special
-    continuation frame, which is tagged with a so-called prompt tag. Procedures
-    to install continuation prompts and to abort the current continuation and
-    to escape back to a previously installed continuation prompt are
-    provided. Moreover, continuation prompts are equipped with handlers that
-    are invoked when a continuation is aborted to them.&lt;/p>
-
-    &lt;p>&lt;i>Continuations:&lt;/i> When continuations are captured, the list of
-    captured continuation frames are always delimited by some continuation
-    prompt. This extends the semantics of Scheme’s
-    &lt;code>call-with-current-continuation&lt;/code>.  Moreover, a
-    procedure to capture so-called composable continuations is
-    provided. As opposed to continuations captured
-    by &lt;code>call-with-current-continuation&lt;/code>, invoking a
-    composable continuation does not abort the then current
-    continuation, so composable continuations behave like ordinary
-    procedures.  Together with continuation prompts, composable
-    continuations allow one to implement the various proposed sets of
-    control operators for delimited continuations. Finally, a
-    primitive (&lt;code>call-in-continuation&lt;/code>) is provided that
-    allows calling a procedure in a given continuation instead of just
-    delivering values to it.&lt;/p>
-
-    &lt;p>&lt;i>Continuation Marks:&lt;/i> Continuation marks are a provided feature
-      that allows one to attach arbitrary information to continuation frames,
-      which are captured and reinstated along the rest of the
-      continuation. Conceptually, exception handlers and parameters are
-      implemented in terms of continuation marks, but the syntax and procedures
-      defined in this SRFI allow the user to use them in more general
-      ways. Moreover, they reify the notion of a tail call, allowing, for
-      example, to test for tail context.&lt;/p>
-
-    &lt;p>&lt;i>Exceptions:&lt;/i> The exception mechanism
-    of &lt;a href="https://doi.org/10.1017/S0956796809990074">R6RS&lt;/a>
-    and &lt;a href="https://small.r7rs.org/attachment/r7rs.pdf">&lt;cite>R7RS&lt;/cite>&lt;/a> is reinterpreted with
-    respect to the concepts introduced in this SRFI.  Moreover, the
-    &lt;code>with-exception-handler&lt;/code> procedure and the &lt;code>guard&lt;/code>
-    syntax gain additional tail context guarantees.&lt;/p>
-
-    &lt;p>&lt;i>Parameters:&lt;/i> The parameter object mechanism
-    of &lt;a href="#feeley2">&lt;cite>SRFI 39&lt;/cite>&lt;/a>
-    and &lt;cite>R7RS&lt;/cite> is reinterpreted with respect to the
-    concepts introduced in this SRFI.  Procedures to retrieve the
-    current parameterization and to reinstall it later are
-    provided. Moreover, the &lt;code>parameterize&lt;/code> syntax gains an
-    additional tail context guarantee.  To support an alternative
-    model of parameters that is linked to the dynamic extent and not
-    to the current parameterization, the notion of a parameter-like
-    object and the &lt;code>temporarily&lt;/code> syntax are introduced.&lt;/p>
-
-    &lt;p>&lt;i>Fluids:&lt;/i> Fluids are a syntactic reinterpretation of parameter
-      objects.&lt;/p>
-
-    &lt;p>&lt;i>Delayed evaluation:&lt;/i> The syntax and procedures on delayed
-      evaluation of &lt;cite>R7RS&lt;/cite> are revisited and redefined to handle the
-      following satisfactorily: the parameterization of the delayed expression
-      being forced, the treatment of exceptions raised during forcing of
-      delayed expressions, and iterative lazy algorithms. Moreover, their
-      semantics are detailed with respect to the concepts introduced in this
-      SRFI, and promises can naturally deliver an arbitrary number of values
-      when being forced. Finally, the initial continuation of a delayed
-      expression being forced is defined in a way that makes it interchangeably
-      with the initial continuation of a thread.&lt;/p>
-
-    &lt;p>&lt;i>Threads:&lt;/i> The thread mechanism
-      of &lt;a href="https://srfi.schemers.org/srfi-18/srfi-18.html">&lt;cite>SRFI 18&lt;/cite>&lt;/a> is detailed with
-      respect to the concepts introduced in this SRFI.  In particular,
-      mutation of parameter objects in multi-threaded applications is
-      specified.  In order to support timeout arguments in a type-safe
-      way, a minimal API on time objects is included as well.&lt;/p>
-
-    &lt;p>Large parts of this SRFI have been inspired by the control operators
-      provided by &lt;a href="https://racket-lang.org/">&lt;cite>Racket&lt;/cite>&lt;/a>.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 06 Aug 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 223: Generalized binary search procedures</title><link>https://srfi.schemers.org/srfi-223/</link><guid>https://srfi.schemers.org/srfi-223</guid><description>SRFI 223 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>Generalized procedures for binary search of vector-like data structures are provided which can be applied to any sequence type, including ones defined by the user, together with applications of these procedures for Scheme’s built-in vectors.&lt;/p>&lt;/blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Tue, 27 Jul 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 222: Compound Objects</title><link>https://srfi.schemers.org/srfi-222/</link><guid>https://srfi.schemers.org/srfi-222</guid><description>SRFI 222 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>Compound objects are analogous to R6RS compound conditions,
+      other threads.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Mon, 15 Nov 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 223: Generalized binary search procedures</title><link>https://srfi.schemers.org/srfi-223/</link><guid>https://srfi.schemers.org/srfi-223</guid><description>SRFI 223 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>Generalized procedures for binary search of vector-like data structures are provided which can be applied to any sequence type, including ones defined by the user, together with applications of these procedures for Scheme’s built-in vectors.&lt;/p>&lt;/blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Tue, 27 Jul 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 222: Compound Objects</title><link>https://srfi.schemers.org/srfi-222/</link><guid>https://srfi.schemers.org/srfi-222</guid><description>SRFI 222 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>Compound objects are analogous to R6RS compound conditions,
 and are suitable for use in creating and handling conditions
 on non-R6RS systems, among other purposes.
 They encapsulate an immutable sequence of subobjects, which can be
