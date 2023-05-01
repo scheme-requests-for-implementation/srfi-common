@@ -1328,7 +1328,7 @@
  (draft-date "2017-06-03")
  (done-date "2017-10-04"))
 ((number 153)
- (status draft)
+ (status final)
  (title "Ordered Sets")
  (author "John Cowan")
  (see-also 128 146)
