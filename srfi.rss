@@ -3,7 +3,17 @@
       and record constructor descriptors can be effectively ignored
       and replaced with the single notion of a record descriptor.  We
       also remove the restriction that the syntactic layer can only
-      define one constructor per record type defined.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Tue, 02 May 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 153: Ordered Sets</title><link>https://srfi.schemers.org/srfi-153/</link><guid>https://srfi.schemers.org/srfi-153</guid><description>SRFI 153 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>&lt;em>Osets&lt;/em> are immutable collections that can contain any Scheme objects as long as a total order exists among the objects.  Osets enforce the constraint that no two elements can be the same in the sense of the oset's associated &lt;em>equality predicate&lt;/em>. The elements in an oset appear in a fixed order determined by the comparator used to create it.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Mon, 01 May 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 226: Control Features</title><link>https://srfi.schemers.org/srfi-226/</link><guid>https://srfi.schemers.org/srfi-226</guid><description>SRFI 226 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>Whenever an expression is evaluated during the run of a Scheme program,
+      define one constructor per record type defined.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Tue, 02 May 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 240: Reconciled Records</title><link>https://srfi.schemers.org/srfi-240/</link><guid>https://srfi.schemers.org/srfi-240</guid><description>SRFI 240 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a version of
+      the &lt;code>define-record-type&lt;/code> definition
+      of &lt;code>R&lt;sup>6&lt;/sup>RS&lt;/code>
+      and &lt;a href="https://srfi.schemers.org/srfi-237/">SRFI
+      237&lt;/a> that extends the &lt;code>define-record-type&lt;/code> syntax
+      of &lt;code>R&lt;sup>7&lt;/sup>RS&lt;/code>, reconciling both systems.&lt;/p>
+
+    &lt;p>This SRFI is meant to be adopted by R&lt;sup>7&lt;/sup>RS-large to
+      integrate essentially the R&lt;sup>6&lt;/sup>RS record system
+      compatibly with the existing R&lt;sup>7&lt;/sup>RS-small record
+      system.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Tue, 02 May 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 153: Ordered Sets</title><link>https://srfi.schemers.org/srfi-153/</link><guid>https://srfi.schemers.org/srfi-153</guid><description>SRFI 153 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>&lt;em>Osets&lt;/em> are immutable collections that can contain any Scheme objects as long as a total order exists among the objects.  Osets enforce the constraint that no two elements can be the same in the sense of the oset's associated &lt;em>equality predicate&lt;/em>. The elements in an oset appear in a fixed order determined by the comparator used to create it.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Mon, 01 May 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 226: Control Features</title><link>https://srfi.schemers.org/srfi-226/</link><guid>https://srfi.schemers.org/srfi-226</guid><description>SRFI 226 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>Whenever an expression is evaluated during the run of a Scheme program,
     there is a continuation awaiting the values of the expression. It is a
     distinguishing property of the Scheme programming language to offer a
     procedure (named &lt;code>call/cc&lt;/code>) that captures the current
@@ -128,17 +138,7 @@ and reduce the need for ad hoc lambdas.&lt;/p>&lt;/blockquote></description><dc:
       (CFGs) suitable for formulating iterative and recursive
       algorithms.  Using the notion of a CFG term, this language can
       be seamlessly embedded in the Scheme language.  Complex CFG
-      terms can be composed from simple CFG terms.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 11 Nov 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 240: Reconciled Records</title><link>https://srfi.schemers.org/srfi-240/</link><guid>https://srfi.schemers.org/srfi-240</guid><description>SRFI 240 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a version of
-      the &lt;code>define-record-type&lt;/code> definition
-      of &lt;code>R&lt;sup>6&lt;/sup>RS&lt;/code>
-      and &lt;a href="https://srfi.schemers.org/srfi-237/srfi-237.html">SRFI
-      237&lt;/a> that extends the &lt;code>define-record-type&lt;/code> syntax
-      of &lt;code>R&lt;sup>7&lt;/sup>RS&lt;/code>, reconciling both systems.&lt;/p>
-
-    &lt;p>This SRFI is meant to be adopted by R&lt;sup>7&lt;/sup>RS-large to
-      integrate essentially the R&lt;sup>6&lt;/sup>RS record system
-      compatibly with the existing R&lt;sup>7&lt;/sup>RS-small record
-      system.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sat, 05 Nov 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 233: INI files</title><link>https://srfi.schemers.org/srfi-233/</link><guid>https://srfi.schemers.org/srfi-233</guid><description>SRFI 233 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>An INI file is a configuration file that consists of key-value
+      terms can be composed from simple CFG terms.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 11 Nov 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 233: INI files</title><link>https://srfi.schemers.org/srfi-233/</link><guid>https://srfi.schemers.org/srfi-233</guid><description>SRFI 233 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>An INI file is a configuration file that consists of key-value
 pairs for properties, and sections that group the properties. The
 name of these configuration files comes from the filename extension
 &lt;code>INI&lt;/code>, short for initialization.
