@@ -37,6 +37,11 @@ Gauche.
 For Chibi or Gauche, just make a symbolic link from the corresponding
 script in ~srfi-tools/wrapper/~ to ~srfi~ somewhere on your ~$PATH~.
 
+Chibi needs SRFI-19 installed via ~snow-chibi install "(srfi 19)"~. Running
+the script ~make-chibi-image.sh~ in the ~srfi-tools~ directory will dump an
+image with all the relevant modules preloaded; the wrapper script will detect
+that and load it to get faster startup times.
+
 For Chicken, there is a ~srfi-tools.egg~ file. Running ~chicken-install -s~
 in the ~srfi-tools~ directory will compile and install ~srfi~.
 
