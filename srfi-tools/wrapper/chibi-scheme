@@ -2,4 +2,10 @@
 set -eu
 d="$(dirname "$(readlink "$0" || printf '%s' "$0")")"
 d="$(cd "$(dirname "$0")" && cd "$d" && cd ../.. && pwd)"
-exec chibi-scheme -I "$d" -R "srfi-tools.main" -- "$@"
+
+if [ -f "$d/srfi-tools/chibi-srfi.img" ]; then
+    # Load an image file if available for faster startup
+    exec chibi-scheme -i "$d/srfi-tools/chibi-srfi.img" -R "srfi-tools.main" -- "$@"
+else
+    exec chibi-scheme -I "$d" -R "srfi-tools.main" -- "$@"
+fi
