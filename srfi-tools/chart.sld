@@ -2,6 +2,7 @@
   (export srfi-generate-chart)
   (import (scheme base)
 	  (scheme write)
+	  (only (srfi 19) date->julian-day)
 	  (srfi-tools data)
 	  (srfi-tools path)
 	  (srfi-tools private command)

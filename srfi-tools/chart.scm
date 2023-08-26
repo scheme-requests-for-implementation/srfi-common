@@ -28,6 +28,22 @@
 	  (write-string (number->string (vector-ref counts i)))
 	  (newline))))))
 
+(define (write-final-srfi-durations)
+  (define (iso->julian iso)
+    (date->julian-day (iso-date->date iso)))
+  (with-output-to-text-file "/tmp/srfi-durations.txt"
+    (lambda ()
+      (for-each (lambda (s)
+		  (write (srfi-number s))
+		  (write-string " ")
+		  (write
+		   (if (eq? (srfi-status s) 'final)
+		       (- (iso->julian (srfi-done-date s))
+			  (iso->julian (srfi-draft-date s)))
+		       0))
+		  (write-string "\n"))
+		(srfi-list)))))
+
 (define (write-srfi-data today)
   (let ((start-dates (srfi-dates srfi-draft-date (lambda (status) #true)))
 	(final-dates
@@ -35,6 +51,7 @@
 	(withdrawn-dates
 	 (srfi-dates srfi-done-date (lambda (status) (eq? 'withdrawn status))))
 	(now (date->julian today)))
+    (write-final-srfi-durations)
     (write-srfi-counts start-dates "/tmp/srfi-all-counts.txt" now)
     (write-srfi-counts final-dates "/tmp/srfi-final-counts.txt" now)
     (write-srfi-counts withdrawn-dates "/tmp/srfi-withdrawn-counts.txt" now)))
@@ -52,7 +69,10 @@
   (write-text-file "/tmp/srfi.gnuplot" (gnuplot-commands today))
   (write-srfi-data today)
   (run-program '("gnuplot" "/tmp/srfi.gnuplot"))
-  (run-program `("cp" "-p" "/tmp/srfi.svg" ,(srfi-common-dir))))
+  (run-program `("cp" "-p" "/tmp/srfi.svg" ,(srfi-common-dir)))
+  (run-program `("gnuplot"
+		 ,(path-append (srfi-common-dir) "admin" "durations.gnuplot")))
+  (run-program `("cp" "-p" "/tmp/durations.svg" ,(srfi-common-dir))))
 
 (define-command (generate-chart)
   "Generate the SRFI progress chart as an SVG file."
