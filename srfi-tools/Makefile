@@ -3,7 +3,7 @@
 .PHONY: all chibi chicken chicken-clean
 
 all:
-	@echo "Availa le targets:"
+	@echo "Available targets:"
 	@echo "make chibi: Install prerequisites and build chibi-scheme image file"
 	@echo "make chicken: Build and install the Chicken srfi-tools egg"
 
