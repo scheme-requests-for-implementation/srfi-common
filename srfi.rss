@@ -1,4 +1,63 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 237: R6RS Records (refined)</title><link>https://srfi.schemers.org/srfi-237/</link><guid>https://srfi.schemers.org/srfi-237</guid><description>SRFI 237 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>The record mechanism of R&lt;sup>6&lt;/sup>RS is refined.  In
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 245: Mixing definitions and expressions within bodies</title><link>https://srfi.schemers.org/srfi-245/</link><guid>https://srfi.schemers.org/srfi-245</guid><description>SRFI 245 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>Scheme has traditionally required procedure bodies and the bodies of derived constructs such as &lt;code>let&lt;/code> to contain definitions followed by expressions. This SRFI proposes to allow expressions to appear before and intermingled with definitions in such bodies, as was allowed in program bodies by the R6RS and in library bodies by R7RS small.&lt;/p>&lt;/blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Sat, 23 Sep 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 154: First-class dynamic extents</title><link>https://srfi.schemers.org/srfi-154/</link><guid>https://srfi.schemers.org/srfi-154</guid><description>SRFI 154 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>Scheme has the notion of the &lt;em>dynamic extent&lt;/em> of a
+  procedure call.  A number of standard Scheme procedures and
+  syntaxes
+  like &lt;code>dynamic-wind&lt;/code>, &lt;code>call-with-current-continuation&lt;/code>,
+  and &lt;code>parameterize&lt;/code>
+  deal with the dynamic extent indirectly.  The same holds true
+  for the procedures and syntaxes dealing with continuation
+  marks as defined by &lt;a href="https://srfi.schemers.org/srfi-157/srfi-157.html">SRFI
+  157&lt;/a>.&lt;/p>
+
+&lt;p>This SRFI reifies the dynamic extent into a first-class value
+  together with a well-defined procedural interface and a syntax to
+  create procedures that remember not only their environment at
+  creation time but also their dynamic extent, which includes their
+  dynamic environment.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Thu, 29 Jun 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 155: Promises</title><link>https://srfi.schemers.org/srfi-155/</link><guid>https://srfi.schemers.org/srfi-155</guid><description>SRFI 155 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>	&lt;p>
+	  Scheme, like ML, is a programming language with strict evaluation
+	  while others, like Haskell, use lazy evaluation.  Scheme, however,
+	  possesses the primitives &lt;code>delay&lt;/code> and &lt;code>force&lt;/code>
+	  that make it possible to express lazy algorithms.
+
+	&lt;/p>&lt;p>
+	  Lazy evaluation does not go well in conjunction with imperative,
+	  non-functional, side-effecting code.  It should, however, be
+	  applicable in a purely functional setting.  This is the case for the
+	  delayed evaluation model as described in the R7RS as long as no
+	  dynamically bound variables, also known as parameter objects, are
+	  present.  It is the purpose of this SRFI to rework the specification
+	  in the R7RS so that lazy evaluation works with purely functional code
+	  that makes use of dynamic environments or, more generally, the dynamic
+	  extent.  This is done by remembering the dynamic extent in effect when
+	  the &lt;code>delay&lt;/code> expression is evaluated.
+
+	&lt;/p>&lt;p>
+	  Another perceived misfeature of the R7RS model of delayed evaluation
+	  is the apparent need of the &lt;code>delay-force&lt;/code> special form to
+	  express iterative lazy algorithms.  It is shown that
+	  the &lt;code>delay-force&lt;/code> special form is unneeded and that the
+	  implementation can (and should) handle iterative lazy algorithms
+	  without space leaks.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Thu, 29 Jun 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 157: Continuation marks</title><link>https://srfi.schemers.org/srfi-157/</link><guid>https://srfi.schemers.org/srfi-157</guid><description>SRFI 157 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>
+  Continuation marks are a programming language feature that allows
+  one to attach information to and retrieve information from
+  continuations, generalizing stack inspection.  Conceptually, a
+  continuation consists of a number of frames where each frame stands
+  for an active procedure call that is not a tail call.  A
+  continuation mark is then a key-value pair associated with a frame,
+  with keys compared using &lt;code>eq?&lt;/code>.
+  At most one mark for a given key can be attached to a single frame.
+&lt;/p>
+
+&lt;p>
+  Besides stack inspection, continuation marks can be used to
+  implement dynamic scope, delimited continuations, or delayed
+  evaluation that is able to handle iterative lazy algorithms.
+&lt;/p>
+&lt;p>
+  This SRFI proposes to add continuation marks to the Scheme
+  programming language.  The interface defined here is modelled after
+  Racket's continuation marks.  It does not include all forms and
+  procedures provided by Racket but provides a compatible subset.
+&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Thu, 29 Jun 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 237: R6RS Records (refined)</title><link>https://srfi.schemers.org/srfi-237/</link><guid>https://srfi.schemers.org/srfi-237</guid><description>SRFI 237 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>The record mechanism of R&lt;sup>6&lt;/sup>RS is refined.  In
       particular, the triad of record names, record-type descriptors
       and record constructor descriptors can be effectively ignored
       and replaced with the single notion of a record descriptor.  We
@@ -133,8 +192,9 @@ and reduce the need for ad hoc lambdas.&lt;/p>&lt;/blockquote></description><dc:
 
 &lt;/p>&lt;p>Best enjoyed in combination with &lt;a href="https://srfi.schemers.org/srfi-162/">SRFI 162&lt;/a>.&lt;/p>&lt;/blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Sat, 10 Dec 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 236: Evaluating expressions in an unspecified order</title><link>https://srfi.schemers.org/srfi-236/</link><guid>https://srfi.schemers.org/srfi-236</guid><description>SRFI 236 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines the &lt;code>independently&lt;/code> syntax, which can be
     used to combine side effects into one expression without
-    specifying their relative order.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Tue, 22 Nov 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 243: Unreadable Objects</title><link>https://srfi.schemers.org/srfi-243/</link><guid>https://srfi.schemers.org/srfi-243</guid><description>SRFI 243 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI standardizes a widely used lexical syntax for
-	writing unreadable objects.&lt;/p>&lt;/blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Sun, 20 Nov 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 242: The CFG Language</title><link>https://srfi.schemers.org/srfi-242/</link><guid>https://srfi.schemers.org/srfi-242</guid><description>SRFI 242 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a language to describe control-flow graphs
+    specifying their relative order.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Tue, 22 Nov 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 243: Unreadable Data</title><link>https://srfi.schemers.org/srfi-243/</link><guid>https://srfi.schemers.org/srfi-243</guid><description>SRFI 243 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI suggests how the Scheme reader and writer should
+  handle unreadable data in general, and unreadable objects in
+  particular.&lt;/p>&lt;/blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Sun, 20 Nov 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 242: The CFG Language</title><link>https://srfi.schemers.org/srfi-242/</link><guid>https://srfi.schemers.org/srfi-242</guid><description>SRFI 242 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a language to describe control-flow graphs
       (CFGs) suitable for formulating iterative and recursive
       algorithms.  Using the notion of a CFG term, this language can
       be seamlessly embedded in the Scheme language.  Complex CFG
@@ -165,7 +225,7 @@ nodes and other nodes that depend on them, forming a partial order,
 and returns a list representing a total ordering of the graph.
 If the graph is cyclic, the topological sort will fail, and an
 error will be signaled.
-&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan (spec)</dc:creator><pubDate>Wed, 10 Aug 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 200: Pattern Matching</title><link>https://srfi.schemers.org/srfi-200/</link><guid>https://srfi.schemers.org/srfi-200</guid><description>SRFI 200 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>This SRFI discusses some of the existing pattern-matching
+&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan and Arne Babenhauserheide</dc:creator><pubDate>Wed, 10 Aug 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 200: Pattern Matching</title><link>https://srfi.schemers.org/srfi-200/</link><guid>https://srfi.schemers.org/srfi-200</guid><description>SRFI 200 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>This SRFI discusses some of the existing pattern-matching
   libraries for the Scheme programming language &amp;amp;mdash; namely,
   the pattern matcher presented by Andrew K. Wright and Robert
   Cartwright in the paper "A Soft Type System for Scheme", the
@@ -284,7 +344,36 @@ implementation-specified bounds.)&lt;/p>&lt;/blockquote></description><dc:creato
 &lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 12 Feb 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 212: Aliases</title><link>https://srfi.schemers.org/srfi-212/</link><guid>https://srfi.schemers.org/srfi-212</guid><description>SRFI 212 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI introduces &lt;em>alias definitions&lt;/em>, a syntactic
 extension.  An alias definition transfers the binding of one
 identifier to another, effectively aliasing the identifier.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 12 Feb 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 218: Unicode Numerals</title><link>https://srfi.schemers.org/srfi-218/</link><guid>https://srfi.schemers.org/srfi-218</guid><description>SRFI 218 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>These procedures allow the creation and interpretation of numerals
-using any set of Unicode digits that support positional notation.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan (text) and Arvydas Silanskas (implementation)</dc:creator><pubDate>Sat, 30 Jan 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 201: Syntactic Extensions to the Core Scheme Bindings</title><link>https://srfi.schemers.org/srfi-201/</link><guid>https://srfi.schemers.org/srfi-201</guid><description>SRFI 201 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This document describes a handful of syntactic extensions
+using any set of Unicode digits that support positional notation.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan (text) and Arvydas Silanskas (implementation)</dc:creator><pubDate>Sat, 30 Jan 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 216: SICP Prerequisites (Portable)</title><link>https://srfi.schemers.org/srfi-216/</link><guid>https://srfi.schemers.org/srfi-216</guid><description>SRFI 216 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+   This SRFI follows
+    &lt;a href="https://srfi.schemers.org/srfi-203/">
+     SRFI 203
+    &lt;/a>
+   in providing "out-of-the-box" support for hosting the exercises suggested by
+    &lt;a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">
+     Structure and Interpretation of Computer Programs
+    &lt;/a>
+   in portable Scheme.
+&lt;/p>
+
+&lt;p>
+Whereas SRFI 203 focused on the necessarily non-portable aspects of the problem set (the graphics), this SRFI aims to provide support for the rest of the features, which are far more widespread, often already provided, and in reality mostly need just a common vocabulary.
+&lt;/p>
+
+&lt;p>
+This SRFI provides procedures for working with time data, multi-threading, and streams, as well as SICP names for &lt;code>true&lt;/code> and &lt;code>false&lt;/code>.
+&lt;/p>
+
+&lt;p>
+None of these procedures is fit for production use.  They are only designed for pedagogical purposes.
+&lt;/p>
+
+&lt;p>
+Students, however, are expected to be able to just write&lt;/p>
+ &lt;pre>
+ (include (srfi sicp))&lt;/pre>
+ &lt;p>and have the code from the book run without problems (apart from those intended by the book authors).
+&lt;/p>&lt;/blockquote></description><dc:creator>Vladimir Nikishkin</dc:creator><pubDate>Thu, 21 Jan 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 201: Syntactic Extensions to the Core Scheme Bindings</title><link>https://srfi.schemers.org/srfi-201/</link><guid>https://srfi.schemers.org/srfi-201</guid><description>SRFI 201 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This document describes a handful of syntactic extensions
   to the core bindings of the Scheme programming language.
   In particular, it proposes to extend the binding forms
   &lt;code>lambda&lt;/code>, &lt;code>let&lt;/code>,
@@ -517,36 +606,7 @@ as an extension of the optional arguments of
   information from a Scheme implementation.  The output is
   Line-oriented S-expressions which are easy to parse from Scheme, C,
   and shell scripts and can co-exist with non-S-expression output.  A
-  standard vocabulary is defined; extensions are easy to make.&lt;/p>&lt;/blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Mon, 24 Feb 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 216: SICP Prerequisites (Portable)</title><link>https://srfi.schemers.org/srfi-216/</link><guid>https://srfi.schemers.org/srfi-216</guid><description>SRFI 216 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
-   This SRFI follows
-    &lt;a href="https://srfi.schemers.org/srfi-203/">
-     SRFI 203
-    &lt;/a>
-   in providing "out-of-the-box" support for hosting the exercises suggested by
-    &lt;a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">
-     Structure and Interpretation of Computer Programs
-    &lt;/a>
-   in portable Scheme.
-&lt;/p>
-
-&lt;p>
-Whereas SRFI 203 focused on the necessarily non-portable aspects of the problem set (the graphics), this SRFI aims to provide support for the rest of the features, which are far more widespread, often already provided, and in reality mostly need just a common vocabulary.
-&lt;/p>
-
-&lt;p>
-This SRFI provides procedures for working with time data, multi-threading, and streams, as well as SICP names for &lt;code>true&lt;/code> and &lt;code>false&lt;/code>.
-&lt;/p>
-
-&lt;p>
-None of these procedures is fit for production use.  They are only designed for pedagogical purposes.
-&lt;/p>
-
-&lt;p>
-Students, however, are expected to be able to just write&lt;/p>
- &lt;pre>
- (include (srfi sicp))&lt;/pre>
- &lt;p>and have the code from the book run without problems (apart from those intended by the book authors).
-&lt;/p>&lt;/blockquote></description><dc:creator>Vladimir Nikishkin</dc:creator><pubDate>Tue, 21 Jan 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 174: POSIX Timespecs</title><link>https://srfi.schemers.org/srfi-174/</link><guid>https://srfi.schemers.org/srfi-174</guid><description>SRFI 174 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines the trivial type &lt;i>timespec&lt;/i>, which is used
+  standard vocabulary is defined; extensions are easy to make.&lt;/p>&lt;/blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Mon, 24 Feb 2020 12:00:00 -0800</pubDate></item><item><title>SRFI 174: POSIX Timespecs</title><link>https://srfi.schemers.org/srfi-174/</link><guid>https://srfi.schemers.org/srfi-174</guid><description>SRFI 174 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines the trivial type &lt;i>timespec&lt;/i>, which is used
 to represent the &lt;code>struct timespec&lt;/code> defined by the
 &lt;a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/time.h.html">
 P&lt;small>OSIX&lt;/small> &lt;code>&amp;lt;time.h>&lt;/code> header&lt;/a>.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Sat, 21 Dec 2019 12:00:00 -0800</pubDate></item><item><title>SRFI 175: ASCII character library</title><link>https://srfi.schemers.org/srfi-175/</link><guid>https://srfi.schemers.org/srfi-175</guid><description>SRFI 175 is now in &lt;em>final&lt;/em> status.&lt;blockquote>  &lt;p>This SRFI defines ASCII-only equivalents to many of the
@@ -656,71 +716,12 @@ or  &lt;a href="https://srfi.schemers.org/srfi-164">SRFI 164&lt;/a>.
 These extensions were implemented in Guile (except the handling of rank-0 arrays),
 and later in Kawa.
 &lt;/p>&lt;p>There are recommendations for output formatting
-and a suggested &lt;code>format-array&lt;/code> procedure.&lt;/p>&lt;/blockquote></description><dc:creator>Per Bothner</dc:creator><pubDate>Fri, 18 Jan 2019 12:00:00 -0800</pubDate></item><item><title>SRFI 154: First-class dynamic extents</title><link>https://srfi.schemers.org/srfi-154/</link><guid>https://srfi.schemers.org/srfi-154</guid><description>SRFI 154 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>Scheme has the notion of the &lt;em>dynamic extent&lt;/em> of a
-  procedure call.  A number of standard Scheme procedures and
-  syntaxes
-  like &lt;code>dynamic-wind&lt;/code>, &lt;code>call-with-current-continuation&lt;/code>,
-  and &lt;code>parameterize&lt;/code>
-  deal with the dynamic extent indirectly.  The same holds true
-  for the procedures and syntaxes dealing with continuation
-  marks as defined by &lt;a href="https://srfi.schemers.org/srfi-157/srfi-157.html">SRFI
-  157&lt;/a>.&lt;/p>
-
-&lt;p>This SRFI reifies the dynamic extent into a first-class value
-  together with a well-defined procedural interface and a syntax to
-  create procedures that remember not only their environment at
-  creation time but also their dynamic extent, which includes their
-  dynamic environment.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sat, 15 Sep 2018 12:00:00 -0800</pubDate></item><item><title>SRFI 155: Promises</title><link>https://srfi.schemers.org/srfi-155/</link><guid>https://srfi.schemers.org/srfi-155</guid><description>SRFI 155 is now in &lt;em>final&lt;/em> status.&lt;blockquote>	&lt;p>
-	  Scheme, like ML, is a programming language with strict evaluation
-	  while others, like Haskell, use lazy evaluation.  Scheme, however,
-	  possesses the primitives &lt;code>delay&lt;/code> and &lt;code>force&lt;/code>
-	  that make it possible to express lazy algorithms.
-
-	&lt;/p>&lt;p>
-	  Lazy evaluation does not go well in conjunction with imperative,
-	  non-functional, side-effecting code.  It should, however, be
-	  applicable in a purely functional setting.  This is the case for the
-	  delayed evaluation model as described in the R7RS as long as no
-	  dynamically bound variables, also known as parameter objects, are
-	  present.  It is the purpose of this SRFI to rework the specification
-	  in the R7RS so that lazy evaluation works with purely functional code
-	  that makes use of dynamic environments or, more generally, the dynamic
-	  extent.  This is done by remembering the dynamic extent in effect when
-	  the &lt;code>delay&lt;/code> expression is evaluated.
-
-	&lt;/p>&lt;p>
-	  Another perceived misfeature of the R7RS model of delayed evaluation
-	  is the apparent need of the &lt;code>delay-force&lt;/code> special form to
-	  express iterative lazy algorithms.  It is shown that
-	  the &lt;code>delay-force&lt;/code> special form is unneeded and that the
-	  implementation can (and should) handle iterative lazy algorithms
-	  without space leaks.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sat, 15 Sep 2018 12:00:00 -0800</pubDate></item><item><title>SRFI 146: Mappings</title><link>https://srfi.schemers.org/srfi-146/</link><guid>https://srfi.schemers.org/srfi-146</guid><description>SRFI 146 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>&lt;em>Mappings&lt;/em> are finite sets of
+and a suggested &lt;code>format-array&lt;/code> procedure.&lt;/p>&lt;/blockquote></description><dc:creator>Per Bothner</dc:creator><pubDate>Fri, 18 Jan 2019 12:00:00 -0800</pubDate></item><item><title>SRFI 146: Mappings</title><link>https://srfi.schemers.org/srfi-146/</link><guid>https://srfi.schemers.org/srfi-146</guid><description>SRFI 146 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>&lt;em>Mappings&lt;/em> are finite sets of
       associations, where each association is a pair consisting of a key and an
       arbitrary Scheme value. The keys are elements of a suitable domain. Each
       mapping holds no more than one association with the same key. The
       fundamental mapping operation is retrieving the value of an association
-      stored in the mapping when the key is given.&lt;/p>&lt;/blockquote></description><dc:creator>Arthur A. Gleckler and Marc Nieper-Wißkirchen</dc:creator><pubDate>Thu, 24 May 2018 12:00:00 -0800</pubDate></item><item><title>SRFI 157: Continuation marks</title><link>https://srfi.schemers.org/srfi-157/</link><guid>https://srfi.schemers.org/srfi-157</guid><description>SRFI 157 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
-  Continuation marks are a programming language feature that allows
-  one to attach information to and retrieve information from
-  continuations, generalizing stack inspection.  Conceptually, a
-  continuation consists of a number of frames where each frame stands
-  for an active procedure call that is not a tail call.  A
-  continuation mark is then a key-value pair associated with a frame,
-  with keys compared using &lt;code>eq?&lt;/code>.
-  At most one mark for a given key can be attached to a single frame.
-&lt;/p>
-
-&lt;p>
-  Besides stack inspection, continuation marks can be used to
-  implement dynamic scope, delimited continuations, or delayed
-  evaluation that is able to handle iterative lazy algorithms.
-&lt;/p>
-&lt;p>
-  This SRFI proposes to add continuation marks to the Scheme
-  programming language.  The interface defined here is modelled after
-  Racket's continuation marks.  It does not include all forms and
-  procedures provided by Racket but provides a compatible subset.
-&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Mon, 29 Jan 2018 12:00:00 -0800</pubDate></item><item><title>SRFI 150: Hygienic ERR5RS Record Syntax (reduced)</title><link>https://srfi.schemers.org/srfi-150/</link><guid>https://srfi.schemers.org/srfi-150</guid><description>SRFI 150 is now in &lt;em>final&lt;/em> status.&lt;blockquote>	&lt;p>
+      stored in the mapping when the key is given.&lt;/p>&lt;/blockquote></description><dc:creator>Arthur A. Gleckler and Marc Nieper-Wißkirchen</dc:creator><pubDate>Thu, 24 May 2018 12:00:00 -0800</pubDate></item><item><title>SRFI 150: Hygienic ERR5RS Record Syntax (reduced)</title><link>https://srfi.schemers.org/srfi-150/</link><guid>https://srfi.schemers.org/srfi-150</guid><description>SRFI 150 is now in &lt;em>final&lt;/em> status.&lt;blockquote>	&lt;p>
 	  This SRFI provides a specification and portable implementation of an
 	  extension of the ERR5RS record syntax
 	  of &lt;a href="https://srfi.schemers.org/srfi-131/srfi-131.html">SRFI
@@ -960,7 +961,36 @@ and a suggested &lt;code>format-array&lt;/code> procedure.&lt;/p>&lt;/blockquote
       a double-ended queue, a sequence which allows elements to be added or
       removed efficiently from either end. A structure is immutable when all
       its operations leave the structure unchanged. Note that none of the
-      procedures specified here ends with an exclamation point.&lt;/p>&lt;/blockquote></description><dc:creator>Kevin Wortman, John Cowan, and Wolfgang Corcoran-Mathe</dc:creator><pubDate>Fri, 01 Jul 2016 12:00:00 -0800</pubDate></item><item><title>SRFI 130: Cursor-based string library</title><link>https://srfi.schemers.org/srfi-130/</link><guid>https://srfi.schemers.org/srfi-130</guid><description>SRFI 130 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>&lt;abbr title="Revised&amp;lt;sup>5&amp;lt;/sup> Report on Scheme">R5RS&lt;/abbr> Scheme has
+      procedures specified here ends with an exclamation point.&lt;/p>&lt;/blockquote></description><dc:creator>Kevin Wortman, John Cowan, and Wolfgang Corcoran-Mathe</dc:creator><pubDate>Fri, 01 Jul 2016 12:00:00 -0800</pubDate></item><item><title>SRFI 125: Intermediate hash tables</title><link>https://srfi.schemers.org/srfi-125/</link><guid>https://srfi.schemers.org/srfi-125</guid><description>SRFI 125 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>This SRFI defines an interface to hash tables,
+      which are widely recognized as a fundamental data structure for a wide
+      variety of applications. A hash table is a data structure that:
+      &lt;ul>
+        &lt;li>Is disjoint from all other types.
+        &lt;/li>&lt;li>
+          Provides a mapping from objects known as
+          &lt;em>keys&lt;/em> to corresponding objects known as
+          &lt;em>values&lt;/em>.
+          &lt;ul>
+            &lt;li>Keys may be any Scheme objects in some
+            kinds of hash tables, but are restricted in other kinds.
+            &lt;/li>&lt;li>Values may be any Scheme objects.
+          &lt;/li>&lt;/ul>&lt;li>
+        &lt;/li>&lt;li>Has no intrinsic order for the key-value
+        &lt;em>associations&lt;/em> it contains.
+        &lt;/li>&lt;li>Provides an &lt;em>equality predicate&lt;/em>
+        which defines when a proposed key is the same as an existing key. No
+        table may contain more than one value for a given key.
+        &lt;/li>&lt;li>Provides a &lt;em>hash function&lt;/em> which maps
+        a candidate key into a non-negative exact integer.
+        &lt;/li>&lt;li>Supports mutation as the primary means of
+        setting the contents of a table.
+        &lt;/li>&lt;li>Provides key lookup and destructive update
+        in (expected) amortized constant time, provided a satisfactory hash
+        function is available.
+        &lt;/li>&lt;li>Does not guarantee that whole-table
+        operations work in the presence of concurrent mutation of the whole
+        hash table (values may be safely mutated).
+      &lt;/li>&lt;/li>&lt;li>&lt;/li>&lt;/ul>&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan and Will Clinger</dc:creator><pubDate>Sat, 28 May 2016 12:00:00 -0800</pubDate></item><item><title>SRFI 130: Cursor-based string library</title><link>https://srfi.schemers.org/srfi-130/</link><guid>https://srfi.schemers.org/srfi-130</guid><description>SRFI 130 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>&lt;abbr title="Revised&amp;lt;sup>5&amp;lt;/sup> Report on Scheme">R5RS&lt;/abbr> Scheme has
       an impoverished set of string-processing utilities, which is a problem
       for authors of portable code. Although &lt;abbr title="Revised&amp;lt;sup>7&amp;lt;/sup> Report on Scheme">R7RS&lt;/abbr> provides
       some extensions and improvements, it is still very incomplete. This
@@ -1071,36 +1101,7 @@ ____   &lt;i>*&lt;/i> n : &lt;i>factorial&lt;/i> (- n 1)
 (&lt;i>newline&lt;/i>)
 &lt;/pre>
         &lt;/td>&lt;/tr>&lt;/th>&lt;/th>&lt;/tr>&lt;/table>
-      &lt;/blockquote>&lt;/p>&lt;/blockquote></description><dc:creator>Arne Babenhauserheide</dc:creator><pubDate>Tue, 23 Jun 2015 12:00:00 -0800</pubDate></item><item><title>SRFI 125: Intermediate hash tables</title><link>https://srfi.schemers.org/srfi-125/</link><guid>https://srfi.schemers.org/srfi-125</guid><description>SRFI 125 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>This SRFI defines an interface to hash tables,
-      which are widely recognized as a fundamental data structure for a wide
-      variety of applications. A hash table is a data structure that:
-      &lt;ul>
-        &lt;li>Is disjoint from all other types.
-        &lt;/li>&lt;li>
-          Provides a mapping from objects known as
-          &lt;em>keys&lt;/em> to corresponding objects known as
-          &lt;em>values&lt;/em>.
-          &lt;ul>
-            &lt;li>Keys may be any Scheme objects in some
-            kinds of hash tables, but are restricted in other kinds.
-            &lt;/li>&lt;li>Values may be any Scheme objects.
-          &lt;/li>&lt;/ul>&lt;li>
-        &lt;/li>&lt;li>Has no intrinsic order for the key-value
-        &lt;em>associations&lt;/em> it contains.
-        &lt;/li>&lt;li>Provides an &lt;em>equality predicate&lt;/em>
-        which defines when a proposed key is the same as an existing key. No
-        table may contain more than one value for a given key.
-        &lt;/li>&lt;li>Provides a &lt;em>hash function&lt;/em> which maps
-        a candidate key into a non-negative exact integer.
-        &lt;/li>&lt;li>Supports mutation as the primary means of
-        setting the contents of a table.
-        &lt;/li>&lt;li>Provides key lookup and destructive update
-        in (expected) amortized constant time, provided a satisfactory hash
-        function is available.
-        &lt;/li>&lt;li>Does not guarantee that whole-table
-        operations work in the presence of concurrent mutation of the whole
-        hash table (values may be safely mutated).
-      &lt;/li>&lt;/li>&lt;li>&lt;/li>&lt;/ul>&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan and Will Clinger</dc:creator><pubDate>Thu, 28 May 2015 12:00:00 -0800</pubDate></item><item><title>SRFI 113: Sets and bags</title><link>https://srfi.schemers.org/srfi-113/</link><guid>https://srfi.schemers.org/srfi-113</guid><description>SRFI 113 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>&lt;em>Sets&lt;/em> and &lt;em>bags&lt;/em> (also known as
+      &lt;/blockquote>&lt;/p>&lt;/blockquote></description><dc:creator>Arne Babenhauserheide</dc:creator><pubDate>Tue, 23 Jun 2015 12:00:00 -0800</pubDate></item><item><title>SRFI 113: Sets and bags</title><link>https://srfi.schemers.org/srfi-113/</link><guid>https://srfi.schemers.org/srfi-113</guid><description>SRFI 113 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>&lt;em>Sets&lt;/em> and &lt;em>bags&lt;/em> (also known as
       multisets) are unordered collections that can contain any Scheme object.
       Sets enforce the constraint that no two elements can be the same in the
       sense of the set's associated &lt;em>equality predicate&lt;/em>; bags do
