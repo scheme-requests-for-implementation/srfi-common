@@ -155,7 +155,7 @@
       (srfi-browse-mail (parse-srfi-number num)))
 
     (define (srfi-compose num)
-      (desktop-open (srfi-mailto-url num)))
+      (desktop-open (srfi-mailto-url num) (srfi-title num)))
 
     (define-command (compose num)
       "Open email app with a new email to SRFI <num> mailing list."

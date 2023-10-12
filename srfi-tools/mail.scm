@@ -13,14 +13,18 @@
   "Display email address URL for SRFI <num>."
   (write-line-about-srfi srfi-mail-address num))
 
-(define (mailto-address-subject address subject)
-  (string-append "mailto:"
-                 address
-                 "?subject=" (url-hexify-string subject)))
+(define mailto-address
+  (case-lambda
+   ((address) (string-append "mailto:" address))
+   ((address subject)
+    (string-append "mailto:"
+                   address
+                   "?subject=" (url-hexify-string subject)))))
 
-(define (srfi-mailto-url num)
-  (mailto-address-subject (srfi-mail-address num)
-                          (srfi-title num)))
+(define srfi-mailto-url
+  (case-lambda
+   ((num) (mailto-address (srfi-mail-address num)))
+   ((num subject) (mailto-address (srfi-mail-address num) subject))))
 
 (define (find-matching-author author-name-part srfi)
   (or (find (lambda (author)
@@ -31,7 +35,7 @@
 
 (define (compose-message num subject sxml)
   (let* ((html (with-output-to-string (lambda () (sxml-display-as-html sxml))))
-         (mailto (mailto-address-subject (srfi-mail-address num) subject)))
+         (mailto (mailto-address (srfi-mail-address num) subject)))
     (copy-html-to-clipboard html)
     (browse-url mailto)
     (write-string "Make sure to use correct sender, and to BCC srfi-announce if appropriate.\n")))
@@ -276,7 +280,8 @@ This command is mostly useful to the SRFI editor."
 
 (define (srfi-new-sxml num)
   (let* ((srfi (srfi-by-number num))
-         (mail-url (srfi-mail-archive-url num))
+         (mail-address (srfi-mail-address num))
+         (mail-url (srfi-mailto-url num))
          (landing-url (srfi-landing-url num))
 	 (num (number->string num))
          (title (srfi-title srfi))
@@ -301,7 +306,7 @@ This command is mostly useful to the SRFI editor."
       (p "You can join the discussion of the draft by filling out the "
          "subscription form on that page.")
       (p "You can contribute a message to the discussion by sending it to "
-	 (a (@ (href ,mail-url)) ,mail-url)
+	 (a (@ (href ,mail-url)) ,mail-address)
 	 ".")
       (p "Here's the abstract:")
       (blockquote ,abstract)

@@ -5,7 +5,8 @@
           srfi-last-call-sxml
           srfi-new-sxml)
   (import (scheme base)
-          (scheme char)
+          (scheme case-lambda)
+	  (scheme char)
 	  (scheme file)
 
           (srfi-tools private clipboard)
