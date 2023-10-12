@@ -13,6 +13,7 @@
     (error-handling "Error Handling")
     (exceptions "Exceptions")
     (features "Features")
+    (garbage-collection "Garbage Collection")
     (i/o "I/O")
     (internationalization "Internationalization")
     (introspection "Introspection")
