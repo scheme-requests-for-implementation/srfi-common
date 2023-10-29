@@ -1,0 +1,12 @@
+    <p>
+      Scheme's exception system is extended so that exception handlers
+      gain access to the delimited continuation representing the rest
+      of the computation of the call of the thunk guarded by the
+      handler.  Algebraic effect handlers can be directly expressed in
+      this extended exception system.  The system directly implements
+      the <code>shift0</code>/<code>reset0</code> delimited control
+      operators.  It is well known that other delimited control
+      operators like <code>prompt0</code>/<code>control0</code> or
+      <code>reset</code>/<code>shift</code> are expressible
+      in <code>shift0</code>/<code>reset0</code> (and vice versa).
+    </p>
