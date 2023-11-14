@@ -1,4 +1,16 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 242: The CFG Language</title><link>https://srfi.schemers.org/srfi-242/</link><guid>https://srfi.schemers.org/srfi-242</guid><description>SRFI 242 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a language to describe control-flow graphs
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 249: Restarting conditions</title><link>https://srfi.schemers.org/srfi-249/</link><guid>https://srfi.schemers.org/srfi-249</guid><description>SRFI 249 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>When an exceptional situation is encountered by a program, it may
+create a &lt;em>condition&lt;/em> object describing the situation and then
+signal the condition and pass control to a condition handler. The
+signaler and handler are two different parts of a system, between which
+there is a barrier of abstraction. In order to recover gracefully and
+flexibly from exceptional situations, however, the signaler can provide
+multiple ways by which the handler can restart the computation, some of
+which may require extra input. Often, the decision of which method of
+recovery to choose is left up to a human user, who may be prompted for
+the input needed to recover. This SRFI proposes a simple mechanism
+called &lt;em>restarters&lt;/em> to encapsulate the information necessary to
+restart a computation with associated interactive prompters.&lt;/p>
+&lt;p>&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Mon, 13 Nov 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 242: The CFG Language</title><link>https://srfi.schemers.org/srfi-242/</link><guid>https://srfi.schemers.org/srfi-242</guid><description>SRFI 242 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a language to describe control-flow graphs
       (CFGs) suitable for formulating iterative and recursive
       algorithms.  Using the notion of a CFG term, this language can
       be seamlessly embedded in the Scheme language.  Complex CFG
