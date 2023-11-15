@@ -1,0 +1,36 @@
+<p>This SRFI defines an interface to hash tables, which are widely
+recognized as a fundamental data structure for a wide variety of
+applications.  A hash table is a data structure that:</p>
+<ul>
+  <li>Is disjoint from all other types.</li>
+  <li>Provides a mapping from objects known as <em>keys</em>
+    to corresponding objects known as <em>values</em>.
+    <ul>
+      <li>Keys may be any Scheme objects in some kinds of hash tables,
+        but are restricted in other kinds.</li>
+      <li>Values may be any Scheme objects.</li></ul></li>
+  <li>Provides an <em>equality predicate</em> which defines
+    when a proposed key is the same as an existing key.  No table
+    may contain more than one value for a given key.</li>
+  <li>Provides a <em>hash function</em> which maps a candidate
+    key into a non-negative exact integer.</li>
+  <li>Supports mutation as the primary means of setting the
+    contents of a table.</li>
+  <li>Provides key lookup and destructive update in (expected)
+    amortized constant time, provided that a satisfactory hash
+    function is available.</li>
+  <li>Does not guarantee that whole-table operations work in
+    the presence of concurrent mutation of the whole hash table.
+    (Values may be safely mutated.)</li>
+</ul>
+
+<p>
+Unlike the hash tables of <a href="https://srfi.schemers.org/srfi-125/">SRFI 125</a>,
+which is the direct ancestor of this specification, the hash tables described
+here are ordered by insertion: that is, associations inserted earlier in
+the history of the hash table appear earlier in the ordering.  Advances
+in the implementations of hash tables, as provided by C++, Python,
+JavaScript, etc., make the provision of this new facility practical.
+As a result, the hash tables of this SRFI do not interoperate with the
+hash tables of SRFI 125, <a href="https://srfi.schemers.org/srfi-126/">SRFI 126</a>,
+or existing R6RS implementations.</p>
