@@ -1,6 +1,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 243: Unreadable Data</title><link>https://srfi.schemers.org/srfi-243/</link><guid>https://srfi.schemers.org/srfi-243</guid><description>SRFI 243 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>This SRFI suggests how the Scheme reader and writer should
   handle unreadable data in general, and unreadable objects in
-  particular.&lt;/p>&lt;/blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Thu, 30 Nov 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 250: Insertion-ordered hash tables</title><link>https://srfi.schemers.org/srfi-250/</link><guid>https://srfi.schemers.org/srfi-250</guid><description>SRFI 250 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines an interface to hash tables, which are widely
+  particular.&lt;/p>&lt;/blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Thu, 30 Nov 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 251: Mixing groups of definitions with expressions within bodies</title><link>https://srfi.schemers.org/srfi-251/</link><guid>https://srfi.schemers.org/srfi-251</guid><description>SRFI 251 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
+Scheme has traditionally required procedure bodies and the bodies of derived constructs
+such as &lt;code>let&lt;/code> to contain definitions followed by commands/expressions.
+This SRFI proposes to allow mixing commands and groups of definitions in such bodies, so that each
+command/expression is in the scope of all local definitions preceding it, but not in scope of
+the local definitions following it. This approach is backwards compatible with R7RS and
+upholds the intuitive rule that to find the definition of a lexical variable, one has
+to look &lt;em>up&lt;/em> the source code tree.
+&lt;/p>&lt;/blockquote></description><dc:creator>Sergei Egorov</dc:creator><pubDate>Thu, 30 Nov 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 250: Insertion-ordered hash tables</title><link>https://srfi.schemers.org/srfi-250/</link><guid>https://srfi.schemers.org/srfi-250</guid><description>SRFI 250 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines an interface to hash tables, which are widely
 recognized as a fundamental data structure for a wide variety of
 applications.  A hash table is a data structure that:&lt;/p>
 &lt;ul>
