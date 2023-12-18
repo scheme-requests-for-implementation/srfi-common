@@ -170,7 +170,7 @@ deprecated SRFIs for a reasonable time period.</p>
 
 <p>New standards, such as R<sup>n</sup>RS, may supersede or conflict with
 existing SRFIs.  The editors and authors will work to update the relationship of
-active SRFIs to such standards.<a id="structure"></a></p>
+active SRFIs to such standards.</p>
 
 <h3 id="errata">Errata</h3>
 
@@ -191,7 +191,7 @@ active SRFIs to such standards.<a id="structure"></a></p>
     158</a>.  In this case, a tag like <code>errata-1</code> is added in
   the Git repository.</p>
 
-<h2>Structure</h2>
+<h2 id="structure">Structure</h2>
 
 <p>Every SRFI must meet the following requirements:</p>
 
@@ -262,9 +262,10 @@ active SRFIs to such standards.<a id="structure"></a></p>
   All proposals must be written in English, be properly formatted, and
   be reasonably grammatical.
 
-  <li id="license">It must contain a copyright statement as follows (where <em>AUTHOR</em>
-  should be replaced by the name(s) of the author(s) and <em>YEAR</em> will be
-  the year in which the SRFI number is allocated):
+  <li id="license">It must contain an MIT/Expat copyright statement as
+  follows (where <em>AUTHOR</em> should be replaced by the name(s) of
+  the author(s) and <em>YEAR</em> will be the year in which the SRFI
+  number is allocated):
 
     <blockquote>
       Copyright (C) <em>AUTHOR</em> (<em>YEAR</em>).
@@ -294,7 +295,45 @@ active SRFIs to such standards.<a id="structure"></a></p>
       another license, citing that software as its sample
       implementation.  The BSD 2- and 3-clause licenses are
       specifically allowed for this purpose.</p>
-</ol>
+
+      <p>Starting in December, 2023, SRFIs use the
+        <a href="https://spdx.dev/">SPDX</a> (The Software Package
+        Data Exchange) system for tracking licenses of SRFI sample
+        implementations.  This is the checklist used to ensure that
+        SPDX metadata is applied properly:
+
+        <ol>
+          <li>The SRFI text MUST include the text of the MIT/Expat
+            license.</li>
+
+          <li>All source and data files included in the repo SHOULD be
+            published under the MIT/Expat license.
+
+            <ol type="a">
+              <li>Any license notice already present in a file MUST be
+                retained as is.</li>
+
+              <li>If the format of a file supports comments, and the
+                file is at least fifteen lines long, it MUST contain a
+                copyright notice.  It MUST also contain the
+                corresponding SPDX metadata.  If the file uses a
+                custom license, the
+                SPDX <a href="https://reuse.software/faq/#custom-license">LicenseRef</a>
+                strategy SHOULD be employed.  If a file is a
+                derivative work, it may also include the license of
+                the original work, or a reference to it, if that is
+                required by the license of the original work.</li>
+
+              <li>If the format of a file does not support comments,
+                nothing SHOULD be added to the file.  Instead, the
+                standard external SPDX metadata SHOULD be
+                used.</li></ol>
+
+          <li>The reuse lint command SHOULD pass, i.e. the SRFI SHOULD
+            be REUSE-compliant.  This means that every source file
+            SHOULD contain a SPDX-License-Identifier tag with the
+            license, and that a LICENSES/ directory SHOULD contain the
+            referenced license's text.</li></ol></ol>
 
 <p>The editors may not reject a proposal because they disagree with the
 importance of the proposal, or because they think it is a wrong-headed approach
@@ -310,14 +349,14 @@ implementation of one of the other types is a complete refutation of this basis
 for rejection.</p>
 
 <p>The other likely basis for rejection is an inadequate design specification.
-In this case, the editors will attempt to help the author(s) conform to the
-requirements.</p>
+    In this case, the editors will attempt to help the author(s) conform to the
+    requirements.</p>
 
 <p>Remember, even if a proposal becomes a <em>final</em> SRFI, the need for it
-must be compelling enough for implementors to decide to incorporate it into
-their systems, or it will have been a waste of time and effort for everyone
-involved.  If the quality of any SRFI is not high, the likelihood of
-implementors adding this feature to their implementation is extremely low.</p>
+    must be compelling enough for implementors to decide to incorporate it into
+    their systems, or it will have been a waste of time and effort for everyone
+    involved.  If the quality of any SRFI is not high, the likelihood of
+    implementors adding this feature to their implementation is extremely low.</p>
 
 <a id="definitions"></a>
 <h2>Definitions</h2>
