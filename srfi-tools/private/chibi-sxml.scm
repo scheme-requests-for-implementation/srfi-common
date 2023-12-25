@@ -106,9 +106,16 @@
         (let ((tag (car sxml))
               (rest (cdr sxml)))
           (cond
+           ((eq? tag '*COMMENT*)
+	    (when indent?
+	      (newline out)
+	      (indent depth out))
+	    (write-string "<!-- " out)
+	    (for-each (lambda (x) (write-string x out)) rest)
+	    (write-string " -->" out))
            ((symbol? tag)
             (cond
-             ((eqv? #\! (string-ref (symbol->string tag) 0))
+	     ((eqv? #\! (string-ref (symbol->string tag) 0))
               (display "<" out) (display tag out)
               (for-each (lambda (x) (display " " out) (display x out)) rest)
               (display ">\n" out))
