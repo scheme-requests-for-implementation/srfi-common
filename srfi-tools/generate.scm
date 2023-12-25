@@ -138,6 +138,13 @@
 	       (src "https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js")))
 	   (script (@ (src "srfi.js")))))))
 
+(define (spdx-license-and-copyright authors)
+  `((*COMMENT* "SPDX-FileCopyrightText: "
+	       ,(number->string (date-year (current-date)))
+	       " "
+	       ,authors)		; Don't include email addresses.
+    (*COMMENT* "SPDX-License-Identifier: MIT")))
+
 (define (index-template abstract
 			authors
 			based-on
@@ -152,7 +159,8 @@
   `(*TOP*
     (!DOCTYPE html)
     (html
-     (head (title  ,title)
+     (head ,@(spdx-license-and-copyright authors)
+	   (title  ,title)
 	   (link (@ (href "/admin.css") (rel "stylesheet")))
 	   (link (@ (href "/list.css") (rel "stylesheet")))
 	   (link (@ (href "/favicon.png")
@@ -269,6 +277,7 @@
 			 status
 			 title)
   `(*TOP*
+    ,@(spdx-license-and-copyright authors)
     (h1 "SRFI " ,number ": " ,title)
     (h2 "by " ,authors)
     (p ,based-on)
