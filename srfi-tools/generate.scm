@@ -377,12 +377,9 @@
 				   (span (@ (class "antispam")) "nospam")
 				   "srfi.schemers.org"))
 			 (p "There is a separate, unmoderated mailing list for discussion of each SRFI.  All discussion of specific SRFI proposals should take place on these lists, as not all interested parties participate in other venues such as "
-			    (a (@ (href "https://groups.google.com/forum/#!forum/comp.lang.scheme"))
-			       "comp.lang.scheme")
-			    "and "
 			    (a (@ (href "https://www.reddit.com/r/scheme/"))
 			       "r/scheme")
-			    ".")
+			    " on Reddit.")
 			 (p "To subscribe to the mailing list for a particular SRFI, visit that SRFI's page, e.g. "
 			    (a (@ (href "http://srfi.schemers.org/srfi-0/"))
 			       "the one for SRFI 0")
