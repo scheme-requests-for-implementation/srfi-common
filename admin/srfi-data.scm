@@ -567,7 +567,7 @@
  (title "A Scheme API for test suites")
  (author "Per Bothner")
  (library-name testing)
- (see-also)
+ (see-also 252)
  (keywords testing)
  (draft-date "2005-01-28")
  (done-date "2006-06-18"))
