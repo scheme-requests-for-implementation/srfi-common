@@ -1,0 +1,14 @@
+<p>This defines an extension of the
+<a href="https://srfi.schemers.org/srfi-64/srfi-64.html">SRFI 64</a>
+test suite API to support property testing. It uses
+<a href="https://srfi.schemers.org/srfi-158/srfi-158.html">SRFI 158</a>
+generators to generate test inputs, which allows for the creation of custom
+input generators. It uses
+<a href="https://srfi.schemers.org/srfi-194/srfi-194.html">SRFI 194</a>
+as the source of random data, so that the generation of random test inputs can
+be made deterministic. For convenience, it also provides helper procedures to
+create test input generators for the types specified in R7RS-small. The
+interface to run property tests is similar to that of
+<a href="https://srfi.schemers.org/srfi-64/srfi-64.html">SRFI 64</a>,
+and a property-testing-specific test runner is specified in order to display
+the results of the propertized tests.</p>

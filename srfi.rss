@@ -1,4 +1,17 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 247: Syntactic Monads</title><link>https://srfi.schemers.org/srfi-247/</link><guid>https://srfi.schemers.org/srfi-247</guid><description>SRFI 247 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI extends Scheme with a simple mechanism to implicitly add
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 252: Property Testing</title><link>https://srfi.schemers.org/srfi-252/</link><guid>https://srfi.schemers.org/srfi-252</guid><description>SRFI 252 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This defines an extension of the
+&lt;a href="https://srfi.schemers.org/srfi-64/srfi-64.html">SRFI 64&lt;/a>
+test suite API to support property testing. It uses
+&lt;a href="https://srfi.schemers.org/srfi-158/srfi-158.html">SRFI 158&lt;/a>
+generators to generate test inputs, which allows for the creation of custom
+input generators. It uses
+&lt;a href="https://srfi.schemers.org/srfi-194/srfi-194.html">SRFI 194&lt;/a>
+as the source of random data, so that the generation of random test inputs can
+be made deterministic. For convenience, it also provides helper procedures to
+create test input generators for the types specified in R7RS-small. The
+interface to run property tests is similar to that of
+&lt;a href="https://srfi.schemers.org/srfi-64/srfi-64.html">SRFI 64&lt;/a>,
+and a property-testing-specific test runner is specified in order to display
+the results of the propertized tests.&lt;/p>&lt;/blockquote></description><dc:creator>Antero Mejr</dc:creator><pubDate>Sat, 13 Jan 2024 12:00:00 -0800</pubDate></item><item><title>SRFI 247: Syntactic Monads</title><link>https://srfi.schemers.org/srfi-247/</link><guid>https://srfi.schemers.org/srfi-247</guid><description>SRFI 247 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI extends Scheme with a simple mechanism to implicitly add
       formal arguments to procedure definitions and to implicitly add
       arguments to procedure calls.  Contrary to parameters (also known as fluids
       or dynamically bound variables), which can be used for the same
