@@ -4,6 +4,12 @@
   src: local("Noto Sans"),
        url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 }
+a {
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  word-wrap: break-word;
+}
 a.eponymous {
   font-family: Monaco, Courier, monospace;
   overflow-wrap: break-word;
