@@ -1,5 +1,7 @@
 ;;;; Generate "index.html" pages, etc. for SRFIs.
 
+(define srfi-editor "Arthur A. Gleckler")
+
 (define (faq-anchor-template description name)
   `(a (@ (href ,(concat "/srfi-faq.html#" name))) ,description))
 
@@ -159,7 +161,7 @@
   `(*TOP*
     (!DOCTYPE html)
     (html
-     (head ,@(spdx-license-and-copyright authors)
+     (head ,@(spdx-license-and-copyright srfi-editor)
 	   (title  ,title)
 	   (link (@ (href "/admin.css") (rel "stylesheet")))
 	   (link (@ (href "/list.css") (rel "stylesheet")))
@@ -277,7 +279,7 @@
 			 status
 			 title)
   `(*TOP*
-    ,@(spdx-license-and-copyright authors)
+    ,@(spdx-license-and-copyright srfi-editor)
     (h1 "SRFI " ,number ": " ,title)
     (h2 "by " ,authors)
     (p ,based-on)
