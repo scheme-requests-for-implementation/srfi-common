@@ -34,6 +34,9 @@ img.srfi-logo {
 span.antispam {
   display: none;
 }
+pre {
+  white-space: pre-wrap;
+}
 .todo {
   color: red;
   font-family: monospace;
