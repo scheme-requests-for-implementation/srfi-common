@@ -1,7 +1,11 @@
 <p>
 Topological sorting is an algorithm that takes a graph consisting of
 nodes and other nodes that depend on them, forming a partial order,
-and returns a list representing a total ordering of the graph.
-If the graph is cyclic, the topological sort will fail, and an
-error will be signaled.
+and returns a list representing a total ordering of the graph. If the
+graph is cyclic, the topological sort will fail. With the
+procedure <code>topological-sort</code>, failure results in
+returning <code>#false</code> and additional information is provided
+via multiple values. With <code>topological-sort/exception</code>, an
+error will be signalled on failure. This SRFI includes utilities to
+operate on simple edgelists.
 </p>
