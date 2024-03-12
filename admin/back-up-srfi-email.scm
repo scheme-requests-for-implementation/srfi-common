@@ -1,3 +1,6 @@
+(load-option 'format)
+(load-option 'synchronous-subprocess)
+
 ;; <> Automate extracting these numbers from the <option> lists on
 ;; <https://www.simplelists.com/members/managelists.php>.
 
@@ -268,6 +271,40 @@
     (13633 srfi-editors)
     (42845 stickers)))
 
+(define (curl-prepare-headers alist)
+  (append-map (lambda (h)
+		(list "--header"
+		      (format #false "~A: ~A" (car h) (cdr h))))
+	      alist))
+
+(define curl-http-get
+  (case-lambda
+   ((headers url)
+    ;; <> This fails if a non-NFC string is returned.
+    (call-with-output-string
+     (lambda (port)
+       (assert (zero?
+		(run-synchronous-subprocess
+		 "/usr/bin/curl"
+		 (cons* "--location"
+			"--silent"
+			"--url" url
+			(curl-prepare-headers headers))
+		 'output port))
+	       "Error in HTTP GET."
+	       url))))
+   ((headers url pathname)
+    (assert (zero?
+	     (run-synchronous-subprocess
+	      "/usr/bin/curl"
+	      (cons* "--location"
+		     "--output" (enough-namestring pathname)
+		     "--silent"
+		     "--url" url
+		     (curl-prepare-headers headers))))
+	    "Error in HTTP GET."
+	    url))))
+
 (define (back-up-list id name session)
   (define (cookie token)
     `("Cookie" . ,(format #f "simplelists.session=~A" session)))
@@ -285,6 +322,9 @@
 ; site and extracting the cookie from the browser.  Pass it to
 ; `back-up-srfi-email'.  Make sure that you're in the destination directory
 ; before running this.
-(define (back-up-srfi-email session)
-  (for-each (lambda (l) (back-up-list (car l) (cadr l) session))
-	    srfi-lists))
+(define (back-up-srfi-email directory session)
+  (with-working-directory-pathname
+      (pathname-as-directory directory)
+    (lambda ()
+      (for-each (lambda (l) (back-up-list (car l) (cadr l) session))
+		srfi-lists))))
