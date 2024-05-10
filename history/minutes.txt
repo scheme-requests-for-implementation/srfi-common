@@ -1,0 +1,421 @@
+From nobody Wed Oct 21 13:48:00 1998
+Path: rice!mufasa.harvard.edu!rutgers!news.sgi.com!nntp.primenet.com!newsfeed.cwix.com!209.95.128.196!news-nyc.telia.net!masternews.telia.net!news-feed.inet.tele.dk!bofh.vszbr.cz!newsfeed.online.no!news.ccs.neu.edu!not-for-mail
+From: William D Clinger <will@ccs.neu.edu>
+Newsgroups: comp.lang.scheme
+Subject: my notes from the Scheme workshop at ICFP98
+Date: Mon, 19 Oct 1998 11:40:47 -0400
+Organization: Northeastern University
+Lines: 400
+Message-ID: <362B5D7A.22872047@ccs.neu.edu>
+References: <slrn72hak9.jts.mkgardne@perts6.cs.uiuc.edu>
+Reply-To: will@ccs.neu.edu
+NNTP-Posting-Host: bonneville.ccs.neu.edu
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Mailer: Mozilla 4.04 (Macintosh; I; PPC)
+To: mkgardne@cs.uiuc.edu
+CC: will@ccs.neu.edu
+Xref: rice comp.lang.scheme:24631
+
+Will Clinger's revised notes (as of 19 Oct 1998) on the 
+Scheme Workshop before ICFP '98 in Baltimore,
+26 September 1998, from one to six o'clock.
+
+(Will's original notes included an incorrect description of
+WITH-HANDLER.  These revised notes incorporate Matthew Flatt's
+code for WITH-HANDLER, and reflect Shriram Krishnamurthi's
+confirmation that he volunteered to provide the web site for RFIs.
+Will would like to emphasize that this was not a meeting of the
+R*RS authors, and that his opinions as expressed in these notes
+may not be shared by any of the other R*RS authors.)
+
+
+Richard Kelsey presided, counted votes, but did not vote himself.
+There were 25 attendees (including Kelsey) at the start of the
+workshop, growing to at least 32 as the workshop continued.  The
+written proposals that were available before the workshop are
+still available at
+http://www.neci.nj.nec.com/homepages/kelsey/workshop.html.
+
+
+Kelsey presented a list of the proposals that had been received,
+and added a couple of new topics that were proposed for discussion
+even though no formal proposals were in hand.  For each proposal
+and topic, he counted the number of attendees who wanted to cover
+that proposal or topic at the workshop.  The most popular topics
+were then covered in decreasing order of popularity, except for
+a few reorderings to consider related topics together or to delay
+a topic that was expected to require an unusually long discussion.
+The more complex topics were discussed toward the end of the
+workshop.
+
+[Except as noted within square brackets, the proposals that gained
+the approval of a majority of those in attendance at the workshop
+are extensions that do not conflict with the Scheme standards.]
+
+
+RECORDS.
+
+21 people wanted to discuss records.  Kelsey reported that Kent
+Dybvig and Bill Rozas had been developing a record proposal and
+were almost finished.  Their proposal was expected to be agreeable
+to all.  Kent summarized this proposal after the workshop ended
+at six o'clock.
+
+
+DELIMITED CHARACTER SYNTAX.
+
+20 people wanted to discuss an oral proposal by Kent Dybvig that
+a delimiter be required following the character syntax.  For
+example, (#\123) would be an error instead of being equivalent to
+(#\1 23) as now.  This change would make it possible to add some
+extensions to the character syntax, for example to support Unicode.
+Dybvig reported that Chez Scheme already requires a delimiter
+following the character syntax, and would like to see that behavior
+sanctioned by the Scheme standards.
+
+Will Clinger requested that those present be polled to provide
+some record of their opinions for posterity.  Kelsey proposed that
+the poll be worded as something like "How many people would like
+to recommend this to the R*RS authors?" and "How many people would
+prefer not to recommend this to the authors?".  As the moderator,
+Kelsey did not vote on this or any other proposal.
+
+This straw poll indicated that 24 people wanted to recommend that
+a delimiter be required following the character syntax, and none
+were opposed to this recommendation.
+
+[This requires minor changes to both the IEEE standard and the R5RS.]
+
+
+LET-SYNTAX AND LETREC-SYNTAX SHOULD NOT CREATE A NEW SCOPE.
+
+15 people wanted to discuss an oral proposal by Kent Dybvig that
+LET-SYNTAX and LETREC-SYNTAX should not introduce a new scope.
+This would allow a LET-SYNTAX or LETREC-SYNTAX form to expand
+into one or more definitions that are visible in the scope in
+which they appear.  This is impossible with the R5RS semantics,
+which effectively requires LET-SYNTAX and LETREC-SYNTAX to expand
+into an expression of the form (LET () ___).  The straw poll for
+this issue was 17-3.
+
+[This requires minor changes to the R5RS.]
+
+
+REPOSITORY FOR PROPOSALS.
+
+17 people wanted to discuss Alan Bawden's proposal for library
+support primitives, which had more to do with process than with
+technical changes to the language.  Discussion led to a proposal
+to create a World-Wide Web repository for proposals in the form
+of requests for implementations (RFIs).  Creating such a
+repository does not require any changes to the R*RS or IEEE
+standard, so the straw poll was amended to ask how many people
+thought this should be done.  The straw poll was unanimously in
+favor.
+
+Shriram Krishnamurthi volunteered to do this.
+
+
+CHECKING FOR FEATURES SUPPORTED BY AN IMPLEMENTATION.
+
+13 people wanted to discuss Marc Feeley's proposal for allowing
+a program to query an implementation to determine its name or
+version or other characteristics.  This was considered early
+because it was relevant to Bawden's proposal.
+
+The attendees felt that it was more useful to inquire concerning
+the properties of an implementation than to ask for the name or
+version of the implementation, pointing to experience with the C
+preprocessor.  Feeley had proposed three different times for this
+kind of query:
+
+    A.  execution time
+    B.  macro expansion time (as in C)
+    C.  read time (during lexical analysis and parsing, as in
+        Common Lisp)
+
+A separate straw poll was taken for each of these three times,
+assuming a feature-oriented set of query predicates whose details
+would have to be worked out in a future proposal.  The results
+of these straw polls were as follows:
+
+    A.  execution time:         9-7
+    B.  macro expansion time:  25-0
+    C.  read time:              0-25
+
+
+INCLUDING SOURCE CODE.
+
+12 people wanted to discuss Marc Feeley's proposal for an INCLUDE
+form that includes source code from a file.  This was considered
+early because conditional inclusion of a file is expected
+to be one of the most common reasons for checking on the features
+that are supported by an implementation.
+
+Feeley's proposal was amended to allow (INCLUDE <filename>) to
+appear anywhere an expression or definition can appear, and to
+wrap an implicit (BEGIN ___) around the contents of the file.
+
+The straw poll was 24-1 in favor of this proposal.  Lars Hansen
+voted twice, feeling that it was both a good and a bad idea
+(bad because program-understanding tools become more sensitive
+to the file system).
+
+
+SAFER FILE I/O.
+
+17 people wanted to discuss an off-the-cuff proposal by Will
+Clinger to make opening and closing of files into safer operations.
+As amended by the attendees, this proposal adds six new procedures:
+
+    (file-exists? <filename>)
+    (delete-file <filename>)
+    (rename-file <oldname> <newname>)
+    (with-input-from-port <port> <thunk>)
+    (with-output-to-port <port> <thunk>)
+    (call-with-file-error-handler <thunk> <proc> <arg1> ...)
+
+Several implementations already provide the first three, and the
+desirability of WITH-INPUT-FROM-PORT and WITH-OUTPUT-TO-PORT has
+been noted by many people.
+
+The second argument to CALL-WITH-FILE-ERROR-HANDLER is required
+to be one of the following procedures:
+
+    open-input-file
+    open-output-file
+    delete-file
+    rename-file
+
+This procedure is called on <arg1> ... .  If a file i/o error
+occurs, then the error is signalled by calling <thunk> with no
+arguments and the same implicit continuation that was passed to
+CALL-WITH-FILE-ERROR-HANDLER.
+
+The straw poll was 20-4 in favor of this proposal.
+
+Kelsey asked how many people wanted to discuss exceptions.  Since
+several people had arrived since the original vote was taken on
+which topics should be discussed, and exceptions were perceived
+to have the potential to consume the rest of the workshop, new
+votes were taken to gauge the interest in several other topics
+that had not yet been discussed.
+
+
+IEEE FLOATING POINT.
+
+24 people wanted to discuss Brad Lucier's proposal for bringing
+Scheme's inexact arithmetic into line with the IEEE floating point
+standards and with other recommended practice for transcendental
+functions and complex arithmetic.  Most of Lucier's proposals
+would apply only to implementations that use IEEE floating point
+for inexact arithmetic and would thus act as recommendations,
+much like the appendices on inexact arithmetic that were published
+with the IEEE standard for Scheme.  A few of Lucier's proposals
+would require changes to the Scheme standards themselves, however.
+
+Discussion of Lucier's proposal required detailed knowledge of IEEE
+floating point arithmetic, which most attendees did not have.  The
+straw poll was 31-0 in favor of bringing Scheme into line with IEEE
+floating point and with current practice, trusting experts to work
+out the details.
+
+[This requires changes to both the IEEE standard and the R5RS:
+
+    The behavior of EQV? on inexact numbers would change.
+    If x and y are inexact reals represented as IEEE floating
+    point numbers, then (EQV? x y) would be true if and only if
+    x and y are equal _and_ have the same base, sign, number of
+    bits in the exponent, number of bits in the significand,
+    and the same biased exponents and significands.  For
+    example, (EQV? +0. -0.) would be false, as would
+    (EQV? 1e8 1d8) in an implementation for which 1d8 has more
+    precision than 1e8.  In most implementations (EQV? x y)
+    would be computed by a bit-level comparison of the floating
+    point representations for x and y.
+
+    (REAL? 4.3+0.i) and (REAL? 4.3-0.i) would be false, although
+    (REAL? 4.3+0i) and (REAL? 4.3-0i) would remain true (assuming
+    an implementation allows the real and imaginary parts of a
+    complex number to have a different exactness, which is not
+    required by the Scheme standards and would not be required
+    by Lucier's proposal).
+
+    TRUNCATE, ROUND, CEILING, and FLOOR would be defined only on
+    rationals, not on all reals.  The motivation for this is that
+    infinities and NaNs would be reals but not rationals, and
+    there is no meaningful integer value that these procedures
+    could return for infinities and NaNs.  Similarly the first
+    argument to RATIONALIZE would be required to be a rational.
+
+    The branch cuts for certain transcendental functions would
+    change to conform to current practice.
+
+    Kahan reportedly would like for (MAX 1 +nan. 2) to return 2
+    instead of +nan., but this would conflict with the guiding
+    principle of Scheme's inexact arithmetic so I oppose this.
+    Returning an inexact 2. would be consistent with Scheme's
+    arithmetic, and would not require any changes to the Scheme
+    standards.
+
+The changes to EQV? and REAL? would probably be the most visible
+in programs.  Generally speaking, the people who want these
+changes are also the only ones who are likely to notice them.]
+
+
+EXCEPTIONS.
+
+18 people wanted to discuss exceptions.  Starting with the
+Friedman/Haynes/Dybvig proposal, the attendees designed the
+core of an exception system with three procedures and one
+special syntactic form:
+
+    (current-exception-handler)
+    (call-with-handler <handler> <thunk>)
+    (raise <exception>)
+    (with-handlers ((<predicate> <handler>) ...) <body>)
+
+These operations must be augmented by an abstract data type of
+exceptions, including operations that:
+
+    create an exception
+    return an error message that is appropriate for an exception
+    extract other information that a programmer might want to
+        package with an exception
+    tell whether an exception is continuable
+    tell whether an exception is an i/o exception
+    ...
+
+Finally, an implementation would arrange for errors to be signalled
+by calling the current exception handler with an appropriate
+exception.
+
+(CURRENT-EXCEPTION-HANDLER) returns the dynamically current
+exception handler.  Implementations would provide a default
+handler, much like (CURRENT-INPUT-PORT) is the default input
+port.
+
+(CALL-WITH-HANDLER <handler> <thunk>) uses DYNAMIC-WIND or an
+equivalent technique to make <handler> the dynamically current
+exception handler, and calls <thunk>.  The dynamic scope of the
+<handler> ends when <thunk> returns.
+
+(RAISE <exception>) calls the current exception handler with
+one argument, the <exception>.  RAISE could be defined by
+
+    (define (raise exception)
+      ((current-exception-handler) exception))
+
+but post-workshop deliberation has suggested that RAISE
+should be used only for non-continuable errors, in which case it
+would be defined by something like
+
+    (define raise
+      (letrec ((raise
+                (lambda (exception)
+                  ((current-exception-handler) exception)
+                  (raise <continue-exception>))))
+        raise))
+
+where <continue-exception> is an exception whose error message
+would be something like "Contining a non-continuable exception
+is not allowed.".  Programmers who want to raise a continuable
+exception could call (CURRENT-EXCEPTION-HANDLER) directly.
+
+(WITH-HANDLERS ((<predicate> <handler>) ...) <body>) is syntactic
+sugar for something like Matthew Flatt's untested
+
+     (define-syntax with-handlers
+       (syntax-rules ()
+        ((_ ((predicate handler-procedure) ...) b1 b2 ...)
+         ((call-with-current-continuation
+           (lambda (k)
+             (let ((rh (current-exception-handler))
+                   (preds (list predicate ...))
+                   (handlers (list handler-procedure ...)))
+               (call-with-handler
+                (lambda (exn)
+                  (call-with-handler
+                   rh
+                   (lambda ()
+                     (let f ((preds preds) (handlers handlers))
+                       (if (not (null? preds))
+                           (if ((car preds) exn)
+                               (k (lambda () ((car handlers) exn)))
+                               (f (cdr preds) (cdr handlers)))
+                           (rh exn))))))
+                (lambda ()
+                  (call-with-values
+                   (lambda () b1 b2 ...)
+                   (lambda args
+                     (k (lambda () (apply values args))))))))))))))
+     
+The idea here is that <body> is evaluated within the dynamic scope
+of an exception handler that takes an exception and tests it using
+the predicates to select the specific handler that should handle
+the exception.  If no predicate returns true, then the handler
+that was current when the WITH-HANDLERS form was entered is used.
+The selected handler is called after the handler that was current
+when the WITH-HANDLERS form was entered has been reestablished as
+the current handler.  This helps to avoid infinite loops when a
+buggy exception handler generates an exception itself.
+
+Most programmers are expected to use WITH-HANDLERS and RAISE as
+a mechanism for exiting from a computation that encounters an error,
+while the lower-level CALL-WITH-HANDLER and CURRENT-EXCEPTION-HANDLER
+mechanisms allow for very fast continuable exceptions that do not
+necessarily correspond to errors.
+
+Kent Dybvig and Matthew Flatt were appointed to finish this proposal.
+Marc Feeley and Will Clinger volunteered to review it.
+
+The straw poll on this exception proposal was 31-1.  Alan Bawden
+voted negatively out of concern for problems that are not solved
+by this proposal.  The exception data type represents a kind of
+language that programs use to communicate between the code that
+encounters an unusual situation and the handler that deals with
+the situation.  The design of this language is the hard part.
+We are hoping to finesse that by using a very simple abstract
+data type of exceptions for now, leaving extensions of that data
+type to the future.
+
+
+UNICODE.
+
+12 people wanted to discuss Marc Feeley's proposal for supporting
+Unicode in Scheme.  This proposal contained many parts, several
+of which appeared to be separable.  Some of the syntactic details
+are fairly arbitrary and are justified by appeals to compatibility
+with other languages; these details deserve more thought.
+
+The attendees seemed to feel that some such proposal is needed but
+that the details of Feeley's proposal were a little too unsettled.
+
+The straw poll was 27-2 in favor of developing and adopting some
+similar proposal, but was not a vote on the details of this
+specific proposal.  The negative votes apparently reflected a
+feeling that it was not a good idea to vote on the general idea
+of a proposal instead of its specific details.
+
+[If Feeley's proposal is interpreted as a proposal for how an
+implementation of Scheme should support Unicode, then the only
+incompatibilities between Feeley's proposal and the existing
+Scheme standards appear to be conflicts that could be resolved
+by requiring a delimiter to follow the character notation, as
+was discussed toward the beginning of the workshop.
+
+If Feeley's proposal is interpreted as a proposal for requiring all
+implementations of Scheme to support Unicode, however, then there
+are a great many incompatibilities between Feeley's proposal and
+the current Scheme standards.
+
+It is not clear which of these interpretations was intended.
+Feeley phrased his proposal in terms of a language called "System
+Scheme", whose precise relationship to the Scheme standards is
+unclear.]
+
+
+The workshop ended at about six o'clock.
+
