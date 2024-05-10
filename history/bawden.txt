@@ -1,0 +1,60 @@
+Proposal: Library Support Primitives
+Author: Alan Bawden
+
+Ten years ago the Scheme Authors tried to encourage the growth of a Scheme
+library by appointing an official librarian.  We hoped to see the creation
+of a rich collection of portable and useful code.  It hasn't exactly worked
+out as we had hoped.  There is a Scheme repository that contains some
+useful code, but the portable code is somewhat limited in scope -- packages
+to do sorting and searching for example.
+
+Unfortunately, you can't effectively build many interesting libraries on
+top of pure R5RS Scheme.  It is too narrow a platform.  It is often
+necessary to go outside R5RS specification to do something interesting.
+Examples: A library that supports tables may want an `object-hash' function
+for using arbitrary objects as hash table keys.  A threads library can be
+built on top of `call-with-current-continuation', but will also want some
+way to track CPU usage.  An "object oriented" programming library may
+benefit from an efficient method dispatch primitive.  A "condition" system
+can be built on top of a primitive error trap mechanism.  And so on.
+
+Libraries built using primitives outside the Scheme specification are hard
+to port because they have to find that outside support differently in each
+implementation.  (Perhaps even using a slow-but-universal version of the
+necessary support in some implementations.)
+
+I would like to see the Scheme community encourage the further growth of
+the library by standardizing on a few of those outside-the-specification
+library support features, but in a way that is in keeping with our overall
+policy of careful, slow growth.  In other words, I'd like to find a way the
+authors can agree on some library support primitives, despite the fact that
+the authors rarely agree on anything.
+
+I therefore propose that the Authors add a new class of procedures to the
+language, Library Support Procedures (LSPs), that are not part of the
+"core" Scheme language.  LSPs must be easier to add to the language and it
+must be easier to modify their specifications.  Ordinary users must be
+discouraged from using LSPs in their code, to prevent the LSPs from
+becoming part of a de facto core Scheme.  If the behavior of an LSP is
+changed, only libraries would need to be altered.
+
+This isn't the place to discuss what political mechanism might be used to
+lower the barrier for LSPs to enter the specification.  Just as an example,
+we might appoint a panel of 7 respected Authors, and insist that 5 of them
+must agree on any change to the set of LSPs.
+
+In order to make it clear that LSPs are not part of the proper Scheme
+language, we might consider publishing the specifications in a completely
+separate document.
+
+In order to discourage users from using LSPs in ordinary code, we might
+agree that their names must all begin with a `%'.  (If we had a module
+system, we could put them in an "lsp" or "sys" module .)
+
+Since the LSP specification may change over time, libraries will need some
+way to check that they will work with the version of the LSP implemented by
+the Scheme system they are being loaded into.  We might give each version
+of the LSP specification a major and minor version number, and add a
+procedure, say `%proclaim-library-support-primitives-version', that a
+library can call to check that it is being loaded in to an LSP version that
+it is known to work with.
