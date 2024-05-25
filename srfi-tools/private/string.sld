@@ -44,7 +44,8 @@
    string-join-english
    string->slug
    unique-string-accumulator
-   url-hexify-string)
+   url-hexify-string
+   with-output-to-string)
   (import (scheme base)
           (scheme char)
 	  (scheme write)
