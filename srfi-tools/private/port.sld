@@ -1,7 +1,6 @@
 (define-library (srfi-tools private port)
   (export read-all
           read-all-chars
-          with-output-to-string
           write-bytevector-as-hex
           write-line
           written
@@ -31,13 +30,6 @@
               whole
               (loop (string-append whole part)
                     (* attempt 2))))))
-
-    (define (with-output-to-string thunk)
-      (call-with-port (open-output-string)
-        (lambda (port)
-          (parameterize ((current-output-port port))
-            (thunk))
-          (get-output-string port))))
 
     (define (write-bytevector-as-hex bytes)
       (do ((i 0 (+ 1 i)))

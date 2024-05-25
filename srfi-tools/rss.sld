@@ -9,6 +9,7 @@
           (srfi-tools private format)
           (srfi-tools private time)
           (srfi-tools private port)
+          (srfi-tools private string)
           (srfi-tools private sxml)
           (srfi-tools private html-parser)
           (srfi-tools private html-writer)
