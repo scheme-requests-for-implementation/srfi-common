@@ -143,7 +143,8 @@ SPDX-License-Identifier: MIT
       (and name body
            (eq? name 'h2)
            (string=? (car body) "Rationale"))))
-  (sxml-rest sxml rationale-tag?))
+  (cons '(h2 (@ (id "rationale")) "Rationale")
+        (sxml-rest sxml rationale-tag?)))
 
 (define (srfi-generate-all)
   (let* ((srfi (call-with-input-file "template.scm"
@@ -152,15 +153,16 @@ SPDX-License-Identifier: MIT
          (sxml (call-with-input-file "template.html"
                  (lambda (port)
                    (html->sxml port))))
+         (abstract (find-abstract sxml))
          (out (open-output-string))
-         (abstract (sxml-display-as-html (find-abstract sxml) out #t))
-         (abstract (get-output-string out))
+         (abstract-str (begin (sxml-display-as-html abstract out #t)
+                              (get-output-string out)))
          (out (open-output-string))
-         (content (sxml-display-as-html (find-content sxml) out #t))
-         (content (get-output-string out)))
-    (write-single-srfi-landing-page srfi "./")
+         (content (begin (sxml-display-as-html (find-content sxml) out #t)
+                         (get-output-string out))))
+    (write-single-srfi-landing-page srfi abstract "./")
     (write-single-srfi-readme srfi "./")
-    (write-single-srfi-document srfi "./" abstract content)))
+    (write-single-srfi-document srfi "./" abstract-str content)))
 
 (define-command (generate-all)
   "Generate all SRFI files using template.html and template.scm in PWD."
@@ -643,9 +645,8 @@ SPDX-License-Identifier: MIT
 
 ;; This generates the "index.html" that is used as a landing page for an
 ;; individual SRFI.
-(define (write-single-srfi-landing-page srfi dir)
+(define (write-single-srfi-landing-page srfi abstract dir)
   (let* ((number (srfi-number srfi))
-	 (abstract (srfi-abstract-raw number))
 	 (archive
 	  `(li (a (@ (href ,(concat "https://srfi-email.schemers.org/srfi-"
 				    number
@@ -699,7 +700,8 @@ SPDX-License-Identifier: MIT
 
 (define (write-srfi-landing-pages)
   (for-each (lambda (n)
-              (write-single-srfi-landing-page n (srfi-dir n)))
+              (write-single-srfi-landing-page n (srfi-abstract-raw n)
+                                              (srfi-dir n)))
             (srfi-list)))
 
 (define (write-srfi-readmes)
@@ -887,5 +889,6 @@ SPDX-License-Identifier: MIT
 (define-command (generate-srfi num)
   "Generate the \"index.html\" and \"README.org\" file for SRFI <num>."
   (let ((number (string->number num)))
-    (write-single-srfi-landing-page number (srfi-dir number))
+    (write-single-srfi-landing-page number (srfi-abstract-raw number)
+                                    (srfi-dir number))
     (write-single-srfi-readme number (srfi-dir number))))
