@@ -2,6 +2,8 @@
 
 This directory contains tools to help people read and write SRFIs.
 
+Some commands are only useful to the SRFI Editor.
+
 The tools can be accessed in two ways:
 
 1. By importing the libraries into a Scheme implementation.
@@ -62,6 +64,21 @@ You can also make git clones of individual SRFIs using ~srfi clone
 123~. This works even for SRFIs that have been seeded from the tar
 archive, though git may encounter conflicting changes to files in some
 cases.
+
+* Examples
+
+- ~srfi browse 123~
+- ~srfi info 123~
+- ~srfi what 12 34 56~
+- ~srfi tail~
+- ~srfi drafts~
+- ~srfi search string~
+- ~srfi identifier-search string~
+- ~srfi identifier-signatures string-split~
+- ~srfi compose 123~
+- ~srfi do 234 git pull~
+- ~srfi do-common git pull~
+- ~cd $(srfi dir 123)~
 
 * Environment variables
 
