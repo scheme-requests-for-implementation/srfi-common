@@ -49,6 +49,7 @@
           write-line-about-srfi
 
 	  keyword->name
+          alist->srfi
 
 	  write-custom-srfi-list
           write-srfi-list)
