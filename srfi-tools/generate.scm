@@ -5,6 +5,169 @@
 (define (faq-anchor-template description name)
   `(a (@ (href ,(concat "/srfi-faq.html#" name))) ,description))
 
+;; Format string for srfi-NNN.html.
+;; TODO: Convert to SXML.
+(define srfi-html-template "<!DOCTYPE html>
+<html lang=\"en\">
+  <head>
+<!--
+SPDX-FileCopyrightText: ~a ~a
+SPDX-License-Identifier: MIT
+-->
+    <meta charset=\"utf-8\">
+    <title>SRFI ~a: ~a</title>
+    <link href=\"/favicon.png\" rel=\"icon\" sizes=\"192x192\" type=\"image/png\">
+    <link rel=\"stylesheet\" href=\"https://srfi.schemers.org/srfi.css\" type=\"text/css\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+    <style>
+     small { font-size: 14px; vertical-align: 2px; }
+     body  { line-height: 24px; }
+     pre  { font-family: inherit; line-height: 20px; }
+    </style>
+  </head>
+  <body>
+    <h1><a href=\"https://srfi.schemers.org/\"><img class=\"srfi-logo\" src=\"https://srfi.schemers.org/srfi-logo.svg\" alt=\"SRFI surfboard logo\" /></a>~a: ~a</h1>
+
+<p>by ~a</p>
+
+<h2 id=\"status\">Status</h2>
+
+    <p>
+      This SRFI is currently in <em>~a</em> status.
+      Here is <a href=\"https://srfi.schemers.org/srfi-process.html\">an explanation</a> of each status that a SRFI can hold.
+      To provide input on this SRFI, please send email to <code><a href=\"mailto:srfi+minus+~a+at+srfi+dotschemers+dot+org\">srfi-~a@<span class=\"antispam\">nospam</span>srfi.schemers.org</a></code>.
+      To subscribe to the list, follow <a href=\"https://srfi.schemers.org/srfi-list-subscribe.html\">these instructions</a>.
+      You can access previous messages via the mailing list <a href=\"https://srfi-email.schemers.org/srfi-~a/\">archive</a>.
+    </p>
+
+    <ul>
+      <li>Received: ~a</li>
+~a
+      ~a
+    </ul>
+
+<h2 id=\"abstract\">Abstract</h2>
+
+~a
+
+~a
+
+<h2 id=\"copyright\">Copyright</h2>
+<p>&copy; ~a ~a</p>
+
+<p>
+~a
+</p>
+<p>
+~a
+</p>
+<p>
+~a
+</p>
+
+  <hr>
+  <address>Editor: <a href=\"mailto:srfi-editors+at+srfi+dot+schemers+dot+org\">~a</a></address>
+  </body>
+</html>\n")
+
+;; Generate srfi-NNN.html given its data, abstract HTML, and content HTML.
+(define (write-single-srfi-document keyword-options dir abstract content)
+  (let ((fname (string-append "srfi-"
+                              (number->string (srfi-number keyword-options))
+                              ".html")))
+    (call-with-output-file (path-append dir fname)
+      (lambda (port)
+        (display
+         (format srfi-html-template
+                 (parse-year (srfi-date-to-show keyword-options))
+                 (srfi-format-authors (srfi-authors keyword-options))
+                 (srfi-number keyword-options)
+                 (srfi-title keyword-options)
+                 (srfi-number keyword-options)
+                 (srfi-title keyword-options)
+                 (srfi-format-authors (srfi-authors keyword-options))
+                 (srfi-status-string keyword-options)
+                 (srfi-number keyword-options)
+                 (srfi-number keyword-options)
+                 (srfi-number keyword-options)
+                 (srfi-draft-date keyword-options)
+                 ""
+                 (if (eq? (srfi-status keyword-options) 'final)
+                     (string-append "<li>Finalized: "
+                                    (srfi-done-date keyword-options)
+                                    "</li>")
+                     "")
+                 abstract
+                 content
+                 (parse-year (srfi-date-to-show keyword-options))
+                 (srfi-format-authors (srfi-authors keyword-options))
+                 (first (srfi-license-sections))
+                 (second (srfi-license-sections))
+                 (third (srfi-license-sections))
+                 srfi-editor)
+         port)))))
+
+(define (parse-year str)
+  (string-take str 4))
+
+(define (sxml-rest elem proc)
+  (call/cc
+   (lambda (k)
+     (let walk ((elem elem))
+       (cond ((not (pair? elem)) '())
+             ((equal? '@ (car elem)) '())
+             (else (let* ((idx (list-index proc elem))
+                          (matches (if idx (drop elem idx) '())))
+                     (if (not (null? matches))
+                         (k (cdr matches))
+                         (for-each walk (sxml-body elem))))))))))
+
+(define (intersect l1 l2)
+  (filter (lambda (item)
+            (not (member item l2)))
+          l1))
+
+(define (find-abstract sxml)
+  (define (abstract-tag? elem)
+    (let-values (((name attrs body) (parse-tag elem)))
+      (and name body
+           (eq? name 'h2)
+           (string=? (car body) "Abstract"))))
+  (let* ((after-abstract (sxml-rest sxml abstract-tag?))
+         (after-content (find-content sxml)))
+    (intersect after-abstract after-content)))
+
+(define (find-content sxml)
+  (define (rationale-tag? elem)
+    (let-values (((name attrs body) (parse-tag elem)))
+      (and name body
+           (eq? name 'h2)
+           (string=? (car body) "Rationale"))))
+  (cons '(h2 (@ (id "rationale")) "Rationale")
+        (sxml-rest sxml rationale-tag?)))
+
+(define (srfi-generate-all)
+  (let* ((srfi (call-with-input-file "template.scm"
+                 (lambda (port)
+                   (alist->srfi (read port)))))
+         (sxml (call-with-input-file "template.html"
+                 (lambda (port)
+                   (html->sxml port))))
+         (abstract (find-abstract sxml))
+         (out (open-output-string))
+         (abstract-str (begin (sxml-display-as-html abstract out #t)
+                              (get-output-string out)))
+         (out (open-output-string))
+         (content (begin (sxml-display-as-html (find-content sxml) out #t)
+                         (get-output-string out))))
+    (write-single-srfi-landing-page srfi abstract "./")
+    (write-single-srfi-readme srfi "./")
+    (write-single-srfi-document srfi "./" abstract-str content)))
+
+(define-command (generate-all)
+  "Generate all SRFI files using template.html and template.scm in PWD."
+  (srfi-generate-all))
+
 (define (home-template keyword-options srfi-list)
   `(*TOP*
     (!DOCTYPE html)
@@ -482,9 +645,8 @@
 
 ;; This generates the "index.html" that is used as a landing page for an
 ;; individual SRFI.
-(define (write-single-srfi-landing-page srfi)
+(define (write-single-srfi-landing-page srfi abstract dir)
   (let* ((number (srfi-number srfi))
-	 (abstract (srfi-abstract-raw number))
 	 (archive
 	  `(li (a (@ (href ,(concat "https://srfi-email.schemers.org/srfi-"
 				    number
@@ -500,7 +662,7 @@
 	 (status (srfi-status srfi))
 	 (title (srfi-title srfi))
 	 (authors (srfi-authors srfi)))
-    (write-html-file (path-append (srfi-dir number) "index.html")
+    (write-html-file (path-append dir "index.html")
       (index-template
        abstract
        (srfi-format-authors authors)
@@ -514,7 +676,7 @@
        status
        title))))
 
-(define (write-single-srfi-readme srfi)
+(define (write-single-srfi-readme srfi dir)
   (let* ((based-on (or (srfi-based-on srfi) ""))
 	 (keywords (srfi-keywords srfi))
 	 (library-name-block
@@ -525,7 +687,7 @@
 	 (status (srfi-status srfi))
 	 (title (srfi-title srfi))
 	 (authors (srfi-authors srfi)))
-    (write-org-file (path-append (srfi-dir number) "README.org")
+    (write-org-file (path-append dir "README.org")
       (readme-template
        (srfi-format-authors authors)
        based-on
@@ -537,10 +699,15 @@
        title))))
 
 (define (write-srfi-landing-pages)
-  (for-each write-single-srfi-landing-page (srfi-list)))
+  (for-each (lambda (n)
+              (write-single-srfi-landing-page n (srfi-abstract-raw n)
+                                              (srfi-dir n)))
+            (srfi-list)))
 
 (define (write-srfi-readmes)
-  (for-each write-single-srfi-readme (srfi-list)))
+  (for-each (lambda (n)
+              (write-single-srfi-readme n (srfi-dir n)))
+            (srfi-list)))
 
 (define (srfi-anchor-template srfi)
   (let ((number (srfi-number srfi))
@@ -722,5 +889,6 @@
 (define-command (generate-srfi num)
   "Generate the \"index.html\" and \"README.org\" file for SRFI <num>."
   (let ((number (string->number num)))
-    (write-single-srfi-landing-page number)
-    (write-single-srfi-readme number)))
+    (write-single-srfi-landing-page number (srfi-abstract-raw number)
+                                    (srfi-dir number))
+    (write-single-srfi-readme number (srfi-dir number))))

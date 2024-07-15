@@ -1,9 +1,11 @@
 (define-library (srfi-tools legal)
   (import (scheme base)
+          (srfi 1)
           (srfi-tools private string)
           (srfi-tools private command))
   (export srfi-license-lines
-          srfi-license-string)
+          srfi-license-string
+          srfi-license-sections)
   (begin
 
     (define mit-license-boilerplate
@@ -27,6 +29,13 @@
         "LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION"
         "OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION"
         "WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."))
+
+    (define (srfi-license-sections)
+      (let* ((lst mit-license-boilerplate)
+             (sec1 (string-join-lines (take (drop lst 1) 7)))
+             (sec2 (string-join-lines (take (drop lst 9) 3)))
+             (sec3 (string-join-lines (take (drop lst 13) 7))))
+        (list sec1 sec2 sec3)))
 
     (define (srfi-license-lines who)
       (cons (string-append "Copyright (C) " who ".")
