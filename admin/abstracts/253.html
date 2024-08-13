@@ -1,0 +1,11 @@
+<p>
+  Data validation and type checking (supposedly) make for more correct code.
+  And faster code too, sometimes.
+  And, in rare cases, code that's easier to follow than the un-checked one.
+  Unfortunately, Scheme does not have many (type-)checking primitives out of the box.
+  This SRFI provides some, with the aim of allowing more performant and correct code with minimum effort on the user side.
+  Both (manual) argument checking/validation (<code>check-arg</code>)
+  and return value(s) (<code>values-checked</code>) checking/coercion are provided.
+  Syntax sugar like <code>lambda-checked</code>
+  and <code>let-checked</code> is added on top.
+</p>

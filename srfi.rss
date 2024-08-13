@@ -1,4 +1,14 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 251: Mixing groups of definitions with expressions within bodies</title><link>https://srfi.schemers.org/srfi-251/</link><guid>https://srfi.schemers.org/srfi-251</guid><description>SRFI 251 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 253: Data (Type-)Checking</title><link>https://srfi.schemers.org/srfi-253/</link><guid>https://srfi.schemers.org/srfi-253</guid><description>SRFI 253 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
+  Data validation and type checking (supposedly) make for more correct code.
+  And faster code too, sometimes.
+  And, in rare cases, code that's easier to follow than the un-checked one.
+  Unfortunately, Scheme does not have many (type-)checking primitives out of the box.
+  This SRFI provides some, with the aim of allowing more performant and correct code with minimum effort on the user side.
+  Both (manual) argument checking/validation (&lt;code>check-arg&lt;/code>)
+  and return value(s) (&lt;code>values-checked&lt;/code>) checking/coercion are provided.
+  Syntax sugar like &lt;code>lambda-checked&lt;/code>
+  and &lt;code>let-checked&lt;/code> is added on top.
+&lt;/p>&lt;/blockquote></description><dc:creator>Artyom Bologov</dc:creator><pubDate>Mon, 12 Aug 2024 12:00:00 -0800</pubDate></item><item><title>SRFI 251: Mixing groups of definitions with expressions within bodies</title><link>https://srfi.schemers.org/srfi-251/</link><guid>https://srfi.schemers.org/srfi-251</guid><description>SRFI 251 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
 Scheme has traditionally required procedure bodies and the bodies of derived constructs
 such as &lt;code>let&lt;/code> to contain definitions followed by commands/expressions.
 This SRFI proposes to allow mixing commands and groups of definitions in such bodies, so that each
@@ -310,9 +320,7 @@ and returns a list representing a total ordering of the graph. If the
 graph is cyclic, the topological sort will fail. With the
 procedure &lt;code>topological-sort&lt;/code>, failure results in
 returning &lt;code>#false&lt;/code> and additional information is provided
-via multiple values. With &lt;code>topological-sort/exception&lt;/code>, an
-error will be signalled on failure. This SRFI includes utilities to
-operate on simple edgelists.
+via multiple values.
 &lt;/p>&lt;/blockquote></description><dc:creator>John Cowan and Arne Babenhauserheide</dc:creator><pubDate>Wed, 10 Aug 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 200: Pattern Matching</title><link>https://srfi.schemers.org/srfi-200/</link><guid>https://srfi.schemers.org/srfi-200</guid><description>SRFI 200 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>This SRFI discusses some of the existing pattern-matching
   libraries for the Scheme programming language &amp;amp;mdash; namely,
   the pattern matcher presented by Andrew K. Wright and Robert
