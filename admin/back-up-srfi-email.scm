@@ -265,6 +265,7 @@
     (92286 srfi-250)
     (92492 srfi-251)
     (93122 srfi-252)
+    (100888 srfi-253)
     (13631 srfi-announce)
     (13133 srfi-discuss)
     (13633 srfi-editors)
