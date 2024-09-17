@@ -1,12 +1,15 @@
-<p>When an exceptional situation is encountered by a program, it may
-create a <em>condition</em> object describing the situation and then
-signal the condition and pass control to a condition handler. The
+<p>When an exceptional situation is encountered by a program, it
+usually creates a condition object describing the situation and then
+passes control to an exception handler. The
 signaler and handler are two different parts of a system, between which
 there is a barrier of abstraction. In order to recover gracefully and
 flexibly from exceptional situations, however, the signaler can provide
 multiple ways by which the handler can restart the computation, some of
 which may require extra input. Often, the decision of which method of
 recovery to choose is left up to a human user, who may be prompted for
-the input needed to recover. This SRFI proposes a simple mechanism
-called <em>restarters</em> to encapsulate the information necessary to
-restart a computation with associated interactive prompters.</p>
+the input needed to recover. This SRFI proposes a mechanism
+called <dfn>restarters</dfn> which uses a new type of condition object
+and an associated exception handler to encapsulate the information
+necessary to restart a computation. We also
+describe the behavior and interface of <dfn>interactor</dfn> procedures,
+which implement interactive restarts.</p>
