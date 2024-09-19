@@ -1,67 +1,64 @@
 #!/bin/bash
 
-# Do this in three <rsync> steps because we need to put only a subset
-# of the files in "srfi.tgz".
+set -e
 
-SOURCE=~/srfi/split
-DESTINATION=/var/www/srfi
-PARENT=`dirname $DESTINATION`
-DESTINATION_EMAIL=$PARENT/srfi-email
-DESTINATION_NO_EMAIL=$PARENT/srfi-no-email
+# Do this in several <rsync> steps because we need to put only a
+# subset of the files in "srfi.tgz".
 
-mkdir -p $DESTINATION_EMAIL
-mkdir -p $DESTINATION_NO_EMAIL
+REMOTE=speechcode.com:/var/www/
+SRFI_ROOT=$(realpath "`srfi common-dir`/..")
+STAGING=$(mktemp --directory -t srfi-staging-XXXXX)
+STAGING_EMAIL=$STAGING/srfi-email
+STAGING_NON_EMAIL=$STAGING/srfi
+STAGING_GLOBAL_TGZ=`mktemp`
 
-# Delete ".tgz" files so rsync won't report that it's deleting them.
-pushd $DESTINATION_NO_EMAIL/
-for SRFI in srfi-*; do rm -f $SRFI/$SRFI.tgz; done
-popd
-
+mkdir -p $STAGING_EMAIL
+mkdir -p $STAGING_NON_EMAIL
 rsync \
-  --checksum \
-  --delete \
   --exclude='*~' \
   --exclude='.gitignore' \
   --exclude='.git/' \
+  --exclude='.reuse/' \
   --exclude='srfi-email/' \
+  --perms \
+  --quiet \
   --recursive \
   --safe-links \
   --times \
-  $SOURCE/ \
-  $DESTINATION_NO_EMAIL/
-
-TEMPFILE=`mktemp`
-
-pushd $DESTINATION_NO_EMAIL/
-tar czf $TEMPFILE --exclude=srfi.tgz .
-mv $TEMPFILE $DESTINATION_EMAIL/srfi.tgz
+  $SRFI_ROOT/ \
+  $SRFI_ROOT/srfi-common/* \
+  $STAGING_NON_EMAIL/
+cd $STAGING_EMAIL/
+rsync \
+  --exclude='*~' \
+  --exclude='.gitignore' \
+  --exclude='.git/' \
+  --exclude='.reuse/' \
+  --perms \
+  --quiet \
+  --recursive \
+  --safe-links \
+  --times \
+  $SRFI_ROOT/srfi-email/ \
+  $STAGING_EMAIL/
+cd $STAGING_NON_EMAIL/
+tar czf $STAGING_GLOBAL_TGZ .
+mv $STAGING_GLOBAL_TGZ srfi.tgz
 for SRFI in srfi-*;
 do
-    (tar czf $SRFI.tgz $SRFI/; mv $SRFI.tgz $SRFI)
+    [ -d "$SRFI" ] || continue
+    (tar czf $SRFI.tgz $SRFI/; mv $SRFI.tgz $SRFI/)
 done
-popd
-rsync \
-  --checksum \
-  --delete \
-  --exclude='*~' \
-  --exclude='.gitignore' \
-  --exclude='.git/' \
-  --exclude='admin/' \
-  --progress \
-  --recursive \
-  --safe-links \
-  --times \
-  $SOURCE/srfi-common/* \
-  $SOURCE/srfi-email/* \
-  $DESTINATION_EMAIL/
-rsync \
-  --checksum \
-  --delete \
-  --out-format='%n' \
-  --recursive \
-  --times \
-  /var/www/srfi-no-email/ \
-  /var/www/srfi-email/ \
-  $DESTINATION/ \
-  | grep --line-buffered -v '/$'
-chmod -R 0755 $DESTINATION/
+chmod -R 0755 $STAGING/
+for DIR in srfi srfi-email; do
+  rsync \
+    --checksum \
+    --delete \
+    --out-format='%n' \
+    --perms \
+    --recursive \
+    --times \
+    $STAGING/$DIR/ \
+    $REMOTE/$DIR/ \
+    | grep --line-buffered -v '/$'
+done
