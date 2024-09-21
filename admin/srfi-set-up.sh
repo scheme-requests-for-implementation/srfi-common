@@ -5,7 +5,17 @@ set -e
 # Do this in several <rsync> steps because we need to put only a
 # subset of the files in "srfi.tgz".
 
-REMOTE=speechcode.com:/var/www/
+if [ "$#" -eq 0 ]; then
+  DESTINATION=speechcode.com:/var/www/
+elif [ "$#" -eq 1 ]; then
+  DESTINATION=$1
+else
+  echo "Usage: $0 [destination]"
+  echo
+  echo "The default destination is srfi.schemers.org."
+  exit 1
+fi
+
 SRFI_ROOT=$(realpath "`srfi common-dir`/..")
 STAGING=$(mktemp --directory -t srfi-staging-XXXXX)
 STAGING_EMAIL=$STAGING/srfi-email
@@ -60,6 +70,6 @@ for DIR in srfi srfi-email; do
     --recursive \
     --times \
     $STAGING/$DIR/ \
-    $REMOTE/$DIR/ \
+    "$DESTINATION"/$DIR/ \
     | grep --line-buffered -v '/$'
 done
