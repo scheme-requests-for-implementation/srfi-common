@@ -12,6 +12,7 @@ STAGING_EMAIL=$STAGING/srfi-email
 STAGING_NON_EMAIL=$STAGING/srfi
 STAGING_GLOBAL_TGZ=`mktemp`
 
+trap "rm -rf $STAGING/" 0 1 15
 mkdir -p $STAGING_EMAIL
 mkdir -p $STAGING_NON_EMAIL
 rsync \
