@@ -1,4 +1,14 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 249: Restarting conditions</title><link>https://srfi.schemers.org/srfi-249/</link><guid>https://srfi.schemers.org/srfi-249</guid><description>SRFI 249 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>When an exceptional situation is encountered by a program, it may
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 234: Topological Sorting</title><link>https://srfi.schemers.org/srfi-234/</link><guid>https://srfi.schemers.org/srfi-234</guid><description>SRFI 234 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+Topological sorting is an algorithm that takes a graph consisting of
+nodes and other nodes that depend on them, forming a partial order,
+and returns a list representing a total ordering of the graph. If the
+graph is cyclic, the topological sort will fail. The
+procedure &lt;code>topological-sort&lt;/code> returns three values. If
+sorting succeeds, the first value contains the result and the second
+and third are &lt;code>#false&lt;/code>. If sorting fails, the result
+is &lt;code>#false&lt;/code> and the second and third value may provide
+additional information about the error.
+&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan and Arne Babenhauserheide</dc:creator><pubDate>Tue, 24 Sep 2024 12:00:00 -0800</pubDate></item><item><title>SRFI 249: Restarting conditions</title><link>https://srfi.schemers.org/srfi-249/</link><guid>https://srfi.schemers.org/srfi-249</guid><description>SRFI 249 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>When an exceptional situation is encountered by a program, it may
 create a &lt;em>condition&lt;/em> object describing the situation and then
 signal the condition and pass control to a condition handler. The
 signaler and handler are two different parts of a system, between which
@@ -83,18 +93,21 @@ in the implementations of hash tables, as provided by C++, Python,
 JavaScript, etc., make the provision of this new facility practical.
 As a result, the hash tables of this SRFI do not interoperate with the
 hash tables of SRFI 125, &lt;a href="https://srfi.schemers.org/srfi-126/">SRFI 126&lt;/a>,
-or existing R6RS implementations.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Tue, 14 Nov 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 255: Restarting conditions</title><link>https://srfi.schemers.org/srfi-255/</link><guid>https://srfi.schemers.org/srfi-255</guid><description>SRFI 255 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>When an exceptional situation is encountered by a program, it may
-create a &lt;em>condition&lt;/em> object describing the situation and then
-signal the condition and pass control to a condition handler. The
+or existing R6RS implementations.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Tue, 14 Nov 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 255: Restarting conditions</title><link>https://srfi.schemers.org/srfi-255/</link><guid>https://srfi.schemers.org/srfi-255</guid><description>SRFI 255 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>When an exceptional situation is encountered by a program, it
+usually creates a condition object describing the situation and then
+passes control to an exception handler. The
 signaler and handler are two different parts of a system, between which
 there is a barrier of abstraction. In order to recover gracefully and
 flexibly from exceptional situations, however, the signaler can provide
 multiple ways by which the handler can restart the computation, some of
 which may require extra input. Often, the decision of which method of
 recovery to choose is left up to a human user, who may be prompted for
-the input needed to recover. This SRFI proposes a simple mechanism
-called &lt;em>restarters&lt;/em> to encapsulate the information necessary to
-restart a computation with associated interactive prompters.&lt;/p>&lt;/blockquote></description><dc:creator>Wolfgang Corcoran-Mathe and Marc Nieper-Wißkirchen</dc:creator><pubDate>Mon, 13 Nov 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 242: The CFG Language</title><link>https://srfi.schemers.org/srfi-242/</link><guid>https://srfi.schemers.org/srfi-242</guid><description>SRFI 242 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a language to describe control-flow graphs
+the input needed to recover. This SRFI proposes a mechanism
+called &lt;dfn>restarters&lt;/dfn> which uses a new type of condition object
+and an associated exception handler to encapsulate the information
+necessary to restart a computation. We also
+describe the behavior and interface of &lt;dfn>interactor&lt;/dfn> procedures,
+which implement interactive restarts.&lt;/p>&lt;/blockquote></description><dc:creator>Wolfgang Corcoran-Mathe and Marc Nieper-Wißkirchen</dc:creator><pubDate>Mon, 13 Nov 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 242: The CFG Language</title><link>https://srfi.schemers.org/srfi-242/</link><guid>https://srfi.schemers.org/srfi-242</guid><description>SRFI 242 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a language to describe control-flow graphs
       (CFGs) suitable for formulating iterative and recursive
       algorithms.  Using the notion of a CFG term, this language can
       be seamlessly embedded in the Scheme language.  Complex CFG
@@ -324,15 +337,7 @@ This SRFI provides access to the contents of an INI file.
       intervals of exact integers. Specialized variants of arrays are specified
       to provide portable programs with efficient representations for common
       use cases.&lt;/p>&lt;/blockquote></description><dc:creator>Bradley J. Lucier</dc:creator><pubDate>Sun, 25 Sep 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 231: Intervals and Generalized Arrays</title><link>https://srfi.schemers.org/srfi-231/</link><guid>https://srfi.schemers.org/srfi-231</guid><description>SRFI 231 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI specifies an array mechanism for Scheme. Arrays as defined here are quite general; at their most basic, an array is simply a mapping, or function, from multi-indices of exact integers $i_0,\ldots,i_{d-1}$ to Scheme values.  The set of multi-indices $i_0,\ldots,i_{d-1}$ that are valid for a given array form the &lt;i>domain&lt;/i> of the array.  In this SRFI, each array's domain consists  of the cross product of intervals of exact integers $[l_0,u_0)\times[l_1,u_1)\times\cdots\times[l_{d-1},u_{d-1})$ of $\mathbb Z^d$, $d$-tuples of integers.  Thus, we introduce a data type called $d$-&lt;i>intervals&lt;/i>, or more briefly &lt;a href="https://en.wikipedia.org/w/index.php?title=Interval_(mathematics)&amp;amp;oldid=1091935326">&lt;i>intervals&lt;/i>&lt;/a>, that encapsulates this notion. (We borrow this terminology from, e.g.,  Elias Zakon's &lt;a href="http://www.trillia.com/zakon1.html">Basic Concepts of Mathematics&lt;/a>.) Specialized variants of arrays provide portable programs with efficient representations for common use cases.&lt;/p>
-    &lt;p>This is a revised and improved version of &lt;a href="https://srfi.schemers.org/srfi-179/">SRFI 179&lt;/a>.&lt;/p>&lt;/blockquote></description><dc:creator>Bradley J. Lucier</dc:creator><pubDate>Sun, 25 Sep 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 234: Topological Sorting</title><link>https://srfi.schemers.org/srfi-234/</link><guid>https://srfi.schemers.org/srfi-234</guid><description>SRFI 234 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
-Topological sorting is an algorithm that takes a graph consisting of
-nodes and other nodes that depend on them, forming a partial order,
-and returns a list representing a total ordering of the graph. If the
-graph is cyclic, the topological sort will fail. With the
-procedure &lt;code>topological-sort&lt;/code>, failure results in
-returning &lt;code>#false&lt;/code> and additional information is provided
-via multiple values.
-&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan and Arne Babenhauserheide</dc:creator><pubDate>Wed, 10 Aug 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 200: Pattern Matching</title><link>https://srfi.schemers.org/srfi-200/</link><guid>https://srfi.schemers.org/srfi-200</guid><description>SRFI 200 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>This SRFI discusses some of the existing pattern-matching
+    &lt;p>This is a revised and improved version of &lt;a href="https://srfi.schemers.org/srfi-179/">SRFI 179&lt;/a>.&lt;/p>&lt;/blockquote></description><dc:creator>Bradley J. Lucier</dc:creator><pubDate>Sun, 25 Sep 2022 12:00:00 -0800</pubDate></item><item><title>SRFI 200: Pattern Matching</title><link>https://srfi.schemers.org/srfi-200/</link><guid>https://srfi.schemers.org/srfi-200</guid><description>SRFI 200 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>This SRFI discusses some of the existing pattern-matching
   libraries for the Scheme programming language &amp;amp;mdash; namely,
   the pattern matcher presented by Andrew K. Wright and Robert
   Cartwright in the paper "A Soft Type System for Scheme", the
