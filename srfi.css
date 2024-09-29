@@ -37,6 +37,9 @@ span.antispam {
 pre {
   white-space: pre-wrap;
 }
+td, th {
+  vertical-align: top;
+}
 .todo {
   color: red;
   font-family: monospace;
