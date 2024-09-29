@@ -37,6 +37,15 @@ span.antispam {
 pre {
   white-space: pre-wrap;
 }
+table {
+  border-collapse: collapse;
+  border-width: 0.1em;
+  border-style: solid;
+}
+td {
+  border-width: 0.1em;
+  border-style: solid;
+}
 .todo {
   color: red;
   font-family: monospace;
