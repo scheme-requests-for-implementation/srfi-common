@@ -997,7 +997,7 @@
  (status final)
  (title "Scheme Regular Expressions")
  (author "Alex Shinn")
- (library-name regex)
+ (library-name regexp)
  (see-also)
  (keywords data-structure r7rs-large r7rs-large-tangerine)
  (draft-date "2013-10-12")
