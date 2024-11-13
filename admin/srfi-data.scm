@@ -2210,6 +2210,6 @@
  (status draft)
  (title "Restarting conditions")
  (author "Wolfgang Corcoran-Mathe")
- (see-also 255)
+ (see-also 249)
  (keywords exceptions)
  (draft-date "2023-11-13"))
