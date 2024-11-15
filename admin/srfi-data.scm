@@ -2197,6 +2197,7 @@
  (status draft)
  (title "Data (Type-)Checking")
  (author "Artyom Bologov")
+ (see-also 143 144 145 187)
  (keywords type-checking)
  (draft-date "2024-08-12"))
 ((number 254)
