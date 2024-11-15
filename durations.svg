@@ -1959,7 +1959,10 @@
 	<path stroke='rgb(  0,   0,   0)'  d='M562.04,412.80 L562.04,324.37 L563.95,324.37 L563.95,412.80 L562.04,412.80 Z  '/>	<g stroke='none' shape-rendering='crispEdges'>
 		<polygon fill = 'rgb(  0,   0,   0)' points = '563.95,412.80 565.87,412.80 565.87,355.14 563.95,355.14 '/>
 	</g>
-	<path stroke='rgb(  0,   0,   0)'  d='M563.95,412.80 L563.95,355.15 L565.86,355.15 L565.86,412.80 L563.95,412.80 Z  '/></g>
+	<path stroke='rgb(  0,   0,   0)'  d='M563.95,412.80 L563.95,355.15 L565.86,355.15 L565.86,412.80 L563.95,412.80 Z  '/>	<g stroke='none' shape-rendering='crispEdges'>
+		<polygon fill = 'rgb(  0,   0,   0)' points = '565.86,412.80 567.77,412.80 567.77,359.62 565.86,359.62 '/>
+	</g>
+	<path stroke='rgb(  0,   0,   0)'  d='M565.86,412.80 L565.86,359.63 L567.76,359.63 L567.76,412.80 L565.86,412.80 Z  '/></g>
 	</g>
 <g fill="none" color="white" stroke="rgb(  0,   0,   0)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
