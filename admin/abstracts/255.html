@@ -5,10 +5,10 @@ signaler and handler are two different parts of a system, between which
 there is a barrier of abstraction. In order to recover gracefully and
 flexibly from exceptional situations, however, the signaler can provide
 multiple ways by which the handler can restart the computation, some of
-which may require extra input. Often, the decision of which method of
-recovery to choose is left up to a human user, who may be prompted for
+which may require extra input. Often, the choice of method of
+recovery is left up to a human user, who may be prompted for
 the input needed to recover. This SRFI proposes a mechanism
-called <dfn>restarters</dfn> which uses a new type of condition object
+called <dfn>restarters</dfn>, which uses a new type of condition object
 and an associated exception handler to encapsulate the information
 necessary to restart a computation. We also
 describe the behavior and interface of <dfn>interactor</dfn> procedures,
