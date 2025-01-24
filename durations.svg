@@ -1969,6 +1969,9 @@
 		<polygon fill = 'rgb(  0,   0,   0)' points = '548.96,412.80 550.85,412.80 550.85,371.93 548.96,371.93 '/>
 	</g>
 	<path stroke='rgb(  0,   0,   0)'  d='M548.96,412.80 L548.96,371.94 L550.84,371.94 L550.84,412.80 L548.96,412.80 Z  '/>	<g stroke='none' shape-rendering='crispEdges'>
+		<polygon fill = 'rgb(  0,   0,   0)' points = '550.84,412.80 552.74,412.80 552.74,159.25 550.84,159.25 '/>
+	</g>
+	<path stroke='rgb(  0,   0,   0)'  d='M550.84,412.80 L550.84,159.26 L552.73,159.26 L552.73,412.80 L550.84,412.80 Z  '/>	<g stroke='none' shape-rendering='crispEdges'>
 		<polygon fill = 'rgb(  0,   0,   0)' points = '556.49,412.80 558.39,412.80 558.39,324.36 556.49,324.36 '/>
 	</g>
 	<path stroke='rgb(  0,   0,   0)'  d='M556.49,412.80 L556.49,324.37 L558.38,324.37 L558.38,412.80 L556.49,412.80 Z  '/>	<g stroke='none' shape-rendering='crispEdges'>

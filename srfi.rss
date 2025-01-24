@@ -1,4 +1,15 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 258: Uninterned symbols</title><link>https://srfi.schemers.org/srfi-258/</link><guid>https://srfi.schemers.org/srfi-258</guid><description>SRFI 258 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>An uninterned symbol is not the same as any other symbol, even one
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 248: Minimal delimited continuations</title><link>https://srfi.schemers.org/srfi-248/</link><guid>https://srfi.schemers.org/srfi-248</guid><description>SRFI 248 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>
+      Scheme's exception system is extended so that exception handlers
+      gain access to the delimited continuation representing the rest
+      of the computation of the call of the thunk guarded by the
+      handler.  Algebraic effect handlers can be directly expressed in
+      this extended exception system.  The system directly implements
+      the &lt;code>shift0&lt;/code>/&lt;code>reset0&lt;/code> delimited control
+      operators.  It is well known that other delimited control
+      operators like &lt;code>prompt0&lt;/code>/&lt;code>control0&lt;/code> or
+      &lt;code>reset&lt;/code>/&lt;code>shift&lt;/code> are expressible
+      in &lt;code>shift0&lt;/code>/&lt;code>reset0&lt;/code> (and vice versa).
+    &lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 24 Jan 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 258: Uninterned symbols</title><link>https://srfi.schemers.org/srfi-258/</link><guid>https://srfi.schemers.org/srfi-258</guid><description>SRFI 258 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>An uninterned symbol is not the same as any other symbol, even one
     with the same name. These symbols are useful in macro programming and
     in other situations where guaranteed-unique names are needed.
     A lexical syntax for uninterned symbols is described, allowing
@@ -125,18 +136,7 @@ or existing R6RS implementations.&lt;/p>&lt;/blockquote></description><dc:creato
       (CFGs) suitable for formulating iterative and recursive
       algorithms.  Using the notion of a CFG term, this language can
       be seamlessly embedded in the Scheme language.  Complex CFG
-      terms can be composed from simple CFG terms.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sun, 29 Oct 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 248: Minimal delimited continuations</title><link>https://srfi.schemers.org/srfi-248/</link><guid>https://srfi.schemers.org/srfi-248</guid><description>SRFI 248 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>
-      Scheme's exception system is extended so that exception handlers
-      gain access to the delimited continuation representing the rest
-      of the computation of the call of the thunk guarded by the
-      handler.  Algebraic effect handlers can be directly expressed in
-      this extended exception system.  The system directly implements
-      the &lt;code>shift0&lt;/code>/&lt;code>reset0&lt;/code> delimited control
-      operators.  It is well known that other delimited control
-      operators like &lt;code>prompt0&lt;/code>/&lt;code>control0&lt;/code> or
-      &lt;code>reset&lt;/code>/&lt;code>shift&lt;/code> are expressible
-      in &lt;code>shift0&lt;/code>/&lt;code>reset0&lt;/code> (and vice versa).
-    &lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sun, 29 Oct 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 154: First-class dynamic extents</title><link>https://srfi.schemers.org/srfi-154/</link><guid>https://srfi.schemers.org/srfi-154</guid><description>SRFI 154 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>Scheme has the notion of the &lt;em>dynamic extent&lt;/em> of a
+      terms can be composed from simple CFG terms.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sun, 29 Oct 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 154: First-class dynamic extents</title><link>https://srfi.schemers.org/srfi-154/</link><guid>https://srfi.schemers.org/srfi-154</guid><description>SRFI 154 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>Scheme has the notion of the &lt;em>dynamic extent&lt;/em> of a
   procedure call.  A number of standard Scheme procedures and
   syntaxes
   like &lt;code>dynamic-wind&lt;/code>, &lt;code>call-with-current-continuation&lt;/code>,
