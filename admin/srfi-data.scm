@@ -2208,7 +2208,7 @@
  (author "Marc Nieper-Wißkirchen")
  (see-also 124 246)
  (keywords garbage-collection)
- (draft-date "2021-09-11"))
+ (draft-date "2024-09-11"))
 ((number 255)
  (status final)
  (title "Restarting conditions")
