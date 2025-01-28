@@ -2236,7 +2236,7 @@
  (title "Uninterned symbols")
  (author "Wolfgang Corcoran-Mathe")
  (see-also 260)
- (keywords data-structure reader-syntax)
+ (keywords data-structure)
  (draft-date "2025-01-23"))
 ((number 259)
  (status draft)
