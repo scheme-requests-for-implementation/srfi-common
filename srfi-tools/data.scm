@@ -26,6 +26,7 @@
     (optimization "Optimization")
     (parameters "Parameters")
     (pattern-matching "Pattern Matching")
+    (record-type "Record Type")
     (r6rs-process "R6RS process")
     (r7rs-large "R7RS Large")
     (r7rs-large-red "R7RS Large: Red Edition")
