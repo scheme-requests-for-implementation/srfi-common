@@ -2244,7 +2244,7 @@
  (author "Daphne Preston-Kendal")
  (see-also 229)
  (keywords data-structure)
- (draft-date "2026-01-26"))
+ (draft-date "2025-01-26"))
 ((number 260)
  (status draft)
  (title "Generated Symbols")
