@@ -2253,3 +2253,6 @@
  (see-also 258)
  (keywords data-structure)
  (draft-date "2025-01-27"))
+
+;; Number 262 is reserved for Daphne.  I'm waiting for another SRFI to come in
+;; to be 261 before publishing hers.
