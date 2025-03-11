@@ -319,7 +319,7 @@
     (format #f "~A.mbox" name))
   (define (url id)
     (format #f
-	    "https://www.simplelists.com/members/listsettings.php?download=~A"
+	    "https://www.simplelists.com/app/listsettings/?download=~A"
 	    id))
   (newline)
   (display name)
