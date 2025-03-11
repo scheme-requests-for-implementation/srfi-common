@@ -1,8 +1,8 @@
 (load-option 'format)
 (load-option 'synchronous-subprocess)
 
-;; <> Automate extracting these numbers from the <option> lists on
-;; <https://www.simplelists.com/members/managelists.php>.
+;; <> Automate extracting these numbers from the table on
+;; <https://www.simplelists.com/app/lists/>.
 
 (define srfi-lists
   '((44023 schemecomm)
@@ -266,6 +266,13 @@
     (92492 srfi-251)
     (93122 srfi-252)
     (100888 srfi-253)
+    (101440 srfi-254)
+    (101516 srfi-255)
+    (103456 srfi-256)
+    (106134 srfi-257)
+    (182925 srfi-258)
+    (182968 srfi-259)
+    (182981 srfi-260)
     (13631 srfi-announce)
     (13133 srfi-discuss)
     (13633 srfi-editors)
