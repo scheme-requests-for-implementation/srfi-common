@@ -2245,6 +2245,7 @@
  (title "Tagged procedures with type safety")
  (author "Daphne Preston-Kendal")
  (see-also 229)
+ (library-name tagged-procedures)
  (keywords data-structure)
  (draft-date "2025-01-26"))
 ((number 260)
