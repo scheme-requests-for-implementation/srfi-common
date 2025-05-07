@@ -2250,12 +2250,13 @@
  (draft-date "2025-01-26")
  (done-date "2025-05-07"))
 ((number 260)
- (status draft)
+ (status final)
  (title "Generated Symbols")
  (author "Marc Nieper-Wißkirchen")
  (see-also 258)
  (keywords data-structure)
- (draft-date "2025-01-27"))
+ (draft-date "2025-01-27")
+ (done-date "2025-05-07"))
 
 ;; Number 262 is reserved for Daphne.  I'm waiting for another SRFI to come in
 ;; to be 261 before publishing hers.
