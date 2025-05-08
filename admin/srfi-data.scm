@@ -849,7 +849,7 @@
  (status final)
  (title "SRFI Libraries")
  (author "David Van Horn")
- (see-also)
+ (see-also 261)
  (keywords modules)
  (draft-date "2008-03-25")
  (done-date "2008-12-22"))
@@ -2257,6 +2257,13 @@
  (keywords data-structure)
  (draft-date "2025-01-27")
  (done-date "2025-05-07"))
+((number 261)
+ (status draft)
+ (title "Portable SRFI Library Reference")
+ (author "WANG Zheng")
+ (see-also 97)
+ (keywords modules)
+ (draft-date "2025-05-07"))
 
 ;; Number 262 is reserved for Daphne.  I'm waiting for another SRFI to come in
 ;; to be 261 before publishing hers.

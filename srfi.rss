@@ -2,7 +2,11 @@
 time it is invoked, the procedure returns a new symbol whose name
 cannot be guessed. The returned symbol is a standard symbol for all
 purposes; it obeys write/read invariance and it is equal to another
-symbol if and only if their names are spelled the same.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Wed, 07 May 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 258: Uninterned symbols</title><link>https://srfi.schemers.org/srfi-258/</link><guid>https://srfi.schemers.org/srfi-258</guid><description>SRFI 258 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>An uninterned symbol is not the same as any other symbol, even one
+symbol if and only if their names are spelled the same.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Wed, 07 May 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 261: Portable SRFI Library Reference</title><link>https://srfi.schemers.org/srfi-261/</link><guid>https://srfi.schemers.org/srfi-261</guid><description>SRFI 261 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI proposal addresses systemic compatibility issues exposed by
+the library reference format defined in SRFI 97
+&lt;code>(srfi :&amp;lt;SRFI number> &amp;lt;identifier> ...)&lt;/code> and
+advocates for a modernized, portable alternative:
+&lt;code>(srfi srfi-&amp;lt;SRFI number>  &amp;lt;identifier> ...)&lt;/code>.&lt;/p>&lt;/blockquote></description><dc:creator>WANG Zheng</dc:creator><pubDate>Wed, 07 May 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 258: Uninterned symbols</title><link>https://srfi.schemers.org/srfi-258/</link><guid>https://srfi.schemers.org/srfi-258</guid><description>SRFI 258 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>An uninterned symbol is not the same as any other symbol, even one
     with the same name. These symbols are useful in macro programming and
     in other situations where guaranteed-unique names are needed.
     A survey of uninterned and uniquely named symbols
