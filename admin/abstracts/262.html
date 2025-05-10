@@ -1,0 +1,17 @@
+<p>A pattern matching form which can operate on arbitrary Scheme
+values is defined. It conforms to the following design
+principles.</p>
+
+<p>The syntax of patterns is declarative. The syntax is extensible
+in the same way that Scheme’s procedural syntax is extensible by
+macros.</p>
+
+<p>For most use cases, the use of the pattern matcher should
+produce code which is essentially as efficient at run time as
+equivalent procedural Scheme code would be, assuming a moderately
+optimizing Scheme implementation. This applies only when the
+equivalent code is also equivalently correct in terms of handling
+of error cases (i.e.&nbsp;including all type checks done
+automatically by the pattern matcher). However, using extension
+syntax should not cause this principle to be violated (provided the
+extension syntax is appropriately implemented).</p>

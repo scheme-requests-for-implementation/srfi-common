@@ -6,7 +6,23 @@ symbol if and only if their names are spelled the same.&lt;/p>&lt;/blockquote></
 the library reference format defined in SRFI 97
 &lt;code>(srfi :&amp;lt;SRFI number> &amp;lt;identifier> ...)&lt;/code> and
 advocates for a modernized, portable alternative:
-&lt;code>(srfi srfi-&amp;lt;SRFI number>  &amp;lt;identifier> ...)&lt;/code>.&lt;/p>&lt;/blockquote></description><dc:creator>WANG Zheng</dc:creator><pubDate>Wed, 07 May 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 258: Uninterned symbols</title><link>https://srfi.schemers.org/srfi-258/</link><guid>https://srfi.schemers.org/srfi-258</guid><description>SRFI 258 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>An uninterned symbol is not the same as any other symbol, even one
+&lt;code>(srfi srfi-&amp;lt;SRFI number>  &amp;lt;identifier> ...)&lt;/code>.&lt;/p>&lt;/blockquote></description><dc:creator>WANG Zheng</dc:creator><pubDate>Wed, 07 May 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 262: Extensible pattern matcher</title><link>https://srfi.schemers.org/srfi-262/</link><guid>https://srfi.schemers.org/srfi-262</guid><description>SRFI 262 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>A pattern matching form which can operate on arbitrary Scheme
+values is defined. It conforms to the following design
+principles.&lt;/p>
+
+&lt;p>The syntax of patterns is declarative. The syntax is extensible
+in the same way that Scheme’s procedural syntax is extensible by
+macros.&lt;/p>
+
+&lt;p>For most use cases, the use of the pattern matcher should
+produce code which is essentially as efficient at run time as
+equivalent procedural Scheme code would be, assuming a moderately
+optimizing Scheme implementation. This applies only when the
+equivalent code is also equivalently correct in terms of handling
+of error cases (i.e. including all type checks done
+automatically by the pattern matcher). However, using extension
+syntax should not cause this principle to be violated (provided the
+extension syntax is appropriately implemented).&lt;/p>&lt;/blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Wed, 07 May 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 258: Uninterned symbols</title><link>https://srfi.schemers.org/srfi-258/</link><guid>https://srfi.schemers.org/srfi-258</guid><description>SRFI 258 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>An uninterned symbol is not the same as any other symbol, even one
     with the same name. These symbols are useful in macro programming and
     in other situations where guaranteed-unique names are needed.
     A survey of uninterned and uniquely named symbols
