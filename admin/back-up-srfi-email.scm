@@ -316,7 +316,7 @@
   (define (cookie token)
     `("Cookie" . ,(format #f "simplelists.session=~A" session)))
   (define (mbox name)
-    (format #f "~A.mbox" name))
+    (format #f "~A.eml.zip" name))
   (define (url id)
     (format #f
 	    "https://www.simplelists.com/app/listsettings/?download=~A"
