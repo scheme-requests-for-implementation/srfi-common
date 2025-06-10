@@ -22,6 +22,7 @@
     (modules "Modules")
     (multiple-value-returns "Multiple-Value Returns")
     (numbers "Numbers")
+    (object-oriented "Object-Oriented Programming")
     (operating-system "Operating System")
     (optimization "Optimization")
     (parameters "Parameters")
