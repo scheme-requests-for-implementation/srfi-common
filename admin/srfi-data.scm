@@ -2175,6 +2175,7 @@
  (status draft)
  (title "Insertion-ordered hash tables")
  (author "John Cowan")
+ (author "Daphne Preston-Kendal")
  (see-also 69 125 126 128)
  (keywords data-structure)
  (draft-date "2023-11-14"))
