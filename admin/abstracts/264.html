@@ -1,0 +1,10 @@
+<p>
+This SRFI proposes SSRE, an alternative string-based syntax
+for Scheme Regular Expressions as defined by <a href="https://srfi.schemers.org/srfi-115/">SRFI 115</a>.
+String syntax is both compact and familiar to many regexp users; it is translated directly into SRE S-expressions,
+providing equivalent constructs. While the proposed syntax mostly follows PCRE, it takes into
+account specifics of Scheme string syntax and limitations of SRE, leaving out constructs
+that either duplicate functionality provided by Scheme strings or have no SRE equivalents.
+The repertoire of named sets and boundary conditions can be extended via a parameter mechanism.
+Extensions to PCRE syntax allow concise expression of operations on named character sets.
+</p>
