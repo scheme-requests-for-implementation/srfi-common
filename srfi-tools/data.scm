@@ -38,6 +38,7 @@
     (superseded "Superseded")
     (syntax "Syntax")
     (testing "Testing")
+    (text "Text")
     (type-checking "Type Checking")))
 
 (define keyword-entry/symbol first)
