@@ -2284,5 +2284,5 @@
  (title "String Syntax for Scheme Regular Expressions")
  (author "Sergei Egorov")
  (see-also 115)
- (keywords pattern-matching)
+ (keywords data-structure)
  (draft-date "2025-07-25"))
