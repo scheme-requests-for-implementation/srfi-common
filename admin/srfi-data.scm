@@ -2270,6 +2270,7 @@
  (title "Extensible pattern matcher")
  (author "Daphne Preston-Kendal")
  (see-also 200 204 241 257)
+ (library-name match)
  (keywords pattern-matching)
  (draft-date "2025-05-07"))
 ((number 263)
