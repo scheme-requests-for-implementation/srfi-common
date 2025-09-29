@@ -114,7 +114,7 @@ This command is mostly useful to the SRFI editor."
   ;; `truncate` works around a bug in Chibi's SRFI 19 implementation.
   (date->iso-date
    (julian-day->date
-    (+ 7 (truncate (date->julian-day (current-date)))))))
+    (+ 15 (truncate (date->julian-day (current-date)))))))
 
 (define (srfi-last-call-subject num)
   (format "Last call for comments on SRFI ~a: ~a" num (srfi-title num)))
