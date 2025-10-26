@@ -16,13 +16,17 @@ else
   exit 1
 fi
 
+RSYNC_EXCLUDES=$(mktemp)
 SRFI_ROOT=$(realpath "`srfi common-dir`/..")
 STAGING=$(mktemp --directory -t srfi-staging-XXXXX)
 STAGING_EMAIL=$STAGING/srfi-email
 STAGING_NON_EMAIL=$STAGING/srfi
 STAGING_GLOBAL_TGZ=`mktemp`
 
-trap "rm -rf $STAGING/" 0 1 15
+trap "rm -rf $RSYNC_EXCLUDES $STAGING/ $STAGING_EMAIL/ $STAGING_GLOBAL_TGZ $STAGING_NON_EMAIL/" 0 1 15
+
+grep -v '^#\|^$' "$SRFI_ROOT/srfi-common/srfi-tools/.gitignore" | \
+  sed 's|^|srfi-tools/|' > "$RSYNC_EXCLUDES" 2>/dev/null || true
 mkdir -p $STAGING_EMAIL
 mkdir -p $STAGING_NON_EMAIL
 rsync \
@@ -31,6 +35,7 @@ rsync \
   --exclude='.git/' \
   --exclude='.reuse/' \
   --exclude='srfi-email/' \
+  --exclude-from="$RSYNC_EXCLUDES" \
   --perms \
   --quiet \
   --recursive \
