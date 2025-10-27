@@ -1,4 +1,39 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 264: String Syntax for Scheme Regular Expressions</title><link>https://srfi.schemers.org/srfi-264/</link><guid>https://srfi.schemers.org/srfi-264</guid><description>SRFI 264 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 250: Insertion-ordered hash tables</title><link>https://srfi.schemers.org/srfi-250/</link><guid>https://srfi.schemers.org/srfi-250</guid><description>SRFI 250 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines an interface to hash tables, which are widely
+recognized as a fundamental data structure for a wide variety of
+applications.  A hash table is a data structure that:&lt;/p>
+
+&lt;ul>
+  &lt;li>Is disjoint from all other types.&lt;/li>
+  &lt;li>Provides a mapping from objects known as &lt;dfn>keys&lt;/dfn>
+    to corresponding objects known as &lt;dfn>values&lt;/dfn>.
+    &lt;ul>
+      &lt;li>Keys may be any Scheme objects in some kinds of hash tables,
+        but are restricted in other kinds.&lt;/li>
+      &lt;li>Values may be any Scheme objects.&lt;/li>&lt;/ul>&lt;/li>
+  &lt;li>Provides an &lt;dfn>equality predicate&lt;/dfn> which defines
+    when a proposed key is the same as an existing key.  No table
+    may contain more than one value for a given key.&lt;/li>
+  &lt;li>Provides a &lt;dfn>hash function&lt;/dfn> which maps a candidate
+    key into a non-negative exact integer.&lt;/li>
+  &lt;li>Supports mutation as the primary means of setting the
+    contents of a table.&lt;/li>
+  &lt;li>Provides key lookup and destructive update in (expected)
+    amortized constant time, provided that a satisfactory hash
+    function is available.&lt;/li>
+  &lt;li>Does not guarantee that whole-table operations work in
+    the presence of concurrent mutation of the whole hash table.
+    (Values may be safely mutated.)&lt;/li>
+&lt;/ul>
+
+&lt;p>Unlike the hash tables of &lt;a href="https://srfi.schemers.org/srfi-125/">SRFI 125&lt;/a>, which is the
+direct ancestor of this specification, the hash tables described here
+are ordered by insertion: that is, associations inserted earlier in
+the history of the hash table appear earlier in the ordering. Advances
+in the implementations of hash tables, as provided by C++, Python,
+JavaScript, etc., make the provision of this new facility practical.
+As a result, the hash tables of this SRFI do not necessarily
+interoperate with the hash tables of SRFI 125, &lt;a href="https://srfi.schemers.org/srfi-126/">SRFI 126&lt;/a>, or existing
+R6RS implementations.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan and Daphne Preston-Kendal</dc:creator><pubDate>Mon, 27 Oct 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 264: String Syntax for Scheme Regular Expressions</title><link>https://srfi.schemers.org/srfi-264/</link><guid>https://srfi.schemers.org/srfi-264</guid><description>SRFI 264 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
 This SRFI proposes SSRE, an alternative string-based syntax
 for Scheme Regular Expressions as defined by &lt;a href="https://srfi.schemers.org/srfi-115/">SRFI 115&lt;/a>.
 String syntax is both compact and familiar to many regexp users; it is translated directly into SRE S-expressions,
@@ -131,42 +166,7 @@ the results of the propertized tests.&lt;/p>&lt;/blockquote></description><dc:cr
       or dynamically bound variables), which can be used for the same
       purpose, no runtime overhead is generated.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Sun, 24 Dec 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 243: Unreadable Data</title><link>https://srfi.schemers.org/srfi-243/</link><guid>https://srfi.schemers.org/srfi-243</guid><description>SRFI 243 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>This SRFI suggests how the Scheme reader and writer should
   handle unreadable data in general, and unreadable objects in
-  particular.&lt;/p>&lt;/blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Thu, 30 Nov 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 250: Insertion-ordered hash tables</title><link>https://srfi.schemers.org/srfi-250/</link><guid>https://srfi.schemers.org/srfi-250</guid><description>SRFI 250 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines an interface to hash tables, which are widely
-recognized as a fundamental data structure for a wide variety of
-applications.  A hash table is a data structure that:&lt;/p>
-&lt;ul>
-  &lt;li>Is disjoint from all other types.&lt;/li>
-  &lt;li>Provides a mapping from objects known as &lt;em>keys&lt;/em>
-    to corresponding objects known as &lt;em>values&lt;/em>.
-    &lt;ul>
-      &lt;li>Keys may be any Scheme objects in some kinds of hash tables,
-        but are restricted in other kinds.&lt;/li>
-      &lt;li>Values may be any Scheme objects.&lt;/li>&lt;/ul>&lt;/li>
-  &lt;li>Provides an &lt;em>equality predicate&lt;/em> which defines
-    when a proposed key is the same as an existing key.  No table
-    may contain more than one value for a given key.&lt;/li>
-  &lt;li>Provides a &lt;em>hash function&lt;/em> which maps a candidate
-    key into a non-negative exact integer.&lt;/li>
-  &lt;li>Supports mutation as the primary means of setting the
-    contents of a table.&lt;/li>
-  &lt;li>Provides key lookup and destructive update in (expected)
-    amortized constant time, provided that a satisfactory hash
-    function is available.&lt;/li>
-  &lt;li>Does not guarantee that whole-table operations work in
-    the presence of concurrent mutation of the whole hash table.
-    (Values may be safely mutated.)&lt;/li>
-&lt;/ul>
-
-&lt;p>
-Unlike the hash tables of &lt;a href="https://srfi.schemers.org/srfi-125/">SRFI 125&lt;/a>,
-which is the direct ancestor of this specification, the hash tables described
-here are ordered by insertion: that is, associations inserted earlier in
-the history of the hash table appear earlier in the ordering.  Advances
-in the implementations of hash tables, as provided by C++, Python,
-JavaScript, etc., make the provision of this new facility practical.
-As a result, the hash tables of this SRFI do not interoperate with the
-hash tables of SRFI 125, &lt;a href="https://srfi.schemers.org/srfi-126/">SRFI 126&lt;/a>,
-or existing R6RS implementations.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan and Daphne Preston-Kendal</dc:creator><pubDate>Tue, 14 Nov 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 242: The CFG Language</title><link>https://srfi.schemers.org/srfi-242/</link><guid>https://srfi.schemers.org/srfi-242</guid><description>SRFI 242 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a language to describe control-flow graphs
+  particular.&lt;/p>&lt;/blockquote></description><dc:creator>Lassi Kortela</dc:creator><pubDate>Thu, 30 Nov 2023 12:00:00 -0800</pubDate></item><item><title>SRFI 242: The CFG Language</title><link>https://srfi.schemers.org/srfi-242/</link><guid>https://srfi.schemers.org/srfi-242</guid><description>SRFI 242 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a language to describe control-flow graphs
       (CFGs) suitable for formulating iterative and recursive
       algorithms.  Using the notion of a CFG term, this language can
       be seamlessly embedded in the Scheme language.  Complex CFG
