@@ -395,7 +395,7 @@
 	   (p "Scheme Topics mailing lists are for discussing specific subjects that we hope may lead to SRFIs and other cooperative work, but which are currently not ready for specific proposals through the SRFI process.  As with all these mailing lists, anyone can subscribe.  None of these mailing lists is included in the "
 	      (a (@ (href "#srfi-auto-subscribe"))
 		 (code "srfi-auto-subscribe"))
-	      "mailing list, which includes "
+	      " mailing list, which includes "
 	      (code "srfi-announce")
 	      " and all the numbered SRFI mailing lists, but not "
 	      (code "srfi-discuss")
