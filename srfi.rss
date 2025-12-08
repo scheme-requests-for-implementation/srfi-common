@@ -1,4 +1,9 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 265: The CFG Language</title><link>https://srfi.schemers.org/srfi-265/</link><guid>https://srfi.schemers.org/srfi-265</guid><description>SRFI 265 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines a language to describe control-flow graphs
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 261: Portable SRFI Library Reference</title><link>https://srfi.schemers.org/srfi-261/</link><guid>https://srfi.schemers.org/srfi-261</guid><description>SRFI 261 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI proposal addresses systemic compatibility issues exposed by
+the &lt;a href="https://srfi.schemers.org/srfi-97/">SRFI 97&lt;/a>-defined library reference format
+&lt;code>(srfi :&amp;lt;SRFI number> &amp;lt;identifier> ...)&lt;/code> and
+advocates for two more modernized, portable and readable alternatives:
+&lt;code>(srfi srfi-&amp;lt;SRFI number>)&lt;/code> and
+&lt;code>(srfi &amp;lt;identifier>-&amp;lt;SRFI number>)&lt;/code>.&lt;/p>&lt;/blockquote></description><dc:creator>WANG Zheng</dc:creator><pubDate>Fri, 07 Nov 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 265: The CFG Language</title><link>https://srfi.schemers.org/srfi-265/</link><guid>https://srfi.schemers.org/srfi-265</guid><description>SRFI 265 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines a language to describe control-flow graphs
   (CFGs) suitable for formulating iterative and recursive
   algorithms.  Using the notion of a CFG term, this language can
   be seamlessly embedded in the Scheme language.  Complex CFG
@@ -54,12 +59,7 @@ Extensions to PCRE syntax allow concise expression of operations on named charac
 time it is invoked, the procedure returns a new symbol whose name
 cannot be guessed. The returned symbol is a standard symbol for all
 purposes; it obeys write/read invariance and it is equal to another
-symbol if and only if their names are spelled the same.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Wed, 07 May 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 261: Portable SRFI Library Reference</title><link>https://srfi.schemers.org/srfi-261/</link><guid>https://srfi.schemers.org/srfi-261</guid><description>SRFI 261 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI proposal addresses systemic compatibility issues exposed by
-the &lt;a href="https://srfi.schemers.org/srfi-97/">SRFI-97&lt;/a>-defined library reference format
-&lt;code>(srfi :&amp;lt;SRFI number> &amp;lt;identifier> ...)&lt;/code> and
-advocates for two more modernized, portable and readable alternatives:
-&lt;code>(srfi srfi-&amp;lt;SRFI number>)&lt;/code> and
-&lt;code>(srfi &amp;lt;identifier>-&amp;lt;SRFI number>)&lt;/code>.&lt;/p>&lt;/blockquote></description><dc:creator>WANG Zheng</dc:creator><pubDate>Wed, 07 May 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 262: Extensible pattern matcher</title><link>https://srfi.schemers.org/srfi-262/</link><guid>https://srfi.schemers.org/srfi-262</guid><description>SRFI 262 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>A pattern matching form which can operate on arbitrary Scheme
+symbol if and only if their names are spelled the same.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Wed, 07 May 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 262: Extensible pattern matcher</title><link>https://srfi.schemers.org/srfi-262/</link><guid>https://srfi.schemers.org/srfi-262</guid><description>SRFI 262 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>A pattern matching form which can operate on arbitrary Scheme
 values is defined. It conforms to the following design
 principles.&lt;/p>
 
@@ -93,12 +93,11 @@ extension syntax is appropriately implemented).&lt;/p>&lt;/blockquote></descript
     &lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 24 Jan 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 257: Simple extendable pattern matcher with backtracking</title><link>https://srfi.schemers.org/srfi-257/</link><guid>https://srfi.schemers.org/srfi-257</guid><description>SRFI 257 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
 Pattern matching extends Scheme's repertoire of conditional constructs, allowing
 decomposition of compound data structures and binding their parts to variables.
-This SRFI proposes one such construct, &lt;code>match&lt;/code>, which provides all
-common-denominator functionality described in &lt;a href="https://srfi.schemers.org/srfi-200/">SRFI-200&lt;/a>,
-adding on top of it support for non-linear patterns and backtracking. Also, the
-proposed construct is modular, and allows for convenient extension via the
-&lt;code>define-match-pattern&lt;/code> mechanism.
-&lt;/p>&lt;/blockquote></description><dc:creator>Sergei Egorov</dc:creator><pubDate>Sun, 29 Dec 2024 12:00:00 -0800</pubDate></item><item><title>SRFI 255: Restarting conditions</title><link>https://srfi.schemers.org/srfi-255/</link><guid>https://srfi.schemers.org/srfi-255</guid><description>SRFI 255 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>When an exceptional situation is encountered by a program, it
+This SRFI proposes one such construct, &lt;code>match&lt;/code>, which offers all
+the core functionality specified in &lt;a href="https://srfi.schemers.org/srfi-200/">SRFI 200&lt;/a>,
+while extending it with support for non-linear patterns and backtracking.
+The proposed construct is modular and supports easy extension through the &lt;code>define-match-pattern&lt;/code>
+mechanism. It can be implemented portably in R⁷RS-Small.&lt;/p>&lt;/blockquote></description><dc:creator>Sergei Egorov</dc:creator><pubDate>Sun, 29 Dec 2024 12:00:00 -0800</pubDate></item><item><title>SRFI 255: Restarting conditions</title><link>https://srfi.schemers.org/srfi-255/</link><guid>https://srfi.schemers.org/srfi-255</guid><description>SRFI 255 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>When an exceptional situation is encountered by a program, it
 usually creates a condition object describing the situation, and then
 passes control to an exception handler. The
 signaler and handler are two different parts of a system, between which
@@ -145,9 +144,37 @@ the input needed to recover. This SRFI proposes a simple mechanism
 called &lt;em>restarters&lt;/em> to encapsulate the information necessary to
 restart a computation with associated interactive prompters.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Fri, 13 Sep 2024 12:00:00 -0800</pubDate></item><item><title>SRFI 246: Guardians</title><link>https://srfi.schemers.org/srfi-246/</link><guid>https://srfi.schemers.org/srfi-246</guid><description>SRFI 246 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>Guardians allow programs to protect objects from deallocation by the garbage collector and to determine which objects would otherwise have been deallocated. When the object has associated non-memory resources, a program can register it with a guardian. The GC will mark inaccessible objects but will not collect them; at the program's convenience, inaccessible objects are removed from the guardian and their non-memory resources are disposed of.
 
-Guardians allow objects to be saved from deallocation indefinitely so that they can be reused or so that clean-up or other actions can be performed using the data stored within the objects. Guardians avoid the problems associated with classical finalizers detailed in the Rationale section.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Wed, 11 Sep 2024 12:00:00 -0800</pubDate></item><item><title>SRFI 254: Ephemerons and Guardians</title><link>https://srfi.schemers.org/srfi-254/</link><guid>https://srfi.schemers.org/srfi-254</guid><description>SRFI 254 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>Guardians allow programs to protect objects from deallocation by the garbage collector and to determine which objects would otherwise have been deallocated. When the object has associated non-memory resources, a program can register it with a guardian. The GC will mark inaccessible objects but will not collect them; at the program's convenience, inaccessible objects are removed from the guardian and their non-memory resources are disposed of.
+Guardians allow objects to be saved from deallocation indefinitely so that they can be reused or so that clean-up or other actions can be performed using the data stored within the objects. Guardians avoid the problems associated with classical finalizers detailed in the Rationale section.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Wed, 11 Sep 2024 12:00:00 -0800</pubDate></item><item><title>SRFI 254: Ephemerons and Guardians</title><link>https://srfi.schemers.org/srfi-254/</link><guid>https://srfi.schemers.org/srfi-254</guid><description>SRFI 254 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI describes three concepts associated with the storage
+  management of a Scheme system, &lt;i>ephemerons&lt;/i>, &lt;i>guardians&lt;/i>, and
+&lt;i>transport cell guardians&lt;/i>.&lt;/p>
 
-Guardians allow objects to be saved from deallocation indefinitely so that they can be reused or so that clean-up or other actions can be performed using the data stored within the objects. Guardians avoid the problems associated with classical finalizers detailed in the Rationale section.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Wed, 11 Sep 2024 12:00:00 -0800</pubDate></item><item><title>SRFI 251: Mixing groups of definitions with expressions within bodies</title><link>https://srfi.schemers.org/srfi-251/</link><guid>https://srfi.schemers.org/srfi-251</guid><description>SRFI 251 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+&lt;p>
+  An ephemeron is a record structure with a &lt;i>key&lt;/i> and a &lt;i>value&lt;/i> field.
+  An ephemeron can be &lt;i>broken&lt;/i>.  Breaking an ephemeron replaces the
+  key and value with &lt;code>#f&lt;/code>.  An implementation of this SRFI
+  breaks an ephemeron when it proves that the storage occupied by
+  the key could be reclaimed if the ephemeron were broken.
+&lt;/p>
+
+&lt;p>
+  A guardian is a structure containing objects as &lt;i>guarded&lt;/i> or
+  &lt;i>resurrected&lt;/i> elements.  Initially, guardians are empty.
+  Objects can be added in guarded elements to the guardian by the
+  programmer.  An implementation of this SRFI resurrects an
+  element when it proves that the storage occupied by
+  the object could be reclaimed if all guardians in the system
+  were empty.  Objects from resurrected elements can be queried
+  and removed from the guardian by the programmer.  Instead of the
+  object itself, a &lt;i>representative&lt;/i> can be returned.
+&lt;/p>
+
+&lt;p>
+  A transport cell guardian is a structure containing &lt;i>transport
+    cells&lt;/i>, similar to a guardian.  Whenever an object in a
+  guarded transport cell in the transport cell guardian is
+  moved by the garbage collector, the transport cell is resurrected
+  so that it can be queried by the programmer.
+&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Wed, 11 Sep 2024 12:00:00 -0800</pubDate></item><item><title>SRFI 251: Mixing groups of definitions with expressions within bodies</title><link>https://srfi.schemers.org/srfi-251/</link><guid>https://srfi.schemers.org/srfi-251</guid><description>SRFI 251 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
 Scheme has traditionally required procedure bodies and the bodies of derived constructs
 such as &lt;code>let&lt;/code> to contain definitions followed by commands/expressions.
 This SRFI proposes to allow mixing commands and groups of definitions in such bodies, so that each
