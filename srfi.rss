@@ -1,4 +1,11 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 261: Portable SRFI Library Reference</title><link>https://srfi.schemers.org/srfi-261/</link><guid>https://srfi.schemers.org/srfi-261</guid><description>SRFI 261 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI proposal addresses systemic compatibility issues exposed by
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 257: Simple extendable pattern matcher with backtracking</title><link>https://srfi.schemers.org/srfi-257/</link><guid>https://srfi.schemers.org/srfi-257</guid><description>SRFI 257 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+Pattern matching extends Scheme's repertoire of conditional constructs, allowing
+decomposition of compound data structures and binding their parts to variables.
+This SRFI proposes one such construct, &lt;code>match&lt;/code>, which offers all
+the core functionality specified in &lt;a href="https://srfi.schemers.org/srfi-200/">SRFI 200&lt;/a>,
+while extending it with support for non-linear patterns and backtracking.
+The proposed construct is modular and supports easy extension through the &lt;code>define-match-pattern&lt;/code>
+mechanism. It can be implemented portably in R⁷RS-Small.&lt;/p>&lt;/blockquote></description><dc:creator>Sergei Egorov</dc:creator><pubDate>Mon, 22 Dec 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 261: Portable SRFI Library Reference</title><link>https://srfi.schemers.org/srfi-261/</link><guid>https://srfi.schemers.org/srfi-261</guid><description>SRFI 261 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI proposal addresses systemic compatibility issues exposed by
 the &lt;a href="https://srfi.schemers.org/srfi-97/">SRFI 97&lt;/a>-defined library reference format
 &lt;code>(srfi :&amp;lt;SRFI number> &amp;lt;identifier> ...)&lt;/code> and
 advocates for two more modernized, portable and readable alternatives:
@@ -90,14 +97,7 @@ extension syntax is appropriately implemented).&lt;/p>&lt;/blockquote></descript
       operators like &lt;code>prompt0&lt;/code>/&lt;code>control0&lt;/code> or
       &lt;code>reset&lt;/code>/&lt;code>shift&lt;/code> are expressible
       in &lt;code>shift0&lt;/code>/&lt;code>reset0&lt;/code> (and vice versa).
-    &lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 24 Jan 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 257: Simple extendable pattern matcher with backtracking</title><link>https://srfi.schemers.org/srfi-257/</link><guid>https://srfi.schemers.org/srfi-257</guid><description>SRFI 257 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
-Pattern matching extends Scheme's repertoire of conditional constructs, allowing
-decomposition of compound data structures and binding their parts to variables.
-This SRFI proposes one such construct, &lt;code>match&lt;/code>, which offers all
-the core functionality specified in &lt;a href="https://srfi.schemers.org/srfi-200/">SRFI 200&lt;/a>,
-while extending it with support for non-linear patterns and backtracking.
-The proposed construct is modular and supports easy extension through the &lt;code>define-match-pattern&lt;/code>
-mechanism. It can be implemented portably in R⁷RS-Small.&lt;/p>&lt;/blockquote></description><dc:creator>Sergei Egorov</dc:creator><pubDate>Sun, 29 Dec 2024 12:00:00 -0800</pubDate></item><item><title>SRFI 255: Restarting conditions</title><link>https://srfi.schemers.org/srfi-255/</link><guid>https://srfi.schemers.org/srfi-255</guid><description>SRFI 255 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>When an exceptional situation is encountered by a program, it
+    &lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Fri, 24 Jan 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 255: Restarting conditions</title><link>https://srfi.schemers.org/srfi-255/</link><guid>https://srfi.schemers.org/srfi-255</guid><description>SRFI 255 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>When an exceptional situation is encountered by a program, it
 usually creates a condition object describing the situation, and then
 passes control to an exception handler. The
 signaler and handler are two different parts of a system, between which
