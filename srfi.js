@@ -1,333 +1,282 @@
-function sortFunction(itemA, itemB, options) {
-  let column = options.valueName;
-  let sort = srfiList.utils.naturalSort;
-  let primary = sort(itemA.values()[column],
-                     itemB.values()[column]);
+"use strict";
 
-  if (primary == 0) {
-    if (column === "number") {
-      return 0;
-    }
-    return sort(itemA.values()["number"],
-                itemB.values()["number"]);
-  }
-  return primary;
-
+const state = {
+  searchQuery: "",
+  selectedStatuses: [],
+  selectedKeywords: [],
+  showAbstracts: false,
+  sortColumn: "number",
+  sortOrder: "desc"
 };
 
-let options = {
-  sortFunction,
-  valueNames: [ "abstract",
-                "authors",
-                "date",
-                "library-name",
-                "name",
-                "number",
-                { name: "status", attr: "data-status" }
-              ]};
+let allCards = [];
 
-let srfiList = new List("srfis", options);
+function parseURL() {
+  const params = new URLSearchParams(window.location.search);
 
-let abstractsControl = document.querySelector("#abstracts-control");
-let listElement = document.querySelector(".list");
-let searchControl = document.querySelector("#search");
-let sortControls = Array.from(document.querySelectorAll(".sort"));
-let statusesControl = document.querySelector("#statuses");
-let keywordsControl = document.querySelector("#keywords");
+  state.searchQuery = params.get("q") || "";
+  state.showAbstracts = params.has("abstracts");
+  state.selectedStatuses = params.get("statuses")?.split(",").filter(Boolean) || [];
+  state.selectedKeywords = params.get("keywords")?.split(",").filter(Boolean) || [];
 
-function assert(expression) {
-  if (! expression) {
-    throw new Error();
-  }
-}
+  const sort = params.get("sort");
 
-function assertMember(candidate, array) {
-  assert(array.find(x => x === candidate));
-}
+  if (sort) {
+    const [column, order] = sort.split("-");
 
-function assertValidColumn(column) {
-  assertMember(column,
-               ["abstract", "authors", "date", "name", "number", "status"]);
-}
-
-function assertValidSortOrder(order) {
-  assertMember(order, ["asc", "desc"]);
-}
-
-function decodeSortParameter(sp) {
-  if (sp) {
-    let [column, order] =  sp.split("-", 2);
-
-    assertValidColumn(column);
-    assertValidSortOrder(order);
-    return { column, order };
-  } else {
-    return { column: "number", order: "desc" };
-  }
-}
-
-function decodeMultiParameter(string) {
-  return string && string.split(",");
-}
-
-let Choice = {
-  YES: 1,
-  NO: 2
-};
-
-function choice(boolean) {
-  return boolean ? Choice.YES : Choice.NO;
-}
-
-function decodeURL(url) {
-  let parameters = url.searchParams;
-  let abstracts = parameters.has("abstracts") ? Choice.YES : Choice.NO;
-  let keywords = decodeMultiParameter(parameters.get("keywords"));
-  let query = parameters.get("q") || "";
-  let sort = decodeSortParameter(parameters.get("sort"));
-  let statuses = decodeMultiParameter(parameters.get("statuses"));
-
-  return { abstracts, keywords, query, sort, statuses };
-}
-
-function encodeWithCommas(name, values) {
-  return values && values.length > 0
-    ? [`${name}=${values.join(",")}`]
-    : [];
-}
-
-function encodeURL(abstracts, keywords, query, sort, statuses) {
-  // Drop defaults.
-  let elements =
-      [].concat(
-        abstracts == Choice.YES ? ["abstracts"] : [],
-        query ? [`q=${encodeURIComponent(query)}`] : [],
-        (sort && (sort.column !== "number" || sort.order !== "desc"))
-          ? [`sort=${sort.column}-${sort.order}`]
-          : [],
-        encodeWithCommas("keywords", keywords),
-        encodeWithCommas("statuses", statuses));
-
-  return elements.length == 0
-    ? ""
-    : "?" + elements.join("&");
-}
-
-function updateURL(url, { abstracts=null,
-                          keywords=null,
-                          query=null,
-                          sort=null,
-                          statuses=null }) {
-  let { abstracts: oldAbstracts,
-        keywords: oldKeywords,
-        query: oldQuery,
-        sort: oldSort,
-        statuses: oldStatuses }
-      = decodeURL(url);
-
-  return url.protocol
-    + "//"
-    + url.host
-    + url.pathname
-    + encodeURL(abstracts || oldAbstracts,
-                keywords || oldKeywords,
-                query === null ? oldQuery : query,
-                sort || oldSort,
-                statuses || oldStatuses);
-}
-
-function obeyAbstracts(abstracts) {
-  abstractsControl.checked = abstracts == Choice.YES;
-  if (abstractsControl.checked) {
-    listElement.classList.remove("summary");
-    listElement.classList.add("detailed");
-  } else {
-    listElement.classList.remove("detailed");
-    listElement.classList.add("summary");
-  }
-}
-
-function updateMultiSelect(control, values) {
-  let options = Array.from(control.querySelectorAll("option"));
-  let set = new Set(values);
-  let names = [];
-
-  for (let o of options) {
-    o.selected = set.has(o.value);
-    if (o.selected) {
-      names.push(o.innerHTML);
+    if (column && order) {
+      state.sortColumn = column;
+      state.sortOrder = order;
     }
-  };
-  control.querySelector(".chosen").innerHTML =
-    choiceEnglish(names);
-  if (set.size == 0) {
-    control.querySelector("[value=\"any\"]").selected = true;
   }
 }
 
-function srfiCards() {
-  return Array.from(srfiList.items).map(i => i.elm);
+function updateURL() {
+  const params = new URLSearchParams();
+
+  if (state.searchQuery) params.set("q", state.searchQuery);
+  if (state.showAbstracts) params.set("abstracts", "");
+  if (state.selectedStatuses.length) params.set("statuses", state.selectedStatuses.join(","));
+  if (state.selectedKeywords.length) params.set("keywords", state.selectedKeywords.join(","));
+  if (state.sortColumn !== "number" || state.sortOrder !== "desc") {
+    params.set("sort", `${state.sortColumn}-${state.sortOrder}`);
+  }
+
+  const url = params.toString() ? `?${params}` : window.location.pathname;
+
+  history.replaceState(null, "", url);
 }
 
-function filterMulti(control, name, values) {
-  let invisibleClass = `invisible-${name}`;
+function updateDisplay() {
+  const query = state.searchQuery.toLowerCase().trim();
 
-  for (let i of Array.from(document.querySelectorAll("." + invisibleClass))) {
-    i.classList.remove(invisibleClass);
-  }
-  if (values.length > 0) {
-    let set = new Set(values);
+  allCards.forEach(card => {
+    let visible = true;
 
-    for (let c of srfiCards()) {
-      let cardValues = c.querySelector(`.${name}`)
-          .dataset[name].split(",");
-
-      if (! cardValues.find(v => set.has(v))) {
-        c.classList.add(invisibleClass);
-      }
+    if (query) {
+      const text = card.textContent.toLowerCase();
+      const words = query.split(/\s+/);
+      visible = visible && words.every(word => text.includes(word));
     }
-  }}
 
-function obeyKeywords(keywords) {
-  updateMultiSelect(keywordsControl, keywords);
-  filterMulti(keywordsControl, "keywords", keywords);
+    if (state.selectedStatuses.length) {
+      const status = card.querySelector("[data-status]").dataset.status;
+
+      visible = visible && state.selectedStatuses.includes(status);
+    }
+
+    if (state.selectedKeywords.length) {
+      const keywords = card.querySelector("[data-keywords]").dataset.keywords.split(",");
+
+      visible = visible && keywords.some(k => state.selectedKeywords.includes(k));
+    }
+
+    card.style.display = visible ? "" : "none";
+  });
+
+  sortCards();
 }
 
-function obeySearch(query) {
-  searchControl.value = query;
-  srfiList.search(query);
+function naturalCompare(a, b) {
+  return a.localeCompare(b, undefined, {numeric: true, sensitivity: "base"});
 }
 
-function obeySort(sort) {
-  srfiList.sort(sort.column, { order: sort.order });
+function sortCards() {
+  const container = document.querySelector(".list");
+
+  if (!container) return;
+
+  const sorted = [...allCards].sort((a, b) => {
+    let aVal = "", bVal = "";
+
+    switch(state.sortColumn) {
+      case "number":
+        aVal = a.querySelector(".number")?.textContent || "";
+        bVal = b.querySelector(".number")?.textContent || "";
+        break;
+      case "name":
+        aVal = a.querySelector(".name")?.textContent || "";
+        bVal = b.querySelector(".name")?.textContent || "";
+        break;
+      case "authors":
+        aVal = a.querySelector(".authors")?.textContent || "";
+        bVal = b.querySelector(".authors")?.textContent || "";
+        break;
+      case "date":
+        aVal = a.querySelector(".date")?.textContent || "";
+        bVal = b.querySelector(".date")?.textContent || "";
+        break;
+      case "status":
+        aVal = a.querySelector("[data-status]").dataset.status;
+        bVal = b.querySelector("[data-status]").dataset.status;
+        break;
+    }
+
+    const compare = naturalCompare(aVal, bVal);
+
+    return state.sortOrder === "asc" ? compare : -compare;
+  });
+
+  sorted.forEach(card => container.appendChild(card));
 }
 
-function obeyStatuses(statuses) {
-  updateMultiSelect(statusesControl, statuses);
-  filterMulti(statusesControl, "status", statuses);
-}
+function updateMultiSelect(selectElement, values) {
+  const options = selectElement.querySelectorAll("option");
+  const anyOption = selectElement.querySelector("[value=\"any\"]");
 
-function obeyQueryParameters(_) {
-  let { abstracts, keywords, query, sort, statuses }
-      = decodeURL(new URL(document.location));
+  options.forEach(o => {
+    o.selected = values.includes(o.value);
+  });
 
-  obeyAbstracts(abstracts);
-  obeyKeywords(keywords || []);
-  obeySearch(query);
-  obeySort(sort);
-  obeyStatuses(statuses || []);
-}
+  if (anyOption) {
+    anyOption.selected = values.length === 0;
+  }
 
-window.onpopstate = obeyQueryParameters;
+  const chosen = selectElement.parentElement.querySelector(".chosen");
 
-function changeURL(replace, components) {
-  let existing = new URL(document.location);
-  let newURL = updateURL(existing, components);
-
-  if (existing.toString() !== newURL) {
-    if (replace) {
-      history.replaceState(newURL, "home", newURL);
+  if (chosen) {
+    if (values.length === 0) {
+      chosen.textContent = "any";
     } else {
-      history.pushState(newURL, "home", newURL);
+      const labels = values.map(v => {
+        const opt = selectElement.querySelector(`[value="${v}"]`);
+
+        return opt ? opt.textContent : v;
+      });
+      chosen.textContent = labels.join(", ");
     }
   }
 }
 
-abstractsControl.addEventListener(
-  "change",
-  function(event) {
-    obeyAbstracts(choice(this.checked));
-    changeURL(false, { abstracts: choice(this.checked) });
-    event.preventDefault();
-    event.stopPropagation();
-  });
+function init() {
+  parseURL();
 
-searchControl.addEventListener(
-  "input",
-  function(event) {
-    changeURL(true, { query: this.value });
-  });
+  allCards = Array.from(document.querySelectorAll(".list > li"));
 
-function choiceEnglish(choices) {
-  if (choices.length == 0) {
-    return "any";
-  }
+  const abstractsControl = document.getElementById("abstracts-control");
+  const listElement = document.querySelector(".list");
 
-  let size = choices.length;
-  let last = choices[size - 1];
+  if (abstractsControl && listElement) {
+    abstractsControl.checked = state.showAbstracts;
+    listElement.classList.toggle("detailed", state.showAbstracts);
+    listElement.classList.toggle("summary", !state.showAbstracts);
 
-  if (size == 1) {
-    return last;
-  }
-  if (size == 2) {
-    return choices[0] + " or " + last;
-  }
-  return choices.slice(0, -1).join(", ") + ", or " + last;
-}
-
-function enableMultiSelect(control, update) {
-  let popper = control.querySelector("button");
-  let select = control.querySelector("select");
-
-  popper.addEventListener(
-    "click",
-    function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      for (let s of Array.from(document.querySelectorAll(".show-options"))) {
-        if (s != control) {
-          s.classList.remove("show-options");
-        }
-      }
-      control.classList.toggle("show-options");
-    }
-  );
-  select.addEventListener(
-    "change",
-    function(event) {
-      event.preventDefault();
-      event.stopPropagation();
-
-      let values = Array.from(select.options)
-          .filter(s => s.selected)
-          .map(s => s.value);
-
-      update(values.includes("any") ? [] : values);
+    abstractsControl.addEventListener("change", () => {
+      state.showAbstracts = abstractsControl.checked;
+      listElement.classList.toggle("detailed", state.showAbstracts);
+      listElement.classList.toggle("summary", !state.showAbstracts);
+      updateURL();
     });
-}
+  }
 
-enableMultiSelect(statusesControl,
-                   function(choices) {
-                     changeURL(false, { statuses: choices });
-                     obeyStatuses(choices);
-                   });
+  const searchControl = document.getElementById("search");
 
-enableMultiSelect(keywordsControl,
-                   function(choices) {
-                     changeURL(false, { keywords: choices });
-                     obeyKeywords(choices);
-                   });
+  if (searchControl) {
+    searchControl.value = state.searchQuery;
+    searchControl.addEventListener("input", () => {
+      state.searchQuery = searchControl.value;
+      updateDisplay();
+      updateURL();
+    });
+  }
 
-let observer = new MutationObserver(
-  function(mutationRecords, observer) {
-    for (let r of mutationRecords) {
-      let button = r.target;
-      let classes = button.classList;
-      let column = button.textContent;
+  document.querySelectorAll(".sort").forEach(button => {
+    const column = button.dataset.sort;
 
-      assertValidColumn(column);
+    if (!column) return;
 
-      if (classes.contains("asc")) {
-        changeURL(false, { sort: { column: column, order: "asc" } });
-      } else if (classes.contains("desc")) {
-        changeURL(false, { sort: { column: column, order: "desc" } });
-      }
+    if (column === state.sortColumn) {
+      button.classList.add(state.sortOrder);
     }
+
+    button.addEventListener("click", () => {
+      if (column === state.sortColumn) {
+        state.sortOrder = state.sortOrder === "asc" ? "desc" : "asc";
+      } else {
+        state.sortColumn = column;
+        state.sortOrder = "asc";
+      }
+
+      document.querySelectorAll(".sort").forEach(b => {
+        b.classList.remove("asc", "desc");
+      });
+      button.classList.add(state.sortOrder);
+
+      updateDisplay();
+      updateURL();
+    });
   });
 
-for (let button of sortControls) {
-  observer.observe(button, { attributes: true });
+  function setupDropdown(dropdown) {
+    const button = dropdown.querySelector("button");
+    const select = dropdown.querySelector("select");
+
+    if (!button || !select) return;
+
+    const isStatus = dropdown.id === "statuses";
+    const isKeywords = dropdown.id === "keywords";
+
+    if (isStatus) {
+      updateMultiSelect(select, state.selectedStatuses);
+    } else if (isKeywords) {
+      updateMultiSelect(select, state.selectedKeywords);
+    }
+
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      document.querySelectorAll(".dropdown").forEach(d => {
+        if (d !== dropdown) d.classList.remove("show-options");
+      });
+
+      dropdown.classList.toggle("show-options");
+    });
+
+    select.addEventListener("change", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const selected = Array.from(select.options)
+        .filter(o => o.selected && o.value !== "any")
+        .map(o => o.value);
+
+      if (isStatus) {
+        state.selectedStatuses = selected;
+        updateMultiSelect(select, selected);
+      } else if (isKeywords) {
+        state.selectedKeywords = selected;
+        updateMultiSelect(select, selected);
+      }
+
+      updateDisplay();
+      updateURL();
+    });
+  }
+
+  const statusesDropdown = document.getElementById("statuses");
+  const keywordsDropdown = document.getElementById("keywords");
+
+  if (statusesDropdown) setupDropdown(statusesDropdown);
+  if (keywordsDropdown) setupDropdown(keywordsDropdown);
+
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".dropdown").forEach(d => {
+      d.classList.remove("show-options");
+    });
+  });
+
+  const parameters = document.getElementById("parameters");
+
+  if (parameters) {
+    parameters.classList.remove("invisible");
+  }
+
+  updateDisplay();
 }
 
-obeyQueryParameters(null);
-document.querySelector(".invisible").classList.remove("invisible");
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}

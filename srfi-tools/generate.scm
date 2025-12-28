@@ -12,7 +12,6 @@
 	  (head
 	   (meta (@ (charset "utf-8")))
 	   (title "Scheme Requests for Implementation")
-	   (link (@ (rel "preload") (href "srfi.js") (as "script")))
 	   (link (@ (href "favicon.png")
 		    (rel "icon")
 		    (sizes "192x192")
@@ -134,10 +133,6 @@
 	      (a (@ (href "mailto:srfi-editors%20at%20srfi%20dot%20schemers%20dot%20org"))
 		 "the SRFI editors")
 	      ".")
-	   (script
-	    (@ (crossorigin "anonymous")
-	       (integrity "sha384-JDmRxRiXkNkskRM5AD4qHRGk9ItwZ9flbqOpsRYs8SOrIRwcMtTGKP2Scnjptzgm")
-	       (src "https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js")))
 	   (script (@ (src "srfi.js")))))))
 
 (define (spdx-license-and-copyright authors)
