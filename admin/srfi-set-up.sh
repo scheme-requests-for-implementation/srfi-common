@@ -16,17 +16,21 @@ else
   exit 1
 fi
 
-RSYNC_EXCLUDES=$(mktemp)
+RSYNC_INCLUDES=$(mktemp)
 SRFI_ROOT=$(realpath "`srfi common-dir`/..")
 STAGING=$(mktemp --directory -t srfi-staging-XXXXX)
 STAGING_EMAIL=$STAGING/srfi-email
 STAGING_NON_EMAIL=$STAGING/srfi
 STAGING_GLOBAL_TGZ=`mktemp`
 
-trap "rm -rf $RSYNC_EXCLUDES $STAGING/ $STAGING_EMAIL/ $STAGING_GLOBAL_TGZ $STAGING_NON_EMAIL/" 0 1 15
+trap "rm -rf $RSYNC_INCLUDES $STAGING/ $STAGING_EMAIL/ $STAGING_GLOBAL_TGZ $STAGING_NON_EMAIL/" 0 1 15
 
-grep -v '^#\|^$' "$SRFI_ROOT/srfi-common/srfi-tools/.gitignore" | \
-  sed 's|^|srfi-tools/|' > "$RSYNC_EXCLUDES" 2>/dev/null || true
+for dir in "$SRFI_ROOT"/*/; do
+    if [ -d "$dir/.git" ]; then
+        dirname=$(basename "$dir")
+        (cd "$dir" && git ls-files | sed "s|^|$dirname/|") >> "$RSYNC_INCLUDES"
+    fi
+done
 mkdir -p $STAGING_EMAIL
 mkdir -p $STAGING_NON_EMAIL
 rsync \
@@ -35,15 +39,20 @@ rsync \
   --exclude='.git/' \
   --exclude='.reuse/' \
   --exclude='srfi-email/' \
-  --exclude-from="$RSYNC_EXCLUDES" \
+  --files-from="$RSYNC_INCLUDES" \
   --perms \
   --quiet \
   --recursive \
   --safe-links \
   --times \
   $SRFI_ROOT/ \
-  $SRFI_ROOT/srfi-common/* \
   $STAGING_NON_EMAIL/
+(cd "$SRFI_ROOT/srfi-common" && git ls-files) | while read -r file; do
+  if [ -f "$SRFI_ROOT/srfi-common/$file" ]; then
+    mkdir -p "$STAGING_NON_EMAIL/$(dirname "$file")"
+    cp -p "$SRFI_ROOT/srfi-common/$file" "$STAGING_NON_EMAIL/$file"
+  fi
+done
 cd $STAGING_EMAIL/
 rsync \
   --exclude='*~' \
