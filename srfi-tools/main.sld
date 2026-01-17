@@ -30,6 +30,7 @@
           (srfi-tools pre)
           (srfi-tools rss)
           (srfi-tools signature)
+          (srfi-tools simplelists)
           (srfi-tools tar)
           (srfi-tools toc))
   (cond-expand
