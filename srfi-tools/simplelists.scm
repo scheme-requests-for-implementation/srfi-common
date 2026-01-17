@@ -1,43 +1,50 @@
 ;;;; Use Simplelists.com API to create and query mailing lists.
 
+(define simplelists-account-id "4137")
+
 (define (simplelists-api-token)
-  "Get the Simplelists API token from the SIMPLELISTS_TOKEN environment variable"
+  "Get the Simplelists API token from the SIMPLELISTS_TOKEN environment
+variable."
   (or (get-environment-variable "SIMPLELISTS_TOKEN")
       (user-error "SIMPLELISTS_TOKEN environment variable not set.")))
 
 (define (simplelists-api-base-url)
-  "Return the Simplelists API v2 base URL"
+  "Return the Simplelists API v2 base URL."
   "https://www.simplelists.com/api/2")
 
 (define (alist->json-string alist)
-  "Convert an alist to a JSON string"
+  "Convert an alist to a JSON string."
   (let ((port (open-output-string)))
     (json-write alist port)
     (get-output-string port)))
 
 (define (safe-delete-file filename)
-  "Delete a file if it exists, ignore errors"
+  "Delete a file if it exists, ignoring errors."
   (when (file-exists? filename)
     (delete-file filename)))
 
 (define (simplelists-api-request method path body)
-  "Make an HTTP request to Simplelists API v2, return parsed JSON response"
+  "Make an HTTP request to Simplelists API v2.  Return parsed JSON response."
   (let* ((token (simplelists-api-token))
          (separator (if (string-index path #\?) "&" "?"))
-         (url (string-append (simplelists-api-base-url) path separator "account_id=4137"))
+         (url (string-append (simplelists-api-base-url)
+			     path
+			     separator
+			     "account_id="
+			     simplelists-account-id))
          (temp-body-file (make-temp-file-name))
          (temp-headers-file (make-temp-file-name)))
     (let ((curl-args
            (append
             (list "curl"
-                  "--silent"
                   "--dump-header" temp-headers-file
+                  "--output" temp-body-file
                   "--request" method
-                  "--user" (string-append token ":")
-                  "--output" temp-body-file)
+                  "--silent"
+                  "--user" (string-append token ":"))
             (if body
-                (list "--header" "Content-Type: application/json"
-                      "--data" (alist->json-string body))
+                (list "--data" (alist->json-string body)
+		      "--header" "Content-Type: application/json")
                 '())
             (list "--" url))))
       (run-program curl-args))
@@ -58,36 +65,38 @@
                           "000")))
       (safe-delete-file temp-body-file)
       (safe-delete-file temp-headers-file)
-      (cond
-       ((string=? body-text "")
-        (user-error "Empty API response"))
-       ((string-prefix? "<" body-text)
-        (user-error (string-append "Invalid API response (HTTP " http-code "): " body-text)))
-       (else
-        (json-read (open-input-string body-text)))))))
+      (cond ((string=? body-text "") (user-error "Empty API response."))
+	    ((string-prefix? "<" body-text)
+             (user-error (string-append "Invalid API response (HTTP "
+					http-code
+					"): "
+					body-text)))
+	    (else (json-read (open-input-string body-text)))))))
 
 (define (simplelists-get-list list-name)
-  "Get the configuration for a mailing list, returns parsed JSON as alist"
+  "Get the configuration for a mailing list.  Return parsed JSON as alist."
   (simplelists-api-request "GET" (string-append "/lists/" list-name "/") #f))
 
 (define (simplelists-get-contact contact-id)
-  "Get contact information by ID, returns parsed JSON as alist"
-  (simplelists-api-request "GET" (string-append "/contacts/" (number->string contact-id) "/") #f))
+  "Get contact information by ID.  Return parsed JSON as alist."
+  (simplelists-api-request "GET"
+			   (string-append "/contacts/"
+					  (number->string contact-id)
+					  "/")
+			   #f))
 
 (define (parse-email-address email-spec)
-  "Parse 'Name <email@example.com>' or 'email@example.com' into (name . email)"
+  "Parse 'Name <email@example.com>' or 'email@example.com' into (name . email)."
   (let ((open-bracket (string-index email-spec #\<))
         (close-bracket (string-index email-spec #\>)))
     (if (and open-bracket close-bracket (< open-bracket close-bracket))
-        ;; Format: "Name <email@example.com>"
         (let ((name (string-trim-both (substring email-spec 0 open-bracket)))
               (email (substring email-spec (+ open-bracket 1) close-bracket)))
           (cons name email))
-        ;; Format: just "email@example.com"
         (cons #f (string-trim-both email-spec)))))
 
 (define (url-encode-email email)
-  "URL-encode an email address (replace @ with %40)"
+  "URL-encode an email address, replacing '@' with '%40'."
   (let ((chars (string->list email)))
     (list->string
      (apply append
@@ -98,33 +107,37 @@
                  chars)))))
 
 (define (simplelists-find-contact-by-email email)
-  "Search for a contact by email address, returns contact object or #f"
+  "Search for a contact by email address.  Return contact object or #f."
   (let* ((encoded-email (url-encode-email email))
          (path (string-append "/contacts/?email=" encoded-email))
          (response (simplelists-api-request "GET" path #f))
          (data (assoc 'data response)))
-    (if (and data (vector? (cdr data)) (> (vector-length (cdr data)) 0))
+    (if (and data
+	     (vector? (cdr data))
+	     (> (vector-length (cdr data)) 0))
         (vector-ref (cdr data) 0)
         #f)))
 
-(define (simplelists-create-contact-form name-email)
-  "Create a new contact using form data, returns contact object"
+(define (simplelists-create-contact name-email)
+  "Create a new contact using form data.  Return contact object."
   (let* ((parsed (parse-email-address name-email))
          (name (car parsed))
          (email (cdr parsed))
          (token (simplelists-api-token))
-         (url (string-append (simplelists-api-base-url) "/contacts/?account_id=4137"))
+         (url (string-append (simplelists-api-base-url)
+			     "/contacts/?account_id="
+			     simplelists-account-id))
          (temp-body-file (make-temp-file-name))
          (temp-headers-file (make-temp-file-name)))
     (let ((curl-args
            (append
             (list "curl"
-                  "--silent"
-                  "--dump-header" temp-headers-file
-                  "--request" "POST"
-                  "--user" (string-append token ":")
                   "--data" (string-append "emails=" email)
-                  "--output" temp-body-file)
+                  "--dump-header" temp-headers-file
+                  "--output" temp-body-file
+                  "--request" "POST"
+                  "--silent"
+                  "--user" (string-append token ":"))
             (if name
                 (list "--data" (string-append "firstname=" name))
                 '())
@@ -139,25 +152,27 @@
       (safe-delete-file temp-body-file)
       (safe-delete-file temp-headers-file)
       (if (string=? body-text "")
-          (user-error "Empty API response")
+          (user-error "Empty API response.")
           (json-read (open-input-string body-text))))))
 
 (define (simplelists-add-membership contact-id list-name)
-  "Add a contact to a list as a member using form data"
+  "Add a contact to a list as a member using form data."
   (let* ((token (simplelists-api-token))
-         (url (string-append (simplelists-api-base-url) "/membership/?account_id=4137"))
+         (url (string-append (simplelists-api-base-url)
+			     "/membership/?account_id="
+			     simplelists-account-id))
          (temp-body-file (make-temp-file-name))
          (temp-headers-file (make-temp-file-name)))
     (let ((curl-args
            (list "curl"
-                 "--silent"
-                 "--dump-header" temp-headers-file
-                 "--request" "POST"
-                 "--user" (string-append token ":")
+                 "--" url
                  "--data" (string-append "contact=" (number->string contact-id))
                  "--data" (string-append "list=" list-name)
+                 "--dump-header" temp-headers-file
                  "--output" temp-body-file
-                 "--" url)))
+                 "--request" "POST"
+                 "--silent"
+                 "--user" (string-append token ":"))))
       (run-program curl-args))
     (let* ((body-text (if (file-exists? temp-body-file)
                           (read-text-file temp-body-file)
@@ -166,7 +181,7 @@
                         (read-text-file temp-headers-file)
                         ""))
            (response (if (string=? body-text "")
-                         (user-error "Empty API response")
+                         (user-error "Empty API response.")
                          (json-read (open-input-string body-text)))))
       (safe-delete-file temp-body-file)
       (safe-delete-file temp-headers-file)
@@ -175,57 +190,64 @@
       response)))
 
 (define (simplelists-find-or-create-contact name-email)
-  "Find existing contact by email or create new one, returns contact ID"
+  "Find existing contact by email or create new one.  Return contact ID."
   (let* ((parsed (parse-email-address name-email))
          (email (cdr parsed))
          (existing (simplelists-find-contact-by-email email)))
-    (if existing
-        (begin
-          (disp "  Found existing contact for " email)
-          (let ((id-pair (assoc 'id existing)))
-            (if id-pair
-                (cdr id-pair)
-                (user-error "Contact found but has no 'id' field. Available fields: "
-                           (map car existing)))))
-        (begin
-          (disp "  Creating new contact for " email)
-          (let* ((new-contact (simplelists-create-contact-form name-email))
-                 (id-pair (assoc 'id new-contact)))
-            (if id-pair
-                (cdr id-pair)
-                (user-error "Created contact but has no 'id' field. Available fields: "
-                           (map car new-contact))))))))
+    (cond (existing
+           (disp "  Found existing contact for " email)
+           (let ((id-pair (assoc 'id existing)))
+             (if id-pair
+                 (cdr id-pair)
+                 (user-error
+		  "Contact found but has no 'id' field. Available fields: "
+                  (map car existing)))))
+          (else
+           (disp "  Creating new contact for " email)
+           (let* ((new-contact (simplelists-create-contact name-email))
+                  (id-pair (assoc 'id new-contact)))
+             (if id-pair
+                 (cdr id-pair)
+                 (user-error
+		  "Created contact but has no 'id' field. Available fields: "
+                  (map car new-contact))))))))
 
 (define (contact-display-name contact)
-  "Extract a display name from a contact object"
+  "Extract a display name from a contact object."
   (let ((firstname (assoc 'firstname contact))
         (surname (assoc 'surname contact))
         (email (assoc 'email contact)))
-    (cond
-     ((and firstname surname (cdr firstname) (cdr surname))
-      (string-append (cdr firstname) " " (cdr surname)))
-     (firstname (cdr firstname))
-     (surname (cdr surname))
-     (email (cdr email))
-     (else "Unknown"))))
+    (cond ((and firstname surname (cdr firstname) (cdr surname))
+	   (string-append (cdr firstname) " " (cdr surname)))
+	  (firstname (cdr firstname))
+	  (surname (cdr surname))
+	  (email (cdr email))
+	  (else "Unknown"))))
 
 (define (simplelists-update-list-form list-name field-name values-list)
-  "Update a mailing list field using form data (for arrays, pass list of values)"
+  "Update a mailing list field using form data.  For arrays, pass list of
+values."
   (let* ((token (simplelists-api-token))
-         (url (string-append (simplelists-api-base-url) "/lists/" list-name "/?account_id=4137"))
+         (url (string-append (simplelists-api-base-url)
+			     "/lists/"
+			     list-name
+			     "/?account_id="
+			     simplelists-account-id))
          (temp-body-file (make-temp-file-name))
          (temp-headers-file (make-temp-file-name))
-         ;; Build curl args with repeated -d parameters for each value
-         (data-args (apply append (map (lambda (val) (list "--data" (string-append field-name "=" val)))
-                                       values-list))))
+         (data-args (apply append
+			   (map (lambda (val)
+				  (list "--data"
+					(string-append field-name "=" val)))
+                                values-list))))
     (let ((curl-args
            (append
             (list "curl"
-                  "--silent"
                   "--dump-header" temp-headers-file
+                  "--output" temp-body-file
                   "--request" "PUT"
-                  "--user" (string-append token ":")
-                  "--output" temp-body-file)
+                  "--silent"
+                  "--user" (string-append token ":"))
             data-args
             (list "--" url))))
       (run-program curl-args))
@@ -238,15 +260,16 @@
       (safe-delete-file temp-body-file)
       (safe-delete-file temp-headers-file)
       (if (string=? body-text "")
-          (user-error "Empty API response")
+          (user-error "Empty API response.")
           (json-read (open-input-string body-text))))))
 
 (define (simplelists-create-list-api list-name params-alist)
-  "Create a new mailing list via API"
+  "Create a new mailing list via API."
   (simplelists-api-request "POST" "/lists/" params-alist))
 
 (define (json-extract-restrict-post-lists json-obj)
-  "Extract the restrict_post_lists array from parsed JSON, returns list of strings"
+  "Extract the restrict_post_lists array from parsed JSON.  Return list of
+strings."
   (let ((val (assoc 'restrict_post_lists json-obj)))
     (if val
         (let ((lists (cdr val)))
@@ -256,79 +279,100 @@
         '())))
 
 (define (simplelists-add-allowed-list list-name allowed-list)
-  "Add an allowed posting list to a mailing list's restrict_post_lists"
+  "Add an allowed posting list to a mailing list's restrict_post_lists."
   (let* ((current-json (simplelists-get-list list-name))
          (current-lists (json-extract-restrict-post-lists current-json)))
     (if (member allowed-list current-lists)
         (begin
-          (disp "List '" allowed-list "' already in restrict_post_lists for '" list-name "'")
+          (disp "List '"
+		allowed-list
+		"' already in restrict_post_lists for '"
+		list-name
+		"'.")
           #f)
         (let ((new-lists (append current-lists (list allowed-list))))
-          (disp "Adding '" allowed-list "' to restrict_post_lists for '" list-name "'")
-          (simplelists-update-list-form list-name "restrict_post_lists" new-lists)
-          (disp "Successfully updated list '" list-name "'")
+          (disp "Adding '"
+		allowed-list
+		"' to restrict_post_lists for '"
+		list-name
+		"'.")
+          (simplelists-update-list-form list-name
+					"restrict_post_lists"
+					new-lists)
+          (disp "Successfully updated list '" list-name "'.")
           #t))))
 
 (define (simplelists-standard-target-lists)
-  "Return the standard lists that SRFI lists should be allowed to post to"
+  "Return the standard lists that SRFI lists should be allowed to post to."
   (list "srfi-auto-subscribe"
         "srfi-discuss"
         "srfi-editors"
         "stickers"))
 
 (define (simplelists-add-to-target-list list-name target-list)
-  "Add list-name to the restrict_post_lists of target-list"
+  "Add list-name to the restrict_post_lists of target-list."
   (let* ((current-json (simplelists-get-list target-list))
          (current-lists (json-extract-restrict-post-lists current-json)))
     (if (member list-name current-lists)
         (begin
-          (disp "  '" list-name "' already allowed to post to '" target-list "'")
+          (disp "  '" list-name "' already allowed to post to '" target-list "'.")
           #f)
         (let ((new-lists (append current-lists (list list-name))))
-          (disp "  Adding '" list-name "' to restrict_post_lists of '" target-list "'")
-          (simplelists-update-list-form target-list "restrict_post_lists" new-lists)
+          (disp "  Adding '"
+		list-name
+		"' to restrict_post_lists of '"
+		target-list
+		"'.")
+          (simplelists-update-list-form target-list
+					"restrict_post_lists"
+					new-lists)
           #t))))
 
 (define (simplelists-add-standard-lists list-name)
-  "Add list-name to the restrict_post_lists of standard target lists"
+  "Add list-name to the restrict_post_lists of standard target lists."
   (disp "Allowing '" list-name "' to post to standard lists:")
   (let ((targets (simplelists-standard-target-lists)))
     (for-each (lambda (target)
                 (simplelists-add-to-target-list list-name target))
               targets)
-    (disp "Completed adding '" list-name "' to standard lists")))
+    (disp "Finished adding '" list-name "' to standard lists.")))
 
 (define (simplelists-create-list num author-email)
-  "Create a new mailing list for SRFI <num> with standard configuration and add author"
+  "Create a new mailing list for SRFI <num> with standard configuration and add
+author."
   (let* ((list-name (srfi-num-stem num))
          (title (srfi-title num))
          (params `((name . ,list-name)
-                  (archive_enabled . #t)
-                  (archive_protected . #f)
-                  (archive_spammode . #t)
-                  (message_footer . "")
-                  (moderate . 6)
-                  (restrict_post_lists . ,(list->vector (list list-name "srfi-auto-subscribe")))
-                  (subs_memberview . ""))))
-    (disp "Creating mailing list for " list-name)
+                   (archive_enabled . #t)
+                   (archive_protected . #f)
+                   (archive_spammode . #t)
+                   (message_footer . "")
+                   (moderate . 6)
+                   (restrict_post_lists . ,(list->vector
+					    (list list-name
+						  "srfi-auto-subscribe")))
+                   (subs_memberview . ""))))
+    (disp "Creating mailing list for '" list-name "'.")
     (simplelists-create-list-api list-name params)
-    (disp "Successfully created list '" list-name "'")
-
-    ;; Add author as member
+    (disp "Successfully created list '" list-name "'.")
     (disp "Adding author to list:")
     (let ((contact-id (simplelists-find-or-create-contact author-email)))
-      (disp "  Adding contact " (number->string contact-id) " to " list-name)
+      (disp "  Adding contact "
+	    (number->string contact-id)
+	    " to '"
+	    list-name
+	    "'.")
       (simplelists-add-membership contact-id list-name)
-      (disp "  Author added successfully"))
-
-    ;; Add srfi-auto-subscribe as member
+      (disp "  Author added successfully."))
     (disp "Adding srfi-auto-subscribe to list:")
     (let ((contact-id (simplelists-find-or-create-contact "srfi-auto-subscribe@srfi.schemers.org")))
-      (disp "  Adding contact " (number->string contact-id) " to " list-name)
+      (disp "  Adding contact "
+	    (number->string contact-id)
+	    " to '"
+	    list-name
+	    "'.")
       (simplelists-add-membership contact-id list-name)
-      (disp "  srfi-auto-subscribe added successfully"))
-
-    ;; Now add the remaining standard allowed lists
+      (disp "  srfi-auto-subscribe added successfully."))
     (simplelists-add-standard-lists list-name)))
 
 ;; Commands
@@ -338,32 +382,32 @@
   (simplelists-create-list (parse-srfi-number num) author-email))
 
 (define (sort-alist alist)
-  "Sort an alist by keys (symbols converted to strings for comparison)"
+  "Sort an alist by keys (symbols converted to strings for comparison)."
   (list-sort (lambda (a b)
                (string<? (symbol->string (car a))
-                        (symbol->string (car b))))
+                         (symbol->string (car b))))
              alist))
 
 (define (contact-email contact)
-  "Extract the primary email address from a contact object"
+  "Extract the primary email address from a contact object."
   (let ((emails (assoc 'emails contact)))
     (if (and emails (vector? (cdr emails)) (> (vector-length (cdr emails)) 0))
         (let* ((first-email-obj (vector-ref (cdr emails) 0))
                (email-pair (assoc 'email first-email-obj)))
           (if email-pair
               (cdr email-pair)
-              "no-email"))
-        "no-email")))
+              "no-email-address"))
+        "no-email-address")))
 
 (define (resolve-contacts-in-list list-config)
-  "Add contact-names-x and contact-addresses-x fields alongside existing contacts field"
+  "Add contact-names-x and contact-addresses-x fields alongside existing
+contacts field."
   (let ((contacts-pair (assoc 'contacts list-config)))
     (if (and contacts-pair (vector? (cdr contacts-pair)))
         (let* ((contact-ids (vector->list (cdr contacts-pair)))
                (contacts-data (map simplelists-get-contact contact-ids))
                (contact-names (list->vector (map contact-display-name contacts-data)))
                (contact-addresses (list->vector (map contact-email contacts-data))))
-          ;; Add contact-names-x and contact-addresses-x to the existing config
           (cons `(contact-names-x . ,contact-names)
                 (cons `(contact-addresses-x . ,contact-addresses)
                       list-config)))
