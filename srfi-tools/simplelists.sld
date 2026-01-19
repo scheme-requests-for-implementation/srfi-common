@@ -1,14 +1,17 @@
 (define-library (srfi-tools simplelists)
   (export simplelists-api-token
           simplelists-api-base-url
+          simplelists-create-list
           simplelists-get-list
-          simplelists-update-list-form
-          simplelists-create-list)
+          simplelists-update-list-form)
   (import (scheme base)
           (scheme file)
           (scheme process-context)
           (scheme read)
           (scheme write)
+
+          (srfi-tools data)
+          (srfi-tools path)
 
           (srfi-tools private command)
           (srfi-tools private error)
@@ -18,10 +21,7 @@
           (srfi-tools private os)
           (srfi-tools private port)
           (srfi-tools private pretty-print)
-          (srfi-tools private string)
-
-          (srfi-tools data)
-          (srfi-tools path))
+          (srfi-tools private string))
 
   ;; Import JSON library based on implementation
   ;; Both (srfi 180) and (chibi json) provide compatible APIs:
