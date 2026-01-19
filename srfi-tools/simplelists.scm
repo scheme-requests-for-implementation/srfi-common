@@ -271,9 +271,11 @@ strings."
   (let* ((current-json (simplelists-get-list target-list))
          (current-lists (json-extract-restrict-post-lists current-json)))
     (if (member list-name current-lists)
-        (begin
-          (disp "  '" list-name "' already allowed to post to '" target-list "'.")
-          #f)
+        (disp "  '"
+	      list-name
+	      "' already allowed to post to '"
+	      target-list
+	      "'.")
         (let ((new-lists (append current-lists (list list-name))))
           (disp "  Adding '"
 		list-name
@@ -322,7 +324,9 @@ author."
       (simplelists-add-membership contact-id list-name)
       (disp "  Author added successfully."))
     (disp "Adding srfi-auto-subscribe to list:")
-    (let ((contact-id (simplelists-find-or-create-contact "srfi-auto-subscribe@srfi.schemers.org")))
+    (let ((contact-id
+	   (simplelists-find-or-create-contact
+	    "srfi-auto-subscribe@srfi.schemers.org")))
       (disp "  Adding contact "
 	    (number->string contact-id)
 	    " to '"
@@ -363,8 +367,10 @@ contacts field."
     (if (and contacts-pair (vector? (cdr contacts-pair)))
         (let* ((contact-ids (vector->list (cdr contacts-pair)))
                (contacts-data (map simplelists-get-contact contact-ids))
-               (contact-names (list->vector (map contact-display-name contacts-data)))
-               (contact-addresses (list->vector (map contact-email contacts-data))))
+               (contact-names
+		(list->vector (map contact-display-name contacts-data)))
+               (contact-addresses
+		(list->vector (map contact-email contacts-data))))
           (cons `(contact-names-x . ,contact-names)
                 (cons `(contact-addresses-x . ,contact-addresses)
                       list-config)))
