@@ -111,19 +111,19 @@ variable."
 					  "/")
 			   #f))
 
-(define (parse-email-address email-spec)
+(define (parse-email-address address)
   "Parse 'Name <email@example.com>' or 'email@example.com' into (name . email)."
-  (let ((open-bracket (string-index email-spec #\<))
-        (close-bracket (string-index email-spec #\>)))
+  (let ((open-bracket (string-index address #\<))
+        (close-bracket (string-index address #\>)))
     (if (and open-bracket close-bracket (< open-bracket close-bracket))
-        (let ((name (string-trim-both (substring email-spec 0 open-bracket)))
-              (email (substring email-spec (+ open-bracket 1) close-bracket)))
+        (let ((name (string-trim-both (substring address 0 open-bracket)))
+              (email (substring address (+ open-bracket 1) close-bracket)))
           (cons name email))
-        (cons #f (string-trim-both email-spec)))))
+        (cons #f (string-trim-both address)))))
 
-(define (url-encode-email email)
-  "URL-encode an email address, replacing '@' with '%40'."
-  (let ((chars (string->list email)))
+(define (url-encode-address address)
+  "URL-encode an address address, replacing '@' with '%40'."
+  (let ((chars (string->list address)))
     (list->string
      (apply append
             (map (lambda (c)
@@ -132,9 +132,9 @@ variable."
                        (list c)))
                  chars)))))
 
-(define (simplelists-find-contact-by-email email)
+(define (simplelists-find-contact-by-address email)
   "Search for a contact by email address.  Return contact object or #f."
-  (let* ((encoded-email (url-encode-email email))
+  (let* ((encoded-email (url-encode-address email))
          (path (string-append "/contacts/?email=" encoded-email))
          (response (simplelists-api-request "GET" path #f))
          (data (assoc 'data response)))
@@ -144,9 +144,9 @@ variable."
         (vector-ref (cdr data) 0)
         #f)))
 
-(define (simplelists-create-contact name-email)
+(define (simplelists-create-contact address)
   "Create a new contact using form data.  Return contact object."
-  (let* ((parsed (parse-email-address name-email))
+  (let* ((parsed (parse-email-address address))
          (name (car parsed))
          (email (cdr parsed))
          (token (simplelists-api-token))
@@ -188,11 +188,12 @@ variable."
     (pretty-print response)
     response))
 
-(define (simplelists-find-or-create-contact name-email)
-  "Find existing contact by email or create new one.  Return contact ID."
-  (let* ((parsed (parse-email-address name-email))
+(define (simplelists-find-or-create-contact address)
+  "Find existing contact by email address, or create new one.  Return contact
+ID."
+  (let* ((parsed (parse-email-address address))
          (email (cdr parsed))
-         (existing (simplelists-find-contact-by-email email)))
+         (existing (simplelists-find-contact-by-address email)))
     (cond (existing
            (disp "  Found existing contact for " email)
            (let ((id-pair (assoc 'id existing)))
@@ -203,7 +204,7 @@ variable."
                   (map car existing)))))
           (else
            (disp "  Creating new contact for " email)
-           (let* ((new-contact (simplelists-create-contact name-email))
+           (let* ((new-contact (simplelists-create-contact address))
                   (id-pair (assoc 'id new-contact)))
              (if id-pair
                  (cdr id-pair)
