@@ -244,7 +244,7 @@ values."
         (user-error "Empty API response.")
         (json-read (open-input-string body-text)))))
 
-(define (simplelists-create-list-api list-name params-alist)
+(define (simplelists-create-list list-name params-alist)
   "Create a new mailing list via API."
   (simplelists-api-request "POST" "/lists/" params-alist))
 
@@ -311,7 +311,7 @@ author."
 						  "srfi-auto-subscribe")))
                    (subs_memberview . ""))))
     (disp "Creating mailing list for '" list-name "'.")
-    (simplelists-create-list-api list-name params)
+    (simplelists-create-list list-name params)
     (disp "Successfully created list '" list-name "'.")
     (disp "Adding author to list:")
     (let ((contact-id (simplelists-find-or-create-contact author-email)))
@@ -342,7 +342,7 @@ author."
   (simplelists-create-list (parse-srfi-number num) author-email))
 
 (define (sort-alist alist)
-  "Sort an alist by keys (symbols converted to strings for comparison)."
+  "Sort an alist by symbolic keys."
   (list-sort (lambda (a b)
                (string<? (symbol->string (car a))
                          (symbol->string (car b))))
@@ -350,9 +350,11 @@ author."
 
 (define (contact-email contact)
   "Extract the primary email address from a contact object."
-  (let ((emails (assoc 'emails contact)))
-    (if (and emails (vector? (cdr emails)) (> (vector-length (cdr emails)) 0))
-        (let* ((first-email-obj (vector-ref (cdr emails) 0))
+  (let ((addresses (assoc 'addresses contact)))
+    (if (and addresses
+	     (vector? (cdr addresses))
+	     (> (vector-length (cdr addresses)) 0))
+        (let* ((first-email-obj (vector-ref (cdr addresses) 0))
                (email-pair (assoc 'email first-email-obj)))
           (if email-pair
               (cdr email-pair)
