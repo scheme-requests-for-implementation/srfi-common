@@ -3,7 +3,6 @@
           simplelists-api-base-url
           simplelists-get-list
           simplelists-update-list-form
-          simplelists-add-allowed-list
           simplelists-create-list)
   (import (scheme base)
           (scheme file)

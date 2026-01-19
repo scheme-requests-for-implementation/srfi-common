@@ -259,30 +259,6 @@ strings."
               '()))
         '())))
 
-(define (simplelists-add-allowed-list list-name allowed-list)
-  "Add an allowed posting list to a mailing list's restrict_post_lists."
-  (let* ((current-json (simplelists-get-list list-name))
-         (current-lists (json-extract-restrict-post-lists current-json)))
-    (if (member allowed-list current-lists)
-        (begin
-          (disp "List '"
-		allowed-list
-		"' already in restrict_post_lists for '"
-		list-name
-		"'.")
-          #f)
-        (let ((new-lists (append current-lists (list allowed-list))))
-          (disp "Adding '"
-		allowed-list
-		"' to restrict_post_lists for '"
-		list-name
-		"'.")
-          (simplelists-update-list-form list-name
-					"restrict_post_lists"
-					new-lists)
-          (disp "Successfully updated list '" list-name "'.")
-          #t))))
-
 (define (simplelists-standard-target-lists)
   "Return the standard lists that SRFI lists should be allowed to post to."
   (list "srfi-auto-subscribe"
