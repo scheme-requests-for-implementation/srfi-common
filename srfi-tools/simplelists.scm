@@ -28,11 +28,11 @@ variable."
 
  method: HTTP method string (GET, POST, PUT, DELETE, etc.)
  url: Full URL string
- auth: Authentication string for --user, or #f for none
- body-type: 'json, 'form, or #f for no body
+ auth: Authentication string for --user, or #false for none
+ body-type: 'json, 'form, or #false for no body
  body: For 'json: alist to convert to JSON
        For 'form: list of (key . value) pairs
-       For #f: ignored"
+       For #false: ignored"
   (let ((temp-body-file (make-temp-file-name))
         (temp-headers-file (make-temp-file-name)))
     (let ((curl-args
@@ -87,7 +87,7 @@ variable."
          (response (http-request method
                                  url
                                  (string-append token ":")
-                                 (if body 'json #f)
+                                 (if body 'json #false)
                                  body))
          (http-code (car response))
          (body-text (cdr response)))
@@ -101,7 +101,7 @@ variable."
 
 (define (simplelists-get-list list-name)
   "Get the configuration for a mailing list.  Return parsed JSON as alist."
-  (simplelists-api-request "GET" (string-append "/lists/" list-name "/") #f))
+  (simplelists-api-request "GET" (string-append "/lists/" list-name "/") #false))
 
 (define (simplelists-get-contact contact-id)
   "Get contact information by ID.  Return parsed JSON as alist."
@@ -109,7 +109,7 @@ variable."
 			   (string-append "/contacts/"
 					  (number->string contact-id)
 					  "/")
-			   #f))
+			   #false))
 
 (define (parse-email-address address)
   "Parse 'Name <email@example.com>' or 'email@example.com' into (name . email)."
@@ -119,7 +119,7 @@ variable."
         (let ((name (string-trim-both (substring address 0 open-bracket)))
               (email (substring address (+ open-bracket 1) close-bracket)))
           (cons name email))
-        (cons #f (string-trim-both address)))))
+        (cons #false (string-trim-both address)))))
 
 (define (url-encode-address address)
   "URL-encode an address address, replacing '@' with '%40'."
@@ -133,16 +133,16 @@ variable."
                  chars)))))
 
 (define (simplelists-find-contact-by-address email)
-  "Search for a contact by email address.  Return contact object or #f."
+  "Search for a contact by email address.  Return contact object or #false."
   (let* ((encoded-email (url-encode-address email))
          (path (string-append "/contacts/?email=" encoded-email))
-         (response (simplelists-api-request "GET" path #f))
+         (response (simplelists-api-request "GET" path #false))
          (data (assoc 'data response)))
     (if (and data
 	     (vector? (cdr data))
 	     (> (vector-length (cdr data)) 0))
         (vector-ref (cdr data) 0)
-        #f)))
+        #false)))
 
 (define (simplelists-create-contact address)
   "Create a new contact using form data.  Return contact object."
@@ -301,9 +301,9 @@ author."
   (let* ((list-name (srfi-num-stem num))
          (title (srfi-title num))
          (params `((name . ,list-name)
-                   (archive_enabled . #t)
-                   (archive_protected . #f)
-                   (archive_spammode . #t)
+                   (archive_enabled . #true)
+                   (archive_protected . #false)
+                   (archive_spammode . #true)
                    (message_footer . "")
                    (moderate . 6)
                    (restrict_post_lists . ,(list->vector
