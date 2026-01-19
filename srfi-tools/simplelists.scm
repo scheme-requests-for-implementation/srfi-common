@@ -245,8 +245,35 @@ values."
         (json-read (open-input-string body-text)))))
 
 (define (simplelists-create-list list-name params-alist)
-  "Create a new mailing list via API."
-  (simplelists-api-request "POST" "/lists/" params-alist))
+  "Create a new mailing list via API using form data."
+  (let* ((token (simplelists-api-token))
+         (url (string-append (simplelists-api-base-url)
+                             "/lists/?account_id="
+                             simplelists-account-id))
+         (form-data (apply append
+                           (map (lambda (pair)
+                                  (let ((key (symbol->string (car pair)))
+                                        (val (cdr pair)))
+                                    (cond
+                                     ((vector? val)
+                                      (map (lambda (v) (cons key v))
+                                           (vector->list val)))
+                                     ((boolean? val)
+                                      (list (cons key (if val "1" "0"))))
+                                     ((number? val)
+                                      (list (cons key (number->string val))))
+                                     (else
+                                      (list (cons key val))))))
+                                params-alist)))
+         (response (http-request "POST"
+                                 url
+                                 (string-append token ":")
+                                 'form
+                                 form-data))
+         (body-text (cdr response)))
+    (if (string=? body-text "")
+        (user-error "Empty API response.")
+        (json-read (open-input-string body-text)))))
 
 (define (json-extract-restrict-post-lists json-obj)
   "Extract the restrict_post_lists array from parsed JSON.  Return list of
@@ -295,11 +322,10 @@ strings."
               targets)
     (disp "Finished adding '" list-name "' to standard lists.")))
 
-(define (simplelists-create-list num author-email)
+(define (simplelists-create-srfi-list num author-email)
   "Create a new mailing list for SRFI <num> with standard configuration and add
 author."
   (let* ((list-name (srfi-num-stem num))
-         (title (srfi-title num))
          (params `((name . ,list-name)
                    (archive_enabled . #true)
                    (archive_protected . #false)
@@ -311,8 +337,12 @@ author."
 						  "srfi-auto-subscribe")))
                    (subs_memberview . ""))))
     (disp "Creating mailing list for '" list-name "'.")
-    (simplelists-create-list list-name params)
-    (disp "Successfully created list '" list-name "'.")
+    (let* ((response (simplelists-create-list list-name params))
+	   (is-error (assoc 'is_error response)))
+      (when (and is-error (cdr is-error))
+        (user-error "Failed to create list: "
+                    (cdr (assoc 'message response))))
+      (disp "Successfully created list '" list-name "'."))
     (disp "Adding author to list:")
     (let ((contact-id (simplelists-find-or-create-contact author-email)))
       (disp "  Adding contact "
@@ -339,7 +369,7 @@ author."
 
 (define-command (simplelists-create num author-email)
   "Create mailing list for SRFI <num> with author as member."
-  (simplelists-create-list (parse-srfi-number num) author-email))
+  (simplelists-create-srfi-list (parse-srfi-number num) author-email))
 
 (define (sort-alist alist)
   "Sort an alist by symbolic keys."
