@@ -284,8 +284,7 @@ strings."
 		"'.")
           (simplelists-update-list-form target-list
 					"restrict_post_lists"
-					new-lists)
-          #t))))
+					new-lists)))))
 
 (define (simplelists-add-standard-lists list-name)
   "Add list-name to the restrict_post_lists of standard target lists."
