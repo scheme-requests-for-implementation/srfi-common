@@ -23,29 +23,37 @@ variable."
   (when (file-exists? filename)
     (delete-file filename)))
 
-(define (simplelists-api-request method path body)
-  "Make an HTTP request to Simplelists API v2.  Return parsed JSON response."
-  (let* ((token (simplelists-api-token))
-         (separator (if (string-index path #\?) "&" "?"))
-         (url (string-append (simplelists-api-base-url)
-			     path
-			     separator
-			     "account_id="
-			     simplelists-account-id))
-         (temp-body-file (make-temp-file-name))
-         (temp-headers-file (make-temp-file-name)))
+(define (http-request method url auth body-type body)
+  "Make an HTTP request using curl.  Returns (status-code . body-text).
+
+ method: HTTP method string (GET, POST, PUT, DELETE, etc.)
+ url: Full URL string
+ auth: Authentication string for --user, or #f for none
+ body-type: 'json, 'form, or #f for no body
+ body: For 'json: alist to convert to JSON
+       For 'form: list of (key . value) pairs
+       For #f: ignored"
+  (let ((temp-body-file (make-temp-file-name))
+        (temp-headers-file (make-temp-file-name)))
     (let ((curl-args
            (append
             (list "curl"
                   "--dump-header" temp-headers-file
                   "--output" temp-body-file
                   "--request" method
-                  "--silent"
-                  "--user" (string-append token ":"))
-            (if body
-                (list "--data" (alist->json-string body)
-		      "--header" "Content-Type: application/json")
-                '())
+                  "--silent")
+            (if auth (list "--user" auth) '())
+            (cond
+             ((eq? body-type 'json)
+              (list "--data" (alist->json-string body)
+                    "--header" "Content-Type: application/json"))
+             ((eq? body-type 'form)
+              (apply append
+                     (map (lambda (pair)
+                            (list "--data"
+                                  (string-append (car pair) "=" (cdr pair))))
+                          body)))
+             (else '()))
             (list "--" url))))
       (run-program curl-args))
     (let* ((body-text (if (file-exists? temp-body-file)
@@ -65,13 +73,31 @@ variable."
                           "000")))
       (safe-delete-file temp-body-file)
       (safe-delete-file temp-headers-file)
-      (cond ((string=? body-text "") (user-error "Empty API response."))
-	    ((string-prefix? "<" body-text)
-             (user-error (string-append "Invalid API response (HTTP "
-					http-code
-					"): "
-					body-text)))
-	    (else (json-read (open-input-string body-text)))))))
+      (cons http-code body-text))))
+
+(define (simplelists-api-request method path body)
+  "Make an HTTP request to Simplelists API v2.  Return parsed JSON response."
+  (let* ((token (simplelists-api-token))
+         (separator (if (string-index path #\?) "&" "?"))
+         (url (string-append (simplelists-api-base-url)
+			     path
+			     separator
+			     "account_id="
+			     simplelists-account-id))
+         (response (http-request method
+                                 url
+                                 (string-append token ":")
+                                 (if body 'json #f)
+                                 body))
+         (http-code (car response))
+         (body-text (cdr response)))
+    (cond ((string=? body-text "") (user-error "Empty API response."))
+	  ((string-prefix? "<" body-text)
+           (user-error (string-append "Invalid API response (HTTP "
+				      http-code
+				      "): "
+				      body-text)))
+	  (else (json-read (open-input-string body-text))))))
 
 (define (simplelists-get-list list-name)
   "Get the configuration for a mailing list.  Return parsed JSON as alist."
@@ -127,33 +153,19 @@ variable."
          (url (string-append (simplelists-api-base-url)
 			     "/contacts/?account_id="
 			     simplelists-account-id))
-         (temp-body-file (make-temp-file-name))
-         (temp-headers-file (make-temp-file-name)))
-    (let ((curl-args
-           (append
-            (list "curl"
-                  "--data" (string-append "emails=" email)
-                  "--dump-header" temp-headers-file
-                  "--output" temp-body-file
-                  "--request" "POST"
-                  "--silent"
-                  "--user" (string-append token ":"))
-            (if name
-                (list "--data" (string-append "firstname=" name))
-                '())
-            (list "--" url))))
-      (run-program curl-args))
-    (let* ((body-text (if (file-exists? temp-body-file)
-                          (read-text-file temp-body-file)
-                          ""))
-           (headers (if (file-exists? temp-headers-file)
-                        (read-text-file temp-headers-file)
-                        "")))
-      (safe-delete-file temp-body-file)
-      (safe-delete-file temp-headers-file)
-      (if (string=? body-text "")
-          (user-error "Empty API response.")
-          (json-read (open-input-string body-text))))))
+         (form-data (if name
+                        (list (cons "emails" email)
+                              (cons "firstname" name))
+                        (list (cons "emails" email))))
+         (response (http-request "POST"
+                                 url
+                                 (string-append token ":")
+                                 'form
+                                 form-data))
+         (body-text (cdr response)))
+    (if (string=? body-text "")
+        (user-error "Empty API response.")
+        (json-read (open-input-string body-text)))))
 
 (define (simplelists-add-membership contact-id list-name)
   "Add a contact to a list as a member using form data."
@@ -161,33 +173,20 @@ variable."
          (url (string-append (simplelists-api-base-url)
 			     "/membership/?account_id="
 			     simplelists-account-id))
-         (temp-body-file (make-temp-file-name))
-         (temp-headers-file (make-temp-file-name)))
-    (let ((curl-args
-           (list "curl"
-                 "--" url
-                 "--data" (string-append "contact=" (number->string contact-id))
-                 "--data" (string-append "list=" list-name)
-                 "--dump-header" temp-headers-file
-                 "--output" temp-body-file
-                 "--request" "POST"
-                 "--silent"
-                 "--user" (string-append token ":"))))
-      (run-program curl-args))
-    (let* ((body-text (if (file-exists? temp-body-file)
-                          (read-text-file temp-body-file)
-                          ""))
-           (headers (if (file-exists? temp-headers-file)
-                        (read-text-file temp-headers-file)
-                        ""))
-           (response (if (string=? body-text "")
-                         (user-error "Empty API response.")
-                         (json-read (open-input-string body-text)))))
-      (safe-delete-file temp-body-file)
-      (safe-delete-file temp-headers-file)
-      (disp "  Membership API response: ")
-      (pretty-print response)
-      response)))
+         (form-data (list (cons "contact" (number->string contact-id))
+                          (cons "list" list-name)))
+         (http-response (http-request "POST"
+                                      url
+                                      (string-append token ":")
+                                      'form
+                                      form-data))
+         (body-text (cdr http-response))
+         (response (if (string=? body-text "")
+                       (user-error "Empty API response.")
+                       (json-read (open-input-string body-text)))))
+    (disp "  Membership API response: ")
+    (pretty-print response)
+    response))
 
 (define (simplelists-find-or-create-contact name-email)
   "Find existing contact by email or create new one.  Return contact ID."
@@ -233,35 +232,16 @@ values."
 			     list-name
 			     "/?account_id="
 			     simplelists-account-id))
-         (temp-body-file (make-temp-file-name))
-         (temp-headers-file (make-temp-file-name))
-         (data-args (apply append
-			   (map (lambda (val)
-				  (list "--data"
-					(string-append field-name "=" val)))
-                                values-list))))
-    (let ((curl-args
-           (append
-            (list "curl"
-                  "--dump-header" temp-headers-file
-                  "--output" temp-body-file
-                  "--request" "PUT"
-                  "--silent"
-                  "--user" (string-append token ":"))
-            data-args
-            (list "--" url))))
-      (run-program curl-args))
-    (let* ((body-text (if (file-exists? temp-body-file)
-                          (read-text-file temp-body-file)
-                          ""))
-           (headers (if (file-exists? temp-headers-file)
-                        (read-text-file temp-headers-file)
-                        "")))
-      (safe-delete-file temp-body-file)
-      (safe-delete-file temp-headers-file)
-      (if (string=? body-text "")
-          (user-error "Empty API response.")
-          (json-read (open-input-string body-text))))))
+         (form-data (map (lambda (val) (cons field-name val)) values-list))
+         (response (http-request "PUT"
+                                 url
+                                 (string-append token ":")
+                                 'form
+                                 form-data))
+         (body-text (cdr response)))
+    (if (string=? body-text "")
+        (user-error "Empty API response.")
+        (json-read (open-input-string body-text)))))
 
 (define (simplelists-create-list-api list-name params-alist)
   "Create a new mailing list via API."
