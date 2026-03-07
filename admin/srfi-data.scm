@@ -2310,5 +2310,5 @@
  (status draft)
  (title "Raw String Syntax")
  (author "Peter McGoron")
- (keywords syntax)
+ (keywords reader-syntax)
  (draft-date "2026-01-17"))
