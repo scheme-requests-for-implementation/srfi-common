@@ -26,6 +26,17 @@ body h1:first-child {
   font-size: 150%;
   margin: 0;
 }
+.erratum:target {
+  position: relative;
+}
+.erratum:target::before {
+  color: #999;
+  content: attr(id) "→";
+  margin-right: 0.5em;
+  position: absolute;
+  right: 100%;
+  white-space: nowrap;
+}
 h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
