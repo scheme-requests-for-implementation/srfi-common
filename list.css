@@ -16,7 +16,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --final-color: MediumPurple;
-    --hover-color: DogerBlue;
+    --hover-color: DodgerBlue;
     --withdrawn-color: DarkSlateGrey;
     --small-text-color: DarkSlateGrey;
     --post-border-color: DarkSlateGrey;
