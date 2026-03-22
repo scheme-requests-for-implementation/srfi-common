@@ -141,17 +141,25 @@ figure:target span {
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
-        font-palette: dark;
-        background-color: black;
-        color: white;
-    }
-    form .title {
-        color: white;
-        font-size: 120%;
-        margin-top: 0;
-    }
-    form .submit,
+  body {
+      font-palette: dark;
+      background-color: #121212;
+      color: #e0e0e0;
+  }
+  form .title {
+      color: white;
+      font-size: 120%;
+      margin-top: 0;
+  }
+  
+  a {
+    color: #66aaff;
+  }
+  
+  a:visited {
+    color: MediumOrchid;
+  }
+    form .submit,h6
     button.close,
     button.sub,
     button.unsub {
