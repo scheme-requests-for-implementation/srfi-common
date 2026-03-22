@@ -1,3 +1,33 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --final-color: purple;
+    --hover-color: blue;
+    --withdrawn-color: lightgrey;
+    --small-text-color: lightgrey;
+    --post-border-color: lightgrey;
+    --search-border-color: #ccc;
+    --search-focus-border-color: #aaa;
+    --controls-background-color: #116611;
+    --author-status-color: grey;
+    --keywords-color: grey;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --final-color: MediumPurple;
+    --hover-color: DogerBlue;
+    --withdrawn-color: DarkSlateGrey;
+    --small-text-color: DarkSlateGrey;
+    --post-border-color: DarkSlateGrey;
+    --search-border-color: black;
+    --search-focus-border-color: black;
+    --controls-background-color: #009933;
+    --author-status-color: #aaaaaa;
+    --keywords-color: #aaaaaa;
+  }
+}
+
 .abstract a,
 .keywords a,
 .see-also a {
@@ -8,7 +38,7 @@
 p.keywords,
 .library-name,
 .status {
-  color: grey;
+  color: var(--author-status-color);
 }
 p.keywords,
 p.library-name {
@@ -37,7 +67,7 @@ p.library-name {
 .date-group,
 span.keywords,
 span.library-name {
-  color: grey;
+  color: var(--keywords-color);
   display: block;
   font-size: 80%;
   padding-top: 0.25em;
@@ -80,7 +110,7 @@ span.library-name {
 }
 .info > li,
 .posts > li {
-  border: solid 2px lightgrey;
+  border: solid 2px var(--post-border-color);
   border-radius: 10px;
   box-shadow: inset 0 1px 0 #fff;
   break-inside: avoid-column;
@@ -107,13 +137,13 @@ span.library-name {
   border-left-color: #55aa55;
 }
 .list > li.final {
-  border-left-color: purple;
+  border-left-color: var(--final-color);
 }
 .list > li.withdrawn {
-  border-left-color: lightgray;
+  border-left-color: var(--withdrawn-color);
 }
 .list > li:hover {
-  border: solid 2px blue;
+  border: solid 2px var(--hover-color);
   border-left-width: 15px;
 }
 
@@ -129,18 +159,18 @@ p a {
   font-weight: bold;
 }
 .search {
-  border: solid 1px #ccc;
+  border: solid 1px var(--search-border-color);
   border-radius: 5px;
   padding: 7px 14px;
   margin-bottom: 10px;
   margin-right: 2em;
 }
 .search:focus {
-  border-color: #aaa;
+  border-color: var(--search-focus-border-color);
   outline: none;
 }
 .controls {
-  background-color: #116611;
+  background-color: var(--controls-background-color);
   border-radius: 6px;
   border: none;
   color: #fff;
@@ -252,7 +282,7 @@ option:not(checked):before {
 }
 #parameters,
 noscript p {
-  border: solid 2px lightgrey;
+  border: solid 2px var(--small-text-color);
   border-radius: 6px;
   margin: 1em 0 1em 0;
   padding: 1em;
@@ -273,83 +303,3 @@ noscript p {
   display: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  .list > li.final {
-    border-left-color: MediumPurple;
-  }
-  .list > li:hover {
-    border: solid 2px DodgerBlue;
-    border-left-width: 15px;
-  }
-  .list > li.withdrawn {
-    border-left-color: DarkSlateGrey;
-  }
-  #parameters,
-  noscript p {
-    border: solid 2px DarkSlateGrey;
-    border-radius: 6px;
-    margin: 1em 0 1em 0;
-    padding: 1em;
-  }
-
-  .list > li {
-    border: solid 2px DarkSlateGrey;
-    border-radius: 10px;
-    border-left-width: 15px;
-    box-shadow: inset 0 1px 0 black;
-    break-inside: avoid-column;
-    display: block;
-    position: relative;
-  }
-  .posts > li {
-    border: solid 2px DarkSlateGrey;
-    border-radius: 10px;
-    box-shadow: inset 0 1px 0 black;
-    break-inside: avoid-column;
-    display: block;
-  }
-  .search {
-    border: solid 1px black;
-    border-radius: 5px;
-    padding: 7px 14px;
-    margin-bottom: 10px;
-    margin-right: 2em;
-    font-palette: dark;
-    background-color: #121212;
-    color: #e0e0e0;
-  }
-  .search:focus {
-    border-color: black;
-    outline: none;
-  }
-  .controls {
-    background-color: #009933;
-    border-radius: 6px;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 15px;
-    height: 30px;
-    margin: 0.1em;
-    padding: 0 1em;
-    text-decoration: none;
-    text-align: left;
-  }
-  .authors,
-  .based-on,
-  p.keywords,
-  .library-name,
-  .status {
-    color: #aaaaaa;
-  }
-  
-  .date-group,
-  span.keywords,
-  span.library-name {
-    color: #aaaaaa;
-    display: block;
-    font-size: 80%;
-    padding-top: 0.25em;
-}
-}
