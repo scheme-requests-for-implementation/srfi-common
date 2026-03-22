@@ -1,3 +1,29 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: white;
+    --text-color: black;
+    --link-color: blue;
+    --visited-link-color: purple;
+    --button-color: white;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --link-color: #66aaff;
+    --visited-link-color: MediumOrchid;
+    --button-color: white;
+  }
+}
+
+a {
+  color: var(--link-color);
+}
+a:visited {
+  color: var(--visited-link-color);
+}
 a.eponymous {
   font-family: Monaco, Courier, monospace;
   overflow-wrap: break-word;
@@ -18,6 +44,8 @@ a.eponymous {
 }
 body {
   font-family: "Noto Sans", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-size: 18px;
   max-width: 46em;
 }
@@ -61,7 +89,7 @@ button.unsub {
   background: #116611;
   border-radius: 3px;
   border: none;
-  color: white;
+  color: var(--background-color);
   cursor: pointer;
   text-shadow: 1px 1px 1px #9E3F3F;
 }
@@ -74,7 +102,7 @@ form .submit:hover {
   text-decoration: underline;
 }
 form .title {
-  color: black;
+  color: var(--text-color);
   font-size: 120%;
   margin-top: 0;
 }
@@ -138,31 +166,4 @@ figure:target span {
   position: absolute;
   right: 0.25em;
   top: 0em;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-      font-palette: dark;
-      background-color: #121212;
-      color: #e0e0e0;
-  }
-  form .title {
-      color: white;
-      font-size: 120%;
-      margin-top: 0;
-  }
-  
-  a {
-    color: #66aaff;
-  }
-  
-  a:visited {
-    color: MediumOrchid;
-  }
-    form .submit,h6
-    button.close,
-    button.sub,
-    button.unsub {
-        color: black;
-    }
 }
