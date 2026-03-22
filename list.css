@@ -116,6 +116,7 @@ span.library-name {
   border: solid 2px blue;
   border-left-width: 15px;
 }
+
 .maillist {
   margin-bottom: 1em;
 }
@@ -270,4 +271,85 @@ noscript p {
 }
 .summary .abstract {
   display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .list > li.final {
+    border-left-color: MediumPurple;
+  }
+  .list > li:hover {
+    border: solid 2px DodgerBlue;
+    border-left-width: 15px;
+  }
+  .list > li.withdrawn {
+    border-left-color: DarkSlateGrey;
+  }
+  #parameters,
+  noscript p {
+    border: solid 2px DarkSlateGrey;
+    border-radius: 6px;
+    margin: 1em 0 1em 0;
+    padding: 1em;
+  }
+
+  .list > li {
+    border: solid 2px DarkSlateGrey;
+    border-radius: 10px;
+    border-left-width: 15px;
+    box-shadow: inset 0 1px 0 black;
+    break-inside: avoid-column;
+    display: block;
+    position: relative;
+  }
+  .posts > li {
+    border: solid 2px DarkSlateGrey;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 0 black;
+    break-inside: avoid-column;
+    display: block;
+  }
+  .search {
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 7px 14px;
+    margin-bottom: 10px;
+    margin-right: 2em;
+    font-palette: dark;
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  .search:focus {
+    border-color: black;
+    outline: none;
+  }
+  .controls {
+    background-color: #009933;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    height: 30px;
+    margin: 0.1em;
+    padding: 0 1em;
+    text-decoration: none;
+    text-align: left;
+  }
+  .authors,
+  .based-on,
+  p.keywords,
+  .library-name,
+  .status {
+    color: #aaaaaa;
+  }
+  
+  .date-group,
+  span.keywords,
+  span.library-name {
+    color: #aaaaaa;
+    display: block;
+    font-size: 80%;
+    padding-top: 0.25em;
+}
 }
