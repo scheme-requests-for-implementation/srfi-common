@@ -139,3 +139,22 @@ figure:target span {
   right: 0.25em;
   top: 0em;
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        font-palette: dark;
+        background-color: black;
+        color: white;
+    }
+    form .title {
+        color: white;
+        font-size: 120%;
+        margin-top: 0;
+    }
+    form .submit,
+    button.close,
+    button.sub,
+    button.unsub {
+        color: black;
+    }
+}
