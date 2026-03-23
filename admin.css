@@ -10,7 +10,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #121212;
+    --background-color: #161616;
     --text-color: #e0e0e0;
     --link-color: #66aaff;
     --visited-link-color: MediumOrchid;
