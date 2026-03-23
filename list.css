@@ -10,6 +10,8 @@
     --controls-background-color: #116611;
     --author-status-color: grey;
     --keywords-color: grey;
+    --top-border-color: lightgrey;
+    --box-shadow-color: #fff;
   }
 }
 
@@ -17,7 +19,7 @@
   :root {
     --final-color: MediumPurple;
     --hover-color: DodgerBlue;
-    --withdrawn-color: DarkSlateGrey;
+    --withdrawn-color: LightSlateGrey;
     --small-text-color: DarkSlateGrey;
     --post-border-color: DarkSlateGrey;
     --search-border-color: black;
@@ -25,6 +27,8 @@
     --controls-background-color: #009933;
     --author-status-color: #aaaaaa;
     --keywords-color: #aaaaaa;
+    --top-border-color: LightSlateGrey;
+    --box-shadow-color: LightSlateGrey;
   }
 }
 
@@ -125,10 +129,10 @@ span.library-name {
   display: none;
 }
 .list > li {
-  border: solid 2px lightgrey;
+  border: solid 2px var(--top-border-color);
   border-radius: 10px;
   border-left-width: 15px;
-  box-shadow: inset 0 1px 0 #fff;
+  box-shadow: inset 0 1px 0 var(--box-shadow-color);
   break-inside: avoid-column;
   display: block;
   position: relative;
@@ -302,4 +306,3 @@ noscript p {
 .summary .abstract {
   display: none;
 }
-
