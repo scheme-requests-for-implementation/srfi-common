@@ -12,8 +12,8 @@
   :root {
     --background-color: #161616;
     --text-color: #e0e0e0;
-    --link-color: #66aaff;
-    --visited-link-color: MediumOrchid;
+    --link-color: SkyBlue;
+    --visited-link-color: Orchid;
     --button-color: white;
   }
 }
