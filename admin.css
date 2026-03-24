@@ -139,22 +139,51 @@ figure:target span {
   right: 0.25em;
   top: 0em;
 }
-
+:root {
+  --bg: white;
+  --fg: black;
+  --btn-fg: white;
+}
 @media (prefers-color-scheme: dark) {
-    body {
-        font-palette: dark;
-        background-color: black;
-        color: white;
-    }
-    form .title {
-        color: white;
-        font-size: 120%;
-        margin-top: 0;
-    }
-    form .submit,
-    button.close,
-    button.sub,
-    button.unsub {
-        color: black;
-    }
+  :root {
+    --bg: black;
+    --fg: white;
+    --btn-fg: black;
+  }
+}
+[data-theme="dark"] {
+  --bg: black;
+  --fg: white;
+  --btn-fg: black;
+}
+[data-theme="light"] {
+  --bg: white;
+  --fg: black;
+  --btn-fg: white;
+}
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+form .title {
+  color: var(--fg);
+}
+form .submit,
+button.close,
+button.sub,
+button.unsub {
+    color: var(--btn-fg);
+}
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--fg);
+    cursor: pointer;
+    font-size: 1.3em;
+    opacity: .7;
+    padding: 0;
+    position: fixed;
+    right: 8px;
+    top: 8px;
+    z-index: 9999;
 }
