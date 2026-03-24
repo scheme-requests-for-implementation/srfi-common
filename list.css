@@ -18,12 +18,13 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --final-color: MediumPurple;
-    --hover-color: DodgerBlue;
+    --hover-color: SkyBlue;
     --withdrawn-color: LightSlateGrey;
     --small-text-color: DarkSlateGrey;
     --post-border-color: DarkSlateGrey;
-    --search-border-color: black;
-    --search-focus-border-color: black;
+ 
+    --search-border-color: LightSlateGrey;
+    --search-focus-border-color: LightSlateGrey;
     --controls-background-color: #009933;
     --author-status-color: #aaaaaa;
     --keywords-color: #aaaaaa;
@@ -168,6 +169,8 @@ p a {
   padding: 7px 14px;
   margin-bottom: 10px;
   margin-right: 2em;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 .search:focus {
   border-color: var(--search-focus-border-color);
