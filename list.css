@@ -19,10 +19,9 @@
   :root {
     --final-color: MediumPurple;
     --hover-color: SkyBlue;
-    --withdrawn-color: LightSlateGrey;
+    --withdrawn-color: #495560;
     --small-text-color: DarkSlateGrey;
     --post-border-color: DarkSlateGrey;
- 
     --search-border-color: LightSlateGrey;
     --search-focus-border-color: LightSlateGrey;
     --controls-background-color: #009933;
