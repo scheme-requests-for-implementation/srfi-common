@@ -116,6 +116,7 @@ figure a {
 }
 figure img {
   cursor: inherit;
+  filter: var(--img-filter);
   width: 100%;
 }
 figure span {
@@ -144,6 +145,7 @@ figure:target span {
   --fg: black;
   --btn-fg: white;
   --font-palette: light;
+  --img-filter: none;
   --link: #0000EE;
 }
 @media (prefers-color-scheme: dark) {
@@ -152,6 +154,7 @@ figure:target span {
     --fg: white;
     --btn-fg: black;
     --font-palette: dark;
+    --img-filter: invert(1);
     --link: #8ab4f8;
   }
 }
@@ -160,6 +163,7 @@ figure:target span {
   --fg: white;
   --btn-fg: black;
   --font-palette: dark;
+  --img-filter: invert(1);
   --link: #8ab4f8;
 }
 [data-theme="light"] {
@@ -167,6 +171,7 @@ figure:target span {
   --fg: black;
   --btn-fg: white;
   --font-palette: light;
+  --img-filter: none;
   --link: #0000EE;
 }
 a {
