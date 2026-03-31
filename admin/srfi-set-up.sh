@@ -16,6 +16,14 @@ else
   exit 1
 fi
 
+GENERATED_HTML="about.html
+index.html
+srfi-editors.html
+srfi-faq.html
+srfi-history.html
+srfi-list-subscribe.html
+srfi-privacy.html
+srfi-process.html"
 RSYNC_INCLUDES=$(mktemp)
 SRFI_ROOT=$(realpath "`srfi common-dir`/..")
 STAGING=$(mktemp --directory -t srfi-staging-XXXXX)
@@ -31,6 +39,7 @@ for dir in "$SRFI_ROOT"/*/; do
         (cd "$dir" && git ls-files | sed "s|^|$dirname/|") >> "$RSYNC_INCLUDES"
     fi
 done
+echo "$GENERATED_HTML" | sed "s|^|srfi-common/|" >> "$RSYNC_INCLUDES"
 mkdir -p $STAGING_EMAIL
 mkdir -p $STAGING_NON_EMAIL
 rsync \
@@ -47,7 +56,8 @@ rsync \
   --times \
   $SRFI_ROOT/ \
   $STAGING_NON_EMAIL/
-(cd "$SRFI_ROOT/srfi-common" && git ls-files) | while read -r file; do
+(cd "$SRFI_ROOT/srfi-common" && git ls-files &&
+echo "$GENERATED_HTML") | while read -r file; do
   if [ -f "$SRFI_ROOT/srfi-common/$file" ]; then
     mkdir -p "$STAGING_NON_EMAIL/$(dirname "$file")"
     cp -p "$SRFI_ROOT/srfi-common/$file" "$STAGING_NON_EMAIL/$file"
