@@ -19,6 +19,7 @@ p.library-name {
 }
 .card h3 {
   margin-top: 0;
+  scroll-margin-top: 1em;
 }
 .card .see-also {
   color: grey;
@@ -154,6 +155,9 @@ span.library-name {
 }
 .subunsub summary::-webkit-details-marker {
   display: none;
+}
+h2[id] {
+  scroll-margin-top: 1em;
 }
 .posts > li:has(:target),
 h2:target ~ ul.posts > li {
