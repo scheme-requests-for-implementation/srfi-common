@@ -143,27 +143,32 @@ figure:target span {
   --bg: white;
   --fg: black;
   --btn-fg: white;
+  --font-palette: light;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: black;
     --fg: white;
     --btn-fg: black;
+    --font-palette: dark;
   }
 }
 [data-theme="dark"] {
   --bg: black;
   --fg: white;
   --btn-fg: black;
+  --font-palette: dark;
 }
 [data-theme="light"] {
   --bg: white;
   --fg: black;
   --btn-fg: white;
+  --font-palette: light;
 }
 body {
   background-color: var(--bg);
   color: var(--fg);
+  font-palette: var(--font-palette);
 }
 form .title {
   color: var(--fg);
