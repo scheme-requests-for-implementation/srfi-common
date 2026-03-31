@@ -57,19 +57,18 @@
       (let ((entry (assoc shell completion-scripts)))
         (and entry (string-join (rest entry) ""))))
 
-    (add-command!
-     "complete" '(name) "Display completions of a srfi subcommand." 1 #f
-     (lambda (what . args)
-       (cond ((string->number what)
-              => (lambda (index)
-                   (for-each write-line (complete index args))))
-             ((completion-script-for-shell what)
-              => (lambda (script)
-                   (if (zero? (length args))
-                       (write-string script)
-                       (error "Too many args"))))
-             (else
-              (error "What to complete?" what)))))
+    (define-command (complete what . args)
+      "Display completions of a srfi subcommand."
+      (cond ((string->number what)
+             => (lambda (index)
+                  (for-each write-line (complete index args))))
+            ((completion-script-for-shell what)
+             => (lambda (script)
+                  (if (zero? (length args))
+                      (write-string script)
+                      (error "Too many args"))))
+            (else
+             (error "What to complete?" what))))
 
     (define help-lines
       '("The `srfi` command presents a number of tools to help"

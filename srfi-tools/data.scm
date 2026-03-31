@@ -347,24 +347,15 @@
 		     words))
 	    (srfi-list))))
 
-(add-command!
- "search"
- '(word ...)
- "Display a list of all the SRFIs whose titles contain all <word>s."
- 1
- #f
- (lambda words (write-srfi-list (srfi-search words))))
+(define-command (search word . words)
+  "Display a list of all the SRFIs whose titles contain all <word>s."
+  (write-srfi-list (srfi-search (cons word words))))
 
 (define (srfi-what . numbers)
   (filter (lambda (srfi) (member (srfi-number srfi) numbers))
           (srfi-list)))
 
-(add-command!
- "what"
- '(number ...)
- "Display a one-line summmary of the given SRFI <number>s."
- 1
- #f
- (lambda numbers
-   (write-srfi-list
-    (apply srfi-what (map parse-srfi-number numbers)))))
+(define-command (what number . numbers)
+  "Display a one-line summmary of the given SRFI <number>s."
+  (write-srfi-list
+   (apply srfi-what (map parse-srfi-number (cons number numbers)))))

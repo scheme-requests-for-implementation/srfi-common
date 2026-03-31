@@ -80,11 +80,6 @@
            (disp)))
        numbers))
 
-    (add-command!
-     "pull"
-     '(number ...)
-     "Run `git pull` for the given SRFI <number>s."
-     1
-     #f
-     (lambda numbers
-       (apply srfi-pull (map parse-srfi-number numbers))))))
+    (define-command (pull number . numbers)
+      "Run `git pull` for the given SRFI <number>s."
+      (apply srfi-pull (map parse-srfi-number (cons number numbers))))))

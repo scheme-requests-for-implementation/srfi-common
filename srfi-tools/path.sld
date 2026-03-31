@@ -88,24 +88,14 @@
     (define (srfi-do num thunk)
       (with-current-directory (srfi-dir num) thunk))
 
-    (add-command!
-     "do"
-     '(num program arg ...)
-     "Run <program> with <arg>s in the SRFI <num> directory."
-     2
-     #f
-     (lambda (num program . args)
-       (srfi-do (parse-srfi-number num)
-                (lambda () (run-program (cons program args))))))
+    (define-command (do num program . args)
+      "Run <program> with <arg>s in the SRFI <num> directory."
+      (srfi-do (parse-srfi-number num)
+               (lambda () (run-program (cons program args)))))
 
     (define (srfi-do-common thunk)
       (with-current-directory (srfi-common-dir) thunk))
 
-    (add-command!
-     "do-common"
-     '(program arg ...)
-     "Run <program> with <arg>s in the srfi-common directory."
-     1
-     #f
-     (lambda (program . args)
-       (srfi-do-common (lambda () (run-program (cons program args))))))))
+    (define-command (do-common program . args)
+      "Run <program> with <arg>s in the srfi-common directory."
+      (srfi-do-common (lambda () (run-program (cons program args)))))))

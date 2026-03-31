@@ -119,13 +119,9 @@
 		 (write-line (format "Opening ~a." (srfi-format srfi)))
 		 (srfi-browse (srfi-number srfi)))))))
 
-    (add-command!
-     "lucky"
-     '(word ...)
-     "Browse first SRFI whose title matches all <word>s."
-     1
-     #f
-     (lambda words (srfi-lucky words)))
+    (define-command (lucky word . words)
+      "Browse first SRFI whose title matches all <word>s."
+      (srfi-lucky (cons word words)))
 
     ;;
 
