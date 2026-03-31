@@ -322,10 +322,10 @@ strings."
               targets)
     (disp "Finished adding '" list-name "' to standard lists.")))
 
-(define (simplelists-create-srfi-list num author-email)
+(define (simplelists-create-srfi-list number author-addresses)
   "Create a new mailing list for SRFI <num> with standard configuration and add
-author."
-  (let* ((list-name (srfi-num-stem num))
+authors."
+  (let* ((list-name (srfi-num-stem number))
          (params `((name . ,list-name)
                    (archive_enabled . #true)
                    (archive_protected . #false)
@@ -343,15 +343,18 @@ author."
         (user-error "Failed to create list: "
                     (cdr (assoc 'message response))))
       (disp "Successfully created list '" list-name "'."))
-    (disp "Adding author to list:")
-    (let ((contact-id (simplelists-find-or-create-contact author-email)))
-      (disp "  Adding contact "
-	    (number->string contact-id)
-	    " to '"
-	    list-name
-	    "'.")
-      (simplelists-add-membership contact-id list-name)
-      (disp "  Author added successfully."))
+    (for-each (lambda (author-address)
+		(disp "Adding author to list:")
+		(let ((contact-id
+		       (simplelists-find-or-create-contact author-address)))
+		  (disp "  Adding contact "
+			(number->string contact-id)
+			" to '"
+			list-name
+			"'.")
+		  (simplelists-add-membership contact-id list-name)
+		  (disp "  Author added successfully.")))
+	      author-addresses)
     (disp "Adding srfi-auto-subscribe to list:")
     (let ((contact-id
 	   (simplelists-find-or-create-contact
@@ -367,9 +370,9 @@ author."
 
 ;; Commands
 
-(define-command (simplelists-create num author-email)
-  "Create mailing list for SRFI <num> with author as member."
-  (simplelists-create-srfi-list (parse-srfi-number num) author-email))
+(define-command (simplelists-create number . author-addresses)
+  "Create mailing list for SRFI <num> with author(s) as members."
+  (simplelists-create-srfi-list (parse-srfi-number number) author-addresses))
 
 (define (sort-alist alist)
   "Sort an alist by symbolic keys."
@@ -407,9 +410,9 @@ contacts field."
                       list-config)))
         list-config)))
 
-(define-command (simplelists-get num)
+(define-command (simplelists-get number)
   "Get mailing list configuration for SRFI with given number."
-  (let* ((srfi-num (parse-srfi-number num))
+  (let* ((srfi-num (parse-srfi-number number))
          (list-name (srfi-num-stem srfi-num))
          (json (simplelists-get-list list-name))
          (with-names (resolve-contacts-in-list json))

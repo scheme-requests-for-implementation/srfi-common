@@ -56,6 +56,9 @@
                                (remove (name-predicate name)
                                        commands))))))
 
+    (define (variadic-arg-names fixed-names rest-name)
+      (append fixed-names (list rest-name (string->symbol "..."))))
+
     (define-syntax define-command
       (syntax-rules ()
         ((define-command (name args ...) help body0 body ...)
@@ -67,7 +70,16 @@
                          n-args
 			 (lambda (args ...)
                            body0
-                           body ...))))))
+                           body ...))))
+        ((define-command (name args ... . rest) help body0 body ...)
+         (add-command! (symbol->string 'name)
+                       (variadic-arg-names (list 'args ...) 'rest)
+                       'help
+                       (length '(args ...))
+                       #f
+                       (lambda (args ... . rest)
+                         body0
+                         body ...)))))
 
     (define (command-list)
       (remove (lambda (command)
