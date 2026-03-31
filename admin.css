@@ -144,6 +144,7 @@ figure:target span {
   --fg: black;
   --btn-fg: white;
   --font-palette: light;
+  --link: #0000EE;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -151,6 +152,7 @@ figure:target span {
     --fg: white;
     --btn-fg: black;
     --font-palette: dark;
+    --link: #8ab4f8;
   }
 }
 [data-theme="dark"] {
@@ -158,12 +160,17 @@ figure:target span {
   --fg: white;
   --btn-fg: black;
   --font-palette: dark;
+  --link: #8ab4f8;
 }
 [data-theme="light"] {
   --bg: white;
   --fg: black;
   --btn-fg: white;
   --font-palette: light;
+  --link: #0000EE;
+}
+a {
+  color: var(--link);
 }
 body {
   background-color: var(--bg);
