@@ -119,6 +119,11 @@ span.library-name {
 .maillist {
   margin-bottom: 1em;
 }
+.posts > li:has(:target),
+h2:target ~ ul.posts > li {
+  border-color: var(--target-border);
+  box-shadow: 0 0 6px var(--target-glow);
+}
 .name,
 .number {
   font-weight: bold;
