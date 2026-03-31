@@ -55,20 +55,14 @@ form label {
   margin-left: 0.25em;
 }
 form .submit,
-button.close,
-button.sub,
-button.unsub {
+.subunsub summary {
   background: #116611;
   border-radius: 3px;
   border: none;
   color: white;
   cursor: pointer;
+  padding: 10px 25px;
   text-shadow: 1px 1px 1px #9E3F3F;
-}
-form .submit,
-button.sub,
-button.unsub {
-  padding: 10px 25px 10px 25px;
 }
 form .submit:hover {
   text-decoration: underline;
@@ -191,9 +185,7 @@ form .title {
   color: var(--fg);
 }
 form .submit,
-button.close,
-button.sub,
-button.unsub {
+.subunsub summary {
     color: var(--btn-fg);
 }
 #theme-toggle {

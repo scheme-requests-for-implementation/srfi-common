@@ -119,6 +119,42 @@ span.library-name {
 .maillist {
   margin-bottom: 1em;
 }
+.subunsub details {
+  display: inline-block;
+  vertical-align: top;
+}
+.subunsub details:not([open]):has(~ details[open]),
+.subunsub details[open] ~ details:not([open]) {
+  display: none;
+}
+.subunsub details[open] {
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+  display: block;
+  padding: 1px 10px 10px;
+}
+.subunsub details[open] form {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.subunsub summary {
+  display: inline-block;
+  list-style: none;
+}
+.subunsub details[open] summary {
+  float: right;
+  font-size: 0;
+  margin: 5px 0;
+  padding: 2px 8px;
+}
+.subunsub details[open] summary::after {
+  content: "X";
+  font-size: 1rem;
+}
+.subunsub summary::-webkit-details-marker {
+  display: none;
+}
 .posts > li:has(:target),
 h2:target ~ ul.posts > li {
   border-color: var(--target-border);
