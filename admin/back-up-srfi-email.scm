@@ -320,9 +320,12 @@
 	    "Error in HTTP GET."
 	    url))))
 
-(define (back-up-list id name session)
-  (define (cookie token)
-    `("Cookie" . ,(format #f "simplelists.session=~A" session)))
+(define (back-up-list id name mfa-token session)
+  (define (cookie)
+    `("Cookie" . ,(format #f
+			   "MFATOKEN=~A"; simplelists.session=~A"
+			   session
+			   mfa-token)))
   (define (mbox name)
     (format #f "~A.eml.zip" name))
   (define (url id)
@@ -331,15 +334,14 @@
 	    id))
   (newline)
   (display name)
-  (curl-http-get (list (cookie session)) (url id) (mbox name)))
+  (curl-http-get (list (cookie)) (url id) (mbox name)))
 
-; Extract the <simplelists.session> cookie value by logging into the Simplelists
-; site and extracting the cookie from the browser.  Pass it to
-; `back-up-srfi-email'.  Make sure that you're in the destination directory
-; before running this.
-(define (back-up-srfi-email directory session)
+; Extract the <simplelists.session> and <MFATOKEN> cookie values by logging into
+; the Simplelists site and extracting the cookies from the browser.  Pass them
+; to `back-up-srfi-email'.
+(define (back-up-srfi-email directory mfa-token session)
   (with-working-directory-pathname
       (pathname-as-directory directory)
     (lambda ()
-      (for-each (lambda (l) (back-up-list (car l) (cadr l) session))
+      (for-each (lambda (l) (back-up-list (car l) (cadr l) mfa-token session))
 		srfi-lists))))
