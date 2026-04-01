@@ -323,7 +323,7 @@
 (define (back-up-list id name mfa-token session)
   (define (cookie)
     `("Cookie" . ,(format #f
-			   "MFATOKEN=~A"; simplelists.session=~A"
+			   "MFATOKEN=~A; simplelists.session=~A"
 			   session
 			   mfa-token)))
   (define (mbox name)
