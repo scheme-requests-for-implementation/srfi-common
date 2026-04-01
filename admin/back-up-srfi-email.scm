@@ -324,8 +324,8 @@
   (define (cookie)
     `("Cookie" . ,(format #f
 			   "MFATOKEN=~A; simplelists.session=~A"
-			   session
-			   mfa-token)))
+			   mfa-token
+			   session)))
   (define (mbox name)
     (format #f "~A.eml.zip" name))
   (define (url id)
