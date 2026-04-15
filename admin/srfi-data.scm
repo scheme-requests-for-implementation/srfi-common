@@ -2318,6 +2318,7 @@
  (author "Per Bothner" "SRFI 163")
  (author "Peter McGoron" "design")
  (author "John Cowan" "editor and steward")
+ (author "Wolfgang Corcoran-Mathe" "implementation")
  (see-also 25 122 231)
  (keywords reader-syntax)
  (draft-date "2026-03-30"))
