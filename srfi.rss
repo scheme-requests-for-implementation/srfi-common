@@ -1,4 +1,16 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 269: Portable Test Definitions</title><link>https://srfi.schemers.org/srfi-269/</link><guid>https://srfi.schemers.org/srfi-269</guid><description>SRFI 269 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines a portable API for test definitions that is
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 267: Raw String Syntax</title><link>https://srfi.schemers.org/srfi-267/</link><guid>https://srfi.schemers.org/srfi-267</guid><description>SRFI 267 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+    Raw strings are a lexical syntax for strings that do
+    not interpret escapes inside of them and are useful in
+    cases where the string data has a lot of characters such as
+    &lt;code>\&lt;/code> or &lt;code>"&lt;/code> that would otherwise
+    have to be escaped. This SRFI proposes a raw string syntax that
+    allows for a customized delimiter to enclose the character
+    data. Importantly, for any string, there exists a delimiter
+    such that the raw string using that delimiter can represent
+    the string verbatim. The raw strings in this SRFI do not do
+    any special whitespace handling.
+&lt;/p>
+&lt;/blockquote></description><dc:creator>Peter McGoron</dc:creator><pubDate>Sun, 26 Apr 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 269: Portable Test Definitions</title><link>https://srfi.schemers.org/srfi-269/</link><guid>https://srfi.schemers.org/srfi-269</guid><description>SRFI 269 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines a portable API for test definitions that is
 decoupled from test execution and reporting.  It provides three
 primitives: the universal &lt;code>is&lt;/code> macro for
 assertions, &lt;code>test&lt;/code> for grouping assertions into
@@ -23,7 +35,7 @@ loop.&lt;/p>
 &lt;p>To bridge the test definitions and test runners, the SRFI specifies
 a message-passing programming interface, and test loading and
 execution semantics recommendations for test runner implementers.&lt;/p>&lt;/blockquote></description><dc:creator>Andrew Tropin and Ramin Honary</dc:creator><pubDate>Thu, 02 Apr 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 268: Multidimensional Array Literals</title><link>https://srfi.schemers.org/srfi-268/</link><guid>https://srfi.schemers.org/srfi-268</guid><description>SRFI 268 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This is a specification of a lexical syntax
-for multi-dimensional arrays. It is a modest alteration of
+for multi-dimensional arrays. Textually it is an alteration of
 &lt;a href="https://srfi.schemers.org/srfi-163/srfi-163.html">SRFI 163&lt;/a>, which
 is an extension of the
 &lt;a href="https://www.lispworks.com/documentation/HyperSpec/Body/02_dhl.htm">
@@ -34,15 +46,11 @@ and &lt;a href="https://srfi.schemers.org/srfi-160">SRFI 160&lt;/a>).
 It can be used in conjunction with
 &lt;a href="https://srfi.schemers.org/srfi-25">SRFI 25&lt;/a>,
 &lt;a href="https://srfi.schemers.org/srfi-122">SRFI 122&lt;/a>,
-or &lt;a href="https://srfi.schemers.org/srfi-213">SRFI 213&lt;/a>.
-There are recommendations for output formatting
-and a suggested &lt;code>format-array&lt;/code> procedure.&lt;/p>&lt;/blockquote></description><dc:creator>Per Bothner (SRFI 163), Peter McGoron (design), and John Cowan (editor and steward)</dc:creator><pubDate>Mon, 30 Mar 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 267: Raw String Syntax</title><link>https://srfi.schemers.org/srfi-267/</link><guid>https://srfi.schemers.org/srfi-267</guid><description>SRFI 267 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>  &lt;p>
-    Raw string syntax is lexical syntax for strings that do not interpret escapes
-    inside of them. They are useful in cases where the string data has a lot of
-    characters like &lt;code>\&lt;/code> or &lt;code>"&lt;/code> that would otherwise have to
-    be escaped. The raw string syntax in this document is derived from C++11's raw
-    string literals.
-  &lt;/p>&lt;/blockquote></description><dc:creator>Peter McGoron</dc:creator><pubDate>Sat, 17 Jan 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 266: The expr syntax</title><link>https://srfi.schemers.org/srfi-266/</link><guid>https://srfi.schemers.org/srfi-266</guid><description>SRFI 266 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>The syntax &lt;code class="expr-keyword">expr&lt;/code> allows one to
+or &lt;a href="https://srfi.schemers.org/srfi-231">SRFI 231&lt;/a>.
+There are recommendations for output formatting,
+&lt;code>read-array&lt;/code> and &lt;code>write-array&lt;/code>
+procedures, and a suggested
+&lt;code>format-array&lt;/code> procedure.&lt;/p>&lt;/blockquote></description><dc:creator>Per Bothner (SRFI 163), Peter McGoron (design), John Cowan (editor and steward), and Wolfgang Corcoran-Mathe (implementation)</dc:creator><pubDate>Mon, 30 Mar 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 266: The expr syntax</title><link>https://srfi.schemers.org/srfi-266/</link><guid>https://srfi.schemers.org/srfi-266</guid><description>SRFI 266 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>The syntax &lt;code class="expr-keyword">expr&lt;/code> allows one to
 write arithmetic expressions using a syntax near to mathematical
 notation, potentially improving the readability of Scheme programs.&lt;/p>&lt;/blockquote></description><dc:creator>José Bollo</dc:creator><pubDate>Fri, 16 Jan 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 257: Simple extendable pattern matcher with backtracking</title><link>https://srfi.schemers.org/srfi-257/</link><guid>https://srfi.schemers.org/srfi-257</guid><description>SRFI 257 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
 Pattern matching extends Scheme's repertoire of conditional constructs, allowing
