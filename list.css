@@ -101,6 +101,8 @@ span.library-name {
   border-left-width: 15px;
   box-shadow: inset 0 1px 0 #fff;
   break-inside: avoid-column;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 5em;
   display: block;
   position: relative;
 }
