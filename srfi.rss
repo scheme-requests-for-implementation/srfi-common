@@ -1,4 +1,11 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 270: Hexadecimal Floating-Point Constants</title><link>https://srfi.schemers.org/srfi-270/</link><guid>https://srfi.schemers.org/srfi-270</guid><description>SRFI 270 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 271: Random port libraries</title><link>https://srfi.schemers.org/srfi-271/</link><guid>https://srfi.schemers.org/srfi-271</guid><description>SRFI 271 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI proposes a pattern of libraries for binary input ports
+  that produce random bytes. Libraries are divided into
+  “cryptographic” and “repeatable” categories to address different
+  uses of random data. The design leaves the details of random
+  number generation to the implementer and the transformation of
+  bytes to other types (floats, etc.) to higher-level libraries.
+  A mechanism for saving random-port states as bytevectors and for
+  propagating those states to new ports is also provided.&lt;/p>&lt;/blockquote></description><dc:creator>Wolfgang Corcoran-Mathe</dc:creator><pubDate>Sun, 03 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 270: Hexadecimal Floating-Point Constants</title><link>https://srfi.schemers.org/srfi-270/</link><guid>https://srfi.schemers.org/srfi-270</guid><description>SRFI 270 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
  Floating-point numbers are generally in radix 2, but are written by
  users in radix 10. This SRFI introduces Scheme syntax for hexadecimal floating
  point constants based on C99's syntax.
