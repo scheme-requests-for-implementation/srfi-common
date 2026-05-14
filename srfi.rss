@@ -1,14 +1,32 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 271: Random port libraries</title><link>https://srfi.schemers.org/srfi-271/</link><guid>https://srfi.schemers.org/srfi-271</guid><description>SRFI 271 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI proposes a pattern of libraries for binary input ports
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 272: Pretty Printing</title><link>https://srfi.schemers.org/srfi-272/</link><guid>https://srfi.schemers.org/srfi-272</guid><description>SRFI 272 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
+  This SRFI follows the traditional Scheme model of pretty printing, which treats it as a 
+  process distinct from general controlled formatting. While general-purpose formatters 
+  often prioritize specialized presentation at the expense of machine-readability, Scheme’s 
+  pretty-printers (such as those of SLIB and MIT Scheme) have traditionally treated 
+  pretty printing as a variant of &lt;code>write&lt;/code>, differing primarily in the insertion 
+  of whitespace to make the presentation more palatable to humans. Common Lisp’s pretty-printer, 
+  by contrast, fills two roles simultaneously by integrating pretty printing with both its 
+  format facility and its generalized &lt;code>write&lt;/code> procedures. This unified approach 
+  offers great power, but at the cost of complexity that can make it difficult to use effectively.
+
+  We propose a specialized, layered approach, specifying five libraries of increasing functionality, 
+  where all but the first are optional. The libraries are downward-compatible: more powerful libraries 
+  satisfy all requirements of the simpler ones while adding new features. Implementors may 
+  choose to support a maximum level of functionality appropriate for their systems. Integration with
+  monadic and string-based formatting libraries is supported.
+&lt;/p>&lt;/blockquote></description><dc:creator>Sergei Egorov</dc:creator><pubDate>Wed, 13 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 271: Random port libraries</title><link>https://srfi.schemers.org/srfi-271/</link><guid>https://srfi.schemers.org/srfi-271</guid><description>SRFI 271 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI proposes a pattern of libraries for binary input ports
   that produce random bytes. Libraries are divided into
-  “cryptographic” and “repeatable” categories to address different
+  “randomized” and “determinized” categories to address different
   uses of random data. The design leaves the details of random
   number generation to the implementer and the transformation of
   bytes to other types (floats, etc.) to higher-level libraries.
   A mechanism for saving random-port states as bytevectors and for
   propagating those states to new ports is also provided.&lt;/p>&lt;/blockquote></description><dc:creator>Wolfgang Corcoran-Mathe</dc:creator><pubDate>Sun, 03 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 270: Hexadecimal Floating-Point Constants</title><link>https://srfi.schemers.org/srfi-270/</link><guid>https://srfi.schemers.org/srfi-270</guid><description>SRFI 270 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
- Floating-point numbers are generally in radix 2, but are written by
+ Floating-point numbers are usually stored in radix 2, but are written by
  users in radix 10. This SRFI introduces Scheme syntax for hexadecimal floating
- point constants based on C99's syntax.
+ point constants based on C99's syntax, that use radix 16 for writing
+ the integer and fractional part, and a radix 10 exponent part that raises
+ the whole value to a power of 2.
 &lt;/p>&lt;/blockquote></description><dc:creator>Peter McGoron</dc:creator><pubDate>Fri, 01 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 267: Raw String Syntax</title><link>https://srfi.schemers.org/srfi-267/</link><guid>https://srfi.schemers.org/srfi-267</guid><description>SRFI 267 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
     Raw strings are a lexical syntax for strings that do
     not interpret escapes inside of them and are useful in

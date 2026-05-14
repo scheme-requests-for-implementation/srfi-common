@@ -1,0 +1,17 @@
+<p>
+  This SRFI follows the traditional Scheme model of pretty printing, which treats it as a
+  process distinct from general controlled formatting. While general-purpose formatters
+  often prioritize specialized presentation at the expense of machine-readability, Scheme’s
+  pretty-printers (such as those of SLIB and MIT Scheme) have traditionally treated
+  pretty printing as a variant of <code>write</code>, differing primarily in the insertion
+  of whitespace to make the presentation more palatable to humans. Common Lisp’s pretty-printer,
+  by contrast, fills two roles simultaneously by integrating pretty printing with both its
+  format facility and its generalized <code>write</code> procedures. This unified approach
+  offers great power, but at the cost of complexity that can make it difficult to use effectively.
+
+  We propose a specialized, layered approach, specifying five libraries of increasing functionality,
+  where all but the first are optional. The libraries are downward-compatible: more powerful libraries
+  satisfy all requirements of the simpler ones while adding new features. Implementors may
+  choose to support a maximum level of functionality appropriate for their systems. Integration with
+  monadic and string-based formatting libraries is supported.
+</p>
