@@ -1,17 +1,22 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 272: Pretty Printing</title><link>https://srfi.schemers.org/srfi-272/</link><guid>https://srfi.schemers.org/srfi-272</guid><description>SRFI 272 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
-  This SRFI follows the traditional Scheme model of pretty printing, which treats it as a 
-  process distinct from general controlled formatting. While general-purpose formatters 
-  often prioritize specialized presentation at the expense of machine-readability, Scheme’s 
-  pretty-printers (such as those of SLIB and MIT Scheme) have traditionally treated 
-  pretty printing as a variant of &lt;code>write&lt;/code>, differing primarily in the insertion 
-  of whitespace to make the presentation more palatable to humans. Common Lisp’s pretty-printer, 
-  by contrast, fills two roles simultaneously by integrating pretty printing with both its 
-  format facility and its generalized &lt;code>write&lt;/code> procedures. This unified approach 
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 273: Extensions to Data (Type-)Checking</title><link>https://srfi.schemers.org/srfi-273/</link><guid>https://srfi.schemers.org/srfi-273</guid><description>SRFI 273 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
+  The original SRFI 253 established a basis for type-checked (or otherwise checked) data handling.
+  But it lacked some quality-of-life features.
+  This SRFI extends SRFI 253 to match existing implementation practice and common sense.
+  Provided extensions are: check aliasing with &lt;a href="#spec--define-check">&lt;code>define-check&lt;/code>&lt;/a>; pre- and post-declaration of type / check with &lt;a href="#spec--declare-checked">&lt;code>declare-checked&lt;/code>&lt;/a>; &lt;a href="#spec--return-value">return value checks&lt;/a> in &lt;code>lambda-checked&lt;/code>, &lt;code>case-lambda-checked&lt;/code>, and &lt;code>define-checked&lt;/code>; the &lt;a href="#spec--derive-check">&lt;code>derive-check&lt;/code>&lt;/a> form to derive a suitable check for an expression; type-matching syntax &lt;a href="#spec--syntax-rules">&lt;code>check?&lt;/code> and &lt;code>check-impl?&lt;/code>&lt;/a> in &lt;code>syntax-rules&lt;/code>, and some checking utilities.
+&lt;/p>&lt;/blockquote></description><dc:creator>Artyom Bologov</dc:creator><pubDate>Mon, 18 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 272: Pretty Printing</title><link>https://srfi.schemers.org/srfi-272/</link><guid>https://srfi.schemers.org/srfi-272</guid><description>SRFI 272 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
+  This SRFI follows the traditional Scheme model of pretty printing, which treats it as a
+  process distinct from general controlled formatting. While general-purpose formatters
+  often prioritize specialized presentation at the expense of machine-readability, Scheme’s
+  pretty-printers (such as those of SLIB and MIT Scheme) have traditionally treated
+  pretty printing as a variant of &lt;code>write&lt;/code>, differing primarily in the insertion
+  of whitespace to make the presentation more palatable to humans. Common Lisp’s pretty-printer,
+  by contrast, fills two roles simultaneously by integrating pretty printing with both its
+  format facility and its generalized &lt;code>write&lt;/code> procedures. This unified approach
   offers great power, but at the cost of complexity that can make it difficult to use effectively.
 
-  We propose a specialized, layered approach, specifying five libraries of increasing functionality, 
-  where all but the first are optional. The libraries are downward-compatible: more powerful libraries 
-  satisfy all requirements of the simpler ones while adding new features. Implementors may 
+  We propose a specialized, layered approach, specifying five libraries of increasing functionality,
+  where all but the first are optional. The libraries are downward-compatible: more powerful libraries
+  satisfy all requirements of the simpler ones while adding new features. Implementors may
   choose to support a maximum level of functionality appropriate for their systems. Integration with
   monadic and string-based formatting libraries is supported.
 &lt;/p>&lt;/blockquote></description><dc:creator>Sergei Egorov</dc:creator><pubDate>Wed, 13 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 271: Random port libraries</title><link>https://srfi.schemers.org/srfi-271/</link><guid>https://srfi.schemers.org/srfi-271</guid><description>SRFI 271 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI proposes a pattern of libraries for binary input ports
