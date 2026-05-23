@@ -54,6 +54,14 @@ pre {
   position: absolute;
   right: 100%;
 }
+:not(.erratum):target::before {
+  display: inline-block;
+  font-size: 1.5em;
+  line-height: 0;
+  margin-right: 1em;
+  top: 0.5em;
+  transform: scaleX(2);
+}
 td, th {
   vertical-align: top;
 }
