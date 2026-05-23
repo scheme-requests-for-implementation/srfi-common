@@ -31,7 +31,10 @@
           '()
           (let ((level (heading-level (car elem))))
             (if level
-                (list (cons level (sxml-body-as-string elem)))
+                (let* ((attrs (sxml-attributes elem))
+                       (id-pair (assoc 'id attrs))
+                       (id (and id-pair (cadr id-pair))))
+                  (list (cons* level (sxml-body-as-string elem) id)))
                 (append-map headings (sxml-body elem))))))
 
     (define (headings->tree/values hs)
@@ -56,16 +59,20 @@
     (define (write-html-toc indent items)
       (disp indent "<h2>Table of contents</h2>")
       (let ((uniq (unique-string-accumulator)))
-        (define (link-html title)
-          (string-append "<a href=\"#" (uniq (string->slug title)) "\">"
-                         title
-                         "</a>"))
+        (define (link-html title-and-id)
+          (let ((title (car title-and-id))
+                (id (cdr title-and-id)))
+            (string-append "<a href=\"#"
+                           (or id (uniq (string->slug title)))
+                           "\">"
+                           title
+                           "</a>")))
         (let display-list ((indent indent) (items items))
           (disp indent "<ul>")
           (let ((indent (string-append indent "  ")))
             (for-each (lambda (item)
-                        (let* ((title (car item))
-                               (link (link-html title)))
+                        (let* ((title-and-id (car item))
+                               (link (link-html title-and-id)))
                           (cond ((null? (cdr item))
                                  (disp indent "<li>" link "</li>"))
                                 (else
@@ -82,7 +89,7 @@
 
     (define (wanted-heading? h)
       (and (<= 2 (car h) 4)
-           (not (member (string-downcase (cdr h))
+           (not (member (string-downcase (cadr h))
                         '("title" "author" "status" "abstract" "issues"
                           "table of contents" "copyright")))))
 
