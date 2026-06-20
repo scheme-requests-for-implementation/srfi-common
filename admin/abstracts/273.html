@@ -1,6 +1,14 @@
 <p>
-  The original <a href="https://srfi.schemers.org/srfi-253/">SRFI 253</a> established a basis for type-checked (or otherwise checked) data handling.
+  The original SRFI 253 established a basis for type-checked (or otherwise checked) data handling.
   But it lacked some quality-of-life features.
   This SRFI extends SRFI 253 to match existing implementation practice and common sense.
-  Provided extensions are: check aliasing with <code>define-check</code>; pre- and post-declaration of type / check with <code>declare-checked</code>; return value checks in <code>lambda-checked</code>, <code>case-lambda-checked</code>, and <code>define-checked</code>; the <code>derive-check</code> form to derive a suitable check for an expression; and some checking utilities.
+  Provided extensions are:
+  check aliasing with <code>define-check</code>;
+  pre- and post-declaration of type / check with <code>declare-checked</code>;
+  return value checks
+  in <code>lambda-checked</code>, <code>case-lambda-checked</code>, and <code>define-checked</code>;
+  the <code>check-of</code>
+  and <code>procedure-check-of</code>
+  procedures to derive a suitable check for a datum / procedure;
+  and some optimizable checking patterns suggested to implementors.
 </p>
