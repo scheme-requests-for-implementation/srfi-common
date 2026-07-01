@@ -1074,7 +1074,7 @@
  (title "Ephemerons")
  (author "John Cowan")
  (see-also 254)
- (keywords data-structure r7rs-large r7rs-large-red)
+ (keywords data-structure r7rs-large r7rs-large-red superseded)
  (draft-date "2015-09-06")
  (done-date "2026-06-30"))
 ((number 125)
