@@ -19,6 +19,31 @@
       (let ((pair (assoc key alist)))
         (and pair (get pair))))
 
+    (define (percent-decode str)
+      (let loop ((i 0) (acc '()))
+        (cond ((>= i (string-length str))
+               (list->string (reverse acc)))
+              ((and (char=? (string-ref str i) #\%)
+                    (<= (+ i 2) (string-length str)))
+               (let ((hi (digit-value (string-ref str (+ i 1)) 16))
+                     (lo (digit-value (string-ref str (+ i 2)) 16)))
+                 (if (and hi lo)
+                     (loop (+ i 3)
+                           (cons (integer->char (+ (* hi 16) lo)) acc))
+                     (loop (+ i 1) (cons #\% acc)))))
+              (else
+               (loop (+ i 1) (cons (string-ref str i) acc))))))
+
+    (define (digit-value ch radix)
+      (let ((n (cond ((and (char<=? #\0 ch) (char<=? ch #\9))
+                      (- (char->integer ch) (char->integer #\0)))
+                     ((and (char<=? #\a ch) (char<=? ch #\f))
+                      (+ 10 (- (char->integer ch) (char->integer #\a))))
+                     ((and (char<=? #\A ch) (char<=? ch #\F))
+                      (+ 10 (- (char->integer ch) (char->integer #\A))))
+                     (else #f))))
+        (and n (< n radix) n)))
+
     (define (missing-ids html-file)
       (let ((names (make-hash-table))
             (hrefs (make-hash-table)))
@@ -41,7 +66,7 @@
                                                  (string-downcase b)))
                          missing-names)
               (loop (cdr hrefs)
-                    (if (hash-table-exists? names (car hrefs))
+                    (if (hash-table-exists? names (percent-decode (car hrefs)))
                         missing-names
                         (cons (car hrefs) missing-names)))))))
 
