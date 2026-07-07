@@ -76,4 +76,4 @@
 
 (define-command (generate-chart)
   "Generate the SRFI progress chart as an SVG file."
-  (srfi-generate-chart (current-date)))
+  (srfi-generate-chart (iso-date->date (date->iso-date (current-date)))))
