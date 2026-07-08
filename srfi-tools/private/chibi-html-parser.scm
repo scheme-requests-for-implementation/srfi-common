@@ -2,6 +2,8 @@
 ;; Copyright (c) 2003-2014 Alex Shinn.  All rights reserved.
 ;; BSD-style license: http://synthcode.com/license.txt
 
+;; Modified to track input position during parsing.
+
 ;;> A permissive HTML parser supporting scalable streaming with a tree
 ;;> folding interface.  This copies the interface of Oleg Kiselyov's
 ;;> SSAX parser, as well as providing simple convenience utilities.
@@ -18,6 +20,18 @@
   (let ((out (open-output-string)))
     (proc out)
     (get-output-string out)))
+
+;; Optional position tracking.  When html-parser-position is
+;; parameterized to an integer, every read-char increments it.
+(define html-parser-position (make-parameter #false))
+
+(define %real-read-char %base-read-char)
+(define (read-char . o)
+  (let ((c (apply %real-read-char o))
+        (pos (html-parser-position)))
+    (when (and pos (not (eof-object? c)))
+      (html-parser-position (+ pos 1)))
+    c))
 
 (define (read-while pred . o)
   (let ((in (if (pair? o) (car o) (current-input-port))))
