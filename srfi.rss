@@ -1,4 +1,18 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 254: Ephemerons and Guardians</title><link>https://srfi.schemers.org/srfi-254/</link><guid>https://srfi.schemers.org/srfi-254</guid><description>SRFI 254 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI describes three concepts associated with the storage
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 277: Cyclic ports</title><link>https://srfi.schemers.org/srfi-277/</link><guid>https://srfi.schemers.org/srfi-277</guid><description>SRFI 277 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>Cyclic ports are like infinite string and bytevector input ports:
+      they produce the elements of a given sequence repeatedly, forever.
+      While their intended use is as reusable seeds for SRFI 271 random
+      ports, they are also useful whenever a repeating sequence of one
+      or more bytes or characters is needed.&lt;/p>&lt;/blockquote></description><dc:creator>Wolfgang Corcoran-Mathe</dc:creator><pubDate>Tue, 07 Jul 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 124: Ephemerons</title><link>https://srfi.schemers.org/srfi-124/</link><guid>https://srfi.schemers.org/srfi-124</guid><description>SRFI 124 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>      &lt;p>An ephemeron is an object with two components
+      called its &lt;em>key&lt;/em> and its &lt;em>datum&lt;/em>. It differs from an
+      ordinary pair as follows: if the garbage collector (GC) can prove that
+      there are no references to the key except from the ephemeron itself and
+      possibly from the datum, then it is free to &lt;em>break&lt;/em> the ephemeron,
+      dropping its reference to both key and datum. In other words, an
+      ephemeron can be broken when nobody else cares about its key. Ephemerons
+      can be used to construct weak vectors or lists and (possibly in
+      combination with finalizers) weak hash tables.
+      &lt;/p>&lt;p>Much of this specification is derived with
+      thanks from the MIT Scheme Reference Manual.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Tue, 30 Jun 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 254: Ephemerons and Guardians</title><link>https://srfi.schemers.org/srfi-254/</link><guid>https://srfi.schemers.org/srfi-254</guid><description>SRFI 254 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI describes three concepts associated with the storage
   management of a Scheme system, &lt;i>ephemerons&lt;/i>, &lt;i>guardians&lt;/i>, and
 &lt;i>transport cell guardians&lt;/i>.&lt;/p>
 
@@ -1335,17 +1349,7 @@ and a suggested &lt;code>format-array&lt;/code> procedure.&lt;/p>&lt;/blockquote
       reliably contain end-of-file objects.
       &lt;/p>&lt;p>This SRFI provides a set of procedures suitable
       for operating on lazy sequences based on &lt;a href="https://srfi.schemers.org/srfi-1/">SRFI
-      1&lt;/a>.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Mon, 18 Jan 2016 12:00:00 -0800</pubDate></item><item><title>SRFI 124: Ephemerons</title><link>https://srfi.schemers.org/srfi-124/</link><guid>https://srfi.schemers.org/srfi-124</guid><description>SRFI 124 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>An ephemeron is an object with two components
-      called its &lt;em>key&lt;/em> and its &lt;em>datum&lt;/em>. It differs from an
-      ordinary pair as follows: if the garbage collector (GC) can prove that
-      there are no references to the key except from the ephemeron itself and
-      possibly from the datum, then it is free to &lt;em>break&lt;/em> the ephemeron,
-      dropping its reference to both key and datum. In other words, an
-      ephemeron can be broken when nobody else cares about its key. Ephemerons
-      can be used to construct weak vectors or lists and (possibly in
-      combination with finalizers) weak hash tables.
-      &lt;/p>&lt;p>Much of this specification is derived with
-      thanks from the MIT Scheme Reference Manual.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Fri, 06 Nov 2015 12:00:00 -0800</pubDate></item><item><title>SRFI 123: Generic accessor and modifier operators</title><link>https://srfi.schemers.org/srfi-123/</link><guid>https://srfi.schemers.org/srfi-123</guid><description>SRFI 123 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>Lisp dialects including Scheme have
+      1&lt;/a>.&lt;/p>&lt;/blockquote></description><dc:creator>John Cowan</dc:creator><pubDate>Mon, 18 Jan 2016 12:00:00 -0800</pubDate></item><item><title>SRFI 123: Generic accessor and modifier operators</title><link>https://srfi.schemers.org/srfi-123/</link><guid>https://srfi.schemers.org/srfi-123</guid><description>SRFI 123 is now in &lt;em>final&lt;/em> status.&lt;blockquote>      &lt;p>Lisp dialects including Scheme have
       traditionally lacked short, simple, generic syntax for accessing and
       modifying the fields of arbitrary "collection" objects. We fill this gap
       for Scheme by defining generalized accessors, and an associated SRFI-17
