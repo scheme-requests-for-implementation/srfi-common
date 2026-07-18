@@ -1,4 +1,11 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 277: Cyclic ports</title><link>https://srfi.schemers.org/srfi-277/</link><guid>https://srfi.schemers.org/srfi-277</guid><description>SRFI 277 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>Cyclic ports are like infinite string and bytevector input ports:
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 271: Random port libraries</title><link>https://srfi.schemers.org/srfi-271/</link><guid>https://srfi.schemers.org/srfi-271</guid><description>SRFI 271 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI proposes a pattern of libraries for binary input ports
+  that produce random bytes. Libraries are divided into
+  “randomized” and “determinized” categories to address different
+  uses of random data. The design leaves the details of random
+  number generation to the implementer and the transformation of
+  bytes to other types (floats, etc.) to higher-level libraries.
+  A mechanism for saving random-port states and
+  propagating them to new ports is also provided.&lt;/p>&lt;/blockquote></description><dc:creator>Wolfgang Corcoran-Mathe</dc:creator><pubDate>Sat, 18 Jul 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 277: Cyclic ports</title><link>https://srfi.schemers.org/srfi-277/</link><guid>https://srfi.schemers.org/srfi-277</guid><description>SRFI 277 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>Cyclic ports are like infinite string and bytevector input ports:
       they produce the elements of a given sequence repeatedly, forever.
       While their intended use is as reusable seeds for SRFI 271 random
       ports, they are also useful whenever a repeating sequence of one
@@ -56,7 +63,7 @@
   Authors of further SRFIs that include list conversion procedures are
   encouraged to align their behavior with the behavior in this SRFI.
 &lt;/p>&lt;/blockquote></description><dc:creator>Peter McGoron</dc:creator><pubDate>Thu, 21 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 273: Extensions to Data (Type-)Checking</title><link>https://srfi.schemers.org/srfi-273/</link><guid>https://srfi.schemers.org/srfi-273</guid><description>SRFI 273 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
-  The original SRFI 253 established a basis for type-checked (or otherwise checked) data handling.
+  The original &lt;a href="https://srfi.schemers.org/srfi-253/">SRFI 253&lt;/a> established a basis for type-checked (or otherwise checked) data handling.
   But it lacked some quality-of-life features.
   This SRFI extends SRFI 253 to match existing implementation practice and common sense.
   Provided extensions are:
@@ -64,9 +71,6 @@
   pre- and post-declaration of type / check with &lt;code>declare-checked&lt;/code>;
   return value checks
   in &lt;code>lambda-checked&lt;/code>, &lt;code>case-lambda-checked&lt;/code>, and &lt;code>define-checked&lt;/code>;
-  the &lt;code>check-of&lt;/code>
-  and &lt;code>procedure-check-of&lt;/code>
-  procedures to derive a suitable check for a datum / procedure;
   and some optimizable checking patterns suggested to implementors.
 &lt;/p>&lt;/blockquote></description><dc:creator>Artyom Bologov</dc:creator><pubDate>Mon, 18 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 272: Pretty Printing</title><link>https://srfi.schemers.org/srfi-272/</link><guid>https://srfi.schemers.org/srfi-272</guid><description>SRFI 272 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
   This SRFI follows the traditional Scheme model of pretty printing, which treats it as a
@@ -84,14 +88,7 @@
   satisfy all requirements of the simpler ones while adding new features. Implementors may
   choose to support a maximum level of functionality appropriate for their systems. Integration with
   monadic and string-based formatting libraries is supported.
-&lt;/p>&lt;/blockquote></description><dc:creator>Sergei Egorov</dc:creator><pubDate>Wed, 13 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 271: Random port libraries</title><link>https://srfi.schemers.org/srfi-271/</link><guid>https://srfi.schemers.org/srfi-271</guid><description>SRFI 271 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI proposes a pattern of libraries for binary input ports
-  that produce random bytes. Libraries are divided into
-  “randomized” and “determinized” categories to address different
-  uses of random data. The design leaves the details of random
-  number generation to the implementer and the transformation of
-  bytes to other types (floats, etc.) to higher-level libraries.
-  A mechanism for saving random-port states and
-  propagating them to new ports is also provided.&lt;/p>&lt;/blockquote></description><dc:creator>Wolfgang Corcoran-Mathe</dc:creator><pubDate>Sun, 03 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 270: Hexadecimal Floating-Point Constants</title><link>https://srfi.schemers.org/srfi-270/</link><guid>https://srfi.schemers.org/srfi-270</guid><description>SRFI 270 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
+&lt;/p>&lt;/blockquote></description><dc:creator>Sergei Egorov</dc:creator><pubDate>Wed, 13 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 270: Hexadecimal Floating-Point Constants</title><link>https://srfi.schemers.org/srfi-270/</link><guid>https://srfi.schemers.org/srfi-270</guid><description>SRFI 270 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
  Floating-point numbers are usually stored in radix 2, but are written by
  users in radix 10. This SRFI introduces Scheme syntax for hexadecimal floating
  point constants based on C99’s syntax. They use radix 16 for writing
