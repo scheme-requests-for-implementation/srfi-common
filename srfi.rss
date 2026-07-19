@@ -11,7 +11,11 @@
   number generation to the implementer and the transformation of
   bytes to other types (floats, etc.) to higher-level libraries.
   A mechanism for saving random-port states and
-  propagating them to new ports is also provided.&lt;/p>&lt;/blockquote></description><dc:creator>Wolfgang Corcoran-Mathe</dc:creator><pubDate>Sat, 18 Jul 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 277: Cyclic ports</title><link>https://srfi.schemers.org/srfi-277/</link><guid>https://srfi.schemers.org/srfi-277</guid><description>SRFI 277 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>Cyclic ports are like infinite string and bytevector input ports:
+  propagating them to new ports is also provided.&lt;/p>&lt;/blockquote></description><dc:creator>Wolfgang Corcoran-Mathe</dc:creator><pubDate>Sat, 18 Jul 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 278: Supplemental Numerics</title><link>https://srfi.schemers.org/srfi-278/</link><guid>https://srfi.schemers.org/srfi-278</guid><description>SRFI 278 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
+  This SRFI defines miscellaneous procedures on numbers that were either
+  missing from the &lt;span class="report-name">R&lt;sup>7&lt;/sup>RS&lt;/span> or are
+  common extensions.
+&lt;/p>&lt;/blockquote></description><dc:creator>Peter McGoron</dc:creator><pubDate>Sat, 18 Jul 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 277: Cyclic ports</title><link>https://srfi.schemers.org/srfi-277/</link><guid>https://srfi.schemers.org/srfi-277</guid><description>SRFI 277 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>    &lt;p>Cyclic ports are like infinite string and bytevector input ports:
       they produce the elements of a given sequence repeatedly, forever.
       While their intended use is as reusable seeds for SRFI 271 random
       ports, they are also useful whenever a repeating sequence of one
