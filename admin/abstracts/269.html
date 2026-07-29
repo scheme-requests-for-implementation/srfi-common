@@ -4,22 +4,22 @@ primitives: the universal <code>is</code> macro for
 assertions, <code>test</code> for grouping assertions into
 independently executable units, and <code>suite</code> for organizing
 tests into hierarchies.  Tests and suites can carry user-provided
-metadata to adjust the behavior of a test runner, for example, to
+metadata to adjust the behavior of a test runner, for example to
 select tests by tags or to enforce timeout values.  The API is tiny,
 yet capable and flexible.  By focusing on the definition and leaving
 execution semantics to test runners, this SRFI offers a common ground
 that can reduce fragmentation among testing libraries.</p>
 
-<p>Unlike side-effect-driven testing frameworks (e.g.&nbsp;SRFI-64),
+<p>Unlike side-effect-driven testing frameworks (e.g.&nbsp;<a href="https://srfi.schemers.org/srfi-64/">SRFI 64</a>),
 this API produces first-class runtime entities, making it easy to
 filter, schedule, wrap them in exception guards and continuation
 barriers, run in arbitrary order, and re-run dynamically generated
 test subsets.  In addition to the usual CLI test runners, it enables
 runtime-friendly test runners that integrate well with highly
 interactive development workflows inside REPLs and IDEs, significantly
-increasing control over test execution and shortening the feedback
+increasing control over test execution, and shortening the feedback
 loop.</p>
 
 <p>To bridge the test definitions and test runners, the SRFI specifies
-a message-passing programming interface, and test loading and
+a message-passing programming interface and test loading and
 execution semantics recommendations for test runner implementers.</p>
