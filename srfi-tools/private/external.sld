@@ -63,12 +63,12 @@
     (define compose-email
       (case-lambda
        ((to subject)
-        (let ((mailer (get-environment-variable "MAILER")))
+        (let ((mailer (get-environment-variable "SRFI_MAILER")))
           (if mailer
               (run-program (list mailer to subject))
               (desktop-open (mailto-url to subject)))))
        ((to subject html)
-        (let ((mailer (get-environment-variable "MAILER")))
+        (let ((mailer (get-environment-variable "SRFI_MAILER")))
           (if mailer
               (let ((temp-file (make-temp-file-name)))
                 (write-text-file temp-file html)
