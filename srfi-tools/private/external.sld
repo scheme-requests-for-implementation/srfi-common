@@ -3,13 +3,16 @@
           edit-text-file
           browse-url-with
           browse-url
+          compose-email
           render-web-page-as-plain-text
           run-pager-on-url
           download-url-into-file
           gzip-decompress-file)
   (import (scheme base)
+          (scheme case-lambda)
           (scheme file)
           (scheme process-context)
+          (srfi-tools private clipboard)
           (srfi-tools private string)
           (srfi-tools private file)
           (srfi-tools private port)
@@ -52,6 +55,28 @@
           ;; It's doubtful anyone is using them anymore.
           (user-error "BROWSER environment variable contains ':' or '%'."))
         (browse-url-with browser url)))
+
+    (define (mailto-url to subject)
+      (string-append "mailto:" to
+                     "?subject=" (url-hexify-string subject)))
+
+    (define compose-email
+      (case-lambda
+       ((to subject)
+        (let ((mailer (get-environment-variable "MAILER")))
+          (if mailer
+              (run-program (list mailer to subject))
+              (desktop-open (mailto-url to subject)))))
+       ((to subject html)
+        (let ((mailer (get-environment-variable "MAILER")))
+          (if mailer
+              (let ((temp-file (make-temp-file-name)))
+                (write-text-file temp-file html)
+                (run-program (list mailer to subject temp-file))
+                (delete-file temp-file))
+              (begin
+                (copy-html-to-clipboard html)
+                (desktop-open (mailto-url to subject))))))))
 
     (define (render-web-page-as-plain-text url)
       (assert-sane-url url)

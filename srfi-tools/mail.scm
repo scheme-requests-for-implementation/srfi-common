@@ -34,10 +34,8 @@
       (error "Cannot find matching author.")))
 
 (define (compose-message num subject sxml)
-  (let* ((html (with-output-to-string (lambda () (sxml-display-as-html sxml))))
-         (mailto (mailto-address (srfi-mail-address num) subject)))
-    (copy-html-to-clipboard html)
-    (browse-url mailto)
+  (let ((html (with-output-to-string (lambda () (sxml-display-as-html sxml)))))
+    (compose-email (srfi-mail-address num) subject html)
     (write-string "Make sure to use correct sender, and to BCC srfi-announce if appropriate.\n")))
 
 (define editor-regards

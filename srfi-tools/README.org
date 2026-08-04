@@ -92,5 +92,12 @@ cases.
 
 ~EDITOR~ - Text editor to use.
 
+~MAILER~ - Program to use for composing email.  When set, it is called
+as ~$MAILER TO SUBJECT [BODY-FILE]~, where ~TO~ is the recipient
+address, ~SUBJECT~ is the subject line, and ~BODY-FILE~, if present, is
+the path of a file containing the HTML message body.  When unset, a
+~mailto:~ URL is opened using the operating system's default handler,
+and the HTML body (if any) is copied to the clipboard for pasting.
+
 Boolean variables accept ~t~, ~true~, ~f~, ~false~, ~y~, ~yes~, ~n~,
 ~no~. If the variable is blank or unset, the default is no.
