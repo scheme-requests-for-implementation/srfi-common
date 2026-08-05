@@ -15,7 +15,13 @@
           (srfi-tools private os)
           (srfi-tools data)
           (srfi-tools path)
+          (srfi-tools private error)
           (srfi-tools url))
+  (cond-expand
+   ((library (srfi 180))
+    (import (srfi 180)))
+   (chibi
+    (import (chibi json))))
   (begin
 
     (define (srfi-github-org)
@@ -65,26 +71,39 @@
               (srfi-num-stem num)))
 
     (define (github-api-request method url data)
-      (run-program
+      (run-program/get-output-string
        (list
         "curl"
         "--data" data
         "--fail"
-        "--include"
         "--header" (format "Authorization: token ~a"
                            (srfi-github-authorization-token))
         "--request" method
         "--show-error"
+        "--silent"
         url)))
 
+    (define (check-field name expected)
+      (lambda (json)
+        (let ((field (assoc name json)))
+          (and field (equal? (cdr field) expected)))))
+
+    (define (github-api-request/check method url data check message)
+      (let* ((response (github-api-request method url data))
+             (json (json-read (open-input-string response))))
+        (unless (check json)
+          (user-error message))))
+
     (define (srfi-subscribe-to-github-repository num)
-      (github-api-request
+      (github-api-request/check
        "PUT"
        (github-api-subscription num)
-       "{ \"subscribed\": true, \"ignored\": false }"))
+       "{ \"subscribed\": true, \"ignored\": false }"
+       (check-field 'subscribed #t)
+       (format "Failed to subscribe to ~a." (srfi-num-stem num))))
 
     (define (srfi-create-github-repository num)
-      (github-api-request
+      (github-api-request/check
        "POST"
        (github-api-repos)
        (format (string-append
@@ -94,7 +113,9 @@
                 ", \"has_wiki\": false"
                 " }")
                num
-               (srfi-title num)))
+               (srfi-title num))
+       (check-field 'name (srfi-num-stem num))
+       (format "Failed to create ~a." (srfi-num-stem num)))
       (srfi-subscribe-to-github-repository num))
 
     (define-command (create-github-repository num)
