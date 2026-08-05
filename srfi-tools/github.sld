@@ -5,7 +5,8 @@
           srfi-github-https-url
           srfi-github-ssh-url
           srfi-github-compare-url
-          srfi-create-github-repository)
+          srfi-create-github-repository
+          srfi-subscribe-to-github-repository)
   (import (scheme base)
           (scheme process-context)
 
@@ -58,23 +59,48 @@
               old-git-ref
               new-git-ref))
 
-    (define (srfi-create-github-repository num)
+    (define (github-api-subscription num)
+      (format "https://api.github.com/repos/~a/~a/subscription"
+              (srfi-github-org)
+              (srfi-num-stem num)))
+
+    (define (github-api-request method url data)
       (run-program
        (list
         "curl"
+        "--data" data
+        "--fail"
         "--include"
         "--header" (format "Authorization: token ~a"
                            (srfi-github-authorization-token))
-        "--data" (format (string-append
-                          "{ \"name\": \"srfi-~a\""
-                          ", \"description\": \"~a\""
-                          ", \"has_issues\": false"
-                          ", \"has_wiki\": false"
-                          " }")
-                         num
-                         (srfi-title num))
-        (github-api-repos))))
+        "--request" method
+        "--show-error"
+        url)))
+
+    (define (srfi-subscribe-to-github-repository num)
+      (github-api-request
+       "PUT"
+       (github-api-subscription num)
+       "{ \"subscribed\": true, \"ignored\": false }"))
+
+    (define (srfi-create-github-repository num)
+      (github-api-request
+       "POST"
+       (github-api-repos)
+       (format (string-append
+                "{ \"name\": \"srfi-~a\""
+                ", \"description\": \"~a\""
+                ", \"has_issues\": false"
+                ", \"has_wiki\": false"
+                " }")
+               num
+               (srfi-title num)))
+      (srfi-subscribe-to-github-repository num))
 
     (define-command (create-github-repository num)
       "Create a GitHub repository for SRFI num."
-      (srfi-create-github-repository (parse-srfi-number num)))))
+      (srfi-create-github-repository (parse-srfi-number num)))
+
+    (define-command (subscribe-to-github-repository num)
+      "Subscribe to notifications for SRFI <num>."
+      (srfi-subscribe-to-github-repository (parse-srfi-number num)))))
