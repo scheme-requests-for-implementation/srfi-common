@@ -62,8 +62,10 @@ as you like to stay up to date with the latest changes.
 
 You can also make git clones of individual SRFIs using ~srfi clone
 123~. This works even for SRFIs that have been seeded from the tar
-archive, though git may encounter conflicting changes to files in some
-cases.
+archive, though ~git~ may encounter conflicting changes to files in
+some cases.
+
+To see a list of all ~srfi~ subcommands, run ~srfi commands~.
 
 * Examples
 
