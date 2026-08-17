@@ -68,17 +68,18 @@ cases.
 * Examples
 
 - ~srfi browse 123~
-- ~srfi info 123~
-- ~srfi what 12 34 56~
-- ~srfi tail~
-- ~srfi drafts~
-- ~srfi search string~
-- ~srfi identifier-search string~
-- ~srfi identifier-signatures string-split~
 - ~srfi compose 123~
+- ~cd $(srfi dir 123)~
 - ~srfi do 234 git pull~
 - ~srfi do-common git pull~
-- ~cd $(srfi dir 123)~
+- ~srfi drafts~
+- ~srfi identifier-search string~
+- ~srfi identifier-signatures string-split~
+- ~srfi info 123~
+- ~srfi search string~
+- ~srfi tail~
+- ~srfi update-toc 123~
+- ~srfi what 12 34 56~
 
 * Environment variables
 
