@@ -51,7 +51,7 @@
          (lambda (elem)
            (let ((attrs (sxml-attributes elem)))
              (let ((id (assoc-get cadr 'id attrs)))
-               (when id (hash-table-set! names id #t)))
+               (when id (hash-table-set! names (percent-decode id) #t)))
              (when (equal? 'a (car elem))
                (let ((name (assoc-get cadr 'name attrs)))
                  (when name (hash-table-set! names name #t)))
