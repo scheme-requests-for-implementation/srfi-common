@@ -135,43 +135,25 @@ figure:target span {
   top: 0em;
 }
 :root {
-  --bg: white;
-  --fg: black;
-  --btn-fg: white;
+  color-scheme: light dark;
+  --bg: light-dark(white, black);
+  --fg: light-dark(black, white);
+  --btn-fg: light-dark(white, black);
   --font-palette: light;
   --img-filter: none;
-  --link: #0000EE;
-  --target-border: #116611;
+  --link: light-dark(#0000EE, #8ab4f8);
+  --target-border: light-dark(#116611, #44bb44);
   --target-glow: color-mix(in srgb, var(--target-border) 50%, transparent);
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: black;
-    --fg: white;
-    --btn-fg: black;
-    --font-palette: dark;
-    --img-filter: invert(1);
-    --link: #8ab4f8;
-    --target-border: #44bb44;
-  }
-}
 [data-theme="dark"] {
-  --bg: black;
-  --fg: white;
-  --btn-fg: black;
+  color-scheme: dark;
   --font-palette: dark;
   --img-filter: invert(1);
-  --link: #8ab4f8;
-  --target-border: #44bb44;
 }
 [data-theme="light"] {
-  --bg: white;
-  --fg: black;
-  --btn-fg: white;
+  color-scheme: light;
   --font-palette: light;
   --img-filter: none;
-  --link: #0000EE;
-  --target-border: #116611;
 }
 a {
   color: var(--link);
