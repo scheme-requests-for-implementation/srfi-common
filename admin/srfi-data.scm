@@ -2372,7 +2372,7 @@
  (done-date "2026-08-20"))
 ((number 275)
  (status draft)
- (title "URIs and IRIs")
+ (title "URIs, IRIs, and basic paths")
  (author "Duncan Guthrie")
  (keywords data-structure)
  (draft-date "2026-06-15"))
