@@ -1,4 +1,20 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 280: Monads</title><link>https://srfi.schemers.org/srfi-280/</link><guid>https://srfi.schemers.org/srfi-280</guid><description>SRFI 280 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 262: Extensible pattern matcher</title><link>https://srfi.schemers.org/srfi-262/</link><guid>https://srfi.schemers.org/srfi-262</guid><description>SRFI 262 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>A pattern matching form which can operate on arbitrary Scheme
+values is defined. It conforms to the following design
+principles.&lt;/p>
+
+&lt;p>The syntax of patterns is declarative. The syntax is extensible
+in the same way that Scheme’s procedural syntax is extensible by
+macros.&lt;/p>
+
+&lt;p>For most use cases, the use of the pattern matcher should
+produce code which is essentially as efficient at run time as
+equivalent procedural Scheme code would be, assuming a moderately
+optimizing Scheme implementation. This applies only when the
+equivalent code is also equivalently correct in terms of handling
+of error cases (i.e. including all type checks done
+automatically by the pattern matcher). However, using extension
+syntax should not cause this principle to be violated (provided the
+extension syntax is appropriately implemented).&lt;/p>&lt;/blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Mon, 31 Aug 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 280: Monads</title><link>https://srfi.schemers.org/srfi-280/</link><guid>https://srfi.schemers.org/srfi-280</guid><description>SRFI 280 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
   Monads are a fundamental concept in functional programming. Schemers
   have been using them for a long time, albeit with ad hoc constructions only
   meant for specific monads. This SRFI deals with monads generally by
@@ -239,23 +255,7 @@ Extensions to PCRE syntax allow concise expression of operations on named charac
 time it is invoked, the procedure returns a new symbol whose name
 cannot be guessed. The returned symbol is a standard symbol for all
 purposes; it obeys write/read invariance and it is equal to another
-symbol if and only if their names are spelled the same.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Wed, 07 May 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 262: Extensible pattern matcher</title><link>https://srfi.schemers.org/srfi-262/</link><guid>https://srfi.schemers.org/srfi-262</guid><description>SRFI 262 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>A pattern matching form which can operate on arbitrary Scheme
-values is defined. It conforms to the following design
-principles.&lt;/p>
-
-&lt;p>The syntax of patterns is declarative. The syntax is extensible
-in the same way that Scheme’s procedural syntax is extensible by
-macros.&lt;/p>
-
-&lt;p>For most use cases, the use of the pattern matcher should
-produce code which is essentially as efficient at run time as
-equivalent procedural Scheme code would be, assuming a moderately
-optimizing Scheme implementation. This applies only when the
-equivalent code is also equivalently correct in terms of handling
-of error cases (i.e. including all type checks done
-automatically by the pattern matcher). However, using extension
-syntax should not cause this principle to be violated (provided the
-extension syntax is appropriately implemented).&lt;/p>&lt;/blockquote></description><dc:creator>Daphne Preston-Kendal</dc:creator><pubDate>Wed, 07 May 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 258: Uninterned symbols</title><link>https://srfi.schemers.org/srfi-258/</link><guid>https://srfi.schemers.org/srfi-258</guid><description>SRFI 258 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>An uninterned symbol is not the same as any other symbol, even one
+symbol if and only if their names are spelled the same.&lt;/p>&lt;/blockquote></description><dc:creator>Marc Nieper-Wißkirchen</dc:creator><pubDate>Wed, 07 May 2025 12:00:00 -0800</pubDate></item><item><title>SRFI 258: Uninterned symbols</title><link>https://srfi.schemers.org/srfi-258/</link><guid>https://srfi.schemers.org/srfi-258</guid><description>SRFI 258 is now in &lt;em>final&lt;/em> status.&lt;blockquote>    &lt;p>An uninterned symbol is not the same as any other symbol, even one
     with the same name. These symbols are useful in macro programming and
     in other situations where guaranteed-unique names are needed.
     A survey of uninterned and uniquely named symbols
