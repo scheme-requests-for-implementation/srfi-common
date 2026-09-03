@@ -30,12 +30,13 @@
         (else #f)))
 
     (define-record-type <heading>
-      (make-heading level text id slug)
+      (make-heading level text id slug data-toc?)
       heading?
-      (level heading-level*)
-      (text  heading-text)
-      (id    heading-id)
-      (slug  heading-slug))
+      (level     heading-level*)
+      (text      heading-text)
+      (id        heading-id)
+      (slug      heading-slug)
+      (data-toc? heading-data-toc?))
 
     ;; Find the name attribute of an <a name="..."> child, if any.
     (define (heading-anchor-name elem)
@@ -62,7 +63,8 @@
                   (list (make-heading level
                                       (sxml-body-as-string elem)
                                       id
-				      #f)))
+				      #f
+				      (and (assoc 'data-toc attrs) #t))))
                 (append-map headings (sxml-body elem))))))
 
     (define (headings->tree/values hs)
@@ -129,14 +131,33 @@
 
     (define (srfi-generate-toc html-file)
       (let* ((sxml (read-html-file html-file))
-             (hdgs (filter wanted-heading? (headings sxml))))
-        (write-html-toc "  " (headings->tree hdgs))))
+             (hdgs (filter wanted-heading? (headings sxml)))
+             (collapsed-ids (data-toc-ids hdgs))
+             (tree (prune-toc-tree (headings->tree hdgs) collapsed-ids)))
+        (write-html-toc "  " tree)))
 
     (define-command (generate-toc num)
       "Display an HTML table of contents for SRFI <num>."
       (srfi-generate-toc (srfi-html-file (parse-srfi-number num))))
 
     ;;; update-toc: Insert TOC, and add missing heading IDs.
+
+    (define (data-toc-ids plan)
+      (filter-map (lambda (h)
+                    (and (heading-data-toc? h)
+                         (wanted-heading? h)
+                         (or (heading-id h) (heading-slug h))))
+                  plan))
+
+    (define (prune-toc-tree tree collapsed-ids)
+      (if (null? collapsed-ids)
+          tree
+          (map (lambda (node)
+                 (if (member (cdar node) collapsed-ids)
+                     (list (car node))
+                     (cons (car node)
+                           (prune-toc-tree (cdr node) collapsed-ids))))
+               tree)))
 
     ;; Assign slugs to wanted headings that lack an existing id.
     (define (heading-plan sxml)
@@ -147,8 +168,11 @@
                                 (not (heading-id h))
                                 (uniq (string->slug (heading-text h))))))
                  (if slug
-                     (make-heading (heading-level* h) (heading-text h)
-                                   (heading-id h) slug)
+                     (make-heading (heading-level* h)
+				   (heading-text h)
+                                   (heading-id h)
+				   slug
+				   (heading-data-toc? h))
                      h)))
              hdgs)))
 
@@ -160,7 +184,8 @@
                                        (heading-text h)
                                        (or (heading-id h)
                                            (heading-slug h))
-                                       #f)))
+                                       #f
+				       #f)))
                   plan))
 
     (define (find-toc-index plan)
@@ -270,10 +295,13 @@
 
     (define (srfi-update-toc html-file)
       (let* ((raw (read-text-file html-file))
-             (sxml (html->sxml raw))
+             (sxml (html->sxml/srfi raw))
              (plan (heading-plan sxml))
+             (collapsed-ids (data-toc-ids plan))
              (positions (heading-positions raw))
-             (tree (headings->tree (plan->toc-headings plan))))
+             (tree (prune-toc-tree
+                    (headings->tree (plan->toc-headings plan))
+                    collapsed-ids)))
         (when (not (= (length plan) (length positions)))
           (error "Heading count mismatch between SXML and tokenizer"))
         (if (null? tree)
@@ -299,5 +327,6 @@
               (write-text-file html-file result)))))
 
     (define-command (update-toc num)
-      "Update table of contents and heading ids in SRFI <num>."
+      "Update table of contents and heading ids in SRFI <num>.
+The children of headings with the attribute `data-toc' are omitted."
       (srfi-update-toc (srfi-html-file (parse-srfi-number num))))))

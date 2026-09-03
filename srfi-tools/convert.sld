@@ -79,7 +79,7 @@
                           "-b" "xhtml5"
                           "-o" "-"
                           "--" source-file)))
-             (sxml (call-with-port (open-input-string html) html->sxml))
+             (sxml (call-with-port (open-input-string html) html->sxml/srfi))
              (sxml (sxml-cleanup (find-html-tag sxml))))
         (emit html-file sxml)))
 
@@ -89,7 +89,7 @@
                     (list "pandoc"
                           "-t" "html5"
                           "--" source-file)))
-             (sxml (call-with-port (open-input-string html) html->sxml)))
+             (sxml (call-with-port (open-input-string html) html->sxml/srfi)))
         (emit html-file sxml)))
 
     (define (srfi-from-markdown source-file)
