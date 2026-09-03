@@ -2414,6 +2414,7 @@
  (status draft)
  (title "Bytevector Utilities")
  (author "Peter McGoron")
+ (library-name bytevectors)
  (see-also 152 160 207)
  (keywords data-structure)
  (draft-date "2026-09-02"))
