@@ -80,7 +80,7 @@
       (p "Here are " ,first-name "'s comments on the draft:")
       (blockquote (b "ADD COMMENTS HERE."))
       (p "Here is the commit summary:")
-      (blockquote (b "ADD COMMIT SUMMARY HERE."))
+      (b "ADD COMMIT SUMMARY HERE.")
       (p "Here's the diff:")
       (blockquote (a (@ (href ,diff-url)) ,diff-url)))))
 
@@ -253,7 +253,7 @@ This command is mostly useful to the SRFI editor."
       (p "Here's the abstract:")
       (blockquote ,(srfi-abstract-raw num))
       (p "Here is the commit summary since the most recent draft:")
-      (blockquote (b "ADD COMMIT SUMMARY HERE."))
+      (b "ADD COMMIT SUMMARY HERE.")
       (p "Here are the diffs since the most recent draft:")
       (blockquote (a (@ (href ,diffs-url)) ,diffs-url))
       (p "Many thanks to "
