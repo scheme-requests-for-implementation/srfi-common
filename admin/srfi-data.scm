@@ -1875,7 +1875,7 @@
 ((number 215)
  (status final)
  (title "Central Log Exchange")
- (author "Göran Weinholt")
+ (author "Gwen Weinholt")
  (library-name logging)
  (see-also)
  (keywords operating-system)
