@@ -734,7 +734,7 @@ Students, however, are expected to be able to just write&lt;/p>
       of which log system is actually used. Simple applications can
       easily get logs on standard output, while more advanced
       applications can send them to a full logging system.
-    &lt;/p>&lt;/blockquote></description><dc:creator>Göran Weinholt</dc:creator><pubDate>Mon, 11 Jan 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 206: Auxiliary Syntax Keywords</title><link>https://srfi.schemers.org/srfi-206/</link><guid>https://srfi.schemers.org/srfi-206</guid><description>SRFI 206 is now in &lt;em>final&lt;/em> status.&lt;blockquote>This SRFI defines a mechanism for defining auxiliary syntax
+    &lt;/p>&lt;/blockquote></description><dc:creator>Gwen Weinholt</dc:creator><pubDate>Mon, 11 Jan 2021 12:00:00 -0800</pubDate></item><item><title>SRFI 206: Auxiliary Syntax Keywords</title><link>https://srfi.schemers.org/srfi-206/</link><guid>https://srfi.schemers.org/srfi-206</guid><description>SRFI 206 is now in &lt;em>final&lt;/em> status.&lt;blockquote>This SRFI defines a mechanism for defining auxiliary syntax
 keywords independently in different modules in such a way that
 they still have the same binding so that they can be used
 interchangeably as literal identifiers in
