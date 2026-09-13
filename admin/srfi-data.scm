@@ -2396,6 +2396,7 @@
  (title "Supplemental Numerics")
  (author "Peter McGoron")
  (see-also 144)
+ (library-name numerics)
  (keywords numbers)
  (draft-date "2026-07-18"))
 ((number 279)
