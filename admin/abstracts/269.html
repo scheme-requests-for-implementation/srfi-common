@@ -1,11 +1,13 @@
 <p>This SRFI defines a portable API for test definitions that is
-decoupled from test execution and reporting.  It provides three
-primitives: the universal <code>is</code> macro for
-assertions, <code>test</code> for grouping assertions into
-independently executable units, and <code>suite</code> for organizing
-tests into hierarchies.  Tests and suites can carry user-provided
-metadata to adjust the behavior of a test runner, for example to
-select tests by tags or to enforce timeout values.  The API is tiny,
+decoupled from test execution and reporting.  It provides four
+definition forms: the universal <code>is</code> macro for assertions,
+<code>testing</code> for giving groups of assertions human-readable
+context, <code>test</code> for grouping assertions into independently
+executable units, and <code>suite</code> for organizing tests into
+hierarchies.  The exported <code>metadata</code> auxiliary syntax
+attaches user-provided information to tests and suites to adjust the
+behavior of a test runner, for example to select tests by tags or to
+enforce timeout values.  The API is tiny,
 yet capable and flexible.  By focusing on the definition and leaving
 execution semantics to test runners, this SRFI offers a common ground
 that can reduce fragmentation among testing libraries.</p>
