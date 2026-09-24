@@ -2422,7 +2422,7 @@
  (draft-date "2026-09-02"))
 ((number 282)
  (status draft)
- (title "Missing R7RS (Type) Predicates")
+ (title "Additional R7RS (Type) Predicates")
  (author "Artyom Bologov")
  (keywords miscellaneous)
  (draft-date "2026-09-15"))
