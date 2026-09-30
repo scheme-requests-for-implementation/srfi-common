@@ -1,4 +1,30 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 285: Dates and Times</title><link>https://srfi.schemers.org/srfi-285/</link><guid>https://srfi.schemers.org/srfi-285</guid><description>SRFI 285 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 269: Portable Test Definitions</title><link>https://srfi.schemers.org/srfi-269/</link><guid>https://srfi.schemers.org/srfi-269</guid><description>SRFI 269 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines a portable API for test definitions that is
+decoupled from test execution and reporting.  It provides four
+definition forms: the universal &lt;code>is&lt;/code> macro for assertions,
+&lt;code>testing&lt;/code> for giving groups of assertions human-readable
+context, &lt;code>test&lt;/code> for grouping assertions into independently
+executable units, and &lt;code>suite&lt;/code> for organizing tests into
+hierarchies.  The exported &lt;code>metadata&lt;/code> auxiliary syntax
+attaches user-provided information to tests and suites to adjust the
+behavior of a test runner, for example to select tests by tags or to
+enforce timeout values.  The API is tiny,
+yet capable and flexible.  By focusing on the definition, and leaving
+execution semantics to test runners, this SRFI offers a common ground
+that can reduce fragmentation among testing libraries.&lt;/p>
+
+&lt;p>Unlike side-effect-driven testing frameworks (e.g. &lt;a href="https://srfi.schemers.org/srfi-64/">SRFI 64&lt;/a>),
+this API produces first-class runtime entities, making it easy to
+filter, schedule, wrap them in exception guards and continuation
+barriers, run in arbitrary order, and re-run dynamically generated
+test subsets.  In addition to the usual CLI test runners, it enables
+runtime-friendly test runners that integrate well with highly
+interactive development workflows inside REPLs and IDEs, significantly
+increasing control over test execution, and shortening the feedback
+loop.&lt;/p>
+
+&lt;p>To bridge the test definitions and test runners, the SRFI specifies
+a message-passing programming interface and test loading and
+execution semantics recommendations for test runner implementers.&lt;/p>&lt;/blockquote></description><dc:creator>Andrew Tropin and Ramin Honary</dc:creator><pubDate>Wed, 30 Sep 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 285: Dates and Times</title><link>https://srfi.schemers.org/srfi-285/</link><guid>https://srfi.schemers.org/srfi-285</guid><description>SRFI 285 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
   This SRFI details an API for storing and manipluating dates and times.
   This SRFI decomposes dates and times into dates (a count of days in the
   proleptic Gregorian calendar), clock times (time of day, independent of
@@ -7,13 +33,13 @@
   time deltas (measurement of elapsed time). By doing this, a Scheme
   program can operate on days in different calendars and timestamps in
   different timezones.
-&lt;/p>&lt;/blockquote></description><dc:creator>Peter McGoron</dc:creator><pubDate>Sun, 20 Sep 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 284: define-typed</title><link>https://srfi.schemers.org/srfi-284/</link><guid>https://srfi.schemers.org/srfi-284</guid><description>SRFI 284 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines the forms &lt;code>define-typed&lt;/code> and &lt;code>define-typed*&lt;/code> for creating procedures with checked type boundaries. It allows checking the arguments and/or the return value or values with simple predicate procedures and raises exceptions on usage when they don’t match. The form &lt;code>define-typed*&lt;/code> supports keyword and optional arguments. The implementation for Guile is optimized to allow the compiler to use the predicates as guarantees to create more optimized code and provides type information for runtime introspection that supports SRFI 283.&lt;/p>&lt;/blockquote></description><dc:creator>Arne Babenhauserheide</dc:creator><pubDate>Fri, 18 Sep 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 283: (Type-)Check Introspection</title><link>https://srfi.schemers.org/srfi-283/</link><guid>https://srfi.schemers.org/srfi-283</guid><description>SRFI 283 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
+&lt;/p>&lt;/blockquote></description><dc:creator>Peter McGoron (steward, corresponding author), John Cowan (original design), Daphne Preston-Kendal (design and specification), and Arvydas Silanskas (implementation)</dc:creator><pubDate>Sun, 20 Sep 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 284: define-typed</title><link>https://srfi.schemers.org/srfi-284/</link><guid>https://srfi.schemers.org/srfi-284</guid><description>SRFI 284 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines the forms &lt;code>define-typed&lt;/code> and &lt;code>define-typed*&lt;/code> for creating procedures with checked type boundaries. It allows checking the arguments and/or the return value or values with simple predicate procedures and raises exceptions on usage when they don’t match. The form &lt;code>define-typed*&lt;/code> supports keyword and optional arguments. For ad-hoc procedures for map or fold, it also provides &lt;code>lambda-typed&lt;/code> and &lt;code>lambda-typed*&lt;/code>. The implementation for Guile is optimized to allow the compiler to use the predicates as guarantees to create more optimized code and provides type information for runtime introspection that supports &lt;a href="https://srfi.schemers.org/srfi-283/srfi-283.html">SRFI 283&lt;/a>.&lt;/p>&lt;/blockquote></description><dc:creator>Arne Babenhauserheide</dc:creator><pubDate>Fri, 18 Sep 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 283: (Type-)Check Introspection</title><link>https://srfi.schemers.org/srfi-283/</link><guid>https://srfi.schemers.org/srfi-283</guid><description>SRFI 283 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
   This SRFI focuses on the introspection and type inference sides of typing / checking.
   It provides several useful procedures deriving types / checks for arbitrary data.
   procedure-check-of and check-of work with checks, as in SRFI 253.
   procedure-type-of and type-of work with implementation-specific types.
   check->sexp provides a way to serialize opaque checks from above into more readable s-expressions.
-&lt;/p>&lt;/blockquote></description><dc:creator>Artyom Bologov</dc:creator><pubDate>Wed, 16 Sep 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 282: Missing R7RS (Type) Predicates</title><link>https://srfi.schemers.org/srfi-282/</link><guid>https://srfi.schemers.org/srfi-282</guid><description>SRFI 282 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
+&lt;/p>&lt;/blockquote></description><dc:creator>Artyom Bologov</dc:creator><pubDate>Wed, 16 Sep 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 282: Additional R7RS (Type) Predicates</title><link>https://srfi.schemers.org/srfi-282/</link><guid>https://srfi.schemers.org/srfi-282</guid><description>SRFI 282 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
   Types and entities deserve predicates so that their user can
   meaningfully understand what they are dealing with, and usefully
   dispatch on them in their code.  However, some R&lt;sup>7&lt;/sup>RS
@@ -173,31 +199,7 @@ extension syntax is appropriately implemented).&lt;/p>&lt;/blockquote></descript
     the string verbatim. The raw strings in this SRFI do not do
     any special whitespace handling.
 &lt;/p>
-&lt;/blockquote></description><dc:creator>Peter McGoron</dc:creator><pubDate>Sun, 26 Apr 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 269: Portable Test Definitions</title><link>https://srfi.schemers.org/srfi-269/</link><guid>https://srfi.schemers.org/srfi-269</guid><description>SRFI 269 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This SRFI defines a portable API for test definitions that is
-decoupled from test execution and reporting.  It provides three
-primitives: the universal &lt;code>is&lt;/code> macro for
-assertions, &lt;code>test&lt;/code> for grouping assertions into
-independently executable units, and &lt;code>suite&lt;/code> for organizing
-tests into hierarchies.  Tests and suites can carry user-provided
-metadata to adjust the behavior of a test runner, for example to
-select tests by tags or to enforce timeout values.  The API is tiny,
-yet capable and flexible.  By focusing on the definition and leaving
-execution semantics to test runners, this SRFI offers a common ground
-that can reduce fragmentation among testing libraries.&lt;/p>
-
-&lt;p>Unlike side-effect-driven testing frameworks (e.g. &lt;a href="https://srfi.schemers.org/srfi-64/">SRFI 64&lt;/a>),
-this API produces first-class runtime entities, making it easy to
-filter, schedule, wrap them in exception guards and continuation
-barriers, run in arbitrary order, and re-run dynamically generated
-test subsets.  In addition to the usual CLI test runners, it enables
-runtime-friendly test runners that integrate well with highly
-interactive development workflows inside REPLs and IDEs, significantly
-increasing control over test execution, and shortening the feedback
-loop.&lt;/p>
-
-&lt;p>To bridge the test definitions and test runners, the SRFI specifies
-a message-passing programming interface and test loading and
-execution semantics recommendations for test runner implementers.&lt;/p>&lt;/blockquote></description><dc:creator>Andrew Tropin and Ramin Honary</dc:creator><pubDate>Thu, 02 Apr 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 268: Multidimensional Array Literals</title><link>https://srfi.schemers.org/srfi-268/</link><guid>https://srfi.schemers.org/srfi-268</guid><description>SRFI 268 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This is a specification of a lexical syntax
+&lt;/blockquote></description><dc:creator>Peter McGoron</dc:creator><pubDate>Sun, 26 Apr 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 268: Multidimensional Array Literals</title><link>https://srfi.schemers.org/srfi-268/</link><guid>https://srfi.schemers.org/srfi-268</guid><description>SRFI 268 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>This is a specification of a lexical syntax
 for multi-dimensional arrays. Textually it is an alteration of
 &lt;a href="https://srfi.schemers.org/srfi-163/srfi-163.html">SRFI 163&lt;/a>, which
 is an extension of the
