@@ -17,11 +17,11 @@ a.eponymous {
 body {
   font-family: "Noto Sans", sans-serif;
   font-size: 18px;
+  line-height: 1.55;
   margin: 1em auto;
   max-width: 46em;
-  padding-inline: clamp(1rem, 4vw, 2rem);
-  line-height: 1.55;
   overflow-wrap: anywhere;
+  padding-inline: clamp(1rem, 4vw, 2rem);
 }
 body h1:first-child {
   font-size: 150%;
@@ -39,8 +39,8 @@ code, var {
   hyphens: none;
 }
 img {
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 img.srfi-logo {
   margin-right: 0.5em;
@@ -51,8 +51,8 @@ span.antispam {
   display: none;
 }
 pre {
-  white-space: pre-wrap;
   overflow-wrap: anywhere;
+  white-space: pre-wrap;
   word-break: normal;
 }
 :target {
@@ -93,14 +93,13 @@ td, th {
   }
 }
 
-/* Keep section markers visible when there is no room in the margin. */
 @media (max-width: 64em) {
   :not(.erratum):target::before {
-    position: static;
     display: inline;
     font-size: inherit;
     line-height: inherit;
     margin-right: 0.4em;
+    position: static;
     transform: none;
   }
 }
