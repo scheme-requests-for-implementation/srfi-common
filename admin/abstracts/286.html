@@ -1,0 +1,11 @@
+<p>
+R7RS Scheme allows programs to query library presence at macro-expansion time using <br/>
+<code>(cond-expand ((library </code>&langle;<i>library name</i>&thinsp;&rangle;<code>)</code> ...<code>))</code>.
+However, when an implementation
+ships a shared library tree across interpreters built with different feature configurations,
+or when third-party libraries depend on conditionally present implementation features, standardizing
+library presence detection becomes problematic. This proposal specifies <em>library mask files</em>
+(<code>mask.slm</code>), a declarative mechanism placed in library root directories to dynamically
+mask unavailable libraries based on the current feature set without requiring physical file removal
+or upfront parsing of library contents.
+</p>
