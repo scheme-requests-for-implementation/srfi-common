@@ -1,0 +1,145 @@
+#+TITLE: SRFI Implementation File Layout Conventions
+
+Across 289 srfi-N/ directories, roughly 120 contain implementation
+files.  In total: 1,080 =.scm= files, 416 =.sld= files (R7RS), and
+119 =.sls= files (R6RS) across 32 SRFIs.
+
+* File extensions and their roles
+
+| Extension | Standard | Role                                  | Count |
+|-----------+----------+---------------------------------------+-------|
+| =.scm=    | General  | Implementation bodies, tests, scripts | 1,080 |
+| =.sld=    | R7RS     | Library definitions                   |   416 |
+| =.sls=    | R6RS     | Library definitions                   |   119 |
+
+=.sld= and =.sls= rarely coexist in the same SRFI (only ~5 cases).
+They target different standards and different author communities.
+=.scm= files are universal --- they appear alongside both as
+implementation bodies.
+
+* Main directory patterns, by prevalence
+
+** 1. Root-level files (48%)
+
+Simple SRFIs drop files directly in =srfi-N/=:
+
+#+begin_example
+srfi-1/srfi-1-reference.scm
+srfi-100/srfi-100.scm
+#+end_example
+
+** 2. =srfi/= subdirectory (41%)
+
+The dominant pattern for structured SRFIs.  Used by both R7RS and R6RS
+libraries:
+
+#+begin_example
+srfi-123/srfi/123.sld          # R7RS library definition
+srfi-123/srfi/123.body.scm     # implementation body
+srfi-135/srfi/135/kernel8.sld  # sub-modules go deeper
+srfi-126/srfi/:126.sls         # R6RS (colon-prefixed number)
+srfi-250/srfi/:250.sls         # R6RS main library
+srfi-250/srfi/:250/internal/immutable.sls
+#+end_example
+
+** 3. =lib/= subdirectory (~9% of .sld, ~65% of .sls)
+
+Used by more complex, multi-module SRFIs.  This is the /dominant/
+layout for R6RS =.sls= files:
+
+#+begin_example
+lib/srfi/274/base.sld                        # R7RS
+lib/srfi/285/timezone.sld
+lib/srfi/:227.sls                            # R6RS
+lib/srfi/:227/opt-lambda.sls
+lib/srfi/:265/cfg/compile.sls                # deep submodules
+lib/control-features.sls                     # non-numeric namespace (srfi-226)
+#+end_example
+
+77 of 119 =.sls= files follow the =lib/srfi/:N/= layout, concentrated
+in SRFIs 212--270 and driven by a small cluster of R6RS-first authors.
+
+** 4. =contrib/= subdirectory (~9%)
+
+Alternative implementations, keyed by author name:
+
+#+begin_example
+contrib/taylan.kammer/64/64.sld
+contrib/antero-mejr/srfi/44.sld
+#+end_example
+
+** 5. =tests/= subdirectory (~5%)
+
+Dedicated test directories, sometimes with their own =.sld= or =.sls=
+definitions.
+
+** 6. =chez/= subdirectory (rare)
+
+Chez Scheme-specific implementations in a few SRFIs:
+
+#+begin_example
+srfi-272/chez/srfi-272.sls
+srfi-272/chez/srfi-272/basic.sls
+#+end_example
+
+* R6RS-specific conventions
+
+** Colon-prefixed directories
+
+R6RS encodes the library name =(srfi :N)= as the directory =srfi/:N/=.
+Some SRFIs also use URI-encoded =%3a= instead of =:=.
+
+** Implementation-specific suffixes
+
+R6RS =.sls= files use a suffix convention to let implementations select
+the right file automatically:
+
+- =.chezscheme.sls= --- Chez Scheme (most common, ~10 files)
+- =.guile.sls= --- GNU Guile
+- =.loko.sls= --- Loko Scheme
+
+#+begin_example
+srfi-204/srfi/:204.chezscheme.sls
+srfi-204/srfi/%3a204.loko.sls
+srfi-204/srfi/srfi-204.guile.sls
+#+end_example
+
+This convention has no =.sld= equivalent --- R7RS doesn't do this.
+
+* Strong conventions
+
+- *=.sld= = library definition, =.scm= = implementation body* ---
+  cleanly separated in modern SRFIs using the =N.body.scm= / =N.sld=
+  pairing.
+- *=srfi/N.sld=* is the most standard place for the main R7RS library
+  definition.
+- *=lib/srfi/:N.sls=* is the most standard place for the main R6RS
+  library definition.
+- *Test naming* is very consistent: =test.scm=, =tests.scm=, or
+  =*-test.scm=.
+- *Shim files* labeled =*-shim.scm= (e.g., =r7rs-shim.scm=).
+
+* What's /not/ standardized
+
+- Whether to use =srfi/= vs =lib/srfi/= vs root --- varies by author
+  and complexity.
+- Some SRFIs have the same library defined in 2--3 different directory
+  layouts (e.g., srfi-130 has =srfi/130.sld=, =foof/130.sld=, and
+  =srfi-130/130.sld=).
+- Nesting depth ranges from 1 to 5 depending on the SRFI's module
+  count.
+- =.sls= vs =.sld= choice is author-driven, not SRFI-policy-driven.
+
+* Summary
+
+| Standard | Canonical layout               | Body convention      |
+|----------+--------------------------------+----------------------|
+| R7RS     | =srfi-N/srfi/N.sld=            | =srfi/N.body.scm=    |
+| R6RS     | =srfi-N/lib/srfi/:N.sls=       | included in =.sls=   |
+| Simple   | =srfi-N/srfi-N.scm= (root)     | self-contained       |
+
+The R6RS =lib/srfi/:N/= convention is actually /more uniform/ than the
+R7RS layout, but only because it's driven by fewer authors working on
+newer SRFIs.  Simple single-file SRFIs just put everything in the root.
+There is a clear trend toward namespaced subdirectories (=srfi/N= or
+=lib/srfi/:N=), but no enforced uniformity across the collection.
