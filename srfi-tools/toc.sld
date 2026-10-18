@@ -293,8 +293,32 @@
                            (string-length raw))))))
         (list (cons* start end (string-append toc "\n")))))
 
+    ;; Detect the end-of-line convention used in a string.
+    (define (eol-crlf? str)
+      (string-contains str "\r\n"))
+
+    ;; Replace each #\newline in str with eol.
+    (define (adjust-newlines str crlf?)
+      (if crlf?
+          (let ((out (open-output-string)))
+            (string-for-each
+             (lambda (ch)
+               (if (char=? ch #\newline)
+                   (write-string "\r\n" out)
+                   (write-char ch out)))
+             str)
+            (get-output-string out))
+          str))
+
+    ;; Adjust an edit's replacement string to use the given eol.
+    (define (adjust-eol edit crlf?)
+      (cons* (car edit)
+	     (cadr edit)
+             (adjust-newlines (cddr edit) crlf?)))
+
     (define (srfi-update-toc html-file)
       (let* ((raw (read-text-file html-file))
+             (crlf? (eol-crlf? raw))
              (sxml (html->sxml/srfi raw))
              (plan (heading-plan sxml))
              (collapsed-ids (data-toc-ids plan))
@@ -323,7 +347,9 @@
                                              tree
 					     #t))
                           (else '())))
-                   (result (apply-edits raw (append id-edits toc-edits))))
+                   (all-edits (map (lambda (e) (adjust-eol e crlf?))
+                                   (append id-edits toc-edits)))
+                   (result (apply-edits raw all-edits)))
               (write-text-file html-file result)))))
 
     (define-command (update-toc num)
