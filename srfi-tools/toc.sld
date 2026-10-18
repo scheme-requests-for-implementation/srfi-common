@@ -38,8 +38,8 @@
       (slug      heading-slug)
       (data-toc? heading-data-toc?))
 
-    ;; Find the name attribute of an <a name="..."> child, if any.
     (define (heading-anchor-name elem)
+      "Find the name attribute of an <a name=\"...\"> child, if any."
       (let loop ((body (sxml-body elem)))
         (cond ((null? body) #f)
               ((and (pair? (car body))
@@ -140,8 +140,6 @@
       "Display an HTML table of contents for SRFI <num>."
       (srfi-generate-toc (srfi-html-file (parse-srfi-number num))))
 
-    ;;; update-toc: Insert TOC, and add missing heading IDs.
-
     (define (data-toc-ids plan)
       (filter-map (lambda (h)
                     (and (heading-data-toc? h)
@@ -159,8 +157,8 @@
                            (prune-toc-tree (cdr node) collapsed-ids))))
                tree)))
 
-    ;; Assign slugs to wanted headings that lack an existing id.
     (define (heading-plan sxml)
+      "Assign slugs to wanted headings that lack an existing id."
       (let ((hdgs (headings sxml))
             (uniq (unique-string-accumulator)))
         (map (lambda (h)
@@ -176,8 +174,8 @@
                      h)))
              hdgs)))
 
-    ;; Extract wanted headings with effective ids for headings->tree.
     (define (plan->toc-headings plan)
+      "Extract wanted headings with effective ids for headings->tree."
       (filter-map (lambda (h)
                     (and (wanted-heading? h)
                          (make-heading (heading-level* h)
@@ -203,9 +201,8 @@
               ((wanted-heading? (car entries)) i)
               (else (loop (+ i 1) (cdr entries))))))
 
-    ;; Tokenizer pass: find the character offset of every heading
-    ;; start tag in the raw HTML string.
     (define (heading-positions raw-html)
+      "Find the character offset of every heading start tag in the raw HTML string."
       (let ((in (open-input-string raw-html)))
         (parameterize ((html-parser-position 0))
           (let loop ((acc '()))
@@ -219,20 +216,19 @@
                      (loop acc)))
                 (else (loop acc))))))))
 
-    ;; Return the position of the start of the line containing pos.
     (define (line-start str pos)
+      "Return the position of the start of the line containing pos."
       (let loop ((i (- pos 1)))
         (cond ((< i 0) 0)
               ((char=? (string-ref str i) #\newline) (+ i 1))
               (else (loop (- i 1))))))
 
-    ;; Return the whitespace from the start of the line to pos.
     (define (line-indent str pos)
+      "Return the whitespace from the start of the line to pos."
       (substring str (line-start str pos) pos))
 
-    ;; Generate TOC HTML as a string.  All heading ids must already be
-    ;; assigned (no unique-string-accumulator needed here).
     (define (generate-toc-html indent tree)
+      "Generate TOC HTML as a string.  All heading ids must already be assigned."
       (with-output-to-string
         (lambda ()
           (disp indent "<h2 id=\"toc\">Table of contents</h2>")
@@ -258,9 +254,9 @@
                items))
             (disp indent "</ul>")))))
 
-    ;; Apply a list of (start end . replacement) edits to a string.
-    ;; Edits are sorted back-to-front so earlier offsets stay valid.
     (define (apply-edits str edits)
+      "Apply a list of (start end . replacement) edits to a string.
+Edits are sorted back-to-front so earlier offsets stay valid."
       (let ((sorted (list-sort (lambda (a b) (> (car a) (car b)))
                                edits)))
         (fold (lambda (edit str)
@@ -271,15 +267,15 @@
               str
               sorted)))
 
-    ;; Build an edit that inserts id="slug" after the tag name.
     (define (id-insertion-edit h pos)
+      "Build an edit that inserts id=\"slug\" after the tag name."
       (let ((slug (heading-slug h)))
         (and slug
              (cons* (+ pos 3) (+ pos 3)
                     (string-append " id=\"" slug "\"")))))
 
-    ;; Build an edit that inserts or replaces the TOC section.
     (define (toc-section-edit raw positions index tree insert?)
+      "Build an edit that inserts or replaces the TOC section."
       (let* ((pos (list-ref positions index))
              (indent (line-indent raw pos))
              (toc (generate-toc-html indent tree))
@@ -293,12 +289,12 @@
                            (string-length raw))))))
         (list (cons* start end (string-append toc "\n")))))
 
-    ;; Detect the end-of-line convention used in a string.
     (define (eol-crlf? str)
+      "Detect the end-of-line convention used in a string."
       (string-contains str "\r\n"))
 
-    ;; Replace each #\newline in str with eol.
     (define (adjust-newlines str crlf?)
+      "Replace each #\\newline in str with CRLF when crlf? is true."
       (if crlf?
           (let ((out (open-output-string)))
             (string-for-each
@@ -310,8 +306,8 @@
             (get-output-string out))
           str))
 
-    ;; Adjust an edit's replacement string to use the given eol.
     (define (adjust-eol edit crlf?)
+      "Adjust an edit's replacement string to use CRLF when crlf? is true."
       (cons* (car edit)
 	     (cadr edit)
              (adjust-newlines (cddr edit) crlf?)))
