@@ -61,7 +61,8 @@
                        (id (or (and id-pair (cadr id-pair))
                                (heading-anchor-name elem))))
                   (list (make-heading level
-                                      (sxml-body-as-string elem)
+                                      (string-trim-both
+                                       (sxml-body-as-string elem))
                                       id
 				      #f
 				      (and (assoc 'data-toc attrs) #t))))
