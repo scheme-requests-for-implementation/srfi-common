@@ -2469,5 +2469,6 @@
  (title "Compound Conditions")
  (author "Peter McGoron")
  (see-also 12 35 99 222 237)
+ (library-name condition)
  (keywords exceptions)
  (draft-date "2026-10-25"))
