@@ -119,20 +119,20 @@ extension syntax is appropriately implemented).&lt;/p>&lt;/blockquote></descript
   extending Scheme with first-class monad objects and adding Haskell-like
   syntax for composing monadic computations. The API is minimal and the
   implementation trivial.
-&lt;/p>&lt;/blockquote></description><dc:creator>Hernán Ibarra Mejia</dc:creator><pubDate>Sun, 30 Aug 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 274: Extended List Conversion Procedures</title><link>https://srfi.schemers.org/srfi-274/</link><guid>https://srfi.schemers.org/srfi-274</guid><description>SRFI 274 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+&lt;/p>&lt;/blockquote></description><dc:creator>Hernán Ibarra Mejia</dc:creator><pubDate>Sun, 30 Aug 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 279: In(tro)spection Protocol</title><link>https://srfi.schemers.org/srfi-279/</link><guid>https://srfi.schemers.org/srfi-279</guid><description>SRFI 279 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+  Interactive REPL-driven systems (that most Schemes are) need a way to get detailed information on a given piece of data.
+  Inspectors, as these are conventionally called.
+  This SRFI defines a basic protocol for inspectors, consisting of three procedures:
+  &lt;code>inspect-properties&lt;/code>, &lt;code>inspect-property&lt;/code>, and &lt;code>inspect-describe&lt;/code>.
+  Some suggestions for standard and popular types’ inspection are also provided.
+&lt;/p>&lt;/blockquote></description><dc:creator>Artyom Bologov</dc:creator><pubDate>Sat, 29 Aug 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 274: Extended List Conversion Procedures</title><link>https://srfi.schemers.org/srfi-274/</link><guid>https://srfi.schemers.org/srfi-274</guid><description>SRFI 274 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
   A set of modest extensions to list conversion and list copying procedures
   is proposed that aligns them with other conversion and copying procedures
   and allows for some operations on dotted and circular lists (collectively
   called improper lists).
   Authors of further SRFIs that include list conversion procedures are
   encouraged to align their behavior with the behavior in this SRFI.
-&lt;/p>&lt;/blockquote></description><dc:creator>Peter McGoron</dc:creator><pubDate>Thu, 20 Aug 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 279: In(tro)spection Protocol</title><link>https://srfi.schemers.org/srfi-279/</link><guid>https://srfi.schemers.org/srfi-279</guid><description>SRFI 279 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
-  Interactive REPL-driven systems (that most Schemes are) need a way to get detailed information on a given piece of data.
-  Inspectors, as these are conventionally called.
-  This SRFI defines a basic protocol for inspectors, consisting of three procedures:
-  &lt;code>inspect-properties&lt;/code>, &lt;code>inspect-property&lt;/code>, and &lt;code>inspect-describe&lt;/code>.
-  Some suggestions for standard and popular types’ inspection are also provided.
-&lt;/p>&lt;/blockquote></description><dc:creator>Artyom Bologov</dc:creator><pubDate>Tue, 11 Aug 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 273: Extensions to Data (Type-)Checking</title><link>https://srfi.schemers.org/srfi-273/</link><guid>https://srfi.schemers.org/srfi-273</guid><description>SRFI 273 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+&lt;/p>&lt;/blockquote></description><dc:creator>Peter McGoron</dc:creator><pubDate>Thu, 20 Aug 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 273: Extensions to Data (Type-)Checking</title><link>https://srfi.schemers.org/srfi-273/</link><guid>https://srfi.schemers.org/srfi-273</guid><description>SRFI 273 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
   The original &lt;a href="https://srfi.schemers.org/srfi-253/">SRFI 253&lt;/a> established a basis for type-checked (or otherwise checked) data handling.
   But it lacked some quality-of-life features.
   This SRFI extends SRFI 253 to match existing implementation practice and common sense.
