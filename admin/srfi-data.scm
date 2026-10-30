@@ -2410,7 +2410,7 @@
  (see-also 69 99 102 191)
  (keywords introspection)
  (draft-date "2026-08-11")
- (done-date "2026-08-29"))
+ (done-date "2026-10-29"))
 ((number 280)
  (status draft)
  (title "Monads")
