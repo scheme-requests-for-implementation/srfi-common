@@ -89,13 +89,19 @@ td, th {
   }
 }
 
+a:target {
+  position: static;
+}
+:is(p, h1, h2, h3, h4, h5, h6, li, dt, dd, div, pre, blockquote):has(a:target) {
+  position: relative;
+}
+
 @media (max-width: 64em) {
   :not(.erratum):target::before {
-    display: inline;
     font-size: inherit;
     line-height: inherit;
-    margin-right: 0.4em;
-    position: static;
+    margin-right: 0;
+    top: 0;
     transform: none;
   }
 }
