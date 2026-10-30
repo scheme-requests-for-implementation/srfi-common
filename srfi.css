@@ -98,6 +98,7 @@ a:target {
 
 @media (max-width: 64em) {
   :not(.erratum):target::before {
+    content: "▶";
     font-size: inherit;
     line-height: inherit;
     margin-right: 0;
