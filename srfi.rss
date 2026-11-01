@@ -1,4 +1,26 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 242: The CFG Language</title><link>https://srfi.schemers.org/srfi-242/</link><guid>https://srfi.schemers.org/srfi-242</guid><description>SRFI 242 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a language to describe control-flow graphs
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/"><channel><title>Scheme Requests for Implementation</title><link>https://srfi.schemers.org/</link><description>Updates to SRFI documents</description><language>en-US</language><webMaster>srfi@speechcode.com (Arthur A. Gleckler)</webMaster><atom:link href="https://srfi.schemers.org/srfi.rss" rel="self" type="application/rss+xml"></atom:link><item><title>SRFI 272: Pretty Printing</title><link>https://srfi.schemers.org/srfi-272/</link><guid>https://srfi.schemers.org/srfi-272</guid><description>SRFI 272 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+  This SRFI follows the traditional Scheme model of pretty printing, which treats it as a
+  process distinct from general controlled formatting. While general-purpose formatters
+  often prioritize specialized presentation at the expense of machine-readability, Scheme’s
+  pretty-printers (such as those of SLIB and MIT Scheme) have traditionally treated
+  pretty printing as a variant of &lt;code>write&lt;/code>, differing primarily in the insertion
+  of whitespace to make the presentation more palatable to humans. Common Lisp’s pretty-printer,
+  by contrast, fills two roles simultaneously by integrating pretty printing with both its
+  format facility and its generalized &lt;code>write&lt;/code> procedures. This unified approach
+  offers great power, but at the cost of complexity that can make it difficult to use effectively.
+
+  We propose a specialized, layered approach, specifying five libraries of increasing functionality,
+  where all but the first are optional. The libraries are downward-compatible: more powerful libraries
+  satisfy all requirements of the simpler ones while adding new features. Implementors may
+  choose to support a maximum level of functionality appropriate for their systems. Integration with
+  monadic and string-based formatting libraries is supported.
+&lt;/p>&lt;/blockquote></description><dc:creator>Sergei Egorov</dc:creator><pubDate>Sun, 01 Nov 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 279: In(tro)spection Protocol</title><link>https://srfi.schemers.org/srfi-279/</link><guid>https://srfi.schemers.org/srfi-279</guid><description>SRFI 279 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+  Interactive REPL-driven systems (that most Schemes are) need a way to get detailed information on a given piece of data.
+  Inspectors, as these are conventionally called.
+  This SRFI defines a basic protocol for inspectors, consisting of three procedures:
+  &lt;code>inspect-properties&lt;/code>, &lt;code>inspect-property&lt;/code>, and &lt;code>inspect-describe&lt;/code>.
+  Some suggestions for standard and popular types’ inspection are also provided.
+&lt;/p>&lt;/blockquote></description><dc:creator>Artyom Bologov</dc:creator><pubDate>Thu, 29 Oct 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 242: The CFG Language</title><link>https://srfi.schemers.org/srfi-242/</link><guid>https://srfi.schemers.org/srfi-242</guid><description>SRFI 242 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>    &lt;p>This SRFI defines a language to describe control-flow graphs
       (CFGs) suitable for formulating iterative and recursive
       algorithms.  Using the notion of a CFG term, this language can
       be seamlessly embedded in the Scheme language.  Complex CFG
@@ -89,13 +111,11 @@ execution semantics recommendations for test runner implementers.&lt;/p>&lt;/blo
       While their intended use is as reusable seeds for SRFI 271 random
       ports, they are also useful whenever a repeating sequence of one
       or more bytes or characters is needed.&lt;/p>&lt;/blockquote></description><dc:creator>Wolfgang Corcoran-Mathe</dc:creator><pubDate>Sun, 06 Sep 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 281: Bytevector Utilities</title><link>https://srfi.schemers.org/srfi-281/</link><guid>https://srfi.schemers.org/srfi-281</guid><description>SRFI 281 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
-  This SRFI implements a modified version of the &lt;span class="report-name">R&lt;sup>6&lt;/sup>RS&lt;/span>’s &lt;code>(rnrs bytevectors
-  (6))&lt;/code> library, which has procedures for the serialization and deserialization
-  of numbers into bytevectors, and conversion to/from Unicode. It also
-  includes some procedures from
-  &lt;a href="https://srfi.schemers.org/srfi-207/">SRFI 207&lt;/a>
-  that are relevant to all bytevectors, such as serialization/deserialization
-  into strings, and order predicates.
+  This SRFI implements a modified version of
+  the &lt;span>R&lt;sup>6&lt;/sup>RS&lt;/span>’s &lt;code>(rnrs bytevectors
+  (6))&lt;/code> library, which has procedures for the serialization and
+  deserialization of numbers into bytevectors, and conversion to/from
+  Unicode.
 &lt;/p>&lt;/blockquote></description><dc:creator>Peter McGoron</dc:creator><pubDate>Wed, 02 Sep 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 262: Extensible pattern matcher</title><link>https://srfi.schemers.org/srfi-262/</link><guid>https://srfi.schemers.org/srfi-262</guid><description>SRFI 262 is now in &lt;em>withdrawn&lt;/em> status.&lt;blockquote>&lt;p>A pattern matching form which can operate on arbitrary Scheme
 values is defined. It conforms to the following design
 principles.&lt;/p>
@@ -119,13 +139,7 @@ extension syntax is appropriately implemented).&lt;/p>&lt;/blockquote></descript
   extending Scheme with first-class monad objects and adding Haskell-like
   syntax for composing monadic computations. The API is minimal and the
   implementation trivial.
-&lt;/p>&lt;/blockquote></description><dc:creator>Hernán Ibarra Mejia</dc:creator><pubDate>Sun, 30 Aug 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 279: In(tro)spection Protocol</title><link>https://srfi.schemers.org/srfi-279/</link><guid>https://srfi.schemers.org/srfi-279</guid><description>SRFI 279 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
-  Interactive REPL-driven systems (that most Schemes are) need a way to get detailed information on a given piece of data.
-  Inspectors, as these are conventionally called.
-  This SRFI defines a basic protocol for inspectors, consisting of three procedures:
-  &lt;code>inspect-properties&lt;/code>, &lt;code>inspect-property&lt;/code>, and &lt;code>inspect-describe&lt;/code>.
-  Some suggestions for standard and popular types’ inspection are also provided.
-&lt;/p>&lt;/blockquote></description><dc:creator>Artyom Bologov</dc:creator><pubDate>Sat, 29 Aug 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 274: Extended List Conversion Procedures</title><link>https://srfi.schemers.org/srfi-274/</link><guid>https://srfi.schemers.org/srfi-274</guid><description>SRFI 274 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+&lt;/p>&lt;/blockquote></description><dc:creator>Hernán Ibarra Mejia</dc:creator><pubDate>Sun, 30 Aug 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 274: Extended List Conversion Procedures</title><link>https://srfi.schemers.org/srfi-274/</link><guid>https://srfi.schemers.org/srfi-274</guid><description>SRFI 274 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
   A set of modest extensions to list conversion and list copying procedures
   is proposed that aligns them with other conversion and copying procedures
   and allows for some operations on dotted and circular lists (collectively
@@ -203,23 +217,7 @@ extension syntax is appropriately implemented).&lt;/p>&lt;/blockquote></descript
   mode and deviations from IEEE 754 arithmetic. New flonum operations are
   also available, such as serialization and
   operations corresponding to IEEE 754-2019 and C23.
-&lt;/p>&lt;/blockquote></description><dc:creator>Peter McGoron</dc:creator><pubDate>Tue, 23 Jun 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 263: Prototype Object System</title><link>https://srfi.schemers.org/srfi-263/</link><guid>https://srfi.schemers.org/srfi-263</guid><description>SRFI 263 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI proposes a "Self"-inspired prototype object system. Such an object system works by having prototype objects that are derived repeatedly to modify, extend, and use them, and is interacted with by passing messages.&lt;/p>&lt;/blockquote></description><dc:creator>Daniel Ziltener</dc:creator><pubDate>Fri, 22 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 272: Pretty Printing</title><link>https://srfi.schemers.org/srfi-272/</link><guid>https://srfi.schemers.org/srfi-272</guid><description>SRFI 272 is now in &lt;em>draft&lt;/em> status.&lt;blockquote>&lt;p>
-  This SRFI follows the traditional Scheme model of pretty printing, which treats it as a
-  process distinct from general controlled formatting. While general-purpose formatters
-  often prioritize specialized presentation at the expense of machine-readability, Scheme’s
-  pretty-printers (such as those of SLIB and MIT Scheme) have traditionally treated
-  pretty printing as a variant of &lt;code>write&lt;/code>, differing primarily in the insertion
-  of whitespace to make the presentation more palatable to humans. Common Lisp’s pretty-printer,
-  by contrast, fills two roles simultaneously by integrating pretty printing with both its
-  format facility and its generalized &lt;code>write&lt;/code> procedures. This unified approach
-  offers great power, but at the cost of complexity that can make it difficult to use effectively.
-
-  We propose a specialized, layered approach, specifying five libraries of increasing functionality,
-  where all but the first are optional. The libraries are downward-compatible: more powerful libraries
-  satisfy all requirements of the simpler ones while adding new features. Implementors may
-  choose to support a maximum level of functionality appropriate for their systems. Integration with
-  monadic and string-based formatting libraries is supported.
-&lt;/p>&lt;/blockquote></description><dc:creator>Sergei Egorov</dc:creator><pubDate>Wed, 13 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 267: Raw String Syntax</title><link>https://srfi.schemers.org/srfi-267/</link><guid>https://srfi.schemers.org/srfi-267</guid><description>SRFI 267 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
+&lt;/p>&lt;/blockquote></description><dc:creator>Peter McGoron</dc:creator><pubDate>Tue, 23 Jun 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 263: Prototype Object System</title><link>https://srfi.schemers.org/srfi-263/</link><guid>https://srfi.schemers.org/srfi-263</guid><description>SRFI 263 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>This SRFI proposes a "Self"-inspired prototype object system. Such an object system works by having prototype objects that are derived repeatedly to modify, extend, and use them, and is interacted with by passing messages.&lt;/p>&lt;/blockquote></description><dc:creator>Daniel Ziltener</dc:creator><pubDate>Fri, 22 May 2026 12:00:00 -0800</pubDate></item><item><title>SRFI 267: Raw String Syntax</title><link>https://srfi.schemers.org/srfi-267/</link><guid>https://srfi.schemers.org/srfi-267</guid><description>SRFI 267 is now in &lt;em>final&lt;/em> status.&lt;blockquote>&lt;p>
     Raw strings are a lexical syntax for strings that do
     not interpret escapes inside of them and are useful in
     cases where the string data has a lot of characters such as
