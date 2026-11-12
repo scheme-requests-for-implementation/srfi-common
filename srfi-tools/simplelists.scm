@@ -322,48 +322,53 @@ strings."
               targets)
     (disp "Finished adding '" list-name "' to standard lists.")))
 
-(define (simplelists-create-srfi-list number author-addresses)
-  "Create a new mailing list for SRFI <num> with standard configuration and add
-authors."
-  (let* ((list-name (srfi-num-stem number))
-         (params `((name . ,list-name)
-                   (archive_enabled . #true)
-                   (archive_protected . #false)
-                   (archive_spammode . #true)
-                   (message_footer . "")
-                   (moderate . 6)
-                   (restrict_post_lists . ,(list->vector
-					    (list list-name
-						  "srfi-auto-subscribe")))
-                   (subs_memberview . ""))))
-    (disp "Creating mailing list for '" list-name "'.")
+(define (simplelists-create-named-list list-name recipient-addresses)
+  "Create a new mailing list with the given name and standard configuration,
+and add recipients."
+  (let ((params `((archive_enabled . #true)
+                  (archive_protected . #false)
+                  (archive_spammode . #true)
+                  (message_footer . "")
+                  (moderate . 6)
+                  (name . ,list-name)
+                  (restrict_post_lists . ,(list->vector
+                                           (list list-name
+                                                 "srfi-auto-subscribe")))
+                  (subs_memberview . ""))))
+    (disp "Creating mailing list '" list-name "'.")
     (let* ((response (simplelists-create-list list-name params))
-	   (is-error (assoc 'is_error response)))
+           (is-error (assoc 'is_error response)))
       (when (and is-error (cdr is-error))
         (user-error "Failed to create list: "
                     (cdr (assoc 'message response))))
       (disp "Successfully created list '" list-name "'."))
-    (for-each (lambda (author-address)
-		(disp "Adding author to list:")
-		(let ((contact-id
-		       (simplelists-find-or-create-contact author-address)))
-		  (disp "  Adding contact "
-			(number->string contact-id)
-			" to '"
-			list-name
-			"'.")
-		  (simplelists-add-membership contact-id list-name)
-		  (disp "  Author added successfully.")))
-	      author-addresses)
+    (for-each (lambda (recipient-address)
+                (disp "Adding recipient to list:")
+                (let ((contact-id
+                       (simplelists-find-or-create-contact recipient-address)))
+                  (disp "  Adding contact "
+                        (number->string contact-id)
+                        " to '"
+                        list-name
+                        "'.")
+                  (simplelists-add-membership contact-id list-name)
+                  (disp "  Recipient added successfully.")))
+              recipient-addresses)))
+
+(define (simplelists-create-srfi-list number author-addresses)
+  "Create a new mailing list for SRFI with standard configuration, add
+authors, subscribe srfi-auto-subscribe, and allow posting to standard lists."
+  (let ((list-name (srfi-num-stem number)))
+    (simplelists-create-named-list list-name author-addresses)
     (disp "Adding srfi-auto-subscribe to list:")
     (let ((contact-id
-	   (simplelists-find-or-create-contact
-	    "srfi-auto-subscribe@srfi.schemers.org")))
+           (simplelists-find-or-create-contact
+            "srfi-auto-subscribe@srfi.schemers.org")))
       (disp "  Adding contact "
-	    (number->string contact-id)
-	    " to '"
-	    list-name
-	    "'.")
+            (number->string contact-id)
+            " to '"
+            list-name
+            "'.")
       (simplelists-add-membership contact-id list-name)
       (disp "  srfi-auto-subscribe added successfully."))
     (simplelists-add-standard-lists list-name)))
@@ -371,8 +376,12 @@ authors."
 ;; Commands
 
 (define-command (simplelists-create number . author-addresses)
-  "Create mailing list for SRFI <num> with author(s) as members."
+  "Create mailing list for SRFI with author(s) as members."
   (simplelists-create-srfi-list (parse-srfi-number number) author-addresses))
+
+(define-command (simplelists-create-test-list list-name . recipient-addresses)
+  "Create mailing list with given name and recipient(s) as members."
+  (simplelists-create-named-list list-name recipient-addresses))
 
 (define (sort-alist alist)
   "Sort an alist by symbolic keys."
