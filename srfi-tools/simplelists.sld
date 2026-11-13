@@ -22,20 +22,13 @@
           (srfi-tools private port)
           (srfi-tools private pretty-print)
           (srfi-tools private string))
-
-  ;; Import JSON library based on implementation
-  ;; Both (srfi 180) and (chibi json) provide compatible APIs:
-  ;;   - json-read: port-or-string -> scheme-object
-  ;;   - json-write: scheme-object port -> unspecified
   (cond-expand
-   ;; SRFI 180 is the portable standard (Chicken, Gauche, and others support it)
-   ((library (srfi 180))
-    (import (srfi 180)))
-   ;; Chibi Scheme has its own compatible JSON library
-   (chibi
-    (import (chibi json)))
-   ;; Fallback error if no JSON library available
+   ((library (srfi 180)) (import (srfi 180)))
+   (chibi (import (chibi json)))
    (else
-    (begin
-      (error "No JSON library available. Please install SRFI 180 or a compatible JSON library."))))
+    (begin (error "Please install SRFI 180 or a compatible JSON library."))))
+  (cond-expand
+   ((library (srfi 166)) (import (only (srfi 166) show tabular each)))
+   ((library (srfi 159)) (import (only (srfi 159) show tabular each)))
+   (else (begin (error "Please install SRFI 159 or SRFI 166."))))
   (include "simplelists.scm"))

@@ -419,6 +419,86 @@ contacts field."
                       list-config)))
         list-config)))
 
+(define (simplelists-get-all-lists)
+  "Get all mailing lists for the account.  Return list of list configs."
+  (let ((response (simplelists-api-request "GET" "/lists/" #false)))
+    (if (vector? response)
+        (vector->list response)
+        (user-error "Unexpected response format from lists API."))))
+
+(define (alist-ref key alist default)
+  "Look up key in alist, returning default if not found."
+  (let ((pair (assoc key alist)))
+    (if pair (cdr pair) default)))
+
+(define (natural-sort-key s)
+  "Return a string key for natural sorting, zero-padding numeric runs to 10
+digits."
+  (let ((size (string-length s)))
+    (with-output-to-string
+      (lambda ()
+        (let next-character ((i 0))
+          (when (< i size)
+            (let ((c (string-ref s i)))
+              (if (ascii-numeric? c)
+                  (let next-digit ((j (+ i 1)))
+                    (if (and (< j size)
+                             (ascii-numeric? (string-ref s j)))
+                        (next-digit (+ j 1))
+                        (begin
+                          (write-string (string-pad (substring s i j) 10 #\0))
+                          (next-character j))))
+                  (begin (write-char c)
+                         (next-character (+ i 1)))))))))))
+
+;; original_sender_mode values (when From is rewritten):
+;;   0  Show original sender in description and Reply-To
+;;   1  Only show original sender in Reply-To
+;;   2  Only show original sender in description
+;;   3  Do not add original sender details
+(define-command (simplelists-dmarc-survey)
+  "Show DMARC-related settings for all mailing lists."
+  (let* ((lists (list-sort
+                 (lambda (a b)
+                   (string<? (natural-sort-key (alist-ref 'name a ""))
+                             (natural-sort-key (alist-ref 'name b ""))))
+                 (simplelists-get-all-lists)))
+         (x-if-true (lambda (value) (if value "x" "")))
+         (value (lambda (key) (lambda (c) (displayed (alist-ref key c "N/A")))))
+         (rewrite-value
+          (lambda (c) (x-if-true (alist-ref 'rewrite_sender c #false))))
+         (set? (lambda (v) (and (string? v) (not (string=? v "")))))
+         (boolean-value
+	  (lambda (key)
+	    (lambda (c) (x-if-true (set? (alist-ref key c #false))))))
+         (header-footer-value
+          (lambda (c)
+            (x-if-true (any set?
+			    (map (lambda (k) (alist-ref k c #false))
+				 '(message_footer
+				   message_footer_html
+				   message_fronter
+				   message_fronter_html))))))
+         (columns
+          (list (cons "name" (value 'name))
+                (cons "original_sender_mode" (value 'original_sender_mode))
+                (cons "header_footer" header-footer-value)
+                (cons "rewrite_sender" rewrite-value)
+                (cons "subject_prefix" (boolean-value 'subject_prefix))))
+         (headers (map (lambda (c) (string-split #\_ (car c))) columns))
+         (getters (map cdr columns))
+         (max-h (fold max 0 (map length headers)))
+         (col (lambda (lines getter)
+                (let* ((pad (make-list (- max-h (length lines)) ""))
+                       (w (fold max 0 (map string-length lines))))
+                  (each (string-join-lines
+                         (append pad
+				 lines
+                                 (list (make-string w #\-))
+                                 (map getter lists)))))))
+         (formatted (map col headers getters)))
+    (show #true (apply tabular (interpose " " formatted)))))
+
 (define-command (simplelists-get number)
   "Get mailing list configuration for SRFI with given number."
   (let* ((srfi-num (parse-srfi-number number))
