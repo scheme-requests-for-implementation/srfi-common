@@ -466,7 +466,13 @@ digits."
          (x-if-true (lambda (value) (if value "x" "")))
          (value (lambda (key) (lambda (c) (displayed (alist-ref key c "N/A")))))
          (rewrite-value
-          (lambda (c) (x-if-true (alist-ref 'rewrite_sender c #false))))
+          (lambda (c)
+            (let ((pair (assoc 'rewrite_sender c)))
+              (cond ((not pair) "inherit")
+                    ((eqv? (cdr pair) #true) "always")
+                    ((eqv? (cdr pair) #false) "when needed")
+                    ((null? (cdr pair)) "inherit")
+                    (else (displayed (cdr pair)))))))
          (set? (lambda (v) (and (string? v) (not (string=? v "")))))
          (boolean-value
 	  (lambda (key)
@@ -497,7 +503,10 @@ digits."
                                  (list (make-string w #\-))
                                  (map getter lists)))))))
          (formatted (map col headers getters)))
-    (show #true (apply tabular (interpose " " formatted)))))
+    (show #true (apply tabular (interpose " " formatted)))
+    (newline)
+    (disp "The account-wide default for rewrite_sender (used when mailing list is set to \"inherit\") is not available via API.")
+    (disp "Check the Simplelists web UI for the account default.")))
 
 (define-command (simplelists-get number)
   "Get mailing list configuration for SRFI with given number."
