@@ -981,7 +981,7 @@
  (status final)
  (title "Sets and bags")
  (author "John Cowan")
- (see-also 217)
+ (see-also 217 289)
  (keywords data-structure r7rs-large r7rs-large-red)
  (draft-date "2013-06-01")
  (done-date "2014-11-28"))
