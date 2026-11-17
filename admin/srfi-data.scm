@@ -2085,7 +2085,7 @@
  (author "Marc Nieper-Wißkirchen")
  (library-name list-case)
  (see-also)
- (keywords syntax)
+ (keywords pattern-matching syntax)
  (draft-date "2022-11-04")
  (done-date "2023-01-23"))
 ((number 240)
